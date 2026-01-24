@@ -1,0 +1,39 @@
+{
+  "name": "driving-theory-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "export:questions": "ts-node tools/export-questions.ts",
+    "dedupe:questions": "node tools/dedupe.js questions.export.json",
+    "dedupe:all": "npm run export:questions && npm run dedupe:questions"
+  },
+  "dependencies": {
+    "@capacitor-community/text-to-speech": "^6.1.0",
+    "@capacitor/cli": "^8.0.1",
+    "@capacitor/core": "^8.0.1",
+    "@supabase/ssr": "^0.8.0",
+    "@supabase/supabase-js": "^2.91.0",
+    "clsx": "^2.1.1",
+    "next": "14.2.33",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^8.0.1",
+    "@capacitor/assets": "^3.0.5",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.33",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5"
+  }
+}
