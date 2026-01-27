@@ -20,7 +20,7 @@ export default function Home() {
         {/* Disclaimer */}
         <div className="mt-6 max-w-2xl mx-auto">
           <p className="text-xs text-[var(--muted-text)]/80 leading-relaxed">
-            Disclaimer: This app provides practice questions designed to help learners prepare for the UK driving theory test. The questions are not official DVSA exam questions but are based on the same learning objectives and topics.
+            Disclaimer: This app provides practice questions designed to help learners prepare for the UK driving theory test. The questions are not official DVSA exam questions and are based on the same learning objectives and topics.
           </p>
         </div>
       </section>

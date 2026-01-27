@@ -40,7 +40,7 @@ export default function RootLayout({
           <footer className="border-t border-[var(--border)]/50 bg-white/80 backdrop-blur-sm">
             <div className="max-w-5xl mx-auto px-4 py-4">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-3">
-                <span className="text-xs text-[var(--muted-text)]">© {new Date().getFullYear()} Driving Theory Helper</span>
+                <span className="text-xs text-[var(--muted-text)]">© 2026 Driving Theory Helper</span>
                 <div className="flex items-center gap-4">
                   <span className="text-xs text-[var(--muted-text)]">Practice • Mock Test • Multilingual</span>
                   <Link href="/terms" className="text-xs text-[var(--muted-text)] hover:text-[var(--navy)] transition-colors">
@@ -50,6 +50,14 @@ export default function RootLayout({
                     Privacy Policy
                   </Link>
                 </div>
+              </div>
+              <div className="border-t border-[var(--border)]/30 pt-3 space-y-1.5">
+                <p className="text-xs text-[var(--muted-text)]">
+                  Support: <a href="mailto:support@lingotheory.org" className="hover:text-[var(--navy)] transition-colors">support@lingotheory.org</a>
+                </p>
+                <p className="text-xs text-[var(--muted-text)]">
+                  Created by Raed Mahfoud — Independent AI Product Creator
+                </p>
               </div>
             </div>
           </footer>

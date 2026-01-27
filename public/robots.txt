@@ -1,0 +1,13 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /dashboard
+Disallow: /auth/callback
+Disallow: /auth/reset
+
+# Host
+Host: https://www.lingotheory.org
+
+# Sitemaps
+Sitemap: https://www.lingotheory.org/sitemap.xml
