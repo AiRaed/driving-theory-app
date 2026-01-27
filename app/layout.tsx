@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
 import Link from "next/link";
 import HeaderClient from "@/components/HeaderClient";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 const inter = Inter({
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${ibmPlexSansArabic.variable} font-sans antialiased min-h-screen`}
       >
+        <Analytics />
         <div className="min-h-screen flex flex-col bg-[var(--bg)]">
           <HeaderClient />
           <main className="flex-1 relative z-10">
