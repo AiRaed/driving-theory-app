@@ -282,7 +282,7 @@ export default function PracticePage() {
         if (response.ok) {
           const data = await response.json();
           // Update local state
-          setAnsweredQuestionIds(prev => new Set([...prev, currentQuestion.id]));
+          setAnsweredQuestionIds(prev => new Set([...Array.from(prev), currentQuestion.id]));
           
           // Refetch access to get updated count
           await refetchAccess();
