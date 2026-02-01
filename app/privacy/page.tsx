@@ -90,6 +90,19 @@ export default function PrivacyPage() {
                 هذا التطبيق مخصص فقط لممارسة وتعلم نظرية القيادة. لسنا مرتبطين بأي سلطة رسمية لاختبار القيادة، وهذا التطبيق لأغراض تعليمية فقط.
               </p>
             </section>
+
+            {/* Section 7: Payments */}
+            <section>
+              <h2 className="text-lg font-bold text-slate-900 mb-2">
+                7. Payments
+              </h2>
+              <p className="text-base text-slate-800 leading-relaxed mb-3">
+                Payments are handled by a third-party provider (Stripe). We do not collect, store, or process any card or financial details. We only store a confirmation that a payment has been completed to manage access within the app.
+              </p>
+              <p className="text-xs text-slate-800/70 leading-relaxed font-normal" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
+                تتم معالجة عمليات الدفع من خلال مزوّد خارجي (Stripe). لا نقوم بجمع أو تخزين أو معالجة أي بيانات مالية أو معلومات بطاقات الدفع. نحتفظ فقط بتأكيد إتمام الدفع لغرض إدارة صلاحيات الوصول داخل التطبيق.
+              </p>
+            </section>
           </div>
         </div>
       </div>

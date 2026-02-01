@@ -23,7 +23,6 @@ const TOPICS = {
   'vehicle-loading': 'تحميل المركبة والحمولة والتوازن',
   'attitude': 'سلوك السائق وآداب القيادة',
   'safety-vehicle': 'سلامة المركبة والصيانة الأساسية',
-  'general': 'أسئلة عامة للقيادة',
 };
 
 /**
@@ -114,7 +113,7 @@ const BATCH_SPECS = {
   batch6: {
     name: 'Weather, Lights & Visibility',
     count: 30,
-    topics: ['vehicle-handling', 'general'],
+    topics: ['vehicle-handling'],
     coverage: [
       'Fog lights (front & rear)',
       'Visibility below 100 metres',
@@ -169,8 +168,7 @@ function generateQuestionId(topic, sequence) {
     'other-vehicles': 'OV',
     'vehicle-loading': 'VL',
     'attitude': 'AT',
-    'safety-vehicle': 'SV',
-    'general': 'GN'
+    'safety-vehicle': 'SV'
   };
   
   const prefix = topicPrefixes[topic] || 'QX';

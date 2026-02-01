@@ -1,0 +1,8 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded square background - deep red -->
+  <rect x="64" y="64" width="384" height="384" rx="96" ry="96" fill="#DC2626"/>
+  
+  <!-- Checkmark symbol (theory test inspired) - white, bold -->
+  <path d="M 160 256 L 224 320 L 352 192" fill="none" stroke="white" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+

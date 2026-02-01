@@ -1,0 +1,25 @@
+{
+  "name": "LingoTheory – Driving Theory Test",
+  "short_name": "LingoTheory",
+  "description": "Multilingual driving theory test practice. Prepare for your UK driving theory test with bilingual practice questions and realistic mock tests.",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#E10600",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
+}
+

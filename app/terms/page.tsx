@@ -90,6 +90,19 @@ export default function TermsPage() {
                 يمكن تحديث هذه الشروط في أي وقت. استمرار استخدام التطبيق يعني الموافقة على الشروط المحدثة.
               </p>
             </section>
+
+            {/* Section 7: Payment & Access */}
+            <section>
+              <h2 className="text-lg font-bold text-slate-900 mb-2">
+                7. Payment & Access
+              </h2>
+              <p className="text-base text-slate-800 leading-relaxed mb-3">
+                This app offers a one-time payment to unlock full access to all practice questions and mock tests. Payments are processed securely via Stripe. We do not store or have access to your card or payment details. Once payment is completed successfully, access is granted immediately and remains available for the lifetime of the account, unless the account is deleted or access is revoked due to misuse. All sales are final. Refunds are not guaranteed and are reviewed only in exceptional cases.
+              </p>
+              <p className="text-xs text-slate-800/70 leading-relaxed font-normal" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
+                يوفّر هذا التطبيق خيار دفع لمرة واحدة لفتح الوصول الكامل إلى جميع أسئلة التدريب والاختبارات التجريبية. تتم جميع عمليات الدفع بشكل آمن عبر Stripe، ولا نقوم بتخزين أو الوصول إلى أي معلومات خاصة ببطاقات الدفع. بعد إتمام الدفع بنجاح، يتم تفعيل الوصول فورًا ويبقى متاحًا طوال مدة استخدام الحساب، ما لم يتم حذف الحساب أو إيقافه بسبب إساءة الاستخدام. جميع عمليات الشراء نهائية، ولا يضمن التطبيق استرداد المبلغ إلا في حالات استثنائية.
+              </p>
+            </section>
           </div>
         </div>
       </div>

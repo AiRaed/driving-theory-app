@@ -20,6 +20,8 @@ export default function AuthClient() {
   const supabase = createClient();
 
   const next = searchParams.get('next') || '/dashboard';
+  const confirmed = searchParams.get('confirmed');
+  const errorParam = searchParams.get('error');
 
   useEffect(() => {
     // Check if user is already logged in
@@ -29,6 +31,17 @@ export default function AuthClient() {
       }
     });
   }, [router, next, supabase]);
+
+  useEffect(() => {
+    // Handle email confirmation success
+    if (confirmed === '1') {
+      setMessage('Email confirmed successfully! You can now log in.');
+    }
+    // Handle email confirmation error
+    if (errorParam === 'confirm_failed') {
+      setError('Email confirmation failed. Please try again or request a new confirmation email.');
+    }
+  }, [confirmed, errorParam]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -80,7 +93,7 @@ export default function AuthClient() {
       setError(error.message);
       setLoading(false);
     } else {
-      setMessage('Account created! Please check your email to confirm your account (if required by your settings).');
+      setMessage('Please check your inbox (or Spam / Junk folder) to confirm your account.');
       setEmail('');
       setPassword('');
       setConfirmPassword('');
@@ -94,16 +107,25 @@ export default function AuthClient() {
     setError(null);
     setMessage(null);
 
-    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    // Use environment-aware SITE_URL for redirectTo
+    // NEXT_PUBLIC_SITE_URL should be set to:
+    // - http://localhost:3000 in development (.env.local)
+    // - https://www.lingotheory.org in production (Render environment variables)
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+    const redirectTo = `${siteUrl}/auth/reset`;
+    
+    // Debug: log the redirect URL being sent to Supabase
+    console.log('Sending password reset email with redirectTo:', redirectTo);
+    
     const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: `${origin}/auth/reset`,
+      redirectTo,
     });
 
     if (error) {
       setError(error.message);
       setLoading(false);
     } else {
-      setMessage('Password reset email sent! Please check your inbox.');
+      setMessage('Reset email sent. Check your inbox (or Spam / Junk folder).');
       setEmail('');
       setLoading(false);
     }

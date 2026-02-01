@@ -9,7 +9,12 @@ export function cn(...inputs: ClassValue[]) {
  * Converts a topic key (e.g., "road-signs", "rules-of-the-road") to Title Case
  * for display purposes. Keeps small words lowercase unless they're the first word.
  */
-export function toTitleCaseLabel(topicKey: string): string {
+export function toTitleCaseLabel(topicKey: string | undefined | null): string {
+  // Handle undefined, null, or empty string
+  if (!topicKey || typeof topicKey !== 'string') {
+    return '';
+  }
+  
   const smallWords = new Set(['of', 'the', 'and', 'to', 'a', 'an', 'in', 'on', 'at', 'for', 'by']);
   
   return topicKey

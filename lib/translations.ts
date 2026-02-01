@@ -13,17 +13,29 @@ export interface TranslationData {
 let urTranslations: TranslationData | null = null;
 
 // Load Urdu translations from JSON file
-export async function loadUrduTranslations(): Promise<TranslationData | null> {
-  if (urTranslations !== null) {
+export async function loadUrduTranslations(forceReload: boolean = false): Promise<TranslationData | null> {
+  if (urTranslations !== null && !forceReload) {
     return urTranslations;
   }
 
   try {
-    const response = await fetch('/locales/ur.json');
+    // Add cache-busting query parameter when force reloading
+    const url = forceReload ? `/locales/ur.json?t=${Date.now()}` : '/locales/ur.json';
+    const response = await fetch(url);
     if (!response.ok) {
+      console.warn('Failed to load Urdu translations: response not ok', response.status);
       return null;
     }
-    urTranslations = await response.json();
+    const data = await response.json();
+    // Always update the cached translations, even if forceReload is false
+    // This ensures we have the latest data
+    urTranslations = data;
+    
+    // Verify critical sections exist
+    if (urTranslations && !urTranslations.alertness) {
+      console.warn('[Translations] alertness section missing in loaded translations');
+    }
+    
     return urTranslations;
   } catch (error) {
     console.error('Failed to load Urdu translations:', error);
@@ -48,11 +60,22 @@ export function getQuestionTranslation(
   }
 
   if (lang === 'ur' && urTranslationsData) {
+    if (!urTranslationsData[topic]) {
+      console.warn(`[Translations] Topic "${topic}" not found in Urdu translations. Available topics:`, Object.keys(urTranslationsData));
+      return null;
+    }
+
     const topicData = urTranslationsData[topic];
-    if (!topicData) return null;
+    if (!topicData[questionId]) {
+      console.warn(`[Translations] Question "${questionId}" not found in topic "${topic}". Available questions:`, Object.keys(topicData).slice(0, 10));
+      return null;
+    }
 
     const questionData = topicData[questionId];
-    if (!questionData) return null;
+    if (!questionData.promptUr) {
+      console.warn(`[Translations] Question "${questionId}" missing promptUr in topic "${topic}"`);
+      return null;
+    }
 
     const optionsArray = questionData.options?.map(opt => opt.ur) || [];
     
@@ -75,19 +98,42 @@ export function getUrduOptionTranslation(
   questionId: string,
   topic: string
 ): string | null {
-  if (!urTranslationsData) return null;
+  if (!urTranslationsData) {
+    console.warn(`[Translations] No Urdu translations data available for ${questionId}`);
+    return null;
+  }
   
   const topicData = urTranslationsData[topic];
-  if (!topicData) return null;
+  if (!topicData) {
+    console.warn(`[Translations] Topic "${topic}" not found for ${questionId}`);
+    return null;
+  }
 
   const questionData = topicData[questionId];
-  if (!questionData || !questionData.options) return null;
+  if (!questionData || !questionData.options) {
+    console.warn(`[Translations] Question "${questionId}" or options not found in topic "${topic}"`);
+    return null;
+  }
 
   // Find the index of the option in the original array by matching English text
   const originalIndex = originalOptions.findIndex(opt => opt.en === optionEn);
-  if (originalIndex === -1 || originalIndex >= questionData.options.length) return null;
+  if (originalIndex === -1) {
+    console.warn(`[Translations] Option not found in original options for ${questionId}: "${optionEn.substring(0, 50)}..."`);
+    return null;
+  }
+  
+  if (originalIndex >= questionData.options.length) {
+    console.warn(`[Translations] Option index out of bounds for ${questionId}: originalIndex=${originalIndex}, options.length=${questionData.options.length}`);
+    return null;
+  }
 
-  return questionData.options[originalIndex]?.ur || null;
+  const urTranslation = questionData.options[originalIndex]?.ur;
+  if (!urTranslation) {
+    console.warn(`[Translations] Urdu translation missing for option ${originalIndex} in ${questionId}`);
+    return null;
+  }
+
+  return urTranslation;
 }
 
 // Get localStorage key for translation language
@@ -107,5 +153,75 @@ export function getTranslationLang(): TranslationLang {
 export function setTranslationLang(lang: TranslationLang): void {
   if (typeof window === 'undefined') return;
   localStorage.setItem(TRANSLATION_LANG_KEY, lang);
+}
+
+/**
+ * Get translation text for a question prompt based on selected language only
+ * @param question - Question object with promptEn and promptAr
+ * @param lang - Selected translation language ('off', 'ar', 'ur')
+ * @param urTranslationsData - Urdu translations data (required if lang === 'ur')
+ * @param questionId - Question ID (required if lang === 'ur')
+ * @param topic - Question topic (required if lang === 'ur')
+ * @returns Translation string or empty string if lang is 'off' or translation not found
+ */
+export function getQuestionPromptTranslation(
+  question: { promptEn: string; promptAr?: string; id: string; topic: string },
+  lang: TranslationLang,
+  urTranslationsData: TranslationData | null
+): string {
+  if (lang === 'off') {
+    return '';
+  }
+  
+  if (lang === 'ar') {
+    return question.promptAr || '';
+  }
+  
+  if (lang === 'ur' && urTranslationsData) {
+    const translation = getQuestionTranslation(question.id, question.topic, 'ur', urTranslationsData);
+    return translation?.prompt || '';
+  }
+  
+  return '';
+}
+
+/**
+ * Get translation text for an option based on selected language only
+ * @param option - Option object with en and ar
+ * @param lang - Selected translation language ('off', 'ar', 'ur')
+ * @param urTranslationsData - Urdu translations data (required if lang === 'ur')
+ * @param originalOptions - Original options array (required if lang === 'ur')
+ * @param questionId - Question ID (required if lang === 'ur')
+ * @param topic - Question topic (required if lang === 'ur')
+ * @returns Translation string or empty string if lang is 'off' or translation not found
+ */
+export function getOptionTranslation(
+  option: { en: string; ar: string },
+  lang: TranslationLang,
+  urTranslationsData: TranslationData | null,
+  originalOptions: Array<{ en: string }>,
+  questionId: string,
+  topic: string
+): string {
+  if (lang === 'off') {
+    return '';
+  }
+  
+  if (lang === 'ar') {
+    return option.ar || '';
+  }
+  
+  if (lang === 'ur' && urTranslationsData) {
+    const urOption = getUrduOptionTranslation(
+      option.en,
+      originalOptions,
+      urTranslationsData,
+      questionId,
+      topic
+    );
+    return urOption || '';
+  }
+  
+  return '';
 }
 

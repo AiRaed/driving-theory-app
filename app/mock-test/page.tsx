@@ -2,18 +2,22 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { questions, Question } from "@/data/questions";
 import { cn } from "@/lib/utils";
 import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
 import DisclaimerModal from "@/components/DisclaimerModal";
+import MockTestLockedModal from "@/components/MockTestLockedModal";
+import { useAccess } from "@/lib/hooks/useAccess";
+import { createClient } from "@/lib/supabase/client";
 import { 
   TranslationLang, 
   getTranslationLang, 
   setTranslationLang, 
   loadUrduTranslations,
-  getQuestionTranslation,
-  getUrduOptionTranslation,
+  getQuestionPromptTranslation,
+  getOptionTranslation,
   type TranslationData 
 } from '@/lib/translations';
 
@@ -36,10 +40,29 @@ interface MockSession {
   isFinished: boolean;
 }
 
+/**
+ * MOCK TEST CONFIGURATION CONSTANTS
+ * 
+ * SAFEGUARDED - DO NOT MODIFY WITHOUT REVIEW
+ * 
+ * SESSION_KEY: Versioned session storage key
+ * - Increment version (v1 -> v2) if session structure changes
+ * - Prevents conflicts with old session data
+ * 
+ * QUESTION_COUNT: Number of questions per mock test
+ * - Set to 50 to match DVSA official mock test standard
+ * - Must not exceed total available questions in database
+ * - Used in generateMockQuestions() to limit selection
+ */
 const SESSION_KEY = "mock_session_v1";
 const QUESTION_COUNT = 50;
 
 export default function MockTestPage() {
+  const router = useRouter();
+  const supabase = createClient();
+  const { isPaid, loading: accessLoading, refreshProfile } = useAccess();
+  const [user, setUser] = useState<any>(null);
+  const [showLockedModal, setShowLockedModal] = useState(false);
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(null);
@@ -47,6 +70,28 @@ export default function MockTestPage() {
   const [isFinished, setIsFinished] = useState(false);
   const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
   const [isMounted, setIsMounted] = useState(false);
+
+  // Check authentication and access level
+  useEffect(() => {
+    const checkAuth = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setUser(user);
+      
+      if (!user) {
+        router.push('/auth');
+        return;
+      }
+    };
+    
+    checkAuth();
+  }, [router, supabase]);
+
+  // Show modal when access is checked and user is not paid
+  useEffect(() => {
+    if (!accessLoading && user && !isPaid) {
+      setShowLockedModal(true);
+    }
+  }, [accessLoading, user, isPaid]);
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -79,12 +124,61 @@ export default function MockTestPage() {
     }
   };
 
-  // Generate 50 random questions mixed across topics with shuffled options
+  /**
+   * MOCK TEST QUESTION GENERATION LOGIC
+   * 
+   * SAFEGUARDED IMPLEMENTATION - DO NOT MODIFY WITHOUT REVIEW
+   * 
+   * Current Behavior:
+   * - Generates a fresh set of 50 random questions on every new test attempt
+   * - Uses simple random shuffle of ALL questions from the database
+   * - Takes first 50 questions after shuffle (no duplicates guaranteed by slice)
+   * - Shuffles options for each selected question
+   * 
+   * Characteristics:
+   * ✅ Fresh questions on each attempt (new shuffle each time)
+   * ✅ No duplicates within same test (slice ensures unique selection)
+   * ⚠️ Questions drawn from ALL available categories (random distribution, not weighted)
+   * ⚠️ Distribution is random, not DVSA-style weighted
+   * ⚠️ No intelligent category filling if a category has insufficient questions
+   * 
+   * IMPORTANT:
+   * - This function is called ONLY when initializing a NEW test (forceNew=true or no saved session)
+   * - Session persistence ensures same questions are used if user returns to incomplete test
+   * - Questions array is imported from @/data/questions and contains ALL available questions
+   * - QUESTION_COUNT constant (50) matches DVSA mock test standard
+   * 
+   * Performance:
+   * - O(n log n) for sort, O(n) for slice and map
+   * - Efficient for typical question database sizes (< 1000 questions)
+   * 
+   * Stability:
+   * - Random shuffle ensures variety across test attempts
+   * - No hardcoded question IDs - fully dynamic
+   * - Works with any question database structure that matches Question interface
+   */
   const generateMockQuestions = (): QuestionWithShuffled[] => {
-    const shuffled = [...questions].sort(() => Math.random() - 0.5);
+    // SAFEGUARD: Ensure questions array exists and is not empty
+    if (!questions || questions.length === 0) {
+      console.error('Mock Test: Questions array is empty or undefined');
+      return [];
+    }
+
+    // SAFEGUARD: Create a copy to avoid mutating original questions array
+    const questionsCopy = [...questions];
+    
+    // Random shuffle: Fisher-Yates style using sort comparator
+    // This ensures different question order on each test attempt
+    const shuffled = questionsCopy.sort(() => Math.random() - 0.5);
+    
+    // SAFEGUARD: Ensure we don't request more questions than available
     const count = Math.min(QUESTION_COUNT, questions.length);
+    
+    // Take first N questions after shuffle (guarantees no duplicates)
+    // Map each question to include shuffled options
     return shuffled.slice(0, count).map(q => ({
       ...q,
+      // Shuffle options for each question to randomize answer positions
       optionsShuffled: shuffleArray(q.options)
     }));
   };
@@ -290,7 +384,39 @@ export default function MockTestPage() {
     }))
     .filter((item) => item.answer && !item.answer.correct);
 
-  // Show loading state
+  // Show loading state while checking access or loading questions
+  if (accessLoading || !user) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+        <div className="max-w-5xl mx-auto px-4 py-6">
+          <div className="text-center text-slate-600 font-medium">Loading...</div>
+        </div>
+      </div>
+    );
+  }
+
+  // Block page if user is not paid - show modal instead
+  if (!isPaid) {
+    return (
+      <>
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+          <div className="max-w-5xl mx-auto px-4 py-6">
+            <div className="text-center text-slate-600 font-medium">Mock Test is locked</div>
+          </div>
+        </div>
+        <MockTestLockedModal
+          isOpen={showLockedModal}
+          onClose={async () => {
+            setShowLockedModal(false);
+            await refreshProfile();
+            router.push('/practice');
+          }}
+        />
+      </>
+    );
+  }
+
+  // Show loading state for questions
   if (mockQuestions.length === 0) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
@@ -361,9 +487,47 @@ export default function MockTestPage() {
                     className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/50 p-5 sm:p-6 mb-3 text-sm shadow-lg hover:shadow-xl transition-shadow"
                   >
                     <p className="font-bold mb-2 text-slate-900 text-base">{question.promptEn}</p>
-                    <p className="text-slate-700 mb-3 leading-[1.8] tracking-wide font-medium" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>{question.promptAr}</p>
+                    {(() => {
+                      const promptTranslation = getQuestionPromptTranslation(
+                        question,
+                        translationLang,
+                        urTranslations
+                      );
+                      if (!promptTranslation) return null;
+                      return (
+                        <p 
+                          className="text-slate-700 mb-3 leading-[1.8] tracking-wide font-medium" 
+                          dir="rtl" 
+                          style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
+                        >
+                          {promptTranslation}
+                        </p>
+                      );
+                    })()}
                     <p className="text-sm text-slate-600">
-                      <span className="font-semibold">Correct answer:</span> <span className="font-semibold text-green-700">{correctOption.en}</span> · <span dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' }}>{correctOption.ar}</span>
+                      <span className="font-semibold">Correct answer:</span> <span className="font-semibold text-green-700">{correctOption.en}</span>
+                      {(() => {
+                        const optionTranslation = getOptionTranslation(
+                          correctOption,
+                          translationLang,
+                          urTranslations,
+                          question.options,
+                          question.id,
+                          question.topic
+                        );
+                        if (!optionTranslation) return null;
+                        return (
+                          <>
+                            {' · '}
+                            <span 
+                              dir="rtl" 
+                              style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' } : { lineHeight: '1.8' }}
+                            >
+                              {optionTranslation}
+                            </span>
+                          </>
+                        );
+                      })()}
                     </p>
                   </div>
                 );
@@ -580,22 +744,27 @@ export default function MockTestPage() {
               {currentQuestion.promptEn}
             </h2>
             <div className="flex items-center gap-2 flex-shrink-0 mt-1">
-              <TTSButton text={currentQuestion.promptEn} />
+              <TTSButton text={currentQuestion.promptEn} options={currentQuestion.optionsShuffled} />
             </div>
           </div>
           {/* Translation Prompt */}
-          {translationLang === 'ar' && currentQuestion.promptAr && (
-            <p className="text-[16px] sm:text-[17px] text-slate-800 font-semibold mb-3 leading-[1.8] tracking-wide" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
-              {currentQuestion.promptAr}
-            </p>
-          )}
-          {(translationLang === 'ur' || currentQuestion.topic === 'hazard-awareness' || currentQuestion.topic === 'road-signs' || currentQuestion.topic === 'general' || currentQuestion.topic === 'safety-vehicle' || currentQuestion.topic === 'attitude' || currentQuestion.topic === 'other-vehicles' || currentQuestion.topic === 'documents' || currentQuestion.topic === 'vulnerable-road-users' || currentQuestion.topic === 'vehicle-handling' || currentQuestion.topic === 'incidents' || currentQuestion.topic === 'motorway-driving' || currentQuestion.topic === 'vehicle-loading') && (() => {
-            const translation = getQuestionTranslation(currentQuestion.id, currentQuestion.topic, 'ur', urTranslations);
-            return translation?.prompt ? (
-              <p className="text-[16px] sm:text-[17px] text-slate-800 font-semibold mb-3 leading-[1.8] tracking-wide" dir="rtl">
-                {translation.prompt}
+          {(() => {
+            const translationText = getQuestionPromptTranslation(
+              currentQuestion,
+              translationLang,
+              urTranslations
+            );
+            if (!translationText) return null;
+            
+            return (
+              <p 
+                className="text-[16px] sm:text-[17px] text-slate-800 font-semibold mb-3 leading-[1.8] tracking-wide" 
+                dir="rtl" 
+                style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
+              >
+                {translationText}
               </p>
-            ) : null;
+            );
           })()}
 
           {/* Divider */}
@@ -647,30 +816,31 @@ export default function MockTestPage() {
                         showCorrect ? "text-green-800" :
                         showWrong ? "text-red-800" : "text-slate-900"
                       )}>{option.en}</div>
-                      {translationLang === 'ar' && option.ar && (
-                        <div className={cn(
-                          "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
-                          isSelected && !showCorrect && !showWrong ? "text-blue-800/90" : 
-                          showCorrect ? "text-green-700/90" :
-                          showWrong ? "text-red-700/90" : "text-slate-700"
-                        )} dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>{option.ar}</div>
-                      )}
-                      {(translationLang === 'ur' || currentQuestion.topic === 'hazard-awareness' || currentQuestion.topic === 'road-signs' || currentQuestion.topic === 'general' || currentQuestion.topic === 'safety-vehicle' || currentQuestion.topic === 'attitude' || currentQuestion.topic === 'other-vehicles' || currentQuestion.topic === 'documents' || currentQuestion.topic === 'vulnerable-road-users' || currentQuestion.topic === 'vehicle-handling' || currentQuestion.topic === 'incidents' || currentQuestion.topic === 'motorway-driving' || currentQuestion.topic === 'vehicle-loading') && (() => {
-                        const urOption = getUrduOptionTranslation(
-                          option.en,
-                          currentQuestion.options,
+                      {(() => {
+                        const translationText = getOptionTranslation(
+                          option,
+                          translationLang,
                           urTranslations,
+                          currentQuestion.options,
                           currentQuestion.id,
                           currentQuestion.topic
                         );
-                        return urOption ? (
-                          <div className={cn(
-                            "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
-                            isSelected && !showCorrect && !showWrong ? "text-blue-800/90" :
-                            showCorrect ? "text-green-700/90" :
-                            showWrong ? "text-red-700/90" : "text-slate-700"
-                          )} dir="rtl">{urOption}</div>
-                        ) : null;
+                        if (!translationText) return null;
+                        
+                        return (
+                          <div 
+                            className={cn(
+                              "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
+                              isSelected && !showCorrect && !showWrong ? "text-blue-800/90" : 
+                              showCorrect ? "text-green-700/90" :
+                              showWrong ? "text-red-700/90" : "text-slate-700"
+                            )} 
+                            dir="rtl" 
+                            style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
+                          >
+                            {translationText}
+                          </div>
+                        );
                       })()}
                     </div>
                   </div>

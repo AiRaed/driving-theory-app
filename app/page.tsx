@@ -1,4 +1,5 @@
 import LandingClient from './LandingClient';
+import Subtitle from '@/components/Subtitle';
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
         <h1 className="text-[28px] sm:text-4xl font-semibold mb-4 text-[var(--ink)]">
           Driving Theory Helper
         </h1>
+        <Subtitle />
         <p className="text-[var(--muted-text)] mb-2 text-lg font-medium">
           Pass your UK driving theory test faster — in your own language.
         </p>
@@ -17,8 +19,12 @@ export default function Home() {
         <p className="text-sm text-[var(--muted-text)] mt-4">
           English by default — <span className="text-[#FFC107]">Arabic</span> & <span className="text-[#FFC107]">Urdu</span> translations available.
         </p>
+        {/* Informational note */}
+        <p className="text-xs text-[var(--muted-text)]/70 mt-6 max-w-2xl mx-auto">
+          For best results, we recommend using this app and website alongside the official DVSA learning materials.
+        </p>
         {/* Disclaimer */}
-        <div className="mt-6 max-w-2xl mx-auto">
+        <div className="mt-4 max-w-2xl mx-auto">
           <p className="text-xs text-[var(--muted-text)]/80 leading-relaxed">
             Disclaimer: This app provides practice questions designed to help learners prepare for the UK driving theory test. The questions are not official DVSA exam questions and are based on the same learning objectives and topics.
           </p>

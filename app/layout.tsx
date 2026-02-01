@@ -21,6 +21,11 @@ const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
 export const metadata: Metadata = {
   title: "LingoTheory – Driving Theory Test. In Your Language.",
   description: "Multilingual driving theory test practice. Prepare for your UK driving theory test with bilingual practice questions and realistic mock tests.",
+  icons: {
+    icon: "/favicon-check.svg",
+    apple: "/favicon-check.svg",
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({

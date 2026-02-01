@@ -1,0 +1,8 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Rounded square background - deep red (UK road signs color) -->
+  <rect x="64" y="64" width="384" height="384" rx="96" ry="96" fill="#DC2626"/>
+  
+  <!-- Stylized "L" letter - white, bold, centered -->
+  <path d="M 192 160 L 192 400 L 352 400 L 352 320 L 272 320 L 272 160 Z" fill="white"/>
+</svg>
+

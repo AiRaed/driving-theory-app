@@ -1,0 +1,3152 @@
+[
+  {
+    "term": "hint-HZ-34",
+    "questionId": "HZ-34",
+    "line": 1000,
+    "englishHint": "Wearing glasses always maintains clear vision in all conditions.",
+    "fullLine": "      { term: \"hint-HZ-34\", ar: \"ارتداء النظارات دائماً يحافظ على الرؤية الواضحة في جميع الظروف.\", explainAr: \"Wearing glasses always maintains clear vision in all conditions.\" }"
+  },
+  {
+    "term": "hint-HZ-35",
+    "questionId": "HZ-35",
+    "line": 1016,
+    "englishHint": "Alcohol impairs judgement and control, significantly increasing accident risk.",
+    "fullLine": "      { term: \"hint-HZ-35\", ar: \"الكحول يضعف الحكم والسيطرة ويزيد خطر الحوادث بشكل كبير.\", explainAr: \"Alcohol impairs judgement and control, significantly increasing accident risk.\" }"
+  },
+  {
+    "term": "hint-HZ-36",
+    "questionId": "HZ-36",
+    "line": 1032,
+    "englishHint": "Stopped buses may hide pedestrians crossing in front.",
+    "fullLine": "      { term: \"hint-HZ-36\", ar: \"الحافلات المتوقفة قد تخفي المشاة الذين يعبرون من الأمام.\", explainAr: \"Stopped buses may hide pedestrians crossing in front.\" }"
+  },
+  {
+    "term": "hint-HZ-37",
+    "questionId": "HZ-37",
+    "line": 1048,
+    "englishHint": "Left-hand bends may contain mud or debris from farm vehicles.",
+    "fullLine": "      { term: \"hint-HZ-37\", ar: \"المنعطفات اليسرى قد تحتوي على طين أو حطام من المركبات الزراعية.\", explainAr: \"Left-hand bends may contain mud or debris from farm vehicles.\" }"
+  },
+  {
+    "term": "hint-HZ-38",
+    "questionId": "HZ-38",
+    "line": 1064,
+    "englishHint": "Drugs reduce concentration and awareness, threatening road safety.",
+    "fullLine": "      { term: \"hint-HZ-38\", ar: \"المخدرات تقلل التركيز والوعي وتهدد السلامة على الطريق.\", explainAr: \"Drugs reduce concentration and awareness, threatening road safety.\" }"
+  },
+  {
+    "term": "hint-HZ-39",
+    "questionId": "HZ-39",
+    "line": 1080,
+    "englishHint": "Spray from large lorries reduces visibility and increases accident risk.",
+    "fullLine": "      { term: \"hint-HZ-39\", ar: \"الرذاذ من الشاحنات الكبيرة يقلل الرؤية ويزيد خطر الحوادث.\", explainAr: \"Spray from large lorries reduces visibility and increases accident risk.\" }"
+  },
+  {
+    "term": "hint-HZ-40",
+    "questionId": "HZ-40",
+    "line": 1096,
+    "englishHint": "Tinted lenses reduce light amount and make night vision harder.",
+    "fullLine": "      { term: \"hint-HZ-40\", ar: \"العدسات الملونة تقلل كمية الضوء وتجعل الرؤية الليلية أصعب.\", explainAr: \"Tinted lenses reduce light amount and make night vision harder.\" }"
+  },
+  {
+    "term": "hint-HZ-41",
+    "questionId": "HZ-41",
+    "line": 1112,
+    "englishHint": "When traffic lights fail, treat it as an unmarked junction with extra caution.",
+    "fullLine": "      { term: \"hint-HZ-41\", ar: \"عند تعطل إشارات المرور، يجب التصرف بحذر كأنها تقاطع غير محكم.\", explainAr: \"When traffic lights fail, treat it as an unmarked junction with extra caution.\" }"
+  },
+  {
+    "term": "hint-HZ-42",
+    "questionId": "HZ-42",
+    "line": 1128,
+    "englishHint": "Older drivers may need more time to react, so give them space.",
+    "fullLine": "      { term: \"hint-HZ-42\", ar: \"السائقون الأكبر سناً قد يحتاجون وقتاً أطول للتفاعل، لذا امنحهم مساحة.\", explainAr: \"Older drivers may need more time to react, so give them space.\" }"
+  },
+  {
+    "term": "hint-HZ-43",
+    "questionId": "HZ-43",
+    "line": 1144,
+    "englishHint": "Continuous signalling may mean the driver forgot to cancel it or there's a problem.",
+    "fullLine": "      { term: \"hint-HZ-43\", ar: \"الإشارة المستمرة قد تعني أن السائق نسى إيقافها أو أن هناك مشكلة.\", explainAr: \"Continuous signalling may mean the driver forgot to cancel it or there's a problem.\" }"
+  },
+  {
+    "term": "hint-HZ-44",
+    "questionId": "HZ-44",
+    "line": 1160,
+    "englishHint": "Sharp bend signs warn of sudden bends requiring speed reduction.",
+    "fullLine": "      { term: \"hint-HZ-44\", ar: \"إشارة المنعطف الحاد تحذرك من منعطف مفاجئ يتطلب تخفيف السرعة.\", explainAr: \"Sharp bend signs warn of sudden bends requiring speed reduction.\" }"
+  },
+  {
+    "term": "hint-HZ-45",
+    "questionId": "HZ-45",
+    "line": 1176,
+    "englishHint": "Narrow bridges require readiness to give way to large vehicles.",
+    "fullLine": "      { term: \"hint-HZ-45\", ar: \"الجسور الضيقة تتطلب الاستعداد لإفساح الطريق للمركبات الكبيرة.\", explainAr: \"Narrow bridges require readiness to give way to large vehicles.\" }"
+  },
+  {
+    "term": "hint-HZ-46",
+    "questionId": "HZ-46",
+    "line": 1192,
+    "englishHint": "Stopping and resting when drowsy prevents accidents from falling asleep at the wheel.",
+    "fullLine": "      { term: \"hint-HZ-46\", ar: \"التوقف والراحة عند النعاس يمنع الحوادث الناتجة عن النوم أثناء القيادة.\", explainAr: \"Stopping and resting when drowsy prevents accidents from falling asleep at the wheel.\" }"
+  },
+  {
+    "term": "hint-HZ-47",
+    "questionId": "HZ-47",
+    "line": 1208,
+    "englishHint": "Hazard lights are only used when the vehicle breaks down and obstructs traffic.",
+    "fullLine": "      { term: \"hint-HZ-47\", ar: \"أضواء التحذير تُستخدم فقط عند تعطل المركبة وإعاقة حركة المرور.\", explainAr: \"Hazard lights are only used when the vehicle breaks down and obstructs traffic.\" }"
+  },
+  {
+    "term": "hint-HZ-48",
+    "questionId": "HZ-48",
+    "line": 1224,
+    "englishHint": "Large lorries may need to use the middle of narrow roads to pass.",
+    "fullLine": "      { term: \"hint-HZ-48\", ar: \"الشاحنات الكبيرة قد تحتاج استخدام منتصف الطريق الضيق للعبور.\", explainAr: \"Large lorries may need to use the middle of narrow roads to pass.\" }"
+  },
+  {
+    "term": "hint-HZ-49",
+    "questionId": "HZ-49",
+    "line": 1240,
+    "englishHint": "Regular breaks maintain concentration and reduce fatigue on long journeys.",
+    "fullLine": "      { term: \"hint-HZ-49\", ar: \"الاستراحات المنتظمة تحافظ على التركيز وتقلل التعب في الرحلات الطويلة.\", explainAr: \"Regular breaks maintain concentration and reduce fatigue on long journeys.\" }"
+  },
+  {
+    "term": "hint-HZ-50",
+    "questionId": "HZ-50",
+    "line": 1256,
+    "englishHint": "Avoiding driving when medicine causes drowsiness prevents serious accidents.",
+    "fullLine": "      { term: \"hint-HZ-50\", ar: \"تجنب القيادة عند النعاس من الدواء يمنع الحوادث الخطيرة.\", explainAr: \"Avoiding driving when medicine causes drowsiness prevents serious accidents.\" }"
+  },
+  {
+    "term": "hint-HZ-51",
+    "questionId": "HZ-51",
+    "line": 1272,
+    "englishHint": "Reflective markers on large goods vehicles help you see them in the dark.",
+    "fullLine": "      { term: \"hint-HZ-51\", ar: \"العلامات العاكسة على المركبات الثقيلة تساعدك على رؤيتها في الظلام.\", explainAr: \"Reflective markers on large goods vehicles help you see them in the dark.\" }"
+  },
+  {
+    "term": "hint-HZ-52",
+    "questionId": "HZ-52",
+    "line": 1288,
+    "englishHint": "Driving at reduced speed in traffic-calmed areas protects pedestrians and cyclists.",
+    "fullLine": "      { term: \"hint-HZ-52\", ar: \"القيادة بسرعة منخفضة في مناطق تهدئة المرور تحمي المشاة والدراجين.\", explainAr: \"Driving at reduced speed in traffic-calmed areas protects pedestrians and cyclists.\" }"
+  },
+  {
+    "term": "hint-HZ-53",
+    "questionId": "HZ-53",
+    "line": 1304,
+    "englishHint": "Letting someone else drive when taking medicine that affects driving maintains safety.",
+    "fullLine": "      { term: \"hint-HZ-53\", ar: \"السماح لشخص آخر بالقيادة عند تناول دواء يؤثر على القيادة يحافظ على السلامة.\", explainAr: \"Letting someone else drive when taking medicine that affects driving maintains safety.\" }"
+  },
+  {
+    "term": "hint-HZ-54",
+    "questionId": "HZ-54",
+    "line": 1320,
+    "englishHint": "Large buses need more space on narrow bridges.",
+    "fullLine": "      { term: \"hint-HZ-54\", ar: \"الحافلات الكبيرة تحتاج مساحة أكبر على الجسور الضيقة.\", explainAr: \"Large buses need more space on narrow bridges.\" }"
+  },
+  {
+    "term": "hint-HZ-55",
+    "questionId": "HZ-55",
+    "line": 1336,
+    "englishHint": "Overtaking near junctions is dangerous due to traffic from multiple directions.",
+    "fullLine": "      { term: \"hint-HZ-55\", ar: \"التجاوز قرب التقاطعات خطير بسبب المرور القادم من عدة اتجاهات.\", explainAr: \"Overtaking near junctions is dangerous due to traffic from multiple directions.\" }"
+  },
+  {
+    "term": "hint-HZ-56",
+    "questionId": "HZ-56",
+    "line": 1352,
+    "englishHint": "Parked cars on bends may hide pedestrians stepping out suddenly.",
+    "fullLine": "      { term: \"hint-HZ-56\", ar: \"السيارات المتوقفة على المنعطفات قد تخفي المشاة الذين يخرجون فجأة.\", explainAr: \"Parked cars on bends may hide pedestrians stepping out suddenly.\" }"
+  },
+  {
+    "term": "hint-HZ-57",
+    "questionId": "HZ-57",
+    "line": 1368,
+    "englishHint": "Limited visibility at junctions increases accident risk with hidden traffic.",
+    "fullLine": "      { term: \"hint-HZ-57\", ar: \"الرؤية المحدودة عند التقاطعات تزيد خطر الحوادث مع المرور المخفي.\", explainAr: \"Limited visibility at junctions increases accident risk with hidden traffic.\" }"
+  },
+  {
+    "term": "hint-HZ-58",
+    "questionId": "HZ-58",
+    "line": 1384,
+    "englishHint": "Alcohol increases confidence dangerously and reduces sound judgement.",
+    "fullLine": "      { term: \"hint-HZ-58\", ar: \"الكحول يزيد الثقة بشكل خطير ويقلل الحكم السليم.\", explainAr: \"Alcohol increases confidence dangerously and reduces sound judgement.\" }"
+  },
+  {
+    "term": "hint-HZ-59",
+    "questionId": "HZ-59",
+    "line": 1400,
+    "englishHint": "Parked car doors may open suddenly and cause serious accidents.",
+    "fullLine": "      { term: \"hint-HZ-59\", ar: \"أبواب السيارات المتوقفة قد تُفتح فجأة وتسبب حوادث خطيرة.\", explainAr: \"Parked car doors may open suddenly and cause serious accidents.\" }"
+  },
+  {
+    "term": "hint-HZ-60",
+    "questionId": "HZ-60",
+    "line": 1416,
+    "englishHint": "Stopping driving when ill keeps everyone safe.",
+    "fullLine": "      { term: \"hint-HZ-60\", ar: \"التوقف عن القيادة عند المرض يحافظ على سلامة الجميع.\", explainAr: \"Stopping driving when ill keeps everyone safe.\" }"
+  },
+  {
+    "term": "hint-HZ-61",
+    "questionId": "HZ-61",
+    "line": 1432,
+    "englishHint": "Avoiding alcohol completely when planning to drive prevents driving under influence.",
+    "fullLine": "      { term: \"hint-HZ-61\", ar: \"تجنب الكحول تماماً عند التخطيط للقيادة يمنع القيادة تحت التأثير.\", explainAr: \"Avoiding alcohol completely when planning to drive prevents driving under influence.\" }"
+  },
+  {
+    "term": "hint-HZ-62",
+    "questionId": "HZ-62",
+    "line": 1448,
+    "englishHint": "Children in residential streets may run out suddenly from between parked cars.",
+    "fullLine": "      { term: \"hint-HZ-62\", ar: \"الأطفال في الشوارع السكنية قد يخرجون فجأة من بين السيارات المتوقفة.\", explainAr: \"Children in residential streets may run out suddenly from between parked cars.\" }"
+  },
+  {
+    "term": "hint-HZ-63",
+    "questionId": "HZ-63",
+    "line": 1464,
+    "englishHint": "Stopping safely as soon as possible when drowsy on motorways prevents accidents.",
+    "fullLine": "      { term: \"hint-HZ-63\", ar: \"التوقف بأمان في أقرب وقت عند النعاس على الطريق السريع يمنع الحوادث.\", explainAr: \"Stopping safely as soon as possible when drowsy on motorways prevents accidents.\" }"
+  },
+  {
+    "term": "hint-HZ-64",
+    "questionId": "HZ-64",
+    "line": 1480,
+    "englishHint": "Checking medicine labels before driving prevents driving under dangerous substances.",
+    "fullLine": "      { term: \"hint-HZ-64\", ar: \"فحص ملصق الدواء قبل القيادة يمنع القيادة تحت تأثير مواد خطيرة.\", explainAr: \"Checking medicine labels before driving prevents driving under dangerous substances.\" }"
+  },
+  {
+    "term": "hint-HZ-65",
+    "questionId": "HZ-65",
+    "line": 1496,
+    "englishHint": "Roadworks require speed reduction and attention to workers and vehicles.",
+    "fullLine": "      { term: \"hint-HZ-65\", ar: \"أعمال الطرق تتطلب تخفيف السرعة والانتباه للعمال والمركبات.\", explainAr: \"Roadworks require speed reduction and attention to workers and vehicles.\" }"
+  },
+  {
+    "term": "hint-HZ-66",
+    "questionId": "HZ-66",
+    "line": 1512,
+    "englishHint": "Hazard lights are used to warn traffic of a breakdown causing obstruction.",
+    "fullLine": "      { term: \"hint-HZ-66\", ar: \"أضواء التحذير تُستخدم لتحذير المرور من عطل يسبب إعاقة.\", explainAr: \"Hazard lights are used to warn traffic of a breakdown causing obstruction.\" }"
+  },
+  {
+    "term": "hint-HZ-67",
+    "questionId": "HZ-67",
+    "line": 1528,
+    "englishHint": "Drink or drug-driving convictions significantly increase insurance costs.",
+    "fullLine": "      { term: \"hint-HZ-67\", ar: \"الإدانة بالقيادة تحت التأثير تزيد تكلفة التأمين بشكل كبير.\", explainAr: \"Drink or drug-driving convictions significantly increase insurance costs.\" }"
+  },
+  {
+    "term": "hint-HZ-68",
+    "questionId": "HZ-68",
+    "line": 1544,
+    "englishHint": "Cyclists near junctions may swerve suddenly into the road.",
+    "fullLine": "      { term: \"hint-HZ-68\", ar: \"الدراجون قرب التقاطعات قد ينحرفون فجأة إلى الطريق.\", explainAr: \"Cyclists near junctions may swerve suddenly into the road.\" }"
+  },
+  {
+    "term": "hint-HZ-69",
+    "questionId": "HZ-69",
+    "line": 1560,
+    "englishHint": "Regular breaks improve concentration and reduce accident risk on long journeys.",
+    "fullLine": "      { term: \"hint-HZ-69\", ar: \"الاستراحات المنتظمة تحسن التركيز وتقلل خطر الحوادث في الرحلات الطويلة.\", explainAr: \"Regular breaks improve concentration and reduce accident risk on long journeys.\" }"
+  },
+  {
+    "term": "hint-HZ-70",
+    "questionId": "HZ-70",
+    "line": 1576,
+    "englishHint": "Rushing on long drives increases fatigue and errors, threatening safety.",
+    "fullLine": "      { term: \"hint-HZ-70\", ar: \"التسرع في الرحلات الطويلة يزيد التعب والأخطاء ويهدد السلامة.\", explainAr: \"Rushing on long drives increases fatigue and errors, threatening safety.\" }"
+  },
+  {
+    "term": "hint-HZ-71",
+    "questionId": "HZ-71",
+    "line": 1592,
+    "englishHint": "Kick-down in automatic cars is used for quick acceleration.",
+    "fullLine": "      { term: \"hint-HZ-71\", ar: \"خاصية التسارع المفاجئ في السيارات الأوتوماتيكية تُستخدم للتسارع السريع.\", explainAr: \"Kick-down in automatic cars is used for quick acceleration.\" }"
+  },
+  {
+    "term": "hint-HZ-72",
+    "questionId": "HZ-72",
+    "line": 1608,
+    "englishHint": "Using the right-hand lane for overtaking on multi-lane motorways is the rule.",
+    "fullLine": "      { term: \"hint-HZ-72\", ar: \"استخدام المسار الأيمن للتجاوز على الطرق السريعة متعددة المسارات هو القاعدة.\", explainAr: \"Using the right-hand lane for overtaking on multi-lane motorways is the rule.\" }"
+  },
+  {
+    "term": "hint-HZ-73",
+    "questionId": "HZ-73",
+    "line": 1624,
+    "englishHint": "Water pooling on roads increases risk of aquaplaning and loss of control.",
+    "fullLine": "      { term: \"hint-HZ-73\", ar: \"تجمع الماء على الطريق يزيد خطر الانزلاق المائي وفقدان السيطرة.\", explainAr: \"Water pooling on roads increases risk of aquaplaning and loss of control.\" }"
+  },
+  {
+    "term": "hint-HZ-74",
+    "questionId": "HZ-74",
+    "line": 1640,
+    "englishHint": "Pedestrians distracted by phones may step into the road without looking.",
+    "fullLine": "      { term: \"hint-HZ-74\", ar: \"المشاة المنشغلون بهواتفهم قد يخطون إلى الطريق دون النظر.\", explainAr: \"Pedestrians distracted by phones may step into the road without looking.\" }"
+  },
+  {
+    "term": "hint-HZ-75",
+    "questionId": "HZ-75",
+    "line": 1656,
+    "englishHint": "Slowing down and passing wide when seeing horse riders keeps everyone safe.",
+    "fullLine": "      { term: \"hint-HZ-75\", ar: \"التخفيف والتجاوز بعرض عند رؤية الفرسان يحافظ على سلامة الجميع.\", explainAr: \"Slowing down and passing wide when seeing horse riders keeps everyone safe.\" }"
+  },
+  {
+    "term": "hint-HZ-76",
+    "questionId": "HZ-76",
+    "line": 1672,
+    "englishHint": "Increasing following distance when seeing a vehicle swerve suddenly gives you time to react.",
+    "fullLine": "      { term: \"hint-HZ-76\", ar: \"زيادة مسافة التباعد عند رؤية مركبة تنحرف فجأة يمنحك وقتاً للتفاعل.\", explainAr: \"Increasing following distance when seeing a vehicle swerve suddenly gives you time to react.\" }"
+  },
+  {
+    "term": "hint-HZ-77",
+    "questionId": "HZ-77",
+    "line": 1688,
+    "englishHint": "Large vehicles need more space to turn and may swing out first.",
+    "fullLine": "      { term: \"hint-HZ-77\", ar: \"المركبات الكبيرة تحتاج مساحة أكبر للانعطاف وقد تتأرجح أولاً.\", explainAr: \"Large vehicles need more space to turn and may swing out first.\" }"
+  },
+  {
+    "term": "hint-HZ-78",
+    "questionId": "HZ-78",
+    "line": 1704,
+    "englishHint": "Large vehicles may need to use the middle of the road to turn.",
+    "fullLine": "      { term: \"hint-HZ-78\", ar: \"المركبات الكبيرة قد تحتاج استخدام منتصف الطريق للانعطاف.\", explainAr: \"Large vehicles may need to use the middle of the road to turn.\" }"
+  },
+  {
+    "term": "hint-HZ-79",
+    "questionId": "HZ-79",
+    "line": 1720,
+    "englishHint": "Large vehicles may swing right before turning left to get space.",
+    "fullLine": "      { term: \"hint-HZ-79\", ar: \"المركبات الكبيرة قد تتأرجح يميناً قبل الانعطاف يساراً للحصول على مساحة.\", explainAr: \"Large vehicles may swing right before turning left to get space.\" }"
+  },
+  {
+    "term": "hint-HZ-80",
+    "questionId": "HZ-80",
+    "line": 1736,
+    "englishHint": "Slowing down before sharp bends on wet roads prevents skidding.",
+    "fullLine": "      { term: \"hint-HZ-80\", ar: \"التخفيف قبل المنعطفات الحادة على الطرق المبللة يمنع الانزلاق.\", explainAr: \"Slowing down before sharp bends on wet roads prevents skidding.\" }"
+  },
+  {
+    "term": "hint-SM-01",
+    "questionId": "SM-01",
+    "line": 1852,
+    "englishHint": "Sudden acceleration or braking causes skidding, especially on wet or icy roads.",
+    "fullLine": "      { term: \"hint-SM-01\", ar: \"التسارع أو الفرملة المفاجئة تسبب الانزلاق، خاصة على الطرق الرطبة أو الجليدية.\", explainAr: \"Sudden acceleration or braking causes skidding, especially on wet or icy roads.\" }"
+  },
+  {
+    "term": "hint-SM-02",
+    "questionId": "SM-02",
+    "line": 1868,
+    "englishHint": "Dipped headlights improve visibility in wet weather without dazzling other drivers.",
+    "fullLine": "      { term: \"hint-SM-02\", ar: \"الأضواء المنخفضة تحسن الرؤية في الطقس الرطب دون إبهار السائقين الآخرين.\", explainAr: \"Dipped headlights improve visibility in wet weather without dazzling other drivers.\" }"
+  },
+  {
+    "term": "hint-SM-03",
+    "questionId": "SM-03",
+    "line": 1884,
+    "englishHint": "Coasting reduces control and increases stopping distance, especially on hills.",
+    "fullLine": "      { term: \"hint-SM-03\", ar: \"القيادة على الحياد تقلل السيطرة وتزيد مسافة التوقف، خاصة على المنحدرات.\", explainAr: \"Coasting reduces control and increases stopping distance, especially on hills.\" }"
+  },
+  {
+    "term": "hint-SM-04",
+    "questionId": "SM-04",
+    "line": 1900,
+    "englishHint": "Correct positioning before bends gives you better visibility and more time to react to hazards.",
+    "fullLine": "      { term: \"hint-SM-04\", ar: \"الموضع الصحيح قبل المنعطف يمنحك رؤية أفضل ووقتًا أطول للتفاعل مع المخاطر.\", explainAr: \"Correct positioning before bends gives you better visibility and more time to react to hazards.\" }"
+  },
+  {
+    "term": "hint-SM-05",
+    "questionId": "SM-05",
+    "line": 1916,
+    "englishHint": "Turning wheels towards the kerb prevents the car from rolling if brakes fail.",
+    "fullLine": "      { term: \"hint-SM-05\", ar: \"توجيه العجلات نحو الرصيف يمنع السيارة من التدحرج في حالة فشل الفرامل.\", explainAr: \"Turning wheels towards the kerb prevents the car from rolling if brakes fail.\" }"
+  },
+  {
+    "term": "hint-SM-06",
+    "questionId": "SM-06",
+    "line": 1932,
+    "englishHint": "Slowing down before speed humps maintains control and protects your vehicle and pedestrians.",
+    "fullLine": "      { term: \"hint-SM-06\", ar: \"تخفيف السرعة قبل المطبات يحافظ على السيطرة ويحمي المركبة والمشاة.\", explainAr: \"Slowing down before speed humps maintains control and protects your vehicle and pedestrians.\" }"
+  },
+  {
+    "term": "hint-SM-07",
+    "questionId": "SM-07",
+    "line": 1948,
+    "englishHint": "Increasing the gap ahead gives you extra time for gradual braking and avoids collisions.",
+    "fullLine": "      { term: \"hint-SM-07\", ar: \"زيادة المسافة أمامك تعطيك وقتًا إضافيًا للفرملة التدريجية وتجنب الاصطدامات.\", explainAr: \"Increasing the gap ahead gives you extra time for gradual braking and avoids collisions.\" }"
+  },
+  {
+    "term": "hint-SM-08",
+    "questionId": "SM-08",
+    "line": 1964,
+    "englishHint": "ABS prevents wheel lock-up, allowing firm braking while maintaining steering ability.",
+    "fullLine": "      { term: \"hint-SM-08\", ar: \"ABS يمنع انغلاق العجلات، مما يسمح بالفرملة القوية مع الحفاظ على القدرة على التوجيه.\", explainAr: \"ABS prevents wheel lock-up, allowing firm braking while maintaining steering ability.\" }"
+  },
+  {
+    "term": "hint-SM-09",
+    "questionId": "SM-09",
+    "line": 1980,
+    "englishHint": "Icy roads reduce friction, making tyres quieter and dramatically increasing stopping distance.",
+    "fullLine": "      { term: \"hint-SM-09\", ar: \"الطرق الجليدية تقلل الاحتكاك، مما يجعل الإطارات أكثر هدوءًا ويزيد مسافة التوقف بشكل كبير.\", explainAr: \"Icy roads reduce friction, making tyres quieter and dramatically increasing stopping distance.\" }"
+  },
+  {
+    "term": "hint-SM-10",
+    "questionId": "SM-10",
+    "line": 1996,
+    "englishHint": "Gradual braking before bends in freezing conditions maintains grip and reduces skidding risk.",
+    "fullLine": "      { term: \"hint-SM-10\", ar: \"الفرملة التدريجية قبل المنعطفات في الطقس المتجمد تحافظ على التماسك وتقلل خطر الانزلاق.\", explainAr: \"Gradual braking before bends in freezing conditions maintains grip and reduces skidding risk.\" }"
+  },
+  {
+    "term": "hint-SM-11",
+    "questionId": "SM-11",
+    "line": 2012,
+    "englishHint": "ABS works best with firm, continuous pressure, reducing stopping distance.",
+    "fullLine": "      { term: \"hint-SM-11\", ar: \"ABS يعمل بشكل أفضل مع الضغط القوي والمستمر، مما يقلل مسافة التوقف.\", explainAr: \"ABS works best with firm, continuous pressure, reducing stopping distance.\" }"
+  },
+  {
+    "term": "hint-SM-12",
+    "questionId": "SM-12",
+    "line": 2028,
+    "englishHint": "Loss of grip on wet roads reduces control and increases aquaplaning risk.",
+    "fullLine": "      { term: \"hint-SM-12\", ar: \"فقدان التماسك على الطرق الرطبة يقلل السيطرة ويزيد خطر الانزلاق المائي.\", explainAr: \"Loss of grip on wet roads reduces control and increases aquaplaning risk.\" }"
+  },
+  {
+    "term": "hint-SM-13",
+    "questionId": "SM-13",
+    "line": 2044,
+    "englishHint": "Strong winds push cyclists unpredictably, so leave extra side space when overtaking.",
+    "fullLine": "      { term: \"hint-SM-13\", ar: \"الرياح القوية تدفع الدراجين بشكل غير متوقع، لذا اترك مسافة جانبية أكبر عند التجاوز.\", explainAr: \"Strong winds push cyclists unpredictably, so leave extra side space when overtaking.\" }"
+  },
+  {
+    "term": "hint-SM-14",
+    "questionId": "SM-14",
+    "line": 2060,
+    "englishHint": "Early, gentle braking on snow maintains grip and reduces skidding risk.",
+    "fullLine": "      { term: \"hint-SM-14\", ar: \"الفرملة المبكرة والتدريجية على الثلج تحافظ على التماسك وتقلل خطر الانزلاق.\", explainAr: \"Early, gentle braking on snow maintains grip and reduces skidding risk.\" }"
+  },
+  {
+    "term": "hint-SM-15",
+    "questionId": "SM-15",
+    "line": 2076,
+    "englishHint": "High gear reduces torque, preventing wheelspin on ice.",
+    "fullLine": "      { term: \"hint-SM-15\", ar: \"الغيار العالي يقلل عزم الدوران، مما يمنع انزلاق العجلات على الجليد.\", explainAr: \"High gear reduces torque, preventing wheelspin on ice.\" }"
+  },
+  {
+    "term": "hint-SM-16",
+    "questionId": "SM-16",
+    "line": 2092,
+    "englishHint": "Lower gear uses engine resistance to slow the car safely, especially on hills.",
+    "fullLine": "      { term: \"hint-SM-16\", ar: \"الغيار المنخفض يستخدم مقاومة المحرك لإبطاء السيارة بأمان، خاصة على المنحدرات.\", explainAr: \"Lower gear uses engine resistance to slow the car safely, especially on hills.\" }"
+  },
+  {
+    "term": "hint-SM-17",
+    "questionId": "SM-17",
+    "line": 2108,
+    "englishHint": "Open roads allow winds to reach with greater force, requiring extra care in control.",
+    "fullLine": "      { term: \"hint-SM-17\", ar: \"الطرق المفتوحة تسمح للرياح بالوصول بقوة أكبر، مما يتطلب حذرًا إضافيًا في السيطرة.\", explainAr: \"Open roads allow winds to reach with greater force, requiring extra care in control.\" }"
+  },
+  {
+    "term": "hint-SM-18",
+    "questionId": "SM-18",
+    "line": 2124,
+    "englishHint": "Extra time allows slow, safe driving in fog, reducing collision risk.",
+    "fullLine": "      { term: \"hint-SM-18\", ar: \"الوقت الإضافي يسمح بالقيادة ببطء وأمان في الضباب، مما يقلل خطر الاصطدامات.\", explainAr: \"Extra time allows slow, safe driving in fog, reducing collision risk.\" }"
+  },
+  {
+    "term": "hint-SM-19",
+    "questionId": "SM-19",
+    "line": 2140,
+    "englishHint": "Dropping back to rebuild safe distance on wet roads gives you enough time to brake safely.",
+    "fullLine": "      { term: \"hint-SM-19\", ar: \"التراجع لإعادة المسافة الآمنة على الطرق الرطبة يمنحك وقتًا كافيًا للفرملة بأمان.\", explainAr: \"Dropping back to rebuild safe distance on wet roads gives you enough time to brake safely.\" }"
+  },
+  {
+    "term": "hint-SM-20",
+    "questionId": "SM-20",
+    "line": 2156,
+    "englishHint": "Four-wheel drive improves grip on slippery roads, but doesn't reduce stopping distance.",
+    "fullLine": "      { term: \"hint-SM-20\", ar: \"الدفع الرباعي يحسن التماسك في الطرق الزلقة، لكنه لا يقلل مسافة التوقف.\", explainAr: \"Four-wheel drive improves grip on slippery roads, but doesn't reduce stopping distance.\" }"
+  },
+  {
+    "term": "hint-SM-21",
+    "questionId": "SM-21",
+    "line": 2172,
+    "englishHint": "Higher gear reduces torque, preventing wheelspin when moving off on snow.",
+    "fullLine": "      { term: \"hint-SM-21\", ar: \"الغيار الأعلى يقلل عزم الدوران، مما يمنع انزلاق العجلات عند الانطلاق على الثلج.\", explainAr: \"Higher gear reduces torque, preventing wheelspin when moving off on snow.\" }"
+  },
+  {
+    "term": "hint-SM-22",
+    "questionId": "SM-22",
+    "line": 2188,
+    "englishHint": "After safely passing the hazard, gradual acceleration returns to normal speed without surprises.",
+    "fullLine": "      { term: \"hint-SM-22\", ar: \"بعد تجاوز الخطر بأمان، التسارع التدريجي يعيد السرعة الطبيعية دون مفاجآت.\", explainAr: \"After safely passing the hazard, gradual acceleration returns to normal speed without surprises.\" }"
+  },
+  {
+    "term": "hint-SM-23",
+    "questionId": "SM-23",
+    "line": 2204,
+    "englishHint": "The two-second rule gives you enough time to react and brake safely in dry conditions.",
+    "fullLine": "      { term: \"hint-SM-23\", ar: \"قاعدة الثانيتين تعطيك وقتًا كافيًا للتفاعل والفرملة بأمان في الظروف الجافة.\", explainAr: \"The two-second rule gives you enough time to react and brake safely in dry conditions.\" }"
+  },
+  {
+    "term": "hint-SM-24",
+    "questionId": "SM-24",
+    "line": 2220,
+    "englishHint": "ESC light flashing means the system is working to correct skidding and improve control.",
+    "fullLine": "      { term: \"hint-SM-24\", ar: \"وميض ضوء ESC يعني أن النظام يعمل لتصحيح الانزلاق وتحسين السيطرة.\", explainAr: \"ESC light flashing means the system is working to correct skidding and improve control.\" }"
+  },
+  {
+    "term": "hint-SM-25",
+    "questionId": "SM-25",
+    "line": 2236,
+    "englishHint": "Soft roads in very hot weather reduce grip and can increase stopping distance.",
+    "fullLine": "      { term: \"hint-SM-25\", ar: \"الطرق اللينة في الحرارة العالية تقلل التماسك ويمكن أن تزيد مسافة التوقف.\", explainAr: \"Soft roads in very hot weather reduce grip and can increase stopping distance.\" }"
+  },
+  {
+    "term": "hint-SM-26",
+    "questionId": "SM-26",
+    "line": 2252,
+    "englishHint": "Strong winds push motorcycles unpredictably, so leave extra side space.",
+    "fullLine": "      { term: \"hint-SM-26\", ar: \"الرياح القوية تدفع الدراجات النارية بشكل غير متوقع، لذا اترك مسافة جانبية أكبر.\", explainAr: \"Strong winds push motorcycles unpredictably, so leave extra side space.\" }"
+  },
+  {
+    "term": "hint-SM-27",
+    "questionId": "SM-27",
+    "line": 2268,
+    "englishHint": "Gentle braking after driving through water dries the brakes and checks they work safely.",
+    "fullLine": "      { term: \"hint-SM-27\", ar: \"الفرملة التدريجية بعد المرور بالمياه تجفف الفرامل وتتحقق من عملها بأمان.\", explainAr: \"Gentle braking after driving through water dries the brakes and checks they work safely.\" }"
+  },
+  {
+    "term": "hint-SM-28",
+    "questionId": "SM-28",
+    "line": 2284,
+    "englishHint": "Loose surfaces like gravel reduce ABS effectiveness because wheels need to lock to create shorter stopping distance.",
+    "fullLine": "      { term: \"hint-SM-28\", ar: \"الطرق غير المتماسكة مثل الحصى تقلل فعالية ABS لأن العجلات تحتاج للانغلاق لإنشاء مسافة توقف أقصر.\", explainAr: \"Loose surfaces like gravel reduce ABS effectiveness because wheels need to lock to create shorter stopping distance.\" }"
+  },
+  {
+    "term": "hint-SM-29",
+    "questionId": "SM-29",
+    "line": 2300,
+    "englishHint": "Safe distance in fog gives you more time to react to hidden hazards.",
+    "fullLine": "      { term: \"hint-SM-29\", ar: \"المسافة الآمنة في الضباب تعطيك وقتًا أطول للتفاعل مع المخاطر المخفية.\", explainAr: \"Safe distance in fog gives you more time to react to hidden hazards.\" }"
+  },
+  {
+    "term": "hint-SM-30",
+    "questionId": "SM-30",
+    "line": 2316,
+    "englishHint": "Clear windows are essential for good visibility, improving safety in freezing weather.",
+    "fullLine": "      { term: \"hint-SM-30\", ar: \"النوافذ النظيفة ضرورية للرؤية الواضحة، مما يحسن السلامة في الطقس المتجمد.\", explainAr: \"Clear windows are essential for good visibility, improving safety in freezing weather.\" }"
+  },
+  {
+    "term": "hint-SM-31",
+    "questionId": "SM-31",
+    "line": 2332,
+    "englishHint": "Choosing your lane early in contraflow systems gives you time to react and reduces dangerous lane changes.",
+    "fullLine": "      { term: \"hint-SM-31\", ar: \"اختيار المسار مبكرًا في أنظمة تحويل المسارات يمنحك وقتًا للتفاعل ويقلل التغييرات الخطيرة.\", explainAr: \"Choosing your lane early in contraflow systems gives you time to react and reduces dangerous lane changes.\" }"
+  },
+  {
+    "term": "hint-SM-32",
+    "questionId": "SM-32",
+    "line": 2348,
+    "englishHint": "Ice dramatically reduces friction, increasing stopping distance more than any other weather condition.",
+    "fullLine": "      { term: \"hint-SM-32\", ar: \"الجليد يقلل الاحتكاك بشكل كبير، مما يزيد مسافة التوقف أكثر من أي حالة طقس أخرى.\", explainAr: \"Ice dramatically reduces friction, increasing stopping distance more than any other weather condition.\" }"
+  },
+  {
+    "term": "hint-SM-33",
+    "questionId": "SM-33",
+    "line": 2364,
+    "englishHint": "Ice dramatically reduces friction, making stopping distance ten times longer than on dry roads.",
+    "fullLine": "      { term: \"hint-SM-33\", ar: \"الجليد يقلل الاحتكاك بشكل كبير، مما يجعل مسافة التوقف أطول بعشر مرات من الطرق الجافة.\", explainAr: \"Ice dramatically reduces friction, making stopping distance ten times longer than on dry roads.\" }"
+  },
+  {
+    "term": "hint-SM-34",
+    "questionId": "SM-34",
+    "line": 2380,
+    "englishHint": "Low gear with gentle braking uses engine braking and maintains control on hills.",
+    "fullLine": "      { term: \"hint-SM-34\", ar: \"الغيار المنخفض مع الفرملة التدريجية يستخدم فرملة المحرك ويحافظ على السيطرة على المنحدرات.\", explainAr: \"Low gear with gentle braking uses engine braking and maintains control on hills.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-01",
+    "line": 2399,
+    "englishHint": "These markers are often used near hidden hazards.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"These markers are often used near hidden hazards.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-02",
+    "line": 2416,
+    "englishHint": "Never overtake if you're unsure.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Never overtake if you're unsure.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-03",
+    "line": 2433,
+    "englishHint": "This applies when no lower limit is signed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"This applies when no lower limit is signed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-04",
+    "line": 2450,
+    "englishHint": "Avoid dazzling other drivers.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Avoid dazzling other drivers.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-05",
+    "line": 2467,
+    "englishHint": "Pavements are mainly for pedestrians.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Pavements are mainly for pedestrians.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-01",
+    "line": 3912,
+    "englishHint": "Leaving the tunnel reduces danger to others.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Leaving the tunnel reduces danger to others.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-02",
+    "line": 3929,
+    "englishHint": "Removing a helmet incorrectly can worsen injuries.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Removing a helmet incorrectly can worsen injuries.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-03",
+    "line": 3946,
+    "englishHint": "Headlights improve visibility for everyone.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Headlights improve visibility for everyone.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-04",
+    "line": 3963,
+    "englishHint": "Correct depth is vital for circulation.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Correct depth is vital for circulation.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-05",
+    "line": 3980,
+    "englishHint": "Personal safety comes first.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Personal safety comes first.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-06",
+    "line": 3997,
+    "englishHint": "Airway first, then breathing.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Airway first, then breathing.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-07",
+    "line": 4014,
+    "englishHint": "Distance gives other drivers time to react.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Distance gives other drivers time to react.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-08",
+    "line": 4031,
+    "englishHint": "Calm reassurance reduces stress.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Calm reassurance reduces stress.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-01",
+    "line": 4050,
+    "englishHint": "You may only drive directly to a booked test.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"You may only drive directly to a booked test.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-02",
+    "line": 4067,
+    "englishHint": "New cars have an MOT exemption period.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"New cars have an MOT exemption period.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-03",
+    "line": 4084,
+    "englishHint": "This is known as a \\",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"This is known as a \\\"producer\\\".\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-04",
+    "line": 4101,
+    "englishHint": "SORN vehicles must not be used on public roads.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"SORN vehicles must not be used on public roads.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-05",
+    "line": 4118,
+    "englishHint": "Responsibility stays with the keeper.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Responsibility stays with the keeper.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-06",
+    "line": 4135,
+    "englishHint": "MOTs must be renewed annually.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"MOTs must be renewed annually.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-07",
+    "line": 4152,
+    "englishHint": "New drivers have stricter rules.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"New drivers have stricter rules.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-08",
+    "line": 4169,
+    "englishHint": "Police can request proof at any time.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Police can request proof at any time.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-09",
+    "line": 4186,
+    "englishHint": "Age and experience both matter.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Age and experience both matter.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-10",
+    "line": 4203,
+    "englishHint": "Licence comes before anything else.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Licence comes before anything else.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-11",
+    "line": 4220,
+    "englishHint": "Insurance is checked automatically.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Insurance is checked automatically.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-12",
+    "line": 4237,
+    "englishHint": "It protects others, not you.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"It protects others, not you.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-13",
+    "line": 4254,
+    "englishHint": "There's no upper financial limit.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"There's no upper financial limit.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-14",
+    "line": 4271,
+    "englishHint": "Insurance is required before vehicle tax.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Insurance is required before vehicle tax.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-15",
+    "line": 4288,
+    "englishHint": "SORN ends when the vehicle status changes.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"SORN ends when the vehicle status changes.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-16",
+    "line": 4305,
+    "englishHint": "Responsibility stays with the keeper.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Responsibility stays with the keeper.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-17",
+    "line": 4322,
+    "englishHint": "Third-party is the minimum.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Third-party is the minimum.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-18",
+    "line": 4339,
+    "englishHint": "Extra training can lower premiums.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Extra training can lower premiums.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-19",
+    "line": 4356,
+    "englishHint": "It protects others, not you.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"It protects others, not you.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-20",
+    "line": 4373,
+    "englishHint": "Insurance may become invalid.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Insurance may become invalid.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-21",
+    "line": 4390,
+    "englishHint": "Insurance applies to all drivers.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Insurance applies to all drivers.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-22",
+    "line": 4407,
+    "englishHint": "Medical conditions must be reported.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Medical conditions must be reported.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-23",
+    "line": 4424,
+    "englishHint": "Ownership changes must be reported.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Ownership changes must be reported.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-24",
+    "line": 4441,
+    "englishHint": "The keeper is officially recorded.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"The keeper is officially recorded.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-25",
+    "line": 4458,
+    "englishHint": "Insurance must cover you as a driver.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Insurance must cover you as a driver.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-26",
+    "line": 4475,
+    "englishHint": "Excess is the amount you pay first.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Excess is the amount you pay first.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "DC-27",
+    "line": 4492,
+    "englishHint": "Address changes must be updated.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Address changes must be updated.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-01",
+    "line": 4511,
+    "englishHint": "The hard shoulder is for emergencies only.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"The hard shoulder is for emergencies only.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-02",
+    "line": 4528,
+    "englishHint": "Stopping is only allowed when instructed or in emergencies.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Stopping is only allowed when instructed or in emergencies.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-03",
+    "line": 4545,
+    "englishHint": "Higher speeds require longer forward observation.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Higher speeds require longer forward observation.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-04",
+    "line": 4562,
+    "englishHint": "Right lanes are for overtaking only.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Right lanes are for overtaking only.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-05",
+    "line": 4579,
+    "englishHint": "Emergency areas are not rest stops.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Emergency areas are not rest stops.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-06",
+    "line": 4596,
+    "englishHint": "Amber studs separate the motorway from slip roads.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Amber studs separate the motorway from slip roads.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-07",
+    "line": 4613,
+    "englishHint": "Marker posts help emergency services locate you.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Marker posts help emergency services locate you.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-08",
+    "line": 4630,
+    "englishHint": "Temporary speed limits are mandatory.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Temporary speed limits are mandatory.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-09",
+    "line": 4647,
+    "englishHint": "A speed limit above means the lane is active.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"A speed limit above means the lane is active.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-10",
+    "line": 4664,
+    "englishHint": "It's a warning of sudden danger ahead.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"It's a warning of sudden danger ahead.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-01",
+    "line": 4683,
+    "englishHint": "Large vehicles can hide smaller vehicles behind them.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Large vehicles can hide smaller vehicles behind them.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-02",
+    "line": 4700,
+    "englishHint": "Giving way prevents sudden collisions.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Giving way prevents sudden collisions.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-03",
+    "line": 4717,
+    "englishHint": "Wind can push cyclists sideways.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Wind can push cyclists sideways.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-04",
+    "line": 4734,
+    "englishHint": "Extended mirrors improve visibility past the caravan.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Extended mirrors improve visibility past the caravan.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-05",
+    "line": 4751,
+    "englishHint": "Pedestrians may cross in front of buses.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Pedestrians may cross in front of buses.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-06",
+    "line": 4768,
+    "englishHint": "Large vehicles need extra space to turn.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Large vehicles need extra space to turn.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-07",
+    "line": 4785,
+    "englishHint": "Dipped headlights reduce glare.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Dipped headlights reduce glare.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-08",
+    "line": 4802,
+    "englishHint": "Sudden gusts can affect balance.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Sudden gusts can affect balance.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-09",
+    "line": 4819,
+    "englishHint": "Warning signs indicate increased risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Warning signs indicate increased risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-10",
+    "line": 4836,
+    "englishHint": "Long vehicles swing wide before turning.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Long vehicles swing wide before turning.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-11",
+    "line": 4853,
+    "englishHint": "Visibility improves decision-making.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Visibility improves decision-making.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-12",
+    "line": 4870,
+    "englishHint": "Give long vehicles space to manoeuvre.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Give long vehicles space to manoeuvre.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-13",
+    "line": 4887,
+    "englishHint": "Length increases exposure time.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Length increases exposure time.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-14",
+    "line": 4904,
+    "englishHint": "Patience reduces risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Patience reduces risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-15",
+    "line": 4921,
+    "englishHint": "Turning space is needed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Turning space is needed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-16",
+    "line": 4938,
+    "englishHint": "Trams run on fixed tracks.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Trams run on fixed tracks.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-17",
+    "line": 4955,
+    "englishHint": "Always maintain safe distance.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Always maintain safe distance.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-18",
+    "line": 4972,
+    "englishHint": "Pedestrians may step out suddenly.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Pedestrians may step out suddenly.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-19",
+    "line": 4989,
+    "englishHint": "Distance improves visibility.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Distance improves visibility.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-20",
+    "line": 5006,
+    "englishHint": "Give priority to buses when safe.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Give priority to buses when safe.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-21",
+    "line": 5023,
+    "englishHint": "Distance reduces spray.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Distance reduces spray.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "OV-22",
+    "line": 5040,
+    "englishHint": "Heavier vehicles are more stable.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Heavier vehicles are more stable.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-01",
+    "line": 5059,
+    "englishHint": "Manufacturer limits are always listed in the handbook.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Manufacturer limits are always listed in the handbook.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-02",
+    "line": 5076,
+    "englishHint": "High loads raise the centre of gravity.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"High loads raise the centre of gravity.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-03",
+    "line": 5093,
+    "englishHint": "Young children must always use approved child seats.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Young children must always use approved child seats.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-04",
+    "line": 5110,
+    "englishHint": "All trailer lights must work before travel.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"All trailer lights must work before travel.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-05",
+    "line": 5127,
+    "englishHint": "You must be able to see clearly behind.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"You must be able to see clearly behind.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-06",
+    "line": 5144,
+    "englishHint": "It applies the brakes if the trailer detaches.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"It applies the brakes if the trailer detaches.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-07",
+    "line": 5161,
+    "englishHint": "Stabilisers reduce trailer sway.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Stabilisers reduce trailer sway.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-08",
+    "line": 5178,
+    "englishHint": "Responsibility always lies with the driver.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Responsibility always lies with the driver.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-09",
+    "line": 5195,
+    "englishHint": "Never exceed the stated MAM.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Never exceed the stated MAM.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-10",
+    "line": 5212,
+    "englishHint": "Secondary couplings add safety.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Secondary couplings add safety.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-11",
+    "line": 5229,
+    "englishHint": "Heavy loads affect balance and control.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Heavy loads affect balance and control.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-12",
+    "line": 5246,
+    "englishHint": "Training improves safety and confidence.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Training improves safety and confidence.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-13",
+    "line": 5263,
+    "englishHint": "Always check licence limits.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Always check licence limits.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-14",
+    "line": 5280,
+    "englishHint": "Gentle speed reduction helps regain control.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Gentle speed reduction helps regain control.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-15",
+    "line": 5297,
+    "englishHint": "Trailers must stay out of the right lane.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Trailers must stay out of the right lane.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-16",
+    "line": 5314,
+    "englishHint": "Heavy loads need higher pressures.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Heavy loads need higher pressures.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-17",
+    "line": 5331,
+    "englishHint": "Sudden actions make swaying worse.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Sudden actions make swaying worse.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-18",
+    "line": 5348,
+    "englishHint": "Same minimum as car tyres.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Same minimum as car tyres.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-19",
+    "line": 5365,
+    "englishHint": "It's illegal and unsafe.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"It's illegal and unsafe.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-20",
+    "line": 5382,
+    "englishHint": "Central weight improves balance.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Central weight improves balance.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "VL-21",
+    "line": 5399,
+    "englishHint": "Loose loads are extremely dangerous.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Loose loads are extremely dangerous.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-01",
+    "line": 5418,
+    "englishHint": "Pedestrians always have priority at crossings.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Pedestrians always have priority at crossings.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-02",
+    "line": 5435,
+    "englishHint": "Increasing space ahead reduces sudden braking risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Increasing space ahead reduces sudden braking risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-03",
+    "line": 5452,
+    "englishHint": "Less space means less time to react.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Less space means less time to react.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-04",
+    "line": 5469,
+    "englishHint": "Bad weather needs longer gaps.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Bad weather needs longer gaps.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-05",
+    "line": 5486,
+    "englishHint": "Large vehicles need space to turn safely.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Large vehicles need space to turn safely.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-06",
+    "line": 5503,
+    "englishHint": "These signs are specific to certain vehicles.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"These signs are specific to certain vehicles.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-07",
+    "line": 5520,
+    "englishHint": "Headlight flashes are for presence, not permission.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Headlight flashes are for presence, not permission.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-08",
+    "line": 5537,
+    "englishHint": "No times means 24-hour operation.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"No times means 24-hour operation.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-09",
+    "line": 5554,
+    "englishHint": "Pedestrians on the crossing still have priority.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Pedestrians on the crossing still have priority.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-10",
+    "line": 5571,
+    "englishHint": "Wet roads double stopping distance.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Wet roads double stopping distance.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-11",
+    "line": 5588,
+    "englishHint": "Sudden reactions increase collision risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Sudden reactions increase collision risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-12",
+    "line": 5605,
+    "englishHint": "Maintain steady speed to help them pass safely.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Maintain steady speed to help them pass safely.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-13",
+    "line": 5622,
+    "englishHint": "Competition on roads leads to risk-taking.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Competition on roads leads to risk-taking.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-14",
+    "line": 5639,
+    "englishHint": "Use passing places correctly.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Use passing places correctly.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-15",
+    "line": 5656,
+    "englishHint": "Livestock movements require full stopping.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Livestock movements require full stopping.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-16",
+    "line": 5673,
+    "englishHint": "You can't control other drivers.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"You can't control other drivers.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-17",
+    "line": 5690,
+    "englishHint": "Stay predictable and calm.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Stay predictable and calm.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-18",
+    "line": 5707,
+    "englishHint": "Blue beacons indicate emergency services.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Blue beacons indicate emergency services.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-19",
+    "line": 5724,
+    "englishHint": "Lack of signs means extra caution.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Lack of signs means extra caution.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-20",
+    "line": 5741,
+    "englishHint": "Avoid dazzling other drivers.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Avoid dazzling other drivers.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-21",
+    "line": 5758,
+    "englishHint": "Flashing amber means pedestrians may still be crossing.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Flashing amber means pedestrians may still be crossing.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-22",
+    "line": 5775,
+    "englishHint": "The rule measures safe following distance.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"The rule measures safe following distance.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-23",
+    "line": 5792,
+    "englishHint": "Spilled fuel is dangerous for other road users.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Spilled fuel is dangerous for other road users.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-24",
+    "line": 5809,
+    "englishHint": "Main beam is shown by a blue/green straight-line headlamp icon.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Main beam is shown by a blue/green straight-line headlamp icon.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-25",
+    "line": 5826,
+    "englishHint": "Letting others pass reduces risk and frustration.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Letting others pass reduces risk and frustration.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-26",
+    "line": 5843,
+    "englishHint": "Do not react aggressively to pressure.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Do not react aggressively to pressure.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-27",
+    "line": 5860,
+    "englishHint": "A loose cap can cause dangerous spills.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"A loose cap can cause dangerous spills.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-28",
+    "line": 5877,
+    "englishHint": "Green beacons are used by doctors responding to emergencies.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Green beacons are used by doctors responding to emergencies.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-29",
+    "line": 5894,
+    "englishHint": "Horses can be startled by noise and speed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Horses can be startled by noise and speed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-30",
+    "line": 5911,
+    "englishHint": "Narrow wheels can slip into rails.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Narrow wheels can slip into rails.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-31",
+    "line": 5928,
+    "englishHint": "Clear positioning helps others anticipate your move.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Clear positioning helps others anticipate your move.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-32",
+    "line": 5945,
+    "englishHint": "Avoid dazzling the driver ahead.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Avoid dazzling the driver ahead.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-33",
+    "line": 5962,
+    "englishHint": "Position according to your intended direction.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Position according to your intended direction.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-34",
+    "line": 5979,
+    "englishHint": "Increase space to avoid collision.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Increase space to avoid collision.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-35",
+    "line": 5996,
+    "englishHint": "Emergency vehicles must be given priority.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Emergency vehicles must be given priority.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-36",
+    "line": 6013,
+    "englishHint": "Toucan = \\",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Toucan = \\\"two can cross\\\".\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-37",
+    "line": 6030,
+    "englishHint": "Close following limits visibility and reaction time.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Close following limits visibility and reaction time.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "AT-38",
+    "line": 6047,
+    "englishHint": "Parking brake prevents bright brake lights.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Parking brake prevents bright brake lights.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-01",
+    "line": 6066,
+    "englishHint": "Blocking access points can prevent others from entering or leaving.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Blocking access points can prevent others from entering or leaving.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-02",
+    "line": 6083,
+    "englishHint": "Securing the vehicle reduces theft risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Securing the vehicle reduces theft risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-03",
+    "line": 6100,
+    "englishHint": "Shock absorbers control bouncing and stability.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Shock absorbers control bouncing and stability.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-04",
+    "line": 6117,
+    "englishHint": "Less traffic usually means smoother travel.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Less traffic usually means smoother travel.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-05",
+    "line": 6134,
+    "englishHint": "Smooth acceleration saves fuel.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Smooth acceleration saves fuel.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-06",
+    "line": 6151,
+    "englishHint": "It treats exhaust gases before release.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"It treats exhaust gases before release.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-07",
+    "line": 6168,
+    "englishHint": "Brake fluid is vital for stopping power.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Brake fluid is vital for stopping power.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-08",
+    "line": 6185,
+    "englishHint": "Visibility deters thieves.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Visibility deters thieves.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-09",
+    "line": 6202,
+    "englishHint": "Required on higher-speed roads.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Required on higher-speed roads.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-10",
+    "line": 6219,
+    "englishHint": "Higher speeds significantly increase fuel use.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Higher speeds significantly increase fuel use.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-11",
+    "line": 6236,
+    "englishHint": "The driver is legally responsible.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"The driver is legally responsible.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-12",
+    "line": 6253,
+    "englishHint": "Running engines waste fuel and increase risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Running engines waste fuel and increase risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-13",
+    "line": 6270,
+    "englishHint": "Efficient driving benefits safety and environment.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Efficient driving benefits safety and environment.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-14",
+    "line": 6287,
+    "englishHint": "Out of sight reduces theft.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Out of sight reduces theft.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-15",
+    "line": 6304,
+    "englishHint": "Stationary steering stresses tyres.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Stationary steering stresses tyres.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-16",
+    "line": 6321,
+    "englishHint": "Prevent identity theft.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Prevent identity theft.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-17",
+    "line": 6338,
+    "englishHint": "It cleans exhaust emissions.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"It cleans exhaust emissions.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-18",
+    "line": 6355,
+    "englishHint": "Security coding deters theft.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Security coding deters theft.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-19",
+    "line": 6372,
+    "englishHint": "Less fuel burned means cleaner air.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Less fuel burned means cleaner air.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-20",
+    "line": 6389,
+    "englishHint": "Consistent low speed improves control.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Consistent low speed improves control.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-11",
+    "line": 7331,
+    "englishHint": "A red cross means the lane is closed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"A red cross means the lane is closed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-12",
+    "line": 7348,
+    "englishHint": "Match speed and merge smoothly.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Match speed and merge smoothly.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-13",
+    "line": 7365,
+    "englishHint": "Towing vehicles have lower speed limits.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Towing vehicles have lower speed limits.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-14",
+    "line": 7382,
+    "englishHint": "Stay away from moving traffic.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Stay away from moving traffic.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-15",
+    "line": 7399,
+    "englishHint": "Build speed before merging.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Build speed before merging.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-16",
+    "line": 7416,
+    "englishHint": "Left lane is the default.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Left lane is the default.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-17",
+    "line": 7433,
+    "englishHint": "Amber marks the hard shoulder boundary.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Amber marks the hard shoulder boundary.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-18",
+    "line": 7450,
+    "englishHint": "Red cross = lane closed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Red cross = lane closed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-19",
+    "line": 7467,
+    "englishHint": "Keep left unless overtaking.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Keep left unless overtaking.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-20",
+    "line": 7484,
+    "englishHint": "Provisional drivers must be supervised.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Provisional drivers must be supervised.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-21",
+    "line": 7499,
+    "englishHint": "A displayed speed limit above the hard shoulder usually means it's being used as a live lane.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"A displayed speed limit above the hard shoulder usually means it's being used as a live lane.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-22",
+    "line": 7516,
+    "englishHint": "Rejoin only when it's safe; use an emergency phone if assistance is needed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Rejoin only when it's safe; use an emergency phone if assistance is needed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-23",
+    "line": 7533,
+    "englishHint": "Brief hazard lights can warn following traffic of sudden slowing.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Brief hazard lights can warn following traffic of sudden slowing.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-24",
+    "line": 7550,
+    "englishHint": "Towing vehicles are restricted from the right-hand lane on 3-lane motorways.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Towing vehicles are restricted from the right-hand lane on 3-lane motorways.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-25",
+    "line": 7567,
+    "englishHint": "On a 3-lane motorway, towing a trailer means you must not use the right-hand lane.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"On a 3-lane motorway, towing a trailer means you must not use the right-hand lane.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-26",
+    "line": 7584,
+    "englishHint": "For safety, call for help rather than attempting roadside wheel changes on motorways.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"For safety, call for help rather than attempting roadside wheel changes on motorways.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-27",
+    "line": 7601,
+    "englishHint": "Motorways are not for routine stops—only emergencies.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Motorways are not for routine stops—only emergencies.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-28",
+    "line": 7618,
+    "englishHint": "These markers count down to an exit/junction.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"These markers count down to an exit/junction.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-29",
+    "line": 7635,
+    "englishHint": "Confirm your position and mirrors after merging.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Confirm your position and mirrors after merging.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-30",
+    "line": 7652,
+    "englishHint": "The slip road is for matching speed and merging smoothly.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"The slip road is for matching speed and merging smoothly.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-31",
+    "line": 7669,
+    "englishHint": "Variable limits can smooth traffic flow.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Variable limits can smooth traffic flow.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-32",
+    "line": 7686,
+    "englishHint": "They reduce stop-start traffic by controlling flow.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"They reduce stop-start traffic by controlling flow.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-33",
+    "line": 7703,
+    "englishHint": "Plan early and move left in good time.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Plan early and move left in good time.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-34",
+    "line": 7720,
+    "englishHint": "Stay safely away from live traffic.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Stay safely away from live traffic.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-35",
+    "line": 7737,
+    "englishHint": "Standard motorway limit is 70 mph unless signed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Standard motorway limit is 70 mph unless signed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-36",
+    "line": 7754,
+    "englishHint": "In slow-moving queues, passing on the left may happen legally.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"In slow-moving queues, passing on the left may happen legally.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-37",
+    "line": 7771,
+    "englishHint": "Marker posts show the direction to the nearest phone.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Marker posts show the direction to the nearest phone.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-38",
+    "line": 7788,
+    "englishHint": "Same rule: 70 mph unless signed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Same rule: 70 mph unless signed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-39",
+    "line": 7805,
+    "englishHint": "Keep left unless overtaking.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Keep left unless overtaking.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-40",
+    "line": 7822,
+    "englishHint": "Help merging traffic only if it's safe—never force sudden moves.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Help merging traffic only if it's safe—never force sudden moves.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-41",
+    "line": 7839,
+    "englishHint": "Motorways are only for fast motor vehicles.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Motorways are only for fast motor vehicles.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-42",
+    "line": 7856,
+    "englishHint": "Never reverse or turn around on a motorway.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Never reverse or turn around on a motorway.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-43",
+    "line": 7873,
+    "englishHint": "White studs separate lanes.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"White studs separate lanes.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-44",
+    "line": 7890,
+    "englishHint": "Use service areas, not the hard shoulder.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Use service areas, not the hard shoulder.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-45",
+    "line": 7907,
+    "englishHint": "Emergency phones give your exact location.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Emergency phones give your exact location.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-46",
+    "line": 7924,
+    "englishHint": "Red = central reservation, white = lane divider.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Red = central reservation, white = lane divider.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-47",
+    "line": 7941,
+    "englishHint": "All lanes closed means you must stop.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"All lanes closed means you must stop.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-48",
+    "line": 7958,
+    "englishHint": "Hazard lights warn approaching traffic.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Hazard lights warn approaching traffic.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-49",
+    "line": 7975,
+    "englishHint": "Left lane is for normal driving.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Left lane is for normal driving.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-50",
+    "line": 7992,
+    "englishHint": "Reduced lanes mean higher risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Reduced lanes mean higher risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-51",
+    "line": 8009,
+    "englishHint": "Speed is reduced for safety.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Speed is reduced for safety.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-52",
+    "line": 8026,
+    "englishHint": "Long high-speed driving stresses vehicles.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Long high-speed driving stresses vehicles.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-53",
+    "line": 8043,
+    "englishHint": "They manage traffic flow and safety.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"They manage traffic flow and safety.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-54",
+    "line": 8060,
+    "englishHint": "Amber separates hard shoulder from traffic.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Amber separates hard shoulder from traffic.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-55",
+    "line": 8077,
+    "englishHint": "Red cross = lane closed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Red cross = lane closed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-56",
+    "line": 8094,
+    "englishHint": "Used to help slow vehicles uphill.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Used to help slow vehicles uphill.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "MW-57",
+    "line": 8111,
+    "englishHint": "Match speed before merging safely.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Match speed before merging safely.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-06",
+    "line": 8130,
+    "englishHint": "Broken lines allow limited access.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Broken lines allow limited access.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-07",
+    "line": 8147,
+    "englishHint": "Default limits return when a restriction ends.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Default limits return when a restriction ends.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-08",
+    "line": 8164,
+    "englishHint": "Keep left unless overtaking.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Keep left unless overtaking.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-09",
+    "line": 8181,
+    "englishHint": "Never guess when reversing.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Never guess when reversing.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-10",
+    "line": 8198,
+    "englishHint": "Designated spaces reduce risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Designated spaces reduce risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-11",
+    "line": 8215,
+    "englishHint": "Street lighting usually indicates 30 mph.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Street lighting usually indicates 30 mph.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-12",
+    "line": 8232,
+    "englishHint": "Passing places allow safe sharing.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Passing places allow safe sharing.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-13",
+    "line": 8249,
+    "englishHint": "National limits apply unless stated otherwise.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"National limits apply unless stated otherwise.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-15",
+    "line": 8283,
+    "englishHint": "Box junctions must be kept clear.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Box junctions must be kept clear.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-16",
+    "line": 8300,
+    "englishHint": "Proceed with caution.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Proceed with caution.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-17",
+    "line": 8317,
+    "englishHint": "Visibility improves safety.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Visibility improves safety.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-18",
+    "line": 8334,
+    "englishHint": "Pedestrians may still be on the crossing.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Pedestrians may still be on the crossing.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-19",
+    "line": 8351,
+    "englishHint": "Pedestrians have priority.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Pedestrians have priority.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-20",
+    "line": 8368,
+    "englishHint": "Always check lane operating times.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Always check lane operating times.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-21",
+    "line": 8385,
+    "englishHint": "Positioning is a form of communication.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Positioning is a form of communication.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-22",
+    "line": 8402,
+    "englishHint": "Never reverse on a main road.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Never reverse on a main road.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-23",
+    "line": 8419,
+    "englishHint": "Never change lanes suddenly at junctions.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Never change lanes suddenly at junctions.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-24",
+    "line": 8436,
+    "englishHint": "Dipped headlights improve visibility for everyone.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Dipped headlights improve visibility for everyone.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-25",
+    "line": 8453,
+    "englishHint": "Reversing manoeuvres are an exception.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Reversing manoeuvres are an exception.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-26",
+    "line": 8470,
+    "englishHint": "Another train may be coming.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Another train may be coming.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-27",
+    "line": 8487,
+    "englishHint": "Early lane changes reduce congestion.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Early lane changes reduce congestion.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-28",
+    "line": 8504,
+    "englishHint": "Right-side parking is allowed only on one-way roads.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Right-side parking is allowed only on one-way roads.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-29",
+    "line": 8521,
+    "englishHint": "Street lighting usually indicates 30 mph.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Street lighting usually indicates 30 mph.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-30",
+    "line": 8538,
+    "englishHint": "Solid lines must not be crossed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Solid lines must not be crossed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-31",
+    "line": 8555,
+    "englishHint": "Keep left unless overtaking.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Keep left unless overtaking.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-32",
+    "line": 8572,
+    "englishHint": "Direction of travel matters, not side.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Direction of travel matters, not side.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-33",
+    "line": 8589,
+    "englishHint": "Always follow time restrictions.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Always follow time restrictions.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-34",
+    "line": 8606,
+    "englishHint": "Signal your exit, not the approach.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Signal your exit, not the approach.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-35",
+    "line": 8623,
+    "englishHint": "Police have legal authority.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Police have legal authority.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-36",
+    "line": 8640,
+    "englishHint": "Secure locations reduce theft.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Secure locations reduce theft.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-37",
+    "line": 8657,
+    "englishHint": "Obstructions remove priority.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Obstructions remove priority.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-38",
+    "line": 8674,
+    "englishHint": "No waiting, but brief pickup is allowed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"No waiting, but brief pickup is allowed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-39",
+    "line": 8691,
+    "englishHint": "Applies unless signs show otherwise.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Applies unless signs show otherwise.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-40",
+    "line": 8708,
+    "englishHint": "Avoid turning in heavy traffic.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Avoid turning in heavy traffic.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-41",
+    "line": 8725,
+    "englishHint": "Do not block box junctions.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Do not block box junctions.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-42",
+    "line": 8742,
+    "englishHint": "Toucan = Two can cross.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Toucan = Two can cross.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-43",
+    "line": 8759,
+    "englishHint": "Another train may still be approaching.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Another train may still be approaching.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-44",
+    "line": 8776,
+    "englishHint": "Parking too close reduces visibility.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Parking too close reduces visibility.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-45",
+    "line": 8793,
+    "englishHint": "Only Blue Badge holders may use these bays.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Only Blue Badge holders may use these bays.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-46",
+    "line": 8810,
+    "englishHint": "Never block live traffic lanes.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Never block live traffic lanes.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-47",
+    "line": 8827,
+    "englishHint": "Correct positioning helps safety and flow.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Correct positioning helps safety and flow.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-48",
+    "line": 8844,
+    "englishHint": "Long vehicles need extra space.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Long vehicles need extra space.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-49",
+    "line": 8861,
+    "englishHint": "Children can appear suddenly.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Children can appear suddenly.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-50",
+    "line": 8878,
+    "englishHint": "Always be prepared to stop.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Always be prepared to stop.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-51",
+    "line": 8895,
+    "englishHint": "Traffic officers have authority.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Traffic officers have authority.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-52",
+    "line": 8912,
+    "englishHint": "Signal your exit clearly.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Signal your exit clearly.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-53",
+    "line": 8929,
+    "englishHint": "You must stop after collisions.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"You must stop after collisions.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-54",
+    "line": 8946,
+    "englishHint": "Long vehicles swing wide.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Long vehicles swing wide.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-55",
+    "line": 8963,
+    "englishHint": "Never block your exit.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Never block your exit.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-56",
+    "line": 8980,
+    "englishHint": "Parking lights improve visibility.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Parking lights improve visibility.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-57",
+    "line": 8997,
+    "englishHint": "Front swing can strike traffic.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Front swing can strike traffic.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-58",
+    "line": 9014,
+    "englishHint": "Lighting deters crime.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Lighting deters crime.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-59",
+    "line": 9031,
+    "englishHint": "Clear the crossing to avoid danger.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Clear the crossing to avoid danger.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-60",
+    "line": 9048,
+    "englishHint": "Clearways prohibit stopping.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Clearways prohibit stopping.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-61",
+    "line": 9065,
+    "englishHint": "Towing reduces limits.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Towing reduces limits.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-62",
+    "line": 9082,
+    "englishHint": "Temporary limits are enforceable.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Temporary limits are enforceable.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-63",
+    "line": 9099,
+    "englishHint": "Parking rules change after zone ends.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Parking rules change after zone ends.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-64",
+    "line": 9116,
+    "englishHint": "Double white lines restrict parking.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Double white lines restrict parking.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-65",
+    "line": 9133,
+    "englishHint": "Disabled bays are protected.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Disabled bays are protected.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-66",
+    "line": 9150,
+    "englishHint": "Reverse only when needed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Reverse only when needed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "RR-67",
+    "line": 9167,
+    "englishHint": "Towing reduces speed limits.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Towing reduces speed limits.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-21",
+    "line": 9186,
+    "englishHint": "Sensors must be clean to detect vehicles accurately.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Sensors must be clean to detect vehicles accurately.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-22",
+    "line": 9203,
+    "englishHint": "Removing valuables removes temptation.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Removing valuables removes temptation.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-23",
+    "line": 9220,
+    "englishHint": "Good grip ensures safe braking and acceleration.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Good grip ensures safe braking and acceleration.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-24",
+    "line": 9237,
+    "englishHint": "Low tyre pressure increases rolling resistance.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Low tyre pressure increases rolling resistance.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-25",
+    "line": 9254,
+    "englishHint": "Medical exemptions must be official.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Medical exemptions must be official.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-26",
+    "line": 9271,
+    "englishHint": "Extra drag increases fuel use.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Extra drag increases fuel use.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-27",
+    "line": 9288,
+    "englishHint": "Emergency braking can apply brakes automatically.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Emergency braking can apply brakes automatically.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-28",
+    "line": 9305,
+    "englishHint": "Brake warnings must be checked immediately.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Brake warnings must be checked immediately.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-29",
+    "line": 9322,
+    "englishHint": "Height matters more than age for restraints.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Height matters more than age for restraints.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-30",
+    "line": 9339,
+    "englishHint": "Security reduces theft risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Security reduces theft risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-31",
+    "line": 9356,
+    "englishHint": "Batteries are hazardous waste.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Batteries are hazardous waste.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-32",
+    "line": 9373,
+    "englishHint": "Extra time reduces stress and risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Extra time reduces stress and risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-33",
+    "line": 9390,
+    "englishHint": "Vibration increases with speed.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Vibration increases with speed.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-34",
+    "line": 9407,
+    "englishHint": "Gentle driving saves fuel.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Gentle driving saves fuel.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-35",
+    "line": 9424,
+    "englishHint": "Smooth driving reduces emissions.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Smooth driving reduces emissions.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-36",
+    "line": 9441,
+    "englishHint": "Cold tyres give accurate readings.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Cold tyres give accurate readings.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-37",
+    "line": 9458,
+    "englishHint": "ABS faults affect braking safety.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"ABS faults affect braking safety.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-38",
+    "line": 9475,
+    "englishHint": "Structural damage is unsafe.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Structural damage is unsafe.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-39",
+    "line": 9492,
+    "englishHint": "Less traffic means fewer delays.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Less traffic means fewer delays.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-40",
+    "line": 9509,
+    "englishHint": "Aggressive driving wastes fuel.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Aggressive driving wastes fuel.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-41",
+    "line": 9526,
+    "englishHint": "Low tyre pressure reduces grip and braking efficiency.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Low tyre pressure reduces grip and braking efficiency.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-42",
+    "line": 9543,
+    "englishHint": "Lane-keep systems detect road markings.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Lane-keep systems detect road markings.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-43",
+    "line": 9560,
+    "englishHint": "Lower revs reduce emissions and fuel use.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Lower revs reduce emissions and fuel use.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-44",
+    "line": 9577,
+    "englishHint": "Lane-departure systems warn if you drift.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Lane-departure systems warn if you drift.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-45",
+    "line": 9594,
+    "englishHint": "Horn use is restricted at night in built-up areas.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Horn use is restricted at night in built-up areas.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-46",
+    "line": 9611,
+    "englishHint": "Uneven braking indicates a fault.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Uneven braking indicates a fault.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-47",
+    "line": 9628,
+    "englishHint": "Aggressive driving wastes fuel.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Aggressive driving wastes fuel.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-48",
+    "line": 9645,
+    "englishHint": "Locking reduces theft risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Locking reduces theft risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-49",
+    "line": 9662,
+    "englishHint": "Well-maintained engines run efficiently.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Well-maintained engines run efficiently.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-50",
+    "line": 9679,
+    "englishHint": "Excess oil can damage seals.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Excess oil can damage seals.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-51",
+    "line": 9696,
+    "englishHint": "Regular servicing prevents breakdowns.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Regular servicing prevents breakdowns.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-52",
+    "line": 9713,
+    "englishHint": "Route planners help avoid delays.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Route planners help avoid delays.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-53",
+    "line": 9730,
+    "englishHint": "Electric vehicles produce no exhaust emissions.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Electric vehicles produce no exhaust emissions.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-54",
+    "line": 9747,
+    "englishHint": "Alternatives save time if roads close.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Alternatives save time if roads close.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-55",
+    "line": 9764,
+    "englishHint": "Fewer car trips reduce congestion.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Fewer car trips reduce congestion.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-56",
+    "line": 9781,
+    "englishHint": "ADAS systems are safety-focused.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"ADAS systems are safety-focused.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-57",
+    "line": 9798,
+    "englishHint": "Correct oil level protects the engine.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Correct oil level protects the engine.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-58",
+    "line": 9815,
+    "englishHint": "Seat belts are a legal safety requirement.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Seat belts are a legal safety requirement.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-59",
+    "line": 9832,
+    "englishHint": "Idling wastes fuel and increases emissions.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Idling wastes fuel and increases emissions.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-60",
+    "line": 9849,
+    "englishHint": "Red routes reduce stopping and congestion.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Red routes reduce stopping and congestion.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-61",
+    "line": 9866,
+    "englishHint": "Traffic calming features slow vehicles to improve safety.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Traffic calming features slow vehicles to improve safety.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-62",
+    "line": 9883,
+    "englishHint": "Acceleration demands the most engine power.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Acceleration demands the most engine power.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-63",
+    "line": 9900,
+    "englishHint": "Vehicle manuals explain system operation.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Vehicle manuals explain system operation.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-64",
+    "line": 9917,
+    "englishHint": "The driver is legally responsible.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"The driver is legally responsible.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-65",
+    "line": 9934,
+    "englishHint": "Cold engines increase emissions.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Cold engines increase emissions.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-66",
+    "line": 9951,
+    "englishHint": "Zigzag lines must always be kept clear.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Zigzag lines must always be kept clear.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-67",
+    "line": 9968,
+    "englishHint": "Low pressure increases rolling resistance.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Low pressure increases rolling resistance.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-68",
+    "line": 9985,
+    "englishHint": "Trailer tyre limits match car requirements.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Trailer tyre limits match car requirements.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-69",
+    "line": 10002,
+    "englishHint": "Proper head restraints reduce whiplash injuries.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Proper head restraints reduce whiplash injuries.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-70",
+    "line": 10019,
+    "englishHint": "Sensors monitor steering and driver behaviour.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Sensors monitor steering and driver behaviour.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-71",
+    "line": 10036,
+    "englishHint": "Head restraints limit head movement.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Head restraints limit head movement.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-72",
+    "line": 10053,
+    "englishHint": "Engine oil is hazardous waste.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Engine oil is hazardous waste.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-73",
+    "line": 10070,
+    "englishHint": "Efficient gear use reduces fuel use.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Efficient gear use reduces fuel use.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-74",
+    "line": 10087,
+    "englishHint": "Marking deters resale.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Marking deters resale.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-75",
+    "line": 10104,
+    "englishHint": "Emissions affect air quality.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Emissions affect air quality.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-76",
+    "line": 10121,
+    "englishHint": "Correct child restraints are mandatory.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Correct child restraints are mandatory.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-77",
+    "line": 10138,
+    "englishHint": "Below legal depth is unsafe and illegal.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Below legal depth is unsafe and illegal.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-78",
+    "line": 10155,
+    "englishHint": "Fewer car trips reduce emissions.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Fewer car trips reduce emissions.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-79",
+    "line": 10172,
+    "englishHint": "Brake faults affect tyre wear.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Brake faults affect tyre wear.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-80",
+    "line": 10189,
+    "englishHint": "Anticipation reduces harsh braking.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Anticipation reduces harsh braking.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-81",
+    "line": 10206,
+    "englishHint": "Driver attention is always required.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Driver attention is always required.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "SV-82",
+    "line": 10223,
+    "englishHint": "Airbags can seriously injure rear-facing infants.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Airbags can seriously injure rear-facing infants.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-09",
+    "line": 10242,
+    "englishHint": "CPR saves lives.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"CPR saves lives.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-10",
+    "line": 10259,
+    "englishHint": "Time is critical.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Time is critical.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-11",
+    "line": 10276,
+    "englishHint": "Your safety matters too.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Your safety matters too.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-12",
+    "line": 10293,
+    "englishHint": "Space reduces fire risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Space reduces fire risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-13",
+    "line": 10310,
+    "englishHint": "AEDs are designed for public use.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"AEDs are designed for public use.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-14",
+    "line": 10327,
+    "englishHint": "Pressure slows bleeding.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Pressure slows bleeding.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-15",
+    "line": 10344,
+    "englishHint": "Hazard markings warn emergency services.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Hazard markings warn emergency services.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-16",
+    "line": 10361,
+    "englishHint": "Always follow tunnel signs.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Always follow tunnel signs.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-17",
+    "line": 11714,
+    "englishHint": "Warmth prevents shock.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Warmth prevents shock.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-18",
+    "line": 11731,
+    "englishHint": "Warning lights signal problems.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Warning lights signal problems.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-19",
+    "line": 11748,
+    "englishHint": "Prevent further danger.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Prevent further danger.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-20",
+    "line": 11765,
+    "englishHint": "Continue until help arrives.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Continue until help arrives.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-21",
+    "line": 11782,
+    "englishHint": "Unnecessary movement can worsen injuries.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Unnecessary movement can worsen injuries.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-22",
+    "line": 11799,
+    "englishHint": "Airway must remain clear at all times.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Airway must remain clear at all times.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-23",
+    "line": 11816,
+    "englishHint": "Calm reassurance reduces shock effects.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Calm reassurance reduces shock effects.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-24",
+    "line": 11833,
+    "englishHint": "Professional help is essential.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Professional help is essential.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-25",
+    "line": 11850,
+    "englishHint": "Breathing check is critical.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Breathing check is critical.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-26",
+    "line": 11867,
+    "englishHint": "AEDs guide users step by step.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"AEDs guide users step by step.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-27",
+    "line": 11884,
+    "englishHint": "Legal reporting is required.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Legal reporting is required.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-28",
+    "line": 11901,
+    "englishHint": "Move only if safety requires it.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Move only if safety requires it.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-29",
+    "line": 11918,
+    "englishHint": "Stopping is a legal duty.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Stopping is a legal duty.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-30",
+    "line": 11935,
+    "englishHint": "Identification details are required by law.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Identification details are required by law.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-31",
+    "line": 11952,
+    "englishHint": "Gradual control prevents skidding.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Gradual control prevents skidding.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-32",
+    "line": 11969,
+    "englishHint": "Tunnels require quick evacuation.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Tunnels require quick evacuation.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-33",
+    "line": 11986,
+    "englishHint": "Prevent further collisions.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Prevent further collisions.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-34",
+    "line": 12003,
+    "englishHint": "Helmets should only be removed by trained professionals.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Helmets should only be removed by trained professionals.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-35",
+    "line": 12020,
+    "englishHint": "CPR rhythm is fast and steady.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"CPR rhythm is fast and steady.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-36",
+    "line": 12037,
+    "englishHint": "Neck and spine injuries are common.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Neck and spine injuries are common.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-37",
+    "line": 12054,
+    "englishHint": "Airway comes before everything else.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Airway comes before everything else.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-38",
+    "line": 12071,
+    "englishHint": "Hazards warn others of sudden danger.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Hazards warn others of sudden danger.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-39",
+    "line": 12088,
+    "englishHint": "Breathing = life.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Breathing = life.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-40",
+    "line": 12105,
+    "englishHint": "Never walk on a motorway.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Never walk on a motorway.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-41",
+    "line": 12122,
+    "englishHint": "Less force is used for children.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Less force is used for children.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-42",
+    "line": 12139,
+    "englishHint": "Safety areas exist for a reason.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Safety areas exist for a reason.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-43",
+    "line": 12156,
+    "englishHint": "Immediate CPR saves lives.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Immediate CPR saves lives.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-44",
+    "line": 12173,
+    "englishHint": "Licence proves legal entitlement to drive.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Licence proves legal entitlement to drive.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-45",
+    "line": 12190,
+    "englishHint": "CPR rhythm is fast and steady.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"CPR rhythm is fast and steady.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-46",
+    "line": 12207,
+    "englishHint": "Fuel leaks are a serious fire risk.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Fuel leaks are a serious fire risk.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-47",
+    "line": 12224,
+    "englishHint": "Pressure helps control bleeding.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Pressure helps control bleeding.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-48",
+    "line": 12241,
+    "englishHint": "AEDs save lives when used quickly.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"AEDs save lives when used quickly.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-49",
+    "line": 12258,
+    "englishHint": "Emergency operators know AED locations.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Emergency operators know AED locations.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-50",
+    "line": 12275,
+    "englishHint": "Clear vision is vital in tunnels.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Clear vision is vital in tunnels.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-51",
+    "line": 12292,
+    "englishHint": "Personal safety comes first.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Personal safety comes first.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-52",
+    "line": 12309,
+    "englishHint": "Never stop on a live motorway.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Never stop on a live motorway.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-53",
+    "line": 12326,
+    "englishHint": "Cool burns, don't treat them.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Cool burns, don't treat them.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-54",
+    "line": 12343,
+    "englishHint": "Shock affects breathing.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Shock affects breathing.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-55",
+    "line": 12360,
+    "englishHint": "Trains cannot stop quickly.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Trains cannot stop quickly.\" }"
+  },
+  {
+    "term": "hint",
+    "questionId": "IN-56",
+    "line": 12377,
+    "englishHint": "Hazards warn others of danger.",
+    "fullLine": "      { term: \"hint\", ar: \"تلميح\", explainAr: \"Hazards warn others of danger.\" }"
+  }
+]

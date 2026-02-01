@@ -1,0 +1,464 @@
+{
+  "summary": {
+    "totalQuestions": 759,
+    "questionsWithoutHints": 134,
+    "hintsWithAllThree": 0,
+    "englishInExplainAr": 450,
+    "missingEnglish": 176,
+    "missingArabic": 450,
+    "missingUrdu": 625
+  },
+  "details": {
+    "noHint": [
+      {
+        "questionId": "RS-01",
+        "topic": "road-signs",
+        "promptEn": "A sign showing a red car beside a black car means:..."
+      },
+      {
+        "questionId": "RS-02",
+        "topic": "road-signs",
+        "promptEn": "A sign with two arrows facing opposite directions means:..."
+      },
+      {
+        "questionId": "RS-03",
+        "topic": "road-signs",
+        "promptEn": "You're driving on a country road after heavy rain and see a triangular warning s..."
+      },
+      {
+        "questionId": "RS-04",
+        "topic": "road-signs",
+        "promptEn": "A red upside-down triangle means:..."
+      },
+      {
+        "questionId": "RS-05",
+        "topic": "road-signs",
+        "promptEn": "You're approaching a junction and see a triangular warning sign with a cross sha..."
+      },
+      {
+        "questionId": "RS-06",
+        "topic": "road-signs",
+        "promptEn": "A sign with a windsock symbol warns of:..."
+      },
+      {
+        "questionId": "RS-07",
+        "topic": "road-signs",
+        "promptEn": "A circular sign with a red border and a number '30' means:..."
+      },
+      {
+        "questionId": "RS-08",
+        "topic": "road-signs",
+        "promptEn": "A blue circular sign with a white arrow pointing left means:..."
+      },
+      {
+        "questionId": "RS-08A",
+        "topic": "road-signs",
+        "promptEn": "A blue circular sign with a white arrow pointing right means:..."
+      },
+      {
+        "questionId": "RS-09",
+        "topic": "road-signs",
+        "promptEn": "You're driving through a residential area and see a triangular warning sign show..."
+      },
+      {
+        "questionId": "RS-10",
+        "topic": "road-signs",
+        "promptEn": "What does a blue circular sign with a red border and a red cross (X) mean?..."
+      },
+      {
+        "questionId": "RS-11",
+        "topic": "road-signs",
+        "promptEn": "You see a triangular warning sign showing a bend to the left. What does it warn ..."
+      },
+      {
+        "questionId": "RS-12",
+        "topic": "road-signs",
+        "promptEn": "A triangular sign showing a train without a barrier warns of:..."
+      },
+      {
+        "questionId": "RS-13",
+        "topic": "road-signs",
+        "promptEn": "A sign with a car and motorcycle in a red circle means:..."
+      },
+      {
+        "questionId": "RS-14",
+        "topic": "road-signs",
+        "promptEn": "You're driving along a main road and see a triangular warning sign showing a rou..."
+      },
+      {
+        "questionId": "RS-15",
+        "topic": "road-signs",
+        "promptEn": "A blue circular sign with a white bicycle symbol means:..."
+      },
+      {
+        "questionId": "RS-16",
+        "topic": "road-signs",
+        "promptEn": "A rectangular sign with a red diagonal line across a black camera symbol means:..."
+      },
+      {
+        "questionId": "RS-17",
+        "topic": "road-signs",
+        "promptEn": "You're driving on a mountain road and see a triangular warning sign showing fall..."
+      },
+      {
+        "questionId": "RS-18",
+        "topic": "road-signs",
+        "promptEn": "A rectangular sign with a white 'H' on a blue background usually means:..."
+      },
+      {
+        "questionId": "RS-20",
+        "topic": "road-signs",
+        "promptEn": "A blue rectangular sign with a car symbol in a lane overhead usually indicates:..."
+      }
+    ],
+    "englishInExplainAr": [
+      {
+        "questionId": "HZ-34",
+        "term": "hint-HZ-34",
+        "englishText": "Wearing glasses always maintains clear vision in all conditions."
+      },
+      {
+        "questionId": "HZ-35",
+        "term": "hint-HZ-35",
+        "englishText": "Alcohol impairs judgement and control, significantly increasing accident risk."
+      },
+      {
+        "questionId": "HZ-36",
+        "term": "hint-HZ-36",
+        "englishText": "Stopped buses may hide pedestrians crossing in front."
+      },
+      {
+        "questionId": "HZ-37",
+        "term": "hint-HZ-37",
+        "englishText": "Left-hand bends may contain mud or debris from farm vehicles."
+      },
+      {
+        "questionId": "HZ-38",
+        "term": "hint-HZ-38",
+        "englishText": "Drugs reduce concentration and awareness, threatening road safety."
+      },
+      {
+        "questionId": "HZ-39",
+        "term": "hint-HZ-39",
+        "englishText": "Spray from large lorries reduces visibility and increases accident risk."
+      },
+      {
+        "questionId": "HZ-40",
+        "term": "hint-HZ-40",
+        "englishText": "Tinted lenses reduce light amount and make night vision harder."
+      },
+      {
+        "questionId": "HZ-41",
+        "term": "hint-HZ-41",
+        "englishText": "When traffic lights fail, treat it as an unmarked junction with extra caution."
+      },
+      {
+        "questionId": "HZ-42",
+        "term": "hint-HZ-42",
+        "englishText": "Older drivers may need more time to react, so give them space."
+      },
+      {
+        "questionId": "HZ-43",
+        "term": "hint-HZ-43",
+        "englishText": "Continuous signalling may mean the driver forgot to cancel it or there's a problem."
+      },
+      {
+        "questionId": "HZ-44",
+        "term": "hint-HZ-44",
+        "englishText": "Sharp bend signs warn of sudden bends requiring speed reduction."
+      },
+      {
+        "questionId": "HZ-45",
+        "term": "hint-HZ-45",
+        "englishText": "Narrow bridges require readiness to give way to large vehicles."
+      },
+      {
+        "questionId": "HZ-46",
+        "term": "hint-HZ-46",
+        "englishText": "Stopping and resting when drowsy prevents accidents from falling asleep at the wheel."
+      },
+      {
+        "questionId": "HZ-47",
+        "term": "hint-HZ-47",
+        "englishText": "Hazard lights are only used when the vehicle breaks down and obstructs traffic."
+      },
+      {
+        "questionId": "HZ-48",
+        "term": "hint-HZ-48",
+        "englishText": "Large lorries may need to use the middle of narrow roads to pass."
+      },
+      {
+        "questionId": "HZ-49",
+        "term": "hint-HZ-49",
+        "englishText": "Regular breaks maintain concentration and reduce fatigue on long journeys."
+      },
+      {
+        "questionId": "HZ-50",
+        "term": "hint-HZ-50",
+        "englishText": "Avoiding driving when medicine causes drowsiness prevents serious accidents."
+      },
+      {
+        "questionId": "HZ-51",
+        "term": "hint-HZ-51",
+        "englishText": "Reflective markers on large goods vehicles help you see them in the dark."
+      },
+      {
+        "questionId": "HZ-52",
+        "term": "hint-HZ-52",
+        "englishText": "Driving at reduced speed in traffic-calmed areas protects pedestrians and cyclists."
+      },
+      {
+        "questionId": "HZ-53",
+        "term": "hint-HZ-53",
+        "englishText": "Letting someone else drive when taking medicine that affects driving maintains safety."
+      }
+    ],
+    "missingEnglish": [
+      {
+        "questionId": "AL-01",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-02",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-03",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-04",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-05",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-06",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-07",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-08",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-09",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-10",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-11",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-12",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-13",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-14",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-15",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-16",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-17",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-18",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-19",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-20",
+        "term": "hint"
+      }
+    ],
+    "missingArabic": [
+      {
+        "questionId": "HZ-34",
+        "term": "hint-HZ-34"
+      },
+      {
+        "questionId": "HZ-35",
+        "term": "hint-HZ-35"
+      },
+      {
+        "questionId": "HZ-36",
+        "term": "hint-HZ-36"
+      },
+      {
+        "questionId": "HZ-37",
+        "term": "hint-HZ-37"
+      },
+      {
+        "questionId": "HZ-38",
+        "term": "hint-HZ-38"
+      },
+      {
+        "questionId": "HZ-39",
+        "term": "hint-HZ-39"
+      },
+      {
+        "questionId": "HZ-40",
+        "term": "hint-HZ-40"
+      },
+      {
+        "questionId": "HZ-41",
+        "term": "hint-HZ-41"
+      },
+      {
+        "questionId": "HZ-42",
+        "term": "hint-HZ-42"
+      },
+      {
+        "questionId": "HZ-43",
+        "term": "hint-HZ-43"
+      },
+      {
+        "questionId": "HZ-44",
+        "term": "hint-HZ-44"
+      },
+      {
+        "questionId": "HZ-45",
+        "term": "hint-HZ-45"
+      },
+      {
+        "questionId": "HZ-46",
+        "term": "hint-HZ-46"
+      },
+      {
+        "questionId": "HZ-47",
+        "term": "hint-HZ-47"
+      },
+      {
+        "questionId": "HZ-48",
+        "term": "hint-HZ-48"
+      },
+      {
+        "questionId": "HZ-49",
+        "term": "hint-HZ-49"
+      },
+      {
+        "questionId": "HZ-50",
+        "term": "hint-HZ-50"
+      },
+      {
+        "questionId": "HZ-51",
+        "term": "hint-HZ-51"
+      },
+      {
+        "questionId": "HZ-52",
+        "term": "hint-HZ-52"
+      },
+      {
+        "questionId": "HZ-53",
+        "term": "hint-HZ-53"
+      }
+    ],
+    "missingUrdu": [
+      {
+        "questionId": "AL-01",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-02",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-03",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-04",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-05",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-06",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-07",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-08",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-09",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-10",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-11",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-12",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-13",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-14",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-15",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-16",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-17",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-18",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-19",
+        "term": "hint"
+      },
+      {
+        "questionId": "AL-20",
+        "term": "hint"
+      }
+    ],
+    "allThreePresent": []
+  }
+}

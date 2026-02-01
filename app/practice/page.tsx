@@ -7,6 +7,8 @@ import { questions } from '@/data/questions';
 import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import DisclaimerModal from '@/components/DisclaimerModal';
+import PaywallModal from '@/components/PaywallModal';
+import { useUserAccess } from '@/lib/hooks/useUserAccess';
 import { 
   TranslationLang, 
   getTranslationLang, 
@@ -34,7 +36,6 @@ const topicArabicMap: Record<string, string> = {
   'vehicle-loading': 'تحميل المركبة',
   'attitude': 'سلوك السائق',
   'safety-vehicle': 'سلامة المركبة',
-  'general': 'أسئلة عامة',
 };
 
 // Urdu translations for topics
@@ -53,7 +54,6 @@ const topicUrduMap: Record<string, string> = {
   'vehicle-loading': 'گاڑی کی لوڈنگ',
   'attitude': 'رویہ',
   'safety-vehicle': 'گاڑی کی حفاظت',
-  'general': 'عمومی',
 };
 
 // Fisher-Yates shuffle algorithm
@@ -73,6 +73,11 @@ export default function PracticePage() {
   const [selectedKeywordIndex, setSelectedKeywordIndex] = useState<number | null>(null);
   const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
   const [isMounted, setIsMounted] = useState(false);
+  const [showPaywall, setShowPaywall] = useState(false);
+  const [answeredQuestionIds, setAnsweredQuestionIds] = useState<Set<string>>(new Set());
+  
+  // Get user access status
+  const { access_level, free_questions_used, loading: accessLoading, refetch: refetchAccess } = useUserAccess();
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -87,23 +92,60 @@ export default function PracticePage() {
   // Load Urdu translations when needed
   useEffect(() => {
     if (translationLang === 'ur') {
-      loadUrduTranslations().then(setUrTranslations);
+      // Force reload to ensure we have the latest translations
+      loadUrduTranslations(true).then((data) => {
+        if (data) {
+          setUrTranslations(data);
+        }
+      });
+    } else {
+      // Clear translations when switching away from Urdu
+      setUrTranslations(null);
     }
   }, [translationLang]);
 
-  // Load Urdu translations automatically for hazard-awareness and road-signs topics
+  // Load Urdu translations automatically for topics that have Urdu translations
   useEffect(() => {
-    if (selectedTopic === 'hazard-awareness' || selectedTopic === 'road-signs' || selectedTopic === 'general' || selectedTopic === 'safety-vehicle' || selectedTopic === 'attitude' || selectedTopic === 'other-vehicles' || selectedTopic === 'documents' || selectedTopic === 'vulnerable-road-users' || selectedTopic === 'vehicle-handling' || selectedTopic === 'incidents' || selectedTopic === 'motorway-driving' || selectedTopic === 'vehicle-loading') {
-      loadUrduTranslations().then(setUrTranslations);
+    if (translationLang === 'ur' && selectedTopic) {
+      const topicsWithUrdu = [
+        'alertness',
+        'hazard-awareness',
+        'road-signs',
+        'safety-margins',
+        'rules-of-the-road',
+        'safety-vehicle',
+        'attitude',
+        'other-vehicles',
+        'documents',
+        'vulnerable-road-users',
+        'vehicle-handling',
+        'incidents',
+        'motorway-driving',
+        'vehicle-loading'
+      ];
+      
+      // Always load translations when Urdu is selected and a topic is chosen
+      loadUrduTranslations(true).then((data) => {
+        if (data) {
+          setUrTranslations(data);
+        }
+      });
     }
-  }, [selectedTopic]);
+  }, [selectedTopic, translationLang]);
 
   // Update translation language
   const handleTranslationLangChange = (lang: TranslationLang) => {
     setTranslationLangState(lang);
     setTranslationLang(lang);
     if (lang === 'ur') {
-      loadUrduTranslations().then(setUrTranslations);
+      // Force reload to ensure we have the latest translations
+      loadUrduTranslations(true).then((data) => {
+        if (data) {
+          setUrTranslations(data);
+        }
+      });
+    } else {
+      setUrTranslations(null);
     }
   };
 
@@ -125,6 +167,17 @@ export default function PracticePage() {
 
   // Get current question
   const currentQuestion = topicQuestions[currentQuestionIndex] || null;
+
+  // Also ensure translations are loaded when question changes
+  useEffect(() => {
+    if (translationLang === 'ur' && currentQuestion && !urTranslations) {
+      loadUrduTranslations(true).then((data) => {
+        if (data) {
+          setUrTranslations(data);
+        }
+      });
+    }
+  }, [currentQuestion?.id, translationLang, urTranslations]);
 
   // Get shuffled options for current question (memoized by question.id)
   // Shuffle runs ONCE per question and remains stable during re-renders
@@ -207,9 +260,43 @@ export default function PracticePage() {
   };
 
   // Handle answer selection
-  const handleAnswerClick = (index: number) => {
+  const handleAnswerClick = async (index: number) => {
     if (selectedAnswerIndex !== null) return; // Prevent re-selection
+    if (!currentQuestion) return;
+    
+    // Block answering if free user has reached limit
+    if (access_level === 'free' && free_questions_used >= 15) {
+      setShowPaywall(true);
+      return;
+    }
+    
     setSelectedAnswerIndex(index);
+    
+    // Only increment if user is free and hasn't answered this question yet
+    if (access_level === 'free' && !answeredQuestionIds.has(currentQuestion.id)) {
+      try {
+        const response = await fetch('/api/practice/increment-usage', {
+          method: 'POST',
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          // Update local state
+          setAnsweredQuestionIds(prev => new Set([...prev, currentQuestion.id]));
+          
+          // Refetch access to get updated count
+          await refetchAccess();
+          
+          // Check if user should see paywall (after 15 questions)
+          if (data.free_questions_used >= 15) {
+            // Show paywall when they try to continue (not immediately)
+            // The paywall will show when they click Next
+          }
+        }
+      } catch (error) {
+        console.error('Error incrementing usage:', error);
+      }
+    }
   };
 
   // Handle navigation
@@ -223,6 +310,12 @@ export default function PracticePage() {
   };
 
   const handleNext = () => {
+    // Check if paywall should be shown (after 15 free questions, when trying to continue)
+    if (access_level === 'free' && free_questions_used >= 15 && selectedAnswerIndex !== null) {
+      setShowPaywall(true);
+      return;
+    }
+    
     if (currentQuestionIndex < topicQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedAnswerIndex(null);
@@ -251,6 +344,12 @@ export default function PracticePage() {
   // Determine correctness based ONLY on the selected option's correct boolean property
   const selectedOption = selectedAnswerIndex !== null ? shuffledOptions[selectedAnswerIndex] : null;
   const isCorrect = selectedOption?.correct === true;
+
+  // Handle paywall close - refresh access status
+  const handlePaywallClose = async () => {
+    setShowPaywall(false);
+    await refetchAccess();
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
@@ -579,7 +678,7 @@ export default function PracticePage() {
                 {currentQuestion.promptEn}
               </h2>
               <div className="flex items-center gap-2 flex-shrink-0 mt-0.5">
-                <TTSButton text={currentQuestion.promptEn} />
+                <TTSButton text={currentQuestion.promptEn} options={shuffledOptions} />
               </div>
             </div>
 
@@ -589,7 +688,11 @@ export default function PracticePage() {
                 {currentQuestion.promptAr}
               </h3>
             )}
-            {translationLang === 'ur' && urTranslations && (() => {
+            {translationLang === 'ur' && currentQuestion && (() => {
+              if (!urTranslations) {
+                console.warn(`[Practice] Urdu translations not loaded for question ${currentQuestion.id}`);
+                return null;
+              }
               const translation = getQuestionTranslation(currentQuestion.id, currentQuestion.topic, 'ur', urTranslations);
               if (translation?.prompt) {
                 return (
@@ -597,6 +700,8 @@ export default function PracticePage() {
                     {translation.prompt}
                   </h3>
                 );
+              } else {
+                console.warn(`[Practice] No Urdu translation found for question ${currentQuestion.id} in topic ${currentQuestion.topic}`);
               }
               return null;
             })()}
@@ -698,74 +803,122 @@ export default function PracticePage() {
             )}
 
             {/* Learning Hints Section - Shown after answering */}
-            {selectedAnswerIndex !== null && currentQuestion.keywords && currentQuestion.keywords.length > 0 && (
-              <div className="mb-3 mt-4 pt-4 border-t border-[var(--border)]/50 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                {/* Toggle Button */}
-                <button
-                  onClick={() => setShowHints(!showHints)}
-                  className="flex items-center gap-2 mb-3 px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 transition-all duration-200 text-sm font-medium text-[var(--navy)] hover:shadow-sm active:scale-[0.98] w-full sm:w-auto"
-                >
-                  <span className="text-lg">💡</span>
-                  <span>{showHints ? "Hide Learning Hints" : "Show Learning Hints"}</span>
-                  <span className={cn(
-                    "ml-auto sm:ml-2 transition-transform duration-200",
-                    showHints ? "rotate-180" : ""
-                  )}>▼</span>
-                </button>
+            {(() => {
+              // Filter hints to only show those with all 3 languages (EN/AR/UR)
+              const validHints = currentQuestion.keywords?.filter((keyword) => {
+                // Check if it's a hint (starts with "hint")
+                if (!keyword.term.startsWith('hint')) return false;
+                
+                // Check English: must have explainEn or explainAr that's actually English
+                const hasEnglish = !!(keyword.explainEn || 
+                  (keyword.explainAr && /^[A-Z]/.test(keyword.explainAr.trim()) && 
+                   /[a-zA-Z]/.test(keyword.explainAr) && 
+                   !/[\u0600-\u06FF]/.test(keyword.explainAr)));
+                
+                // Check Arabic: must have explainAr that's actually Arabic (not English)
+                const hasArabic = !!(keyword.explainAr && 
+                  !(/^[A-Z]/.test(keyword.explainAr.trim()) && 
+                    /[a-zA-Z]/.test(keyword.explainAr) && 
+                    !/[\u0600-\u06FF]/.test(keyword.explainAr)));
+                
+                // Check Urdu: must have translation in keyword-translations.ts
+                const urduTranslation = getKeywordUrduTranslation(keyword.term);
+                const hasUrdu = !!urduTranslation?.explainUr;
+                
+                // Only show if all three languages exist
+                return hasEnglish && hasArabic && hasUrdu;
+              }) || [];
 
-                {/* Hints Content - Collapsible */}
-                {showHints && (
-                  <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
-                    <div className="mb-3">
-                      <h3 className="text-base font-semibold text-[var(--navy)]">
-                        Learning Hints
-                      </h3>
-                    </div>
-                    {translationLang === 'ar' && (
-                      <p className="text-[13px] sm:text-[14px] font-medium mb-4 text-[var(--muted-text)]/80 leading-[1.8] tracking-wide" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
-                        نصائح تعليمية: فهم هذه الكلمات يساعدك في الإجابة الصحيحة
-                      </p>
-                    )}
-                    {translationLang === 'ur' && (
-                      <p className="text-[13px] sm:text-[14px] font-medium mb-4 text-[var(--muted-text)]/80 leading-[1.8] tracking-wide" dir="rtl">
-                        تعلیمی اشارات: ان الفاظ کو سمجھنا آپ کو صحیح جواب دینے میں مدد کرتا ہے
-                      </p>
-                    )}
-                    <div className="space-y-3">
-                      {currentQuestion.keywords.map((keyword, index) => {
-                        const urduTranslation = translationLang === 'ur' ? getKeywordUrduTranslation(keyword.term) : null;
-                        return (
-                          <div
-                            key={index}
-                            className="bg-gradient-to-br from-teal-50/80 via-white to-cyan-50/50 border border-teal-200/60 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:border-teal-300/80"
-                          >
-                            <div className="flex items-start gap-3 mb-2">
-                              <span className="text-teal-700 font-bold text-sm flex-shrink-0 mt-0.5">{keyword.term}</span>
-                              {translationLang === 'ar' && (
-                                <span className="text-[var(--muted-text)]/70 text-sm" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' }}>{keyword.ar}</span>
+              // Only show hints section if there are valid hints
+              if (selectedAnswerIndex === null || validHints.length === 0) {
+                return null;
+              }
+
+              return (
+                <div className="mb-3 mt-4 pt-4 border-t border-[var(--border)]/50 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                  {/* Toggle Button */}
+                  <button
+                    onClick={() => setShowHints(!showHints)}
+                    className="flex items-center gap-2 mb-3 px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 transition-all duration-200 text-sm font-medium text-[var(--navy)] hover:shadow-sm active:scale-[0.98] w-full sm:w-auto"
+                  >
+                    <span className="text-lg">💡</span>
+                    <span>{showHints ? "Hide Learning Hints" : "Show Learning Hints"}</span>
+                    <span className={cn(
+                      "ml-auto sm:ml-2 transition-transform duration-200",
+                      showHints ? "rotate-180" : ""
+                    )}>▼</span>
+                  </button>
+
+                  {/* Hints Content - Collapsible */}
+                  {showHints && (
+                    <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
+                      <div className="mb-3">
+                        <h3 className="text-base font-semibold text-[var(--navy)]">
+                          Learning Hints
+                        </h3>
+                      </div>
+                      {translationLang === 'off' && (
+                        <p className="text-[13px] sm:text-[14px] font-medium mb-4 text-[var(--muted-text)]/80 leading-relaxed">
+                          Learning hints: Understanding these concepts helps you answer correctly
+                        </p>
+                      )}
+                      {translationLang === 'ar' && (
+                        <p className="text-[13px] sm:text-[14px] font-medium mb-4 text-[var(--muted-text)]/80 leading-[1.8] tracking-wide" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
+                          نصائح تعليمية: فهم هذه الكلمات يساعدك في الإجابة الصحيحة
+                        </p>
+                      )}
+                      {translationLang === 'ur' && (
+                        <p className="text-[13px] sm:text-[14px] font-medium mb-4 text-[var(--muted-text)]/80 leading-[1.8] tracking-wide" dir="rtl">
+                          تعلیمی اشارات: ان الفاظ کو سمجھنا آپ کو صحیح جواب دینے میں مدد کرتا ہے
+                        </p>
+                      )}
+                      <div className="space-y-3">
+                        {validHints.map((keyword, index) => {
+                          const urduTranslation = getKeywordUrduTranslation(keyword.term);
+                          // Get English text - prefer explainEn, fallback to explainAr if it's English
+                          const englishText = keyword.explainEn || 
+                            (keyword.explainAr && /^[A-Z]/.test(keyword.explainAr.trim()) && 
+                             /[a-zA-Z]/.test(keyword.explainAr) && 
+                             !/[\u0600-\u06FF]/.test(keyword.explainAr) ? keyword.explainAr : null);
+                          
+                          return (
+                            <div
+                              key={index}
+                              className="bg-gradient-to-br from-teal-50/80 via-white to-cyan-50/50 border border-teal-200/60 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:border-teal-300/80"
+                            >
+                              <div className="flex items-start gap-3 mb-2">
+                                <span className="text-teal-700 font-bold text-sm flex-shrink-0 mt-0.5">{keyword.term}</span>
+                                {translationLang === 'ar' && (
+                                  <span className="text-[var(--muted-text)]/70 text-sm" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' }}>{keyword.ar}</span>
+                                )}
+                                {translationLang === 'ur' && urduTranslation && (
+                                  <span className="text-[var(--muted-text)]/70 text-sm" dir="rtl" style={{ lineHeight: '1.8' }}>{urduTranslation.ur}</span>
+                                )}
+                              </div>
+                              {translationLang === 'off' && englishText && (
+                                <p className="text-sm text-[var(--navy)] leading-relaxed">
+                                  {englishText}
+                                </p>
+                              )}
+                              {translationLang === 'ar' && keyword.explainAr && (
+                                <p className="text-sm text-[var(--navy)] leading-relaxed" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' }}>
+                                  {keyword.explainAr}
+                                </p>
                               )}
                               {translationLang === 'ur' && urduTranslation && (
-                                <span className="text-[var(--muted-text)]/70 text-sm" dir="rtl" style={{ lineHeight: '1.8' }}>{urduTranslation.ur}</span>
+                                <p className="text-sm text-[var(--navy)] leading-relaxed" dir="rtl" style={{ lineHeight: '1.8' }}>
+                                  {urduTranslation.explainUr}
+                                </p>
                               )}
                             </div>
-                            {translationLang === 'ar' && (
-                              <p className="text-sm text-[var(--navy)] leading-relaxed" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' }}>
-                                {keyword.explainAr}
-                              </p>
-                            )}
-                            {translationLang === 'ur' && urduTranslation && (
-                              <p className="text-sm text-[var(--navy)] leading-relaxed" dir="rtl" style={{ lineHeight: '1.8' }}>
-                                {urduTranslation.explainUr}
-                              </p>
-                            )}
-                          </div>
-                        );
-                      })}
+                          );
+                        })}
+                      </div>
                     </div>
-                  </div>
-                )}
-              </div>
-            )}
+                  )}
+                </div>
+              );
+            })()}
 
             {/* Navigation Buttons */}
             <div className="flex justify-between items-center mt-4">
@@ -805,6 +958,13 @@ export default function PracticePage() {
           </div>
         )}
       </div>
+      
+      {/* Paywall Modal */}
+      <PaywallModal
+        isOpen={showPaywall}
+        onClose={handlePaywallClose}
+        freeQuestionsUsed={free_questions_used}
+      />
     </div>
   );
 }
