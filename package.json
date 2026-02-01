@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "postbuild": "next-sitemap",
-    "start": "next start",
+    "start": "next start -p $PORT",
     "lint": "next lint",
     "export:questions": "ts-node tools/export-questions.ts",
     "dedupe:questions": "node tools/dedupe.js questions.export.json",
