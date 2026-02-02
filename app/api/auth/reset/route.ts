@@ -5,6 +5,9 @@ import { NextRequest, NextResponse } from 'next/server';
  * Server-side route handler for password reset code exchange
  * This handles PKCE flow which requires server-side cookie management
  */
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const code = searchParams.get('code');
