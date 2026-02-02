@@ -50,10 +50,20 @@ export default function Navigation() {
     }
   };
 
+  const handleMockTestClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // If user is logged in, not loading, and not paid, show locked modal
+    // Otherwise, allow navigation (middleware will handle auth redirect if needed)
+    if (user && !accessLoading && !isPaid) {
+      e.preventDefault();
+      setShowMockTestLockedModal(true);
+    }
+  };
+
   return (
     <nav className="flex gap-1.5 md:gap-2 text-xs md:text-sm items-center flex-nowrap overflow-x-auto hide-scrollbar">
       <Link 
-        href="/practice" 
+        href="/practice"
+        prefetch={true}
         data-active={pathname === '/practice'}
         className="px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 text-[var(--navy)]/70 hover:text-[var(--navy)] relative data-[active=true]:text-[var(--navy)] data-[active=true]:bg-white/80 whitespace-nowrap flex-shrink-0"
       >
@@ -65,17 +75,10 @@ export default function Navigation() {
           </>
         )}
       </Link>
-      <button
-        onClick={(e) => {
-          e.preventDefault();
-          // If user is logged in, not loading, and not paid, show locked modal
-          // Otherwise, navigate to mock-test (middleware will handle auth redirect if needed)
-          if (user && !accessLoading && !isPaid) {
-            setShowMockTestLockedModal(true);
-          } else {
-            router.push('/mock-test');
-          }
-        }}
+      <Link
+        href="/mock-test"
+        prefetch={true}
+        onClick={handleMockTestClick}
         data-active={pathname === '/mock-test'}
         className="px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 text-[var(--navy)]/70 hover:text-[var(--navy)] relative data-[active=true]:text-[var(--navy)] data-[active=true]:bg-white/80 whitespace-nowrap flex-shrink-0"
       >
@@ -86,7 +89,7 @@ export default function Navigation() {
             <span className="absolute -top-0.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-[var(--teal)] rounded-full shadow-sm"></span>
           </>
         )}
-      </button>
+      </Link>
       {user && (
         <button
           onClick={handleLogout}
