@@ -8,8 +8,6 @@ import { cn } from "@/lib/utils";
 import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
 import DisclaimerModal from "@/components/DisclaimerModal";
-import PaywallOverlay from "@/components/PaywallOverlay";
-import { useAccess } from "@/lib/hooks/useAccess";
 import { createClient } from "@/lib/supabase/client";
 import { 
   TranslationLang, 
@@ -60,13 +58,7 @@ const QUESTION_COUNT = 50;
 export default function MockTestPage() {
   const router = useRouter();
   const supabase = createClient();
-  const { paid, freeUsed, loading: accessLoading } = useAccess();
   const [user, setUser] = useState<any>(null);
-  
-  // Determine access status - access_level === 'paid' is the ONLY gate
-  const isPaid = paid;
-  // Show paywall immediately if not paid - Mock Test requires paid access
-  const showPaywall = !isPaid && !accessLoading;
   
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -91,20 +83,6 @@ export default function MockTestPage() {
     checkAuth();
   }, [router, supabase]);
 
-  // Clear mock test state when paywall is shown
-  useEffect(() => {
-    if (showPaywall) {
-      // Clear all mock test state
-      setMockQuestions([]);
-      setCurrentIndex(0);
-      setSelectedOptionIndex(null);
-      setAnswers([]);
-      setIsFinished(false);
-      
-      // Clear localStorage session
-      clearSession();
-    }
-  }, [showPaywall]);
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -147,15 +125,8 @@ export default function MockTestPage() {
    * - Uses simple random shuffle of ALL questions from the database
    * - Takes first 50 questions after shuffle (no duplicates guaranteed by slice)
    * - Shuffles options for each selected question
-   * 
-   * IMPORTANT: This function is BLOCKED when user is not paid
    */
   const generateMockQuestions = (): QuestionWithShuffled[] => {
-    // BLOCK question generation when paywall is shown
-    if (showPaywall) {
-      return [];
-    }
-    
     // SAFEGUARD: Ensure questions array exists and is not empty
     if (!questions || questions.length === 0) {
       console.error('Mock Test: Questions array is empty or undefined');
@@ -232,18 +203,8 @@ export default function MockTestPage() {
     }
   };
 
-  // Restore session or initialize new test - BLOCKED when paywall is shown
+  // Restore session or initialize new test
   const initializeTest = (forceNew: boolean = false) => {
-    // BLOCK test initialization when paywall is shown
-    if (showPaywall) {
-      setMockQuestions([]);
-      setCurrentIndex(0);
-      setSelectedOptionIndex(null);
-      setAnswers([]);
-      setIsFinished(false);
-      return;
-    }
-    
     if (forceNew) {
       clearSession();
     }
@@ -299,13 +260,13 @@ export default function MockTestPage() {
     });
   };
 
-  // Initialize test when paywall is not shown
+  // Initialize test when user is authenticated
   useEffect(() => {
-    if (!showPaywall && !accessLoading && user) {
+    if (user) {
       initializeTest();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [showPaywall, accessLoading, user]);
+  }, [user]);
 
   // Save session whenever state changes
   useEffect(() => {
@@ -331,10 +292,8 @@ export default function MockTestPage() {
     }
   }, [currentIndex, answers]);
 
-  // Handle option click - BLOCKED when paywall is shown
+  // Handle option click
   const handleOptionClick = (optionIndex: number) => {
-    // Block all interactions when paywall is shown
-    if (showPaywall) return;
     if (isFinished) return;
 
     const currentQuestion = mockQuestions[currentIndex];
@@ -417,15 +376,6 @@ export default function MockTestPage() {
         <div className="max-w-5xl mx-auto px-4 py-6">
           <div className="text-center text-slate-600 font-medium">Loading...</div>
         </div>
-      </div>
-    );
-  }
-
-  // Don't show questions if paywall is shown - blocks viewing questions
-  if (showPaywall) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
-        <PaywallOverlay freeQuestionsUsed={freeUsed} />
       </div>
     );
   }

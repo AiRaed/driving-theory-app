@@ -5,13 +5,10 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { User } from '@supabase/supabase-js';
-import { useAccess } from '@/lib/hooks/useAccess';
-
 export default function Navigation() {
   const pathname = usePathname();
   const router = useRouter();
   const supabase = createClient();
-  const { paid } = useAccess();
   const [user, setUser] = useState<User | null>(null);
   const [loggingOut, setLoggingOut] = useState(false);
 

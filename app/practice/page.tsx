@@ -7,8 +7,6 @@ import { questions } from '@/data/questions';
 import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import DisclaimerModal from '@/components/DisclaimerModal';
-import PaywallOverlay from '@/components/PaywallOverlay';
-import { useAccess } from '@/lib/hooks/useAccess';
 import { 
   TranslationLang, 
   getTranslationLang, 
@@ -74,15 +72,6 @@ export default function PracticePage() {
   const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
   const [isMounted, setIsMounted] = useState(false);
   const [answeredQuestionIds, setAnsweredQuestionIds] = useState<Set<string>>(new Set());
-  
-  // Get user access status from global store
-  const { paid, freeUsed, loading: accessLoading } = useAccess();
-  
-  // Determine access status - access_level === 'paid' is the ONLY gate
-  const isPaid = paid;
-  // Show PaywallOverlay only when !paid && freeUsed >= 15
-  const showPaywall = !isPaid && freeUsed >= 15;
-  const isTrial = !isPaid && freeUsed < 15;
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -164,13 +153,11 @@ export default function PracticePage() {
   const totalQuestions = questions.length;
   const totalTopics = topics.length;
 
-  // Get questions for the selected topic - ONLY if user has access
+  // Get questions for the selected topic
   const topicQuestions = useMemo(() => {
-    // If paywall is shown, return empty array - don't show questions
-    if (showPaywall) return [];
     if (!selectedTopic) return [];
     return questions.filter(q => q.topic === selectedTopic);
-  }, [selectedTopic, showPaywall]);
+  }, [selectedTopic]);
 
   // Get current question
   const currentQuestion = topicQuestions[currentQuestionIndex] || null;
@@ -242,11 +229,8 @@ export default function PracticePage() {
     }
   }, [currentQuestionIndex, selectedTopic]);
 
-  // Handle topic selection - BLOCK if paywall is shown
+  // Handle topic selection
   const handleTopicSelect = (topic: string) => {
-    // Prevent topic selection when paywall is shown
-    if (showPaywall) return;
-    
     setSelectedTopic(topic);
     // Index will be restored by useEffect
     setSelectedAnswerIndex(null);
@@ -269,37 +253,17 @@ export default function PracticePage() {
     }, 100);
   };
 
-  // Handle answer selection - BLOCK if paywall is shown
+  // Handle answer selection
   const handleAnswerClick = (index: number) => {
-    // Block all interactions when paywall is shown
-    if (showPaywall) return;
-    
     if (selectedAnswerIndex !== null) return; // Prevent re-selection
     if (!currentQuestion) return;
     
-    // Immediately update UI state (optimistic update)
+    // Immediately update UI state
     setSelectedAnswerIndex(index);
     
-    // Fire-and-forget async save (don't block UI)
-    if (isTrial && !answeredQuestionIds.has(currentQuestion.id)) {
-      // Update local state optimistically
+    // Update local state
+    if (!answeredQuestionIds.has(currentQuestion.id)) {
       setAnsweredQuestionIds(prev => new Set([...Array.from(prev), currentQuestion.id]));
-      
-      // Save progress asynchronously without blocking
-      (async () => {
-        try {
-          const response = await fetch('/api/practice/increment-usage', {
-            method: 'POST',
-          });
-          
-          if (response.ok) {
-            // Access store will auto-update via throttle mechanism
-            // No need to manually refetch - store handles it
-          }
-        } catch (error) {
-          console.error('Error incrementing usage:', error);
-        }
-      })();
     }
   };
 
@@ -314,8 +278,6 @@ export default function PracticePage() {
   };
 
   const handleNext = () => {
-    // Block navigation when paywall is shown
-    if (showPaywall) return;
     // Block navigation when no answer is selected
     if (selectedAnswerIndex === null) return;
     
@@ -354,31 +316,6 @@ export default function PracticePage() {
   const selectedOption = selectedAnswerIndex !== null ? shuffledOptions[selectedAnswerIndex] : null;
   const isCorrect = selectedOption?.correct === true;
 
-  // Clear all question state when paywall is shown
-  useEffect(() => {
-    if (showPaywall) {
-      // Clear all question-related state
-      setSelectedTopic('');
-      setCurrentQuestionIndex(0);
-      setSelectedAnswerIndex(null);
-      setSelectedKeywordIndex(null);
-      setAnsweredQuestionIds(new Set());
-      setShowTopicsGrid(true);
-      setShowHints(false);
-      
-      // Clear localStorage
-      if (typeof window !== 'undefined') {
-        try {
-          localStorage.removeItem('theory_last_index_v1');
-        } catch (e) {
-          console.error('Failed to clear localStorage:', e);
-        }
-      }
-    }
-  }, [showPaywall]);
-
-  // No loading spinner - access store handles loading internally
-  // Page renders immediately, paywall shows when needed
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
@@ -531,14 +468,13 @@ export default function PracticePage() {
           </div>
         )}
 
-        {/* Topic Selection - Chips - DISABLED when locked */}
+        {/* Topic Selection - Chips */}
         <div 
           id="topics-grid"
           className={cn(
             "relative mb-8 transition-all duration-500 ease-out",
             // Hide on mobile when topic is selected
-            !showTopicsGrid && "hidden md:block",
-            showPaywall && "pointer-events-none opacity-50"
+            !showTopicsGrid && "hidden md:block"
           )}>
           {/* Responsive grid: 2 cols on mobile (<=640px), 3 cols on sm, 5 cols on desktop */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:grid-rows-3">
@@ -550,7 +486,6 @@ export default function PracticePage() {
                 <button
                   key={topic}
                   onClick={() => handleTopicSelect(topic)}
-                  disabled={showPaywall}
                   className={cn(
                     "rounded-xl border text-left transition-all duration-200 ease-in-out",
                     "hover:shadow-md active:scale-[0.97]",
@@ -559,7 +494,6 @@ export default function PracticePage() {
                     // Mobile: consistent min-height for alignment
                     "min-h-[64px] sm:min-h-[56px] md:min-h-[40px]",
                     "flex flex-col justify-center",
-                    showPaywall && "cursor-not-allowed",
                     isActive
                       ? "border-red-700/30 bg-gradient-to-br from-red-600 to-red-700 text-white shadow-lg hover:shadow-xl hover:from-red-700 hover:to-red-800" 
                       : "bg-gradient-to-br from-red-50/50 via-white to-red-50/30 border-red-100/60 text-slate-800 hover:from-red-50/70 hover:via-white hover:to-red-50/40 hover:border-red-200/80 hover:shadow-md"
@@ -629,8 +563,8 @@ export default function PracticePage() {
         {/* Mobile Disclaimer Modal */}
         <DisclaimerModal showArabic={translationLang === 'ar'} />
 
-            {/* Question Display - ONLY show if paywall is NOT shown */}
-        {showPaywall ? null : currentQuestion ? (
+            {/* Question Display */}
+        {currentQuestion ? (
           <div className="rounded-2xl border border-red-100/60 bg-gradient-to-br from-red-50/50 via-white to-red-50/30 p-6 sm:p-7 mt-4 shadow-xl relative overflow-hidden backdrop-blur-sm">
             {/* Premium red top accent bar */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 via-red-600 to-red-700"></div>
@@ -990,12 +924,6 @@ export default function PracticePage() {
           </div>
         )}
       </div>
-      
-      {/* PaywallOverlay - Show only when !paid && freeUsed >= 15 */}
-      {/* Blocks viewing questions, not just answering */}
-      {showPaywall && (
-        <PaywallOverlay freeQuestionsUsed={freeUsed} />
-      )}
     </div>
   );
 }
