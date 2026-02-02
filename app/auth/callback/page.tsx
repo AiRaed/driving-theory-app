@@ -31,6 +31,38 @@ export default async function CallbackPage({ searchParams }: PageProps) {
       redirect(`/auth?error=confirm_failed`);
     }
     
+    // Get user after session exchange
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (user) {
+      // Ensure profile exists for new users
+      const { data: profile, error: profileError } = await supabase
+        .from('profiles')
+        .select('*')
+        .eq('id', user.id)
+        .single();
+
+      if (profileError && profileError.code === 'PGRST116') {
+        // Profile doesn't exist, create it
+        if (process.env.NODE_ENV === 'development') {
+          console.log('[Callback] Creating profile for new user:', user.id);
+        }
+        
+        await supabase
+          .from('profiles')
+          .insert({
+            id: user.id,
+            email: user.email,
+            access_level: 'free',
+            free_questions_used: 0,
+          });
+      } else if (process.env.NODE_ENV === 'development' && profile) {
+        console.log('[Callback] Profile exists for user:', user.id);
+      }
+    }
+    
     // Successfully exchanged code for session, redirect to dashboard
     redirect('/dashboard');
   }
@@ -38,7 +70,30 @@ export default async function CallbackPage({ searchParams }: PageProps) {
   // No code, but check if user session exists
   const { data: { session } } = await supabase.auth.getSession();
   
-  if (session) {
+  if (session?.user) {
+    // User has a session, ensure profile exists
+    const { data: profile, error: profileError } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', session.user.id)
+      .single();
+
+    if (profileError && profileError.code === 'PGRST116') {
+      // Profile doesn't exist, create it
+      if (process.env.NODE_ENV === 'development') {
+        console.log('[Callback] Creating profile for user:', session.user.id);
+      }
+      
+      await supabase
+        .from('profiles')
+        .insert({
+          id: session.user.id,
+          email: session.user.email,
+          access_level: 'free',
+          free_questions_used: 0,
+        });
+    }
+    
     // User has a session, redirect to dashboard
     redirect('/dashboard');
   }

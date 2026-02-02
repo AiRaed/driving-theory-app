@@ -58,7 +58,8 @@ export default function AuthClient() {
       setError(error.message);
       setLoading(false);
     } else {
-      router.push(next);
+      router.replace('/dashboard');
+      router.refresh();
     }
   };
 

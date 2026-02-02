@@ -9,7 +9,14 @@ export async function GET(request: NextRequest) {
     } = await supabase.auth.getUser();
 
     if (!user) {
+      if (process.env.NODE_ENV === 'development') {
+        console.log('[check-access] No user found');
+      }
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log('[check-access] User found:', user.id);
     }
 
     // Get user profile
@@ -21,6 +28,10 @@ export async function GET(request: NextRequest) {
 
     // Create profile if it doesn't exist
     if (profileError && profileError.code === 'PGRST116') {
+      if (process.env.NODE_ENV === 'development') {
+        console.log('[check-access] Profile missing, creating for user:', user.id);
+      }
+      
       const { data: newProfile, error: insertError } = await supabase
         .from('profiles')
         .insert({
@@ -33,32 +44,47 @@ export async function GET(request: NextRequest) {
         .single();
 
       if (insertError) {
-        console.error('Error creating profile:', insertError);
-        return NextResponse.json(
-          { error: 'Failed to create profile' },
-          { status: 500 }
-        );
+        if (process.env.NODE_ENV === 'development') {
+          console.error('[check-access] Error creating profile:', insertError);
+        }
+        // Return default values instead of failing - NEVER sign out
+        return NextResponse.json({
+          access_level: 'free',
+          free_questions_used: 0,
+        });
       }
 
+      if (process.env.NODE_ENV === 'development') {
+        console.log('[check-access] Profile created successfully');
+      }
       profile = newProfile;
     } else if (profileError) {
-      console.error('Error fetching profile:', profileError);
-      return NextResponse.json(
-        { error: 'Failed to fetch profile' },
-        { status: 500 }
-      );
+      if (process.env.NODE_ENV === 'development') {
+        console.error('[check-access] Error fetching profile:', profileError);
+      }
+      // Return default values instead of failing - NEVER sign out
+      return NextResponse.json({
+        access_level: 'free',
+        free_questions_used: 0,
+      });
+    } else if (process.env.NODE_ENV === 'development') {
+      console.log('[check-access] Profile exists, access_level:', profile?.access_level);
     }
 
+    // NEVER call signOut here - missing profile is not a reason to log out
     return NextResponse.json({
       access_level: profile?.access_level || 'free',
       free_questions_used: profile?.free_questions_used || 0,
     });
   } catch (error) {
-    console.error('Check access error:', error);
-    return NextResponse.json(
-      { error: 'Internal server error' },
-      { status: 500 }
-    );
+    if (process.env.NODE_ENV === 'development') {
+      console.error('[check-access] Error:', error);
+    }
+    // Return default values instead of failing - NEVER sign out
+    return NextResponse.json({
+      access_level: 'free',
+      free_questions_used: 0,
+    });
   }
 }
 
