@@ -29,6 +29,28 @@ export default function MockTestLockedModal({ isOpen, onClose }: MockTestLockedM
     setError(null);
 
     try {
+      // First, check if user is already paid (SINGLE SOURCE OF TRUTH)
+      const statusResponse = await fetch('/api/access/status', {
+        cache: 'no-store',
+        headers: {
+          'Cache-Control': 'no-cache',
+        },
+      });
+
+      if (statusResponse.ok) {
+        const statusData = await statusResponse.json();
+        if (statusData.paid === true && statusData.accessLevel === 'paid') {
+          // User is already paid, don't call checkout
+          setError('User already has paid access');
+          setLoading(false);
+          // Close modal and refresh
+          onClose();
+          router.refresh();
+          return;
+        }
+      }
+
+      // User is not paid, proceed with checkout
       const response = await fetch('/api/stripe/checkout', {
         method: 'POST',
       });

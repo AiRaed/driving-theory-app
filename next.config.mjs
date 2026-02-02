@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Only enable static export for Capacitor builds
+  // Only enable static export for Capacitor builds (Android)
+  // For Render/server builds, use normal Next.js server mode (no output: 'export')
   ...(process.env.CAPACITOR_BUILD === 'true' && {
     output: 'export',
     images: { unoptimized: true },
   }),
+  // Default: no output: 'export' - allows API routes to work on Render
   trailingSlash: true,
   eslint: { ignoreDuringBuilds: true },
   

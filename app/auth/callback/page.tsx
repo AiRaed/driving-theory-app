@@ -42,9 +42,14 @@ function CallbackContent() {
         } = await supabase.auth.getUser();
 
         if (user) {
-          // Ensure profile exists for new users via API
+          // Ensure profile exists for new users via API (SINGLE SOURCE OF TRUTH)
           try {
-            const response = await fetch('/api/practice/check-access');
+            const response = await fetch('/api/access/status', {
+              cache: 'no-store',
+              headers: {
+                'Cache-Control': 'no-cache',
+              },
+            });
             if (!response.ok) {
               // Profile will be created by the API if missing
               console.log('[Callback] Profile check completed');
@@ -63,9 +68,14 @@ function CallbackContent() {
       const { data: { session } } = await supabase.auth.getSession();
       
       if (session?.user) {
-        // User has a session, ensure profile exists via API
+        // User has a session, ensure profile exists via API (SINGLE SOURCE OF TRUTH)
         try {
-          await fetch('/api/practice/check-access');
+          await fetch('/api/access/status', {
+            cache: 'no-store',
+            headers: {
+              'Cache-Control': 'no-cache',
+            },
+          });
         } catch (err) {
           console.error('[Callback] Error checking profile:', err);
         }

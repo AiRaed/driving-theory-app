@@ -31,21 +31,35 @@ export function useAccessGate(): AccessGate {
       }
       setError(null);
 
-      const response = await fetch('/api/practice/check-access');
+      // Use SINGLE SOURCE OF TRUTH: /api/access/status
+      const response = await fetch('/api/access/status', {
+        cache: 'no-store',
+        headers: {
+          'Cache-Control': 'no-cache',
+        },
+      });
       
       if (!response.ok) {
-        throw new Error('Failed to fetch access status');
+        if (response.status === 401) {
+          // Unauthorized - user not logged in
+          setStatus('locked');
+          setError('Please log in to continue');
+        } else {
+          throw new Error('Failed to fetch access status');
+        }
+        return;
       }
 
       const data = await response.json();
-      const accessLevel = data.access_level || 'free';
-      const freeQuestionsUsed = data.free_questions_used || 0;
+      const paid = data.paid === true;
+      const accessLevel = data.accessLevel || 'free';
+      const freeQuestionsUsed = data.freeQuestionsUsed || 0;
 
       setFreeUsed(freeQuestionsUsed);
 
       // Determine status - access_level === 'paid' is the ONLY gate
       // If paid, always return 'paid' status regardless of free_questions_used
-      if (accessLevel === 'paid') {
+      if (paid && accessLevel === 'paid') {
         setStatus('paid');
       } else if (freeQuestionsUsed >= TRIAL_LIMIT) {
         setStatus('locked');
@@ -54,7 +68,7 @@ export function useAccessGate(): AccessGate {
       }
     } catch (err) {
       console.error('Error fetching access:', err);
-      setError(err instanceof Error ? err.message : 'Failed to fetch access status');
+      setError(err instanceof Error ? err.message : 'Couldn\'t verify access, please refresh');
       // Default to locked on error to be safe
       setStatus('locked');
     } finally {

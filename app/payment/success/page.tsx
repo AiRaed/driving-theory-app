@@ -40,6 +40,24 @@ function PaymentSuccessContent() {
         }
 
         // Refresh access status to get updated access_level (single source of truth)
+        // Use /api/access/status directly for immediate update
+        try {
+          const statusResponse = await fetch('/api/access/status', {
+            cache: 'no-store',
+            headers: {
+              'Cache-Control': 'no-cache',
+            },
+          });
+          
+          if (statusResponse.ok) {
+            const statusData = await statusResponse.json();
+            console.log('[Payment Success] Access status after payment:', statusData);
+          }
+        } catch (err) {
+          console.error('[Payment Success] Error checking access status:', err);
+        }
+        
+        // Also refetch via hook
         await refetchAccess();
         
         // Force re-check by refreshing router to ensure all components get updated access_level

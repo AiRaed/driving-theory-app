@@ -25,18 +25,35 @@ export function useAccess(): Access {
       setLoading(true);
       setError(null);
 
-      const response = await fetch('/api/practice/check-access');
+      // Use SINGLE SOURCE OF TRUTH: /api/access/status
+      const response = await fetch('/api/access/status', {
+        cache: 'no-store',
+        headers: {
+          'Cache-Control': 'no-cache',
+        },
+      });
       
       if (!response.ok) {
-        throw new Error('Failed to fetch access status');
+        if (response.status === 401) {
+          // Unauthorized - user not logged in
+          setIsPaid(false);
+          setFreeUsed(0);
+          setError('Please log in to continue');
+        } else {
+          throw new Error('Failed to fetch access status');
+        }
+        return;
       }
 
       const data = await response.json();
-      setIsPaid(data.access_level === 'paid');
-      setFreeUsed(data.free_questions_used || 0);
+      setIsPaid(data.paid === true && data.accessLevel === 'paid');
+      setFreeUsed(data.freeQuestionsUsed || 0);
     } catch (err) {
       console.error('Error fetching access:', err);
-      setError(err instanceof Error ? err.message : 'Failed to fetch access status');
+      setError(err instanceof Error ? err.message : 'Couldn\'t verify access, please refresh');
+      // Default to not paid on error
+      setIsPaid(false);
+      setFreeUsed(0);
     } finally {
       setLoading(false);
     }
