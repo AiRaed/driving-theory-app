@@ -41,6 +41,9 @@ function PaymentSuccessContent() {
 
         // Refresh access status to get updated access_level (single source of truth)
         await refetchAccess();
+        
+        // Force re-check by refreshing router to ensure all components get updated access_level
+        router.refresh();
 
         // Success - redirect to dashboard after a short delay
         setTimeout(() => {
@@ -54,7 +57,7 @@ function PaymentSuccessContent() {
     };
 
     verifyPayment();
-  }, [searchParams, router]);
+  }, [searchParams, router, refetchAccess]);
 
   if (verifying) {
     return (

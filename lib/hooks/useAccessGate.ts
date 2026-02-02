@@ -43,7 +43,8 @@ export function useAccessGate(): AccessGate {
 
       setFreeUsed(freeQuestionsUsed);
 
-      // Determine status
+      // Determine status - access_level === 'paid' is the ONLY gate
+      // If paid, always return 'paid' status regardless of free_questions_used
       if (accessLevel === 'paid') {
         setStatus('paid');
       } else if (freeQuestionsUsed >= TRIAL_LIMIT) {

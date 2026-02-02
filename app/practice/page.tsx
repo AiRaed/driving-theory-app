@@ -78,9 +78,9 @@ export default function PracticePage() {
   // Get user access status using AccessGate
   const { status, freeUsed, loading: accessLoading, refetch: refetchAccess } = useAccessGate();
   
-  // Determine if user is locked
-  const isLocked = status === 'locked';
+  // Determine access status - access_level === 'paid' is the ONLY gate
   const isPaid = status === 'paid';
+  const isLocked = status === 'locked' && !isPaid; // Only locked if not paid
   const isTrial = status === 'trial';
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
@@ -999,8 +999,9 @@ export default function PracticePage() {
         )}
       </div>
       
-      {/* Paywall Overlay - ALWAYS visible when locked */}
-      {isLocked && (
+      {/* Paywall Overlay - Only show if locked AND not paid */}
+      {/* If paid=true (access_level === 'paid'), never render paywall */}
+      {isLocked && !isPaid && (
         <PaywallModal
           isOpen={true}
           onClose={() => {}} // Non-dismissible

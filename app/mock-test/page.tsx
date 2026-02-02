@@ -64,8 +64,7 @@ export default function MockTestPage() {
   const { status, freeUsed, loading: accessLoading, refetch: refetchAccess } = useAccessGate();
   const [user, setUser] = useState<any>(null);
   
-  // Determine access status
-  const isLocked = status === 'locked';
+  // Determine access status - access_level === 'paid' is the ONLY gate
   const isPaid = status === 'paid';
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -90,9 +89,9 @@ export default function MockTestPage() {
     checkAuth();
   }, [router, supabase]);
 
-  // Clear mock test state when locked
+  // Clear mock test state when not paid (free users can't access mock test)
   useEffect(() => {
-    if (isLocked) {
+    if (!isPaid) {
       // Clear all mock test state
       setMockQuestions([]);
       setCurrentIndex(0);
@@ -103,7 +102,7 @@ export default function MockTestPage() {
       // Clear localStorage session
       clearSession();
     }
-  }, [isLocked]);
+  }, [isPaid]);
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -147,11 +146,11 @@ export default function MockTestPage() {
    * - Takes first 50 questions after shuffle (no duplicates guaranteed by slice)
    * - Shuffles options for each selected question
    * 
-   * IMPORTANT: This function is BLOCKED when user is locked
+   * IMPORTANT: This function is BLOCKED when user is not paid
    */
   const generateMockQuestions = (): QuestionWithShuffled[] => {
-    // BLOCK question generation when locked
-    if (isLocked) {
+    // BLOCK question generation when not paid
+    if (!isPaid) {
       return [];
     }
     
@@ -231,10 +230,10 @@ export default function MockTestPage() {
     }
   };
 
-  // Restore session or initialize new test - BLOCKED when locked
+  // Restore session or initialize new test - BLOCKED when not paid
   const initializeTest = (forceNew: boolean = false) => {
-    // BLOCK test initialization when locked
-    if (isLocked) {
+    // BLOCK test initialization when not paid
+    if (!isPaid) {
       setMockQuestions([]);
       setCurrentIndex(0);
       setSelectedOptionIndex(null);
@@ -298,13 +297,13 @@ export default function MockTestPage() {
     });
   };
 
-  // Initialize on mount - only if not locked
+  // Initialize on mount - only if paid
   useEffect(() => {
-    if (!isLocked && !accessLoading && user) {
+    if (isPaid && !accessLoading && user) {
       initializeTest();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLocked, accessLoading, user]);
+  }, [isPaid, accessLoading, user]);
 
   // Save session whenever state changes
   useEffect(() => {
@@ -330,10 +329,10 @@ export default function MockTestPage() {
     }
   }, [currentIndex, answers]);
 
-  // Handle option click - BLOCKED when locked
+  // Handle option click - BLOCKED when not paid
   const handleOptionClick = (optionIndex: number) => {
-    // Block all interactions when locked
-    if (isLocked) return;
+    // Block all interactions when not paid
+    if (!isPaid) return;
     if (isFinished) return;
 
     const currentQuestion = mockQuestions[currentIndex];
@@ -420,25 +419,8 @@ export default function MockTestPage() {
     );
   }
 
-  // Block page if user is locked - show paywall overlay
-  if (isLocked) {
-    return (
-      <>
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
-          <div className="max-w-5xl mx-auto px-4 py-6">
-            <div className="text-center text-slate-600 font-medium">Mock Test is locked</div>
-          </div>
-        </div>
-        <PaywallModal
-          isOpen={true}
-          onClose={() => {}}
-          freeQuestionsUsed={freeUsed}
-        />
-      </>
-    );
-  }
-
-  // Block page if user is not paid (trial users can't access mock test)
+  // Block page if user is not paid - access_level === 'paid' is the ONLY gate
+  // Mock Test is locked for free users; only paid users can access
   if (!isPaid) {
     return (
       <>
