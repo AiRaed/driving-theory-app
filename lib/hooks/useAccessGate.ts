@@ -23,9 +23,12 @@ export function useAccessGate(): AccessGate {
   const [error, setError] = useState<string | null>(null);
   const supabase = createClient();
 
-  const fetchAccess = async () => {
+  const fetchAccess = async (silent: boolean = false) => {
     try {
-      setLoading(true);
+      // Only show loading state if not silent (for initial load)
+      if (!silent) {
+        setLoading(true);
+      }
       setError(null);
 
       const response = await fetch('/api/practice/check-access');
@@ -54,7 +57,9 @@ export function useAccessGate(): AccessGate {
       // Default to locked on error to be safe
       setStatus('locked');
     } finally {
-      setLoading(false);
+      if (!silent) {
+        setLoading(false);
+      }
     }
   };
 
@@ -69,7 +74,7 @@ export function useAccessGate(): AccessGate {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event, session) => {
       if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'TOKEN_REFRESHED') {
-        fetchAccess();
+        fetchAccess(false); // Show loading on auth changes
       }
     });
 
@@ -82,12 +87,12 @@ export function useAccessGate(): AccessGate {
   // Re-check access when window regains focus (e.g., returning from Stripe checkout)
   useEffect(() => {
     const handleFocus = () => {
-      fetchAccess();
+      fetchAccess(true); // Silent refetch on focus
     };
 
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
-        fetchAccess();
+        fetchAccess(true); // Silent refetch on visibility change
       }
     };
 
@@ -107,7 +112,7 @@ export function useAccessGate(): AccessGate {
     trialLimit: TRIAL_LIMIT,
     loading,
     error,
-    refetch: fetchAccess,
+    refetch: () => fetchAccess(true), // Silent refetch to avoid loading screen
   };
 }
 

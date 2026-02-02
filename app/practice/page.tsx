@@ -269,33 +269,39 @@ export default function PracticePage() {
   };
 
   // Handle answer selection - BLOCK if locked
-  const handleAnswerClick = async (index: number) => {
+  const handleAnswerClick = (index: number) => {
     // Block all interactions when locked
     if (isLocked) return;
     
     if (selectedAnswerIndex !== null) return; // Prevent re-selection
     if (!currentQuestion) return;
     
+    // Immediately update UI state (optimistic update)
     setSelectedAnswerIndex(index);
     
-    // Only increment if user is in trial and hasn't answered this question yet
+    // Fire-and-forget async save (don't block UI)
     if (isTrial && !answeredQuestionIds.has(currentQuestion.id)) {
-      try {
-        const response = await fetch('/api/practice/increment-usage', {
-          method: 'POST',
-        });
-        
-        if (response.ok) {
-          const data = await response.json();
-          // Update local state
-          setAnsweredQuestionIds(prev => new Set([...Array.from(prev), currentQuestion.id]));
+      // Update local state optimistically
+      setAnsweredQuestionIds(prev => new Set([...Array.from(prev), currentQuestion.id]));
+      
+      // Save progress asynchronously without blocking
+      (async () => {
+        try {
+          const response = await fetch('/api/practice/increment-usage', {
+            method: 'POST',
+          });
           
-          // Refetch access to get updated count
-          await refetchAccess();
+          if (response.ok) {
+            // Refetch access in background silently (fire-and-forget, don't await)
+            // This won't trigger loading screen since refetch is silent
+            refetchAccess().catch(err => {
+              console.error('Error refetching access:', err);
+            });
+          }
+        } catch (error) {
+          console.error('Error incrementing usage:', error);
         }
-      } catch (error) {
-        console.error('Error incrementing usage:', error);
-      }
+      })();
     }
   };
 
