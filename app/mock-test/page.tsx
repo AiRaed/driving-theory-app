@@ -322,6 +322,14 @@ export default function MockTestPage() {
     }
   }, [mockQuestions, answers, currentIndex, isFinished]);
 
+  // Reset selected option when question changes (if no saved answer exists)
+  useEffect(() => {
+    const currentAnswer = answers[currentIndex];
+    if (currentAnswer === undefined) {
+      setSelectedOptionIndex(null);
+    }
+  }, [currentIndex, answers]);
+
   // Handle option click - BLOCKED when locked
   const handleOptionClick = (optionIndex: number) => {
     // Block all interactions when locked
@@ -360,7 +368,10 @@ export default function MockTestPage() {
   };
 
   const handleNext = () => {
-    if (currentIndex < mockQuestions.length - 1 && isAnswered) {
+    // Block navigation when no answer is selected
+    if (!isAnswered) return;
+    
+    if (currentIndex < mockQuestions.length - 1) {
       const newIndex = currentIndex + 1;
       setCurrentIndex(newIndex);
       // Restore next answer state if exists
@@ -370,6 +381,8 @@ export default function MockTestPage() {
   };
 
   const handleFinish = () => {
+    // Block finish when no answer is selected
+    if (!isAnswered) return;
     setIsFinished(true);
   };
 
@@ -917,7 +930,14 @@ export default function MockTestPage() {
               Restart
             </button>
             <button
-              onClick={currentIndex === mockQuestions.length - 1 ? handleFinish : handleNext}
+              onClick={() => {
+                if (!isAnswered) return;
+                if (currentIndex === mockQuestions.length - 1) {
+                  handleFinish();
+                } else {
+                  handleNext();
+                }
+              }}
               disabled={!isAnswered}
               className={cn(
                 "h-12 w-full rounded-xl text-sm font-medium transition-all duration-200",

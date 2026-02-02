@@ -318,6 +318,8 @@ export default function PracticePage() {
   const handleNext = () => {
     // Block navigation when locked
     if (isLocked) return;
+    // Block navigation when no answer is selected
+    if (selectedAnswerIndex === null) return;
     
     if (currentQuestionIndex < topicQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -338,6 +340,12 @@ export default function PracticePage() {
   useEffect(() => {
     setImageError(false);
   }, [currentQuestionIndex, currentQuestion?.id]);
+
+  // Reset selected answer when question changes
+  useEffect(() => {
+    setSelectedAnswerIndex(null);
+    setSelectedKeywordIndex(null);
+  }, [currentQuestion?.id]);
 
   // Handle image load error
   const handleImageError = () => {
@@ -974,10 +982,10 @@ export default function PracticePage() {
               </div>
               <button
                 onClick={handleNext}
-                disabled={currentQuestionIndex === topicQuestions.length - 1}
-                  className={cn(
+                disabled={currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null}
+                className={cn(
                   "px-6 py-3 rounded-xl text-sm bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98] font-semibold",
-                  currentQuestionIndex === topicQuestions.length - 1 && "opacity-50 cursor-not-allowed hover:translate-y-0"
+                  (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null) && "opacity-50 cursor-not-allowed hover:translate-y-0"
                 )}
               >
                 Next →
