@@ -4,6 +4,7 @@ import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { questions } from '@/data/questions';
+import { useAccessStore } from '@/lib/stores/accessStore';
 
 interface PaywallModalProps {
   isOpen: boolean;
@@ -14,48 +15,10 @@ interface PaywallModalProps {
 export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: PaywallModalProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [paid, setPaid] = useState<boolean | null>(null);
-  const [checkingPaid, setCheckingPaid] = useState(true);
   const router = useRouter();
-
-  // Check paid status before showing paywall - SINGLE SOURCE OF TRUTH
-  useEffect(() => {
-    const checkPaidStatus = async () => {
-      try {
-        setCheckingPaid(true);
-        const response = await fetch('/api/access/status', {
-          cache: 'no-store',
-          headers: {
-            'Cache-Control': 'no-cache',
-          },
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          const isPaid = data.paid === true && data.accessLevel === 'paid';
-          setPaid(isPaid);
-          
-          // If paid, don't show paywall and close modal
-          if (isPaid && onClose) {
-            onClose();
-          }
-        } else {
-          // On error, assume not paid (show paywall)
-          setPaid(false);
-        }
-      } catch (err) {
-        console.error('Error checking paid status:', err);
-        // On error, assume not paid (show paywall)
-        setPaid(false);
-      } finally {
-        setCheckingPaid(false);
-      }
-    };
-
-    if (isOpen) {
-      checkPaidStatus();
-    }
-  }, [isOpen, onClose]);
+  
+  // Get paid status from global store - SINGLE SOURCE OF TRUTH
+  const paid = useAccessStore((state) => state.paid);
 
   // Compute topic count from questions data (reliable source of truth)
   const topicCount = useMemo(() => {
@@ -114,38 +77,16 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
   // Don't show paywall if paid=true (SINGLE SOURCE OF TRUTH)
   if (!isOpen || paid === true) return null;
 
-  // Show loading state while checking paid status
-  if (checkingPaid) {
-    return (
-      <div className="fixed inset-0 bg-black/70 z-[9999] flex items-center justify-center">
-        <div className="text-white">Checking access...</div>
-      </div>
-    );
-  }
-
   const handleCheckout = async () => {
-    // Double-check paid status before calling checkout
-    try {
-      const response = await fetch('/api/access/status', {
-        cache: 'no-store',
-        headers: {
-          'Cache-Control': 'no-cache',
-        },
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        if (data.paid === true && data.accessLevel === 'paid') {
-          // User is already paid, don't call checkout
-          setError('User already has paid access');
-          if (onClose) {
-            onClose();
-          }
-          return;
-        }
+    // Double-check paid status from store before calling checkout
+    const currentPaid = useAccessStore.getState().paid;
+    if (currentPaid) {
+      // User is already paid, don't call checkout
+      setError('User already has paid access');
+      if (onClose) {
+        onClose();
       }
-    } catch (err) {
-      console.error('Error checking paid status before checkout:', err);
+      return;
     }
     setLoading(true);
     setError(null);

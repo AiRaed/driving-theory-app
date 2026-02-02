@@ -8,7 +8,7 @@ import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import DisclaimerModal from '@/components/DisclaimerModal';
 import PaywallModal from '@/components/PaywallModal';
-import { useAccessGate } from '@/lib/hooks/useAccessGate';
+import { useAccess } from '@/lib/hooks/useAccess';
 import { 
   TranslationLang, 
   getTranslationLang, 
@@ -75,13 +75,13 @@ export default function PracticePage() {
   const [isMounted, setIsMounted] = useState(false);
   const [answeredQuestionIds, setAnsweredQuestionIds] = useState<Set<string>>(new Set());
   
-  // Get user access status using AccessGate
-  const { status, freeUsed, loading: accessLoading, refetch: refetchAccess } = useAccessGate();
+  // Get user access status from global store
+  const { paid, freeUsed, loading: accessLoading } = useAccess();
   
   // Determine access status - access_level === 'paid' is the ONLY gate
-  const isPaid = status === 'paid';
-  const isLocked = status === 'locked' && !isPaid; // Only locked if not paid
-  const isTrial = status === 'trial';
+  const isPaid = paid;
+  const isLocked = !isPaid && freeUsed >= 15; // Locked if not paid AND free questions used >= 15
+  const isTrial = !isPaid && freeUsed < 15;
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -292,11 +292,8 @@ export default function PracticePage() {
           });
           
           if (response.ok) {
-            // Refetch access in background silently (fire-and-forget, don't await)
-            // This won't trigger loading screen since refetch is silent
-            refetchAccess().catch(err => {
-              console.error('Error refetching access:', err);
-            });
+            // Access store will auto-update via throttle mechanism
+            // No need to manually refetch - store handles it
           }
         } catch (error) {
           console.error('Error incrementing usage:', error);
@@ -379,14 +376,8 @@ export default function PracticePage() {
     }
   }, [isLocked]);
 
-  // Show loading state while checking access
-  if (accessLoading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 flex items-center justify-center">
-        <div className="text-center text-slate-600 font-medium">Loading...</div>
-      </div>
-    );
-  }
+  // No loading spinner - access store handles loading internally
+  // Page renders immediately, paywall shows when needed
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
@@ -999,9 +990,9 @@ export default function PracticePage() {
         )}
       </div>
       
-      {/* Paywall Overlay - Only show if locked AND not paid */}
-      {/* If paid=true (access_level === 'paid'), never render paywall */}
-      {isLocked && !isPaid && (
+      {/* Global Paywall Modal - Show when locked (not paid AND freeUsed >= 15) */}
+      {/* If paid=true, never render paywall */}
+      {isLocked && (
         <PaywallModal
           isOpen={true}
           onClose={() => {}} // Non-dismissible

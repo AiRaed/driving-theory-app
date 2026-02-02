@@ -6,16 +6,14 @@ import { usePathname, useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { User } from '@supabase/supabase-js';
 import { useAccess } from '@/lib/hooks/useAccess';
-import MockTestLockedModal from '@/components/MockTestLockedModal';
 
 export default function Navigation() {
   const pathname = usePathname();
   const router = useRouter();
   const supabase = createClient();
-  const { isPaid, loading: accessLoading, refreshProfile } = useAccess();
+  const { paid } = useAccess();
   const [user, setUser] = useState<User | null>(null);
   const [loggingOut, setLoggingOut] = useState(false);
-  const [showMockTestLockedModal, setShowMockTestLockedModal] = useState(false);
 
   useEffect(() => {
     // Check initial user session
@@ -50,49 +48,6 @@ export default function Navigation() {
     }
   };
 
-  const handleMockTestClick = async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    // If user is logged in, check paid status before blocking
-    if (user && !accessLoading) {
-      // Force refresh access status before checking (critical after payment)
-      // This ensures Mock Test unlocks immediately after payment
-      await refreshProfile();
-      
-      // Check paid status directly via API for immediate update
-      try {
-        const statusResponse = await fetch('/api/access/status', {
-          cache: 'no-store',
-          headers: {
-            'Cache-Control': 'no-cache',
-          },
-        });
-        
-        if (statusResponse.ok) {
-          const statusData = await statusResponse.json();
-          const isPaidNow = statusData.paid === true && statusData.accessLevel === 'paid';
-          
-          // If not paid, show locked modal
-          if (!isPaidNow) {
-            e.preventDefault();
-            setShowMockTestLockedModal(true);
-          }
-          // If paid, allow navigation (don't prevent default)
-        } else {
-          // On error, check hook state
-          if (!isPaid) {
-            e.preventDefault();
-            setShowMockTestLockedModal(true);
-          }
-        }
-      } catch (err) {
-        console.error('[Navigation] Error checking access status:', err);
-        // On error, check hook state
-        if (!isPaid) {
-          e.preventDefault();
-          setShowMockTestLockedModal(true);
-        }
-      }
-    }
-  };
 
   return (
     <nav className="flex gap-1.5 md:gap-2 text-xs md:text-sm items-center flex-nowrap overflow-x-auto hide-scrollbar">
@@ -113,7 +68,6 @@ export default function Navigation() {
       <Link
         href="/mock-test"
         prefetch={true}
-        onClick={handleMockTestClick}
         data-active={pathname === '/mock-test'}
         className="px-3 py-1.5 md:px-4 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 text-[var(--navy)]/70 hover:text-[var(--navy)] relative data-[active=true]:text-[var(--navy)] data-[active=true]:bg-white/80 whitespace-nowrap flex-shrink-0"
       >
@@ -134,10 +88,6 @@ export default function Navigation() {
           {loggingOut ? 'Logging out...' : 'Log out'}
         </button>
       )}
-      <MockTestLockedModal
-        isOpen={showMockTestLockedModal}
-        onClose={() => setShowMockTestLockedModal(false)}
-      />
     </nav>
   );
 }

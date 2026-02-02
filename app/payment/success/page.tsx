@@ -3,14 +3,14 @@
 import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { useAccessGate } from '@/lib/hooks/useAccessGate';
+import { useAccessStore } from '@/lib/stores/accessStore';
 
 export const dynamic = 'force-dynamic';
 
 function PaymentSuccessContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { refetch: refetchAccess } = useAccessGate();
+  const refresh = useAccessStore((state) => state.refresh);
   const [verifying, setVerifying] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -39,37 +39,19 @@ function PaymentSuccessContent() {
           throw new Error(data.error || 'Payment verification failed');
         }
 
-        // Refresh access status to get updated access_level (single source of truth)
-        // Use /api/access/status directly for immediate update
-        try {
-          const statusResponse = await fetch('/api/access/status', {
-            cache: 'no-store',
-            headers: {
-              'Cache-Control': 'no-cache',
-            },
-          });
-          
-          if (statusResponse.ok) {
-            const statusData = await statusResponse.json();
-            console.log('[Payment Success] Access status after payment:', statusData);
-          }
-        } catch (err) {
-          console.error('[Payment Success] Error checking access status:', err);
-        }
+        // Refresh access store to get updated paid status
+        console.log('[Payment Success] Refreshing access store...');
+        await refresh();
         
-        // Also refetch via hook
-        await refetchAccess();
-        
-        // Force re-check by refreshing router to ensure all components get updated access_level
-        router.refresh();
+        // Get updated state
+        const { paid } = useAccessStore.getState();
+        console.log('[Payment Success] Access refreshed, paid:', paid);
 
-        // Success - redirect to dashboard after a short delay
-        // Give time for access status to update in all components
+        // Success - redirect to requested page (or dashboard)
+        // Access store is now updated, all components will see paid=true
         setTimeout(() => {
-          // Force refresh before redirect to ensure all pages get updated access
-          router.refresh();
           router.push('/dashboard');
-        }, 1500);
+        }, 1000);
       } catch (err) {
         console.error('Payment verification error:', err);
         setError(err instanceof Error ? err.message : 'Payment verification failed');
@@ -78,7 +60,7 @@ function PaymentSuccessContent() {
     };
 
     verifyPayment();
-  }, [searchParams, router, refetchAccess]);
+  }, [searchParams, router, refresh]);
 
   if (verifying) {
     return (

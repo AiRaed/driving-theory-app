@@ -3,6 +3,7 @@ import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
 import Link from "next/link";
 import HeaderClient from "@/components/HeaderClient";
 import Analytics from "@/components/Analytics";
+import AccessProvider from "@/components/AccessProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -39,11 +40,12 @@ export default function RootLayout({
         className={`${inter.variable} ${ibmPlexSansArabic.variable} font-sans antialiased min-h-screen`}
       >
         <Analytics />
-        <div className="min-h-screen flex flex-col bg-[var(--bg)]">
-          <HeaderClient />
-          <main className="flex-1 relative z-10">
-            {children}
-          </main>
+        <AccessProvider>
+          <div className="min-h-screen flex flex-col bg-[var(--bg)]">
+            <HeaderClient />
+            <main className="flex-1 relative z-10">
+              {children}
+            </main>
           <footer className="border-t border-[var(--border)]/50 bg-white/80 backdrop-blur-sm">
             <div className="max-w-5xl mx-auto px-4 py-4">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-3">
@@ -68,7 +70,8 @@ export default function RootLayout({
               </div>
             </div>
           </footer>
-        </div>
+          </div>
+        </AccessProvider>
       </body>
     </html>
   );

@@ -8,9 +8,8 @@ import { cn } from "@/lib/utils";
 import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
 import DisclaimerModal from "@/components/DisclaimerModal";
-import MockTestLockedModal from "@/components/MockTestLockedModal";
 import PaywallModal from "@/components/PaywallModal";
-import { useAccessGate } from "@/lib/hooks/useAccessGate";
+import { useAccess } from "@/lib/hooks/useAccess";
 import { createClient } from "@/lib/supabase/client";
 import { 
   TranslationLang, 
@@ -61,11 +60,11 @@ const QUESTION_COUNT = 50;
 export default function MockTestPage() {
   const router = useRouter();
   const supabase = createClient();
-  const { status, freeUsed, loading: accessLoading, refetch: refetchAccess } = useAccessGate();
+  const { paid, freeUsed, loading: accessLoading } = useAccess();
   const [user, setUser] = useState<any>(null);
   
   // Determine access status - access_level === 'paid' is the ONLY gate
-  const isPaid = status === 'paid';
+  const isPaid = paid;
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(null);
@@ -74,7 +73,7 @@ export default function MockTestPage() {
   const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
   const [isMounted, setIsMounted] = useState(false);
 
-  // Check authentication and access level
+  // Check authentication
   useEffect(() => {
     const checkAuth = async () => {
       const { data: { user } } = await supabase.auth.getUser();
@@ -84,32 +83,10 @@ export default function MockTestPage() {
         router.push('/auth');
         return;
       }
-      
-      // Force refetch access status on mount to ensure we have latest paid status
-      // This is critical after payment to unlock Mock Test immediately
-      // Use direct API call for immediate update, then refetch via hook
-      try {
-        const statusResponse = await fetch('/api/access/status', {
-          cache: 'no-store',
-          headers: {
-            'Cache-Control': 'no-cache',
-          },
-        });
-        
-        if (statusResponse.ok) {
-          const statusData = await statusResponse.json();
-          console.log('[Mock Test] Access status on mount:', statusData);
-        }
-      } catch (err) {
-        console.error('[Mock Test] Error checking access status:', err);
-      }
-      
-      // Also refetch via hook to update state
-      await refetchAccess();
     };
     
     checkAuth();
-  }, [router, supabase, refetchAccess]);
+  }, [router, supabase]);
 
   // Clear mock test state when not paid (free users can't access mock test)
   useEffect(() => {
@@ -319,19 +296,6 @@ export default function MockTestPage() {
     });
   };
 
-  // Initialize on mount - only if paid
-  // Also refetch access status on mount to ensure we have latest paid status after payment
-  useEffect(() => {
-    // Force refetch on mount to get latest paid status (critical after payment)
-    if (user && !accessLoading) {
-      refetchAccess().then(() => {
-        // After refetch, check if paid and initialize test
-        // This ensures Mock Test unlocks immediately after payment
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
-
   // Initialize test when paid status is confirmed
   useEffect(() => {
     if (isPaid && !accessLoading && user) {
@@ -443,8 +407,8 @@ export default function MockTestPage() {
     }))
     .filter((item) => item.answer && !item.answer.correct);
 
-  // Show loading state while checking access
-  if (accessLoading || !user) {
+  // Show minimal loading only for initial auth check
+  if (!user) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         <div className="max-w-5xl mx-auto px-4 py-6">
@@ -454,28 +418,9 @@ export default function MockTestPage() {
     );
   }
 
-  // Block page if user is not paid - access_level === 'paid' is the ONLY gate
-  // Mock Test is locked for free users; only paid users can access
-  // IMPORTANT: After payment, this check ensures Mock Test unlocks immediately
-  if (!isPaid && !accessLoading) {
-    return (
-      <>
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
-          <div className="max-w-5xl mx-auto px-4 py-6">
-            <div className="text-center text-slate-600 font-medium">Mock Test requires paid access</div>
-          </div>
-        </div>
-        <MockTestLockedModal
-          isOpen={true}
-          onClose={async () => {
-            // Force refetch before closing to check if user paid
-            await refetchAccess();
-            router.push('/practice');
-          }}
-        />
-      </>
-    );
-  }
+  // Show paywall if not paid - Mock Test requires paid access
+  // Use same PaywallModal as Practice for consistency
+  const showPaywall = !isPaid && !accessLoading;
 
   // Show loading state for questions
   if (mockQuestions.length === 0) {
@@ -971,6 +916,15 @@ export default function MockTestPage() {
           </div>
         </div>
       </div>
+      
+      {/* Global Paywall Modal - same as Practice */}
+      {showPaywall && (
+        <PaywallModal
+          isOpen={true}
+          onClose={() => {}}
+          freeQuestionsUsed={freeUsed}
+        />
+      )}
     </div>
   );
 }
