@@ -79,6 +79,28 @@ export function useAccessGate(): AccessGate {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Re-check access when window regains focus (e.g., returning from Stripe checkout)
+  useEffect(() => {
+    const handleFocus = () => {
+      fetchAccess();
+    };
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        fetchAccess();
+      }
+    };
+
+    window.addEventListener('focus', handleFocus);
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      window.removeEventListener('focus', handleFocus);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return {
     status,
     freeUsed,

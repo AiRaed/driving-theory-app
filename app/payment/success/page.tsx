@@ -3,14 +3,14 @@
 import { useEffect, useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { useAccess } from '@/lib/hooks/useAccess';
+import { useAccessGate } from '@/lib/hooks/useAccessGate';
 
 export const dynamic = 'force-dynamic';
 
 function PaymentSuccessContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const { refreshProfile } = useAccess();
+  const { refetch: refetchAccess } = useAccessGate();
   const [verifying, setVerifying] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -39,8 +39,8 @@ function PaymentSuccessContent() {
           throw new Error(data.error || 'Payment verification failed');
         }
 
-        // Refresh profile to get updated access_level
-        await refreshProfile();
+        // Refresh access status to get updated access_level (single source of truth)
+        await refetchAccess();
 
         // Success - redirect to dashboard after a short delay
         setTimeout(() => {
