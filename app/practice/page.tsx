@@ -8,7 +8,7 @@ import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import DisclaimerModal from '@/components/DisclaimerModal';
 import PaywallModal from '@/components/PaywallModal';
-import { useUserAccess } from '@/lib/hooks/useUserAccess';
+import { useAccessGate } from '@/lib/hooks/useAccessGate';
 import { 
   TranslationLang, 
   getTranslationLang, 
@@ -73,11 +73,15 @@ export default function PracticePage() {
   const [selectedKeywordIndex, setSelectedKeywordIndex] = useState<number | null>(null);
   const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
   const [isMounted, setIsMounted] = useState(false);
-  const [showPaywall, setShowPaywall] = useState(false);
   const [answeredQuestionIds, setAnsweredQuestionIds] = useState<Set<string>>(new Set());
   
-  // Get user access status
-  const { access_level, free_questions_used, loading: accessLoading, refetch: refetchAccess } = useUserAccess();
+  // Get user access status using AccessGate
+  const { status, freeUsed, loading: accessLoading, refetch: refetchAccess } = useAccessGate();
+  
+  // Determine if user is locked
+  const isLocked = status === 'locked';
+  const isPaid = status === 'paid';
+  const isTrial = status === 'trial';
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -159,11 +163,13 @@ export default function PracticePage() {
   const totalQuestions = questions.length;
   const totalTopics = topics.length;
 
-  // Get questions for the selected topic
+  // Get questions for the selected topic - ONLY if user has access
   const topicQuestions = useMemo(() => {
+    // If locked, return empty array - don't fetch questions
+    if (isLocked) return [];
     if (!selectedTopic) return [];
     return questions.filter(q => q.topic === selectedTopic);
-  }, [selectedTopic]);
+  }, [selectedTopic, isLocked]);
 
   // Get current question
   const currentQuestion = topicQuestions[currentQuestionIndex] || null;
@@ -235,8 +241,11 @@ export default function PracticePage() {
     }
   }, [currentQuestionIndex, selectedTopic]);
 
-  // Handle topic selection
+  // Handle topic selection - BLOCK if locked
   const handleTopicSelect = (topic: string) => {
+    // Prevent topic selection when locked
+    if (isLocked) return;
+    
     setSelectedTopic(topic);
     // Index will be restored by useEffect
     setSelectedAnswerIndex(null);
@@ -259,21 +268,18 @@ export default function PracticePage() {
     }, 100);
   };
 
-  // Handle answer selection
+  // Handle answer selection - BLOCK if locked
   const handleAnswerClick = async (index: number) => {
+    // Block all interactions when locked
+    if (isLocked) return;
+    
     if (selectedAnswerIndex !== null) return; // Prevent re-selection
     if (!currentQuestion) return;
     
-    // Block answering if free user has reached limit
-    if (access_level === 'free' && free_questions_used >= 15) {
-      setShowPaywall(true);
-      return;
-    }
-    
     setSelectedAnswerIndex(index);
     
-    // Only increment if user is free and hasn't answered this question yet
-    if (access_level === 'free' && !answeredQuestionIds.has(currentQuestion.id)) {
+    // Only increment if user is in trial and hasn't answered this question yet
+    if (isTrial && !answeredQuestionIds.has(currentQuestion.id)) {
       try {
         const response = await fetch('/api/practice/increment-usage', {
           method: 'POST',
@@ -286,12 +292,6 @@ export default function PracticePage() {
           
           // Refetch access to get updated count
           await refetchAccess();
-          
-          // Check if user should see paywall (after 15 questions)
-          if (data.free_questions_used >= 15) {
-            // Show paywall when they try to continue (not immediately)
-            // The paywall will show when they click Next
-          }
         }
       } catch (error) {
         console.error('Error incrementing usage:', error);
@@ -310,11 +310,8 @@ export default function PracticePage() {
   };
 
   const handleNext = () => {
-    // Check if paywall should be shown (after 15 free questions, when trying to continue)
-    if (access_level === 'free' && free_questions_used >= 15 && selectedAnswerIndex !== null) {
-      setShowPaywall(true);
-      return;
-    }
+    // Block navigation when locked
+    if (isLocked) return;
     
     if (currentQuestionIndex < topicQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -345,18 +342,40 @@ export default function PracticePage() {
   const selectedOption = selectedAnswerIndex !== null ? shuffledOptions[selectedAnswerIndex] : null;
   const isCorrect = selectedOption?.correct === true;
 
-  // Handle paywall close - disabled (paywall is non-dismissible)
-  const handlePaywallClose = async () => {
-    // Paywall cannot be closed - user must proceed to payment
-    // This function is kept for compatibility but does nothing
-    return;
-  };
+  // Clear all question state when locked
+  useEffect(() => {
+    if (isLocked) {
+      // Clear all question-related state
+      setSelectedTopic('');
+      setCurrentQuestionIndex(0);
+      setSelectedAnswerIndex(null);
+      setSelectedKeywordIndex(null);
+      setAnsweredQuestionIds(new Set());
+      setShowTopicsGrid(true);
+      setShowHints(false);
+      
+      // Clear localStorage
+      if (typeof window !== 'undefined') {
+        try {
+          localStorage.removeItem('theory_last_index_v1');
+        } catch (e) {
+          console.error('Failed to clear localStorage:', e);
+        }
+      }
+    }
+  }, [isLocked]);
+
+  // Show loading state while checking access
+  if (accessLoading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 flex items-center justify-center">
+        <div className="text-center text-slate-600 font-medium">Loading...</div>
+      </div>
+    );
+  }
 
   return (
-    <div 
-      className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30"
-      style={{ pointerEvents: showPaywall ? 'none' : 'auto' }}
-    >
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
       <div className="max-w-5xl mx-auto px-4 py-6">
         {/* Compact Summary Row */}
         <div className="mb-4 flex flex-wrap items-center gap-3 justify-between">
@@ -506,13 +525,14 @@ export default function PracticePage() {
           </div>
         )}
 
-        {/* Topic Selection - Chips */}
+        {/* Topic Selection - Chips - DISABLED when locked */}
         <div 
           id="topics-grid"
           className={cn(
             "relative mb-8 transition-all duration-500 ease-out",
             // Hide on mobile when topic is selected
-            !showTopicsGrid && "hidden md:block"
+            !showTopicsGrid && "hidden md:block",
+            isLocked && "pointer-events-none opacity-50"
           )}>
           {/* Responsive grid: 2 cols on mobile (<=640px), 3 cols on sm, 5 cols on desktop */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:grid-rows-3">
@@ -524,6 +544,7 @@ export default function PracticePage() {
                 <button
                   key={topic}
                   onClick={() => handleTopicSelect(topic)}
+                  disabled={isLocked}
                   className={cn(
                     "rounded-xl border text-left transition-all duration-200 ease-in-out",
                     "hover:shadow-md active:scale-[0.97]",
@@ -532,6 +553,7 @@ export default function PracticePage() {
                     // Mobile: consistent min-height for alignment
                     "min-h-[64px] sm:min-h-[56px] md:min-h-[40px]",
                     "flex flex-col justify-center",
+                    isLocked && "cursor-not-allowed",
                     isActive
                       ? "border-red-700/30 bg-gradient-to-br from-red-600 to-red-700 text-white shadow-lg hover:shadow-xl hover:from-red-700 hover:to-red-800" 
                       : "bg-gradient-to-br from-red-50/50 via-white to-red-50/30 border-red-100/60 text-slate-800 hover:from-red-50/70 hover:via-white hover:to-red-50/40 hover:border-red-200/80 hover:shadow-md"
@@ -601,8 +623,8 @@ export default function PracticePage() {
         {/* Mobile Disclaimer Modal */}
         <DisclaimerModal showArabic={translationLang === 'ar'} />
 
-            {/* Question Display */}
-        {currentQuestion ? (
+            {/* Question Display - ONLY show if NOT locked */}
+        {isLocked ? null : currentQuestion ? (
           <div className="rounded-2xl border border-red-100/60 bg-gradient-to-br from-red-50/50 via-white to-red-50/30 p-6 sm:p-7 mt-4 shadow-xl relative overflow-hidden backdrop-blur-sm">
             {/* Premium red top accent bar */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 via-red-600 to-red-700"></div>
@@ -963,12 +985,14 @@ export default function PracticePage() {
         )}
       </div>
       
-      {/* Paywall Modal */}
-      <PaywallModal
-        isOpen={showPaywall}
-        onClose={handlePaywallClose}
-        freeQuestionsUsed={free_questions_used}
-      />
+      {/* Paywall Overlay - ALWAYS visible when locked */}
+      {isLocked && (
+        <PaywallModal
+          isOpen={true}
+          onClose={() => {}} // Non-dismissible
+          freeQuestionsUsed={freeUsed}
+        />
+      )}
     </div>
   );
 }

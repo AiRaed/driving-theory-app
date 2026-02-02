@@ -15,12 +15,15 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
-  // Lock scroll and prevent interactions when modal is open
+  // Lock scroll and prevent ALL interactions when modal is open
   useEffect(() => {
     if (isOpen) {
       // Lock body scroll
       const originalOverflow = document.body.style.overflow;
+      const originalPosition = document.body.style.position;
       document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.width = '100%';
 
       // Prevent Escape key from closing
       const handleEscape = (e: KeyboardEvent) => {
@@ -30,11 +33,32 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
         }
       };
 
+      // Prevent all keyboard shortcuts
+      const handleKeyDown = (e: KeyboardEvent) => {
+        // Allow only Tab for accessibility, but prevent everything else
+        if (e.key !== 'Tab' && !(e.ctrlKey && e.key === 'c')) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      };
+
+      // Prevent right-click context menu
+      const handleContextMenu = (e: MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+      };
+
       window.addEventListener('keydown', handleEscape, { capture: true });
+      window.addEventListener('keydown', handleKeyDown, { capture: true });
+      window.addEventListener('contextmenu', handleContextMenu, { capture: true });
 
       return () => {
         document.body.style.overflow = originalOverflow;
+        document.body.style.position = originalPosition;
+        document.body.style.width = '';
         window.removeEventListener('keydown', handleEscape, { capture: true });
+        window.removeEventListener('keydown', handleKeyDown, { capture: true });
+        window.removeEventListener('contextmenu', handleContextMenu, { capture: true });
       };
     }
   }, [isOpen]);
@@ -73,21 +97,32 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
 
   return (
     <>
-      {/* Backdrop - non-clickable, blocks all interactions */}
+      {/* Full-screen backdrop - blocks ALL interactions */}
       <div
-        className="fixed inset-0 bg-black/50 z-50"
-        style={{ pointerEvents: 'auto' }}
+        className="fixed inset-0 bg-black/70 z-[9999]"
+        style={{ 
+          pointerEvents: 'auto',
+          touchAction: 'none',
+          userSelect: 'none',
+        }}
         onClick={(e) => {
           // Prevent closing on backdrop click
           e.preventDefault();
           e.stopPropagation();
         }}
+        onContextMenu={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        }}
       />
       
-      {/* Modal */}
+      {/* Modal - centered, blocks all interactions behind it */}
       <div 
-        className="fixed inset-0 z-50 flex items-center justify-center p-4"
-        style={{ pointerEvents: 'auto' }}
+        className="fixed inset-0 z-[10000] flex items-center justify-center p-4"
+        style={{ 
+          pointerEvents: 'auto',
+          touchAction: 'none',
+        }}
         onClick={(e) => {
           // Prevent clicks from propagating
           e.stopPropagation();
@@ -95,12 +130,18 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
       >
         <div 
           className="relative w-full max-w-md rounded-2xl border border-red-100/60 bg-gradient-to-br from-red-50/50 via-white to-red-50/30 shadow-2xl overflow-hidden"
-          style={{ pointerEvents: 'auto' }}
+          style={{ 
+            pointerEvents: 'auto',
+            touchAction: 'auto',
+          }}
           tabIndex={-1}
           onClick={(e) => {
             // Allow clicks inside modal
             e.stopPropagation();
           }}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="paywall-title"
         >
           {/* Premium red top accent bar */}
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 via-red-600 to-red-700"></div>
@@ -113,7 +154,7 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
             {/* Header */}
             <div className="text-center mb-6">
               <div className="text-4xl mb-3">🔒</div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-2">
+              <h2 id="paywall-title" className="text-2xl font-bold text-slate-900 mb-2">
                 Unlock Unlimited Practice
               </h2>
               <p className="text-sm text-slate-600">

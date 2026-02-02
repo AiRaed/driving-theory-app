@@ -9,7 +9,8 @@ import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
 import DisclaimerModal from "@/components/DisclaimerModal";
 import MockTestLockedModal from "@/components/MockTestLockedModal";
-import { useAccess } from "@/lib/hooks/useAccess";
+import PaywallModal from "@/components/PaywallModal";
+import { useAccessGate } from "@/lib/hooks/useAccessGate";
 import { createClient } from "@/lib/supabase/client";
 import { 
   TranslationLang, 
@@ -60,9 +61,12 @@ const QUESTION_COUNT = 50;
 export default function MockTestPage() {
   const router = useRouter();
   const supabase = createClient();
-  const { isPaid, loading: accessLoading, refreshProfile } = useAccess();
+  const { status, freeUsed, loading: accessLoading, refetch: refetchAccess } = useAccessGate();
   const [user, setUser] = useState<any>(null);
-  const [showLockedModal, setShowLockedModal] = useState(false);
+  
+  // Determine access status
+  const isLocked = status === 'locked';
+  const isPaid = status === 'paid';
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(null);
@@ -86,12 +90,20 @@ export default function MockTestPage() {
     checkAuth();
   }, [router, supabase]);
 
-  // Show modal when access is checked and user is not paid
+  // Clear mock test state when locked
   useEffect(() => {
-    if (!accessLoading && user && !isPaid) {
-      setShowLockedModal(true);
+    if (isLocked) {
+      // Clear all mock test state
+      setMockQuestions([]);
+      setCurrentIndex(0);
+      setSelectedOptionIndex(null);
+      setAnswers([]);
+      setIsFinished(false);
+      
+      // Clear localStorage session
+      clearSession();
     }
-  }, [accessLoading, user, isPaid]);
+  }, [isLocked]);
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -135,29 +147,14 @@ export default function MockTestPage() {
    * - Takes first 50 questions after shuffle (no duplicates guaranteed by slice)
    * - Shuffles options for each selected question
    * 
-   * Characteristics:
-   * ✅ Fresh questions on each attempt (new shuffle each time)
-   * ✅ No duplicates within same test (slice ensures unique selection)
-   * ⚠️ Questions drawn from ALL available categories (random distribution, not weighted)
-   * ⚠️ Distribution is random, not DVSA-style weighted
-   * ⚠️ No intelligent category filling if a category has insufficient questions
-   * 
-   * IMPORTANT:
-   * - This function is called ONLY when initializing a NEW test (forceNew=true or no saved session)
-   * - Session persistence ensures same questions are used if user returns to incomplete test
-   * - Questions array is imported from @/data/questions and contains ALL available questions
-   * - QUESTION_COUNT constant (50) matches DVSA mock test standard
-   * 
-   * Performance:
-   * - O(n log n) for sort, O(n) for slice and map
-   * - Efficient for typical question database sizes (< 1000 questions)
-   * 
-   * Stability:
-   * - Random shuffle ensures variety across test attempts
-   * - No hardcoded question IDs - fully dynamic
-   * - Works with any question database structure that matches Question interface
+   * IMPORTANT: This function is BLOCKED when user is locked
    */
   const generateMockQuestions = (): QuestionWithShuffled[] => {
+    // BLOCK question generation when locked
+    if (isLocked) {
+      return [];
+    }
+    
     // SAFEGUARD: Ensure questions array exists and is not empty
     if (!questions || questions.length === 0) {
       console.error('Mock Test: Questions array is empty or undefined');
@@ -234,8 +231,18 @@ export default function MockTestPage() {
     }
   };
 
-  // Restore session or initialize new test
+  // Restore session or initialize new test - BLOCKED when locked
   const initializeTest = (forceNew: boolean = false) => {
+    // BLOCK test initialization when locked
+    if (isLocked) {
+      setMockQuestions([]);
+      setCurrentIndex(0);
+      setSelectedOptionIndex(null);
+      setAnswers([]);
+      setIsFinished(false);
+      return;
+    }
+    
     if (forceNew) {
       clearSession();
     }
@@ -291,10 +298,13 @@ export default function MockTestPage() {
     });
   };
 
-  // Initialize on mount
+  // Initialize on mount - only if not locked
   useEffect(() => {
-    initializeTest();
-  }, []);
+    if (!isLocked && !accessLoading && user) {
+      initializeTest();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLocked, accessLoading, user]);
 
   // Save session whenever state changes
   useEffect(() => {
@@ -312,8 +322,10 @@ export default function MockTestPage() {
     }
   }, [mockQuestions, answers, currentIndex, isFinished]);
 
-  // Handle option click
+  // Handle option click - BLOCKED when locked
   const handleOptionClick = (optionIndex: number) => {
+    // Block all interactions when locked
+    if (isLocked) return;
     if (isFinished) return;
 
     const currentQuestion = mockQuestions[currentIndex];
@@ -384,7 +396,7 @@ export default function MockTestPage() {
     }))
     .filter((item) => item.answer && !item.answer.correct);
 
-  // Show loading state while checking access or loading questions
+  // Show loading state while checking access
   if (accessLoading || !user) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
@@ -395,8 +407,8 @@ export default function MockTestPage() {
     );
   }
 
-  // Block page if user is not paid - show modal instead
-  if (!isPaid) {
+  // Block page if user is locked - show paywall overlay
+  if (isLocked) {
     return (
       <>
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
@@ -404,11 +416,28 @@ export default function MockTestPage() {
             <div className="text-center text-slate-600 font-medium">Mock Test is locked</div>
           </div>
         </div>
+        <PaywallModal
+          isOpen={true}
+          onClose={() => {}}
+          freeQuestionsUsed={freeUsed}
+        />
+      </>
+    );
+  }
+
+  // Block page if user is not paid (trial users can't access mock test)
+  if (!isPaid) {
+    return (
+      <>
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+          <div className="max-w-5xl mx-auto px-4 py-6">
+            <div className="text-center text-slate-600 font-medium">Mock Test requires paid access</div>
+          </div>
+        </div>
         <MockTestLockedModal
-          isOpen={showLockedModal}
+          isOpen={true}
           onClose={async () => {
-            setShowLockedModal(false);
-            await refreshProfile();
+            await refetchAccess();
             router.push('/practice');
           }}
         />
