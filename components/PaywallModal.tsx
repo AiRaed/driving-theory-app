@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
@@ -14,6 +14,30 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+
+  // Lock scroll and prevent interactions when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      // Lock body scroll
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+
+      // Prevent Escape key from closing
+      const handleEscape = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+      };
+
+      window.addEventListener('keydown', handleEscape, { capture: true });
+
+      return () => {
+        document.body.style.overflow = originalOverflow;
+        window.removeEventListener('keydown', handleEscape, { capture: true });
+      };
+    }
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -49,33 +73,42 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
 
   return (
     <>
-      {/* Backdrop */}
+      {/* Backdrop - non-clickable, blocks all interactions */}
       <div
         className="fixed inset-0 bg-black/50 z-50"
-        onClick={onClose}
+        style={{ pointerEvents: 'auto' }}
+        onClick={(e) => {
+          // Prevent closing on backdrop click
+          e.preventDefault();
+          e.stopPropagation();
+        }}
       />
       
       {/* Modal */}
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-        <div className="relative w-full max-w-md rounded-2xl border border-red-100/60 bg-gradient-to-br from-red-50/50 via-white to-red-50/30 shadow-2xl overflow-hidden">
+      <div 
+        className="fixed inset-0 z-50 flex items-center justify-center p-4"
+        style={{ pointerEvents: 'auto' }}
+        onClick={(e) => {
+          // Prevent clicks from propagating
+          e.stopPropagation();
+        }}
+      >
+        <div 
+          className="relative w-full max-w-md rounded-2xl border border-red-100/60 bg-gradient-to-br from-red-50/50 via-white to-red-50/30 shadow-2xl overflow-hidden"
+          style={{ pointerEvents: 'auto' }}
+          tabIndex={-1}
+          onClick={(e) => {
+            // Allow clicks inside modal
+            e.stopPropagation();
+          }}
+        >
           {/* Premium red top accent bar */}
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 via-red-600 to-red-700"></div>
           {/* Teal secondary accent line */}
           <div className="absolute top-1.5 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-teal-300/40 to-transparent"></div>
 
           <div className="p-6 sm:p-8">
-            {/* Close button */}
-            {onClose && (
-              <button
-                onClick={onClose}
-                className="absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors"
-                aria-label="Close"
-              >
-                <svg className="w-5 h-5 text-slate-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            )}
+            {/* Close button removed - modal is non-dismissible */}
 
             {/* Header */}
             <div className="text-center mb-6">

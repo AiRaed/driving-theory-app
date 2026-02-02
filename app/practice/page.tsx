@@ -345,14 +345,18 @@ export default function PracticePage() {
   const selectedOption = selectedAnswerIndex !== null ? shuffledOptions[selectedAnswerIndex] : null;
   const isCorrect = selectedOption?.correct === true;
 
-  // Handle paywall close - refresh access status
+  // Handle paywall close - disabled (paywall is non-dismissible)
   const handlePaywallClose = async () => {
-    setShowPaywall(false);
-    await refetchAccess();
+    // Paywall cannot be closed - user must proceed to payment
+    // This function is kept for compatibility but does nothing
+    return;
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+    <div 
+      className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30"
+      style={{ pointerEvents: showPaywall ? 'none' : 'auto' }}
+    >
       <div className="max-w-5xl mx-auto px-4 py-6">
         {/* Compact Summary Row */}
         <div className="mb-4 flex flex-wrap items-center gap-3 justify-between">
