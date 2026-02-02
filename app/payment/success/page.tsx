@@ -64,9 +64,12 @@ function PaymentSuccessContent() {
         router.refresh();
 
         // Success - redirect to dashboard after a short delay
+        // Give time for access status to update in all components
         setTimeout(() => {
+          // Force refresh before redirect to ensure all pages get updated access
+          router.refresh();
           router.push('/dashboard');
-        }, 2000);
+        }, 1500);
       } catch (err) {
         console.error('Payment verification error:', err);
         setError(err instanceof Error ? err.message : 'Payment verification failed');

@@ -84,10 +84,32 @@ export default function MockTestPage() {
         router.push('/auth');
         return;
       }
+      
+      // Force refetch access status on mount to ensure we have latest paid status
+      // This is critical after payment to unlock Mock Test immediately
+      // Use direct API call for immediate update, then refetch via hook
+      try {
+        const statusResponse = await fetch('/api/access/status', {
+          cache: 'no-store',
+          headers: {
+            'Cache-Control': 'no-cache',
+          },
+        });
+        
+        if (statusResponse.ok) {
+          const statusData = await statusResponse.json();
+          console.log('[Mock Test] Access status on mount:', statusData);
+        }
+      } catch (err) {
+        console.error('[Mock Test] Error checking access status:', err);
+      }
+      
+      // Also refetch via hook to update state
+      await refetchAccess();
     };
     
     checkAuth();
-  }, [router, supabase]);
+  }, [router, supabase, refetchAccess]);
 
   // Clear mock test state when not paid (free users can't access mock test)
   useEffect(() => {
@@ -298,6 +320,19 @@ export default function MockTestPage() {
   };
 
   // Initialize on mount - only if paid
+  // Also refetch access status on mount to ensure we have latest paid status after payment
+  useEffect(() => {
+    // Force refetch on mount to get latest paid status (critical after payment)
+    if (user && !accessLoading) {
+      refetchAccess().then(() => {
+        // After refetch, check if paid and initialize test
+        // This ensures Mock Test unlocks immediately after payment
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user]);
+
+  // Initialize test when paid status is confirmed
   useEffect(() => {
     if (isPaid && !accessLoading && user) {
       initializeTest();
@@ -421,7 +456,8 @@ export default function MockTestPage() {
 
   // Block page if user is not paid - access_level === 'paid' is the ONLY gate
   // Mock Test is locked for free users; only paid users can access
-  if (!isPaid) {
+  // IMPORTANT: After payment, this check ensures Mock Test unlocks immediately
+  if (!isPaid && !accessLoading) {
     return (
       <>
         <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
@@ -432,6 +468,7 @@ export default function MockTestPage() {
         <MockTestLockedModal
           isOpen={true}
           onClose={async () => {
+            // Force refetch before closing to check if user paid
             await refetchAccess();
             router.push('/practice');
           }}
