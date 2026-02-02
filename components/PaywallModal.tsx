@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { questions } from '@/data/questions';
 
 interface PaywallModalProps {
   isOpen: boolean;
@@ -14,6 +15,12 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
+
+  // Compute topic count from questions data (reliable source of truth)
+  const topicCount = useMemo(() => {
+    const uniqueTopics = Array.from(new Set(questions.map(q => q.topic)));
+    return uniqueTopics.length;
+  }, []);
 
   // Lock scroll and prevent ALL interactions when modal is open
   useEffect(() => {
@@ -175,7 +182,7 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
                 <span className="text-green-600 text-xl">✓</span>
                 <div>
                   <div className="font-semibold text-slate-900">All Topics Included</div>
-                  <div className="text-sm text-slate-600">Practice across all 13 topics</div>
+                  <div className="text-sm text-slate-600">Practice across all {topicCount} topics</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
