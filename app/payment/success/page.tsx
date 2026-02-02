@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic';
 function PaymentSuccessContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const refresh = useAccessStore((state) => state.refresh);
+  const refresh = useAccessStore((state: { refresh: () => Promise<void> }) => state.refresh);
   const [verifying, setVerifying] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -47,11 +47,9 @@ function PaymentSuccessContent() {
         const { paid } = useAccessStore.getState();
         console.log('[Payment Success] Access refreshed, paid:', paid);
 
-        // Success - redirect to requested page (or dashboard)
+        // Success - redirect to dashboard (or mock-test if user wants)
         // Access store is now updated, all components will see paid=true
-        setTimeout(() => {
-          router.push('/dashboard');
-        }, 1000);
+        router.push('/dashboard');
       } catch (err) {
         console.error('Payment verification error:', err);
         setError(err instanceof Error ? err.message : 'Payment verification failed');

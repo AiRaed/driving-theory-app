@@ -12,7 +12,7 @@ interface AccessState {
 
 const THROTTLE_MS = 60000; // 60 seconds
 
-export const useAccessStore = create<AccessState>((set, get) => ({
+export const useAccessStore = create<AccessState>((set: (partial: Partial<AccessState> | ((state: AccessState) => Partial<AccessState>)) => void, get: () => AccessState) => ({
   loading: false,
   paid: false,
   freeUsed: 0,

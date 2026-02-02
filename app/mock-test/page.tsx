@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
 import DisclaimerModal from "@/components/DisclaimerModal";
-import PaywallModal from "@/components/PaywallModal";
+import PaywallOverlay from "@/components/PaywallOverlay";
 import { useAccess } from "@/lib/hooks/useAccess";
 import { createClient } from "@/lib/supabase/client";
 import { 
@@ -65,6 +65,9 @@ export default function MockTestPage() {
   
   // Determine access status - access_level === 'paid' is the ONLY gate
   const isPaid = paid;
+  // Show paywall immediately if not paid - Mock Test requires paid access
+  const showPaywall = !isPaid && !accessLoading;
+  
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(null);
@@ -88,9 +91,9 @@ export default function MockTestPage() {
     checkAuth();
   }, [router, supabase]);
 
-  // Clear mock test state when not paid (free users can't access mock test)
+  // Clear mock test state when paywall is shown
   useEffect(() => {
-    if (!isPaid) {
+    if (showPaywall) {
       // Clear all mock test state
       setMockQuestions([]);
       setCurrentIndex(0);
@@ -101,7 +104,7 @@ export default function MockTestPage() {
       // Clear localStorage session
       clearSession();
     }
-  }, [isPaid]);
+  }, [showPaywall]);
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -148,8 +151,8 @@ export default function MockTestPage() {
    * IMPORTANT: This function is BLOCKED when user is not paid
    */
   const generateMockQuestions = (): QuestionWithShuffled[] => {
-    // BLOCK question generation when not paid
-    if (!isPaid) {
+    // BLOCK question generation when paywall is shown
+    if (showPaywall) {
       return [];
     }
     
@@ -229,10 +232,10 @@ export default function MockTestPage() {
     }
   };
 
-  // Restore session or initialize new test - BLOCKED when not paid
+  // Restore session or initialize new test - BLOCKED when paywall is shown
   const initializeTest = (forceNew: boolean = false) => {
-    // BLOCK test initialization when not paid
-    if (!isPaid) {
+    // BLOCK test initialization when paywall is shown
+    if (showPaywall) {
       setMockQuestions([]);
       setCurrentIndex(0);
       setSelectedOptionIndex(null);
@@ -296,13 +299,13 @@ export default function MockTestPage() {
     });
   };
 
-  // Initialize test when paid status is confirmed
+  // Initialize test when paywall is not shown
   useEffect(() => {
-    if (isPaid && !accessLoading && user) {
+    if (!showPaywall && !accessLoading && user) {
       initializeTest();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isPaid, accessLoading, user]);
+  }, [showPaywall, accessLoading, user]);
 
   // Save session whenever state changes
   useEffect(() => {
@@ -328,10 +331,10 @@ export default function MockTestPage() {
     }
   }, [currentIndex, answers]);
 
-  // Handle option click - BLOCKED when not paid
+  // Handle option click - BLOCKED when paywall is shown
   const handleOptionClick = (optionIndex: number) => {
-    // Block all interactions when not paid
-    if (!isPaid) return;
+    // Block all interactions when paywall is shown
+    if (showPaywall) return;
     if (isFinished) return;
 
     const currentQuestion = mockQuestions[currentIndex];
@@ -418,9 +421,14 @@ export default function MockTestPage() {
     );
   }
 
-  // Show paywall if not paid - Mock Test requires paid access
-  // Use same PaywallModal as Practice for consistency
-  const showPaywall = !isPaid && !accessLoading;
+  // Don't show questions if paywall is shown - blocks viewing questions
+  if (showPaywall) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
+        <PaywallOverlay freeQuestionsUsed={freeUsed} />
+      </div>
+    );
+  }
 
   // Show loading state for questions
   if (mockQuestions.length === 0) {
@@ -917,14 +925,6 @@ export default function MockTestPage() {
         </div>
       </div>
       
-      {/* Global Paywall Modal - same as Practice */}
-      {showPaywall && (
-        <PaywallModal
-          isOpen={true}
-          onClose={() => {}}
-          freeQuestionsUsed={freeUsed}
-        />
-      )}
     </div>
   );
 }

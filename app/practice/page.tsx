@@ -7,7 +7,7 @@ import { questions } from '@/data/questions';
 import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import DisclaimerModal from '@/components/DisclaimerModal';
-import PaywallModal from '@/components/PaywallModal';
+import PaywallOverlay from '@/components/PaywallOverlay';
 import { useAccess } from '@/lib/hooks/useAccess';
 import { 
   TranslationLang, 
@@ -80,7 +80,8 @@ export default function PracticePage() {
   
   // Determine access status - access_level === 'paid' is the ONLY gate
   const isPaid = paid;
-  const isLocked = !isPaid && freeUsed >= 15; // Locked if not paid AND free questions used >= 15
+  // Show PaywallOverlay only when !paid && freeUsed >= 15
+  const showPaywall = !isPaid && freeUsed >= 15;
   const isTrial = !isPaid && freeUsed < 15;
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
@@ -165,11 +166,11 @@ export default function PracticePage() {
 
   // Get questions for the selected topic - ONLY if user has access
   const topicQuestions = useMemo(() => {
-    // If locked, return empty array - don't fetch questions
-    if (isLocked) return [];
+    // If paywall is shown, return empty array - don't show questions
+    if (showPaywall) return [];
     if (!selectedTopic) return [];
     return questions.filter(q => q.topic === selectedTopic);
-  }, [selectedTopic, isLocked]);
+  }, [selectedTopic, showPaywall]);
 
   // Get current question
   const currentQuestion = topicQuestions[currentQuestionIndex] || null;
@@ -241,10 +242,10 @@ export default function PracticePage() {
     }
   }, [currentQuestionIndex, selectedTopic]);
 
-  // Handle topic selection - BLOCK if locked
+  // Handle topic selection - BLOCK if paywall is shown
   const handleTopicSelect = (topic: string) => {
-    // Prevent topic selection when locked
-    if (isLocked) return;
+    // Prevent topic selection when paywall is shown
+    if (showPaywall) return;
     
     setSelectedTopic(topic);
     // Index will be restored by useEffect
@@ -268,10 +269,10 @@ export default function PracticePage() {
     }, 100);
   };
 
-  // Handle answer selection - BLOCK if locked
+  // Handle answer selection - BLOCK if paywall is shown
   const handleAnswerClick = (index: number) => {
-    // Block all interactions when locked
-    if (isLocked) return;
+    // Block all interactions when paywall is shown
+    if (showPaywall) return;
     
     if (selectedAnswerIndex !== null) return; // Prevent re-selection
     if (!currentQuestion) return;
@@ -313,8 +314,8 @@ export default function PracticePage() {
   };
 
   const handleNext = () => {
-    // Block navigation when locked
-    if (isLocked) return;
+    // Block navigation when paywall is shown
+    if (showPaywall) return;
     // Block navigation when no answer is selected
     if (selectedAnswerIndex === null) return;
     
@@ -353,9 +354,9 @@ export default function PracticePage() {
   const selectedOption = selectedAnswerIndex !== null ? shuffledOptions[selectedAnswerIndex] : null;
   const isCorrect = selectedOption?.correct === true;
 
-  // Clear all question state when locked
+  // Clear all question state when paywall is shown
   useEffect(() => {
-    if (isLocked) {
+    if (showPaywall) {
       // Clear all question-related state
       setSelectedTopic('');
       setCurrentQuestionIndex(0);
@@ -374,7 +375,7 @@ export default function PracticePage() {
         }
       }
     }
-  }, [isLocked]);
+  }, [showPaywall]);
 
   // No loading spinner - access store handles loading internally
   // Page renders immediately, paywall shows when needed
@@ -537,7 +538,7 @@ export default function PracticePage() {
             "relative mb-8 transition-all duration-500 ease-out",
             // Hide on mobile when topic is selected
             !showTopicsGrid && "hidden md:block",
-            isLocked && "pointer-events-none opacity-50"
+            showPaywall && "pointer-events-none opacity-50"
           )}>
           {/* Responsive grid: 2 cols on mobile (<=640px), 3 cols on sm, 5 cols on desktop */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:grid-rows-3">
@@ -549,7 +550,7 @@ export default function PracticePage() {
                 <button
                   key={topic}
                   onClick={() => handleTopicSelect(topic)}
-                  disabled={isLocked}
+                  disabled={showPaywall}
                   className={cn(
                     "rounded-xl border text-left transition-all duration-200 ease-in-out",
                     "hover:shadow-md active:scale-[0.97]",
@@ -558,7 +559,7 @@ export default function PracticePage() {
                     // Mobile: consistent min-height for alignment
                     "min-h-[64px] sm:min-h-[56px] md:min-h-[40px]",
                     "flex flex-col justify-center",
-                    isLocked && "cursor-not-allowed",
+                    showPaywall && "cursor-not-allowed",
                     isActive
                       ? "border-red-700/30 bg-gradient-to-br from-red-600 to-red-700 text-white shadow-lg hover:shadow-xl hover:from-red-700 hover:to-red-800" 
                       : "bg-gradient-to-br from-red-50/50 via-white to-red-50/30 border-red-100/60 text-slate-800 hover:from-red-50/70 hover:via-white hover:to-red-50/40 hover:border-red-200/80 hover:shadow-md"
@@ -628,8 +629,8 @@ export default function PracticePage() {
         {/* Mobile Disclaimer Modal */}
         <DisclaimerModal showArabic={translationLang === 'ar'} />
 
-            {/* Question Display - ONLY show if NOT locked */}
-        {isLocked ? null : currentQuestion ? (
+            {/* Question Display - ONLY show if paywall is NOT shown */}
+        {showPaywall ? null : currentQuestion ? (
           <div className="rounded-2xl border border-red-100/60 bg-gradient-to-br from-red-50/50 via-white to-red-50/30 p-6 sm:p-7 mt-4 shadow-xl relative overflow-hidden backdrop-blur-sm">
             {/* Premium red top accent bar */}
             <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 via-red-600 to-red-700"></div>
@@ -990,14 +991,10 @@ export default function PracticePage() {
         )}
       </div>
       
-      {/* Global Paywall Modal - Show when locked (not paid AND freeUsed >= 15) */}
-      {/* If paid=true, never render paywall */}
-      {isLocked && (
-        <PaywallModal
-          isOpen={true}
-          onClose={() => {}} // Non-dismissible
-          freeQuestionsUsed={freeUsed}
-        />
+      {/* PaywallOverlay - Show only when !paid && freeUsed >= 15 */}
+      {/* Blocks viewing questions, not just answering */}
+      {showPaywall && (
+        <PaywallOverlay freeQuestionsUsed={freeUsed} />
       )}
     </div>
   );

@@ -6,19 +6,17 @@ import { cn } from '@/lib/utils';
 import { questions } from '@/data/questions';
 import { useAccessStore } from '@/lib/stores/accessStore';
 
-interface PaywallModalProps {
-  isOpen: boolean;
-  onClose?: () => void;
+interface PaywallOverlayProps {
   freeQuestionsUsed: number;
 }
 
-export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: PaywallModalProps) {
+export default function PaywallOverlay({ freeQuestionsUsed }: PaywallOverlayProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const router = useRouter();
   
   // Get paid status from global store - SINGLE SOURCE OF TRUTH
-  const paid = useAccessStore((state) => state.paid);
+  const paid = useAccessStore((state: { paid: boolean }) => state.paid);
 
   // Compute topic count from questions data (reliable source of truth)
   const topicCount = useMemo(() => {
@@ -26,9 +24,8 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
     return uniqueTopics.length;
   }, []);
 
-  // Lock scroll and prevent ALL interactions when modal is open
+  // Lock scroll and prevent ALL interactions - overlay is always blocking when shown
   useEffect(() => {
-    if (isOpen) {
       // Lock body scroll
       const originalOverflow = document.body.style.overflow;
       const originalPosition = document.body.style.position;
@@ -70,12 +67,11 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
         window.removeEventListener('keydown', handleEscape, { capture: true });
         window.removeEventListener('keydown', handleKeyDown, { capture: true });
         window.removeEventListener('contextmenu', handleContextMenu, { capture: true });
-      };
-    }
-  }, [isOpen]);
+    };
+  }, []);
 
   // Don't show paywall if paid=true (SINGLE SOURCE OF TRUTH)
-  if (!isOpen || paid === true) return null;
+  if (paid === true) return null;
 
   const handleCheckout = async () => {
     // Double-check paid status from store before calling checkout
@@ -83,9 +79,6 @@ export default function PaywallModal({ isOpen, onClose, freeQuestionsUsed }: Pay
     if (currentPaid) {
       // User is already paid, don't call checkout
       setError('User already has paid access');
-      if (onClose) {
-        onClose();
-      }
       return;
     }
     setLoading(true);

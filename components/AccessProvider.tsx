@@ -5,7 +5,7 @@ import { createClient } from '@/lib/supabase/client';
 import { useAccessStore } from '@/lib/stores/accessStore';
 
 export default function AccessProvider({ children }: { children: React.ReactNode }) {
-  const initialize = useAccessStore((state) => state.initialize);
+  const initialize = useAccessStore((state: { initialize: () => Promise<void> }) => state.initialize);
   const supabase = createClient();
 
   useEffect(() => {
