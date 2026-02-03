@@ -5,16 +5,46 @@ import Stripe from 'stripe';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
-// Validate required environment variables
-const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
-if (!stripeSecretKey) {
-  console.error('Missing env: STRIPE_SECRET_KEY');
-}
-
-const stripe = stripeSecretKey ? new Stripe(stripeSecretKey) : null;
-
 export async function POST(request: NextRequest) {
   try {
+    const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+    const priceId = process.env.STRIPE_PRICE_ID_FULL_ACCESS;
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+
+    if (!stripeSecretKey) {
+      return NextResponse.json(
+        { error: 'Missing STRIPE_SECRET_KEY environment variable' },
+        { status: 500 }
+      );
+    }
+
+    if (!priceId) {
+      return NextResponse.json(
+        { error: 'Missing STRIPE_PRICE_ID_FULL_ACCESS environment variable' },
+        { status: 500 }
+      );
+    }
+
+    const isProd = process.env.NODE_ENV === 'production';
+
+    if (isProd && !siteUrl) {
+      return NextResponse.json(
+        { error: 'Missing NEXT_PUBLIC_SITE_URL environment variable in production' },
+        { status: 500 }
+      );
+    }
+
+    const baseUrl = isProd
+      ? siteUrl
+      : (siteUrl || 'http://localhost:3000');
+
+    if (!baseUrl) {
+      return NextResponse.json(
+        { error: 'Unable to determine site URL' },
+        { status: 500 }
+      );
+    }
+
     const supabase = await createClient();
     const {
       data: { user },
@@ -24,7 +54,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    // Check if user is already paid
     const { data: profile } = await supabase
       .from('profiles')
       .select('access_level')
@@ -38,25 +67,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate Stripe client
-    if (!stripe) {
-      return NextResponse.json(
-        { error: 'Missing env: STRIPE_SECRET_KEY' },
-        { status: 500 }
-      );
-    }
+    const stripe = new Stripe(stripeSecretKey);
 
-    const priceId = process.env.STRIPE_PRICE_ID_FULL_ACCESS;
-    if (!priceId) {
-      return NextResponse.json(
-        { error: 'Missing STRIPE_PRICE_ID_FULL_ACCESS' },
-        { status: 500 }
-      );
-    }
-
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
-    const successUrl = `${siteUrl}/payment/success?session_id={CHECKOUT_SESSION_ID}`;
-    const cancelUrl = `${siteUrl}/dashboard`;
+    const successUrl = `${baseUrl}/payment/success?session_id={CHECKOUT_SESSION_ID}`;
+    const cancelUrl = `${baseUrl}/dashboard`;
 
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
@@ -84,4 +98,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-
