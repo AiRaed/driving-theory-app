@@ -78,6 +78,21 @@ export default function PracticePage() {
   const [answeredQuestionIds, setAnsweredQuestionIds] = useState<Set<string>>(new Set());
   // Track which questions have already been counted to avoid double-counting
   const countedQuestionIds = useRef<Set<string>>(new Set());
+  
+  // Keep stable paywall state during refresh to prevent flicker
+  const stablePaid = useRef(false);
+  const stableTrialUsed = useRef(0);
+  const stableTrialLimit = useRef(15);
+  
+  // Update stable refs when values change (but keep previous during loading)
+  useEffect(() => {
+    if (!loading) {
+      // Only update stable refs when NOT loading (after fetch completes)
+      stablePaid.current = paid;
+      stableTrialUsed.current = trialUsed;
+      stableTrialLimit.current = trialLimit;
+    }
+  }, [loading, paid, trialUsed, trialLimit]);
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -296,7 +311,9 @@ export default function PracticePage() {
     // Increment usage on server ONLY when moving to next question (not on answer click)
     // This ensures we count each question only once
     // Only increment if not paid and question not already counted
-    if (!paid && currentQuestion && !countedQuestionIds.current.has(currentQuestion.id)) {
+    // Use stable paid value to prevent flicker during refresh
+    const currentPaid = loading ? stablePaid.current : paid;
+    if (!currentPaid && currentQuestion && !countedQuestionIds.current.has(currentQuestion.id)) {
       countedQuestionIds.current.add(currentQuestion.id);
       
       // Fire-and-forget: increment usage in background, don't block UI
@@ -350,18 +367,23 @@ export default function PracticePage() {
   const isCorrect = selectedOption?.correct === true;
 
   // Practice: allow 15 total answers across all topics before showing paywall
+  // Use stable values during refresh to prevent flicker
+  const displayPaid = loading ? stablePaid.current : paid;
+  const displayTrialUsed = loading ? stableTrialUsed.current : trialUsed;
+  const displayTrialLimit = loading ? stableTrialLimit.current : trialLimit;
+  
   // canAccessPractice = paid OR trialUsed < trialLimit
-  const canAccessPractice = paid || trialUsed < trialLimit;
+  const canAccessPractice = displayPaid || displayTrialUsed < displayTrialLimit;
   
   // PaywallOverlay must render ONLY when:
   // 1. paid === false
   // 2. AND trialUsed >= trialLimit (15)
-  // 3. AND loading === false
-  const showPaywall = !paid && trialUsed >= trialLimit && !loading;
+  // 3. AND loading === false (keep stable state during refresh)
+  const showPaywall = !displayPaid && displayTrialUsed >= displayTrialLimit && !loading;
 
   // IMPORTANT: Default UI state is LOCKED while loading (show PaywallOverlay)
   // Only unlock after confirmed paid=true
-  // But only show loading screen on initial load, not during silent refreshes
+  // But only show loading screen on initial load (when we have no data yet)
   if (loading && trialUsed === 0 && !paid) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
