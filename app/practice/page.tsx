@@ -304,10 +304,9 @@ export default function PracticePage() {
         method: 'POST',
       }).then(response => {
         if (response.ok) {
-          // Silent refresh paywall status from Supabase to get updated trialUsed
+          // Refresh paywall status from Supabase to get updated trialUsed
           // This ensures Web and Android stay in sync
-          // Silent refresh keeps previous stable state (no loading=true) to prevent flicker
-          refresh(true).catch(err => console.error('Error refreshing access:', err));
+          refresh().catch(err => console.error('Error refreshing access:', err));
         }
       }).catch(error => {
         console.error('Error incrementing usage:', error);
