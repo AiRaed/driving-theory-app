@@ -11,6 +11,9 @@ if (!stripeSecretKey) {
 
 const stripe = stripeSecretKey ? new Stripe(stripeSecretKey) : null;
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export async function POST(request: NextRequest) {
   try {
     // Validate Stripe client
@@ -71,11 +74,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const supabaseUrl = process.env.SUPABASE_URL;
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
     if (!supabaseUrl) {
-      console.error('Missing env: SUPABASE_URL');
+      console.error('Missing env: NEXT_PUBLIC_SUPABASE_URL');
       return NextResponse.json(
-        { error: 'Missing env: SUPABASE_URL' },
+        { error: 'Missing env: NEXT_PUBLIC_SUPABASE_URL' },
         { status: 400 }
       );
     }
@@ -93,6 +96,7 @@ export async function POST(request: NextRequest) {
       .update({
         access_level: 'paid',
         paid_at: new Date().toISOString(),
+        stripe_customer_id: session.customer as string || null,
       })
       .eq('id', user.id);
 
@@ -112,6 +116,7 @@ export async function POST(request: NextRequest) {
       .from('payments')
       .upsert({
         user_id: user.id,
+        provider: 'stripe',
         stripe_checkout_session_id: session_id,
         stripe_payment_intent_id: paymentIntent?.id || null,
         amount: amount,
@@ -127,7 +132,7 @@ export async function POST(request: NextRequest) {
       // The profile update is more important
     }
 
-    return NextResponse.json({ success: true });
+    return NextResponse.json({ ok: true });
   } catch (error) {
     console.error('Payment verification error:', error);
     return NextResponse.json(

@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
 import DisclaimerModal from "@/components/DisclaimerModal";
+import PaywallOverlay from "@/components/PaywallOverlay";
+import { useAccess } from "@/lib/providers/AccessProvider";
 import { createClient } from "@/lib/supabase/client";
 import { 
   TranslationLang, 
@@ -58,6 +60,7 @@ const QUESTION_COUNT = 50;
 export default function MockTestPage() {
   const router = useRouter();
   const supabase = createClient();
+  const { loading, paid } = useAccess();
   const [user, setUser] = useState<any>(null);
   
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
@@ -67,6 +70,9 @@ export default function MockTestPage() {
   const [isFinished, setIsFinished] = useState(false);
   const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
   const [isMounted, setIsMounted] = useState(false);
+  
+  // Mock Test is always locked for free users
+  const showPaywall = !paid;
 
   // Check authentication
   useEffect(() => {
@@ -369,12 +375,26 @@ export default function MockTestPage() {
     }))
     .filter((item) => item.answer && !item.answer.correct);
 
-  // Show minimal loading only for initial auth check
-  if (!user) {
+  // Show loading state
+  if (loading || !user) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         <div className="max-w-5xl mx-auto px-4 py-6">
           <div className="text-center text-slate-600 font-medium">Loading...</div>
+        </div>
+      </div>
+    );
+  }
+
+  // Mock Test is always locked for free users - show paywall immediately
+  if (showPaywall) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
+        <PaywallOverlay />
+        <div className="pointer-events-none blur-sm opacity-50">
+          <div className="max-w-5xl mx-auto px-4 py-6">
+            <div className="text-center text-slate-600 font-medium">Mock Test requires paid access</div>
+          </div>
         </div>
       </div>
     );

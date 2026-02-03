@@ -7,6 +7,8 @@ import { questions } from '@/data/questions';
 import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import DisclaimerModal from '@/components/DisclaimerModal';
+import PaywallOverlay from '@/components/PaywallOverlay';
+import { useAccess } from '@/lib/providers/AccessProvider';
 import { 
   TranslationLang, 
   getTranslationLang, 
@@ -65,6 +67,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export default function PracticePage() {
+  const { loading, paid, freeUsed, refresh } = useAccess();
   const [selectedTopic, setSelectedTopic] = useState<string>('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
@@ -253,17 +256,38 @@ export default function PracticePage() {
     }, 100);
   };
 
-  // Handle answer selection
-  const handleAnswerClick = (index: number) => {
+  // Handle answer selection - increment free_questions_used atomically
+  const handleAnswerClick = async (index: number) => {
     if (selectedAnswerIndex !== null) return; // Prevent re-selection
     if (!currentQuestion) return;
+    
+    // Check if already answered this question
+    if (answeredQuestionIds.has(currentQuestion.id)) {
+      setSelectedAnswerIndex(index);
+      return;
+    }
     
     // Immediately update UI state
     setSelectedAnswerIndex(index);
     
     // Update local state
-    if (!answeredQuestionIds.has(currentQuestion.id)) {
-      setAnsweredQuestionIds(prev => new Set([...Array.from(prev), currentQuestion.id]));
+    setAnsweredQuestionIds(prev => new Set([...Array.from(prev), currentQuestion.id]));
+    
+    // Increment free_questions_used atomically (only if not paid)
+    if (!paid) {
+      try {
+        const response = await fetch('/api/practice/increment-usage', {
+          method: 'POST',
+        });
+        
+        if (response.ok) {
+          const data = await response.json();
+          // Refresh access to get updated freeUsed count
+          await refresh();
+        }
+      } catch (error) {
+        console.error('Error incrementing usage:', error);
+      }
     }
   };
 
@@ -316,9 +340,29 @@ export default function PracticePage() {
   const selectedOption = selectedAnswerIndex !== null ? shuffledOptions[selectedAnswerIndex] : null;
   const isCorrect = selectedOption?.correct === true;
 
+  // Show paywall if not paid and free questions exhausted
+  const showPaywall = !paid && freeUsed >= 15;
+
+  // Show loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 flex items-center justify-center">
+        <div className="text-center text-slate-600 font-medium">Loading...</div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
+      {/* Paywall Overlay - blocks everything when locked */}
+      {showPaywall && <PaywallOverlay />}
+      
+      {/* Content - blurred and non-interactive when paywall is shown */}
+      <div
+        className={cn(
+          showPaywall && "pointer-events-none blur-sm opacity-50"
+        )}
+      >
       <div className="max-w-5xl mx-auto px-4 py-6">
         {/* Compact Summary Row */}
         <div className="mb-4 flex flex-wrap items-center gap-3 justify-between">
@@ -908,10 +952,10 @@ export default function PracticePage() {
               </div>
               <button
                 onClick={handleNext}
-                disabled={currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null}
+                disabled={currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall}
                 className={cn(
                   "px-6 py-3 rounded-xl text-sm bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98] font-semibold",
-                  (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null) && "opacity-50 cursor-not-allowed hover:translate-y-0"
+                  (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall) && "opacity-50 cursor-not-allowed hover:translate-y-0"
                 )}
               >
                 Next →
@@ -923,6 +967,7 @@ export default function PracticePage() {
             <p className="text-lg font-medium">Please select a topic to start practicing.</p>
           </div>
         )}
+      </div>
       </div>
     </div>
   );

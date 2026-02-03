@@ -3,7 +3,7 @@ import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
 import Link from "next/link";
 import HeaderClient from "@/components/HeaderClient";
 import Analytics from "@/components/Analytics";
-import AccessProvider from "@/components/AccessProvider";
+import { AccessProvider } from "@/lib/providers/AccessProvider";
 import "./globals.css";
 
 const inter = Inter({
