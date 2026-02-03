@@ -8,7 +8,7 @@ import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import DisclaimerModal from '@/components/DisclaimerModal';
 import PaywallOverlay from '@/components/PaywallOverlay';
-import { useAccess } from '@/lib/providers/AccessProvider';
+import { usePaywallStatus } from '@/lib/hooks/usePaywallStatus';
 import { 
   TranslationLang, 
   getTranslationLang, 
@@ -67,7 +67,8 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export default function PracticePage() {
-  const { loading, paid, free_questions_used, refresh } = useAccess();
+  // SINGLE SOURCE OF TRUTH: usePaywallStatus from /api/paywall/status
+  const { loading, paid, trialUsed, trialLimit, refresh } = usePaywallStatus();
   const [selectedTopic, setSelectedTopic] = useState<string>('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
@@ -275,7 +276,7 @@ export default function PracticePage() {
     // Update local state
     setAnsweredQuestionIds(prev => new Set([...Array.from(prev), currentQuestion.id]));
     
-    // NO optimistic update - free_questions_used comes from Supabase only
+    // NO optimistic update - trialUsed comes from Supabase only (via /api/paywall/status)
   };
 
   // Handle navigation
@@ -294,6 +295,7 @@ export default function PracticePage() {
     
     // Increment usage on server ONLY when moving to next question (not on answer click)
     // This ensures we count each question only once
+    // Only increment if not paid and question not already counted
     if (!paid && currentQuestion && !countedQuestionIds.current.has(currentQuestion.id)) {
       countedQuestionIds.current.add(currentQuestion.id);
       
@@ -302,7 +304,7 @@ export default function PracticePage() {
         method: 'POST',
       }).then(response => {
         if (response.ok) {
-          // Refresh access status from Supabase to get updated free_questions_used
+          // Refresh paywall status from Supabase to get updated trialUsed
           // This ensures Web and Android stay in sync
           refresh().catch(err => console.error('Error refreshing access:', err));
         }
@@ -346,13 +348,25 @@ export default function PracticePage() {
   const selectedOption = selectedAnswerIndex !== null ? shuffledOptions[selectedAnswerIndex] : null;
   const isCorrect = selectedOption?.correct === true;
 
-  // Show paywall if not paid and free questions exhausted
-  // free_questions_used comes from Supabase (single source of truth)
-  // canAccessPractice = is_paid OR free_questions_used < 15
-  const canAccessPractice = paid || free_questions_used < 15;
+  // Practice: allow 15 total answers across all topics before showing paywall
+  // canAccessPractice = paid OR trialUsed < trialLimit
+  const canAccessPractice = paid || trialUsed < trialLimit;
   const showPaywall = !canAccessPractice;
-  
-  // No full-page loading overlay - only show local button loading if needed
+
+  // IMPORTANT: Default UI state is LOCKED while loading (show PaywallOverlay)
+  // Only unlock after confirmed paid=true
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
+        <PaywallOverlay />
+        <div className="pointer-events-none blur-sm opacity-50">
+          <div className="max-w-5xl mx-auto px-4 py-6">
+            <div className="text-center text-slate-600 font-medium">Checking access...</div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">

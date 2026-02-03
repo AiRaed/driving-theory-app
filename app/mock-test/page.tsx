@@ -9,7 +9,7 @@ import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
 import DisclaimerModal from "@/components/DisclaimerModal";
 import PaywallOverlay from "@/components/PaywallOverlay";
-import { useAccess } from "@/lib/providers/AccessProvider";
+import { usePaywallStatus } from "@/lib/hooks/usePaywallStatus";
 import { createClient } from "@/lib/supabase/client";
 import { 
   TranslationLang, 
@@ -60,7 +60,8 @@ const QUESTION_COUNT = 50;
 export default function MockTestPage() {
   const router = useRouter();
   const supabase = createClient();
-  const { loading, paid } = useAccess();
+  // SINGLE SOURCE OF TRUTH: usePaywallStatus from /api/paywall/status
+  const { loading, paid } = usePaywallStatus();
   const [user, setUser] = useState<any>(null);
   
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
@@ -71,8 +72,7 @@ export default function MockTestPage() {
   const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
   const [isMounted, setIsMounted] = useState(false);
   
-  // Mock Test is always locked until is_paid=true
-  // canAccessMock = is_paid (mock test locked until payment)
+  // Mock Test: fully locked unless paid=true
   const canAccessMock = paid;
   const showPaywall = !canAccessMock;
 
@@ -389,16 +389,26 @@ export default function MockTestPage() {
     );
   }
 
-  // Mock Test is always locked for free users - show paywall immediately
-  if (showPaywall) {
+  // IMPORTANT: Default UI state is LOCKED while loading (show PaywallOverlay)
+  // Only unlock after confirmed paid=true
+  // Mock Test: fully locked unless paid=true
+  if (loading || showPaywall) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
         <PaywallOverlay />
-        <div className="pointer-events-none blur-sm opacity-50">
-          <div className="max-w-5xl mx-auto px-4 py-6">
-            <div className="text-center text-slate-600 font-medium">Mock Test requires paid access</div>
+        {loading ? (
+          <div className="pointer-events-none blur-sm opacity-50">
+            <div className="max-w-5xl mx-auto px-4 py-6">
+              <div className="text-center text-slate-600 font-medium">Checking access...</div>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="pointer-events-none blur-sm opacity-50">
+            <div className="max-w-5xl mx-auto px-4 py-6">
+              <div className="text-center text-slate-600 font-medium">Mock Test requires paid access</div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }
