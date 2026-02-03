@@ -6,7 +6,7 @@ interface AccessContextType {
   loading: boolean;
   paid: boolean;
   freeUsed: number;
-  refresh: () => Promise<void>;
+  refresh: (silent?: boolean) => Promise<void>;
 }
 
 const AccessContext = createContext<AccessContextType | undefined>(undefined);
@@ -16,9 +16,12 @@ export function AccessProvider({ children }: { children: ReactNode }) {
   const [paid, setPaid] = useState(false);
   const [freeUsed, setFreeUsed] = useState(0);
 
-  const refresh = async () => {
+  const refresh = async (silent: boolean = false) => {
     try {
-      setLoading(true);
+      // Only show loading on initial load, not on silent refreshes
+      if (!silent) {
+        setLoading(true);
+      }
       const response = await fetch('/api/access/status', {
         cache: 'no-store',
         headers: {
@@ -45,7 +48,9 @@ export function AccessProvider({ children }: { children: ReactNode }) {
       setPaid(false);
       setFreeUsed(0);
     } finally {
-      setLoading(false);
+      if (!silent) {
+        setLoading(false);
+      }
     }
   };
 

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { questions } from '@/data/questions';
@@ -75,6 +75,10 @@ export default function PracticePage() {
   const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
   const [isMounted, setIsMounted] = useState(false);
   const [answeredQuestionIds, setAnsweredQuestionIds] = useState<Set<string>>(new Set());
+  // Track local freeUsed count for optimistic updates (no network calls on answer click)
+  const [localFreeUsed, setLocalFreeUsed] = useState<number>(0);
+  // Track which questions have already been counted to avoid double-counting
+  const countedQuestionIds = useRef<Set<string>>(new Set());
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -256,8 +260,8 @@ export default function PracticePage() {
     }, 100);
   };
 
-  // Handle answer selection - increment free_questions_used atomically
-  const handleAnswerClick = async (index: number) => {
+  // Handle answer selection - INSTANT client-side only, no network calls
+  const handleAnswerClick = (index: number) => {
     if (selectedAnswerIndex !== null) return; // Prevent re-selection
     if (!currentQuestion) return;
     
@@ -267,27 +271,16 @@ export default function PracticePage() {
       return;
     }
     
-    // Immediately update UI state
+    // INSTANT UI update - no async, no network calls, no loading
     setSelectedAnswerIndex(index);
     
     // Update local state
     setAnsweredQuestionIds(prev => new Set([...Array.from(prev), currentQuestion.id]));
     
-    // Increment free_questions_used atomically (only if not paid)
-    if (!paid) {
-      try {
-        const response = await fetch('/api/practice/increment-usage', {
-          method: 'POST',
-        });
-        
-        if (response.ok) {
-          const data = await response.json();
-          // Refresh access to get updated freeUsed count
-          await refresh();
-        }
-      } catch (error) {
-        console.error('Error incrementing usage:', error);
-      }
+    // Optimistic update: increment local freeUsed count (only if not paid and not already counted)
+    if (!paid && !countedQuestionIds.current.has(currentQuestion.id)) {
+      countedQuestionIds.current.add(currentQuestion.id);
+      setLocalFreeUsed(prev => prev + 1);
     }
   };
 
@@ -301,9 +294,27 @@ export default function PracticePage() {
     }
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
     // Block navigation when no answer is selected
     if (selectedAnswerIndex === null) return;
+    
+    // Increment usage on server ONLY when moving to next question (not on answer click)
+    // This ensures we count each question only once
+    if (!paid && currentQuestion && !countedQuestionIds.current.has(currentQuestion.id)) {
+      countedQuestionIds.current.add(currentQuestion.id);
+      
+      // Fire-and-forget: increment usage in background, don't block UI
+      fetch('/api/practice/increment-usage', {
+        method: 'POST',
+      }).then(response => {
+        if (response.ok) {
+          // Silently refresh access status in background (no loading state)
+          refresh(true).catch(err => console.error('Error refreshing access:', err));
+        }
+      }).catch(error => {
+        console.error('Error incrementing usage:', error);
+      });
+    }
     
     if (currentQuestionIndex < topicQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -341,16 +352,18 @@ export default function PracticePage() {
   const isCorrect = selectedOption?.correct === true;
 
   // Show paywall if not paid and free questions exhausted
-  const showPaywall = !paid && freeUsed >= 15;
+  // Use localFreeUsed for immediate UI update, fallback to freeUsed from server
+  const effectiveFreeUsed = localFreeUsed > 0 ? localFreeUsed : freeUsed;
+  const showPaywall = !paid && effectiveFreeUsed >= 15;
 
-  // Show loading state
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 flex items-center justify-center">
-        <div className="text-center text-slate-600 font-medium">Loading...</div>
-      </div>
-    );
-  }
+  // Initialize localFreeUsed from server freeUsed on mount
+  useEffect(() => {
+    if (!loading && freeUsed > 0) {
+      setLocalFreeUsed(freeUsed);
+    }
+  }, [loading, freeUsed]);
+  
+  // No full-page loading overlay - only show local button loading if needed
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">

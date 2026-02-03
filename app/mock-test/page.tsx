@@ -375,8 +375,9 @@ export default function MockTestPage() {
     }))
     .filter((item) => item.answer && !item.answer.correct);
 
-  // Show loading state
-  if (loading || !user) {
+  // Show minimal loading state only on initial mount (no full-page overlay)
+  // Don't block UI for access status checks
+  if (!user) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         <div className="max-w-5xl mx-auto px-4 py-6">
