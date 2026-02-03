@@ -42,7 +42,19 @@ function PaymentSuccessContent() {
         // Small delay to ensure database update completes
         await new Promise(resolve => setTimeout(resolve, 500));
 
-        // Redirect to dashboard - AccessProvider will refresh access on load
+        // Refresh access state from Supabase before redirect
+        // This ensures paywall disappears immediately without reload
+        // Works for both Web and Android
+        await fetch('/api/access/status', {
+          cache: 'no-store',
+          credentials: 'include',
+          headers: {
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+            'Pragma': 'no-cache',
+          },
+        });
+
+        // Redirect to dashboard - AccessProvider will also refresh on load
         router.replace('/dashboard');
       } catch (err) {
         console.error('Payment sync error:', err);

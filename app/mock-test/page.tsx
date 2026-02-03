@@ -71,8 +71,10 @@ export default function MockTestPage() {
   const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
   const [isMounted, setIsMounted] = useState(false);
   
-  // Mock Test is always locked for free users
-  const showPaywall = !paid;
+  // Mock Test is always locked until is_paid=true
+  // canAccessMock = is_paid (mock test locked until payment)
+  const canAccessMock = paid;
+  const showPaywall = !canAccessMock;
 
   // Check authentication
   useEffect(() => {

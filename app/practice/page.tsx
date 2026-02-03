@@ -67,7 +67,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export default function PracticePage() {
-  const { loading, paid, refresh } = useAccess();
+  const { loading, paid, free_questions_used, refresh } = useAccess();
   const [selectedTopic, setSelectedTopic] = useState<string>('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
@@ -75,8 +75,6 @@ export default function PracticePage() {
   const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
   const [isMounted, setIsMounted] = useState(false);
   const [answeredQuestionIds, setAnsweredQuestionIds] = useState<Set<string>>(new Set());
-  // Track local freeUsed count for optimistic updates (no network calls on answer click)
-  const [localFreeUsed, setLocalFreeUsed] = useState<number>(0);
   // Track which questions have already been counted to avoid double-counting
   const countedQuestionIds = useRef<Set<string>>(new Set());
 
@@ -277,11 +275,7 @@ export default function PracticePage() {
     // Update local state
     setAnsweredQuestionIds(prev => new Set([...Array.from(prev), currentQuestion.id]));
     
-    // Optimistic update: increment local freeUsed count (only if not paid and not already counted)
-    if (!paid && !countedQuestionIds.current.has(currentQuestion.id)) {
-      countedQuestionIds.current.add(currentQuestion.id);
-      setLocalFreeUsed(prev => prev + 1);
-    }
+    // NO optimistic update - free_questions_used comes from Supabase only
   };
 
   // Handle navigation
@@ -308,7 +302,8 @@ export default function PracticePage() {
         method: 'POST',
       }).then(response => {
         if (response.ok) {
-          // Silently refresh access status in background (no loading state)
+          // Refresh access status from Supabase to get updated free_questions_used
+          // This ensures Web and Android stay in sync
           refresh().catch(err => console.error('Error refreshing access:', err));
         }
       }).catch(error => {
@@ -352,9 +347,10 @@ export default function PracticePage() {
   const isCorrect = selectedOption?.correct === true;
 
   // Show paywall if not paid and free questions exhausted
-  // Use localFreeUsed for immediate UI update
-  const effectiveFreeUsed = localFreeUsed;
-  const showPaywall = !paid && effectiveFreeUsed >= 15;
+  // free_questions_used comes from Supabase (single source of truth)
+  // canAccessPractice = is_paid OR free_questions_used < 15
+  const canAccessPractice = paid || free_questions_used < 15;
+  const showPaywall = !canAccessPractice;
   
   // No full-page loading overlay - only show local button loading if needed
 

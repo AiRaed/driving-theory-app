@@ -6,8 +6,9 @@ export const dynamic = 'force-dynamic';
 
 /**
  * SINGLE SOURCE OF TRUTH for user access status
- * Returns { paid: boolean }
+ * Returns { paid: boolean, free_questions_used: number }
  * paid === true ONLY when profiles.access_level === 'paid'
+ * free_questions_used comes from profiles.free_questions_used
  */
 export async function GET(request: NextRequest) {
   try {
@@ -40,29 +41,30 @@ export async function GET(request: NextRequest) {
       },
     });
 
-    // Query profiles table - access_level is the ONLY flag
+    // Query profiles table - access_level and free_questions_used are the ONLY source of truth
     const { data: profile, error: profileError } = await adminClient
       .from('profiles')
-      .select('access_level')
+      .select('access_level, free_questions_used')
       .eq('id', user.id)
       .maybeSingle();
 
     if (profileError) {
-      // Profile doesn't exist - return unpaid
+      // Profile doesn't exist - return unpaid with 0 free questions used
       if (profileError.code === 'PGRST116') {
-        return NextResponse.json({ paid: false });
+        return NextResponse.json({ paid: false, free_questions_used: 0 });
       }
-      // Other error - return unpaid
-      return NextResponse.json({ paid: false });
+      // Other error - return unpaid with 0 free questions used
+      return NextResponse.json({ paid: false, free_questions_used: 0 });
     }
 
     // EXACTLY ONE source of truth: profiles.access_level === 'paid'
     const paid = profile?.access_level === 'paid';
+    const free_questions_used = profile?.free_questions_used || 0;
 
-    return NextResponse.json({ paid });
+    return NextResponse.json({ paid, free_questions_used });
   } catch (error) {
     console.error('[access/status] Error:', error);
-    return NextResponse.json({ paid: false });
+    return NextResponse.json({ paid: false, free_questions_used: 0 });
   }
 }
 
