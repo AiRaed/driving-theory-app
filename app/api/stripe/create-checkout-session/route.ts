@@ -5,14 +5,13 @@ import Stripe from 'stripe';
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
+// Validate required environment variables
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
 if (!stripeSecretKey) {
-  throw new Error('Missing STRIPE_SECRET_KEY');
+  console.error('Missing env: STRIPE_SECRET_KEY');
 }
 
-const stripe = new Stripe(stripeSecretKey, {
-  apiVersion: '2024-12-18.acacia',
-});
+const stripe = stripeSecretKey ? new Stripe(stripeSecretKey) : null;
 
 export async function POST(request: NextRequest) {
   try {
@@ -36,6 +35,14 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'User already has paid access' },
         { status: 400 }
+      );
+    }
+
+    // Validate Stripe client
+    if (!stripe) {
+      return NextResponse.json(
+        { error: 'Missing env: STRIPE_SECRET_KEY' },
+        { status: 500 }
       );
     }
 
