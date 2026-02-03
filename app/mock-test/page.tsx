@@ -61,7 +61,7 @@ export default function MockTestPage() {
   const router = useRouter();
   const supabase = createClient();
   // SINGLE SOURCE OF TRUTH: usePaywallStatus from /api/paywall/status
-  const { loading, paid } = usePaywallStatus();
+  const { loading, paid, hydrated } = usePaywallStatus();
   const [user, setUser] = useState<any>(null);
   
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
@@ -73,8 +73,11 @@ export default function MockTestPage() {
   const [isMounted, setIsMounted] = useState(false);
   
   // Mock Test: fully locked unless paid=true
-  const canAccessMock = paid;
-  const showPaywall = !canAccessMock;
+  // PaywallOverlay must render ONLY when:
+  // 1. hydrated === true (first fetch finished successfully)
+  // 2. loading === false
+  // 3. paid === false
+  const shouldPaywall = hydrated && !loading && !paid;
 
   // Check authentication
   useEffect(() => {
@@ -389,26 +392,18 @@ export default function MockTestPage() {
     );
   }
 
-  // IMPORTANT: Default UI state is LOCKED while loading (show PaywallOverlay)
-  // Only unlock after confirmed paid=true
-  // Mock Test: fully locked unless paid=true
-  if (loading || showPaywall) {
+  // IMPORTANT: PaywallOverlay must render ONLY when:
+  // hydrated === true && !loading && !paid
+  // This prevents paywall from flashing before access state is loaded
+  if (shouldPaywall) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
         <PaywallOverlay />
-        {loading ? (
-          <div className="pointer-events-none blur-sm opacity-50">
-            <div className="max-w-5xl mx-auto px-4 py-6">
-              <div className="text-center text-slate-600 font-medium">Checking access...</div>
-            </div>
+        <div className="pointer-events-none blur-sm opacity-50">
+          <div className="max-w-5xl mx-auto px-4 py-6">
+            <div className="text-center text-slate-600 font-medium">Mock Test requires paid access</div>
           </div>
-        ) : (
-          <div className="pointer-events-none blur-sm opacity-50">
-            <div className="max-w-5xl mx-auto px-4 py-6">
-              <div className="text-center text-slate-600 font-medium">Mock Test requires paid access</div>
-            </div>
-          </div>
-        )}
+        </div>
       </div>
     );
   }

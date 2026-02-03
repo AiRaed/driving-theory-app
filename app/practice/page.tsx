@@ -68,7 +68,7 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function PracticePage() {
   // SINGLE SOURCE OF TRUTH: usePaywallStatus from /api/paywall/status
-  const { loading, paid, trialUsed, trialLimit, refresh } = usePaywallStatus();
+  const { loading, paid, trialUsed, trialLimit, hydrated, refresh } = usePaywallStatus();
   const [selectedTopic, setSelectedTopic] = useState<string>('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
@@ -78,21 +78,6 @@ export default function PracticePage() {
   const [answeredQuestionIds, setAnsweredQuestionIds] = useState<Set<string>>(new Set());
   // Track which questions have already been counted to avoid double-counting
   const countedQuestionIds = useRef<Set<string>>(new Set());
-  
-  // Keep stable paywall state during refresh to prevent flicker
-  const stablePaid = useRef(false);
-  const stableTrialUsed = useRef(0);
-  const stableTrialLimit = useRef(15);
-  
-  // Update stable refs when values change (but keep previous during loading)
-  useEffect(() => {
-    if (!loading) {
-      // Only update stable refs when NOT loading (after fetch completes)
-      stablePaid.current = paid;
-      stableTrialUsed.current = trialUsed;
-      stableTrialLimit.current = trialLimit;
-    }
-  }, [loading, paid, trialUsed, trialLimit]);
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -311,9 +296,7 @@ export default function PracticePage() {
     // Increment usage on server ONLY when moving to next question (not on answer click)
     // This ensures we count each question only once
     // Only increment if not paid and question not already counted
-    // Use stable paid value to prevent flicker during refresh
-    const currentPaid = loading ? stablePaid.current : paid;
-    if (!currentPaid && currentQuestion && !countedQuestionIds.current.has(currentQuestion.id)) {
+    if (!paid && currentQuestion && !countedQuestionIds.current.has(currentQuestion.id)) {
       countedQuestionIds.current.add(currentQuestion.id);
       
       // Fire-and-forget: increment usage in background, don't block UI
@@ -367,46 +350,27 @@ export default function PracticePage() {
   const isCorrect = selectedOption?.correct === true;
 
   // Practice: allow 15 total answers across all topics before showing paywall
-  // Use stable values during refresh to prevent flicker
-  const displayPaid = loading ? stablePaid.current : paid;
-  const displayTrialUsed = loading ? stableTrialUsed.current : trialUsed;
-  const displayTrialLimit = loading ? stableTrialLimit.current : trialLimit;
-  
-  // canAccessPractice = paid OR trialUsed < trialLimit
-  const canAccessPractice = displayPaid || displayTrialUsed < displayTrialLimit;
+  // Normalize trialUsed: if null/undefined => 0
+  const normalizedTrialUsed = trialUsed ?? 0;
+  const normalizedTrialLimit = trialLimit ?? 15;
   
   // PaywallOverlay must render ONLY when:
-  // 1. paid === false
-  // 2. AND trialUsed >= trialLimit (15)
-  // 3. AND loading === false (keep stable state during refresh)
-  const showPaywall = !displayPaid && displayTrialUsed >= displayTrialLimit && !loading;
-
-  // IMPORTANT: Default UI state is LOCKED while loading (show PaywallOverlay)
-  // Only unlock after confirmed paid=true
-  // But only show loading screen on initial load (when we have no data yet)
-  if (loading && trialUsed === 0 && !paid) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
-        <PaywallOverlay />
-        <div className="pointer-events-none blur-sm opacity-50">
-          <div className="max-w-5xl mx-auto px-4 py-6">
-            <div className="text-center text-slate-600 font-medium">Checking access...</div>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // 1. hydrated === true (first fetch finished successfully)
+  // 2. loading === false
+  // 3. paid === false
+  // 4. normalizedTrialUsed >= normalizedTrialLimit (15)
+  const shouldPaywall = hydrated && !loading && !paid && normalizedTrialUsed >= normalizedTrialLimit;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
       {/* Paywall Overlay - blocks everything when locked */}
-      {/* Only show when: !paid AND trialUsed >= 15 AND !loading */}
-      {showPaywall && <PaywallOverlay />}
+      {/* Only show when: hydrated && !loading && !paid && trialUsed >= 15 */}
+      {shouldPaywall && <PaywallOverlay />}
       
       {/* Content - blurred and non-interactive when paywall is shown */}
       <div
         className={cn(
-          showPaywall && "pointer-events-none blur-sm opacity-50"
+          shouldPaywall && "pointer-events-none blur-sm opacity-50"
         )}
       >
       <div className="max-w-5xl mx-auto px-4 py-6">
@@ -998,10 +962,10 @@ export default function PracticePage() {
               </div>
               <button
                 onClick={handleNext}
-                disabled={currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall}
+                disabled={currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || shouldPaywall}
                 className={cn(
                   "px-6 py-3 rounded-xl text-sm bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98] font-semibold",
-                  (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall) && "opacity-50 cursor-not-allowed hover:translate-y-0"
+                  (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || shouldPaywall) && "opacity-50 cursor-not-allowed hover:translate-y-0"
                 )}
               >
                 Next →

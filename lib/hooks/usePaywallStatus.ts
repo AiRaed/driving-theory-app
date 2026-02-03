@@ -1,42 +1,32 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 
 interface PaywallStatus {
   loading: boolean;
   paid: boolean;
   trialUsed: number;
   trialLimit: number;
-  refresh: (silent?: boolean) => Promise<void>;
+  hydrated: boolean;
+  refresh: () => Promise<void>;
 }
 
 /**
  * usePaywallStatus - SINGLE SOURCE OF TRUTH for paywall
  * Calls /api/paywall/status ONCE per session
- * Default state is LOCKED (paid=false) while loading
- * Only unlocks after confirmed paid=true
+ * hydrated flag ensures paywall NEVER renders until first successful fetch
  * NEVER uses localStorage/sessionStorage
- * Keeps stable state during refresh to prevent flicker
  */
 export function usePaywallStatus(): PaywallStatus {
   const [loading, setLoading] = useState(true);
   const [paid, setPaid] = useState(false);
   const [trialUsed, setTrialUsed] = useState(0);
   const [trialLimit, setTrialLimit] = useState(15);
-  
-  // Keep stable state during refresh to prevent flicker
-  const stablePaid = useRef(false);
-  const stableTrialUsed = useRef(0);
-  const stableTrialLimit = useRef(15);
+  const [hydrated, setHydrated] = useState(false);
 
-  const refresh = async (silent: boolean = false) => {
+  const refresh = async () => {
     try {
-      // While access is loading/refetching, DO NOT show paywall
-      // Keep previous stable access state until the fetch completes
-      // Only set loading=true on initial load, not on silent refreshes
-      if (!silent) {
-        setLoading(true);
-      }
+      setLoading(true);
       
       const response = await fetch('/api/paywall/status', {
         cache: 'no-store',
@@ -49,65 +39,50 @@ export function usePaywallStatus(): PaywallStatus {
 
       if (!response.ok) {
         if (response.status === 401) {
-          // Not logged in - default to locked
+          // Not logged in - default to locked but don't set hydrated
           setPaid(false);
           setTrialUsed(0);
           setTrialLimit(15);
-        }
-        if (!silent) {
-          setLoading(false);
+          // DO NOT set hydrated=true on error - prevents paywall from showing
         }
         return;
       }
 
       const data = await response.json();
       
-      // Only update state after fetch completes - prevents flicker
-      // Update stable refs first, then state atomically
-      const newPaid = data.paid === true;
-      const newTrialUsed = data.trialUsed || 0;
-      const newTrialLimit = data.trialLimit || 15;
+      // Normalize freeUsed: if null/undefined from DB => 0
+      const normalizedTrialUsed = data.trialUsed ?? 0;
+      const normalizedTrialLimit = data.trialLimit ?? 15;
       
-      // Update stable refs
-      stablePaid.current = newPaid;
-      stableTrialUsed.current = newTrialUsed;
-      stableTrialLimit.current = newTrialLimit;
+      // Only unlock after confirmed paid=true
+      setPaid(data.paid === true);
+      setTrialUsed(normalizedTrialUsed);
+      setTrialLimit(normalizedTrialLimit);
       
-      // Update state atomically to prevent intermediate states
-      setPaid(newPaid);
-      setTrialUsed(newTrialUsed);
-      setTrialLimit(newTrialLimit);
+      // Set hydrated=true ONLY after successful fetch
+      setHydrated(true);
 
       // Safe console logs in development
       if (process.env.NODE_ENV === 'development') {
         console.log('[usePaywallStatus]', {
           paid: data.paid,
-          trialUsed: data.trialUsed,
-          trialLimit: data.trialLimit,
+          trialUsed: normalizedTrialUsed,
+          trialLimit: normalizedTrialLimit,
+          hydrated: true,
           status: 'ready',
         });
       }
     } catch (error) {
       console.error('[usePaywallStatus] Error:', error);
-      // Default to locked on error - but keep previous state if silent refresh
-      if (!silent) {
-        setPaid(false);
-        setTrialUsed(0);
-        setTrialLimit(15);
-      }
+      // Default to locked on error - DO NOT set hydrated=true
+      // This prevents paywall from showing on error
+      setPaid(false);
+      setTrialUsed(0);
+      setTrialLimit(15);
     } finally {
-      if (!silent) {
-        setLoading(false);
-      }
+      setLoading(false);
     }
   };
-
-  // Initialize stable refs
-  useEffect(() => {
-    stablePaid.current = paid;
-    stableTrialUsed.current = trialUsed;
-    stableTrialLimit.current = trialLimit;
-  }, [paid, trialUsed, trialLimit]);
 
   // Fetch ONCE per session - no persistence between reloads
   useEffect(() => {
@@ -115,6 +90,7 @@ export function usePaywallStatus(): PaywallStatus {
     if (process.env.NODE_ENV === 'development') {
       console.log('[usePaywallStatus]', {
         status: 'loading',
+        hydrated: false,
       });
     }
     refresh();
@@ -125,6 +101,7 @@ export function usePaywallStatus(): PaywallStatus {
     paid,
     trialUsed,
     trialLimit,
+    hydrated,
     refresh,
   };
 }
