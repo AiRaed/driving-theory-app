@@ -1,7 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
+import { usePaywallStatus } from '@/lib/hooks/usePaywallStatus';
 
 /**
  * PaywallOverlay - ONE component only
@@ -11,6 +13,8 @@ import { cn } from '@/lib/utils';
  */
 export default function PaywallOverlay() {
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const { refresh } = usePaywallStatus();
 
   const handlePayment = async () => {
     setLoading(true);
@@ -24,6 +28,16 @@ export default function PaywallOverlay() {
 
       const data = await response.json();
 
+      // If user is already paid, refresh access and reload page (no alert, no error)
+      if (data.alreadyPaid === true) {
+        // Refresh access status from Supabase to update paid state
+        await refresh();
+        // Reload current page so paywall disappears immediately
+        // This ensures paywall disappears on both web and Android
+        window.location.reload();
+        return;
+      }
+
       if (!response.ok) {
         throw new Error(data.error || 'Failed to create checkout session');
       }
@@ -35,6 +49,7 @@ export default function PaywallOverlay() {
       }
     } catch (error) {
       console.error('Payment error:', error);
+      // Only show alert for actual errors, not for alreadyPaid case
       alert(error instanceof Error ? error.message : 'Failed to start payment. Please try again.');
       setLoading(false);
     }

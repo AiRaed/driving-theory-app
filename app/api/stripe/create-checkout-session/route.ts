@@ -54,6 +54,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    // Check if user is already paid BEFORE creating Stripe session
+    // If already paid, return success with alreadyPaid flag (NOT an error)
     const { data: profile } = await supabase
       .from('profiles')
       .select('access_level')
@@ -61,10 +63,9 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (profile?.access_level === 'paid') {
-      return NextResponse.json(
-        { error: 'User already has paid access' },
-        { status: 400 }
-      );
+      // Return HTTP 200 with alreadyPaid flag - NOT an error
+      // This allows UI to refresh access and redirect gracefully
+      return NextResponse.json({ alreadyPaid: true }, { status: 200 });
     }
 
     // Use default Stripe API version (compatible with installed package)
