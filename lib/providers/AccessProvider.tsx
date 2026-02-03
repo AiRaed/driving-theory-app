@@ -5,61 +5,57 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 interface AccessContextType {
   loading: boolean;
   paid: boolean;
-  freeUsed: number;
-  refresh: (silent?: boolean) => Promise<void>;
+  refresh: () => Promise<void>;
 }
 
 const AccessContext = createContext<AccessContextType | undefined>(undefined);
 
+/**
+ * AccessProvider - SINGLE SOURCE OF TRUTH
+ * Fetches /api/access/status ONCE on app load
+ * NO localStorage, NO caching, NO assumptions
+ */
 export function AccessProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
   const [paid, setPaid] = useState(false);
-  const [freeUsed, setFreeUsed] = useState(0);
 
-  const refresh = async (silent: boolean = false) => {
+  const refresh = async () => {
     try {
-      // Only show loading on initial load, not on silent refreshes
-      if (!silent) {
-        setLoading(true);
-      }
+      setLoading(true);
       const response = await fetch('/api/access/status', {
         cache: 'no-store',
+        credentials: 'include',
         headers: {
-          'Cache-Control': 'no-cache',
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache',
         },
       });
 
       if (!response.ok) {
         if (response.status === 401) {
-          // Not logged in
           setPaid(false);
-          setFreeUsed(0);
-        } else {
-          console.error('[AccessProvider] Failed to fetch access status');
         }
         return;
       }
 
       const data = await response.json();
-      setPaid(data.paid === true && data.accessLevel === 'paid');
-      setFreeUsed(data.freeQuestionsUsed || 0);
+      // paid === true ONLY when profiles.access_level === 'paid'
+      setPaid(data.paid === true);
     } catch (error) {
-      console.error('[AccessProvider] Error fetching access:', error);
+      console.error('[AccessProvider] Error:', error);
       setPaid(false);
-      setFreeUsed(0);
     } finally {
-      if (!silent) {
-        setLoading(false);
-      }
+      setLoading(false);
     }
   };
 
+  // Fetch ONCE on app load - no persistence between reloads
   useEffect(() => {
     refresh();
   }, []);
 
   return (
-    <AccessContext.Provider value={{ loading, paid, freeUsed, refresh }}>
+    <AccessContext.Provider value={{ loading, paid, refresh }}>
       {children}
     </AccessContext.Provider>
   );

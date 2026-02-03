@@ -1,38 +1,13 @@
-import type { CapacitorConfig } from '@capacitor/cli';
-
-const config: CapacitorConfig = {
+const config = {
   appId: 'io.lingotheory.app',
   appName: 'Driving Theory Helper',
-
-  // مهم: نتركها out لكن التطبيق فعلياً رح يعتمد على server.url
-  webDir: 'out',
-
+  // webDir points to build output (not 'public')
+  webDir: '.next',
   server: {
+    // MUST be production URL - NO localhost, NO mock auth
     url: 'https://www.lingotheory.org',
     androidScheme: 'https',
     cleartext: false,
-    allowNavigation: [
-      'https://www.lingotheory.org',
-      'https://lingotheory.org',
-      'https://checkout.stripe.com',
-      'https://*.stripe.com',
-      'https://*.supabase.co',
-    ],
-  },
-
-  android: {
-    allowMixedContent: false,
-    captureInput: true,
-  },
-
-  ios: {
-    contentInset: 'automatic',
-  },
-
-  plugins: {
-    SplashScreen: {
-      launchShowDuration: 2000,
-    },
   },
 };
 

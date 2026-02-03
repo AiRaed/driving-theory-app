@@ -1,26 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Only enable static export for Capacitor builds (Android)
-  // For Render/server builds, use normal Next.js server mode (no output: 'export')
-  ...(process.env.CAPACITOR_BUILD === 'true' && {
-    output: 'export',
-    images: { unoptimized: true },
-  }),
-  // Default: no output: 'export' - allows API routes to work on Render
-  trailingSlash: true,
-  eslint: { ignoreDuringBuilds: true },
-  
-  // إصلاح مشكلة webpack مع next-sitemap
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-        path: false,
-        crypto: false,
-      };
-    }
-    return config;
+  // DO NOT globally enable static export - API routes must work on Render
+  // output: 'export', // REMOVED - breaks API routes
+
+  // Disable ESLint blocking builds
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
+  // Disable TypeScript errors blocking builds (optional, but safe)
+  typescript: {
+    ignoreBuildErrors: false,
   },
 };
 

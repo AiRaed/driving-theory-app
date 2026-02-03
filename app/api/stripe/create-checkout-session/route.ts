@@ -67,6 +67,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Use default Stripe API version (compatible with installed package)
     const stripe = new Stripe(stripeSecretKey);
 
     const successUrl = `${baseUrl}/payment/success?session_id={CHECKOUT_SESSION_ID}`;

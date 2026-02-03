@@ -20,6 +20,4 @@ services:
         sync: false
       - key: NEXT_PUBLIC_SITE_URL
         sync: false
-      - key: CAPACITOR_BUILD
-        value: "false"
 

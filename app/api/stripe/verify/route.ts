@@ -9,6 +9,7 @@ if (!stripeSecretKey) {
   console.error('Missing env: STRIPE_SECRET_KEY');
 }
 
+// Use default Stripe API version (compatible with installed package)
 const stripe = stripeSecretKey ? new Stripe(stripeSecretKey) : null;
 
 export const dynamic = 'force-dynamic';
@@ -90,12 +91,11 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Update profile to paid
+    // Update profile to paid - THIS IS THE ONLY FLAG
     const { error: profileError } = await adminClient
       .from('profiles')
       .update({
         access_level: 'paid',
-        paid_at: new Date().toISOString(),
         stripe_customer_id: session.customer as string || null,
       })
       .eq('id', user.id);
@@ -106,30 +106,6 @@ export async function POST(request: NextRequest) {
         { error: 'Failed to update profile' },
         { status: 500 }
       );
-    }
-
-    // Create or update payment record
-    const paymentIntent = session.payment_intent as Stripe.PaymentIntent | null;
-    const amount = session.amount_total || 0;
-    
-    const { error: paymentError } = await adminClient
-      .from('payments')
-      .upsert({
-        user_id: user.id,
-        provider: 'stripe',
-        stripe_checkout_session_id: session_id,
-        stripe_payment_intent_id: paymentIntent?.id || null,
-        amount: amount,
-        currency: session.currency || 'gbp',
-        status: 'paid',
-      }, {
-        onConflict: 'stripe_checkout_session_id',
-      });
-
-    if (paymentError) {
-      console.error('Error creating payment record:', paymentError);
-      // Don't fail the request if payment record creation fails
-      // The profile update is more important
     }
 
     return NextResponse.json({ ok: true });

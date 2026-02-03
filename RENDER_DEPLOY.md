@@ -48,8 +48,6 @@ STRIPE_SECRET_KEY=your_stripe_secret_key
 STRIPE_PRICE_ID_FULL_ACCESS=your_stripe_price_id
 
 NEXT_PUBLIC_SITE_URL=https://your-app-name.onrender.com
-
-CAPACITOR_BUILD=false
 ```
 
 **ملاحظة:** استبدل القيم بقيمك الفعلية من Supabase و Stripe.
@@ -79,10 +77,10 @@ CAPACITOR_BUILD=false
 
 3. **الـ Build:**
    - إذا فشل البناء، تحقق من logs في Render Dashboard
-   - تأكد من أن `CAPACITOR_BUILD=false` (لتفعيل API routes)
+   - جميع API routes ستعمل بشكل طبيعي (لا يوجد static export)
 
 4. **الـ API Routes:**
-   - مع `CAPACITOR_BUILD=false`، جميع API routes ستعمل بشكل طبيعي
+   - جميع API routes ستعمل بشكل طبيعي
    - `/api/access/status` و `/api/stripe/*` ستعمل
 
 ## Troubleshooting:
@@ -95,8 +93,8 @@ CAPACITOR_BUILD=false
 
 ### مشكلة: API routes لا تعمل
 ```bash
-# تأكد من أن CAPACITOR_BUILD=false
-# تأكد من أن output: 'export' غير مفعل في next.config.mjs
+# تأكد من أن next.config.mjs لا يحتوي على output: 'export'
+# تأكد من أن التطبيق يعمل في server mode وليس static export
 ```
 
 ### مشكلة: Environment Variables غير موجودة

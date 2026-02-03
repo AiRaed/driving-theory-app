@@ -3,6 +3,12 @@
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
 
+/**
+ * PaywallOverlay - ONE component only
+ * Full screen overlay with backdrop blur
+ * ONE button: "Continue to Payment – £9.99"
+ * NO "Maybe later", NO free option
+ */
 export default function PaywallOverlay() {
   const [loading, setLoading] = useState(false);
 
@@ -109,7 +115,7 @@ export default function PaywallOverlay() {
               </div>
             </div>
 
-            {/* CTA Button */}
+            {/* ONE button only */}
             <button
               onClick={handlePayment}
               disabled={loading}

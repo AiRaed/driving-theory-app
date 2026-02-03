@@ -67,7 +67,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export default function PracticePage() {
-  const { loading, paid, freeUsed, refresh } = useAccess();
+  const { loading, paid, refresh } = useAccess();
   const [selectedTopic, setSelectedTopic] = useState<string>('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
@@ -309,7 +309,7 @@ export default function PracticePage() {
       }).then(response => {
         if (response.ok) {
           // Silently refresh access status in background (no loading state)
-          refresh(true).catch(err => console.error('Error refreshing access:', err));
+          refresh().catch(err => console.error('Error refreshing access:', err));
         }
       }).catch(error => {
         console.error('Error incrementing usage:', error);
@@ -352,16 +352,9 @@ export default function PracticePage() {
   const isCorrect = selectedOption?.correct === true;
 
   // Show paywall if not paid and free questions exhausted
-  // Use localFreeUsed for immediate UI update, fallback to freeUsed from server
-  const effectiveFreeUsed = localFreeUsed > 0 ? localFreeUsed : freeUsed;
+  // Use localFreeUsed for immediate UI update
+  const effectiveFreeUsed = localFreeUsed;
   const showPaywall = !paid && effectiveFreeUsed >= 15;
-
-  // Initialize localFreeUsed from server freeUsed on mount
-  useEffect(() => {
-    if (!loading && freeUsed > 0) {
-      setLocalFreeUsed(freeUsed);
-    }
-  }, [loading, freeUsed]);
   
   // No full-page loading overlay - only show local button loading if needed
 
