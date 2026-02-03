@@ -67,7 +67,8 @@ export async function GET(request: NextRequest) {
       console.error('[paywall/status] Error querying profile:', profileError);
     }
 
-    const trialUsed = profile?.free_questions_used || 0;
+    // Normalize freeUsed: if null/undefined from DB => 0
+    const trialUsed = profile?.free_questions_used ?? 0;
     const trialLimit = 15;
 
     // Safe console logs in development
