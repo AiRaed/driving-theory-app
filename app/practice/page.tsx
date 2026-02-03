@@ -304,9 +304,10 @@ export default function PracticePage() {
         method: 'POST',
       }).then(response => {
         if (response.ok) {
-          // Refresh paywall status from Supabase to get updated trialUsed
+          // Silent refresh paywall status from Supabase to get updated trialUsed
           // This ensures Web and Android stay in sync
-          refresh().catch(err => console.error('Error refreshing access:', err));
+          // Silent refresh keeps previous stable state (no loading=true) to prevent flicker
+          refresh(true).catch(err => console.error('Error refreshing access:', err));
         }
       }).catch(error => {
         console.error('Error incrementing usage:', error);
@@ -351,11 +352,17 @@ export default function PracticePage() {
   // Practice: allow 15 total answers across all topics before showing paywall
   // canAccessPractice = paid OR trialUsed < trialLimit
   const canAccessPractice = paid || trialUsed < trialLimit;
-  const showPaywall = !canAccessPractice;
+  
+  // PaywallOverlay must render ONLY when:
+  // 1. paid === false
+  // 2. AND trialUsed >= trialLimit (15)
+  // 3. AND loading === false
+  const showPaywall = !paid && trialUsed >= trialLimit && !loading;
 
   // IMPORTANT: Default UI state is LOCKED while loading (show PaywallOverlay)
   // Only unlock after confirmed paid=true
-  if (loading) {
+  // But only show loading screen on initial load, not during silent refreshes
+  if (loading && trialUsed === 0 && !paid) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
         <PaywallOverlay />
@@ -371,6 +378,7 @@ export default function PracticePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
       {/* Paywall Overlay - blocks everything when locked */}
+      {/* Only show when: !paid AND trialUsed >= 15 AND !loading */}
       {showPaywall && <PaywallOverlay />}
       
       {/* Content - blurred and non-interactive when paywall is shown */}

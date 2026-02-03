@@ -23,9 +23,15 @@ export function usePaywallStatus(): PaywallStatus {
   const [trialUsed, setTrialUsed] = useState(0);
   const [trialLimit, setTrialLimit] = useState(15);
 
-  const refresh = async () => {
+  const refresh = async (silent: boolean = false) => {
     try {
-      setLoading(true);
+      // While access is loading/refetching, DO NOT show paywall
+      // Keep previous stable access state until the fetch completes
+      // Only set loading=true on initial load, not on silent refreshes
+      if (!silent) {
+        setLoading(true);
+      }
+      
       const response = await fetch('/api/paywall/status', {
         cache: 'no-store',
         credentials: 'include',
@@ -41,6 +47,9 @@ export function usePaywallStatus(): PaywallStatus {
           setPaid(false);
           setTrialUsed(0);
           setTrialLimit(15);
+        }
+        if (!silent) {
+          setLoading(false);
         }
         return;
       }
@@ -68,7 +77,9 @@ export function usePaywallStatus(): PaywallStatus {
       setTrialUsed(0);
       setTrialLimit(15);
     } finally {
-      setLoading(false);
+      if (!silent) {
+        setLoading(false);
+      }
     }
   };
 
