@@ -3,6 +3,7 @@
 import { useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import { useAccess } from '@/lib/providers/AccessProvider';
 
 export const dynamic = 'force-dynamic';
 
@@ -10,6 +11,7 @@ function PaymentSuccessContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const supabase = createClient();
+  const { refresh } = useAccess();
 
   useEffect(() => {
     const sync = async () => {
@@ -42,19 +44,12 @@ function PaymentSuccessContent() {
         // Small delay to ensure database update completes
         await new Promise(resolve => setTimeout(resolve, 500));
 
-        // Refresh access state from Supabase before redirect
+        // Refresh access state from Supabase using access provider
         // This ensures paywall disappears immediately without reload
         // Works for both Web and Android
-        await fetch('/api/access/status', {
-          cache: 'no-store',
-          credentials: 'include',
-          headers: {
-            'Cache-Control': 'no-cache, no-store, must-revalidate',
-            'Pragma': 'no-cache',
-          },
-        });
+        await refresh();
 
-        // Redirect to dashboard - AccessProvider will also refresh on load
+        // Redirect to dashboard
         router.replace('/dashboard');
       } catch (err) {
         console.error('Payment sync error:', err);
@@ -63,7 +58,7 @@ function PaymentSuccessContent() {
     };
 
     sync();
-  }, [searchParams, router, supabase]);
+  }, [searchParams, router, supabase, refresh]);
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4">

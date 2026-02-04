@@ -1,9 +1,17 @@
 import { createClient } from '@/lib/supabase/server';
+import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+
+/**
+ * create-checkout-session API
+ * Before creating Stripe session, check profile access in Supabase (service role)
+ * If access_level === 'paid' return 200 { alreadyPaid: true }
+ * Otherwise create Stripe Checkout session and return { url }
+ */
 
 export async function POST(request: NextRequest) {
   try {
@@ -55,13 +63,36 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if user is already paid BEFORE creating Stripe session
-    // If already paid, return success with alreadyPaid flag (NOT an error)
-    const { data: profile } = await supabase
+    // Use service role key to query profiles (bypasses RLS)
+    const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+
+    if (!serviceRoleKey || !supabaseUrl) {
+      return NextResponse.json(
+        { error: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
+
+    const adminClient = createAdminClient(supabaseUrl, serviceRoleKey, {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false,
+      },
+    });
+
+    // Query profiles table - access_level is the ONLY source of truth
+    const { data: profile, error: profileError } = await adminClient
       .from('profiles')
       .select('access_level')
       .eq('id', user.id)
-      .single();
+      .maybeSingle();
 
+    if (profileError && profileError.code !== 'PGRST116') {
+      console.error('[create-checkout-session] Error querying profile:', profileError);
+    }
+
+    // If already paid, return success with alreadyPaid flag (NOT an error)
     if (profile?.access_level === 'paid') {
       // Return HTTP 200 with alreadyPaid flag - NOT an error
       // This allows UI to refresh access and redirect gracefully

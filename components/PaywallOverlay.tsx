@@ -3,18 +3,25 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { usePaywallStatus } from '@/lib/hooks/usePaywallStatus';
+import { useAccess } from '@/lib/providers/AccessProvider';
+
+interface PaywallOverlayProps {
+  onPay?: () => void;
+  loading?: boolean;
+}
 
 /**
- * PaywallOverlay - ONE component only
+ * PaywallOverlay - PURE UI component
  * Full screen overlay with backdrop blur
  * ONE button: "Continue to Payment – £9.99"
  * NO "Maybe later", NO free option
+ * Receives onPay handler and loading prop from parent
+ * Does NOT disappear unless parent stops rendering it (when paid becomes true)
  */
-export default function PaywallOverlay() {
+export default function PaywallOverlay({ onPay, loading: externalLoading }: PaywallOverlayProps = {}) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const { refresh } = usePaywallStatus();
+  const { refresh } = useAccess();
 
   const handlePayment = async () => {
     setLoading(true);
@@ -28,13 +35,12 @@ export default function PaywallOverlay() {
 
       const data = await response.json();
 
-      // If user is already paid, refresh access and reload page (no alert, no error)
+      // If user is already paid, refresh access and redirect to dashboard (no alert, no error)
       if (data.alreadyPaid === true) {
         // Refresh access status from Supabase to update paid state
         await refresh();
-        // Reload current page so paywall disappears immediately
-        // This ensures paywall disappears on both web and Android
-        window.location.reload();
+        // Redirect to dashboard - paywall will disappear when paid becomes true
+        router.push('/dashboard');
         return;
       }
 
@@ -54,6 +60,8 @@ export default function PaywallOverlay() {
       setLoading(false);
     }
   };
+
+  const isLoading = loading || externalLoading;
 
   return (
     <>
@@ -132,8 +140,8 @@ export default function PaywallOverlay() {
 
             {/* ONE button only */}
             <button
-              onClick={handlePayment}
-              disabled={loading}
+              onClick={onPay || handlePayment}
+              disabled={isLoading}
               className={cn(
                 "w-full py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold text-base",
                 "hover:from-red-700 hover:to-red-800 transition-all duration-200 shadow-lg hover:shadow-xl",
@@ -141,7 +149,7 @@ export default function PaywallOverlay() {
                 "active:scale-[0.98]"
               )}
             >
-              {loading ? 'Processing...' : 'Continue to Payment – £9.99'}
+              {isLoading ? 'Processing...' : 'Continue to Payment – £9.99'}
             </button>
 
             <p className="text-xs text-slate-500 text-center mt-4">

@@ -8,7 +8,7 @@ import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import DisclaimerModal from '@/components/DisclaimerModal';
 import PaywallOverlay from '@/components/PaywallOverlay';
-import { usePaywallStatus } from '@/lib/hooks/usePaywallStatus';
+import { useAccess } from '@/lib/providers/AccessProvider';
 import { 
   TranslationLang, 
   getTranslationLang, 
@@ -67,8 +67,8 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export default function PracticePage() {
-  // SINGLE SOURCE OF TRUTH: usePaywallStatus from /api/paywall/status
-  const { loading, paid, trialUsed, trialLimit, hydrated, refresh } = usePaywallStatus();
+  // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
+  const { loading, paid, freeUsed, refresh } = useAccess();
   const [selectedTopic, setSelectedTopic] = useState<string>('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
@@ -348,29 +348,41 @@ export default function PracticePage() {
   const selectedOption = selectedAnswerIndex !== null ? shuffledOptions[selectedAnswerIndex] : null;
   const isCorrect = selectedOption?.correct === true;
 
-  // Practice: allow 15 total answers across all topics before showing paywall
-  // Normalize trialUsed: if null/undefined => 0
-  const normalizedTrialUsed = trialUsed ?? 0;
-  const normalizedTrialLimit = trialLimit ?? 15;
+  // Practice: allow exactly 15 free questions total when !paid
+  // After freeUsed >= 15, show Paywall and block answering/next
+  // Normalize freeUsed: if null/undefined => 0
+  const normalizedFreeUsed = freeUsed ?? 0;
+  const freeLimit = 15;
   
   // PaywallOverlay must render ONLY when:
-  // 1. hydrated === true (first fetch finished successfully)
-  // 2. loading === false
-  // 3. paid === false
-  // 4. normalizedTrialUsed >= normalizedTrialLimit (15)
-  const shouldPaywall = hydrated && !loading && !paid && normalizedTrialUsed >= normalizedTrialLimit;
+  // 1. loading === false (access state loaded)
+  // 2. paid === false
+  // 3. normalizedFreeUsed >= freeLimit (15)
+  // Do NOT render PaywallOverlay while loading === true
+  const showPaywall = !loading && !paid && normalizedFreeUsed >= freeLimit;
+
+  // Show loading state while access is being fetched
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+        <div className="max-w-5xl mx-auto px-4 py-6">
+          <div className="text-center text-slate-600 font-medium">Loading...</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
       {/* Paywall Overlay - blocks everything when locked */}
-      {/* Only show when: hydrated && !loading && !paid && trialUsed >= 15 */}
-      {shouldPaywall && <PaywallOverlay />}
+      {/* Only show when: !loading && !paid && freeUsed >= 15 */}
+      {showPaywall && <PaywallOverlay />}
       
       {/* Content - blurred and non-interactive when paywall is shown */}
       <div
-        className={cn(
-          shouldPaywall && "pointer-events-none blur-sm opacity-50"
-        )}
+            className={cn(
+              showPaywall && "pointer-events-none blur-sm opacity-50"
+            )}
       >
       <div className="max-w-5xl mx-auto px-4 py-6">
         {/* Compact Summary Row */}
@@ -961,10 +973,10 @@ export default function PracticePage() {
               </div>
               <button
                 onClick={handleNext}
-                disabled={currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || shouldPaywall}
+                disabled={currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall}
                 className={cn(
                   "px-6 py-3 rounded-xl text-sm bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98] font-semibold",
-                  (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || shouldPaywall) && "opacity-50 cursor-not-allowed hover:translate-y-0"
+                  (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall) && "opacity-50 cursor-not-allowed hover:translate-y-0"
                 )}
               >
                 Next →

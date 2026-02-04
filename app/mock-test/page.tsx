@@ -9,7 +9,7 @@ import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
 import DisclaimerModal from "@/components/DisclaimerModal";
 import PaywallOverlay from "@/components/PaywallOverlay";
-import { usePaywallStatus } from "@/lib/hooks/usePaywallStatus";
+import { useAccess } from '@/lib/providers/AccessProvider';
 import { createClient } from "@/lib/supabase/client";
 import { 
   TranslationLang, 
@@ -60,8 +60,8 @@ const QUESTION_COUNT = 50;
 export default function MockTestPage() {
   const router = useRouter();
   const supabase = createClient();
-  // SINGLE SOURCE OF TRUTH: usePaywallStatus from /api/paywall/status
-  const { loading, paid, hydrated } = usePaywallStatus();
+  // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
+  const { loading, paid } = useAccess();
   const [user, setUser] = useState<any>(null);
   
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
@@ -72,12 +72,13 @@ export default function MockTestPage() {
   const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
   const [isMounted, setIsMounted] = useState(false);
   
-  // Mock Test: fully locked unless paid=true
+  // Mock Test: always locked when !paid (no free mock test)
+  // Once paid === true, Paywall must NEVER render
   // PaywallOverlay must render ONLY when:
-  // 1. hydrated === true (first fetch finished successfully)
-  // 2. loading === false
-  // 3. paid === false
-  const shouldPaywall = hydrated && !loading && !paid;
+  // 1. loading === false (access state loaded)
+  // 2. paid === false
+  // Do NOT render PaywallOverlay while loading === true
+  const showPaywall = !loading && !paid;
 
   // Check authentication
   useEffect(() => {
@@ -392,10 +393,21 @@ export default function MockTestPage() {
     );
   }
 
+  // Show loading state while access is being fetched
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+        <div className="max-w-5xl mx-auto px-4 py-6">
+          <div className="text-center text-slate-600 font-medium">Loading...</div>
+        </div>
+      </div>
+    );
+  }
+
   // IMPORTANT: PaywallOverlay must render ONLY when:
-  // hydrated === true && !loading && !paid
-  // This prevents paywall from flashing before access state is loaded
-  if (shouldPaywall) {
+  // !loading && !paid
+  // Do NOT render PaywallOverlay while loading === true
+  if (showPaywall) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
         <PaywallOverlay />
