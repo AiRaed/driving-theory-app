@@ -1,8 +1,7 @@
 const config = {
-  appId: 'io.lingotheory.app',
+  appId: 'io.lingotheory.mobile',
   appName: 'Driving Theory Helper',
-  // webDir points to build output (not 'public')
-  webDir: '.next',
+  webDir: 'public',
   server: {
     // MUST be production URL - NO localhost, NO mock auth
     url: 'https://www.lingotheory.org',

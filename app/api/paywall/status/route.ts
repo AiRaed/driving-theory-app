@@ -6,8 +6,9 @@ export const dynamic = 'force-dynamic';
 
 /**
  * SINGLE SOURCE OF TRUTH for paywall status
- * Reads from payments table (paid status) and profiles table (trial usage)
+ * Reads from profiles table (access_level and free_questions_used)
  * Returns { paid: boolean, trialUsed: number, trialLimit: number }
+ * paid === true ONLY when profiles.access_level === 'paid'
  */
 export async function GET(request: NextRequest) {
   try {
@@ -22,7 +23,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    // Use SERVICE_ROLE_KEY to query both payments and profiles (bypasses RLS)
+    // Use SERVICE_ROLE_KEY to query profiles (bypasses RLS)
     const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
@@ -40,26 +41,10 @@ export async function GET(request: NextRequest) {
       },
     });
 
-    // Query payments table - paid status from payments table
-    const { data: payment, error: paymentError } = await adminClient
-      .from('payments')
-      .select('status')
-      .eq('user_id', user.id)
-      .eq('status', 'paid')
-      .limit(1)
-      .maybeSingle();
-
-    if (paymentError && paymentError.code !== 'PGRST116') {
-      console.error('[paywall/status] Error querying payments:', paymentError);
-    }
-
-    // paid === true ONLY when payments table has a record with status='paid'
-    const paid = payment !== null && payment.status === 'paid';
-
-    // Query profiles table for trial usage
+    // Query profiles table - access_level and free_questions_used are the ONLY source of truth
     const { data: profile, error: profileError } = await adminClient
       .from('profiles')
-      .select('free_questions_used')
+      .select('access_level, free_questions_used')
       .eq('id', user.id)
       .maybeSingle();
 
@@ -67,6 +52,9 @@ export async function GET(request: NextRequest) {
       console.error('[paywall/status] Error querying profile:', profileError);
     }
 
+    // paid === true ONLY when profiles.access_level === 'paid'
+    const paid = profile?.access_level === 'paid';
+    
     // Normalize freeUsed: if null/undefined from DB => 0
     const trialUsed = profile?.free_questions_used ?? 0;
     const trialLimit = 15;

@@ -1,4 +1,4 @@
-package io.lingotheory.app;
+package io.lingotheory.mobile;
 
 import com.getcapacitor.BridgeActivity;
 

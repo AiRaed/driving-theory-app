@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { Capacitor } from '@capacitor/core';
 import { cn } from '@/lib/utils';
 import { useAccess } from '@/lib/providers/AccessProvider';
 
@@ -11,19 +12,78 @@ interface PaywallOverlayProps {
 }
 
 /**
- * PaywallOverlay - PURE UI component
+ * PaywallOverlay - Supports both Stripe (web) and Google Play (Android)
  * Full screen overlay with backdrop blur
- * ONE button: "Continue to Payment – £9.99"
+ * Web: "Continue to Payment – £9.99" (Stripe)
+ * Android: "Unlock with Google Play" (Google Play Billing)
  * NO "Maybe later", NO free option
- * Receives onPay handler and loading prop from parent
  * Does NOT disappear unless parent stops rendering it (when paid becomes true)
  */
 export default function PaywallOverlay({ onPay, loading: externalLoading }: PaywallOverlayProps = {}) {
   const [loading, setLoading] = useState(false);
+  const [isAndroid, setIsAndroid] = useState(false);
   const router = useRouter();
   const { refresh } = useAccess();
 
-  const handlePayment = async () => {
+  // Detect platform on mount
+  useEffect(() => {
+    setIsAndroid(Capacitor.isNativePlatform() && Capacitor.getPlatform() === 'android');
+  }, []);
+
+  const handleGooglePlayPurchase = async () => {
+    setLoading(true);
+    try {
+      // Get PlayBilling plugin from Capacitor
+      const PlayBilling = (window as any).Capacitor?.Plugins?.PlayBilling;
+      if (!PlayBilling) {
+        throw new Error('PlayBilling plugin not available');
+      }
+
+      // Initialize billing client
+      await PlayBilling.init();
+
+      // Get product ID (default to 'full_access')
+      const productId = process.env.NEXT_PUBLIC_GOOGLE_PRODUCT_ID || 'full_access';
+
+      // Launch purchase flow
+      const purchaseResult = await PlayBilling.purchase({ productId });
+
+      if (!purchaseResult || !purchaseResult.purchaseToken) {
+        throw new Error('Purchase failed or incomplete');
+      }
+
+      // Verify purchase with server
+      const verifyResponse = await fetch('/api/billing/google/verify', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          productId: purchaseResult.productId || productId,
+          purchaseToken: purchaseResult.purchaseToken,
+          platform: 'android',
+        }),
+      });
+
+      const verifyData = await verifyResponse.json();
+
+      if (!verifyResponse.ok) {
+        throw new Error(verifyData.error || 'Failed to verify purchase');
+      }
+
+      // Refresh access status from Supabase
+      await refresh();
+      
+      // Paywall will disappear when paid becomes true
+      // No need to redirect - state update will handle it
+    } catch (error) {
+      console.error('Google Play purchase error:', error);
+      alert(error instanceof Error ? error.message : 'Failed to complete purchase. Please try again.');
+      setLoading(false);
+    }
+  };
+
+  const handleStripePayment = async () => {
     setLoading(true);
     try {
       const response = await fetch('/api/stripe/create-checkout-session', {
@@ -60,6 +120,8 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
       setLoading(false);
     }
   };
+
+  const handlePayment = onPay || (isAndroid ? handleGooglePlayPurchase : handleStripePayment);
 
   const isLoading = loading || externalLoading;
 
@@ -138,9 +200,9 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
               </div>
             </div>
 
-            {/* ONE button only */}
+            {/* ONE button only - different text for Android vs Web */}
             <button
-              onClick={onPay || handlePayment}
+              onClick={handlePayment}
               disabled={isLoading}
               className={cn(
                 "w-full py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold text-base",
@@ -149,11 +211,17 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
                 "active:scale-[0.98]"
               )}
             >
-              {isLoading ? 'Processing...' : 'Continue to Payment – £9.99'}
+              {isLoading 
+                ? 'Processing...' 
+                : isAndroid 
+                  ? 'Buy on Google Play – £9.99' 
+                  : 'Continue to Payment – £9.99'}
             </button>
 
             <p className="text-xs text-slate-500 text-center mt-4">
-              Secure payment powered by Stripe
+              {isAndroid 
+                ? 'Secure payment powered by Google Play' 
+                : 'Secure payment powered by Stripe'}
             </p>
           </div>
         </div>

@@ -68,7 +68,7 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function PracticePage() {
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
-  const { loading, paid, freeUsed, refresh } = useAccess();
+  const { loading, paid, freeUsed, refresh, silentRefresh } = useAccess();
   const [selectedTopic, setSelectedTopic] = useState<string>('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
@@ -299,14 +299,25 @@ export default function PracticePage() {
     if (!paid && currentQuestion && !countedQuestionIds.current.has(currentQuestion.id)) {
       countedQuestionIds.current.add(currentQuestion.id);
       
+      // Track previous freeUsed to detect when crossing 15
+      const previousFreeUsed = freeUsed ?? 0;
+      
       // Fire-and-forget: increment usage in background, don't block UI
       fetch('/api/practice/increment-usage', {
         method: 'POST',
       }).then(response => {
         if (response.ok) {
-          // Refresh paywall status from Supabase to get updated trialUsed
-          // This ensures Web and Android stay in sync
-          refresh().catch(err => console.error('Error refreshing access:', err));
+          // Only refresh when freeUsed crosses 15 exactly (to show paywall)
+          // Use silentRefresh to avoid flicker (doesn't set loading=true)
+          // This prevents paywall from flashing between questions
+          const newFreeUsed = previousFreeUsed + 1;
+          if (newFreeUsed >= 15 && previousFreeUsed < 15) {
+            // Crossing 15 - refresh to show paywall (silent to avoid flicker)
+            silentRefresh().catch(err => console.error('Error refreshing access:', err));
+          } else {
+            // Not crossing 15 - silent refresh to update count without flicker
+            silentRefresh().catch(err => console.error('Error refreshing access:', err));
+          }
         }
       }).catch(error => {
         console.error('Error incrementing usage:', error);

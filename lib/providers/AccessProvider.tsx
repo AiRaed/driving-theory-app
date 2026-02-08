@@ -8,6 +8,7 @@ interface AccessContextType {
   paid: boolean;
   freeUsed: number;
   refresh: () => Promise<void>;
+  silentRefresh: () => Promise<void>; // Refresh without setting loading=true
 }
 
 const AccessContext = createContext<AccessContextType | undefined>(undefined);
@@ -25,9 +26,11 @@ export function AccessProvider({ children }: { children: ReactNode }) {
   const [freeUsed, setFreeUsed] = useState(0);
   const supabase = createClient();
 
-  const refresh = async () => {
+  const fetchAccessStatus = async (setLoadingState: boolean = true) => {
     try {
-      setLoading(true);
+      if (setLoadingState) {
+        setLoading(true);
+      }
       const response = await fetch('/api/access/status', {
         cache: 'no-store',
         credentials: 'include',
@@ -57,8 +60,18 @@ export function AccessProvider({ children }: { children: ReactNode }) {
       setPaid(false);
       setFreeUsed(0);
     } finally {
-      setLoading(false);
+      if (setLoadingState) {
+        setLoading(false);
+      }
     }
+  };
+
+  const refresh = async () => {
+    await fetchAccessStatus(true);
+  };
+
+  const silentRefresh = async () => {
+    await fetchAccessStatus(false);
   };
 
   // Fetch on app load
@@ -82,7 +95,7 @@ export function AccessProvider({ children }: { children: ReactNode }) {
   }, [supabase]);
 
   return (
-    <AccessContext.Provider value={{ loading, paid, freeUsed, refresh }}>
+    <AccessContext.Provider value={{ loading, paid, freeUsed, refresh, silentRefresh }}>
       {children}
     </AccessContext.Provider>
   );
