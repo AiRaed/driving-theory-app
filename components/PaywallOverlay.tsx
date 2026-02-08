@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Capacitor } from '@capacitor/core';
+import { Capacitor,registerPlugin} from '@capacitor/core';
 import { cn } from '@/lib/utils';
 import { useAccess } from '@/lib/providers/AccessProvider';
 
@@ -34,11 +34,10 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
     setLoading(true);
     try {
       // Get PlayBilling plugin from Capacitor
-      const PlayBilling = (window as any).Capacitor?.Plugins?.PlayBilling;
-      if (!PlayBilling) {
+      const PlayBilling = registerPlugin<any>('PlayBilling');
+      if (!Capacitor.isNativePlatform()) {
         throw new Error('PlayBilling plugin not available');
       }
-
       // Initialize billing client
       await PlayBilling.init();
 
