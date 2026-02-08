@@ -41,8 +41,8 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
       // Initialize billing client
       await PlayBilling.init();
 
-      // Get product ID (default to 'full_access')
-      const productId = process.env.NEXT_PUBLIC_GOOGLE_PRODUCT_ID || 'full_access';
+      // Get product ID (default to 'unlock_full_access' - must match Play Console)
+      const productId = process.env.NEXT_PUBLIC_GOOGLE_PRODUCT_ID || 'unlock_full_access';
 
       // Launch purchase flow
       const purchaseResult = await PlayBilling.purchase({ productId });
