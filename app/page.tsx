@@ -7,10 +7,6 @@ export default function Home() {
     <>
       {/* App version badge - only visible in native Android app */}
       <AppVersionBadge />
-      {/* Sync test marker - fixed at bottom-left, no layout impact */}
-      <div className="fixed bottom-0 left-0 p-2 text-xs opacity-60 z-[9999] pointer-events-none">
-        <span className="text-red-500">❤️</span> sync-test
-      </div>
       <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col items-center">
         <section className="w-full max-w-2xl text-center mt-8 mb-8">
           <h1 className="text-[28px] sm:text-4xl font-semibold mb-4 text-[var(--ink)]">

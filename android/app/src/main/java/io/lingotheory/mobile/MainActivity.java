@@ -7,7 +7,8 @@ import io.lingotheory.mobile.billing.PlayBillingPlugin;
 public class MainActivity extends BridgeActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        // Register custom plugins BEFORE super.onCreate()
         registerPlugin(PlayBillingPlugin.class);
+        super.onCreate(savedInstanceState);
     }
 }
