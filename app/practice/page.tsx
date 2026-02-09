@@ -833,17 +833,6 @@ export default function PracticePage() {
               })}
             </div>
 
-            {/* Feedback Badge */}
-            {selectedAnswerIndex !== null && (
-              <div className={cn(
-                "inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold mb-5 transition-all duration-300 animate-in fade-in slide-in-from-top-2 shadow-md",
-                isCorrect ? "bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 border border-green-300" : "bg-gradient-to-r from-red-100 to-rose-100 text-red-800 border border-red-300"
-              )}>
-                <span className="text-lg font-bold">{isCorrect ? "✓" : "✕"}</span>
-                <span>{isCorrect ? "Well done! You've got this." : "Not quite. Review the explanation below."}</span>
-              </div>
-            )}
-
             {/* Learning Hints Section - Shown after answering */}
             {(() => {
               // Filter hints to only show those with all 3 languages (EN/AR/UR)
