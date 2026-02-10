@@ -24,9 +24,14 @@ export const metadata: Metadata = {
   description: "Multilingual driving theory test practice. Prepare for your UK driving theory test with bilingual practice questions and realistic mock tests.",
   icons: {
     icon: "/favicon-check.svg",
-    apple: "/favicon-check.svg",
+    apple: "/pwa/icon-192.png",
   },
-  manifest: "/site.webmanifest",
+  manifest: "/manifest.webmanifest",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "LingoTheory",
+  },
 };
 
 export default function RootLayout({

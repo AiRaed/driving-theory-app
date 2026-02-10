@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { isMobileDevice, isStandaloneMode, isCapacitorWebView } from '@/lib/utils/platform';
 import { cn } from '@/lib/utils';
 
@@ -14,7 +14,10 @@ interface AddToHomeScreenPopupProps {
 
 export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupProps) {
   const [show, setShow] = useState(false);
+  const [hasInstallPrompt, setHasInstallPrompt] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
+  const [isAndroid, setIsAndroid] = useState(false);
+  const deferredPromptRef = useRef<any>(null);
 
   useEffect(() => {
     // Check if we should show the popup
@@ -68,26 +71,80 @@ export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupPr
       return true;
     };
 
-    // Detect iOS
+    // Detect platform
     if (typeof window !== 'undefined') {
       const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
       setIsIOS(/iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream);
+      setIsAndroid(/Android/.test(userAgent));
+    }
+
+    // Listen for beforeinstallprompt event (universal PWA install prompt)
+    const handleBeforeInstallPrompt = (e: Event) => {
+      // Prevent the default mini-infobar from appearing
+      e.preventDefault();
+      // Store the event so it can be triggered later
+      deferredPromptRef.current = e;
+      setHasInstallPrompt(true);
+    };
+
+    // Listen for app installed event
+    const handleAppInstalled = () => {
+      // Mark as installed
+      if (typeof window !== 'undefined') {
+        localStorage.setItem(STORAGE_KEY_INSTALLED, 'true');
+      }
+      setShow(false);
+      deferredPromptRef.current = null;
+      setHasInstallPrompt(false);
+    };
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      window.addEventListener('appinstalled', handleAppInstalled);
     }
 
     // Show popup if conditions are met
     if (shouldShow()) {
       setShow(true);
     }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+        window.removeEventListener('appinstalled', handleAppInstalled);
+      }
+    };
   }, []);
 
-  const handleGotIt = () => {
-    // Dismiss for 7 days
-    if (typeof window !== 'undefined') {
-      const dismissedUntil = Date.now() + 7 * 24 * 60 * 60 * 1000; // 7 days
-      localStorage.setItem(STORAGE_KEY_DISMISSED_UNTIL, dismissedUntil.toString());
+  const handleInstall = async () => {
+    // If browser supports native install prompt, use it
+    if (deferredPromptRef.current) {
+      try {
+        // Show the install prompt
+        const promptEvent = deferredPromptRef.current as any;
+        await promptEvent.prompt();
+        
+        // Wait for the user to respond
+        const { outcome } = await promptEvent.userChoice;
+        
+        // Clear the stored prompt
+        deferredPromptRef.current = null;
+        setHasInstallPrompt(false);
+        
+        // Close popup regardless of outcome
+        setShow(false);
+        onClose?.();
+      } catch (error) {
+        console.error('Install prompt error:', error);
+        // If prompt fails, just close
+        setShow(false);
+        onClose?.();
+      }
+    } else {
+      // No native prompt available - just close (instructions are already shown)
+      setShow(false);
+      onClose?.();
     }
-    setShow(false);
-    onClose?.();
   };
 
   const handleLater = () => {
@@ -113,6 +170,10 @@ export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupPr
     return null;
   }
 
+  // Determine button text and behavior
+  const showInstructions = !hasInstallPrompt;
+  const primaryButtonText = hasInstallPrompt ? 'Install app' : 'Close';
+
   return (
     <>
       {/* Backdrop */}
@@ -129,32 +190,44 @@ export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupPr
           'animate-in slide-in-from-bottom duration-300',
           'max-w-md mx-auto'
         )}
-        dir="rtl"
+        dir="ltr"
       >
         <div className="p-6 space-y-4">
           {/* Title */}
           <h2 className="text-xl font-bold text-[var(--navy)] text-center">
-            ثبّت LingoTheory على موبايلك
+            Install LingoTheory
           </h2>
 
           {/* Body */}
           <div className="space-y-3">
             <p className="text-base text-[var(--muted-text)] text-center leading-relaxed">
-              خليه مثل تطبيق وافتحه بكبسة واحدة من الشاشة الرئيسية.
+              Add LingoTheory to your home screen for quick access.
             </p>
 
-            {/* iOS specific instructions */}
-            {isIOS && (
-              <p className="text-sm text-[var(--muted-text)]/80 text-center leading-relaxed">
-                على الآيفون: اضغط زر المشاركة ⬆️ ثم اختر Add to Home Screen
-              </p>
+            {/* Instructions - shown when native prompt is NOT available */}
+            {showInstructions && (
+              <div className="bg-slate-50 rounded-lg p-4 space-y-2">
+                {isIOS ? (
+                  <p className="text-sm text-[var(--muted-text)] text-center leading-relaxed">
+                    Tap the Share icon → Add to Home Screen
+                  </p>
+                ) : isAndroid ? (
+                  <p className="text-sm text-[var(--muted-text)] text-center leading-relaxed">
+                    Open the browser menu and tap "Add to Home screen" or "Install app"
+                  </p>
+                ) : (
+                  <p className="text-sm text-[var(--muted-text)] text-center leading-relaxed">
+                    Open the browser menu and look for "Add to Home screen" or "Install app"
+                  </p>
+                )}
+              </div>
             )}
           </div>
 
           {/* Buttons */}
           <div className="space-y-2 pt-2">
             <button
-              onClick={handleGotIt}
+              onClick={handleInstall}
               className={cn(
                 'w-full py-3 rounded-xl',
                 'bg-gradient-to-r from-[var(--primary-red)] to-[#C10500]',
@@ -164,7 +237,7 @@ export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupPr
                 'active:scale-[0.98]'
               )}
             >
-              فهمت
+              {primaryButtonText}
             </button>
 
             <button
@@ -179,7 +252,7 @@ export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupPr
                 'active:scale-[0.98]'
               )}
             >
-              لاحقًا
+              Later
             </button>
 
             <button
@@ -191,7 +264,7 @@ export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupPr
                 'transition-colors duration-200'
               )}
             >
-              لا تظهر مرة ثانية
+              Don't show again
             </button>
           </div>
         </div>
@@ -199,4 +272,3 @@ export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupPr
     </>
   );
 }
-
