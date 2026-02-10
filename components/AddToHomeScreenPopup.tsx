@@ -1,8 +1,9 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { isMobileDevice, isStandaloneMode, isCapacitorWebView } from '@/lib/utils/platform';
 import { cn } from '@/lib/utils';
+import { useInstallPrompt } from '@/lib/hooks/useInstallPrompt';
 
 const STORAGE_KEY_DISMISSED_UNTIL = 'addToHomeScreen_dismissedUntil';
 const STORAGE_KEY_DISMISSED_FOREVER = 'addToHomeScreen_dismissedForever';
@@ -10,18 +11,23 @@ const STORAGE_KEY_INSTALLED = 'addToHomeScreen_installed';
 
 interface AddToHomeScreenPopupProps {
   onClose?: () => void;
+  forceShow?: boolean; // Force show popup (for fallback mode from persistent button)
 }
 
-export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupProps) {
+export default function AddToHomeScreenPopup({ onClose, forceShow = false }: AddToHomeScreenPopupProps) {
   const [show, setShow] = useState(false);
-  const [hasInstallPrompt, setHasInstallPrompt] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
   const [isAndroid, setIsAndroid] = useState(false);
-  const deferredPromptRef = useRef<any>(null);
+  const { hasInstallPrompt, isInstalled, triggerInstall } = useInstallPrompt();
 
   useEffect(() => {
     // Check if we should show the popup
     const shouldShow = () => {
+      // Force show if requested (for fallback mode)
+      if (forceShow) {
+        return true;
+      }
+
       // Don't show on desktop
       if (!isMobileDevice()) {
         return false;
@@ -33,7 +39,7 @@ export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupPr
       }
 
       // Don't show if already installed (standalone mode)
-      if (isStandaloneMode()) {
+      if (isStandaloneMode() || isInstalled) {
         // Mark as installed in localStorage
         if (typeof window !== 'undefined') {
           localStorage.setItem(STORAGE_KEY_INSTALLED, 'true');
@@ -78,68 +84,19 @@ export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupPr
       setIsAndroid(/Android/.test(userAgent));
     }
 
-    // Listen for beforeinstallprompt event (universal PWA install prompt)
-    const handleBeforeInstallPrompt = (e: Event) => {
-      // Prevent the default mini-infobar from appearing
-      e.preventDefault();
-      // Store the event so it can be triggered later
-      deferredPromptRef.current = e;
-      setHasInstallPrompt(true);
-    };
-
-    // Listen for app installed event
-    const handleAppInstalled = () => {
-      // Mark as installed
-      if (typeof window !== 'undefined') {
-        localStorage.setItem(STORAGE_KEY_INSTALLED, 'true');
-      }
-      setShow(false);
-      deferredPromptRef.current = null;
-      setHasInstallPrompt(false);
-    };
-
-    if (typeof window !== 'undefined') {
-      window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-      window.addEventListener('appinstalled', handleAppInstalled);
-    }
-
     // Show popup if conditions are met
     if (shouldShow()) {
       setShow(true);
     }
-
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-        window.removeEventListener('appinstalled', handleAppInstalled);
-      }
-    };
-  }, []);
+  }, [forceShow, isInstalled]);
 
   const handleInstall = async () => {
     // If browser supports native install prompt, use it
-    if (deferredPromptRef.current) {
-      try {
-        // Show the install prompt
-        const promptEvent = deferredPromptRef.current as any;
-        await promptEvent.prompt();
-        
-        // Wait for the user to respond
-        const { outcome } = await promptEvent.userChoice;
-        
-        // Clear the stored prompt
-        deferredPromptRef.current = null;
-        setHasInstallPrompt(false);
-        
-        // Close popup regardless of outcome
-        setShow(false);
-        onClose?.();
-      } catch (error) {
-        console.error('Install prompt error:', error);
-        // If prompt fails, just close
-        setShow(false);
-        onClose?.();
-      }
+    if (hasInstallPrompt) {
+      const result = await triggerInstall();
+      // Close popup after user choice (accepted or dismissed)
+      setShow(false);
+      onClose?.();
     } else {
       // No native prompt available - just close (instructions are already shown)
       setShow(false);
@@ -170,9 +127,8 @@ export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupPr
     return null;
   }
 
-  // Determine button text and behavior
+  // Determine if we should show instructions (when native prompt is NOT available)
   const showInstructions = !hasInstallPrompt;
-  const primaryButtonText = hasInstallPrompt ? 'Install app' : 'Close';
 
   return (
     <>
@@ -237,23 +193,26 @@ export default function AddToHomeScreenPopup({ onClose }: AddToHomeScreenPopupPr
                 'active:scale-[0.98]'
               )}
             >
-              {primaryButtonText}
+              {hasInstallPrompt ? 'Install app' : 'Close'}
             </button>
 
-            <button
-              onClick={handleLater}
-              className={cn(
-                'w-full py-2.5 rounded-xl',
-                'border-2 border-[var(--primary-red)]',
-                'bg-white text-[var(--primary-red)]',
-                'font-medium text-sm',
-                'hover:bg-red-50',
-                'transition-all duration-200',
-                'active:scale-[0.98]'
-              )}
-            >
-              Later
-            </button>
+            {/* Show "Later" button ONLY when native install prompt is available */}
+            {hasInstallPrompt && (
+              <button
+                onClick={handleLater}
+                className={cn(
+                  'w-full py-2.5 rounded-xl',
+                  'border-2 border-[var(--primary-red)]',
+                  'bg-white text-[var(--primary-red)]',
+                  'font-medium text-sm',
+                  'hover:bg-red-50',
+                  'transition-all duration-200',
+                  'active:scale-[0.98]'
+                )}
+              >
+                Later
+              </button>
+            )}
 
             <button
               onClick={handleDontShowAgain}

@@ -8,13 +8,17 @@ import { User } from '@supabase/supabase-js';
 import { cn } from '@/lib/utils';
 import { questions } from '@/data/questions';
 import AddToHomeScreenPopup from '@/components/AddToHomeScreenPopup';
+import { useInstallPrompt } from '@/lib/hooks/useInstallPrompt';
+import { isMobileDevice, isStandaloneMode, isCapacitorWebView } from '@/lib/utils/platform';
 
 export default function DashboardClient() {
   const [user, setUser] = useState<User | null>(null);
   const [deleteConfirm, setDeleteConfirm] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
+  const [showInstallPopup, setShowInstallPopup] = useState(false);
   const router = useRouter();
   const supabase = createClient();
+  const { hasInstallPrompt, isInstalled, triggerInstall } = useInstallPrompt();
 
   useEffect(() => {
     // Get initial user
@@ -71,6 +75,35 @@ export default function DashboardClient() {
   // Get question counts
   const practiceQuestionsCount = questions.length;
   const mockTestQuestionsCount = 50; // Standard mock test size
+
+  // Handle install button click
+  const handleInstallClick = async () => {
+    if (hasInstallPrompt) {
+      // Trigger native install prompt
+      await triggerInstall();
+    } else {
+      // Open popup in fallback mode with instructions
+      setShowInstallPopup(true);
+    }
+  };
+
+  // Check if install button should be visible (mobile only, not installed, not Capacitor)
+  const [shouldShowInstallButton, setShouldShowInstallButton] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      setShouldShowInstallButton(false);
+      return;
+    }
+
+    const shouldShow = 
+      isMobileDevice() &&
+      !isCapacitorWebView() &&
+      !isStandaloneMode() &&
+      !isInstalled;
+    
+    setShouldShowInstallButton(shouldShow);
+  }, [isInstalled]);
 
   return (
     <div className="min-h-[calc(100vh-64px)] flex items-center md:items-start justify-center py-6 md:py-6 md:py-8">
@@ -145,6 +178,26 @@ export default function DashboardClient() {
               </p>
             )}
           </div>
+
+          {/* Persistent Install App Button - Mobile only */}
+          {shouldShowInstallButton && (
+            <div className="pt-4 pb-0">
+              <button
+                onClick={handleInstallClick}
+                className={cn(
+                  'w-full py-3 rounded-xl',
+                  'bg-gradient-to-r from-blue-600 to-blue-700',
+                  'text-white font-semibold text-sm sm:text-base',
+                  'hover:from-blue-700 hover:to-blue-800',
+                  'transition-all duration-200 shadow-md hover:shadow-lg',
+                  'active:scale-[0.98]',
+                  'md:hidden' // Only show on mobile screens
+                )}
+              >
+                Install app
+              </button>
+            </div>
+          )}
         </div>
         
         {/* Helper text below card */}
@@ -154,7 +207,7 @@ export default function DashboardClient() {
       </div>
 
       {/* Add to Home Screen Popup - Mobile only */}
-      {user && <AddToHomeScreenPopup />}
+      {user && <AddToHomeScreenPopup forceShow={showInstallPopup} onClose={() => setShowInstallPopup(false)} />}
     </div>
   );
 }
