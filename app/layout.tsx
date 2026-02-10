@@ -4,6 +4,7 @@ import Link from "next/link";
 import HeaderClient from "@/components/HeaderClient";
 import Analytics from "@/components/Analytics";
 import { AccessProvider } from "@/lib/providers/AccessProvider";
+import PWAMetaTags from "@/components/PWAMetaTags";
 import "./globals.css";
 
 const inter = Inter({
@@ -26,12 +27,16 @@ export const metadata: Metadata = {
     icon: "/favicon-check.svg",
     apple: "/pwa/icon-192.png",
   },
+  other: {
+    "apple-touch-icon": "/pwa/icon-192.png",
+  },
   manifest: "/manifest.webmanifest",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
     title: "LingoTheory",
   },
+  themeColor: "#ffffff",
 };
 
 export default function RootLayout({
@@ -44,6 +49,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${ibmPlexSansArabic.variable} font-sans antialiased min-h-screen`}
       >
+        <PWAMetaTags />
         <Analytics />
         <AccessProvider>
           <div className="min-h-screen flex flex-col bg-[var(--bg)]">

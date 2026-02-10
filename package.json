@@ -10,7 +10,8 @@
     "lint": "next lint",
     "export:questions": "ts-node tools/export-questions.ts",
     "dedupe:questions": "node tools/dedupe.js questions.export.json",
-    "dedupe:all": "npm run export:questions && npm run dedupe:questions"
+    "dedupe:all": "npm run export:questions && npm run dedupe:questions",
+    "generate:pwa-icons": "node tools/generate-pwa-icons.js"
   },
   "dependencies": {
     "@capacitor-community/text-to-speech": "^6.1.0",
