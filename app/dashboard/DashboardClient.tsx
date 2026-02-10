@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { User } from '@supabase/supabase-js';
 import { cn } from '@/lib/utils';
 import { questions } from '@/data/questions';
+import AddToHomeScreenPopup from '@/components/AddToHomeScreenPopup';
 
 export default function DashboardClient() {
   const [user, setUser] = useState<User | null>(null);
@@ -151,6 +152,9 @@ export default function DashboardClient() {
           Practice daily to increase your chances of passing.
         </div>
       </div>
+
+      {/* Add to Home Screen Popup - Mobile only */}
+      {user && <AddToHomeScreenPopup />}
     </div>
   );
 }
