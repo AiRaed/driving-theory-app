@@ -119,6 +119,104 @@ export function isIOSDevice(): boolean {
   return isIOS || isIPadOS;
 }
 
+/**
+ * Check if running in iOS Safari (not Chrome iOS, not Firefox iOS, not in-app browsers)
+ * @returns true if iOS Safari, false otherwise
+ */
+export function isSafari(): boolean {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  // Must be iOS device first
+  if (!isIOSDevice()) {
+    return false;
+  }
+
+  const userAgent = navigator.userAgent || '';
+
+  // Chrome iOS has "CriOS" in user agent
+  if (userAgent.includes('CriOS')) {
+    return false;
+  }
+
+  // Firefox iOS has "FxiOS" in user agent
+  if (userAgent.includes('FxiOS')) {
+    return false;
+  }
+
+  // In-app browsers often have specific patterns
+  // Facebook in-app: "FBAN" or "FBAV"
+  if (userAgent.includes('FBAN') || userAgent.includes('FBAV')) {
+    return false;
+  }
+
+  // Twitter in-app: "Twitter"
+  if (userAgent.includes('Twitter')) {
+    return false;
+  }
+
+  // Instagram in-app: "Instagram"
+  if (userAgent.includes('Instagram')) {
+    return false;
+  }
+
+  // LinkedIn in-app: "LinkedInApp"
+  if (userAgent.includes('LinkedInApp')) {
+    return false;
+  }
+
+  // Check for Safari (Safari has "Safari" but not "Chrome" or "CriOS")
+  // Safari on iOS will have "Safari" in user agent and not have "CriOS" or "FxiOS"
+  const hasSafari = userAgent.includes('Safari');
+  const hasChrome = userAgent.includes('Chrome');
+  
+  // Safari has "Safari" but not "Chrome" (Chrome iOS has "CriOS" which we already filtered)
+  // However, Safari on iOS also includes "Version" in the user agent
+  return hasSafari && !hasChrome;
+}
+
+/**
+ * Safely copy text to clipboard
+ * Falls back to textarea method if clipboard API is not available
+ * @param text - The text to copy
+ * @returns Promise that resolves to true if successful, false otherwise
+ */
+export async function copyToClipboard(text: string): Promise<boolean> {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  // Try modern clipboard API first
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch (err) {
+      // Fall through to fallback method
+    }
+  }
+
+  // Fallback: use textarea method
+  try {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.left = '-999999px';
+    textarea.style.top = '-999999px';
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    
+    const successful = document.execCommand('copy');
+    document.body.removeChild(textarea);
+    
+    return successful;
+  } catch (err) {
+    return false;
+  }
+}
+
 
 
 

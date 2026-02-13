@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { isMobileDevice, isStandaloneMode, isCapacitorWebView, isIOSDevice } from '@/lib/utils/platform';
+import { isMobileDevice, isStandaloneMode, isCapacitorWebView, isIOSDevice, isSafari, copyToClipboard } from '@/lib/utils/platform';
 import { cn } from '@/lib/utils';
 import { useInstallPrompt } from '@/lib/hooks/useInstallPrompt';
 
@@ -17,24 +17,42 @@ interface AddToHomeScreenPopupProps {
  * Full-screen overlay with step-by-step instructions and visual arrow indicator
  */
 function IOSInstructionsOverlay({ onClose }: { onClose: () => void }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyLink = async () => {
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+    const success = await copyToClipboard(url);
+    if (success) {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    }
+  };
+
   return (
     <>
-      {/* Backdrop */}
+      {/* Backdrop - pointer-events: none to allow touches to pass through to Safari UI */}
       <div
-        className="fixed inset-0 bg-black/70 z-[10000] animate-in fade-in"
-        onClick={onClose}
+        className="fixed inset-0 bg-black/70 z-[10000] animate-in fade-in pointer-events-none"
       />
 
-      {/* Overlay Content */}
+      {/* Overlay Content - pointer-events: auto to capture clicks on the popup */}
       <div
         className={cn(
-          'fixed inset-0 z-[10001]',
+          'fixed inset-0 z-[10001] pointer-events-none',
           'flex flex-col items-center justify-center',
           'px-6 py-8'
         )}
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e) => {
+          // Only close if clicking outside the popup card
+          if (e.target === e.currentTarget) {
+            onClose();
+          }
+        }}
       >
-        <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-6">
+        <div 
+          className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-6 pointer-events-auto"
+          onClick={(e) => e.stopPropagation()}
+        >
           {/* Title */}
           <h2 className="text-2xl font-bold text-[var(--navy)] text-center">
             Add to Home Screen
@@ -82,6 +100,23 @@ function IOSInstructionsOverlay({ onClose }: { onClose: () => void }) {
             </div>
           </div>
 
+          {/* Copy Link Fallback Button */}
+          <button
+            onClick={handleCopyLink}
+            className={cn(
+              'w-full py-2.5 rounded-xl',
+              'border-2 border-[var(--primary-red)]',
+              'bg-white text-[var(--primary-red)]',
+              'font-medium text-sm',
+              'hover:bg-red-50',
+              'transition-all duration-200',
+              'active:scale-[0.98]',
+              copied && 'bg-green-50 border-green-500 text-green-700'
+            )}
+          >
+            {copied ? '✓ Copied!' : 'Copy link'}
+          </button>
+
           {/* Close Button */}
           <button
             onClick={onClose}
@@ -117,8 +152,8 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
         return true;
       }
 
-      // Don't show on desktop
-      if (!isMobileDevice()) {
+      // Only show on iOS Safari (not Chrome iOS, not in-app browsers, not Capacitor webview)
+      if (!isSafari()) {
         return false;
       }
 
@@ -218,16 +253,15 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
 
   return (
     <>
-      {/* Backdrop */}
+      {/* Backdrop - pointer-events: none to allow touches to pass through to Safari UI */}
       <div
-        className="fixed inset-0 bg-black/50 z-[9998] animate-in fade-in"
-        onClick={handleNotNow}
+        className="fixed inset-0 bg-black/50 z-[9998] animate-in fade-in pointer-events-none"
       />
 
-      {/* Popup */}
+      {/* Popup - pointer-events: auto to capture clicks on the popup itself */}
       <div
         className={cn(
-          'fixed bottom-0 left-0 right-0 z-[9999]',
+          'fixed bottom-0 left-0 right-0 z-[9999] pointer-events-auto',
           'bg-white rounded-t-2xl shadow-2xl',
           'animate-in slide-in-from-bottom duration-300',
           'max-w-md mx-auto'
