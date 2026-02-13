@@ -96,6 +96,29 @@ export function isCapacitorWebView(): boolean {
   return false;
 }
 
+/**
+ * Check if running on iOS (iPhone, iPad, iPod, iPadOS)
+ * Reliable detection using user agent and touch detection for iPadOS
+ * @returns true if iOS device, false otherwise
+ */
+export function isIOSDevice(): boolean {
+  // Return false on server
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+  
+  // Check for iOS devices (iPhone, iPad, iPod)
+  const isIOS = /iPhone|iPad|iPod/.test(userAgent) && !(window as any).MSStream;
+  
+  // Check for iPadOS (iPad reports as MacIntel with touch support)
+  const isIPadOS = /MacIntel/.test(userAgent) && 
+                   navigator.maxTouchPoints > 1;
+  
+  return isIOS || isIPadOS;
+}
+
 
 
 
