@@ -81,14 +81,12 @@ export default function AuthClient() {
       return;
     }
 
-    // Use NEXT_PUBLIC_SITE_URL to ensure www.lingotheory.org in production
-    // Falls back to window.location.origin for local development
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+    const origin = typeof window !== 'undefined' ? window.location.origin : '';
     const { error } = await supabase.auth.signUp({
       email,
       password,
       options: {
-        emailRedirectTo: `${siteUrl}/auth/callback`,
+        emailRedirectTo: `${origin}/auth/callback`,
       },
     });
 
