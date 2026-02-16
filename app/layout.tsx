@@ -5,6 +5,7 @@ import HeaderClient from "@/components/HeaderClient";
 import Analytics from "@/components/Analytics";
 import { AccessProvider } from "@/lib/providers/AccessProvider";
 import PWAMetaTags from "@/components/PWAMetaTags";
+import CapacitorAppUrlHandler from "@/components/CapacitorAppUrlHandler";
 import "./globals.css";
 
 const inter = Inter({
@@ -51,6 +52,7 @@ export default function RootLayout({
       >
         <PWAMetaTags />
         <Analytics />
+        <CapacitorAppUrlHandler />
         <AccessProvider>
           <div className="min-h-screen flex flex-col bg-[var(--bg)]">
             <HeaderClient />
