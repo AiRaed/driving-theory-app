@@ -8,6 +8,7 @@ import { User } from '@supabase/supabase-js';
 import { cn } from '@/lib/utils';
 import { questions } from '@/data/questions';
 import AddToHomeScreenPopup from '@/components/AddToHomeScreenPopup';
+import IosInstallHint from '@/components/IosInstallHint';
 import { useInstallPrompt } from '@/lib/hooks/useInstallPrompt';
 import { isMobileDevice, isStandaloneMode, isCapacitorWebView, isIOSDevice } from '@/lib/utils/platform';
 
@@ -135,6 +136,7 @@ export default function DashboardClient() {
                 {practiceQuestionsCount} questions
               </p>
             </div>
+            <IosInstallHint />
             <div className="flex flex-col">
               <Link
                 href="/mock-test"
