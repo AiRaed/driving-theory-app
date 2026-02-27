@@ -1,16 +1,18 @@
 const fs = require('fs');
 const path = require('path');
 
-// PWA icon sizes
+// PWA icon sizes: pwa/ (maskable) and icons/ (manifest + apple-touch-icon)
 const iconSizes = {
   'icon-192.png': 192,
   'icon-512.png': 512,
   'icon-192-maskable.png': 192,  // Maskable with safe padding
   'icon-512-maskable.png': 512,  // Maskable with safe padding
+  'apple-touch-icon.png': 180,   // iOS recommended 180x180
 };
 
 const sourceLogo = path.join(__dirname, '../public/logo-lingotheory.png');
 const outputDir = path.join(__dirname, '../public/pwa');
+const iconsDir = path.join(__dirname, '../public/icons');
 
 // Check if source logo exists
 if (!fs.existsSync(sourceLogo)) {
@@ -31,11 +33,13 @@ try {
 async function generateIcons() {
   console.log('Generating PWA icons with white background...');
   
-  // Ensure output directory exists
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
-    console.log(`Created directory: ${outputDir}`);
-  }
+  // Ensure output directories exist
+  [outputDir, iconsDir].forEach((dir) => {
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+      console.log(`Created directory: ${path.relative(path.join(__dirname, '..'), dir)}`);
+    }
+  });
 
   // Read source logo
   const image = sharp(sourceLogo);
@@ -44,7 +48,8 @@ async function generateIcons() {
 
   // Generate each icon
   for (const [filename, size] of Object.entries(iconSizes)) {
-    const outputPath = path.join(outputDir, filename);
+    const isForIconsDir = filename === 'icon-192.png' || filename === 'icon-512.png' || filename === 'apple-touch-icon.png';
+    const outputPath = path.join(isForIconsDir ? iconsDir : outputDir, filename);
     const isMaskable = filename.includes('maskable');
     
     if (isMaskable) {

@@ -1,10 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
 import Link from "next/link";
 import HeaderClient from "@/components/HeaderClient";
 import Analytics from "@/components/Analytics";
 import { AccessProvider } from "@/lib/providers/AccessProvider";
 import PWAMetaTags from "@/components/PWAMetaTags";
+import RegisterServiceWorker from "@/components/RegisterServiceWorker";
+import IOSInstallBanner from "@/components/IOSInstallBanner";
 import "./globals.css";
 
 const inter = Inter({
@@ -25,10 +27,7 @@ export const metadata: Metadata = {
   description: "Multilingual driving theory test practice. Prepare for your UK driving theory test with bilingual practice questions and realistic mock tests.",
   icons: {
     icon: "/favicon-check.svg",
-    apple: "/pwa/icon-192.png",
-  },
-  other: {
-    "apple-touch-icon": "/pwa/icon-192.png",
+    apple: "/icons/apple-touch-icon.png",
   },
   manifest: "/manifest.webmanifest",
   appleWebApp: {
@@ -36,6 +35,14 @@ export const metadata: Metadata = {
     statusBarStyle: "default",
     title: "LingoTheory",
   },
+  other: {
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "LingoTheory",
+  },
+};
+
+export const viewport: Viewport = {
   themeColor: "#ffffff",
 };
 
@@ -50,6 +57,8 @@ export default function RootLayout({
         className={`${inter.variable} ${ibmPlexSansArabic.variable} font-sans antialiased min-h-screen`}
       >
         <PWAMetaTags />
+        <RegisterServiceWorker />
+        <IOSInstallBanner />
         <Analytics />
         <AccessProvider>
           <div className="min-h-screen flex flex-col bg-[var(--bg)]">
