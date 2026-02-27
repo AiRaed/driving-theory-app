@@ -8,6 +8,7 @@ import {
   isSafari,
   isIOSInAppOrChrome,
   copyToClipboard,
+  CANONICAL_APP_URL,
 } from '@/lib/utils/platform';
 import { cn } from '@/lib/utils';
 import { useInstallPrompt } from '@/lib/hooks/useInstallPrompt';
@@ -20,10 +21,10 @@ interface AddToHomeScreenPopupProps {
 }
 
 /**
- * Install UX by platform:
- * - Android/Chrome: "Install app" only when deferred prompt exists; else browser menu instructions.
- * - iOS Safari: Share → Add to Home Screen instructions only.
- * - iOS in-app/Chrome: "Open in Safari" guidance + copy link, then Add to Home Screen steps.
+ * Install UX by platform (no programmatic install or Share sheet on iOS):
+ * - iOS Safari: Short instructions only. Button: Close.
+ * - iOS in-app: Copy link (canonical URL) + instructions to open in Safari. Buttons: Copy link, Close.
+ * - Android Chrome: "Install app" if beforeinstallprompt captured; else browser menu instructions.
  */
 export default function AddToHomeScreenPopup({ onClose, forceShow = false }: AddToHomeScreenPopupProps) {
   const [show, setShow] = useState(false);
@@ -69,13 +70,12 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
   };
 
   const handleCopyLink = async () => {
-    const url = typeof window !== 'undefined' ? window.location.href : '';
-    const ok = await copyToClipboard(url);
+    const ok = await copyToClipboard(CANONICAL_APP_URL);
     setCopySuccess(ok);
     if (ok) setTimeout(() => setCopySuccess(false), 2000);
   };
 
-  const handleNotNow = () => {
+  const handleClose = () => {
     setShow(false);
     onClose?.();
   };
@@ -91,29 +91,27 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
 
   // --- Platform-specific content ---
 
-  // A) Android/Chrome: real Install button only when deferred prompt exists; else instructions
   const isAndroidChrome = !isIOS;
   const showAndroidInstallButton = isAndroidChrome && hasInstallPrompt;
   const showAndroidInstructions = isAndroidChrome && !hasInstallPrompt;
 
-  // B) iOS Safari: instructions only (no install API on iOS)
-  // C) iOS in-app/Chrome: Open in Safari step + copy link, then instructions
-
+  // iOS Safari: single "Close" button. iOS in-app: "Copy link" + "Close". Android: "Install app" or "Close" + "Close".
   const primaryButtonText = showAndroidInstallButton
     ? 'Install app'
-    : isIOSSafari
-      ? 'Got it'
-      : isIOSInApp
-        ? (copySuccess ? 'Got it' : 'Copy link')
-        : showAndroidInstructions
-          ? 'Got it'
-          : 'Got it';
+    : isIOSInApp
+      ? (copySuccess ? 'Copied' : 'Copy link')
+      : showAndroidInstructions
+        ? 'Close'
+        : 'Close';
 
   const primaryAction = showAndroidInstallButton
     ? handleInstall
     : isIOSInApp && !copySuccess
       ? handleCopyLink
       : closeAndMaybePersist;
+
+  // iOS Safari: only one button "Close". Other platforms may show primary + Close.
+  const showPrimaryButton = showAndroidInstallButton || isIOSInApp || showAndroidInstructions;
 
   return (
     <>
@@ -137,41 +135,36 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
               Add LingoTheory to your home screen for quick access.
             </p>
 
-            {/* A) Android/Chrome – no deferred prompt: browser menu instructions */}
+            {/* Android/Chrome – no deferred prompt: browser Install banner/menu instructions */}
             {showAndroidInstructions && (
               <div className="bg-slate-50 rounded-lg p-4 space-y-2">
                 <p className="text-sm text-[var(--muted-text)] text-center leading-relaxed">
-                  Use the browser menu → <strong>Install app</strong> or <strong>Add to Home screen</strong>.
+                  Use the browser <strong>Install</strong> banner or menu → <strong>Install app</strong> / <strong>Add to Home screen</strong>.
                 </p>
               </div>
             )}
 
-            {/* B) iOS Safari: Share → Add to Home Screen */}
+            {/* iOS Safari: short instructions only */}
             {isIOSSafari && (
               <div className="bg-slate-50 rounded-lg p-4 space-y-2">
                 <p className="text-sm text-[var(--muted-text)] text-center leading-relaxed">
-                  Tap the <strong>Share</strong> icon (square with arrow) → <strong>Add to Home Screen</strong> → <strong>Add</strong>.
+                  Tap <strong>Share</strong> → <strong>Add to Home Screen</strong> → <strong>Add</strong>.
                 </p>
               </div>
             )}
 
-            {/* C) iOS in-app or Chrome: Open in Safari first */}
+            {/* iOS in-app (WhatsApp, Instagram, Facebook, etc.): Safari-only message + Copy link */}
             {isIOSInApp && (
-              <div className="bg-slate-50 rounded-lg p-4 space-y-3">
+              <div className="bg-slate-50 rounded-lg p-4 space-y-2">
                 <p className="text-sm text-[var(--muted-text)] text-center leading-relaxed">
-                  Add to Home Screen is only available in <strong>Safari</strong>. Open this page in Safari first.
+                  Add to Home Screen works only in Safari. Copy the link, open Safari app, paste it, then Share → Add to Home Screen.
                 </p>
-                <ol className="text-sm text-[var(--muted-text)] list-decimal list-inside space-y-1 text-left">
-                  <li>Tap <strong>Copy link</strong> below (or use this browser’s menu → Open in Safari).</li>
-                  <li>Paste the link in Safari and go to the page.</li>
-                  <li>In Safari: Share → Add to Home Screen → Add.</li>
-                </ol>
               </div>
             )}
           </div>
 
           <div className="space-y-2 pt-2">
-            {(showAndroidInstallButton || isIOSSafari || isIOSInApp || showAndroidInstructions) && (
+            {showPrimaryButton && (
               <button
                 onClick={primaryAction}
                 className={cn(
@@ -188,7 +181,7 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
             )}
 
             <button
-              onClick={handleNotNow}
+              onClick={handleClose}
               className={cn(
                 'w-full py-2.5 rounded-xl',
                 'border-2 border-[var(--primary-red)]',
@@ -199,7 +192,7 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
                 'active:scale-[0.98]'
               )}
             >
-              Not now
+              Close
             </button>
 
             <label className="flex items-center justify-center gap-2 py-2 cursor-pointer">

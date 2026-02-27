@@ -3,6 +3,9 @@
  * Detects if running in Capacitor Android app
  */
 
+/** Canonical app URL for install / Add to Home Screen instructions and copy-link. */
+export const CANONICAL_APP_URL = 'https://www.lingotheory.org';
+
 /**
  * Check if running in Capacitor Android app
  * @returns true if running in Android app, false otherwise
