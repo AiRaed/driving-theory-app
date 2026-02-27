@@ -1,7 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { isStandaloneMode, isCapacitorWebView, isIOSDevice, isSafari } from '@/lib/utils/platform';
+import {
+  isStandaloneMode,
+  isCapacitorWebView,
+  isIOSDevice,
+  isSafari,
+  isIOSInAppOrChrome,
+  copyToClipboard,
+} from '@/lib/utils/platform';
 import { cn } from '@/lib/utils';
 import { useInstallPrompt } from '@/lib/hooks/useInstallPrompt';
 
@@ -9,101 +16,66 @@ const STORAGE_KEY_DISMISSED_FOREVER = 'addToHomeScreen_dismissedForever';
 
 interface AddToHomeScreenPopupProps {
   onClose?: () => void;
-  forceShow?: boolean; // Force show popup (for fallback mode from persistent button)
+  forceShow?: boolean; // Force show popup (e.g. dashboard "Install app" when no deferred prompt)
 }
 
+/**
+ * Install UX by platform:
+ * - Android/Chrome: "Install app" only when deferred prompt exists; else browser menu instructions.
+ * - iOS Safari: Share → Add to Home Screen instructions only.
+ * - iOS in-app/Chrome: "Open in Safari" guidance + copy link, then Add to Home Screen steps.
+ */
 export default function AddToHomeScreenPopup({ onClose, forceShow = false }: AddToHomeScreenPopupProps) {
   const [show, setShow] = useState(false);
   const [dontShowAgain, setDontShowAgain] = useState(false);
+  const [copySuccess, setCopySuccess] = useState(false);
   const { hasInstallPrompt, isInstalled, triggerInstall } = useInstallPrompt();
+
   const isIOS = isIOSDevice();
-  const hasWebShare = typeof window !== 'undefined' && 'share' in navigator;
+  const isIOSSafari = isIOS && isSafari();
+  const isIOSInApp = isIOSInAppOrChrome();
 
   useEffect(() => {
-    // Check if we should show the popup
     const shouldShow = () => {
-      // Force show if requested (for fallback mode)
-      if (forceShow) {
-        return true;
-      }
-
-      // Only show on iOS Safari (not Chrome iOS, not in-app browsers, not Capacitor webview)
-      if (!isSafari()) {
-        return false;
-      }
-
-      // Don't show in Capacitor WebView
-      if (isCapacitorWebView()) {
-        return false;
-      }
-
-      // Don't show if already installed (standalone mode)
-      if (isStandaloneMode() || isInstalled) {
-        return false;
-      }
-
-      // Check if dismissed forever
-      if (typeof window !== 'undefined') {
-        const dismissedForever = localStorage.getItem(STORAGE_KEY_DISMISSED_FOREVER);
-        if (dismissedForever === 'true') {
-          return false;
-        }
-      }
-
-      return true;
+      if (forceShow) return true;
+      if (isCapacitorWebView() || isStandaloneMode() || isInstalled) return false;
+      if (typeof window !== 'undefined' && localStorage.getItem(STORAGE_KEY_DISMISSED_FOREVER) === 'true') return false;
+      // Auto-show only on iOS (Safari or in-app) so we can show correct guidance
+      if (isIOS) return true;
+      return false;
     };
 
-    // Show popup if conditions are met
-    if (shouldShow()) {
-      setShow(true);
+    if (shouldShow()) setShow(true);
+  }, [forceShow, isInstalled, isIOS]);
+
+  const closeAndMaybePersist = () => {
+    if (dontShowAgain && typeof window !== 'undefined') {
+      localStorage.setItem(STORAGE_KEY_DISMISSED_FOREVER, 'true');
     }
-  }, [forceShow, isInstalled]);
+    setShow(false);
+    onClose?.();
+  };
 
   const handleInstall = async () => {
-    // iOS: Use Web Share API if available
-    if (isIOS) {
-      if (hasWebShare) {
-        try {
-          await navigator.share({
-            title: 'LingoTheory',
-            url: window.location.href
-          });
-          // Keep popup open after share closes (do NOT redirect)
-        } catch (error) {
-          // User cancelled or error occurred - keep popup open
-        }
-      }
-      // If no Web Share API, no button is shown (instructions only)
+    // Android/Chrome: use deferred prompt
+    if (hasInstallPrompt) {
+      await triggerInstall();
+      closeAndMaybePersist();
       return;
     }
 
-    // Android/Chromium: Use native install prompt if available
-    if (hasInstallPrompt) {
-      const result = await triggerInstall();
-      // Close popup after user choice (accepted or dismissed)
-      if (dontShowAgain) {
-        if (typeof window !== 'undefined') {
-          localStorage.setItem(STORAGE_KEY_DISMISSED_FOREVER, 'true');
-        }
-      }
-      setShow(false);
-      onClose?.();
-    } else {
-      // No native prompt available - show instructions
-      // For Android non-Chrome browsers
-      if (typeof window !== 'undefined') {
-        // Just close and let user know to use browser menu
-        if (dontShowAgain) {
-          localStorage.setItem(STORAGE_KEY_DISMISSED_FOREVER, 'true');
-        }
-      }
-      setShow(false);
-      onClose?.();
-    }
+    // Android without prompt: just close (instructions already shown)
+    closeAndMaybePersist();
+  };
+
+  const handleCopyLink = async () => {
+    const url = typeof window !== 'undefined' ? window.location.href : '';
+    const ok = await copyToClipboard(url);
+    setCopySuccess(ok);
+    if (ok) setTimeout(() => setCopySuccess(false), 2000);
   };
 
   const handleNotNow = () => {
-    // Just close without persisting
     setShow(false);
     onClose?.();
   };
@@ -115,33 +87,37 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
     }
   };
 
-  if (!show) {
-    return null;
-  }
+  if (!show) return null;
 
-  // Determine primary button text and action
-  const primaryButtonText = isIOS 
-    ? (hasWebShare ? 'Open Share Menu' : null)
-    : hasInstallPrompt 
-      ? 'Install app' 
-      : 'Close';
+  // --- Platform-specific content ---
 
-  // Determine if we should show instructions in popup
-  const showInstructions = !isIOS && !hasInstallPrompt;
-  
-  // iOS instructions text
-  const iosInstructionsText = hasWebShare
-    ? 'After the share sheet opens, scroll and tap "Add to Home Screen", then tap "Add".'
-    : 'Tap the Share icon → Add to Home Screen';
+  // A) Android/Chrome: real Install button only when deferred prompt exists; else instructions
+  const isAndroidChrome = !isIOS;
+  const showAndroidInstallButton = isAndroidChrome && hasInstallPrompt;
+  const showAndroidInstructions = isAndroidChrome && !hasInstallPrompt;
+
+  // B) iOS Safari: instructions only (no install API on iOS)
+  // C) iOS in-app/Chrome: Open in Safari step + copy link, then instructions
+
+  const primaryButtonText = showAndroidInstallButton
+    ? 'Install app'
+    : isIOSSafari
+      ? 'Got it'
+      : isIOSInApp
+        ? (copySuccess ? 'Got it' : 'Copy link')
+        : showAndroidInstructions
+          ? 'Got it'
+          : 'Got it';
+
+  const primaryAction = showAndroidInstallButton
+    ? handleInstall
+    : isIOSInApp && !copySuccess
+      ? handleCopyLink
+      : closeAndMaybePersist;
 
   return (
     <>
-      {/* Backdrop - pointer-events: none to allow touches to pass through to Safari UI */}
-      <div
-        className="fixed inset-0 bg-black/50 z-[9998] animate-in fade-in pointer-events-none"
-      />
-
-      {/* Popup - pointer-events: auto to capture clicks on the popup itself */}
+      <div className="fixed inset-0 bg-black/50 z-[9998] animate-in fade-in pointer-events-none" />
       <div
         className={cn(
           'fixed bottom-0 left-0 right-0 z-[9999] pointer-events-auto',
@@ -152,42 +128,52 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
         dir="ltr"
       >
         <div className="p-6 space-y-4">
-          {/* Title */}
           <h2 className="text-xl font-bold text-[var(--navy)] text-center">
             Install LingoTheory
           </h2>
 
-          {/* Body */}
           <div className="space-y-3">
             <p className="text-base text-[var(--muted-text)] text-center leading-relaxed">
               Add LingoTheory to your home screen for quick access.
             </p>
 
-            {/* iOS Instructions */}
-            {isIOS && (
+            {/* A) Android/Chrome – no deferred prompt: browser menu instructions */}
+            {showAndroidInstructions && (
               <div className="bg-slate-50 rounded-lg p-4 space-y-2">
                 <p className="text-sm text-[var(--muted-text)] text-center leading-relaxed">
-                  {iosInstructionsText}
+                  Use the browser menu → <strong>Install app</strong> or <strong>Add to Home screen</strong>.
                 </p>
               </div>
             )}
 
-            {/* Instructions - shown for Android non-Chrome browsers */}
-            {showInstructions && (
+            {/* B) iOS Safari: Share → Add to Home Screen */}
+            {isIOSSafari && (
               <div className="bg-slate-50 rounded-lg p-4 space-y-2">
                 <p className="text-sm text-[var(--muted-text)] text-center leading-relaxed">
-                  Open the browser menu and tap "Install app" or "Add to Home screen"
+                  Tap the <strong>Share</strong> icon (square with arrow) → <strong>Add to Home Screen</strong> → <strong>Add</strong>.
                 </p>
+              </div>
+            )}
+
+            {/* C) iOS in-app or Chrome: Open in Safari first */}
+            {isIOSInApp && (
+              <div className="bg-slate-50 rounded-lg p-4 space-y-3">
+                <p className="text-sm text-[var(--muted-text)] text-center leading-relaxed">
+                  Add to Home Screen is only available in <strong>Safari</strong>. Open this page in Safari first.
+                </p>
+                <ol className="text-sm text-[var(--muted-text)] list-decimal list-inside space-y-1 text-left">
+                  <li>Tap <strong>Copy link</strong> below (or use this browser’s menu → Open in Safari).</li>
+                  <li>Paste the link in Safari and go to the page.</li>
+                  <li>In Safari: Share → Add to Home Screen → Add.</li>
+                </ol>
               </div>
             )}
           </div>
 
-          {/* Buttons */}
           <div className="space-y-2 pt-2">
-            {/* Primary Button - Only show if not iOS without Web Share */}
-            {primaryButtonText && (
+            {(showAndroidInstallButton || isIOSSafari || isIOSInApp || showAndroidInstructions) && (
               <button
-                onClick={handleInstall}
+                onClick={primaryAction}
                 className={cn(
                   'w-full py-3 rounded-xl',
                   'bg-gradient-to-r from-[var(--primary-red)] to-[#C10500]',
@@ -201,7 +187,6 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
               </button>
             )}
 
-            {/* Secondary Button - Not now */}
             <button
               onClick={handleNotNow}
               className={cn(
@@ -217,7 +202,6 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
               Not now
             </button>
 
-            {/* Don't show again checkbox */}
             <label className="flex items-center justify-center gap-2 py-2 cursor-pointer">
               <input
                 type="checkbox"
@@ -225,14 +209,11 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
                 onChange={(e) => handleDontShowAgainChange(e.target.checked)}
                 className="w-4 h-4 rounded border-gray-300 text-[var(--primary-red)] focus:ring-[var(--primary-red)]"
               />
-              <span className="text-xs text-[var(--muted-text)]">
-                Don't show again
-              </span>
+              <span className="text-xs text-[var(--muted-text)]">Don&apos;t show again</span>
             </label>
           </div>
         </div>
       </div>
-
     </>
   );
 }

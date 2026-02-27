@@ -1,11 +1,12 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { isStandaloneMode, isCapacitorWebView } from '@/lib/utils/platform';
+import { isStandaloneMode, isCapacitorWebView, isIOSDevice } from '@/lib/utils/platform';
 
 /**
- * Shared hook for managing PWA install prompt
- * Provides deferred prompt state and methods to trigger install
+ * Shared hook for managing PWA install prompt.
+ * iOS does NOT support beforeinstallprompt; only Android/Chromium do.
+ * Provides deferred prompt state and methods to trigger install (Android/Chrome only).
  */
 export function useInstallPrompt() {
   const [hasInstallPrompt, setHasInstallPrompt] = useState(false);
@@ -24,7 +25,12 @@ export function useInstallPrompt() {
       return;
     }
 
-    // Listen for beforeinstallprompt event
+    // iOS never fires beforeinstallprompt; only show install UX via "Open in Safari" / Add to Home Screen instructions
+    if (isIOSDevice()) {
+      return;
+    }
+
+    // Android/Chrome: listen for beforeinstallprompt event
     const handleBeforeInstallPrompt = (e: Event) => {
       e.preventDefault();
       deferredPromptRef.current = e;

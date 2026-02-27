@@ -177,6 +177,18 @@ export function isSafari(): boolean {
 }
 
 /**
+ * Check if on iOS but NOT in Safari (Chrome iOS, or in-app browser: WhatsApp, Instagram, TikTok, etc.)
+ * On these, "Add to Home Screen" is not available; user must open in Safari first.
+ * @returns true if iOS and not Safari, false otherwise
+ */
+export function isIOSInAppOrChrome(): boolean {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+  return isIOSDevice() && !isSafari();
+}
+
+/**
  * Safely copy text to clipboard
  * Falls back to textarea method if clipboard API is not available
  * @param text - The text to copy

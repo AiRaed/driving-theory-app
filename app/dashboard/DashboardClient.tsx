@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 import { questions } from '@/data/questions';
 import AddToHomeScreenPopup from '@/components/AddToHomeScreenPopup';
 import { useInstallPrompt } from '@/lib/hooks/useInstallPrompt';
-import { isMobileDevice, isStandaloneMode, isCapacitorWebView } from '@/lib/utils/platform';
+import { isMobileDevice, isStandaloneMode, isCapacitorWebView, isIOSDevice } from '@/lib/utils/platform';
 
 export default function DashboardClient() {
   const [user, setUser] = useState<User | null>(null);
@@ -194,7 +194,7 @@ export default function DashboardClient() {
                   'md:hidden' // Only show on mobile screens
                 )}
               >
-                Install app
+                {isIOSDevice() ? 'Add to Home Screen' : 'Install app'}
               </button>
             </div>
           )}
