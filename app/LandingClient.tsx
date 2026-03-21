@@ -5,6 +5,50 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
 import { User } from '@supabase/supabase-js';
+import { useInstallPrompt } from '@/lib/hooks/useInstallPrompt';
+import {
+  isAndroidChrome,
+  isCapacitorWebView,
+  isIOSDevice,
+  isStandaloneMode,
+} from '@/lib/utils/platform';
+
+function AndroidInstallHeroCta() {
+  const [eligible, setEligible] = useState(false);
+  const { hasInstallPrompt, isInstalled, triggerInstall } = useInstallPrompt();
+
+  useEffect(() => {
+    setEligible(
+      isAndroidChrome() &&
+        !isStandaloneMode() &&
+        !isCapacitorWebView() &&
+        !isIOSDevice()
+    );
+  }, []);
+
+  if (!eligible || isInstalled) {
+    return null;
+  }
+
+  return (
+    <div className="flex flex-col items-center gap-1.5 w-full max-w-sm mt-1">
+      <button
+        type="button"
+        onClick={() => {
+          void triggerInstall();
+        }}
+        className="px-5 py-2 text-sm rounded-xl font-medium border-2 border-[var(--navy)]/25 text-[var(--navy)] bg-white/80 hover:bg-[var(--navy)]/5 hover:border-[var(--navy)]/40 transition-colors"
+      >
+        Install app
+      </button>
+      {!hasInstallPrompt ? (
+        <p className="text-xs text-[var(--muted-text)] text-center px-2">
+          Use browser menu → Install app
+        </p>
+      ) : null}
+    </div>
+  );
+}
 
 export default function LandingClient() {
   const [user, setUser] = useState<User | null>(null);
@@ -36,6 +80,7 @@ export default function LandingClient() {
         >
           Go to Dashboard
         </Link>
+        <AndroidInstallHeroCta />
       </div>
     );
   }
@@ -52,6 +97,7 @@ export default function LandingClient() {
       >
         Log in / Get started
       </Link>
+      <AndroidInstallHeroCta />
       <Link
         href="/auth"
         className="text-sm text-[var(--muted-text)] hover:text-[var(--navy)] transition-colors"

@@ -49,6 +49,36 @@ export function isMobileDevice(): boolean {
 }
 
 /**
+ * Android Chrome (stable) — suitable for beforeinstallprompt / PWA install UX.
+ * Excludes WebView, Samsung Internet, Firefox, Opera, Edge, and iOS.
+ */
+export function isAndroidChrome(): boolean {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+
+  const ua = navigator.userAgent || '';
+  if (!/Android/i.test(ua)) {
+    return false;
+  }
+
+  if (/; wv\)/.test(ua)) {
+    return false;
+  }
+
+  if (!/Chrome\/\d/.test(ua)) {
+    return false;
+  }
+
+  if (/SamsungBrowser/i.test(ua)) return false;
+  if (/Firefox/i.test(ua)) return false;
+  if (/OPR\/|Opera/i.test(ua)) return false;
+  if (/EdgA/i.test(ua)) return false;
+
+  return true;
+}
+
+/**
  * Check if running in standalone/PWA mode (already installed)
  * @returns true if in standalone mode, false otherwise
  */
