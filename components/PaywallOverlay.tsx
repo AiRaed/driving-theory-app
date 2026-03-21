@@ -14,7 +14,7 @@ interface PaywallOverlayProps {
 /**
  * PaywallOverlay - Supports both Stripe (web) and Google Play (Android)
  * Full screen overlay with backdrop blur
- * Web: "Continue to Payment – £9.99" (Stripe)
+ * Web: "Continue to Payment — £4.99" (Stripe)
  * Android: "Unlock with Google Play" (Google Play Billing)
  * NO "Maybe later", NO free option
  * Does NOT disappear unless parent stops rendering it (when paid becomes true)
@@ -194,7 +194,11 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
                 <span className="text-green-600 text-xl">✓</span>
                 <div>
                   <div className="font-semibold text-slate-900">One-Time Payment</div>
-                  <div className="text-sm text-slate-600">£9.99 - No recurring charges</div>
+                  <div className="text-sm text-slate-600">
+                    {isAndroid
+                      ? '£9.99 - No recurring charges'
+                      : '£4.99 — No recurring charges'}
+                  </div>
                 </div>
               </div>
             </div>
@@ -214,7 +218,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
                 ? 'Processing...' 
                 : isAndroid 
                   ? 'Buy on Google Play – £9.99' 
-                  : 'Continue to Payment – £9.99'}
+                  : 'Continue to Payment — £4.99'}
             </button>
 
             <p className="text-xs text-slate-500 text-center mt-4">
