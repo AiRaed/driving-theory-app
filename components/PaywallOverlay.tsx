@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Capacitor,registerPlugin} from '@capacitor/core';
 import { cn } from '@/lib/utils';
 import { useAccess } from '@/lib/providers/AccessProvider';
+import { trackEvent } from '@/lib/analytics/trackEvent';
 
 interface PaywallOverlayProps {
   onPay?: () => void;
@@ -32,6 +33,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
 
   const handleGooglePlayPurchase = async () => {
     setLoading(true);
+    void trackEvent('checkout_clicked');
     try {
       // Get PlayBilling plugin from Capacitor
       const PlayBilling = registerPlugin<any>('PlayBilling');
@@ -69,6 +71,8 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
       if (!verifyResponse.ok) {
         throw new Error(verifyData.error || 'Failed to verify purchase');
       }
+
+      void trackEvent('payment_success');
 
       // Refresh access status from Supabase
       await refresh();
@@ -108,6 +112,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
       }
 
       if (data.url) {
+        void trackEvent('checkout_clicked');
         window.location.href = data.url;
       } else {
         throw new Error('No checkout URL received');

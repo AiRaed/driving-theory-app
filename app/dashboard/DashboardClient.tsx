@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import Link from 'next/link';
@@ -11,9 +11,11 @@ import AddToHomeScreenPopup from '@/components/AddToHomeScreenPopup';
 import IosInstallHint from '@/components/IosInstallHint';
 import { useInstallPrompt } from '@/lib/hooks/useInstallPrompt';
 import { isMobileDevice, isStandaloneMode, isCapacitorWebView, isIOSDevice } from '@/lib/utils/platform';
+import { trackEvent } from '@/lib/analytics/trackEvent';
 
 export default function DashboardClient() {
   const [user, setUser] = useState<User | null>(null);
+  const dashboardViewTracked = useRef(false);
   const [deleteConfirm, setDeleteConfirm] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [showInstallPopup, setShowInstallPopup] = useState(false);
@@ -42,6 +44,12 @@ export default function DashboardClient() {
 
     return () => subscription.unsubscribe();
   }, [supabase, router]);
+
+  useEffect(() => {
+    if (!user || dashboardViewTracked.current) return;
+    dashboardViewTracked.current = true;
+    void trackEvent('dashboard_viewed');
+  }, [user]);
 
   const handleDeleteAccount = async () => {
     if (!deleteConfirm) {
@@ -128,6 +136,7 @@ export default function DashboardClient() {
             <div className="flex flex-col">
               <Link
                 href="/practice"
+                onClick={() => void trackEvent('start_practice_clicked')}
                 className="block w-full py-3 md:h-12 rounded-xl bg-[var(--primary-red)] text-white text-sm sm:text-base font-medium hover:bg-[#C10500] transition-all duration-200 shadow-sm hover:shadow-md text-center flex items-center justify-center"
               >
                 Start Practice
@@ -140,6 +149,7 @@ export default function DashboardClient() {
             <div className="flex flex-col">
               <Link
                 href="/mock-test"
+                onClick={() => void trackEvent('mock_test_clicked')}
                 className="block w-full py-3 md:h-12 rounded-xl border-2 border-[var(--primary-red)] bg-white text-[var(--primary-red)] text-sm sm:text-base font-medium hover:bg-red-50 transition-all duration-200 shadow-sm hover:shadow-md text-center flex items-center justify-center"
               >
                 Take Mock Test

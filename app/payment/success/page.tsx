@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, Suspense } from 'react';
+import { useEffect, Suspense, useRef } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { useAccess } from '@/lib/providers/AccessProvider';
+import { trackEvent } from '@/lib/analytics/trackEvent';
 
 export const dynamic = 'force-dynamic';
 
@@ -12,6 +13,7 @@ function PaymentSuccessContent() {
   const searchParams = useSearchParams();
   const supabase = createClient();
   const { refresh } = useAccess();
+  const paymentSuccessTracked = useRef(false);
 
   useEffect(() => {
     const sync = async () => {
@@ -36,6 +38,11 @@ function PaymentSuccessContent() {
           console.error('Payment verification failed');
           router.replace('/dashboard');
           return;
+        }
+
+        if (!paymentSuccessTracked.current) {
+          paymentSuccessTracked.current = true;
+          void trackEvent('payment_success');
         }
 
         // Refresh session (fixes Capacitor stale session on Android)

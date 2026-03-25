@@ -108,6 +108,40 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    try {
+      const { data: existingPayment } = await adminClient
+        .from('payments')
+        .select('id')
+        .eq('stripe_checkout_session_id', session.id)
+        .maybeSingle();
+
+      if (!existingPayment) {
+        const pi = session.payment_intent;
+        const stripePaymentIntentId =
+          typeof pi === 'string'
+            ? pi
+            : pi && typeof pi === 'object' && 'id' in pi
+              ? (pi as Stripe.PaymentIntent).id
+              : null;
+
+        const { error: paymentInsertError } = await adminClient.from('payments').insert({
+          user_id: user.id,
+          provider: 'stripe',
+          stripe_checkout_session_id: session.id,
+          stripe_payment_intent_id: stripePaymentIntentId,
+          amount: session.amount_total ?? 0,
+          currency: (session.currency ?? 'gbp').toLowerCase(),
+          status: 'paid',
+        });
+
+        if (paymentInsertError) {
+          console.error('[stripe/verify] payments insert error:', paymentInsertError);
+        }
+      }
+    } catch (paymentsErr) {
+      console.error('[stripe/verify] payments insert exception:', paymentsErr);
+    }
+
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error('Payment verification error:', error);

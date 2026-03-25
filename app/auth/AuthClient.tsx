@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import { trackEvent } from '@/lib/analytics/trackEvent';
 import { cn } from '@/lib/utils';
 
 type AuthMode = 'login' | 'register' | 'forgot';
@@ -94,6 +95,7 @@ export default function AuthClient() {
       setError(error.message);
       setLoading(false);
     } else {
+      void trackEvent('signup_completed');
       setMessage('Please check your inbox (or Spam / Junk folder) to confirm your account.');
       setEmail('');
       setPassword('');
