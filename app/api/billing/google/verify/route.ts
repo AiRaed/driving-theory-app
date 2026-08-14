@@ -173,6 +173,13 @@ export async function POST(request: NextRequest) {
       // Continue - profile update is the critical part
     }
 
+    try {
+      const { markPaymentSuccess } = await import('@/lib/analytics/server');
+      await markPaymentSuccess(user.id);
+    } catch (analyticsErr) {
+      console.error('[google/verify] analytics markPaymentSuccess:', analyticsErr);
+    }
+
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error('[google/verify] Error:', error);

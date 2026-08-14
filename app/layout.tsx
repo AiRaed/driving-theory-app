@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, IBM_Plex_Sans_Arabic } from "next/font/google";
+import { Plus_Jakarta_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
 import Link from "next/link";
 import HeaderClient from "@/components/HeaderClient";
 import Analytics from "@/components/Analytics";
@@ -9,9 +9,9 @@ import RegisterServiceWorker from "@/components/RegisterServiceWorker";
 import IOSInstallBanner from "@/components/IOSInstallBanner";
 import "./globals.css";
 
-const inter = Inter({
+const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
   display: "swap",
 });
 
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#F4F2EF",
 };
 
 export default function RootLayout({
@@ -54,42 +54,44 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <body
-        className={`${inter.variable} ${ibmPlexSansArabic.variable} font-sans antialiased min-h-screen`}
+        className={`${plusJakarta.variable} ${ibmPlexSansArabic.variable} font-sans antialiased min-h-screen`}
       >
         <PWAMetaTags />
         <RegisterServiceWorker />
         <IOSInstallBanner />
         <Analytics />
         <AccessProvider>
-          <div className="min-h-screen flex flex-col bg-[var(--bg)]">
+          <div className="min-h-screen flex flex-col bg-[var(--background)]">
             <HeaderClient />
             <main className="flex-1 relative z-10">
               {children}
             </main>
-          <footer className="border-t border-[var(--border)]/50 bg-white/80 backdrop-blur-sm">
-            <div className="max-w-5xl mx-auto px-4 py-4">
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-3">
-                <span className="text-xs text-[var(--muted-text)]">© 2026 Driving Theory Helper</span>
-                <div className="flex items-center gap-4">
-                  <span className="text-xs text-[var(--muted-text)]">Practice • Mock Test • Multilingual</span>
-                  <Link href="/terms" className="text-xs text-[var(--muted-text)] hover:text-[var(--navy)] transition-colors">
-                    Terms & Conditions
-                  </Link>
-                  <Link href="/privacy" className="text-xs text-[var(--muted-text)] hover:text-[var(--navy)] transition-colors">
-                    Privacy Policy
-                  </Link>
+            <footer className="mt-auto border-t border-[var(--border)] bg-[var(--surface)]">
+              <div className="max-w-5xl mx-auto px-4 py-6">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-4">
+                  <div>
+                    <p className="text-sm font-semibold text-[var(--text-primary)]">LingoTheory</p>
+                    <p className="text-xs text-[var(--text-secondary)] mt-0.5">© 2026 · Driving theory, in your language</p>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+                    <Link href="/terms" className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors">
+                      Terms & Conditions
+                    </Link>
+                    <Link href="/privacy" className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors">
+                      Privacy Policy
+                    </Link>
+                  </div>
+                </div>
+                <div className="border-t border-[var(--border)] pt-4 space-y-1">
+                  <p className="text-xs text-[var(--text-secondary)]">
+                    Support: <a href="mailto:support@lingotheory.org" className="font-medium hover:text-[var(--lingo-red)] transition-colors">support@lingotheory.org</a>
+                  </p>
+                  <p className="text-xs text-[var(--text-secondary)]">
+                    Created by Raed Mahfoud — Independent AI Product Creator
+                  </p>
                 </div>
               </div>
-              <div className="border-t border-[var(--border)]/30 pt-3 space-y-1.5">
-                <p className="text-xs text-[var(--muted-text)]">
-                  Support: <a href="mailto:support@lingotheory.org" className="hover:text-[var(--navy)] transition-colors">support@lingotheory.org</a>
-                </p>
-                <p className="text-xs text-[var(--muted-text)]">
-                  Created by Raed Mahfoud — Independent AI Product Creator
-                </p>
-              </div>
-            </div>
-          </footer>
+            </footer>
           </div>
         </AccessProvider>
       </body>

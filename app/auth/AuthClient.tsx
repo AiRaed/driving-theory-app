@@ -59,6 +59,7 @@ export default function AuthClient() {
       setError(error.message);
       setLoading(false);
     } else {
+      void trackEvent('login');
       router.replace('/dashboard');
       router.refresh();
     }
@@ -147,20 +148,15 @@ export default function AuthClient() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-md">
-        <div className="rounded-2xl border border-[var(--border)]/60 bg-white p-6 sm:p-8 shadow-lg relative overflow-hidden">
-          {/* Premium red top accent bar */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary-red)] to-[#C10500]"></div>
-          {/* Teal secondary accent line */}
-          <div className="absolute top-1 left-0 right-0 h-[1px] bg-[var(--teal)]/30"></div>
-
-          <h1 className="text-2xl font-semibold mb-6 text-[var(--navy)] text-center">
+        <div className="lt-card-accent p-6 sm:p-8">
+          <h1 className="text-2xl font-semibold mb-6 text-[var(--text-primary)] text-center pt-1">
             {mode === 'login' && 'Log in'}
             {mode === 'register' && 'Create account'}
             {mode === 'forgot' && 'Reset password'}
           </h1>
 
           {/* Tabs */}
-          <div className="flex gap-2 mb-6 border-b border-[var(--border)]/50">
+          <div className="flex gap-2 mb-6 border-b border-[var(--border)]">
             <button
               onClick={() => {
                 setMode('login');
@@ -170,8 +166,8 @@ export default function AuthClient() {
               className={cn(
                 'px-4 py-2 text-sm font-medium transition-colors',
                 mode === 'login'
-                  ? 'text-[var(--primary-red)] border-b-2 border-[var(--primary-red)]'
-                  : 'text-[var(--muted-text)] hover:text-[var(--navy)]'
+                  ? 'text-[var(--lingo-red)] border-b-2 border-[var(--lingo-red)]'
+                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               )}
             >
               Login
@@ -185,8 +181,8 @@ export default function AuthClient() {
               className={cn(
                 'px-4 py-2 text-sm font-medium transition-colors',
                 mode === 'register'
-                  ? 'text-[var(--primary-red)] border-b-2 border-[var(--primary-red)]'
-                  : 'text-[var(--muted-text)] hover:text-[var(--navy)]'
+                  ? 'text-[var(--lingo-red)] border-b-2 border-[var(--lingo-red)]'
+                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               )}
             >
               Register
@@ -200,8 +196,8 @@ export default function AuthClient() {
               className={cn(
                 'px-4 py-2 text-sm font-medium transition-colors',
                 mode === 'forgot'
-                  ? 'text-[var(--primary-red)] border-b-2 border-[var(--primary-red)]'
-                  : 'text-[var(--muted-text)] hover:text-[var(--navy)]'
+                  ? 'text-[var(--lingo-red)] border-b-2 border-[var(--lingo-red)]'
+                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
               )}
             >
               Forgot
@@ -211,7 +207,7 @@ export default function AuthClient() {
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-[var(--navy)] mb-1.5">
+              <label htmlFor="email" className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">
                 Email
               </label>
               <input
@@ -225,14 +221,14 @@ export default function AuthClient() {
                 tabIndex={0}
                 disabled={false}
                 readOnly={false}
-                className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)]/60 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--primary-red)]/20 focus:border-[var(--primary-red)] transition-all"
+                className="lt-input"
                 placeholder="your@email.com"
               />
             </div>
 
             {mode !== 'forgot' && (
               <div>
-                <label htmlFor="password" className="block text-sm font-medium text-[var(--navy)] mb-1.5">
+                <label htmlFor="password" className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">
                   Password
                 </label>
                 <input
@@ -241,7 +237,7 @@ export default function AuthClient() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)]/60 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--primary-red)]/20 focus:border-[var(--primary-red)] transition-all"
+                  className="lt-input"
                   placeholder="••••••••"
                 />
               </div>
@@ -249,7 +245,7 @@ export default function AuthClient() {
 
             {mode === 'register' && (
               <div>
-                <label htmlFor="confirmPassword" className="block text-sm font-medium text-[var(--navy)] mb-1.5">
+                <label htmlFor="confirmPassword" className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">
                   Confirm Password
                 </label>
                 <input
@@ -258,20 +254,20 @@ export default function AuthClient() {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   required
-                  className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)]/60 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--primary-red)]/20 focus:border-[var(--primary-red)] transition-all"
+                  className="lt-input"
                   placeholder="••••••••"
                 />
               </div>
             )}
 
             {error && (
-              <div className="px-4 py-2.5 rounded-xl bg-[var(--wrong-soft)] text-[var(--wrong)] text-sm border border-[var(--wrong)]/20">
+              <div className="px-4 py-2.5 rounded-[var(--radius-md)] bg-[var(--wrong-soft)] text-[var(--wrong)] text-sm border border-[var(--wrong)]/20">
                 {error}
               </div>
             )}
 
             {message && (
-              <div className="px-4 py-2.5 rounded-xl bg-[var(--teal-soft)] text-[var(--teal)] text-sm border border-[var(--teal)]/20">
+              <div className="px-4 py-2.5 rounded-[var(--radius-md)] bg-[var(--teal-soft)] text-[var(--teal)] text-sm border border-[var(--teal)]/25">
                 {message}
               </div>
             )}
@@ -280,7 +276,7 @@ export default function AuthClient() {
               type="submit"
               disabled={loading}
               className={cn(
-                'w-full px-6 py-3 rounded-xl bg-[var(--primary-red)] text-white font-medium hover:bg-[#C10500] transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed',
+                'lt-btn-primary w-full px-6 py-3 text-base',
                 loading && 'opacity-50 cursor-not-allowed'
               )}
             >

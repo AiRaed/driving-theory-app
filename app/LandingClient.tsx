@@ -37,7 +37,7 @@ function AndroidInstallHeroCta() {
         onClick={() => {
           void triggerInstall();
         }}
-        className="px-5 py-2 text-sm rounded-xl font-medium border-2 border-[var(--navy)]/25 text-[var(--navy)] bg-white/80 hover:bg-[var(--navy)]/5 hover:border-[var(--navy)]/40 transition-colors"
+        className="lt-btn-ghost px-5 py-2 text-sm"
       >
         Install app
       </button>
@@ -73,10 +73,10 @@ export default function LandingClient() {
 
   if (user) {
     return (
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-col items-center gap-3">
         <Link
           href="/dashboard"
-          className="px-6 py-3 rounded-2xl bg-[var(--primary-red)] text-white font-medium hover:bg-[#C10500] transition-colors shadow-sm hover:shadow-md"
+          className="lt-btn-primary px-10 py-3.5 text-[0.95rem] sm:text-base min-w-[240px] sm:min-w-[280px] shadow-[var(--shadow-sm)]"
         >
           Go to Dashboard
         </Link>
@@ -86,21 +86,17 @@ export default function LandingClient() {
   }
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      {/* Subtle yellow accent icon */}
-      <div className="flex items-center justify-center mb-1">
-        <span className="text-[#FFC107]/60 text-lg">✨</span>
-      </div>
+    <div className="flex flex-col items-center gap-3">
       <Link
         href="/auth"
-        className="px-6 py-3 rounded-2xl bg-[var(--primary-red)] text-white font-medium hover:bg-[#C10500] transition-colors shadow-sm hover:shadow-md"
+        className="lt-btn-primary px-10 py-3.5 text-[0.95rem] sm:text-base min-w-[240px] sm:min-w-[280px] shadow-[var(--shadow-sm)]"
       >
         Log in / Get started
       </Link>
       <AndroidInstallHeroCta />
       <Link
         href="/auth"
-        className="text-sm text-[var(--muted-text)] hover:text-[var(--navy)] transition-colors"
+        className="text-sm text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors font-medium"
       >
         Create account
       </Link>

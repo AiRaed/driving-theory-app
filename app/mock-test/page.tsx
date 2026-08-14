@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { questions, Question } from "@/data/questions";
+import { Question } from "@/data/questions";
 import { cn } from "@/lib/utils";
 import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
@@ -11,6 +11,7 @@ import DisclaimerModal from "@/components/DisclaimerModal";
 import PaywallOverlay from "@/components/PaywallOverlay";
 import { useAccess } from '@/lib/providers/AccessProvider';
 import { createClient } from "@/lib/supabase/client";
+import { useQuestionBank } from "@/lib/questions/useQuestionBank";
 import { 
   TranslationLang, 
   getTranslationLang, 
@@ -20,6 +21,15 @@ import {
   getOptionTranslation,
   type TranslationData 
 } from '@/lib/translations';
+import {
+  analyticsLanguage,
+  clearClientSessionId,
+  getOrCreateClientSessionId,
+  trackAttempt,
+  trackEvent,
+  trackSessionComplete,
+  trackSessionStart,
+} from '@/lib/analytics/client';
 
 interface AnswerRecord {
   questionId: string;
@@ -56,6 +66,7 @@ interface MockSession {
  */
 const SESSION_KEY = "mock_session_v1";
 const QUESTION_COUNT = 50;
+const MOCK_ANALYTICS_SESSION_KEY = "lt_mock_analytics_session";
 
 export default function MockTestPage() {
   const router = useRouter();
@@ -71,6 +82,9 @@ export default function MockTestPage() {
   const [isFinished, setIsFinished] = useState(false);
   const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
   const [isMounted, setIsMounted] = useState(false);
+  const mockSessionIdRef = useRef<string | null>(null);
+  const mockCompleteTrackedRef = useRef(false);
+  const mockStartedTrackedRef = useRef(false);
   
   // Mock Test: always locked when !paid (no free mock test)
   // Once paid === true, Paywall must NEVER render
@@ -102,27 +116,29 @@ export default function MockTestPage() {
     setTranslationLangState(getTranslationLang());
   }, []);
   const [urTranslations, setUrTranslations] = useState<TranslationData | null>(null);
+  const { questions, urTranslations: bankUrdu, source: bankSource, ready: bankReady } = useQuestionBank();
 
-  // Load Urdu translations when needed
+  // Prefer DB Urdu when the published bank is loaded; otherwise fall back to locale JSON.
   useEffect(() => {
-    if (translationLang === 'ur') {
+    if (bankSource === "database" && bankUrdu) {
+      setUrTranslations(bankUrdu);
+      return;
+    }
+    if (translationLang === "ur" || !urTranslations) {
       loadUrduTranslations().then(setUrTranslations);
     }
-  }, [translationLang]);
-
-  // Load Urdu translations automatically for hazard-awareness and road-signs topics
-  // Since mock test includes questions from all topics, always load translations
-  useEffect(() => {
-    if (!urTranslations) {
-      loadUrduTranslations().then(setUrTranslations);
-    }
-  }, []);
+  }, [bankSource, bankUrdu, translationLang]);
 
   // Update translation language
   const handleTranslationLangChange = (lang: TranslationLang) => {
     setTranslationLangState(lang);
     setTranslationLang(lang);
-    if (lang === 'ur') {
+    void trackEvent('language_changed', {
+      language: analyticsLanguage(lang),
+      previous: analyticsLanguage(translationLang),
+      mode: 'mock',
+    });
+    if (lang === "ur" && bankSource !== "database") {
       loadUrduTranslations().then(setUrTranslations);
     }
   };
@@ -243,6 +259,10 @@ export default function MockTestPage() {
         setCurrentIndex(savedSession.currentIndex);
         setAnswers(savedSession.answers);
         setIsFinished(savedSession.isFinished);
+        mockSessionIdRef.current = getOrCreateClientSessionId(MOCK_ANALYTICS_SESSION_KEY);
+        // Don't re-fire started/completed for restored sessions
+        mockStartedTrackedRef.current = true;
+        mockCompleteTrackedRef.current = !!savedSession.isFinished;
         
         // Restore selected option for current question
         const currentAnswer = savedSession.answers[savedSession.currentIndex];
@@ -258,6 +278,21 @@ export default function MockTestPage() {
     setSelectedOptionIndex(null);
     setAnswers([]);
     setIsFinished(false);
+    mockCompleteTrackedRef.current = false;
+    mockStartedTrackedRef.current = false;
+    clearClientSessionId(MOCK_ANALYTICS_SESSION_KEY);
+    const sid = getOrCreateClientSessionId(MOCK_ANALYTICS_SESSION_KEY);
+    mockSessionIdRef.current = sid;
+    trackSessionStart({
+      mode: 'mock',
+      language: analyticsLanguage(translationLang),
+      client_session_id: sid,
+    });
+    void trackEvent('mock_test_started', {
+      question_count: newQuestions.length,
+      language: analyticsLanguage(translationLang),
+    });
+    mockStartedTrackedRef.current = true;
     
     // Build shuffled option indices map
     const shuffledOptionIndices = getShuffledOptionIndices(newQuestions);
@@ -272,13 +307,13 @@ export default function MockTestPage() {
     });
   };
 
-  // Initialize test when user is authenticated
+  // Initialize test when user is authenticated and question bank is ready
   useEffect(() => {
-    if (user) {
+    if (user && bankReady && questions.length > 0) {
       initializeTest();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
+  }, [user, bankReady, questions]);
 
   // Save session whenever state changes
   useEffect(() => {
@@ -326,6 +361,22 @@ export default function MockTestPage() {
     const newAnswers = [...answers];
     newAnswers[currentIndex] = newAnswer;
     setAnswers(newAnswers);
+
+    const sid =
+      mockSessionIdRef.current ||
+      getOrCreateClientSessionId(MOCK_ANALYTICS_SESSION_KEY);
+    mockSessionIdRef.current = sid;
+    const correctOpt = currentQuestion.optionsShuffled[correctIndex];
+    trackAttempt({
+      question_id: currentQuestion.id,
+      topic: currentQuestion.topic,
+      answer_selected: selectedOption.en,
+      correct_answer: correctOpt?.en || '',
+      is_correct: isCorrect,
+      mode: 'mock',
+      language: analyticsLanguage(translationLang),
+      session_id: sid,
+    });
   };
 
   // Handle navigation
@@ -358,6 +409,31 @@ export default function MockTestPage() {
     setIsFinished(true);
   };
 
+  // Record mock completion once when finished (uses latest answers state)
+  useEffect(() => {
+    if (!isFinished || mockCompleteTrackedRef.current) return;
+    if (mockQuestions.length === 0) return;
+    mockCompleteTrackedRef.current = true;
+    const answered = answers.filter((a) => a);
+    const correct = answered.filter((a) => a.correct).length;
+    const total = mockQuestions.length;
+    const sid =
+      mockSessionIdRef.current ||
+      getOrCreateClientSessionId(MOCK_ANALYTICS_SESSION_KEY);
+    trackSessionComplete({
+      mode: 'mock',
+      client_session_id: sid,
+      questions_attempted: answered.length || total,
+      correct_answers: correct,
+      score: correct,
+    });
+    void trackEvent('mock_test_completed', {
+      score: correct,
+      total,
+      language: analyticsLanguage(translationLang),
+    });
+  }, [isFinished, answers, mockQuestions, translationLang]);
+
   // Handle retake
   const handleRetake = () => {
     initializeTest(true);
@@ -385,9 +461,9 @@ export default function MockTestPage() {
   // Don't block UI for access status checks
   if (!user) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div className="min-h-screen bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-4 py-6">
-          <div className="text-center text-slate-600 font-medium">Loading...</div>
+          <div className="text-center text-[var(--text-secondary)] font-medium">Loading...</div>
         </div>
       </div>
     );
@@ -396,9 +472,9 @@ export default function MockTestPage() {
   // Show loading state while access is being fetched
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div className="min-h-screen bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-4 py-6">
-          <div className="text-center text-slate-600 font-medium">Loading...</div>
+          <div className="text-center text-[var(--text-secondary)] font-medium">Loading...</div>
         </div>
       </div>
     );
@@ -409,11 +485,11 @@ export default function MockTestPage() {
   // Do NOT render PaywallOverlay while loading === true
   if (showPaywall) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
+      <div className="min-h-screen bg-[var(--background)] relative">
         <PaywallOverlay />
         <div className="pointer-events-none blur-sm opacity-50">
           <div className="max-w-5xl mx-auto px-4 py-6">
-            <div className="text-center text-slate-600 font-medium">Mock Test requires paid access</div>
+            <div className="text-center text-[var(--text-secondary)] font-medium">Mock Test requires paid access</div>
           </div>
         </div>
       </div>
@@ -423,9 +499,9 @@ export default function MockTestPage() {
   // Show loading state for questions
   if (mockQuestions.length === 0) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div className="min-h-screen bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-4 py-6">
-          <div className="text-center text-slate-600 font-medium">Loading questions...</div>
+          <div className="text-center text-[var(--text-secondary)] font-medium">Loading questions...</div>
         </div>
       </div>
     );
@@ -440,19 +516,15 @@ export default function MockTestPage() {
     const pass = percent >= 86; // DVSA-style pass threshold
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div className="min-h-screen bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-4 py-6">
           {/* Results Card */}
-          <div className="rounded-2xl border border-red-100/60 bg-gradient-to-br from-red-50/50 via-white to-red-50/30 p-6 sm:p-8 mt-4 mb-6 shadow-xl relative overflow-hidden backdrop-blur-sm">
-            {/* Premium red top accent bar */}
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 via-red-600 to-red-700"></div>
-            {/* Teal secondary accent line */}
-            <div className="absolute top-1.5 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-teal-300/40 to-transparent"></div>
+          <div className="lt-card-accent p-6 sm:p-8 mt-4 mb-6">
             <div className="flex items-center gap-2 mb-2">
               <span className="text-2xl">{pass ? "🎉" : "📝"}</span>
-              <h1 className="text-xl font-bold text-[var(--navy)]">Mock Test Result</h1>
+              <h1 className="text-xl font-bold text-[var(--text-primary)]">Mock Test Result</h1>
             </div>
-            <p className="text-lg font-semibold mb-1 text-[var(--navy)]">
+            <p className="text-lg font-semibold mb-1 text-[var(--text-primary)]">
               You scored {correct} / {total} ({percent}%)
             </p>
             <p
@@ -466,13 +538,13 @@ export default function MockTestPage() {
                 ? "PASS — Well done! You&apos;re above the recommended pass mark."
                 : "FAIL — Keep practicing. Aim for at least 86% to pass the real test."}</span>
             </p>
-            <p className="text-sm text-[var(--muted-text)] mb-4" dir="rtl">
+            <p className="text-sm text-[var(--text-secondary)] mb-4" dir="rtl">
               راجع الأسئلة التي أخطأت بها لتقوية نقاط الضعف قبل الامتحان الحقيقي.
             </p>
             <button
               type="button"
               onClick={handleRetake}
-              className="px-6 py-3 rounded-xl bg-gradient-to-r from-red-600 to-red-700 text-white text-sm font-semibold hover:from-red-700 hover:to-red-800 transition-all duration-200 shadow-lg hover:shadow-xl"
+              className="lt-btn-primary px-6 py-3 text-sm"
             >
               Retake
             </button>
@@ -488,9 +560,9 @@ export default function MockTestPage() {
                 return (
                   <div
                     key={`${question.id}-${idx}`}
-                    className="rounded-xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/50 p-5 sm:p-6 mb-3 text-sm shadow-lg hover:shadow-xl transition-shadow"
+                    className="lt-card p-5 sm:p-6 mb-3 text-sm"
                   >
-                    <p className="font-bold mb-2 text-slate-900 text-base">{question.promptEn}</p>
+                    <p className="font-bold mb-2 text-[var(--text-primary)] text-base">{question.promptEn}</p>
                     {(() => {
                       const promptTranslation = getQuestionPromptTranslation(
                         question,
@@ -500,7 +572,7 @@ export default function MockTestPage() {
                       if (!promptTranslation) return null;
                       return (
                         <p 
-                          className="text-slate-700 mb-3 leading-[1.8] tracking-wide font-medium" 
+                          className="text-[var(--text-secondary)] mb-3 leading-[1.8] tracking-wide font-medium" 
                           dir="rtl" 
                           style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
                         >
@@ -508,8 +580,8 @@ export default function MockTestPage() {
                         </p>
                       );
                     })()}
-                    <p className="text-sm text-slate-600">
-                      <span className="font-semibold">Correct answer:</span> <span className="font-semibold text-green-700">{correctOption.en}</span>
+                    <p className="text-sm text-[var(--text-secondary)]">
+                      <span className="font-semibold">Correct answer:</span> <span className="font-semibold text-[var(--correct)]">{correctOption.en}</span>
                       {(() => {
                         const optionTranslation = getOptionTranslation(
                           correctOption,
@@ -556,40 +628,36 @@ export default function MockTestPage() {
   const correctIndex = currentQuestion.optionsShuffled.findIndex((opt) => opt.correct);
 
   return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
+      <div className="min-h-screen bg-[var(--background)]">
       <div className="max-w-5xl mx-auto px-4 py-6">
         {/* Header with Translation Switcher */}
         <div className="mb-4 flex flex-wrap items-center gap-3 justify-between">
           <div className="flex items-center gap-3 flex-wrap flex-1 min-w-0">
             <Link
               href="/dashboard"
-              className="hidden sm:inline-flex items-center px-4 py-2 rounded-xl text-sm border border-slate-300 bg-white hover:bg-gradient-to-br hover:from-slate-50 hover:to-white transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] font-semibold text-slate-800"
+              className="lt-btn-ghost hidden sm:inline-flex px-4 py-2 text-sm"
             >
               ← Back to dashboard
             </Link>
-            <span className="hidden md:inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-red-50 to-red-100/50 text-red-700 border border-red-200/60 shadow-sm">
+            <span className="hidden md:inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-[var(--lingo-red-soft)] text-[var(--lingo-red)] border border-[var(--lingo-red-muted)]">
               Mock Test
             </span>
             <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-3 flex-1 min-w-0">
-              <span className="text-xs md:text-sm font-medium text-slate-600 whitespace-nowrap">
+              <span className="text-xs md:text-sm font-medium text-[var(--text-secondary)] whitespace-nowrap">
                 <span className="md:hidden">{mockQuestions.length}Q</span>
                 <span className="hidden md:inline">{mockQuestions.length} questions</span>
               </span>
               {/* Translation Switcher - Mobile */}
               {isMounted && (
                 <div className="flex items-center gap-1 sm:hidden flex-shrink-0">
-                  <span className="text-[10px] font-medium text-slate-600 whitespace-nowrap">Tr:</span>
-                  <div className="inline-flex rounded-lg border border-red-200 bg-white p-0.5 shadow-sm" role="group" aria-label="Translation language selector">
+                  <span className="text-[10px] font-medium text-[var(--text-secondary)] whitespace-nowrap">Tr:</span>
+                  <div className="lt-segmented" role="group" aria-label="Translation language selector">
                     <button
                       type="button"
                       onClick={() => handleTranslationLangChange('off')}
                       aria-pressed={translationLang === 'off'}
-                      className={cn(
-                        "px-2 py-1 text-xs font-medium rounded-md transition-all duration-150 whitespace-nowrap",
-                        translationLang === 'off'
-                          ? "bg-[#D32F2F] text-white shadow-sm"
-                          : "bg-white text-slate-700 hover:bg-slate-50"
-                      )}
+                      data-active={translationLang === 'off'}
+                      className="lt-segmented-btn px-2 py-1 text-xs"
                     >
                       Off
                     </button>
@@ -597,12 +665,8 @@ export default function MockTestPage() {
                       type="button"
                       onClick={() => handleTranslationLangChange('ar')}
                       aria-pressed={translationLang === 'ar'}
-                      className={cn(
-                        "px-2 py-1 text-xs font-medium rounded-md transition-all duration-150 whitespace-nowrap",
-                        translationLang === 'ar'
-                          ? "bg-[#D32F2F] text-white shadow-sm"
-                          : "bg-white text-slate-700 hover:bg-slate-50"
-                      )}
+                      data-active={translationLang === 'ar'}
+                      className="lt-segmented-btn px-2 py-1 text-xs"
                     >
                       العربية
                     </button>
@@ -610,12 +674,8 @@ export default function MockTestPage() {
                       type="button"
                       onClick={() => handleTranslationLangChange('ur')}
                       aria-pressed={translationLang === 'ur'}
-                      className={cn(
-                        "px-2 py-1 text-xs font-medium rounded-md transition-all duration-150 whitespace-nowrap",
-                        translationLang === 'ur'
-                          ? "bg-[#D32F2F] text-white shadow-sm"
-                          : "bg-white text-slate-700 hover:bg-slate-50"
-                      )}
+                      data-active={translationLang === 'ur'}
+                      className="lt-segmented-btn px-2 py-1 text-xs"
                     >
                       اردو
                     </button>
@@ -627,18 +687,14 @@ export default function MockTestPage() {
           {/* Translation Switcher - Desktop */}
           {isMounted && (
             <div className="hidden sm:flex items-center gap-3 flex-wrap">
-              <span className="text-xs font-medium text-slate-600">Translation:</span>
-              <div className="inline-flex rounded-lg border border-red-200 bg-white p-0.5 shadow-sm" role="group" aria-label="Translation language selector">
+              <span className="text-xs font-medium text-[var(--text-secondary)]">Translation:</span>
+              <div className="lt-segmented" role="group" aria-label="Translation language selector">
                 <button
                   type="button"
                   onClick={() => handleTranslationLangChange('off')}
                   aria-pressed={translationLang === 'off'}
-                  className={cn(
-                    "px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-150 whitespace-nowrap",
-                    translationLang === 'off'
-                      ? "bg-[#D32F2F] text-white shadow-sm"
-                      : "bg-white text-slate-700 hover:bg-slate-50"
-                  )}
+                  data-active={translationLang === 'off'}
+                  className="lt-segmented-btn px-3 py-1.5 text-xs"
                 >
                   Off
                 </button>
@@ -646,12 +702,8 @@ export default function MockTestPage() {
                   type="button"
                   onClick={() => handleTranslationLangChange('ar')}
                   aria-pressed={translationLang === 'ar'}
-                  className={cn(
-                    "px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-150 whitespace-nowrap",
-                    translationLang === 'ar'
-                      ? "bg-[#D32F2F] text-white shadow-sm"
-                      : "bg-white text-slate-700 hover:bg-slate-50"
-                  )}
+                  data-active={translationLang === 'ar'}
+                  className="lt-segmented-btn px-3 py-1.5 text-xs"
                 >
                   العربية
                 </button>
@@ -659,12 +711,8 @@ export default function MockTestPage() {
                   type="button"
                   onClick={() => handleTranslationLangChange('ur')}
                   aria-pressed={translationLang === 'ur'}
-                  className={cn(
-                    "px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-150 whitespace-nowrap",
-                    translationLang === 'ur'
-                      ? "bg-[#D32F2F] text-white shadow-sm"
-                      : "bg-white text-slate-700 hover:bg-slate-50"
-                  )}
+                  data-active={translationLang === 'ur'}
+                  className="lt-segmented-btn px-3 py-1.5 text-xs"
                 >
                   اردو
                 </button>
@@ -687,25 +735,20 @@ export default function MockTestPage() {
         {/* Mobile Disclaimer Modal */}
         <DisclaimerModal showArabic={translationLang === 'ar'} />
         {/* Question Card */}
-        <div className="rounded-2xl border border-red-100/60 bg-gradient-to-br from-red-50/50 via-white to-red-50/30 p-6 sm:p-7 mt-4 shadow-xl relative overflow-hidden backdrop-blur-sm">
-          {/* Premium red top accent bar */}
-          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 via-red-600 to-red-700"></div>
-          {/* Teal secondary accent line */}
-          <div className="absolute top-1.5 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-teal-300/40 to-transparent"></div>
-          
+        <div className="lt-card-accent p-6 sm:p-7 mt-4">
           {/* Progress Section */}
           <div className="mb-3">
             <div className="flex items-center justify-between mb-1.5">
-              <div className="text-xs text-[var(--muted-text)]/80 font-medium">
+              <div className="text-xs text-[var(--text-secondary)] font-medium">
                 Question {currentIndex + 1} of {mockQuestions.length}
               </div>
-              <div className="text-xs text-[var(--muted-text)]/70">
+              <div className="text-xs text-[var(--text-secondary)]">
                 {Math.round(((currentIndex + 1) / mockQuestions.length) * 100)}% complete
               </div>
             </div>
-            <div className="h-2 w-full bg-slate-200/60 rounded-full overflow-hidden shadow-inner">
+            <div className="h-1.5 w-full bg-[var(--surface-secondary)] rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-red-500 via-red-600 to-red-700 rounded-full transition-all duration-500 ease-out shadow-sm"
+                className="h-full bg-[var(--lingo-red)] rounded-full transition-all duration-500 ease-out"
                 style={{ width: `${((currentIndex + 1) / mockQuestions.length) * 100}%` }}
               />
             </div>
@@ -744,7 +787,7 @@ export default function MockTestPage() {
 
           {/* Question Prompt */}
           <div className="flex items-start justify-between gap-2 sm:gap-3 mb-2">
-            <h2 className="text-[19px] sm:text-[21px] font-bold text-slate-900 leading-[1.4] flex-1 min-w-0 break-words whitespace-normal">
+            <h2 className="text-[19px] sm:text-[21px] font-bold text-[var(--text-primary)] leading-[1.4] flex-1 min-w-0 break-words whitespace-normal">
               {currentQuestion.promptEn}
             </h2>
             <div className="flex items-center gap-2 flex-shrink-0 mt-1">
@@ -762,7 +805,7 @@ export default function MockTestPage() {
             
             return (
               <p 
-                className="text-[16px] sm:text-[17px] text-slate-800 font-semibold mb-3 leading-[1.8] tracking-wide" 
+                className="text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold mb-3 leading-[1.8] tracking-wide" 
                 dir="rtl" 
                 style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
               >
@@ -772,7 +815,7 @@ export default function MockTestPage() {
           })()}
 
           {/* Divider */}
-          <div className="border-t border-slate-200/80 mb-4 mt-2"></div>
+          <div className="border-t border-[var(--border)] mb-4 mt-2"></div>
 
           {/* Options */}
           <div className="space-y-2.5 mb-4">
@@ -781,34 +824,34 @@ export default function MockTestPage() {
               const isCorrectOption = option.correct;
               const showCorrect = isAnswered && isCorrectOption;
               const showWrong = isAnswered && isSelected && !isCorrectOption;
+              const optionState = showCorrect
+                ? 'correct'
+                : showWrong
+                  ? 'wrong'
+                  : isSelected
+                    ? 'selected'
+                    : undefined;
 
               return (
                 <button
                   key={index}
                   onClick={() => handleOptionClick(index)}
                   disabled={isFinished}
+                  data-state={optionState}
                   className={cn(
-                    "w-full text-left rounded-xl px-5 py-3.5 transition-all duration-200 ease-in-out border",
-                    "shadow-sm hover:shadow-lg hover:-translate-y-1 active:scale-[0.98]",
-                    !isFinished && !isAnswered && "bg-white border-slate-200 hover:bg-gradient-to-br hover:from-slate-50 hover:to-white hover:border-red-300 hover:shadow-md",
+                    "lt-option active:scale-[0.99]",
                     isFinished && "cursor-not-allowed",
-                    // Selected but not yet revealed (neutral state)
-                    isSelected && !showCorrect && !showWrong && "bg-gradient-to-br from-blue-50 to-white border-blue-300 shadow-lg ring-2 ring-blue-200/50",
-                    // Correct answer (shown after selection)
-                    showCorrect && "bg-gradient-to-br from-green-50 to-emerald-50 border-green-400 shadow-lg ring-2 ring-green-200/50",
-                    // Wrong answer (user's selection)
-                    showWrong && "bg-gradient-to-br from-red-50 to-rose-50 border-red-400 shadow-lg ring-2 ring-red-200/50",
                     isAnswered && "cursor-default"
                   )}
                 >
                   <div className="flex items-start gap-3">
                     {isSelected && !showCorrect && !showWrong && (
-                      <span className="text-xl flex-shrink-0 mt-0.5 text-blue-600 font-bold">○</span>
+                      <span className="text-xl flex-shrink-0 mt-0.5 text-[var(--lingo-red)] font-bold">○</span>
                     )}
                     {(showCorrect || showWrong) && (
                       <span className={cn(
                         "text-xl flex-shrink-0 mt-0.5 font-bold transition-all duration-300",
-                        showCorrect ? "text-green-600" : "text-red-600"
+                        showCorrect ? "text-[var(--correct)]" : "text-[var(--wrong)]"
                       )}>
                         {showCorrect ? "✓" : "✕"}
                       </span>
@@ -816,9 +859,9 @@ export default function MockTestPage() {
                     <div className="flex-1">
                       <div className={cn(
                         "font-bold text-[17px] sm:text-[18px] leading-relaxed",
-                        isSelected && !showCorrect && !showWrong ? "text-blue-900" : 
-                        showCorrect ? "text-green-800" :
-                        showWrong ? "text-red-800" : "text-slate-900"
+                        isSelected && !showCorrect && !showWrong ? "text-[var(--lingo-red-dark)]" : 
+                        showCorrect ? "text-[var(--correct)]" :
+                        showWrong ? "text-[var(--wrong)]" : "text-[var(--text-primary)]"
                       )}>{option.en}</div>
                       {(() => {
                         const translationText = getOptionTranslation(
@@ -835,9 +878,9 @@ export default function MockTestPage() {
                           <div 
                             className={cn(
                               "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
-                              isSelected && !showCorrect && !showWrong ? "text-blue-800/90" : 
-                              showCorrect ? "text-green-700/90" :
-                              showWrong ? "text-red-700/90" : "text-slate-700"
+                              isSelected && !showCorrect && !showWrong ? "text-[var(--lingo-red-dark)]/90" : 
+                              showCorrect ? "text-[var(--correct)]/90" :
+                              showWrong ? "text-[var(--wrong)]/90" : "text-[var(--text-secondary)]"
                             )} 
                             dir="rtl" 
                             style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
@@ -856,8 +899,10 @@ export default function MockTestPage() {
           {/* Feedback Badge */}
           {isAnswered && (
             <div className={cn(
-              "inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold mb-5 transition-all duration-300 animate-in fade-in slide-in-from-top-2 shadow-md",
-              isCorrect ? "bg-gradient-to-r from-green-100 to-emerald-100 text-green-800 border border-green-300" : "bg-gradient-to-r from-red-100 to-rose-100 text-red-800 border border-red-300"
+              "inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full text-sm font-semibold mb-5 transition-all duration-300 animate-in fade-in slide-in-from-top-2",
+              isCorrect
+                ? "bg-[var(--correct-soft)] text-[var(--correct)] border border-[var(--correct)]/30"
+                : "bg-[var(--wrong-soft)] text-[var(--wrong)] border border-[var(--wrong)]/30"
             )}>
               <span className="text-lg font-bold">{isCorrect ? "✓" : "✕"}</span>
               <span>{isCorrect ? "Excellent! Keep your focus." : "Review this carefully before the real test."}</span>
@@ -871,10 +916,7 @@ export default function MockTestPage() {
               onClick={handlePrevious}
               disabled={currentIndex === 0}
               className={cn(
-                "h-12 w-full rounded-xl text-sm font-medium transition-all duration-200",
-                "focus:outline-none focus:ring-2 focus:ring-red-200",
-                "bg-white border border-gray-300 text-gray-800 hover:bg-gray-50",
-                "shadow-sm hover:shadow-md",
+                "lt-btn-ghost h-12 w-full text-sm",
                 currentIndex === 0 && "opacity-50 cursor-not-allowed"
               )}
             >
@@ -882,12 +924,7 @@ export default function MockTestPage() {
             </button>
             <button
               onClick={handleRestart}
-              className={cn(
-                "h-12 w-full rounded-xl text-sm font-medium transition-all duration-200",
-                "focus:outline-none focus:ring-2 focus:ring-red-200",
-                "bg-white border border-gray-300 text-gray-800 hover:bg-gray-50",
-                "shadow-sm hover:shadow-md"
-              )}
+              className="lt-btn-ghost h-12 w-full text-sm"
             >
               Restart
             </button>
@@ -902,10 +939,7 @@ export default function MockTestPage() {
               }}
               disabled={!isAnswered}
               className={cn(
-                "h-12 w-full rounded-xl text-sm font-medium transition-all duration-200",
-                "focus:outline-none focus:ring-2 focus:ring-red-200",
-                "bg-red-600 text-white hover:bg-red-700",
-                "shadow-sm hover:shadow-md whitespace-nowrap",
+                "lt-btn-primary h-12 w-full text-sm whitespace-nowrap",
                 !isAnswered && "opacity-50 cursor-not-allowed"
               )}
             >

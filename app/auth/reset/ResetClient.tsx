@@ -183,11 +183,10 @@ export default function ResetClient() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4 py-8">
         <div className="w-full max-w-md">
-          <div className="rounded-2xl border border-[var(--border)]/60 bg-white p-6 sm:p-8 shadow-lg relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary-red)] to-[#C10500]"></div>
-            <div className="text-center">
-              <h1 className="text-2xl font-semibold mb-2 text-[var(--navy)]">Verifying link...</h1>
-              <p className="text-[var(--muted-text)]">Please wait</p>
+          <div className="lt-card-accent p-6 sm:p-8">
+            <div className="text-center pt-1">
+              <h1 className="text-2xl font-semibold mb-2 text-[var(--text-primary)]">Verifying link...</h1>
+              <p className="text-[var(--text-secondary)]">Please wait</p>
             </div>
           </div>
         </div>
@@ -199,14 +198,13 @@ export default function ResetClient() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4 py-8">
         <div className="w-full max-w-md">
-          <div className="rounded-2xl border border-[var(--border)]/60 bg-white p-6 sm:p-8 shadow-lg relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary-red)] to-[#C10500]"></div>
-            <div className="text-center">
-              <h1 className="text-2xl font-semibold mb-2 text-[var(--navy)]">Link expired</h1>
-              <p className="text-[var(--muted-text)] mb-6">Invalid or expired link. Please request a new reset email.</p>
+          <div className="lt-card-accent p-6 sm:p-8">
+            <div className="text-center pt-1">
+              <h1 className="text-2xl font-semibold mb-2 text-[var(--text-primary)]">Link expired</h1>
+              <p className="text-[var(--text-secondary)] mb-6">Invalid or expired link. Please request a new reset email.</p>
               <button
                 onClick={() => router.push('/auth')}
-                className="w-full px-6 py-3 rounded-xl bg-[var(--primary-red)] text-white font-medium hover:bg-[#C10500] transition-all duration-200 shadow-sm hover:shadow-md"
+                className="lt-btn-primary w-full px-6 py-3 text-base"
               >
                 Back to Login
               </button>
@@ -221,15 +219,14 @@ export default function ResetClient() {
     return (
       <div className="min-h-screen flex items-center justify-center px-4 py-8">
         <div className="w-full max-w-md">
-          <div className="rounded-2xl border border-[var(--border)]/60 bg-white p-6 sm:p-8 shadow-lg relative overflow-hidden">
-            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary-red)] to-[#C10500]"></div>
-            <div className="text-center">
-              <div className="text-4xl mb-4">✓</div>
-              <h1 className="text-2xl font-semibold mb-2 text-[var(--navy)]">Password updated!</h1>
-              <p className="text-[var(--muted-text)] mb-6">Your password has been successfully updated.</p>
+          <div className="lt-card-accent p-6 sm:p-8">
+            <div className="text-center pt-1">
+              <div className="text-4xl mb-4 text-[var(--correct)]">✓</div>
+              <h1 className="text-2xl font-semibold mb-2 text-[var(--text-primary)]">Password updated!</h1>
+              <p className="text-[var(--text-secondary)] mb-6">Your password has been successfully updated.</p>
               <button
                 onClick={() => router.push('/auth')}
-                className="w-full px-6 py-3 rounded-xl bg-[var(--primary-red)] text-white font-medium hover:bg-[#C10500] transition-all duration-200 shadow-sm hover:shadow-md"
+                className="lt-btn-primary w-full px-6 py-3 text-base"
               >
                 Back to Login
               </button>
@@ -243,19 +240,14 @@ export default function ResetClient() {
   return (
     <div className="min-h-screen flex items-center justify-center px-4 py-8">
       <div className="w-full max-w-md">
-        <div className="rounded-2xl border border-[var(--border)]/60 bg-white p-6 sm:p-8 shadow-lg relative overflow-hidden">
-          {/* Premium red top accent bar */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary-red)] to-[#C10500]"></div>
-          {/* Teal secondary accent line */}
-          <div className="absolute top-1 left-0 right-0 h-[1px] bg-[var(--teal)]/30"></div>
-
-          <h1 className="text-2xl font-semibold mb-6 text-[var(--navy)] text-center">
+        <div className="lt-card-accent p-6 sm:p-8">
+          <h1 className="text-2xl font-semibold mb-6 text-[var(--text-primary)] text-center pt-1">
             Set new password
           </h1>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-[var(--navy)] mb-1.5">
+              <label htmlFor="password" className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">
                 New Password
               </label>
               <input
@@ -264,13 +256,13 @@ export default function ResetClient() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)]/60 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--primary-red)]/20 focus:border-[var(--primary-red)] transition-all"
+                className="lt-input"
                 placeholder="••••••••"
               />
             </div>
 
             <div>
-              <label htmlFor="confirmPassword" className="block text-sm font-medium text-[var(--navy)] mb-1.5">
+              <label htmlFor="confirmPassword" className="block text-sm font-medium text-[var(--text-primary)] mb-1.5">
                 Confirm Password
               </label>
               <input
@@ -279,13 +271,13 @@ export default function ResetClient() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
-                className="w-full px-4 py-2.5 rounded-xl border border-[var(--border)]/60 bg-white focus:outline-none focus:ring-2 focus:ring-[var(--primary-red)]/20 focus:border-[var(--primary-red)] transition-all"
+                className="lt-input"
                 placeholder="••••••••"
               />
             </div>
 
             {error && (
-              <div className="px-4 py-2.5 rounded-xl bg-[var(--wrong-soft)] text-[var(--wrong)] text-sm border border-[var(--wrong)]/20">
+              <div className="px-4 py-2.5 rounded-[var(--radius-md)] bg-[var(--wrong-soft)] text-[var(--wrong)] text-sm border border-[var(--wrong)]/20">
                 {error}
               </div>
             )}
@@ -293,7 +285,7 @@ export default function ResetClient() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full px-6 py-3 rounded-xl bg-[var(--primary-red)] text-white font-medium hover:bg-[#C10500] transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+              className="lt-btn-primary w-full px-6 py-3 text-base disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? 'Updating...' : 'Update password'}
             </button>

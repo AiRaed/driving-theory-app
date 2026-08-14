@@ -32,8 +32,9 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   // Protected routes
-  const protectedPaths = ['/practice', '/mock-test', '/dashboard'];
+  const protectedPaths = ['/practice', '/mock-test', '/dashboard', '/admin'];
   const isProtectedPath = protectedPaths.some((path) => request.nextUrl.pathname.startsWith(path));
+  const isAdminPath = request.nextUrl.pathname.startsWith('/admin');
 
   // Allow auth routes (callback, reset)
   const isAuthRoute = request.nextUrl.pathname.startsWith('/auth/callback') || 
@@ -44,6 +45,15 @@ export async function updateSession(request: NextRequest) {
     url.pathname = '/auth';
     url.searchParams.set('next', request.nextUrl.pathname);
     return NextResponse.redirect(url);
+  }
+
+  // Admin: authenticated + email must match ADMIN_EMAIL (server env)
+  if (isAdminPath && user) {
+    const adminEmail = (process.env.ADMIN_EMAIL || '').trim().toLowerCase();
+    const userEmail = (user.email || '').trim().toLowerCase();
+    if (!adminEmail || userEmail !== adminEmail) {
+      return NextResponse.redirect(new URL('/dashboard', request.url));
+    }
   }
 
   // Redirect authenticated users away from auth pages (except callback and reset)

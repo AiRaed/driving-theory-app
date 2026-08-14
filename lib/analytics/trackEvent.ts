@@ -1,23 +1,27 @@
-import { createClient } from '@/lib/supabase/client';
-
 type EventData = Record<string, unknown> | null | undefined;
 
 /**
- * Client-side insert into user_events. Swallows all errors (no UI impact).
+ * Fire-and-forget first-party analytics via /api/analytics/track.
+ * Swallows all errors (no UI impact).
  */
 export async function trackEvent(eventName: string, eventData?: EventData): Promise<void> {
   try {
-    const supabase = createClient();
-    const {
-      data: { user },
-    } = await supabase.auth.getUser();
+    const metadata =
+      eventData === undefined || eventData === null
+        ? undefined
+        : (eventData as Record<string, unknown>);
 
-    const { error } = await supabase.from('user_events').insert({
-      event_name: eventName,
-      event_data: eventData === undefined ? null : eventData,
-      user_id: user?.id ?? null,
+    void fetch('/api/analytics/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        event_name: eventName,
+        ...(metadata !== undefined ? { metadata } : {}),
+      }),
+      keepalive: true,
+    }).catch(() => {
+      // silent
     });
-    if (error) return;
   } catch {
     // silent
   }

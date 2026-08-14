@@ -31,6 +31,11 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
     setIsAndroid(Capacitor.isNativePlatform() && Capacitor.getPlatform() === 'android');
   }, []);
 
+  // Paywall viewed once per mount
+  useEffect(() => {
+    void trackEvent('paywall_viewed');
+  }, []);
+
   const handleGooglePlayPurchase = async () => {
     setLoading(true);
     void trackEvent('checkout_clicked');
@@ -72,7 +77,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
         throw new Error(verifyData.error || 'Failed to verify purchase');
       }
 
-      void trackEvent('payment_success');
+      void trackEvent('payment_success', { source: 'google_play_client' });
 
       // Refresh access status from Supabase
       await refresh();
@@ -153,21 +158,16 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
         }}
       >
         <div
-          className="relative w-full max-w-md rounded-2xl border border-red-100/60 bg-gradient-to-br from-red-50/50 via-white to-red-50/30 shadow-2xl overflow-hidden"
+          className="lt-card-accent relative w-full max-w-md shadow-[var(--shadow-md)]"
           style={{
             pointerEvents: 'auto',
           }}
         >
-          {/* Premium red top accent bar */}
-          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 via-red-600 to-red-700"></div>
-          {/* Teal secondary accent line */}
-          <div className="absolute top-1.5 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-teal-300/40 to-transparent"></div>
-
-          <div className="p-6 sm:p-8">
+          <div className="p-6 sm:p-8 pt-7">
             {/* Header */}
             <div className="text-center mb-6">
               <div className="text-4xl mb-3">🔒</div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-2">
+              <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
                 Unlock Full Access
               </h2>
             </div>
@@ -175,31 +175,31 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
             {/* Features */}
             <div className="space-y-3 mb-6">
               <div className="flex items-start gap-3">
-                <span className="text-green-600 text-xl">✓</span>
+                <span className="text-[var(--correct)] text-xl">✓</span>
                 <div>
-                  <div className="font-semibold text-slate-900">Unlimited Practice Questions</div>
-                  <div className="text-sm text-slate-600">Access all questions across all topics</div>
+                  <div className="font-semibold text-[var(--text-primary)]">Unlimited Practice Questions</div>
+                  <div className="text-sm text-[var(--text-secondary)]">Access all questions across all topics</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-green-600 text-xl">✓</span>
+                <span className="text-[var(--correct)] text-xl">✓</span>
                 <div>
-                  <div className="font-semibold text-slate-900">All Topics Included</div>
-                  <div className="text-sm text-slate-600">Practice across all topics</div>
+                  <div className="font-semibold text-[var(--text-primary)]">All Topics Included</div>
+                  <div className="text-sm text-[var(--text-secondary)]">Practice across all topics</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-green-600 text-xl">✓</span>
+                <span className="text-[var(--correct)] text-xl">✓</span>
                 <div>
-                  <div className="font-semibold text-slate-900">Mock Test Access</div>
-                  <div className="text-sm text-slate-600">Take unlimited mock tests</div>
+                  <div className="font-semibold text-[var(--text-primary)]">Mock Test Access</div>
+                  <div className="text-sm text-[var(--text-secondary)]">Take unlimited mock tests</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-green-600 text-xl">✓</span>
+                <span className="text-[var(--correct)] text-xl">✓</span>
                 <div>
-                  <div className="font-semibold text-slate-900">One-Time Payment</div>
-                  <div className="text-sm text-slate-600">
+                  <div className="font-semibold text-[var(--text-primary)]">One-Time Payment</div>
+                  <div className="text-sm text-[var(--text-secondary)]">
                     {isAndroid
                       ? '£9.99 - No recurring charges'
                       : '£4.99 — No recurring charges'}
@@ -213,8 +213,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
               onClick={handlePayment}
               disabled={isLoading}
               className={cn(
-                "w-full py-3.5 rounded-xl bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold text-base",
-                "hover:from-red-700 hover:to-red-800 transition-all duration-200 shadow-lg hover:shadow-xl",
+                "lt-btn-primary w-full py-3.5 text-base",
                 "disabled:opacity-50 disabled:cursor-not-allowed",
                 "active:scale-[0.98]"
               )}
@@ -226,7 +225,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
                   : 'Continue to Payment — £4.99'}
             </button>
 
-            <p className="text-xs text-slate-500 text-center mt-4">
+            <p className="text-xs text-[var(--text-secondary)] text-center mt-4">
               {isAndroid 
                 ? 'Secure payment powered by Google Play' 
                 : 'Secure payment powered by Stripe'}

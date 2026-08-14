@@ -115,64 +115,62 @@ export default function DashboardClient() {
   }, [isInstalled]);
 
   return (
-    <div className="min-h-[calc(100vh-64px)] flex items-center md:items-start justify-center py-6 md:py-6 md:py-8">
-      <div className="w-full max-w-[420px] md:max-w-5xl mx-4 md:mx-auto px-0 md:px-4 flex flex-col items-center md:items-stretch">
-        <div className="rounded-2xl border border-[var(--border)]/60 bg-white p-5 sm:p-6 md:p-8 pb-8 md:pb-8 shadow-lg relative h-auto w-full">
-          {/* Premium red top accent bar */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[var(--primary-red)] to-[#C10500]"></div>
-          {/* Teal secondary accent line */}
-          <div className="absolute top-1 left-0 right-0 h-[1px] bg-[var(--teal)]/30"></div>
+    <div className="min-h-[calc(100vh-64px)] flex items-start justify-center py-8 md:py-10">
+      <div className="w-full max-w-[420px] md:max-w-lg mx-4 md:mx-auto flex flex-col">
+        <div className="mb-5 px-1">
+          <p className="lt-kicker mb-2">Your study hub</p>
+          <h1 className="text-2xl sm:text-[1.75rem] font-bold text-[var(--text-primary)] tracking-tight">
+            Dashboard
+          </h1>
+          <p className="text-sm text-[var(--text-secondary)] mt-1.5">
+            Choose how you want to practise today.
+          </p>
+        </div>
 
-          <div className="mb-6 md:mb-6">
-            <h1 className="text-2xl sm:text-3xl font-semibold mb-1 md:mb-2 text-[var(--navy)]">
-              Dashboard
-            </h1>
-            <p className="text-sm md:text-base text-gray-500 md:text-[var(--muted-text)]">
-              Welcome back 👋
+        <div className="lt-card p-5 sm:p-6 w-full space-y-4">
+          <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--lingo-red-soft)]/50 p-4">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--lingo-red)] mb-2">
+              Primary
+            </p>
+            <Link
+              href="/practice"
+              onClick={() => void trackEvent('start_practice_clicked')}
+              className="lt-btn-primary w-full py-3.5 text-sm sm:text-base"
+            >
+              Start Practice
+            </Link>
+            <p className="text-xs text-[var(--text-secondary)] mt-2.5 text-center">
+              {practiceQuestionsCount} questions · all topics
             </p>
           </div>
 
-          <div className="space-y-3 md:space-y-4 mb-6">
-            <div className="flex flex-col">
-              <Link
-                href="/practice"
-                onClick={() => void trackEvent('start_practice_clicked')}
-                className="block w-full py-3 md:h-12 rounded-xl bg-[var(--primary-red)] text-white text-sm sm:text-base font-medium hover:bg-[#C10500] transition-all duration-200 shadow-sm hover:shadow-md text-center flex items-center justify-center"
-              >
-                Start Practice
-              </Link>
-              <p className="text-xs text-[var(--muted-text)]/70 mt-1.5 text-center">
-                {practiceQuestionsCount} questions
-              </p>
-            </div>
-            <IosInstallHint />
-            <div className="flex flex-col">
-              <Link
-                href="/mock-test"
-                onClick={() => void trackEvent('mock_test_clicked')}
-                className="block w-full py-3 md:h-12 rounded-xl border-2 border-[var(--primary-red)] bg-white text-[var(--primary-red)] text-sm sm:text-base font-medium hover:bg-red-50 transition-all duration-200 shadow-sm hover:shadow-md text-center flex items-center justify-center"
-              >
-                Take Mock Test
-              </Link>
-              <p className="text-xs text-[var(--muted-text)]/70 mt-1.5 text-center">
-                {mockTestQuestionsCount} questions
-              </p>
-            </div>
+          <IosInstallHint />
+
+          <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] p-4">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-secondary)] mb-2">
+              Exam simulation
+            </p>
+            <Link
+              href="/mock-test"
+              onClick={() => void trackEvent('mock_test_clicked')}
+              className="lt-btn-secondary w-full py-3.5 text-sm sm:text-base"
+            >
+              Take Mock Test
+            </Link>
+            <p className="text-xs text-[var(--text-secondary)] mt-2.5 text-center">
+              {mockTestQuestionsCount} questions · timed practice
+            </p>
           </div>
 
-          {/* Divider - separate element to ensure visibility */}
-          <div className="my-6 md:my-8 border-t border-red-300/70"></div>
-
-          {/* Delete account section */}
-          <div className="pt-0 pb-0 space-y-2">
+          <div className="border-t border-[var(--border)] pt-4 space-y-2">
             <button
               onClick={handleDeleteAccount}
               disabled={deleteLoading}
               className={cn(
-                'w-full py-2 md:py-2.5 px-6 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed',
+                'w-full py-2.5 px-4 rounded-[var(--radius-sm)] text-xs sm:text-sm font-medium transition-colors duration-150 disabled:opacity-50 disabled:cursor-not-allowed',
                 deleteConfirm
-                  ? 'bg-red-600/90 text-white hover:bg-red-700'
-                  : 'border border-red-300/60 bg-white text-red-600/80 hover:bg-red-50/50'
+                  ? 'bg-[var(--lingo-red)] text-white hover:bg-[var(--lingo-red-hover)]'
+                  : 'border border-[var(--border)] bg-transparent text-[var(--text-secondary)] hover:bg-[var(--surface-secondary)] hover:text-[var(--text-primary)]'
               )}
             >
               {deleteLoading
@@ -181,41 +179,31 @@ export default function DashboardClient() {
                 ? 'Confirm delete account'
                 : 'Delete account'}
             </button>
-            <p className="text-xs text-[var(--muted-text)]/70 text-center">
+            <p className="text-[11px] text-[var(--text-secondary)] text-center">
               This action is permanent.
             </p>
             {deleteConfirm && (
-              <p className="text-xs text-[var(--muted-text)]/70 text-center">
+              <p className="text-[11px] text-[var(--text-secondary)] text-center">
                 Click again to confirm.
               </p>
             )}
           </div>
 
-          {/* Persistent Install App Button - Mobile only */}
           {shouldShowInstallButton && (
-            <div className="pt-4 pb-0">
+            <div className="pt-1">
               <button
                 onClick={handleInstallClick}
-                className={cn(
-                  'w-full py-3 rounded-xl',
-                  'bg-gradient-to-r from-blue-600 to-blue-700',
-                  'text-white font-semibold text-sm sm:text-base',
-                  'hover:from-blue-700 hover:to-blue-800',
-                  'transition-all duration-200 shadow-md hover:shadow-lg',
-                  'active:scale-[0.98]',
-                  'md:hidden' // Only show on mobile screens
-                )}
+                className="lt-btn-ghost w-full py-3 text-sm md:hidden"
               >
                 {isIOSDevice() ? 'Add to Home Screen' : 'Install app'}
               </button>
             </div>
           )}
         </div>
-        
-        {/* Helper text below card */}
-        <div className="mt-6 text-xs text-[var(--muted-text)]/60 text-center w-full max-w-[420px]">
+
+        <p className="mt-5 text-xs text-[var(--text-secondary)] text-center px-2">
           Practice daily to increase your chances of passing.
-        </div>
+        </p>
       </div>
 
       {/* Add to Home Screen Popup - Mobile only */}

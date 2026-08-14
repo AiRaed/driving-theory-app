@@ -142,6 +142,13 @@ export async function POST(request: NextRequest) {
       console.error('[stripe/verify] payments insert exception:', paymentsErr);
     }
 
+    try {
+      const { markPaymentSuccess } = await import('@/lib/analytics/server');
+      await markPaymentSuccess(user.id);
+    } catch (analyticsErr) {
+      console.error('[stripe/verify] analytics markPaymentSuccess:', analyticsErr);
+    }
+
     return NextResponse.json({ ok: true });
   } catch (error) {
     console.error('Payment verification error:', error);

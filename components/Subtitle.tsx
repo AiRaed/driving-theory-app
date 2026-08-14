@@ -3,18 +3,16 @@ export default function Subtitle() {
   const urduSubtitle = 'اپنے برطانیہ کے ڈرائیونگ تھیوری ٹیسٹ کے لیے ذہین مددگار';
 
   return (
-    <div className="mt-2 mb-4">
-      {/* Arabic subtitle */}
-      <p 
-        className="text-sm sm:text-base text-[var(--muted-text)]"
+    <div className="mb-6 space-y-1.5 max-w-md mx-auto">
+      <p
+        className="text-sm sm:text-[0.95rem] text-[var(--text-secondary)] leading-relaxed"
         dir="rtl"
         style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}
       >
         {arabicSubtitle}
       </p>
-      {/* Urdu subtitle - directly below Arabic, same style */}
-      <p 
-        className="text-sm sm:text-base text-[var(--muted-text)] mt-1"
+      <p
+        className="text-sm sm:text-[0.95rem] text-[var(--text-secondary)] leading-relaxed"
         dir="rtl"
         style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}
       >
@@ -23,4 +21,3 @@ export default function Subtitle() {
     </div>
   );
 }
-

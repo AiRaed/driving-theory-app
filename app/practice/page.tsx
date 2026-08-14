@@ -3,12 +3,12 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { questions } from '@/data/questions';
 import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import DisclaimerModal from '@/components/DisclaimerModal';
 import PaywallOverlay from '@/components/PaywallOverlay';
 import { useAccess } from '@/lib/providers/AccessProvider';
+import { useQuestionBank } from '@/lib/questions/useQuestionBank';
 import { 
   TranslationLang, 
   getTranslationLang, 
@@ -19,6 +19,13 @@ import {
   type TranslationData 
 } from '@/lib/translations';
 import { getKeywordUrduTranslation } from '@/lib/keyword-translations';
+import {
+  analyticsLanguage,
+  getOrCreateClientSessionId,
+  trackAttempt,
+  trackEvent,
+  trackSessionStart,
+} from '@/lib/analytics/client';
 
 // Arabic translations for topics
 const topicArabicMap: Record<string, string> = {
@@ -69,6 +76,7 @@ function shuffleArray<T>(array: T[]): T[] {
 export default function PracticePage() {
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
   const { loading, paid, freeUsed, refresh, silentRefresh } = useAccess();
+  const { questions, urTranslations: bankUrdu, source: bankSource } = useQuestionBank();
   const [selectedTopic, setSelectedTopic] = useState<string>('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
@@ -78,6 +86,9 @@ export default function PracticePage() {
   const [answeredQuestionIds, setAnsweredQuestionIds] = useState<Set<string>>(new Set());
   // Track which questions have already been counted to avoid double-counting
   const countedQuestionIds = useRef<Set<string>>(new Set());
+  const practiceSessionKeyRef = useRef<string | null>(null);
+  const freeLimitTrackedRef = useRef(false);
+  const practiceStartedTopicsRef = useRef<Set<string>>(new Set());
 
   // Load translation language from localStorage after mount to avoid hydration mismatch
   useEffect(() => {
@@ -89,60 +100,47 @@ export default function PracticePage() {
   const [showTopicsGrid, setShowTopicsGrid] = useState<boolean>(true);
   const [showHints, setShowHints] = useState<boolean>(false); // Collapsed by default on mobile
 
-  // Load Urdu translations when needed
+  // Prefer DB Urdu when bank is from database; otherwise load locale file
   useEffect(() => {
+    if (bankSource === 'database' && bankUrdu) {
+      setUrTranslations(bankUrdu);
+      return;
+    }
     if (translationLang === 'ur') {
-      // Force reload to ensure we have the latest translations
       loadUrduTranslations(true).then((data) => {
-        if (data) {
-          setUrTranslations(data);
-        }
+        if (data) setUrTranslations(data);
       });
-    } else {
-      // Clear translations when switching away from Urdu
+    } else if (bankSource !== 'database') {
       setUrTranslations(null);
     }
-  }, [translationLang]);
+  }, [translationLang, bankSource, bankUrdu]);
 
   // Load Urdu translations automatically for topics that have Urdu translations
   useEffect(() => {
+    if (bankSource === 'database') return;
     if (translationLang === 'ur' && selectedTopic) {
-      const topicsWithUrdu = [
-        'alertness',
-        'hazard-awareness',
-        'road-signs',
-        'safety-margins',
-        'rules-of-the-road',
-        'safety-vehicle',
-        'attitude',
-        'other-vehicles',
-        'documents',
-        'vulnerable-road-users',
-        'vehicle-handling',
-        'incidents',
-        'motorway-driving',
-        'vehicle-loading'
-      ];
-      
-      // Always load translations when Urdu is selected and a topic is chosen
       loadUrduTranslations(true).then((data) => {
-        if (data) {
-          setUrTranslations(data);
-        }
+        if (data) setUrTranslations(data);
       });
     }
-  }, [selectedTopic, translationLang]);
+  }, [selectedTopic, translationLang, bankSource]);
 
   // Update translation language
   const handleTranslationLangChange = (lang: TranslationLang) => {
     setTranslationLangState(lang);
     setTranslationLang(lang);
+    void trackEvent('language_changed', {
+      language: analyticsLanguage(lang),
+      previous: analyticsLanguage(translationLang),
+      mode: 'practice',
+    });
+    if (bankSource === 'database' && bankUrdu) {
+      setUrTranslations(bankUrdu);
+      return;
+    }
     if (lang === 'ur') {
-      // Force reload to ensure we have the latest translations
       loadUrduTranslations(true).then((data) => {
-        if (data) {
-          setUrTranslations(data);
-        }
+        if (data) setUrTranslations(data);
       });
     } else {
       setUrTranslations(null);
@@ -153,7 +151,7 @@ export default function PracticePage() {
   const topics = useMemo(() => {
     const uniqueTopics = Array.from(new Set(questions.map(q => q.topic)));
     return uniqueTopics;
-  }, []);
+  }, [questions]);
 
   // Compute totals
   const totalQuestions = questions.length;
@@ -163,7 +161,7 @@ export default function PracticePage() {
   const topicQuestions = useMemo(() => {
     if (!selectedTopic) return [];
     return questions.filter(q => q.topic === selectedTopic);
-  }, [selectedTopic]);
+  }, [selectedTopic, questions]);
 
   // Get current question
   const currentQuestion = topicQuestions[currentQuestionIndex] || null;
@@ -259,6 +257,34 @@ export default function PracticePage() {
     }, 100);
   };
 
+  // Start practice session once per topic selection
+  useEffect(() => {
+    if (!selectedTopic) return;
+    if (practiceStartedTopicsRef.current.has(selectedTopic)) return;
+    practiceStartedTopicsRef.current.add(selectedTopic);
+    const key = `lt_practice_session_${selectedTopic}`;
+    const sessionId = getOrCreateClientSessionId(key);
+    practiceSessionKeyRef.current = sessionId;
+    trackSessionStart({
+      mode: 'practice',
+      language: analyticsLanguage(translationLang),
+      client_session_id: sessionId,
+    });
+    void trackEvent('practice_started', {
+      topic: selectedTopic,
+      language: analyticsLanguage(translationLang),
+    });
+  }, [selectedTopic, translationLang]);
+
+  // Free limit reached (once)
+  useEffect(() => {
+    if (loading || paid) return;
+    if ((freeUsed ?? 0) < 15) return;
+    if (freeLimitTrackedRef.current) return;
+    freeLimitTrackedRef.current = true;
+    void trackEvent('free_limit_reached', { free_used: freeUsed ?? 0 });
+  }, [loading, paid, freeUsed]);
+
   // Handle answer selection - INSTANT client-side only, no network calls
   const handleAnswerClick = (index: number) => {
     if (selectedAnswerIndex !== null) return; // Prevent re-selection
@@ -275,6 +301,26 @@ export default function PracticePage() {
     
     // Update local state
     setAnsweredQuestionIds(prev => new Set([...Array.from(prev), currentQuestion.id]));
+
+    const selected = shuffledOptions[index];
+    const correctOpt =
+      shuffledOptions.find((o) => o.correct) ||
+      currentQuestion.options.find((o) => o.correct);
+    const sessionId =
+      practiceSessionKeyRef.current ||
+      getOrCreateClientSessionId(`lt_practice_session_${selectedTopic || 'general'}`);
+    practiceSessionKeyRef.current = sessionId;
+
+    trackAttempt({
+      question_id: currentQuestion.id,
+      topic: currentQuestion.topic,
+      answer_selected: selected?.en || '',
+      correct_answer: correctOpt?.en || '',
+      is_correct: selected?.correct === true,
+      mode: 'practice',
+      language: analyticsLanguage(translationLang),
+      session_id: sessionId,
+    });
     
     // NO optimistic update - trialUsed comes from Supabase only (via /api/paywall/status)
   };
@@ -384,7 +430,7 @@ export default function PracticePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 relative">
+    <div className="min-h-screen bg-[var(--background)] relative">
       {/* Paywall Overlay - blocks everything when locked */}
       {/* Only show when: !loading && !paid && freeUsed >= 15 */}
       {showPaywall && <PaywallOverlay />}
@@ -401,33 +447,29 @@ export default function PracticePage() {
           <div className="flex items-center gap-3 flex-wrap flex-1 min-w-0">
             <Link
               href="/dashboard"
-              className="hidden sm:inline-flex px-4 py-2 rounded-xl text-sm border border-slate-300 bg-white hover:bg-gradient-to-br hover:from-slate-50 hover:to-white transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] font-semibold text-slate-800"
+              className="lt-btn-ghost hidden sm:inline-flex px-4 py-2 text-sm"
             >
               ← Back to dashboard
             </Link>
-            <span className="hidden md:inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-red-50 to-red-100/50 text-red-700 border border-red-200/60 shadow-sm">
+            <span className="hidden md:inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-[var(--lingo-red-soft)] text-[var(--lingo-red)] border border-[var(--lingo-red-muted)]">
               Practice
             </span>
             <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-3 flex-1 min-w-0">
-              <span className="text-xs md:text-sm font-medium text-slate-600 whitespace-nowrap">
+              <span className="text-xs md:text-sm font-medium text-[var(--text-secondary)] whitespace-nowrap">
                 <span className="md:hidden">{totalQuestions}Q · {totalTopics}T</span>
                 <span className="hidden md:inline">{totalQuestions} questions · {totalTopics} topics</span>
               </span>
               {/* Translation Switcher - Mobile */}
               {isMounted && (
                 <div className="flex items-center gap-1 sm:hidden flex-shrink-0">
-                  <span className="text-[10px] font-medium text-slate-600 whitespace-nowrap">Tr:</span>
-                  <div className="inline-flex rounded-lg border border-red-200 bg-white p-0.5 shadow-sm" role="group" aria-label="Translation language selector">
+                  <span className="text-[10px] font-medium text-[var(--text-secondary)] whitespace-nowrap">Tr:</span>
+                  <div className="lt-segmented" role="group" aria-label="Translation language selector">
                     <button
                       type="button"
                       onClick={() => handleTranslationLangChange('off')}
                       aria-pressed={translationLang === 'off'}
-                      className={cn(
-                        "px-2 py-1 text-xs font-medium rounded-md transition-all duration-150 whitespace-nowrap",
-                        translationLang === 'off'
-                          ? "bg-[#D32F2F] text-white shadow-sm"
-                          : "bg-white text-slate-700 hover:bg-slate-50"
-                      )}
+                      data-active={translationLang === 'off'}
+                      className="lt-segmented-btn px-2 py-1 text-xs"
                     >
                       Off
                     </button>
@@ -435,12 +477,8 @@ export default function PracticePage() {
                       type="button"
                       onClick={() => handleTranslationLangChange('ar')}
                       aria-pressed={translationLang === 'ar'}
-                      className={cn(
-                        "px-2 py-1 text-xs font-medium rounded-md transition-all duration-150 whitespace-nowrap",
-                        translationLang === 'ar'
-                          ? "bg-[#D32F2F] text-white shadow-sm"
-                          : "bg-white text-slate-700 hover:bg-slate-50"
-                      )}
+                      data-active={translationLang === 'ar'}
+                      className="lt-segmented-btn px-2 py-1 text-xs"
                     >
                       العربية
                     </button>
@@ -448,12 +486,8 @@ export default function PracticePage() {
                       type="button"
                       onClick={() => handleTranslationLangChange('ur')}
                       aria-pressed={translationLang === 'ur'}
-                      className={cn(
-                        "px-2 py-1 text-xs font-medium rounded-md transition-all duration-150 whitespace-nowrap",
-                        translationLang === 'ur'
-                          ? "bg-[#D32F2F] text-white shadow-sm"
-                          : "bg-white text-slate-700 hover:bg-slate-50"
-                      )}
+                      data-active={translationLang === 'ur'}
+                      className="lt-segmented-btn px-2 py-1 text-xs"
                     >
                       اردو
                     </button>
@@ -465,18 +499,14 @@ export default function PracticePage() {
           {/* Translation Switcher - Desktop */}
           {isMounted && (
             <div className="hidden sm:flex items-center gap-3 flex-wrap">
-              <span className="text-xs font-medium text-slate-600">Translation:</span>
-              <div className="inline-flex rounded-lg border border-red-200 bg-white p-0.5 shadow-sm" role="group" aria-label="Translation language selector">
+              <span className="text-xs font-medium text-[var(--text-secondary)]">Translation:</span>
+              <div className="lt-segmented" role="group" aria-label="Translation language selector">
                 <button
                   type="button"
                   onClick={() => handleTranslationLangChange('off')}
                   aria-pressed={translationLang === 'off'}
-                  className={cn(
-                    "px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-150 whitespace-nowrap",
-                    translationLang === 'off'
-                      ? "bg-[#D32F2F] text-white shadow-sm"
-                      : "bg-white text-slate-700 hover:bg-slate-50"
-                  )}
+                  data-active={translationLang === 'off'}
+                  className="lt-segmented-btn px-3 py-1.5 text-xs"
                 >
                   Off
                 </button>
@@ -484,12 +514,8 @@ export default function PracticePage() {
                   type="button"
                   onClick={() => handleTranslationLangChange('ar')}
                   aria-pressed={translationLang === 'ar'}
-                  className={cn(
-                    "px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-150 whitespace-nowrap",
-                    translationLang === 'ar'
-                      ? "bg-[#D32F2F] text-white shadow-sm"
-                      : "bg-white text-slate-700 hover:bg-slate-50"
-                  )}
+                  data-active={translationLang === 'ar'}
+                  className="lt-segmented-btn px-3 py-1.5 text-xs"
                 >
                   العربية
                 </button>
@@ -497,12 +523,8 @@ export default function PracticePage() {
                   type="button"
                   onClick={() => handleTranslationLangChange('ur')}
                   aria-pressed={translationLang === 'ur'}
-                  className={cn(
-                    "px-3 py-1.5 text-xs font-medium rounded-md transition-all duration-150 whitespace-nowrap",
-                    translationLang === 'ur'
-                      ? "bg-[#D32F2F] text-white shadow-sm"
-                      : "bg-white text-slate-700 hover:bg-slate-50"
-                  )}
+                  data-active={translationLang === 'ur'}
+                  className="lt-segmented-btn px-3 py-1.5 text-xs"
                 >
                   اردو
                 </button>
@@ -514,21 +536,21 @@ export default function PracticePage() {
         {/* Mobile: Selected Topic Bar (shown when grid is hidden) */}
         {selectedTopic && !showTopicsGrid && (
           <div className="md:hidden mb-4">
-            <div className="flex items-start justify-between gap-3 px-4 py-2.5 rounded-xl border border-red-200/60 bg-gradient-to-br from-red-50/50 via-white to-red-50/30 shadow-md">
+            <div className="flex items-start justify-between gap-3 px-4 py-3 rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-sm)]">
               {/* Title stack: English + Translation (mobile: stacked vertically, full width) */}
               <div className="flex-1 min-w-0 flex flex-col gap-1 pr-2">
                 {/* English topic name - first line, full width */}
-                <div className="font-semibold text-base text-slate-800 leading-tight w-full block">
+                <div className="font-semibold text-base text-[var(--text-primary)] leading-tight w-full block">
                   {toTitleCaseLabel(selectedTopic)}
                 </div>
                 {/* Translation - second line, directly under English, full width */}
                 {translationLang === 'ar' && topicArabicMap[selectedTopic] && (
-                  <div className="text-sm text-slate-600/80 font-normal leading-tight w-full block text-right" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
+                  <div className="text-sm text-[var(--text-secondary)] font-normal leading-tight w-full block text-right" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
                     {topicArabicMap[selectedTopic]}
                   </div>
                 )}
                 {translationLang === 'ur' && topicUrduMap[selectedTopic] && (
-                  <div className="text-sm text-slate-600/80 font-normal leading-tight w-full block text-right" dir="rtl">
+                  <div className="text-sm text-[var(--text-secondary)] font-normal leading-tight w-full block text-right" dir="rtl">
                     {topicUrduMap[selectedTopic]}
                   </div>
                 )}
@@ -536,7 +558,7 @@ export default function PracticePage() {
               {/* Change button: stays on the right, doesn't wrap */}
               <button
                 onClick={handleChangeTopic}
-                className="flex-shrink-0 px-4 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 transition-all duration-200 shadow-sm hover:shadow-md active:scale-[0.97] whitespace-nowrap self-start"
+                className="lt-btn-primary flex-shrink-0 px-4 py-1.5 text-xs whitespace-nowrap self-start"
               >
                 Change topic
               </button>
@@ -562,17 +584,13 @@ export default function PracticePage() {
                 <button
                   key={topic}
                   onClick={() => handleTopicSelect(topic)}
+                  data-active={isActive}
                   className={cn(
-                    "rounded-xl border text-left transition-all duration-200 ease-in-out",
-                    "hover:shadow-md active:scale-[0.97]",
-                    // Mobile: consistent height and padding
-                    "py-2.5 px-3 md:py-[3px] md:px-4",
-                    // Mobile: consistent min-height for alignment
-                    "min-h-[64px] sm:min-h-[56px] md:min-h-[40px]",
-                    "flex flex-col justify-center",
-                    isActive
-                      ? "border-red-700/30 bg-gradient-to-br from-red-600 to-red-700 text-white shadow-lg hover:shadow-xl hover:from-red-700 hover:to-red-800" 
-                      : "bg-gradient-to-br from-red-50/50 via-white to-red-50/30 border-red-100/60 text-slate-800 hover:from-red-50/70 hover:via-white hover:to-red-50/40 hover:border-red-200/80 hover:shadow-md"
+                    "lt-topic-chip",
+                    "hover:shadow-md active:scale-[0.98]",
+                    "py-2.5 px-3 md:py-2 md:px-3.5",
+                    "min-h-[64px] sm:min-h-[56px] md:min-h-[44px]",
+                    "flex flex-col justify-center"
                   )}
                 >
                   <div className="flex items-start gap-1.5 md:gap-2 w-full">
@@ -585,7 +603,7 @@ export default function PracticePage() {
                         "font-semibold text-xs md:text-xs leading-tight",
                         "line-clamp-2 sm:line-clamp-1 md:line-clamp-1",
                         "overflow-hidden",
-                        isActive ? "text-white" : "text-slate-800"
+                        isActive ? "text-white" : "text-[var(--text-primary)]"
                       )}>{englishLabel}</div>
                       {/* Translation subtitle: always below English, smaller and muted */}
                       {translationLang === 'ar' && arabicSubtitle && (
@@ -593,7 +611,7 @@ export default function PracticePage() {
                           className={cn(
                             "text-[10px] md:text-[11px] font-normal mt-1 leading-tight",
                             "line-clamp-1 overflow-hidden text-ellipsis",
-                            isActive ? "text-white/80" : "text-slate-600/70"
+                            isActive ? "text-white/85" : "text-[var(--text-secondary)]"
                           )} 
                           dir="rtl" 
                           style={{ 
@@ -608,7 +626,7 @@ export default function PracticePage() {
                           className={cn(
                             "text-[10px] md:text-[11px] font-normal mt-1 leading-tight",
                             "line-clamp-1 overflow-hidden text-ellipsis",
-                            isActive ? "text-white/80" : "text-slate-600/70"
+                            isActive ? "text-white/85" : "text-[var(--text-secondary)]"
                           )} 
                           dir="rtl"
                         >
@@ -641,25 +659,20 @@ export default function PracticePage() {
 
             {/* Question Display */}
         {currentQuestion ? (
-          <div className="rounded-2xl border border-red-100/60 bg-gradient-to-br from-red-50/50 via-white to-red-50/30 p-6 sm:p-7 mt-4 shadow-xl relative overflow-hidden backdrop-blur-sm">
-            {/* Premium red top accent bar */}
-            <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-red-500 via-red-600 to-red-700"></div>
-            {/* Teal secondary accent line */}
-            <div className="absolute top-1.5 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-teal-300/40 to-transparent"></div>
-            
+          <div className="lt-card-accent p-6 sm:p-7 mt-4">
             {/* Progress Section */}
-            <div className="mb-4">
+            <div className="mb-4 pt-1">
               <div className="flex items-center justify-between mb-1.5">
-                <div className="text-xs text-[var(--muted-text)]/80 font-medium">
+                <div className="text-xs text-[var(--text-secondary)] font-medium">
                   Question {currentQuestionIndex + 1} of {topicQuestions.length}
                 </div>
-                <div className="text-xs text-[var(--muted-text)]/70">
+                <div className="text-xs text-[var(--text-secondary)]">
                   {Math.round(((currentQuestionIndex + 1) / topicQuestions.length) * 100)}% complete
                 </div>
               </div>
-              <div className="h-2 w-full bg-slate-200/60 rounded-full overflow-hidden shadow-inner">
+              <div className="h-1.5 w-full bg-[var(--surface-secondary)] rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-red-500 via-red-600 to-red-700 rounded-full transition-all duration-500 ease-out shadow-sm"
+                  className="h-full bg-[var(--lingo-red)] rounded-full transition-all duration-500 ease-out"
                   style={{ width: `${((currentQuestionIndex + 1) / topicQuestions.length) * 100}%` }}
                 />
               </div>
@@ -716,7 +729,7 @@ export default function PracticePage() {
 
             {/* English Prompt */}
             <div className="flex items-start justify-between gap-2 mb-1">
-              <h2 className="text-[19px] sm:text-[21px] font-bold text-slate-900 leading-[1.4] flex-1 min-w-0 break-words whitespace-normal">
+              <h2 className="text-[19px] sm:text-[21px] font-bold text-[var(--text-primary)] leading-[1.4] flex-1 min-w-0 break-words whitespace-normal">
                 {currentQuestion.promptEn}
               </h2>
               <div className="flex items-center gap-2 flex-shrink-0 mt-0.5">
@@ -726,7 +739,7 @@ export default function PracticePage() {
 
             {/* Translation Prompt */}
             {translationLang === 'ar' && currentQuestion.promptAr && (
-              <h3 className="text-[16px] sm:text-[17px] text-slate-800 font-semibold mb-3 leading-[1.8] tracking-wide" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
+              <h3 className="text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold mb-3 leading-[1.8] tracking-wide" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
                 {currentQuestion.promptAr}
               </h3>
             )}
@@ -738,7 +751,7 @@ export default function PracticePage() {
               const translation = getQuestionTranslation(currentQuestion.id, currentQuestion.topic, 'ur', urTranslations);
               if (translation?.prompt) {
                 return (
-                  <h3 className="text-[16px] sm:text-[17px] text-slate-800 font-semibold mb-3 leading-[1.8] tracking-wide" dir="rtl">
+                  <h3 className="text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold mb-3 leading-[1.8] tracking-wide" dir="rtl">
                     {translation.prompt}
                   </h3>
                 );
@@ -749,7 +762,7 @@ export default function PracticePage() {
             })()}
 
             {/* Divider */}
-            <div className="border-t border-slate-200/80 mb-4 mt-2"></div>
+            <div className="border-t border-[var(--border)] mb-4 mt-2"></div>
 
             {/* Answer Options */}
             <div className="space-y-2.5 mb-4">
@@ -759,34 +772,33 @@ export default function PracticePage() {
                 const isCorrectOption = option.correct === true;
                 const showAsCorrect = selectedAnswerIndex !== null && isCorrectOption;
                 const showAsWrong = isSelected && !isCorrectOption;
+                const optionState = showAsCorrect
+                  ? 'correct'
+                  : showAsWrong
+                    ? 'wrong'
+                    : isSelected
+                      ? 'selected'
+                      : undefined;
 
                 return (
                   <button
                     key={index}
                     onClick={() => handleAnswerClick(index)}
                     disabled={selectedAnswerIndex !== null}
+                    data-state={optionState}
                     className={cn(
-                      "w-full text-left rounded-xl px-5 py-3.5 transition-all duration-200 ease-in-out border",
-                      "shadow-sm hover:shadow-lg hover:-translate-y-1 active:scale-[0.98]",
-                      // Neutral (unanswered) state
-                      selectedAnswerIndex === null && "bg-white border-slate-200 hover:bg-gradient-to-br hover:from-slate-50 hover:to-white hover:border-red-300 hover:shadow-md",
-                      // Selected but not yet revealed (neutral state)
-                      isSelected && !showAsCorrect && !showAsWrong && "bg-gradient-to-br from-blue-50 to-white border-blue-300 shadow-lg ring-2 ring-blue-200/50",
-                      // Correct answer (shown after selection)
-                      showAsCorrect && "bg-gradient-to-br from-green-50 to-emerald-50 border-green-400 shadow-lg ring-2 ring-green-200/50",
-                      // Wrong answer (user's selection)
-                      showAsWrong && "bg-gradient-to-br from-red-50 to-rose-50 border-red-400 shadow-lg ring-2 ring-red-200/50",
+                      "lt-option active:scale-[0.99]",
                       selectedAnswerIndex !== null && "cursor-default"
                     )}
                   >
                     <div className="flex items-start gap-3">
                       {isSelected && !showAsCorrect && !showAsWrong && (
-                        <span className="text-xl flex-shrink-0 mt-0.5 text-blue-600 font-bold">○</span>
+                        <span className="text-xl flex-shrink-0 mt-0.5 text-[var(--lingo-red)] font-bold">○</span>
                       )}
                       {(showAsCorrect || showAsWrong) && (
                         <span className={cn(
                           "text-xl flex-shrink-0 mt-0.5 font-bold transition-all duration-300",
-                          showAsCorrect ? "text-green-600" : "text-red-600"
+                          showAsCorrect ? "text-[var(--correct)]" : "text-[var(--wrong)]"
                         )}>
                           {showAsCorrect ? "✓" : "✕"}
                         </span>
@@ -794,16 +806,16 @@ export default function PracticePage() {
                       <div className="flex-1">
                         <div className={cn(
                           "font-bold text-[17px] sm:text-[18px] leading-relaxed",
-                          isSelected && !showAsCorrect && !showAsWrong ? "text-blue-900" : 
-                          showAsCorrect ? "text-green-800" :
-                          showAsWrong ? "text-red-800" : "text-slate-900"
+                          isSelected && !showAsCorrect && !showAsWrong ? "text-[var(--lingo-red-dark)]" : 
+                          showAsCorrect ? "text-[var(--correct)]" :
+                          showAsWrong ? "text-[var(--wrong)]" : "text-[var(--text-primary)]"
                         )}>{option.en}</div>
                         {translationLang === 'ar' && option.ar && (
                           <div className={cn(
                             "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
-                            isSelected && !showAsCorrect && !showAsWrong ? "text-blue-800/90" : 
-                            showAsCorrect ? "text-green-700/90" :
-                            showAsWrong ? "text-red-700/90" : "text-slate-700"
+                            isSelected && !showAsCorrect && !showAsWrong ? "text-[var(--lingo-red-dark)]/90" : 
+                            showAsCorrect ? "text-[var(--correct)]/90" :
+                            showAsWrong ? "text-[var(--wrong)]/90" : "text-[var(--text-secondary)]"
                           )} dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>{option.ar}</div>
                         )}
                         {translationLang === 'ur' && urTranslations && (() => {
@@ -818,9 +830,9 @@ export default function PracticePage() {
                             return (
                               <div className={cn(
                                 "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
-                                isSelected && !showAsCorrect && !showAsWrong ? "text-blue-800/90" : 
-                                showAsCorrect ? "text-green-700/90" :
-                                showAsWrong ? "text-red-700/90" : "text-slate-700"
+                                isSelected && !showAsCorrect && !showAsWrong ? "text-[var(--lingo-red-dark)]/90" : 
+                                showAsCorrect ? "text-[var(--correct)]/90" :
+                                showAsWrong ? "text-[var(--wrong)]/90" : "text-[var(--text-secondary)]"
                               )} dir="rtl">{urOption}</div>
                             );
                           }
@@ -870,7 +882,7 @@ export default function PracticePage() {
                   {/* Toggle Button */}
                   <button
                     onClick={() => setShowHints(!showHints)}
-                    className="flex items-center gap-2 mb-3 px-3 py-2 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 transition-all duration-200 text-sm font-medium text-[var(--navy)] hover:shadow-sm active:scale-[0.98] w-full sm:w-auto"
+                    className="lt-btn-ghost flex items-center gap-2 mb-3 px-3 py-2 text-sm w-full sm:w-auto"
                   >
                     <span className="text-lg">💡</span>
                     <span>{showHints ? "Hide Learning Hints" : "Show Learning Hints"}</span>
@@ -915,10 +927,10 @@ export default function PracticePage() {
                           return (
                             <div
                               key={index}
-                              className="bg-gradient-to-br from-teal-50/80 via-white to-cyan-50/50 border border-teal-200/60 rounded-xl p-5 transition-all duration-300 hover:shadow-lg hover:border-teal-300/80"
+                              className="bg-[var(--teal-soft)] border border-[var(--teal)]/25 rounded-[var(--radius-md)] p-5 transition-shadow duration-200 hover:shadow-[var(--shadow-sm)]"
                             >
                               <div className="flex items-start gap-3 mb-2">
-                                <span className="text-teal-700 font-bold text-sm flex-shrink-0 mt-0.5">{keyword.term}</span>
+                                <span className="text-[var(--teal)] font-bold text-sm flex-shrink-0 mt-0.5">{keyword.term}</span>
                                 {translationLang === 'ar' && (
                                   <span className="text-[var(--muted-text)]/70 text-sm" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' }}>{keyword.ar}</span>
                                 )}
@@ -952,21 +964,21 @@ export default function PracticePage() {
             })()}
 
             {/* Navigation Buttons */}
-            <div className="flex justify-between items-center mt-4">
+            <div className="flex justify-between items-center mt-4 gap-2 flex-wrap">
               <div className="flex gap-2">
                 <button
                   onClick={handlePrevious}
                   disabled={currentQuestionIndex === 0}
                   className={cn(
-                    "px-6 py-3 rounded-xl text-sm border border-slate-300 bg-white hover:bg-gradient-to-br hover:from-slate-50 hover:to-white transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] font-semibold text-slate-800",
-                    currentQuestionIndex === 0 && "opacity-50 cursor-not-allowed hover:translate-y-0"
+                    "lt-btn-ghost px-5 py-2.5 text-sm",
+                    currentQuestionIndex === 0 && "opacity-50 cursor-not-allowed"
                   )}
                 >
                   ← Previous
                 </button>
                 <button
                   onClick={handleRestart}
-                  className="px-6 py-3 rounded-xl text-sm border border-slate-300 bg-white hover:bg-gradient-to-br hover:from-slate-50 hover:to-white transition-all duration-200 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:scale-[0.98] font-semibold text-slate-800"
+                  className="lt-btn-ghost px-5 py-2.5 text-sm"
                 >
                   Restart
                 </button>
@@ -975,8 +987,8 @@ export default function PracticePage() {
                 onClick={handleNext}
                 disabled={currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall}
                 className={cn(
-                  "px-6 py-3 rounded-xl text-sm bg-gradient-to-r from-red-600 to-red-700 text-white hover:from-red-700 hover:to-red-800 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:scale-[0.98] font-semibold",
-                  (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall) && "opacity-50 cursor-not-allowed hover:translate-y-0"
+                  "lt-btn-primary px-5 py-2.5 text-sm",
+                  (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall) && "opacity-50 cursor-not-allowed"
                 )}
               >
                 Next →
@@ -984,8 +996,8 @@ export default function PracticePage() {
             </div>
           </div>
         ) : (
-          <div className="rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-slate-50/50 p-8 sm:p-10 mt-4 text-center text-slate-600 shadow-xl">
-            <p className="text-lg font-medium">Please select a topic to start practicing.</p>
+          <div className="lt-card p-8 sm:p-10 mt-4 text-center text-[var(--text-secondary)]">
+            <p className="text-lg font-medium text-[var(--text-primary)]">Please select a topic to start practicing.</p>
           </div>
         )}
       </div>

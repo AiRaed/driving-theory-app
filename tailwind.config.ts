@@ -10,11 +10,22 @@ const config: Config = {
     extend: {
       colors: {
         background: "var(--background)",
-        foreground: "var(--foreground)",
+        foreground: "var(--text-primary)",
+        lingo: {
+          red: "var(--lingo-red)",
+          "red-dark": "var(--lingo-red-dark)",
+          "red-soft": "var(--lingo-red-soft)",
+        },
       },
-      fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        arabic: ["var(--font-arabic)", "var(--font-inter)", "system-ui", "sans-serif"],
+  fontFamily: {
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        arabic: ["var(--font-arabic)", "var(--font-sans)", "system-ui", "sans-serif"],
+      },
+      borderRadius: {
+        lt: "var(--radius-md)",
+      },
+      boxShadow: {
+        lt: "var(--shadow-sm)",
       },
     },
   },

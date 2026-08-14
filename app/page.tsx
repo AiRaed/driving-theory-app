@@ -5,32 +5,43 @@ import AppVersionBadge from '@/components/AppVersionBadge';
 export default function Home() {
   return (
     <>
-      {/* App version badge - only visible in native Android app */}
       <AppVersionBadge />
-      <div className="max-w-5xl mx-auto px-4 py-8 flex flex-col items-center">
-        <section className="w-full max-w-2xl text-center mt-8 mb-8">
-          <h1 className="text-[28px] sm:text-4xl font-semibold mb-4 text-[var(--ink)]">
+      <div className="lt-page py-10 sm:py-14 flex flex-col items-center">
+        <section className="w-full max-w-xl text-center">
+          <p className="lt-kicker mb-4">LingoTheory</p>
+
+          <h1 className="text-[1.75rem] sm:text-[2.35rem] font-bold mb-4 text-[var(--text-primary)] leading-[1.15] text-balance">
             Driving Theory Helper
           </h1>
+
           <Subtitle />
-          <p className="text-[var(--muted-text)] mb-2 text-lg font-medium">
+
+          <p className="text-[var(--text-primary)] mb-3 text-lg sm:text-xl font-semibold leading-snug text-balance">
             Pass your UK driving theory test faster — in your own language.
           </p>
-          <p className="text-[var(--muted-text)] mb-6 text-base">
-            Prepare for the UK driving theory test with bilingual practice questions, simplified explanations, and realistic mock tests — designed to help you understand, not just memorise.
+
+          <p className="text-[var(--text-secondary)] mb-9 text-[0.95rem] sm:text-base leading-relaxed max-w-md mx-auto">
+            Bilingual practice questions, clear explanations, and realistic mock tests — built to help you understand, not just memorise.
           </p>
-          <LandingClient />
-          <p className="text-sm text-[var(--muted-text)] mt-4">
-            English by default — <span className="text-[#FFC107]">Arabic</span> & <span className="text-[#FFC107]">Urdu</span> translations available.
+
+          <div className="mb-8">
+            <LandingClient />
+          </div>
+
+          <p className="text-sm text-[var(--text-secondary)]">
+            English by default ·{' '}
+            <span className="font-semibold text-[var(--text-primary)]">Arabic</span>
+            {' '}&{' '}
+            <span className="font-semibold text-[var(--text-primary)]">Urdu</span>
+            {' '}translations
           </p>
-          {/* Informational note */}
-          <p className="text-xs text-[var(--muted-text)]/70 mt-6 max-w-2xl mx-auto">
-            For best results, we recommend using this app and website alongside the official DVSA learning materials.
-          </p>
-          {/* Disclaimer */}
-          <div className="mt-4 max-w-2xl mx-auto">
-            <p className="text-xs text-[var(--muted-text)]/80 leading-relaxed">
-              Disclaimer: This app provides practice questions designed to help learners prepare for the UK driving theory test. The questions are not official DVSA exam questions and are based on the same learning objectives and topics.
+
+          <div className="mt-10 pt-6 border-t border-[var(--border)] space-y-3 text-left sm:text-center">
+            <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
+              For best results, use this app alongside official DVSA learning materials.
+            </p>
+            <p className="text-[11px] text-[var(--text-secondary)] leading-relaxed">
+              Disclaimer: Practice questions are designed to help learners prepare for the UK driving theory test. They are not official DVSA exam questions and are based on the same learning objectives and topics.
             </p>
           </div>
         </section>
