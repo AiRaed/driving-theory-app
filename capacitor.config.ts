@@ -6,6 +6,7 @@ const config = {
     // MUST be production URL - NO localhost, NO mock auth
     url: 'https://www.lingotheory.org',
     androidScheme: 'https',
+    iosScheme: 'https',
     cleartext: false,
   },
 };

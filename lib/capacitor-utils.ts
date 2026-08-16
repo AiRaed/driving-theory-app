@@ -10,3 +10,14 @@ export function isNativeAndroid() {
   }
 }
 
+export function isNativeIOS() {
+  if (typeof window === "undefined") return false;
+
+  try {
+    const { Capacitor } = require("@capacitor/core");
+    return Capacitor.isNativePlatform() && Capacitor.getPlatform() === "ios";
+  } catch {
+    return false;
+  }
+}
+

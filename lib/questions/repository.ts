@@ -8,6 +8,7 @@ import {
   isMissingColumnError,
   rowToLearnerQuestion,
   rowToUrduBucket,
+  rowToRomanianBucket,
   type QuestionRow,
 } from '@/lib/questions/types';
 
@@ -16,6 +17,7 @@ export type BankSource = 'database' | 'static';
 export interface LearnerBank {
   questions: Question[];
   urduByTopic: TranslationData;
+  romanianByTopic: TranslationData;
   source: BankSource;
   count: number;
 }
@@ -34,6 +36,7 @@ function staticBank(): LearnerBank {
   return {
     questions: staticQuestions,
     urduByTopic: {},
+    romanianByTopic: {},
     source: 'static',
     count: staticQuestions.length,
   };
@@ -72,14 +75,21 @@ export async function getPublishedQuestionBank(): Promise<LearnerBank> {
 
     const questions = rows.map(rowToLearnerQuestion);
     const urduByTopic: TranslationData = {};
+    const romanianByTopic: TranslationData = {};
     for (const row of rows) {
       if (!urduByTopic[row.topic_id]) urduByTopic[row.topic_id] = {};
       urduByTopic[row.topic_id][row.id] = rowToUrduBucket(row);
+      const roBucket = rowToRomanianBucket(row);
+      if (roBucket.promptRo) {
+        if (!romanianByTopic[row.topic_id]) romanianByTopic[row.topic_id] = {};
+        romanianByTopic[row.topic_id][row.id] = roBucket;
+      }
     }
 
     return {
       questions,
       urduByTopic,
+      romanianByTopic,
       source: 'database',
       count: questions.length,
     };

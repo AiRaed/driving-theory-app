@@ -9,6 +9,7 @@ export async function GET() {
   return NextResponse.json({
     questions: bank.questions,
     urduByTopic: bank.urduByTopic,
+    romanianByTopic: bank.romanianByTopic,
     source: bank.source,
     count: bank.count,
   });

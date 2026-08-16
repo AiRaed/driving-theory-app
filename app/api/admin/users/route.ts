@@ -165,6 +165,11 @@ export async function GET(request: NextRequest) {
           (u) => u.last_language_used === 'en' || u.preferred_language === 'en'
         );
         break;
+      case 'lang_ro':
+        merged = merged.filter(
+          (u) => u.last_language_used === 'ro' || u.preferred_language === 'ro'
+        );
+        break;
       case 'mock_started':
         merged = merged.filter((u) => u.mock_tests_started > 0);
         break;

@@ -14,11 +14,13 @@ import {
   getTranslationLang, 
   setTranslationLang, 
   loadUrduTranslations,
+  loadRomanianTranslations,
   getQuestionTranslation,
   getUrduOptionTranslation,
+  getRomanianOptionTranslation,
   type TranslationData 
 } from '@/lib/translations';
-import { getKeywordUrduTranslation } from '@/lib/keyword-translations';
+import { getKeywordUrduTranslation, getKeywordRomanianTranslation } from '@/lib/keyword-translations';
 import {
   analyticsLanguage,
   getOrCreateClientSessionId,
@@ -63,6 +65,24 @@ const topicUrduMap: Record<string, string> = {
   'safety-vehicle': 'گاڑی کی حفاظت',
 };
 
+// Romanian translations for topics
+const topicRomanianMap: Record<string, string> = {
+  'alertness': 'Atenție și vigilență',
+  'hazard-awareness': 'Conștientizarea pericolelor',
+  'road-signs': 'Indicatoare rutiere',
+  'safety-margins': 'Margini de siguranță',
+  'rules-of-the-road': 'Regulile circulației',
+  'vulnerable-road-users': 'Utilizatori vulnerabili ai drumului',
+  'vehicle-handling': 'Manevrarea vehiculului',
+  'incidents': 'Incidente și urgențe',
+  'documents': 'Documente',
+  'motorway-driving': 'Conducerea pe autostradă',
+  'other-vehicles': 'Alte vehicule',
+  'vehicle-loading': 'Încărcarea vehiculului',
+  'attitude': 'Atitudinea șoferului',
+  'safety-vehicle': 'Siguranța vehiculului',
+};
+
 // Fisher-Yates shuffle algorithm
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];
@@ -76,7 +96,7 @@ function shuffleArray<T>(array: T[]): T[] {
 export default function PracticePage() {
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
   const { loading, paid, freeUsed, refresh, silentRefresh } = useAccess();
-  const { questions, urTranslations: bankUrdu, source: bankSource } = useQuestionBank();
+  const { questions, urTranslations: bankUrdu, roTranslations: bankRo, source: bankSource } = useQuestionBank();
   const [selectedTopic, setSelectedTopic] = useState<string>('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
@@ -96,13 +116,14 @@ export default function PracticePage() {
     setTranslationLangState(getTranslationLang());
   }, []);
   const [urTranslations, setUrTranslations] = useState<TranslationData | null>(null);
+  const [roTranslations, setRoTranslations] = useState<TranslationData | null>(null);
   const [imageError, setImageError] = useState<boolean>(false);
   const [showTopicsGrid, setShowTopicsGrid] = useState<boolean>(true);
   const [showHints, setShowHints] = useState<boolean>(false); // Collapsed by default on mobile
 
   // Prefer DB Urdu when bank is from database; otherwise load locale file
   useEffect(() => {
-    if (bankSource === 'database' && bankUrdu) {
+    if (bankSource === 'database' && bankUrdu && Object.keys(bankUrdu).length > 0) {
       setUrTranslations(bankUrdu);
       return;
     }
@@ -115,12 +136,37 @@ export default function PracticePage() {
     }
   }, [translationLang, bankSource, bankUrdu]);
 
+  // Prefer DB Romanian when bank is from database; otherwise load locale file
+  useEffect(() => {
+    if (bankSource === 'database' && bankRo && Object.keys(bankRo).length > 0) {
+      setRoTranslations(bankRo);
+      return;
+    }
+    if (translationLang === 'ro') {
+      loadRomanianTranslations(true).then((data) => {
+        if (data) setRoTranslations(data);
+      });
+    } else if (bankSource !== 'database') {
+      setRoTranslations(null);
+    }
+  }, [translationLang, bankSource, bankRo]);
+
   // Load Urdu translations automatically for topics that have Urdu translations
   useEffect(() => {
     if (bankSource === 'database') return;
     if (translationLang === 'ur' && selectedTopic) {
       loadUrduTranslations(true).then((data) => {
         if (data) setUrTranslations(data);
+      });
+    }
+  }, [selectedTopic, translationLang, bankSource]);
+
+  // Load Romanian translations automatically for topics
+  useEffect(() => {
+    if (bankSource === 'database') return;
+    if (translationLang === 'ro' && selectedTopic) {
+      loadRomanianTranslations(true).then((data) => {
+        if (data) setRoTranslations(data);
       });
     }
   }, [selectedTopic, translationLang, bankSource]);
@@ -134,16 +180,22 @@ export default function PracticePage() {
       previous: analyticsLanguage(translationLang),
       mode: 'practice',
     });
-    if (bankSource === 'database' && bankUrdu) {
-      setUrTranslations(bankUrdu);
-      return;
-    }
     if (lang === 'ur') {
-      loadUrduTranslations(true).then((data) => {
-        if (data) setUrTranslations(data);
-      });
-    } else {
-      setUrTranslations(null);
+      if (bankSource === 'database' && bankUrdu && Object.keys(bankUrdu).length > 0) {
+        setUrTranslations(bankUrdu);
+      } else {
+        loadUrduTranslations(true).then((data) => {
+          if (data) setUrTranslations(data);
+        });
+      }
+    } else if (lang === 'ro') {
+      if (bankSource === 'database' && bankRo && Object.keys(bankRo).length > 0) {
+        setRoTranslations(bankRo);
+      } else {
+        loadRomanianTranslations(true).then((data) => {
+          if (data) setRoTranslations(data);
+        });
+      }
     }
   };
 
@@ -175,7 +227,14 @@ export default function PracticePage() {
         }
       });
     }
-  }, [currentQuestion?.id, translationLang, urTranslations]);
+    if (translationLang === 'ro' && currentQuestion && !roTranslations) {
+      loadRomanianTranslations(true).then((data) => {
+        if (data) {
+          setRoTranslations(data);
+        }
+      });
+    }
+  }, [currentQuestion?.id, translationLang, urTranslations, roTranslations]);
 
   // Get shuffled options for current question (memoized by question.id)
   // Shuffle runs ONCE per question and remains stable during re-renders
@@ -454,22 +513,28 @@ export default function PracticePage() {
             <span className="hidden md:inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-[var(--lingo-red-soft)] text-[var(--lingo-red)] border border-[var(--lingo-red-muted)]">
               Practice
             </span>
-            <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-3 flex-1 min-w-0">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-start sm:gap-3 flex-1 min-w-0">
               <span className="text-xs md:text-sm font-medium text-[var(--text-secondary)] whitespace-nowrap">
                 <span className="md:hidden">{totalQuestions}Q · {totalTopics}T</span>
                 <span className="hidden md:inline">{totalQuestions} questions · {totalTopics} topics</span>
               </span>
               {/* Translation Switcher - Mobile */}
               {isMounted && (
-                <div className="flex items-center gap-1 sm:hidden flex-shrink-0">
-                  <span className="text-[10px] font-medium text-[var(--text-secondary)] whitespace-nowrap">Tr:</span>
-                  <div className="lt-segmented" role="group" aria-label="Translation language selector">
+                <div className="flex items-center gap-1.5 sm:hidden w-full min-w-0">
+                  <span className="text-[10px] font-medium text-[var(--text-secondary)] whitespace-nowrap flex-shrink-0">
+                    Tr:
+                  </span>
+                  <div
+                    className="lt-segmented flex-1 min-w-0 flex-wrap justify-start"
+                    role="group"
+                    aria-label="Translation language selector"
+                  >
                     <button
                       type="button"
                       onClick={() => handleTranslationLangChange('off')}
                       aria-pressed={translationLang === 'off'}
                       data-active={translationLang === 'off'}
-                      className="lt-segmented-btn px-2 py-1 text-xs"
+                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.25rem]"
                     >
                       Off
                     </button>
@@ -478,7 +543,7 @@ export default function PracticePage() {
                       onClick={() => handleTranslationLangChange('ar')}
                       aria-pressed={translationLang === 'ar'}
                       data-active={translationLang === 'ar'}
-                      className="lt-segmented-btn px-2 py-1 text-xs"
+                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.25rem]"
                     >
                       العربية
                     </button>
@@ -487,9 +552,18 @@ export default function PracticePage() {
                       onClick={() => handleTranslationLangChange('ur')}
                       aria-pressed={translationLang === 'ur'}
                       data-active={translationLang === 'ur'}
-                      className="lt-segmented-btn px-2 py-1 text-xs"
+                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.25rem]"
                     >
                       اردو
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleTranslationLangChange('ro')}
+                      aria-pressed={translationLang === 'ro'}
+                      data-active={translationLang === 'ro'}
+                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.5rem]"
+                    >
+                      Română
                     </button>
                   </div>
                 </div>
@@ -528,6 +602,15 @@ export default function PracticePage() {
                 >
                   اردو
                 </button>
+                <button
+                  type="button"
+                  onClick={() => handleTranslationLangChange('ro')}
+                  aria-pressed={translationLang === 'ro'}
+                  data-active={translationLang === 'ro'}
+                  className="lt-segmented-btn px-3 py-1.5 text-xs"
+                >
+                  Română
+                </button>
               </div>
             </div>
           )}
@@ -552,6 +635,11 @@ export default function PracticePage() {
                 {translationLang === 'ur' && topicUrduMap[selectedTopic] && (
                   <div className="text-sm text-[var(--text-secondary)] font-normal leading-tight w-full block text-right" dir="rtl">
                     {topicUrduMap[selectedTopic]}
+                  </div>
+                )}
+                {translationLang === 'ro' && topicRomanianMap[selectedTopic] && (
+                  <div className="text-sm text-[var(--text-secondary)] font-normal leading-tight w-full block" dir="ltr">
+                    {topicRomanianMap[selectedTopic]}
                   </div>
                 )}
               </div>
@@ -633,6 +721,18 @@ export default function PracticePage() {
                           {topicUrduMap[topic]}
                         </div>
                       )}
+                      {translationLang === 'ro' && topicRomanianMap[topic] && (
+                        <div 
+                          className={cn(
+                            "text-[10px] md:text-[11px] font-normal mt-1 leading-tight",
+                            "line-clamp-1 overflow-hidden text-ellipsis",
+                            isActive ? "text-white/85" : "text-[var(--text-secondary)]"
+                          )} 
+                          dir="ltr"
+                        >
+                          {topicRomanianMap[topic]}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </button>
@@ -652,10 +752,15 @@ export default function PracticePage() {
               تنويه: هذا التطبيق يقدّم أسئلة تدريبية للمساعدة في الاستعداد لاختبار القيادة النظري في المملكة المتحدة. الأسئلة ليست أسئلة الامتحان الرسمية، لكنها مبنية على نفس الأهداف التعليمية.
             </p>
           )}
+          {translationLang === 'ro' && (
+            <p className="text-xs text-[var(--muted-text)]/70 leading-relaxed mt-1.5" dir="ltr">
+              Declinarea responsabilității: Această aplicație oferă întrebări de exersare menite să ajute cursanții să se pregătească pentru testul teoretic de conducere din Regatul Unit. Întrebările nu sunt întrebări oficiale de examen DVSA, dar se bazează pe aceleași obiective și teme de învățare.
+            </p>
+          )}
         </div>
 
         {/* Mobile Disclaimer Modal */}
-        <DisclaimerModal showArabic={translationLang === 'ar'} />
+        <DisclaimerModal showArabic={translationLang === 'ar'} showRomanian={translationLang === 'ro'} />
 
             {/* Question Display */}
         {currentQuestion ? (
@@ -760,6 +865,23 @@ export default function PracticePage() {
               }
               return null;
             })()}
+            {translationLang === 'ro' && currentQuestion && (() => {
+              if (!roTranslations) {
+                console.warn(`[Practice] Romanian translations not loaded for question ${currentQuestion.id}`);
+                return null;
+              }
+              const translation = getQuestionTranslation(currentQuestion.id, currentQuestion.topic, 'ro', roTranslations);
+              if (translation?.prompt) {
+                return (
+                  <h3 className="text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold mb-3 leading-[1.8] tracking-wide" dir="ltr">
+                    {translation.prompt}
+                  </h3>
+                );
+              } else {
+                console.warn(`[Practice] No Romanian translation found for question ${currentQuestion.id} in topic ${currentQuestion.topic}`);
+              }
+              return null;
+            })()}
 
             {/* Divider */}
             <div className="border-t border-[var(--border)] mb-4 mt-2"></div>
@@ -838,6 +960,26 @@ export default function PracticePage() {
                           }
                           return null;
                         })()}
+                        {translationLang === 'ro' && roTranslations && (() => {
+                          const roOption = getRomanianOptionTranslation(
+                            option.en,
+                            currentQuestion.options,
+                            roTranslations,
+                            currentQuestion.id,
+                            currentQuestion.topic
+                          );
+                          if (roOption) {
+                            return (
+                              <div className={cn(
+                                "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
+                                isSelected && !showAsCorrect && !showAsWrong ? "text-[var(--lingo-red-dark)]/90" : 
+                                showAsCorrect ? "text-[var(--correct)]/90" :
+                                showAsWrong ? "text-[var(--wrong)]/90" : "text-[var(--text-secondary)]"
+                              )} dir="ltr">{roOption}</div>
+                            );
+                          }
+                          return null;
+                        })()}
                       </div>
                     </div>
                   </button>
@@ -847,7 +989,7 @@ export default function PracticePage() {
 
             {/* Learning Hints Section - Shown after answering */}
             {(() => {
-              // Filter hints to only show those with all 3 languages (EN/AR/UR)
+              // Filter hints by active language requirements
               const validHints = currentQuestion.keywords?.filter((keyword) => {
                 // Check if it's a hint (starts with "hint")
                 if (!keyword.term.startsWith('hint')) return false;
@@ -867,8 +1009,18 @@ export default function PracticePage() {
                 // Check Urdu: must have translation in keyword-translations.ts
                 const urduTranslation = getKeywordUrduTranslation(keyword.term);
                 const hasUrdu = !!urduTranslation?.explainUr;
-                
-                // Only show if all three languages exist
+
+                // Check Romanian: must have translation in keyword-translations.ts
+                const romanianTranslation = getKeywordRomanianTranslation(keyword.term);
+                const hasRomanian = !!romanianTranslation?.explainRo;
+
+                if (translationLang === 'ro') {
+                  return hasEnglish && hasRomanian;
+                }
+                if (translationLang === 'off') {
+                  return hasEnglish;
+                }
+                // ar / ur: keep requiring EN + AR + UR
                 return hasEnglish && hasArabic && hasUrdu;
               }) || [];
 
@@ -915,9 +1067,15 @@ export default function PracticePage() {
                           تعلیمی اشارات: ان الفاظ کو سمجھنا آپ کو صحیح جواب دینے میں مدد کرتا ہے
                         </p>
                       )}
+                      {translationLang === 'ro' && (
+                        <p className="text-[13px] sm:text-[14px] font-medium mb-4 text-[var(--muted-text)]/80 leading-relaxed" dir="ltr">
+                          Sfaturi de învățare: Înțelegerea acestor concepte te ajută să răspunzi corect
+                        </p>
+                      )}
                       <div className="space-y-3">
                         {validHints.map((keyword, index) => {
                           const urduTranslation = getKeywordUrduTranslation(keyword.term);
+                          const romanianTranslation = getKeywordRomanianTranslation(keyword.term);
                           // Get English text - prefer explainEn, fallback to explainAr if it's English
                           const englishText = keyword.explainEn || 
                             (keyword.explainAr && /^[A-Z]/.test(keyword.explainAr.trim()) && 
@@ -937,6 +1095,9 @@ export default function PracticePage() {
                                 {translationLang === 'ur' && urduTranslation && (
                                   <span className="text-[var(--muted-text)]/70 text-sm" dir="rtl" style={{ lineHeight: '1.8' }}>{urduTranslation.ur}</span>
                                 )}
+                                {translationLang === 'ro' && romanianTranslation && (
+                                  <span className="text-[var(--muted-text)]/70 text-sm" dir="ltr" style={{ lineHeight: '1.8' }}>{romanianTranslation.ro}</span>
+                                )}
                               </div>
                               {translationLang === 'off' && englishText && (
                                 <p className="text-sm text-[var(--navy)] leading-relaxed">
@@ -951,6 +1112,11 @@ export default function PracticePage() {
                               {translationLang === 'ur' && urduTranslation && (
                                 <p className="text-sm text-[var(--navy)] leading-relaxed" dir="rtl" style={{ lineHeight: '1.8' }}>
                                   {urduTranslation.explainUr}
+                                </p>
+                              )}
+                              {translationLang === 'ro' && romanianTranslation && (
+                                <p className="text-sm text-[var(--navy)] leading-relaxed" dir="ltr">
+                                  {romanianTranslation.explainRo}
                                 </p>
                               )}
                             </div>

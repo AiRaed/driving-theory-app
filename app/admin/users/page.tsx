@@ -36,6 +36,7 @@ const FILTER_OPTIONS: { value: AdminUserFilter; label: string }[] = [
   { value: 'not_paid', label: 'Not paid' },
   { value: 'lang_ar', label: 'Language: Arabic' },
   { value: 'lang_ur', label: 'Language: Urdu' },
+  { value: 'lang_ro', label: 'Language: Romanian' },
   { value: 'lang_en', label: 'Language: English' },
   { value: 'mock_started', label: 'Mock started' },
   { value: 'mock_completed', label: 'Mock completed' },
@@ -67,7 +68,7 @@ function formatDate(iso: string | null | undefined): string {
 
 function langLabel(code: string | null | undefined): string {
   if (!code) return '—';
-  const map: Record<string, string> = { en: 'EN', ar: 'AR', ur: 'UR' };
+  const map: Record<string, string> = { en: 'EN', ar: 'AR', ur: 'UR', ro: 'RO' };
   return map[code] || code.toUpperCase();
 }
 

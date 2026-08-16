@@ -71,9 +71,10 @@ export function trackSessionComplete(payload: {
   postJson('/api/analytics/session', { action: 'complete', ...payload });
 }
 
-/** Map TranslationLang ('off'|'ar'|'ur') to analytics language label. */
+/** Map TranslationLang ('off'|'ar'|'ur'|'ro') to analytics language label. */
 export function analyticsLanguage(lang: string | null | undefined): string {
   if (lang === 'ar') return 'ar';
   if (lang === 'ur') return 'ur';
+  if (lang === 'ro') return 'ro';
   return 'en';
 }

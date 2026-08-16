@@ -17,6 +17,7 @@ import {
   getTranslationLang, 
   setTranslationLang, 
   loadUrduTranslations,
+  loadRomanianTranslations,
   getQuestionPromptTranslation,
   getOptionTranslation,
   type TranslationData 
@@ -116,11 +117,15 @@ export default function MockTestPage() {
     setTranslationLangState(getTranslationLang());
   }, []);
   const [urTranslations, setUrTranslations] = useState<TranslationData | null>(null);
-  const { questions, urTranslations: bankUrdu, source: bankSource, ready: bankReady } = useQuestionBank();
+  const [roTranslations, setRoTranslations] = useState<TranslationData | null>(null);
+  const { questions, urTranslations: bankUrdu, roTranslations: bankRo, source: bankSource, ready: bankReady } = useQuestionBank();
+
+  const localeTranslations =
+    translationLang === 'ro' ? roTranslations : translationLang === 'ur' ? urTranslations : null;
 
   // Prefer DB Urdu when the published bank is loaded; otherwise fall back to locale JSON.
   useEffect(() => {
-    if (bankSource === "database" && bankUrdu) {
+    if (bankSource === "database" && bankUrdu && Object.keys(bankUrdu).length > 0) {
       setUrTranslations(bankUrdu);
       return;
     }
@@ -128,6 +133,17 @@ export default function MockTestPage() {
       loadUrduTranslations().then(setUrTranslations);
     }
   }, [bankSource, bankUrdu, translationLang]);
+
+  // Prefer DB Romanian when the published bank is loaded; otherwise fall back to locale JSON.
+  useEffect(() => {
+    if (bankSource === "database" && bankRo && Object.keys(bankRo).length > 0) {
+      setRoTranslations(bankRo);
+      return;
+    }
+    if (translationLang === "ro") {
+      loadRomanianTranslations().then(setRoTranslations);
+    }
+  }, [bankSource, bankRo, translationLang]);
 
   // Update translation language
   const handleTranslationLangChange = (lang: TranslationLang) => {
@@ -138,8 +154,11 @@ export default function MockTestPage() {
       previous: analyticsLanguage(translationLang),
       mode: 'mock',
     });
-    if (lang === "ur" && bankSource !== "database") {
+    if (lang === "ur" && !(bankSource === "database" && bankUrdu && Object.keys(bankUrdu).length > 0)) {
       loadUrduTranslations().then(setUrTranslations);
+    }
+    if (lang === "ro" && !(bankSource === "database" && bankRo && Object.keys(bankRo).length > 0)) {
+      loadRomanianTranslations().then(setRoTranslations);
     }
   };
 
@@ -567,13 +586,13 @@ export default function MockTestPage() {
                       const promptTranslation = getQuestionPromptTranslation(
                         question,
                         translationLang,
-                        urTranslations
+                        localeTranslations
                       );
                       if (!promptTranslation) return null;
                       return (
                         <p 
                           className="text-[var(--text-secondary)] mb-3 leading-[1.8] tracking-wide font-medium" 
-                          dir="rtl" 
+                          dir={translationLang === 'ro' ? 'ltr' : 'rtl'} 
                           style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
                         >
                           {promptTranslation}
@@ -586,7 +605,7 @@ export default function MockTestPage() {
                         const optionTranslation = getOptionTranslation(
                           correctOption,
                           translationLang,
-                          urTranslations,
+                          localeTranslations,
                           question.options,
                           question.id,
                           question.topic
@@ -596,7 +615,7 @@ export default function MockTestPage() {
                           <>
                             {' · '}
                             <span 
-                              dir="rtl" 
+                              dir={translationLang === 'ro' ? 'ltr' : 'rtl'} 
                               style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' } : { lineHeight: '1.8' }}
                             >
                               {optionTranslation}
@@ -642,22 +661,28 @@ export default function MockTestPage() {
             <span className="hidden md:inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-[var(--lingo-red-soft)] text-[var(--lingo-red)] border border-[var(--lingo-red-muted)]">
               Mock Test
             </span>
-            <div className="flex items-center justify-between sm:justify-start gap-2 sm:gap-3 flex-1 min-w-0">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-start sm:gap-3 flex-1 min-w-0">
               <span className="text-xs md:text-sm font-medium text-[var(--text-secondary)] whitespace-nowrap">
                 <span className="md:hidden">{mockQuestions.length}Q</span>
                 <span className="hidden md:inline">{mockQuestions.length} questions</span>
               </span>
               {/* Translation Switcher - Mobile */}
               {isMounted && (
-                <div className="flex items-center gap-1 sm:hidden flex-shrink-0">
-                  <span className="text-[10px] font-medium text-[var(--text-secondary)] whitespace-nowrap">Tr:</span>
-                  <div className="lt-segmented" role="group" aria-label="Translation language selector">
+                <div className="flex items-center gap-1.5 sm:hidden w-full min-w-0">
+                  <span className="text-[10px] font-medium text-[var(--text-secondary)] whitespace-nowrap flex-shrink-0">
+                    Tr:
+                  </span>
+                  <div
+                    className="lt-segmented flex-1 min-w-0 flex-wrap justify-start"
+                    role="group"
+                    aria-label="Translation language selector"
+                  >
                     <button
                       type="button"
                       onClick={() => handleTranslationLangChange('off')}
                       aria-pressed={translationLang === 'off'}
                       data-active={translationLang === 'off'}
-                      className="lt-segmented-btn px-2 py-1 text-xs"
+                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.25rem]"
                     >
                       Off
                     </button>
@@ -666,7 +691,7 @@ export default function MockTestPage() {
                       onClick={() => handleTranslationLangChange('ar')}
                       aria-pressed={translationLang === 'ar'}
                       data-active={translationLang === 'ar'}
-                      className="lt-segmented-btn px-2 py-1 text-xs"
+                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.25rem]"
                     >
                       العربية
                     </button>
@@ -675,9 +700,18 @@ export default function MockTestPage() {
                       onClick={() => handleTranslationLangChange('ur')}
                       aria-pressed={translationLang === 'ur'}
                       data-active={translationLang === 'ur'}
-                      className="lt-segmented-btn px-2 py-1 text-xs"
+                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.25rem]"
                     >
                       اردو
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => handleTranslationLangChange('ro')}
+                      aria-pressed={translationLang === 'ro'}
+                      data-active={translationLang === 'ro'}
+                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.5rem]"
+                    >
+                      Română
                     </button>
                   </div>
                 </div>
@@ -716,6 +750,15 @@ export default function MockTestPage() {
                 >
                   اردو
                 </button>
+                <button
+                  type="button"
+                  onClick={() => handleTranslationLangChange('ro')}
+                  aria-pressed={translationLang === 'ro'}
+                  data-active={translationLang === 'ro'}
+                  className="lt-segmented-btn px-3 py-1.5 text-xs"
+                >
+                  Română
+                </button>
               </div>
             </div>
           )}
@@ -731,9 +774,14 @@ export default function MockTestPage() {
               تنويه: هذا التطبيق يقدّم أسئلة تدريبية للمساعدة في الاستعداد لاختبار القيادة النظري في المملكة المتحدة. الأسئلة ليست أسئلة الامتحان الرسمية، لكنها مبنية على نفس الأهداف التعليمية.
             </p>
           )}
+          {translationLang === 'ro' && (
+            <p className="text-xs text-[var(--muted-text)]/70 leading-relaxed mt-1.5" dir="ltr">
+              Declinarea responsabilității: Această aplicație oferă întrebări de exersare menite să ajute cursanții să se pregătească pentru testul teoretic de conducere din Regatul Unit. Întrebările nu sunt întrebări oficiale de examen DVSA, dar se bazează pe aceleași obiective și teme de învățare.
+            </p>
+          )}
         </div>
         {/* Mobile Disclaimer Modal */}
-        <DisclaimerModal showArabic={translationLang === 'ar'} />
+        <DisclaimerModal showArabic={translationLang === 'ar'} showRomanian={translationLang === 'ro'} />
         {/* Question Card */}
         <div className="lt-card-accent p-6 sm:p-7 mt-4">
           {/* Progress Section */}
@@ -799,14 +847,14 @@ export default function MockTestPage() {
             const translationText = getQuestionPromptTranslation(
               currentQuestion,
               translationLang,
-              urTranslations
+              localeTranslations
             );
             if (!translationText) return null;
             
             return (
               <p 
                 className="text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold mb-3 leading-[1.8] tracking-wide" 
-                dir="rtl" 
+                dir={translationLang === 'ro' ? 'ltr' : 'rtl'} 
                 style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
               >
                 {translationText}
@@ -867,7 +915,7 @@ export default function MockTestPage() {
                         const translationText = getOptionTranslation(
                           option,
                           translationLang,
-                          urTranslations,
+                          localeTranslations,
                           currentQuestion.options,
                           currentQuestion.id,
                           currentQuestion.topic
@@ -882,7 +930,7 @@ export default function MockTestPage() {
                               showCorrect ? "text-[var(--correct)]/90" :
                               showWrong ? "text-[var(--wrong)]/90" : "text-[var(--text-secondary)]"
                             )} 
-                            dir="rtl" 
+                            dir={translationLang === 'ro' ? 'ltr' : 'rtl'} 
                             style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
                           >
                             {translationText}

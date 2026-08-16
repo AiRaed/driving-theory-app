@@ -3,10 +3,11 @@
 import { useState } from 'react';
 
 interface DisclaimerModalProps {
-  showArabic: boolean;
+  showArabic?: boolean;
+  showRomanian?: boolean;
 }
 
-export default function DisclaimerModal({ showArabic }: DisclaimerModalProps) {
+export default function DisclaimerModal({ showArabic = false, showRomanian = false }: DisclaimerModalProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -53,6 +54,11 @@ export default function DisclaimerModal({ showArabic }: DisclaimerModalProps) {
               {showArabic && (
                 <p className="text-sm text-[var(--muted-text)] leading-relaxed" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
                   تنويه: هذا التطبيق يقدّم أسئلة تدريبية للمساعدة في الاستعداد لاختبار القيادة النظري في المملكة المتحدة. الأسئلة ليست أسئلة الامتحان الرسمية، لكنها مبنية على نفس الأهداف التعليمية.
+                </p>
+              )}
+              {showRomanian && (
+                <p className="text-sm text-[var(--muted-text)] leading-relaxed" dir="ltr">
+                  Declinarea responsabilității: Această aplicație oferă întrebări de exersare menite să ajute cursanții să se pregătească pentru testul teoretic de conducere din Regatul Unit. Întrebările nu sunt întrebări oficiale de examen DVSA, dar se bazează pe aceleași obiective și teme de învățare.
                 </p>
               )}
             </div>

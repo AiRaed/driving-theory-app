@@ -34,7 +34,7 @@ module.exports = {
     } else if (path === '/auth') {
       priority = 0.8;
       changefreq = 'monthly';
-    } else if (path === '/terms' || path === '/privacy') {
+    } else if (path === '/terms' || path === '/privacy' || path === '/support') {
       priority = 0.5;
       changefreq = 'yearly';
     }

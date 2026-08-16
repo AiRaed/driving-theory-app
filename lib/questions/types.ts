@@ -382,6 +382,27 @@ export function rowToUrduBucket(row: QuestionRow): {
   };
 }
 
+/** Attach Romanian from translations JSONB (no flat question_ro columns). */
+export function rowToRomanianBucket(row: QuestionRow): {
+  promptRo?: string;
+  options?: Array<{ ro: string }>;
+} {
+  const map = rowToTranslationsMap(row);
+  const ro = getTranslation(map, 'ro');
+  if (!ro || !translationHasContent(ro)) {
+    return { promptRo: undefined, options: undefined };
+  }
+  return {
+    promptRo: ro.question || undefined,
+    options: [
+      { ro: ro.answers[0] || '' },
+      { ro: ro.answers[1] || '' },
+      { ro: ro.answers[2] || '' },
+      { ro: ro.answers[3] || '' },
+    ],
+  };
+}
+
 export function emptyQuestionForm(topicId = 'alertness'): QuestionFormData {
   return {
     topic_id: topicId,

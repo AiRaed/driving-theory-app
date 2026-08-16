@@ -31,8 +31,10 @@ export default function Home() {
           <p className="text-sm text-[var(--text-secondary)]">
             English by default ·{' '}
             <span className="font-semibold text-[var(--text-primary)]">Arabic</span>
-            {' '}&{' '}
+            {', '}
             <span className="font-semibold text-[var(--text-primary)]">Urdu</span>
+            {' '}&{' '}
+            <span className="font-semibold text-[var(--text-primary)]">Romanian</span>
             {' '}translations
           </p>
 
