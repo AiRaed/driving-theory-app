@@ -80,6 +80,9 @@ export default function RootLayout({
                     <Link href="/privacy" className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors">
                       Privacy Policy
                     </Link>
+                    <Link href="/support" className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors">
+                      Support
+                    </Link>
                   </div>
                 </div>
                 <div className="border-t border-[var(--border)] pt-4 space-y-1">
