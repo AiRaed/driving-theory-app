@@ -403,6 +403,48 @@ export function rowToRomanianBucket(row: QuestionRow): {
   };
 }
 
+/** Attach Polish from translations JSONB (no flat question_pl columns). */
+export function rowToPolishBucket(row: QuestionRow): {
+  promptPl?: string;
+  options?: Array<{ pl: string }>;
+} {
+  const map = rowToTranslationsMap(row);
+  const pl = getTranslation(map, 'pl');
+  if (!pl || !translationHasContent(pl)) {
+    return { promptPl: undefined, options: undefined };
+  }
+  return {
+    promptPl: pl.question || undefined,
+    options: [
+      { pl: pl.answers[0] || '' },
+      { pl: pl.answers[1] || '' },
+      { pl: pl.answers[2] || '' },
+      { pl: pl.answers[3] || '' },
+    ],
+  };
+}
+
+/** Attach Portuguese from translations JSONB (no flat question_pt columns). */
+export function rowToPortugueseBucket(row: QuestionRow): {
+  promptPt?: string;
+  options?: Array<{ pt: string }>;
+} {
+  const map = rowToTranslationsMap(row);
+  const pt = getTranslation(map, 'pt');
+  if (!pt || !translationHasContent(pt)) {
+    return { promptPt: undefined, options: undefined };
+  }
+  return {
+    promptPt: pt.question || undefined,
+    options: [
+      { pt: pt.answers[0] || '' },
+      { pt: pt.answers[1] || '' },
+      { pt: pt.answers[2] || '' },
+      { pt: pt.answers[3] || '' },
+    ],
+  };
+}
+
 export function emptyQuestionForm(topicId = 'alertness'): QuestionFormData {
   return {
     topic_id: topicId,

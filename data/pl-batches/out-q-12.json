@@ -1,0 +1,854 @@
+{
+  "safety-vehicle": {
+    "SV-33": {
+      "promptPl": "Jaki objaw sugeruje, że koła są niewyważone?",
+      "options": [
+        {
+          "pl": "Awaria hamulców"
+        },
+        {
+          "pl": "Spadek ciśnienia w oponie"
+        },
+        {
+          "pl": "Wibracje układu kierowniczego"
+        },
+        {
+          "pl": "Ściąganie na jedną stronę"
+        }
+      ]
+    },
+    "SV-34": {
+      "promptPl": "Jakie działanie pomaga zmniejszyć zużycie paliwa?",
+      "options": [
+        {
+          "pl": "Gwałtowne przyspieszanie"
+        },
+        {
+          "pl": "Mocne hamowanie"
+        },
+        {
+          "pl": "Pozostawanie na niskich biegach"
+        },
+        {
+          "pl": "Płynniejsza i bardziej równomierna jazda"
+        }
+      ]
+    },
+    "SV-35": {
+      "promptPl": "Jak kierowcy mogą pomóc chronić środowisko?",
+      "options": [
+        {
+          "pl": "Gwałtownym przyspieszaniem"
+        },
+        {
+          "pl": "Łagodnym przyspieszaniem"
+        },
+        {
+          "pl": "Używaniem paliwa ołowiowego"
+        },
+        {
+          "pl": "Szybszą jazdą"
+        }
+      ]
+    },
+    "SV-36": {
+      "promptPl": "Kiedy najlepiej sprawdzać ciśnienie w oponach?",
+      "options": [
+        {
+          "pl": "Po długiej jeździe"
+        },
+        {
+          "pl": "Przy dużej prędkości"
+        },
+        {
+          "pl": "Gdy opony są gorące"
+        },
+        {
+          "pl": "Gdy opony są zimne"
+        }
+      ]
+    },
+    "SV-37": {
+      "promptPl": "Co powinieneś zrobić, jeśli kontrolka ABS świeci się podczas jazdy?",
+      "options": [
+        {
+          "pl": "Sprawdzić poziom płynu"
+        },
+        {
+          "pl": "Sprawdzić hamulec ręczny"
+        },
+        {
+          "pl": "Kontynuować jazdę"
+        },
+        {
+          "pl": "Natychmiast oddać hamulce do sprawdzenia"
+        }
+      ]
+    },
+    "SV-38": {
+      "promptPl": "Co sprawia, że opony są nielegalne do użytku na drodze?",
+      "options": [
+        {
+          "pl": "Różne wzory bieżnika"
+        },
+        {
+          "pl": "Różne marki"
+        },
+        {
+          "pl": "Duże, głębokie nacięcia na boku opony"
+        },
+        {
+          "pl": "Zakup używany"
+        }
+      ]
+    },
+    "SV-39": {
+      "promptPl": "Dlaczego warto planować podróż tak, aby unikać godzin szczytu?",
+      "options": [
+        {
+          "pl": "Dłuższa podróż"
+        },
+        {
+          "pl": "Więcej stresu"
+        },
+        {
+          "pl": "Łatwiejsza, płynniejsza jazda"
+        },
+        {
+          "pl": "Więcej korków"
+        }
+      ]
+    },
+    "SV-40": {
+      "promptPl": "Czego możesz się spodziewać, jeśli często mocno przyspieszasz i mocno hamujesz?",
+      "options": [
+        {
+          "pl": "Mniejszego zanieczyszczenia"
+        },
+        {
+          "pl": "Większego bezpieczeństwa na drodze"
+        },
+        {
+          "pl": "Mniejszego zużycia paliwa"
+        },
+        {
+          "pl": "Większego zużycia paliwa"
+        }
+      ]
+    },
+    "SV-41": {
+      "promptPl": "Jak niedopompowane opony wpływają na Twój pojazd?",
+      "options": [
+        {
+          "pl": "Zwiększa się częstotliwość migania kierunkowskazów"
+        },
+        {
+          "pl": "Reflektory świecą wyżej"
+        },
+        {
+          "pl": "Zmiana biegów staje się sztywna"
+        },
+        {
+          "pl": "Droga hamowania się wydłuża"
+        }
+      ]
+    },
+    "SV-42": {
+      "promptPl": "Jadąc drogą dwujezdniową, który system wspomagania kierowcy pomaga utrzymać samochód w oznaczeniach pasa?",
+      "options": [
+        {
+          "pl": "Asystent martwego pola"
+        },
+        {
+          "pl": "Asystent korków"
+        },
+        {
+          "pl": "Inteligentny asystent prędkości"
+        },
+        {
+          "pl": "Asystent utrzymania pasa (lane-keep assist)"
+        }
+      ]
+    },
+    "SV-43": {
+      "promptPl": "Jak możesz zmniejszyć wpływ swojego pojazdu na środowisko?",
+      "options": [
+        {
+          "pl": "Unikać serwisowania"
+        },
+        {
+          "pl": "Jechać szybciej niż zwykle"
+        },
+        {
+          "pl": "Robić tylko krótkie trasy"
+        },
+        {
+          "pl": "Utrzymywać niskie obroty silnika"
+        }
+      ]
+    },
+    "SV-44": {
+      "promptPl": "Na spokojnej autostradzie, która funkcja wspomagania kierowcy najprawdopodobniej pomoże zapobiec zjeżdżaniu z pasa?",
+      "options": [
+        {
+          "pl": "Asystent korków"
+        },
+        {
+          "pl": "Widzenie nocne"
+        },
+        {
+          "pl": "Inteligentny asystent prędkości"
+        },
+        {
+          "pl": "Ostrzeżenie o zjechaniu z pasa (lane-departure warning)"
+        }
+      ]
+    },
+    "SV-45": {
+      "promptPl": "Kiedy NIE wolno używać klaksonu na terenie zabudowanym?",
+      "options": [
+        {
+          "pl": "Między 22:00 a 6:00"
+        },
+        {
+          "pl": "W dowolnym momencie"
+        },
+        {
+          "pl": "Między 23:30 a 7:00"
+        },
+        {
+          "pl": "Tylko na drogach głównych"
+        }
+      ]
+    },
+    "SV-46": {
+      "promptPl": "Co powinieneś zrobić, jeśli samochód ściąga na jedną stronę podczas hamowania?",
+      "options": [
+        {
+          "pl": "Pompować pedał hamulca"
+        },
+        {
+          "pl": "Zwiększyć ciśnienie w oponach"
+        },
+        {
+          "pl": "Użyć hamulca ręcznego"
+        },
+        {
+          "pl": "Szybko oddać hamulce do sprawdzenia"
+        }
+      ]
+    },
+    "SV-47": {
+      "promptPl": "Jakie zachowanie za kierownicą najprawdopodobniej zwiększa zużycie paliwa?",
+      "options": [
+        {
+          "pl": "Jazda na wysokich biegach"
+        },
+        {
+          "pl": "Słaba kontrola kierownicy"
+        },
+        {
+          "pl": "Gwałtowne hamowanie i przyspieszanie"
+        },
+        {
+          "pl": "Płynne pokonywanie zakrętów"
+        }
+      ]
+    },
+    "SV-48": {
+      "promptPl": "Co powinieneś zrobić, zostawiając samochód bez opieki nawet na krótko?",
+      "options": [
+        {
+          "pl": "Zostawić silnik włączony"
+        },
+        {
+          "pl": "Zostawić klucz w środku"
+        },
+        {
+          "pl": "Zamknąć samochód i zabrać klucz"
+        },
+        {
+          "pl": "Parkować przy kontrolerze"
+        }
+      ]
+    },
+    "SV-49": {
+      "promptPl": "Jak możesz uniknąć niepotrzebnego marnowania paliwa?",
+      "options": [
+        {
+          "pl": "Kręcić silnikiem na niskich biegach"
+        },
+        {
+          "pl": "Jechać szybciej"
+        },
+        {
+          "pl": "Zostawić pusty bagażnik dachowy"
+        },
+        {
+          "pl": "Regularnie serwisować pojazd"
+        }
+      ]
+    },
+    "SV-50": {
+      "promptPl": "Co prawdopodobnie się stanie, jeśli dolano za dużo oleju silnikowego?",
+      "options": [
+        {
+          "pl": "Poślizg paska rozrządu"
+        },
+        {
+          "pl": "Zablokowanie dolotu powietrza"
+        },
+        {
+          "pl": "Uszczelniacze oleju mogą przeciekać"
+        },
+        {
+          "pl": "Zablokowanie sprzęgła"
+        }
+      ]
+    },
+    "SV-51": {
+      "promptPl": "Jaka jest korzyść z przestrzegania harmonogramu serwisowego producenta?",
+      "options": [
+        {
+          "pl": "Niższe koszty ubezpieczenia"
+        },
+        {
+          "pl": "Krótszy czas podróży"
+        },
+        {
+          "pl": "Poprawia się niezawodność pojazdu"
+        },
+        {
+          "pl": "Niższy podatek od pojazdu"
+        }
+      ]
+    },
+    "SV-52": {
+      "promptPl": "Jak możesz zaplanować trasę przed długą podróżą?",
+      "options": [
+        {
+          "pl": "Zapytać warsztat"
+        },
+        {
+          "pl": "Sprawdzić instrukcję obsługi"
+        },
+        {
+          "pl": "Skonsultować się z biurem podróży"
+        },
+        {
+          "pl": "Użyć internetowego planera tras"
+        }
+      ]
+    },
+    "SV-53": {
+      "promptPl": "Co sprawia, że pojazd jest bardziej przyjazny dla środowiska w porównaniu z innymi?",
+      "options": [
+        {
+          "pl": "Napęd diesla"
+        },
+        {
+          "pl": "Silnik benzynowy"
+        },
+        {
+          "pl": "Napęd elektryczny"
+        },
+        {
+          "pl": "Napęd grawitacyjny"
+        }
+      ]
+    },
+    "SV-54": {
+      "promptPl": "Dlaczego warto zaplanować alternatywną trasę przed rozpoczęciem podróży?",
+      "options": [
+        {
+          "pl": "Mapy mają różne skale"
+        },
+        {
+          "pl": "Pierwotna trasa może być zablokowana"
+        },
+        {
+          "pl": "Obowiązują opłaty za wjazd do strefy (congestion charge)"
+        },
+        {
+          "pl": "Traktory powodują opóźnienia"
+        }
+      ]
+    },
+    "SV-55": {
+      "promptPl": "Jakie działanie pomaga zmniejszyć ogólne natężenie ruchu?",
+      "options": [
+        {
+          "pl": "Jazda wszędzie samochodem"
+        },
+        {
+          "pl": "Korzystanie z pasów autobusowych"
+        },
+        {
+          "pl": "Krótkie trasy pieszo lub rowerem"
+        },
+        {
+          "pl": "Większe silniki"
+        }
+      ]
+    },
+    "SV-56": {
+      "promptPl": "Jaki jest główny cel zaawansowanych systemów wspomagania kierowcy (ADAS)?",
+      "options": [
+        {
+          "pl": "Zmniejszyć zanieczyszczenie"
+        },
+        {
+          "pl": "Skrócić podróże"
+        },
+        {
+          "pl": "Ułatwić jazdę"
+        },
+        {
+          "pl": "Poprawić bezpieczeństwo na drodze"
+        }
+      ]
+    },
+    "SV-57": {
+      "promptPl": "Kiedy powinieneś sprawdzić poziom oleju silnikowego?",
+      "options": [
+        {
+          "pl": "Gdy silnik jest gorący"
+        },
+        {
+          "pl": "Przy każdej jeździe"
+        },
+        {
+          "pl": "Przed długą podróżą"
+        },
+        {
+          "pl": "Tylko wczesnym rankiem"
+        }
+      ]
+    },
+    "SV-58": {
+      "promptPl": "Który element pojazdu musi być zgodnie z prawem utrzymywany w dobrym stanie?",
+      "options": [
+        {
+          "pl": "Skrzynia biegów"
+        },
+        {
+          "pl": "Zamki drzwi"
+        },
+        {
+          "pl": "Układ napędowy"
+        },
+        {
+          "pl": "Pasy bezpieczeństwa"
+        }
+      ]
+    },
+    "SV-59": {
+      "promptPl": "Jeśli zatrzymasz się na dłużej przy drodze, co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Użyć świateł mijania"
+        },
+        {
+          "pl": "Wyłączyć silnik"
+        },
+        {
+          "pl": "Wyłączyć radio"
+        },
+        {
+          "pl": "Załączyć blokadę kierownicy"
+        }
+      ]
+    },
+    "SV-60": {
+      "promptPl": "Dlaczego w dużych miastach wprowadzono „red routes”?",
+      "options": [
+        {
+          "pl": "Aby podnieść limity prędkości"
+        },
+        {
+          "pl": "Aby zapewnić parking"
+        },
+        {
+          "pl": "Aby poprawić płynność ruchu"
+        },
+        {
+          "pl": "Aby ułatwić załadunek"
+        }
+      ]
+    },
+    "SV-61": {
+      "promptPl": "Jaki jest główny cel progów, szikan i zwężeń jezdni?",
+      "options": [
+        {
+          "pl": "Rozdzielić pasy ruchu"
+        },
+        {
+          "pl": "Zwiększyć prędkość pojazdów"
+        },
+        {
+          "pl": "Umożliwić przejścia dla pieszych"
+        },
+        {
+          "pl": "Zmniejszyć prędkość ruchu"
+        }
+      ]
+    },
+    "SV-62": {
+      "promptPl": "Kiedy pojazd zużywa najwięcej paliwa?",
+      "options": [
+        {
+          "pl": "Podczas hamowania"
+        },
+        {
+          "pl": "Podczas jazdy na luzie"
+        },
+        {
+          "pl": "Podczas przyspieszania"
+        },
+        {
+          "pl": "Podczas skręcania"
+        }
+      ]
+    },
+    "SV-63": {
+      "promptPl": "Prowadzisz nieznany samochód z systemami wspomagania kierowcy. Gdzie powinieneś sprawdzić, jak ich prawidłowo używać?",
+      "options": [
+        {
+          "pl": "Zapytać warsztat"
+        },
+        {
+          "pl": "W instrukcji producenta"
+        },
+        {
+          "pl": "W Highway Code"
+        },
+        {
+          "pl": "W stowarzyszeniu motoryzacyjnym"
+        }
+      ]
+    },
+    "SV-64": {
+      "promptPl": "Dwoje dzieci poniżej 14 lat jest pasażerami. Kto odpowiada za zapięcie pasów?",
+      "options": [
+        {
+          "pl": "Dorosły pasażer"
+        },
+        {
+          "pl": "Dzieci"
+        },
+        {
+          "pl": "Ty, jako kierowca"
+        },
+        {
+          "pl": "Ich rodzic"
+        }
+      ]
+    },
+    "SV-65": {
+      "promptPl": "Jakie działanie pomaga zmniejszyć szkody dla środowiska powodowane przez pojazdy?",
+      "options": [
+        {
+          "pl": "Unikać tempomatu"
+        },
+        {
+          "pl": "Używać klimatyzacji bez przerwy"
+        },
+        {
+          "pl": "Hamować biegami"
+        },
+        {
+          "pl": "Unikać wielu krótkich podróży"
+        }
+      ]
+    },
+    "SV-66": {
+      "promptPl": "Czy kiedykolwiek wolno parkować na liniach zygzakowatych przy przejściu zebra?",
+      "options": [
+        {
+          "pl": "Tak, jeśli zostajesz w samochodzie"
+        },
+        {
+          "pl": "Tak, aby wysadzić pasażerów"
+        },
+        {
+          "pl": "Tak, jeśli piesi mogą przejść"
+        },
+        {
+          "pl": "Nie, nigdy"
+        }
+      ]
+    },
+    "SV-67": {
+      "promptPl": "Kiedy pojazd zużyje więcej paliwa?",
+      "options": [
+        {
+          "pl": "Przy niedopompowanych oponach"
+        },
+        {
+          "pl": "Przy oponach różnych marek"
+        },
+        {
+          "pl": "Przy zbyt mocno napompowanych oponach"
+        },
+        {
+          "pl": "Przy nowych oponach"
+        }
+      ]
+    },
+    "SV-68": {
+      "promptPl": "Jaka jest prawnie wymagana minimalna głębokość bieżnika opon przyczepy lub przyczepy kempingowej?",
+      "options": [
+        {
+          "pl": "1 mm"
+        },
+        {
+          "pl": "1,6 mm"
+        },
+        {
+          "pl": "2 mm"
+        },
+        {
+          "pl": "2,6 mm"
+        }
+      ]
+    },
+    "SV-69": {
+      "promptPl": "Dlaczego prawidłowo wyregulowany zagłówek jest ważny?",
+      "options": [
+        {
+          "pl": "Dla komfortu"
+        },
+        {
+          "pl": "Dla relaksu"
+        },
+        {
+          "pl": "Dla ochrony przed urazem szyi"
+        },
+        {
+          "pl": "Dla pozycji za kierownicą"
+        }
+      ]
+    },
+    "SV-70": {
+      "promptPl": "Kiedy system wykrywania senności kierowcy Cię ostrzeże?",
+      "options": [
+        {
+          "pl": "Po 4 godzinach jazdy"
+        },
+        {
+          "pl": "O ustalonych porach"
+        },
+        {
+          "pl": "Gdy wykryje oznaki zmęczenia"
+        },
+        {
+          "pl": "W pobliżu znaków miejsc odpoczynku"
+        }
+      ]
+    },
+    "SV-71": {
+      "promptPl": "Po kolizji, co zmniejsza ryzyko urazu szyi?",
+      "options": [
+        {
+          "pl": "Hamulce ABS"
+        },
+        {
+          "pl": "Składająca się kolumna kierownicy"
+        },
+        {
+          "pl": "Fotel z zawieszeniem powietrznym"
+        },
+        {
+          "pl": "Prawidłowo wyregulowany zagłówek"
+        }
+      ]
+    },
+    "SV-72": {
+      "promptPl": "Jak należy zutylizować zużyty olej silnikowy?",
+      "options": [
+        {
+          "pl": "Wylać do kanalizacji"
+        },
+        {
+          "pl": "Do domowego kosza"
+        },
+        {
+          "pl": "W punkcie recyklingu lokalnych władz"
+        },
+        {
+          "pl": "Wlać do gleby"
+        }
+      ]
+    },
+    "SV-73": {
+      "promptPl": "Jaka technika jazdy pomaga oszczędzać paliwo?",
+      "options": [
+        {
+          "pl": "Częste niskie biegi"
+        },
+        {
+          "pl": "Gwałtowne przyspieszanie"
+        },
+        {
+          "pl": "Używanie każdego biegu"
+        },
+        {
+          "pl": "Odpowiednie pomijanie biegów"
+        }
+      ]
+    },
+    "SV-74": {
+      "promptPl": "Co może pomóc odstraszyć kradzież pojazdu?",
+      "options": [
+        {
+          "pl": "Włączone reflektory"
+        },
+        {
+          "pl": "Okna refleksyjne"
+        },
+        {
+          "pl": "Włączone światło wewnętrzne"
+        },
+        {
+          "pl": "Wytrawienie numeru rejestracyjnego na szybach"
+        }
+      ]
+    },
+    "SV-75": {
+      "promptPl": "Dlaczego podczas MOT bada się emisję spalin?",
+      "options": [
+        {
+          "pl": "Aby odzyskać koszt sprzętu"
+        },
+        {
+          "pl": "Aby chronić środowisko"
+        },
+        {
+          "pl": "Aby porównać dostawców paliwa"
+        },
+        {
+          "pl": "Aby wyrównać spaliny silników"
+        }
+      ]
+    },
+    "SV-76": {
+      "promptPl": "Przewozisz 5-letnie dziecko bez odpowiedniego fotelika. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Użyć pasa dla dorosłych"
+        },
+        {
+          "pl": "Dzielić pas"
+        },
+        {
+          "pl": "Posadzić między dziećmi"
+        },
+        {
+          "pl": "Nie przewozić dziecka, dopóki nie będzie odpowiedniego fotelika"
+        }
+      ]
+    },
+    "SV-77": {
+      "promptPl": "Jaka jest prawnie wymagana minimalna głębokość bieżnika opon samochodowych?",
+      "options": [
+        {
+          "pl": "1 mm"
+        },
+        {
+          "pl": "1,6 mm"
+        },
+        {
+          "pl": "2,5 mm"
+        },
+        {
+          "pl": "4 mm"
+        }
+      ]
+    },
+    "SV-78": {
+      "promptPl": "Jak ludzie mogą pomóc zmniejszyć zanieczyszczenie w miastach?",
+      "options": [
+        {
+          "pl": "Jechać szybciej"
+        },
+        {
+          "pl": "Przekręcać silnik"
+        },
+        {
+          "pl": "Chodzić lub jeździć rowerem"
+        },
+        {
+          "pl": "Jeździć na krótkich trasach"
+        }
+      ]
+    },
+    "SV-79": {
+      "promptPl": "Co może powodować nadmierne lub nierównomierne zużycie opon?",
+      "options": [
+        {
+          "pl": "Uszkodzona skrzynia biegów"
+        },
+        {
+          "pl": "Uszkodzony układ hamulcowy"
+        },
+        {
+          "pl": "Usterka elektryczna"
+        },
+        {
+          "pl": "Usterka układu wydechowego"
+        }
+      ]
+    },
+    "SV-80": {
+      "promptPl": "Jak możesz zmniejszyć szkody dla środowiska powodowane przez Twój pojazd?",
+      "options": [
+        {
+          "pl": "Używać ruchliwych tras"
+        },
+        {
+          "pl": "Hamować mocno"
+        },
+        {
+          "pl": "Używać bocznych ulic"
+        },
+        {
+          "pl": "Przewidywać ruch z przodu"
+        }
+      ]
+    },
+    "SV-81": {
+      "promptPl": "Włączasz adaptacyjny tempomat. Co nadal musisz robić?",
+      "options": [
+        {
+          "pl": "Odpiąć pas bezpieczeństwa"
+        },
+        {
+          "pl": "Korzystać z telefonu"
+        },
+        {
+          "pl": "Jeść i pić"
+        },
+        {
+          "pl": "Nadal obserwować znaki drogowe"
+        }
+      ]
+    },
+    "SV-82": {
+      "promptPl": "Chcesz zamontować fotelik niemowlęcy tyłem do kierunku jazdy na przednim fotelu pasażera przy aktywnej poduszce powietrznej. Co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Obrócić fotel bokiem"
+        },
+        {
+          "pl": "Poprosić pasażera, by trzymał dziecko"
+        },
+        {
+          "pl": "Użyć pasa dla dorosłych"
+        },
+        {
+          "pl": "Dezaktywować poduszkę powietrzną"
+        }
+      ]
+    }
+  }
+}

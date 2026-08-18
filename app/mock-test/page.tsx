@@ -7,21 +7,28 @@ import { Question } from "@/data/questions";
 import { cn } from "@/lib/utils";
 import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
+import VocabHintsControl from "@/components/VocabHintsControl";
 import DisclaimerModal from "@/components/DisclaimerModal";
+import LanguageSelector from "@/components/LanguageSelector";
+import BilingualLabel from "@/components/BilingualLabel";
+import { enLabel } from "@/lib/i18n/ui-strings";
 import PaywallOverlay from "@/components/PaywallOverlay";
 import { useAccess } from '@/lib/providers/AccessProvider';
 import { createClient } from "@/lib/supabase/client";
 import { useQuestionBank } from "@/lib/questions/useQuestionBank";
 import { 
-  TranslationLang, 
-  getTranslationLang, 
-  setTranslationLang, 
   loadUrduTranslations,
   loadRomanianTranslations,
+  loadPolishTranslations,
+  loadPortugueseTranslations,
+  loadBengaliTranslations,
   getQuestionPromptTranslation,
   getOptionTranslation,
+  isLtrTranslationLang,
   type TranslationData 
 } from '@/lib/translations';
+import { useLanguage } from '@/lib/i18n/LanguageProvider';
+import { isRtlLang, type TranslationLang } from '@/lib/i18n/languages';
 import {
   analyticsLanguage,
   clearClientSessionId,
@@ -74,6 +81,7 @@ export default function MockTestPage() {
   const supabase = createClient();
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
   const { loading, paid } = useAccess();
+  const { lang: translationLang, setLang, ready: languageReady } = useLanguage();
   const [user, setUser] = useState<any>(null);
   
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
@@ -81,8 +89,6 @@ export default function MockTestPage() {
   const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(null);
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
   const [isFinished, setIsFinished] = useState(false);
-  const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
-  const [isMounted, setIsMounted] = useState(false);
   const mockSessionIdRef = useRef<string | null>(null);
   const mockCompleteTrackedRef = useRef(false);
   const mockStartedTrackedRef = useRef(false);
@@ -110,18 +116,33 @@ export default function MockTestPage() {
     checkAuth();
   }, [router, supabase]);
 
-
-  // Load translation language from localStorage after mount to avoid hydration mismatch
-  useEffect(() => {
-    setIsMounted(true);
-    setTranslationLangState(getTranslationLang());
-  }, []);
   const [urTranslations, setUrTranslations] = useState<TranslationData | null>(null);
   const [roTranslations, setRoTranslations] = useState<TranslationData | null>(null);
-  const { questions, urTranslations: bankUrdu, roTranslations: bankRo, source: bankSource, ready: bankReady } = useQuestionBank();
+  const [plTranslations, setPlTranslations] = useState<TranslationData | null>(null);
+  const [ptTranslations, setPtTranslations] = useState<TranslationData | null>(null);
+  const [bnTranslations, setBnTranslations] = useState<TranslationData | null>(null);
+  const {
+    questions,
+    urTranslations: bankUrdu,
+    roTranslations: bankRo,
+    plTranslations: bankPl,
+    ptTranslations: bankPt,
+    source: bankSource,
+    ready: bankReady,
+  } = useQuestionBank();
 
   const localeTranslations =
-    translationLang === 'ro' ? roTranslations : translationLang === 'ur' ? urTranslations : null;
+    translationLang === 'bn'
+      ? bnTranslations
+      : translationLang === 'pt'
+      ? ptTranslations
+      : translationLang === 'pl'
+        ? plTranslations
+        : translationLang === 'ro'
+          ? roTranslations
+          : translationLang === 'ur'
+            ? urTranslations
+            : null;
 
   // Prefer DB Urdu when the published bank is loaded; otherwise fall back to locale JSON.
   useEffect(() => {
@@ -145,20 +166,50 @@ export default function MockTestPage() {
     }
   }, [bankSource, bankRo, translationLang]);
 
-  // Update translation language
-  const handleTranslationLangChange = (lang: TranslationLang) => {
-    setTranslationLangState(lang);
-    setTranslationLang(lang);
-    void trackEvent('language_changed', {
-      language: analyticsLanguage(lang),
-      previous: analyticsLanguage(translationLang),
-      mode: 'mock',
-    });
-    if (lang === "ur" && !(bankSource === "database" && bankUrdu && Object.keys(bankUrdu).length > 0)) {
+  // Prefer DB Polish when the published bank is loaded; otherwise fall back to locale JSON.
+  useEffect(() => {
+    if (bankSource === "database" && bankPl && Object.keys(bankPl).length > 0) {
+      setPlTranslations(bankPl);
+      return;
+    }
+    if (translationLang === "pl") {
+      loadPolishTranslations().then(setPlTranslations);
+    }
+  }, [bankSource, bankPl, translationLang]);
+
+  // Prefer DB Portuguese when the published bank is loaded; otherwise fall back to locale JSON.
+  useEffect(() => {
+    if (bankSource === "database" && bankPt && Object.keys(bankPt).length > 0) {
+      setPtTranslations(bankPt);
+      return;
+    }
+    if (translationLang === "pt") {
+      loadPortugueseTranslations().then(setPtTranslations);
+    }
+  }, [bankSource, bankPt, translationLang]);
+
+  useEffect(() => {
+    if (translationLang === 'bn') {
+      loadBengaliTranslations().then(setBnTranslations);
+    }
+  }, [translationLang]);
+
+  const handleTranslationLangChange = (next: TranslationLang) => {
+    setLang(next);
+    if (next === "ur" && !(bankSource === "database" && bankUrdu && Object.keys(bankUrdu).length > 0)) {
       loadUrduTranslations().then(setUrTranslations);
     }
-    if (lang === "ro" && !(bankSource === "database" && bankRo && Object.keys(bankRo).length > 0)) {
+    if (next === "ro" && !(bankSource === "database" && bankRo && Object.keys(bankRo).length > 0)) {
       loadRomanianTranslations().then(setRoTranslations);
+    }
+    if (next === "pl" && !(bankSource === "database" && bankPl && Object.keys(bankPl).length > 0)) {
+      loadPolishTranslations().then(setPlTranslations);
+    }
+    if (next === "pt" && !(bankSource === "database" && bankPt && Object.keys(bankPt).length > 0)) {
+      loadPortugueseTranslations().then(setPtTranslations);
+    }
+    if (next === 'bn') {
+      loadBengaliTranslations().then(setBnTranslations);
     }
   };
 
@@ -482,7 +533,7 @@ export default function MockTestPage() {
     return (
       <div className="min-h-screen bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-4 py-6">
-          <div className="text-center text-[var(--text-secondary)] font-medium">Loading...</div>
+          <div className="text-center text-[var(--text-secondary)] font-medium">{enLabel('loading')}</div>
         </div>
       </div>
     );
@@ -493,7 +544,7 @@ export default function MockTestPage() {
     return (
       <div className="min-h-screen bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-4 py-6">
-          <div className="text-center text-[var(--text-secondary)] font-medium">Loading...</div>
+          <div className="text-center text-[var(--text-secondary)] font-medium">{enLabel('loading')}</div>
         </div>
       </div>
     );
@@ -508,7 +559,7 @@ export default function MockTestPage() {
         <PaywallOverlay />
         <div className="pointer-events-none blur-sm opacity-50">
           <div className="max-w-5xl mx-auto px-4 py-6">
-            <div className="text-center text-[var(--text-secondary)] font-medium">Mock Test requires paid access</div>
+            <div className="text-center text-[var(--text-secondary)] font-medium">{enLabel('mockRequiresPaid')}</div>
           </div>
         </div>
       </div>
@@ -520,7 +571,7 @@ export default function MockTestPage() {
     return (
       <div className="min-h-screen bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-4 py-6">
-          <div className="text-center text-[var(--text-secondary)] font-medium">Loading questions...</div>
+          <div className="text-center text-[var(--text-secondary)] font-medium">{enLabel('loadingQuestions')}</div>
         </div>
       </div>
     );
@@ -537,14 +588,26 @@ export default function MockTestPage() {
     return (
       <div className="min-h-screen bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-4 py-6">
+          <div className="mb-4 flex flex-wrap items-center gap-3">
+            <Link href="/dashboard" className="lt-btn-ghost hidden sm:inline-flex px-4 py-2 text-sm flex-col items-center">
+              <BilingualLabel keyName="backToDashboard" lang={translationLang} />
+            </Link>
+            {languageReady && (
+              <LanguageSelector
+                value={translationLang}
+                onChange={handleTranslationLangChange}
+                className="flex-1 min-w-0"
+              />
+            )}
+          </div>
           {/* Results Card */}
           <div className="lt-card-accent p-6 sm:p-8 mt-4 mb-6">
             <div className="flex items-center gap-2 mb-2">
               <span className="text-2xl">{pass ? "🎉" : "📝"}</span>
-              <h1 className="text-xl font-bold text-[var(--text-primary)]">Mock Test Result</h1>
+              <h1 className="text-xl font-bold text-[var(--text-primary)]">{enLabel('mockResult')}</h1>
             </div>
             <p className="text-lg font-semibold mb-1 text-[var(--text-primary)]">
-              You scored {correct} / {total} ({percent}%)
+              {enLabel('youScored', { correct, total, percent })}
             </p>
             <p
               className={cn(
@@ -553,19 +616,14 @@ export default function MockTestPage() {
               )}
             >
               <span>{pass ? "✓" : "✕"}</span>
-              <span>{pass
-                ? "PASS — Well done! You&apos;re above the recommended pass mark."
-                : "FAIL — Keep practicing. Aim for at least 86% to pass the real test."}</span>
-            </p>
-            <p className="text-sm text-[var(--text-secondary)] mb-4" dir="rtl">
-              راجع الأسئلة التي أخطأت بها لتقوية نقاط الضعف قبل الامتحان الحقيقي.
+              <span>{pass ? enLabel('passMessage') : enLabel('failMessage')}</span>
             </p>
             <button
               type="button"
               onClick={handleRetake}
-              className="lt-btn-primary px-6 py-3 text-sm"
+              className="lt-btn-primary px-6 py-3 text-sm flex flex-col items-center"
             >
-              Retake
+              <BilingualLabel keyName="retake" lang={translationLang} />
             </button>
           </div>
 
@@ -592,7 +650,7 @@ export default function MockTestPage() {
                       return (
                         <p 
                           className="text-[var(--text-secondary)] mb-3 leading-[1.8] tracking-wide font-medium" 
-                          dir={translationLang === 'ro' ? 'ltr' : 'rtl'} 
+                          dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'} 
                           style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
                         >
                           {promptTranslation}
@@ -600,7 +658,7 @@ export default function MockTestPage() {
                       );
                     })()}
                     <p className="text-sm text-[var(--text-secondary)]">
-                      <span className="font-semibold">Correct answer:</span> <span className="font-semibold text-[var(--correct)]">{correctOption.en}</span>
+                      <span className="font-semibold">{enLabel('correctAnswer')}</span> <span className="font-semibold text-[var(--correct)]">{correctOption.en}</span>
                       {(() => {
                         const optionTranslation = getOptionTranslation(
                           correctOption,
@@ -615,7 +673,7 @@ export default function MockTestPage() {
                           <>
                             {' · '}
                             <span 
-                              dir={translationLang === 'ro' ? 'ltr' : 'rtl'} 
+                              dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'} 
                               style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' } : { lineHeight: '1.8' }}
                             >
                               {optionTranslation}
@@ -654,144 +712,48 @@ export default function MockTestPage() {
           <div className="flex items-center gap-3 flex-wrap flex-1 min-w-0">
             <Link
               href="/dashboard"
-              className="lt-btn-ghost hidden sm:inline-flex px-4 py-2 text-sm"
+              className="lt-btn-ghost hidden sm:inline-flex px-4 py-2 text-sm flex-col items-center"
             >
-              ← Back to dashboard
+              <BilingualLabel keyName="backToDashboard" lang={translationLang} />
             </Link>
             <span className="hidden md:inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-[var(--lingo-red-soft)] text-[var(--lingo-red)] border border-[var(--lingo-red-muted)]">
-              Mock Test
+              {enLabel('mockTest')}
             </span>
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-start sm:gap-3 flex-1 min-w-0">
               <span className="text-xs md:text-sm font-medium text-[var(--text-secondary)] whitespace-nowrap">
-                <span className="md:hidden">{mockQuestions.length}Q</span>
-                <span className="hidden md:inline">{mockQuestions.length} questions</span>
+                <span className="md:hidden">{enLabel('questionsShort', { n: mockQuestions.length })}</span>
+                <span className="hidden md:inline">{enLabel('questionsCount', { n: mockQuestions.length })}</span>
               </span>
-              {/* Translation Switcher - Mobile */}
-              {isMounted && (
-                <div className="flex items-center gap-1.5 sm:hidden w-full min-w-0">
-                  <span className="text-[10px] font-medium text-[var(--text-secondary)] whitespace-nowrap flex-shrink-0">
-                    Tr:
-                  </span>
-                  <div
-                    className="lt-segmented flex-1 min-w-0 flex-wrap justify-start"
-                    role="group"
-                    aria-label="Translation language selector"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => handleTranslationLangChange('off')}
-                      aria-pressed={translationLang === 'off'}
-                      data-active={translationLang === 'off'}
-                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.25rem]"
-                    >
-                      Off
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleTranslationLangChange('ar')}
-                      aria-pressed={translationLang === 'ar'}
-                      data-active={translationLang === 'ar'}
-                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.25rem]"
-                    >
-                      العربية
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleTranslationLangChange('ur')}
-                      aria-pressed={translationLang === 'ur'}
-                      data-active={translationLang === 'ur'}
-                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.25rem]"
-                    >
-                      اردو
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleTranslationLangChange('ro')}
-                      aria-pressed={translationLang === 'ro'}
-                      data-active={translationLang === 'ro'}
-                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.5rem]"
-                    >
-                      Română
-                    </button>
-                  </div>
-                </div>
+              {languageReady && (
+                <LanguageSelector
+                  value={translationLang}
+                  onChange={handleTranslationLangChange}
+                  className="flex-1 min-w-0"
+                />
               )}
             </div>
           </div>
-          {/* Translation Switcher - Desktop */}
-          {isMounted && (
-            <div className="hidden sm:flex items-center gap-3 flex-wrap">
-              <span className="text-xs font-medium text-[var(--text-secondary)]">Translation:</span>
-              <div className="lt-segmented" role="group" aria-label="Translation language selector">
-                <button
-                  type="button"
-                  onClick={() => handleTranslationLangChange('off')}
-                  aria-pressed={translationLang === 'off'}
-                  data-active={translationLang === 'off'}
-                  className="lt-segmented-btn px-3 py-1.5 text-xs"
-                >
-                  Off
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleTranslationLangChange('ar')}
-                  aria-pressed={translationLang === 'ar'}
-                  data-active={translationLang === 'ar'}
-                  className="lt-segmented-btn px-3 py-1.5 text-xs"
-                >
-                  العربية
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleTranslationLangChange('ur')}
-                  aria-pressed={translationLang === 'ur'}
-                  data-active={translationLang === 'ur'}
-                  className="lt-segmented-btn px-3 py-1.5 text-xs"
-                >
-                  اردو
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleTranslationLangChange('ro')}
-                  aria-pressed={translationLang === 'ro'}
-                  data-active={translationLang === 'ro'}
-                  className="lt-segmented-btn px-3 py-1.5 text-xs"
-                >
-                  Română
-                </button>
-              </div>
-            </div>
-          )}
         </div>
         {/* Disclaimer Message - Desktop only */}
         <div className="hidden sm:block text-center mt-4 mb-2 max-w-5xl mx-auto">
-          <p className="text-[10px] text-[var(--muted-text)]/70 leading-tight max-w-4xl mx-auto">
+          <p
+            className="text-[10px] text-[var(--muted-text)]/70 leading-tight max-w-4xl mx-auto"
+          >
             <span className="mr-1">ℹ️</span>
-            Disclaimer: This app provides practice questions designed to help learners prepare for the UK driving theory test. The questions are not official DVSA exam questions but are based on the same learning objectives and topics.
+            {enLabel('disclaimerBody')}
           </p>
-          {translationLang === 'ar' && (
-            <p className="text-xs text-[var(--muted-text)]/70 leading-relaxed mt-1.5" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
-              تنويه: هذا التطبيق يقدّم أسئلة تدريبية للمساعدة في الاستعداد لاختبار القيادة النظري في المملكة المتحدة. الأسئلة ليست أسئلة الامتحان الرسمية، لكنها مبنية على نفس الأهداف التعليمية.
-            </p>
-          )}
-          {translationLang === 'ro' && (
-            <p className="text-xs text-[var(--muted-text)]/70 leading-relaxed mt-1.5" dir="ltr">
-              Declinarea responsabilității: Această aplicație oferă întrebări de exersare menite să ajute cursanții să se pregătească pentru testul teoretic de conducere din Regatul Unit. Întrebările nu sunt întrebări oficiale de examen DVSA, dar se bazează pe aceleași obiective și teme de învățare.
-            </p>
-          )}
         </div>
-        {/* Mobile Disclaimer Modal */}
-        <DisclaimerModal showArabic={translationLang === 'ar'} showRomanian={translationLang === 'ro'} />
+        <DisclaimerModal lang={translationLang} />
         {/* Question Card */}
         <div className="lt-card-accent p-6 sm:p-7 mt-4">
           {/* Progress Section */}
           <div className="mb-3">
             <div className="flex items-center justify-between mb-1.5">
               <div className="text-xs text-[var(--text-secondary)] font-medium">
-                Question {currentIndex + 1} of {mockQuestions.length}
+                {enLabel('questionOf', { current: currentIndex + 1, total: mockQuestions.length })}
               </div>
               <div className="text-xs text-[var(--text-secondary)]">
-                {Math.round(((currentIndex + 1) / mockQuestions.length) * 100)}% complete
+                {enLabel('percentComplete', { percent: Math.round(((currentIndex + 1) / mockQuestions.length) * 100) })}
               </div>
             </div>
             <div className="h-1.5 w-full bg-[var(--surface-secondary)] rounded-full overflow-hidden">
@@ -801,11 +763,11 @@ export default function MockTestPage() {
               />
             </div>
             {currentIndex + 1 === mockQuestions.length && (
-              <p className="text-xs text-[var(--teal)] mt-2 font-medium">Final question! You&apos;re doing great.</p>
+              <p className="text-xs text-[var(--teal)] mt-2 font-medium">{enLabel('finalQuestion')}</p>
             )}
             {answers.filter(a => a && a.correct).length > 0 && (
               <p className="text-xs text-[var(--correct)] mt-2 font-medium">
-                {answers.filter(a => a && a.correct).length} correct so far — keep it up!
+                {enLabel('correctSoFar', { n: answers.filter(a => a && a.correct).length })}
               </p>
             )}
           </div>
@@ -854,13 +816,18 @@ export default function MockTestPage() {
             return (
               <p 
                 className="text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold mb-3 leading-[1.8] tracking-wide" 
-                dir={translationLang === 'ro' ? 'ltr' : 'rtl'} 
+                dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'} 
                 style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
               >
                 {translationText}
               </p>
             );
           })()}
+
+          <VocabHintsControl
+            questionId={currentQuestion.id}
+            translationLang={translationLang}
+          />
 
           {/* Divider */}
           <div className="border-t border-[var(--border)] mb-4 mt-2"></div>
@@ -930,7 +897,7 @@ export default function MockTestPage() {
                               showCorrect ? "text-[var(--correct)]/90" :
                               showWrong ? "text-[var(--wrong)]/90" : "text-[var(--text-secondary)]"
                             )} 
-                            dir={translationLang === 'ro' ? 'ltr' : 'rtl'} 
+                            dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'} 
                             style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
                           >
                             {translationText}
@@ -953,7 +920,7 @@ export default function MockTestPage() {
                 : "bg-[var(--wrong-soft)] text-[var(--wrong)] border border-[var(--wrong)]/30"
             )}>
               <span className="text-lg font-bold">{isCorrect ? "✓" : "✕"}</span>
-              <span>{isCorrect ? "Excellent! Keep your focus." : "Review this carefully before the real test."}</span>
+              <span>{isCorrect ? enLabel('excellentFocus') : enLabel('reviewCarefully')}</span>
             </div>
           )}
 
@@ -964,17 +931,17 @@ export default function MockTestPage() {
               onClick={handlePrevious}
               disabled={currentIndex === 0}
               className={cn(
-                "lt-btn-ghost h-12 w-full text-sm",
+                "lt-btn-ghost h-12 w-full text-sm flex flex-col items-center justify-center",
                 currentIndex === 0 && "opacity-50 cursor-not-allowed"
               )}
             >
-              ← Previous
+              <BilingualLabel keyName="previous" lang={translationLang} />
             </button>
             <button
               onClick={handleRestart}
-              className="lt-btn-ghost h-12 w-full text-sm"
+              className="lt-btn-ghost h-12 w-full text-sm flex flex-col items-center justify-center"
             >
-              Restart
+              <BilingualLabel keyName="restart" lang={translationLang} />
             </button>
             <button
               onClick={() => {
@@ -987,11 +954,15 @@ export default function MockTestPage() {
               }}
               disabled={!isAnswered}
               className={cn(
-                "lt-btn-primary h-12 w-full text-sm whitespace-nowrap",
+                "lt-btn-primary h-12 w-full text-sm whitespace-nowrap flex flex-col items-center justify-center",
                 !isAnswered && "opacity-50 cursor-not-allowed"
               )}
             >
-              {currentIndex === mockQuestions.length - 1 ? "Finish →" : "Next →"}
+              {currentIndex === mockQuestions.length - 1 ? (
+                <BilingualLabel keyName="finish" lang={translationLang} />
+              ) : (
+                <BilingualLabel keyName="next" lang={translationLang} />
+              )}
             </button>
           </div>
         </div>

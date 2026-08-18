@@ -1,0 +1,1015 @@
+{
+  "SV-19": [
+    {
+      "term": "fuel-efficient driving",
+      "translations": {
+        "en": "Driving in a way that uses less fuel, often by smoother acceleration and steadier speed.",
+        "ar": "القيادة بطريقة تستهلك وقوداً أقل، غالباً بتسارع أكثر سلاسة وسرعة أكثر ثباتاً.",
+        "ur": "ایسا ڈرائیونگ طریقہ جس سے کم ایندھن لگے، اکثر ہموار ایکسلریشن اور مستحکم رفتار سے۔",
+        "ro": "Conducere care consumă mai puțin combustibil, de obicei prin accelerație lină și viteză constantă."
+      }
+    },
+    {
+      "term": "exhaust emissions",
+      "translations": {
+        "en": "Gases and particles released from a vehicle’s exhaust into the air.",
+        "ar": "الغازات والجسيمات المنبعثة من عادم المركبة إلى الهواء.",
+        "ur": "گاڑی کے ایگزاسٹ سے ہوا میں نکلنے والی گیسیں اور ذرات۔",
+        "ro": "Gaze și particule eliberate din eșapamentul vehiculului în aer."
+      }
+    }
+  ],
+  "SV-20": [
+    {
+      "term": "speed humps",
+      "translations": {
+        "en": "Raised ridges across the road that force drivers to slow down (also called sleeping policemen).",
+        "ar": "نتوءات مرتفعة عبر الطريق تُجبر السائقين على تخفيف السرعة.",
+        "ur": "سڑک پر اٹھے ہوئے ٹیلے جو ڈرائیورز کو رفتار کم کرنے پر مجبور کرتے ہیں۔",
+        "ro": "Denivelări ridicate pe carosabil care obligă șoferii să reducă viteza."
+      }
+    }
+  ],
+  "RS-07": [],
+  "RS-08": [
+    {
+      "term": "give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    },
+    {
+      "term": "one-way street",
+      "translations": {
+        "en": "A street where traffic is allowed to travel in only one direction.",
+        "ar": "شارع يُسمح فيه لحركة المرور بالسير في اتجاه واحد فقط.",
+        "ur": "ایسی گلی جہاں ٹریفک صرف ایک سمت میں چل سکتی ہے۔",
+        "ro": "Stradă pe care circulația este permisă într-un singur sens."
+      }
+    }
+  ],
+  "RS-08A": [
+    {
+      "term": "give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    },
+    {
+      "term": "one-way street",
+      "translations": {
+        "en": "A street where traffic is allowed to travel in only one direction.",
+        "ar": "شارع يُسمح فيه لحركة المرور بالسير في اتجاه واحد فقط.",
+        "ur": "ایسی گلی جہاں ٹریفک صرف ایک سمت میں چل سکتی ہے۔",
+        "ro": "Stradă pe care circulația este permisă într-un singur sens."
+      }
+    }
+  ],
+  "RS-09": [
+    {
+      "term": "residential area",
+      "translations": {
+        "en": "A neighbourhood of homes where traffic and pedestrians are often close together.",
+        "ar": "حي سكني تكثر فيه المنازل وغالباً ما يكون المرور والمشاة قريبين من بعضهم.",
+        "ur": "رہائشی محلہ جہاں گھر ہوں اور ٹریفک و پیدل چلنے والے اکثر قریب ہوں۔",
+        "ro": "Cartier de locuințe unde traficul și pietonii sunt adesea apropiați."
+      }
+    },
+    {
+      "term": "triangular warning sign",
+      "translations": {
+        "en": "A red-bordered triangle road sign that warns of a hazard ahead.",
+        "ar": "لافتة طريق مثلثة بإطار أحمر تحذّر من خطر أمامك.",
+        "ur": "سرخ کنارے والا تکونی سڑک کا نشان جو آگے خطرے سے خبردار کرتا ہے۔",
+        "ro": "Indicator rutier triunghiular cu bordură roșie care avertizează asupra unui pericol în față."
+      }
+    }
+  ],
+  "RS-10": [
+    {
+      "term": "No stopping",
+      "translations": {
+        "en": "A ban on stopping your vehicle at all, even briefly (stricter than no parking).",
+        "ar": "منع التوقف بالمركبة تماماً ولو لفترة قصيرة (أشد من منع الوقوف/الانتظار).",
+        "ur": "گاڑی بالکل روکنے کی ممانعت، چاہے مختصر ہی ہو (نو پارکنگ سے سخت تر)۔",
+        "ro": "Interdicție de a opri vehiculul deloc, chiar și scurt (mai strict decât no parking)."
+      }
+    },
+    {
+      "term": "No parking",
+      "translations": {
+        "en": "You must not leave the vehicle parked, but brief stopping to drop off may be allowed.",
+        "ar": "يُمنع ترك المركبة متوقفة للانتظار، لكن التوقف القصير للإنزال قد يُسمح به.",
+        "ur": "گاڑی پارک کر کے نہیں چھوڑنی؛ مختصر اترنے/اتارنے کے لیے رکنا کبھی جائز ہو۔",
+        "ro": "Nu lăsați vehiculul parcat; oprirea scurtă pentru coborâre poate fi permisă."
+      }
+    },
+    {
+      "term": "End of restrictions",
+      "translations": {
+        "en": "A sign meaning earlier parking or waiting limits no longer apply beyond that point.",
+        "ar": "لافتة تعني أن قيود الوقوف أو الانتظار السابقة لم تعد سارية بعد هذه النقطة.",
+        "ur": "نشان کہ پہلے کی پارکنگ/انتظار پابندیاں اس نقطے کے بعد ختم ہو گئیں۔",
+        "ro": "Indicator care arată că restricțiile anterioare de parcare/staționare nu mai sunt valabile."
+      }
+    }
+  ],
+  "RS-11": [
+    {
+      "term": "triangular warning sign",
+      "translations": {
+        "en": "A red-bordered triangle road sign that warns of a hazard ahead.",
+        "ar": "لافتة طريق مثلثة بإطار أحمر تحذّر من خطر أمامك.",
+        "ur": "سرخ کنارے والا تکونی سڑک کا نشان جو آگے خطرے سے خبردار کرتا ہے۔",
+        "ro": "Indicator rutier triunghiular cu bordură roșie care avertizează asupra unui pericol în față."
+      }
+    },
+    {
+      "term": "road narrows",
+      "translations": {
+        "en": "The carriageway becomes narrower ahead, so there is less space for vehicles.",
+        "ar": "يصبح عرض الطريق أضيق أمامك، فيقلّت المساحة للمركبات.",
+        "ur": "آگے سڑک تنگ ہو جاتی ہے، اس لیے گاڑیوں کے لیے کم جگہ ہوتی ہے۔",
+        "ro": "Carosabilul se îngustează în față, deci rămâne mai puțin spațiu pentru vehicule."
+      }
+    }
+  ],
+  "RS-12": [
+    {
+      "term": "level crossing",
+      "translations": {
+        "en": "A place where a road crosses a railway line, often with barriers and warning lights.",
+        "ar": "مكان يتقاطع فيه الطريق مع خط السكة الحديدية، وغالباً توجد حواجز وأضواء تحذير.",
+        "ur": "وہ جگہ جہاں سڑک ریلوے لائن کو کاٹتی ہے؛ اکثر رکاوٹیں اور وارننگ لائٹس ہوتی ہیں۔",
+        "ro": "Locul unde un drum traversează o cale ferată, adesea cu bariere și lumini de avertizare."
+      }
+    }
+  ],
+  "RS-13": [
+    {
+      "term": "motor vehicles",
+      "translations": {
+        "en": "Powered road vehicles such as cars, vans, and motorcycles (not bicycles or pedestrians).",
+        "ar": "مركبات الطريق ذات المحرك مثل السيارات والشاحنات الصغيرة والدراجات النارية.",
+        "ur": "انجن والی سڑک گاڑیاں جیسے کار، وین اور موٹر سائیکل (سائیکل یا پیدل نہیں)۔",
+        "ro": "Vehicule rutiere cu motor, cum ar fi mașini, dube și motociclete (nu biciclete sau pietoni)."
+      }
+    }
+  ],
+  "RS-14": [
+    {
+      "term": "roundabout",
+      "translations": {
+        "en": "A circular junction where traffic usually travels clockwise and you give way to traffic already on it.",
+        "ar": "تقاطع دائري تسير فيه المركبات عادةً مع عقارب الساعة، وتعطي الأولوية لمن داخل الدوار.",
+        "ur": "گول جنکشن جہاں ٹریفک عام طور پر گھڑی وار چلتی ہے اور آپ اندر موجود ٹریفک کو راستہ دیں۔",
+        "ro": "Intersecție circulară unde circulația merge de obicei în sens orar și cedați traficului deja pe el."
+      }
+    },
+    {
+      "term": "give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    },
+    {
+      "term": "mini-roundabout",
+      "translations": {
+        "en": "A small roundabout, often marked by a white painted circle on the road.",
+        "ar": "دوار صغير غالباً يُعلَّم بدائرة بيضاء مرسومة على الطريق.",
+        "ur": "چھوٹا راؤنڈ اباؤٹ، اکثر سڑک پر سفید دائرے سے نشان زد۔",
+        "ro": "Sens giratoriu mic, deseori marcat cu un cerc alb pictat pe carosabil."
+      }
+    }
+  ],
+  "RS-15": [
+    {
+      "term": "Cycle route",
+      "translations": {
+        "en": "A path or lane intended for bicycles.",
+        "ar": "مسار أو ممر مخصص للدراجات الهوائية.",
+        "ur": "سائیکلوں کے لیے مخصوص راستہ یا لین۔",
+        "ro": "Traseu sau bandă destinată bicicletelor."
+      }
+    }
+  ],
+  "RS-16": [
+    {
+      "term": "speed camera zone",
+      "translations": {
+        "en": "An area where cameras check vehicle speeds for enforcement.",
+        "ar": "منطقة تراقب فيها كاميرات سرعة المركبات لفرض القانون.",
+        "ur": "وہ علاقہ جہاں کیمرے رفتار چیک کر کے قانون نافذ کرتے ہیں۔",
+        "ro": "Zonă unde camerele verifică viteza vehiculelor pentru aplicarea legii."
+      }
+    }
+  ],
+  "RS-17": [
+    {
+      "term": "Roadworks",
+      "translations": {
+        "en": "Road repairs or construction that may change layout, lanes, or speed limits.",
+        "ar": "أعمال إصلاح أو إنشاء على الطريق قد تغيّر المسارات أو حدود السرعة.",
+        "ur": "سڑک کی مرمت یا تعمیر جو ترتیب، لین یا رفتار کی حد بدل سکتی ہے۔",
+        "ro": "Lucrări de reparații sau construcție pe drum care pot schimba benzi sau limite de viteză."
+      }
+    },
+    {
+      "term": "Loose gravel",
+      "translations": {
+        "en": "Small loose stones on the road surface that can reduce tyre grip.",
+        "ar": "حصى صغير مفكوك على سطح الطريق قد يقلل تماسك الإطارات.",
+        "ur": "سڑک پر ڈھیلے کنکر جو ٹائر کی گرفت کم کر سکتے ہیں۔",
+        "ro": "Pietriș afânat pe carosabil care poate reduce aderența anvelopelor."
+      }
+    },
+    {
+      "term": "triangular warning sign",
+      "translations": {
+        "en": "A red-bordered triangle road sign that warns of a hazard ahead.",
+        "ar": "لافتة طريق مثلثة بإطار أحمر تحذّر من خطر أمامك.",
+        "ur": "سرخ کنارے والا تکونی سڑک کا نشان جو آگے خطرے سے خبردار کرتا ہے۔",
+        "ro": "Indicator rutier triunghiular cu bordură roșie care avertizează asupra unui pericol în față."
+      }
+    }
+  ],
+  "RS-18": [],
+  "RS-20": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "Bus lane",
+      "translations": {
+        "en": "A lane reserved mainly for buses (and sometimes taxis or cycles) at certain times.",
+        "ar": "مسار مخصص أساساً للحافلات (وأحياناً سيارات الأجرة أو الدراجات) في أوقات معينة.",
+        "ur": "لین جو بنیادی طور پر بسوں کے لیے مخصوص ہو (کبھی ٹیکسی/سائیکل بھی)، مخصوص اوقات میں۔",
+        "ro": "Bandă rezervată în principal autobuzelor (uneori taxiuri sau biciclete) în anumite intervale."
+      }
+    }
+  ],
+  "RS-21": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "RS-26": [
+    {
+      "term": "U-turn",
+      "translations": {
+        "en": "Turning the vehicle around in one move to go back the opposite way.",
+        "ar": "تدوير المركبة دفعة واحدة للعودة في الاتجاه المعاكس.",
+        "ur": "گاڑی کو ایک ہی حرکت میں موڑ کر مخالف سمت میں واپس جانا۔",
+        "ro": "Intoarcere a vehiculului dintr-o manevră pentru a merge pe sensul opus."
+      }
+    },
+    {
+      "term": "Two-way traffic",
+      "translations": {
+        "en": "Traffic moving in both directions on the same road.",
+        "ar": "حركة مرور تسير في الاتجاهين على الطريق نفسه.",
+        "ur": "ایک ہی سڑک پر دونوں سمتوں میں چلتی ٹریفک۔",
+        "ro": "Trafic care circulă pe ambele sensuri pe același drum."
+      }
+    }
+  ],
+  "VH-09": [
+    {
+      "term": "transverse lines",
+      "translations": {
+        "en": "Lines painted across the road (often yellow) to alert you as you approach a hazard.",
+        "ar": "خطوط مرسومة عبر الطريق (غالباً صفراء) لتنبيهك عند الاقتراب من خطر.",
+        "ur": "سڑک کے آر پار لکیریں (اکثر پیلی) جو خطرے کے قریب آنے پر متنبہ کرتی ہیں۔",
+        "ro": "Linii pictate transversal pe drum (deseori galbene) care vă alertează aproape de un pericol."
+      }
+    },
+    {
+      "term": "carriageway",
+      "translations": {
+        "en": "The part of the road used by vehicles, not the pavement or verge.",
+        "ar": "جزء الطريق الذي تستخدمه المركبات، وليس الرصيف أو الحافة.",
+        "ur": "سڑک کا وہ حصہ جو گاڑیوں کے لیے ہے، فٹ پاتھ یا کنارہ نہیں۔",
+        "ro": "Partea drumului folosită de vehicule, nu trotuarul sau acostamentul."
+      }
+    }
+  ],
+  "VH-10": [
+    {
+      "term": "warning triangle",
+      "translations": {
+        "en": "A red reflective triangle placed on the road to warn others of a broken-down vehicle.",
+        "ar": "مثلث أحمر عاكس يُوضع على الطريق لتحذير الآخرين من مركبة متوقفة بسبب عطل.",
+        "ur": "سرخ عکاس مثلث جو خراب گاڑی سے دوسروں کو خبردار کرنے کے لیے سڑک پر رکھا جاتا ہے۔",
+        "ro": "Triunghi roșu reflectorizant așezat pe drum pentru a avertiza asupra unui vehicul defect."
+      }
+    }
+  ],
+  "VH-11": [
+    {
+      "term": "Parking/sidelights",
+      "translations": {
+        "en": "Low-intensity lights used to show a parked or stationary vehicle’s position.",
+        "ar": "أضواء منخفضة الشدة تُظهر موقع مركبة متوقفة أو ساكنة.",
+        "ur": "کم روشنی والی لائٹس جو کھڑی یا ساکن گاڑی کی پوزیشن دکھاتی ہیں۔",
+        "ro": "Lumini de intensitate redusă care arată poziția unui vehicul parcat sau staționar."
+      }
+    },
+    {
+      "term": "Dipped headlights",
+      "translations": {
+        "en": "Headlights aimed lower so they light the road without dazzling oncoming drivers.",
+        "ar": "أضواء أمامية موجّهة للأسفل لإنارة الطريق دون إبهار السائقين القادمين.",
+        "ur": "ہیڈلائٹس جو نیچے کی طرف ہوں تاکہ سڑک روشن ہو اور سامنے والے ڈرائیورز چوندھیا نہ جائیں۔",
+        "ro": "Faruri îndreptate mai jos ca să lumineze drumul fără a orbi șoferii din sens opus."
+      }
+    },
+    {
+      "term": "Main beam headlights",
+      "translations": {
+        "en": "Full high-beam headlights that light farther ahead but can dazzle other drivers.",
+        "ar": "الأضواء العالية الكاملة التي تنير أبعد أمامك لكنها قد تبهر السائقين الآخرين.",
+        "ur": "فل ہائی بیم ہیڈلائٹس جو زیادہ دور روشن کرتی ہیں مگر دوسروں کو چوندھیا سکتی ہیں۔",
+        "ro": "Faza lungă care luminează mai departe, dar poate orbi alți șoferi."
+      }
+    }
+  ],
+  "VH-12": [
+    {
+      "term": "road humps",
+      "translations": {
+        "en": "Raised bumps in the road surface used to slow traffic.",
+        "ar": "نتوءات مرتفعة في سطح الطريق لإبطاء المرور.",
+        "ur": "سڑک کی سطح پر اُبھار جو ٹریفک سست کرنے کے لیے ہوتے ہیں۔",
+        "ro": "Denivelări pe carosabil folosite pentru a încetini traficul."
+      }
+    },
+    {
+      "term": "cruise control",
+      "translations": {
+        "en": "A system that holds a set speed without keeping your foot on the accelerator.",
+        "ar": "نظام يحافظ على سرعة محددة دون إبقاء قدمك على دواسة الوقود.",
+        "ur": "سسٹم جو ایک سیٹ رفتار برقرار رکھتا ہے بغیر ایکسلریٹر پر پاؤں رکھے۔",
+        "ro": "Sistem care menține o viteză setată fără a ține piciorul pe accelerație."
+      }
+    }
+  ],
+  "VH-13": [
+    {
+      "term": "high-sided vehicle",
+      "translations": {
+        "en": "A tall vehicle such as a lorry or van that can be strongly affected by side winds.",
+        "ar": "مركبة مرتفعة مثل شاحنة أو فان قد تتأثر بشدة برياح الجانب.",
+        "ur": "اونچی گاڑی جیسے لاری یا وین جس پر سائیڈ ونڈ زیادہ اثر ڈال سکتی ہے۔",
+        "ro": "Vehicul înalt, cum ar fi un camion sau o dubă, puternic afectat de vânt lateral."
+      }
+    },
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing another vehicle travelling in the same direction to move ahead of it.",
+        "ar": "تجاوز مركبة أخرى تسير في نفس الاتجاه للانتقال أمامها.",
+        "ur": "اسی سمت میں چلتی دوسری گاڑی کو پیچھے چھوڑ کر آگے نکلنا۔",
+        "ro": "Depășirea unui alt vehicul care merge în același sens pentru a trece înaintea lui."
+      }
+    },
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "VH-14": [
+    {
+      "term": "engine braking",
+      "translations": {
+        "en": "Slowing the vehicle by changing to a lower gear so the engine helps reduce speed.",
+        "ar": "إبطاء المركبة بتغيير إلى ترس أدنى بحيث يساعد المحرك على تقليل السرعة.",
+        "ur": "نچے گیئر لگا کر گاڑی سست کرنا تاکہ انجن رفتار کم کرنے میں مدد کرے۔",
+        "ro": "Încetinirea vehiculului trecând pe o treaptă mai mică, astfel încât motorul ajută la reducerea vitezei."
+      }
+    },
+    {
+      "term": "Coast in neutral",
+      "translations": {
+        "en": "Rolling without a gear engaged, so the engine does not help slow the vehicle.",
+        "ar": "التدحرج دون تعشيق ترس، فلا يساعد المحرك على إبطاء المركبة.",
+        "ur": "گیئر لگائے بغیر لڑھکنا، اس لیے انجن گاڑی سست کرنے میں مدد نہیں کرتا۔",
+        "ro": "Deplasare fără treaptă cuplată, astfel încât motorul nu ajută la încetinire."
+      }
+    },
+    {
+      "term": "Ride the clutch",
+      "translations": {
+        "en": "Holding the clutch partly down while driving, which can wear it and reduce control.",
+        "ar": "إبقاء دواسة القابض مضغوطة جزئياً أثناء القيادة، مما يسبب تآكلاً ويقلل التحكم.",
+        "ur": "ڈرائیونگ کے دوران کلچ کو جزوی دبائے رکھنا، جس سے گھسائ اور کنٹرول کم ہو سکتا ہے۔",
+        "ro": "Ținerea ambreiajului parțial apăsat în mers, ceea ce îl uzează și reduce controlul."
+      }
+    }
+  ],
+  "VH-15": [
+    {
+      "term": "dipped headlights",
+      "translations": {
+        "en": "Headlights aimed lower so they light the road without dazzling oncoming drivers.",
+        "ar": "أضواء أمامية موجّهة للأسفل لإنارة الطريق دون إبهار السائقين القادمين.",
+        "ur": "ہیڈلائٹس جو نیچے کی طرف ہوں تاکہ سڑک روشن ہو اور سامنے والے ڈرائیورز چوندھیا نہ جائیں۔",
+        "ro": "Faruri îndreptate mai jos ca să lumineze drumul fără a orbi șoferii din sens opus."
+      }
+    },
+    {
+      "term": "tail lights",
+      "translations": {
+        "en": "The red lights at the rear of a vehicle that show its position to drivers behind.",
+        "ar": "الأضواء الحمراء في مؤخرة المركبة التي تُظهر موقعها لمن خلفك.",
+        "ur": "گاڑی کے پیچھے سرخ لائٹس جو پیچھے والوں کو اس کی پوزیشن دکھاتی ہیں۔",
+        "ro": "Luminile roșii din spatele vehiculului care arată poziția șoferilor din spate."
+      }
+    }
+  ],
+  "VH-17": [
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing another vehicle travelling in the same direction to move ahead of it.",
+        "ar": "تجاوز مركبة أخرى تسير في نفس الاتجاه للانتقال أمامها.",
+        "ur": "اسی سمت میں چلتی دوسری گاڑی کو پیچھے چھوڑ کر آگے نکلنا۔",
+        "ro": "Depășirea unui alt vehicul care merge în același sens pentru a trece înaintea lui."
+      }
+    },
+    {
+      "term": "Oncoming headlights",
+      "translations": {
+        "en": "The headlights of vehicles coming toward you from the opposite direction.",
+        "ar": "أضواء المركبات القادمة نحوك من الاتجاه المعاكس.",
+        "ur": "مخالف سمت سے آپ کی طرف آنے والی گاڑیوں کی ہیڈلائٹس۔",
+        "ro": "Farurile vehiculelor care vin spre dumneavoastră din sens opus."
+      }
+    }
+  ],
+  "VH-18": [
+    {
+      "term": "dazzled",
+      "translations": {
+        "en": "Temporarily blinded or unable to see clearly because of bright lights.",
+        "ar": "فقدان الرؤية مؤقتاً أو صعوبة الرؤية بسبب أضواء ساطعة.",
+        "ur": "تیز روشنی کی وجہ سے عارضی طور پر نظر نہ آنا یا دھندلا دیکھنا۔",
+        "ro": "Orbire temporară sau vedere neclară din cauza luminilor puternice."
+      }
+    },
+    {
+      "term": "main beam",
+      "translations": {
+        "en": "High-beam headlights that light farther ahead but can dazzle other road users.",
+        "ar": "الأضواء العالية التي تنير أبعد لكنها قد تبهر مستخدمي الطريق الآخرين.",
+        "ur": "ہائی بیم ہیڈلائٹس جو زیادہ دور روشن کرتی ہیں مگر دوسروں کو چوندھیا سکتی ہیں۔",
+        "ro": "Faza lungă care luminează mai departe, dar poate orbi alți participanți la trafic."
+      }
+    }
+  ],
+  "VH-19": [
+    {
+      "term": "rear fog lights",
+      "translations": {
+        "en": "Bright red lights at the back of a vehicle used only in thick fog to help others see you.",
+        "ar": "أضواء حمراء ساطعة في مؤخرة المركبة تُستخدم فقط في الضباب الكثيف ليراك الآخرون.",
+        "ur": "گاڑی کے پیچھے روشن سرخ لائٹس جو صرف گہرے دھند میں دوسروں کو آپ دکھانے کے لیے استعمال ہوتی ہیں۔",
+        "ro": "Lumini roșii puternice în spatele vehiculului, folosite doar în ceață densă ca alții să vă vadă."
+      }
+    },
+    {
+      "term": "fog lights",
+      "translations": {
+        "en": "Extra lights for very poor visibility in fog; use only when conditions are bad enough.",
+        "ar": "أضواء إضافية لضعف الرؤية الشديد في الضباب؛ تُستخدم فقط عند سوء الرؤية الكافي.",
+        "ur": "دھند میں بہت خراب نظر کے لیے اضافی لائٹس؛ صرف اتنی خراب صورتحال میں استعمال کریں۔",
+        "ro": "Lumini suplimentare pentru vizibilitate foarte slabă în ceață; folosiți-le doar când e necesar."
+      }
+    }
+  ],
+  "VH-21": [
+    {
+      "term": "rear fog lights",
+      "translations": {
+        "en": "Bright red lights at the back of a vehicle used only in thick fog to help others see you.",
+        "ar": "أضواء حمراء ساطعة في مؤخرة المركبة تُستخدم فقط في الضباب الكثيف ليراك الآخرون.",
+        "ur": "گاڑی کے پیچھے روشن سرخ لائٹس جو صرف گہرے دھند میں دوسروں کو آپ دکھانے کے لیے استعمال ہوتی ہیں۔",
+        "ro": "Lumini roșii puternice în spatele vehiculului, folosite doar în ceață densă ca alții să vă vadă."
+      }
+    },
+    {
+      "term": "brake lights",
+      "translations": {
+        "en": "Red lights at the rear that come on when you press the brake pedal.",
+        "ar": "أضواء حمراء خلفية تضيء عند الضغط على دواسة الفرامل.",
+        "ur": "پیچھے سرخ لائٹس جو بریک پیڈل دبانے پر جلتی ہیں۔",
+        "ro": "Lumini roșii spate care se aprind când apăsați pedala de frână."
+      }
+    }
+  ],
+  "VH-22": [
+    {
+      "term": "aggressive driving",
+      "translations": {
+        "en": "Driving in a hostile or impatient way, such as tailgating or harsh speeding.",
+        "ar": "القيادة بعدوانية أو نفاد صبر، مثل الاقتراب الشديد أو التسارع العنيف.",
+        "ur": "جارحانہ یا بے صبری والی ڈرائیونگ، جیسے دم چھڑانا یا سخت تیزی۔",
+        "ro": "Conducere ostilă sau nerăbdătoare, cum ar fi urmărirea prea aproape sau accelerări bruște."
+      }
+    },
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing another vehicle travelling in the same direction to move ahead of it.",
+        "ar": "تجاوز مركبة أخرى تسير في نفس الاتجاه للانتقال أمامها.",
+        "ur": "اسی سمت میں چلتی دوسری گاڑی کو پیچھے چھوڑ کر آگے نکلنا۔",
+        "ro": "Depășirea unui alt vehicul care merge în același sens pentru a trece înaintea lui."
+      }
+    }
+  ],
+  "VH-23": [
+    {
+      "term": "engine braking",
+      "translations": {
+        "en": "Slowing the vehicle by changing to a lower gear so the engine helps reduce speed.",
+        "ar": "إبطاء المركبة بتغيير إلى ترس أدنى بحيث يساعد المحرك على تقليل السرعة.",
+        "ur": "نچے گیئر لگا کر گاڑی سست کرنا تاکہ انجن رفتار کم کرنے میں مدد کرے۔",
+        "ro": "Încetinirea vehiculului trecând pe o treaptă mai mică, astfel încât motorul ajută la reducerea vitezei."
+      }
+    },
+    {
+      "term": "skidding",
+      "translations": {
+        "en": "When tyres lose grip and the vehicle slides instead of staying under control.",
+        "ar": "عندما تفقد الإطارات التماسك وتنزلق المركبة بدل البقاء تحت السيطرة.",
+        "ur": "جب ٹائر گرفت کھوئیں اور گاڑی کنٹرول میں رہنے کے بجائے پھسل جائے۔",
+        "ro": "Când anvelopele pierd aderența și vehiculul derapează în loc să rămână sub control."
+      }
+    }
+  ],
+  "VH-24": [
+    {
+      "term": "Dazzling",
+      "translations": {
+        "en": "Blinding other drivers with bright lights so they cannot see properly.",
+        "ar": "إبهار السائقين الآخرين بأضواء ساطعة بحيث لا يرون جيداً.",
+        "ur": "تیز روشنی سے دوسرے ڈرائیورز کو چوندھیا دینا تاکہ وہ ٹھیک نہ دیکھ سکیں۔",
+        "ro": "Orbirea altor șoferi cu lumini puternice, astfel încât nu văd bine."
+      }
+    },
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing another vehicle travelling in the same direction to move ahead of it.",
+        "ar": "تجاوز مركبة أخرى تسير في نفس الاتجاه للانتقال أمامها.",
+        "ur": "اسی سمت میں چلتی دوسری گاڑی کو پیچھے چھوڑ کر آگے نکلنا۔",
+        "ro": "Depășirea unui alt vehicul care merge în același sens pentru a trece înaintea lui."
+      }
+    }
+  ],
+  "VH-25": [],
+  "VH-26": [
+    {
+      "term": "coasting downhill",
+      "translations": {
+        "en": "Rolling down a slope without using the engine to help control speed.",
+        "ar": "الانحدار دون استخدام المحرك للمساعدة في التحكم بالسرعة.",
+        "ur": "ڈھلوان پر بغیر انجن سے رفتار کنٹرول کیے لڑھکنا۔",
+        "ro": "Coborârea unei pante fără a folosi motorul pentru a controla viteza."
+      }
+    }
+  ],
+  "VH-27": [
+    {
+      "term": "Dazzles",
+      "translations": {
+        "en": "Temporarily blinds other drivers with bright light so they cannot see clearly.",
+        "ar": "يُبهر السائقين الآخرين مؤقتاً بضوء ساطع فلا يرون بوضوح.",
+        "ur": "تیز روشنی سے دوسرے ڈرائیورز کو عارضی طور پر چوندھیا دینا تاکہ وہ صاف نہ دیکھ سکیں۔",
+        "ro": "Orbește temporar alți șoferi cu lumină puternică, astfel încât nu văd clar."
+      }
+    }
+  ],
+  "VH-28": [
+    {
+      "term": "wheelspin",
+      "translations": {
+        "en": "When drive wheels spin too fast on a slippery surface and lose grip.",
+        "ar": "عندما تدور عجلات الدفع بسرعة زائدة على سطح زلق وتفقد التماسك.",
+        "ur": "جب ڈرائیو پہیے پھسلن والی سطح پر تیزی سے گھومیں اور گرفت کھو دیں۔",
+        "ro": "Când roțile motoare patinează prea repede pe o suprafață alunecoasă și pierd aderența."
+      }
+    }
+  ],
+  "VH-29": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    },
+    {
+      "term": "Sidelights",
+      "translations": {
+        "en": "Low-power front and rear position lights; not bright enough alone for driving at speed.",
+        "ar": "أضواء موضع منخفضة القوة أماماً وخلفاً؛ ليست كافية وحدها للقيادة بسرعة.",
+        "ur": "کم طاقت والی آگے پیچھے پوزیشن لائٹس؛ تیز رفتار ڈرائیونگ کے لیے اکیلے کافی نہیں۔",
+        "ro": "Lumini de poziție slabe față/spate; insuficiente singure pentru mers la viteză."
+      }
+    },
+    {
+      "term": "rear fog lights",
+      "translations": {
+        "en": "Bright red lights at the back of a vehicle used only in thick fog to help others see you.",
+        "ar": "أضواء حمراء ساطعة في مؤخرة المركبة تُستخدم فقط في الضباب الكثيف ليراك الآخرون.",
+        "ur": "گاڑی کے پیچھے روشن سرخ لائٹس جو صرف گہرے دھند میں دوسروں کو آپ دکھانے کے لیے استعمال ہوتی ہیں۔",
+        "ro": "Lumini roșii puternice în spatele vehiculului, folosite doar în ceață densă ca alții să vă vadă."
+      }
+    }
+  ],
+  "VH-30": [],
+  "VH-31": [
+    {
+      "term": "engine braking",
+      "translations": {
+        "en": "Slowing the vehicle by changing to a lower gear so the engine helps reduce speed.",
+        "ar": "إبطاء المركبة بتغيير إلى ترس أدنى بحيث يساعد المحرك على تقليل السرعة.",
+        "ur": "نچے گیئر لگا کر گاڑی سست کرنا تاکہ انجن رفتار کم کرنے میں مدد کرے۔",
+        "ro": "Încetinirea vehiculului trecând pe o treaptă mai mică, astfel încât motorul ajută la reducerea vitezei."
+      }
+    },
+    {
+      "term": "parking brake",
+      "translations": {
+        "en": "The handbrake or electronic brake that holds the vehicle when parked.",
+        "ar": "فرامل اليد أو الفرامل الإلكترونية التي تثبت المركبة عند التوقف.",
+        "ur": "ہینڈ بریک یا الیکٹرانک بریک جو پارک کرتے وقت گاڑی روکے رکھتی ہے۔",
+        "ro": "Frâna de mână sau frâna electronică care ține vehiculul când este parcat."
+      }
+    }
+  ],
+  "VH-32": [
+    {
+      "term": "stopping distance",
+      "translations": {
+        "en": "The total distance needed to stop: thinking distance plus braking distance.",
+        "ar": "المسافة الإجمالية اللازمة للتوقف: مسافة التفكير زائد مسافة الفرملة.",
+        "ur": "رکنے کے لیے درکار کل فاصلہ: سوچنے کا فاصلہ جمع بریک لگانے کا فاصلہ۔",
+        "ro": "Distanța totală necesară pentru a opri: distanța de reacție plus distanța de frânare."
+      }
+    }
+  ],
+  "VH-33": [],
+  "VH-34": [
+    {
+      "term": "floodwater",
+      "translations": {
+        "en": "Deep water covering the road after heavy rain or flooding.",
+        "ar": "مياه عميقة تغطي الطريق بعد أمطار غزيرة أو فيضان.",
+        "ur": "تیز بارش یا سیلاب کے بعد سڑک ڈھانپنے والا گہرا پانی۔",
+        "ro": "Apă adâncă care acoperă drumul după ploi torențiale sau inundații."
+      }
+    }
+  ],
+  "VH-35": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    },
+    {
+      "term": "Dipped headlights",
+      "translations": {
+        "en": "Headlights aimed lower so they light the road without dazzling oncoming drivers.",
+        "ar": "أضواء أمامية موجّهة للأسفل لإنارة الطريق دون إبهار السائقين القادمين.",
+        "ur": "ہیڈلائٹس جو نیچے کی طرف ہوں تاکہ سڑک روشن ہو اور سامنے والے ڈرائیورز چوندھیا نہ جائیں۔",
+        "ro": "Faruri îndreptate mai jos ca să lumineze drumul fără a orbi șoferii din sens opus."
+      }
+    },
+    {
+      "term": "Main beam",
+      "translations": {
+        "en": "High-beam headlights that light farther ahead but can dazzle other road users.",
+        "ar": "الأضواء العالية التي تنير أبعد لكنها قد تبهر مستخدمي الطريق الآخرين.",
+        "ur": "ہائی بیم ہیڈلائٹس جو زیادہ دور روشن کرتی ہیں مگر دوسروں کو چوندھیا سکتی ہیں۔",
+        "ro": "Faza lungă care luminează mai departe, dar poate orbi alți participanți la trafic."
+      }
+    }
+  ],
+  "VH-36": [
+    {
+      "term": "reflective studs",
+      "translations": {
+        "en": "Cat’s-eye markers set in the road that reflect light to show lane edges at night.",
+        "ar": "علامات عاكسة مثبتة في الطريق تعكس الضوء لإظهار حدود المسارات ليلاً.",
+        "ur": "سڑک میں لگی عکاس سٹڈز (کیٹس آئیز) جو رات کو لین کنارے دکھاتی ہیں۔",
+        "ro": "Marcaje reflectorizante în carosabil (ochi de pisică) care arată marginile benzilor noaptea."
+      }
+    },
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "VH-37": [
+    {
+      "term": "stopping distance",
+      "translations": {
+        "en": "The total distance needed to stop: thinking distance plus braking distance.",
+        "ar": "المسافة الإجمالية اللازمة للتوقف: مسافة التفكير زائد مسافة الفرملة.",
+        "ur": "رکنے کے لیے درکار کل فاصلہ: سوچنے کا فاصلہ جمع بریک لگانے کا فاصلہ۔",
+        "ro": "Distanța totală necesară pentru a opri: distanța de reacție plus distanța de frânare."
+      }
+    }
+  ],
+  "VH-38": [
+    {
+      "term": "amber beacon",
+      "translations": {
+        "en": "A flashing amber warning light, often used on slow or working vehicles.",
+        "ar": "ضوء تحذير كهرماني وامض، غالباً على مركبات بطيئة أو تعمل في الطريق.",
+        "ur": "چمکنے والی امبر وارننگ لائٹ، اکثر سست یا ورکنگ گاڑیوں پر۔",
+        "ro": "Lumină de avertizare amber intermitentă, deseori pe vehicule lente sau de lucru."
+      }
+    }
+  ],
+  "VH-39": [
+    {
+      "term": "dipped headlights",
+      "translations": {
+        "en": "Headlights aimed lower so they light the road without dazzling oncoming drivers.",
+        "ar": "أضواء أمامية موجّهة للأسفل لإنارة الطريق دون إبهار السائقين القادمين.",
+        "ur": "ہیڈلائٹس جو نیچے کی طرف ہوں تاکہ سڑک روشن ہو اور سامنے والے ڈرائیورز چوندھیا نہ جائیں۔",
+        "ro": "Faruri îndreptate mai jos ca să lumineze drumul fără a orbi șoferii din sens opus."
+      }
+    }
+  ],
+  "VH-40": [
+    {
+      "term": "Dipped headlights",
+      "translations": {
+        "en": "Headlights aimed lower so they light the road without dazzling oncoming drivers.",
+        "ar": "أضواء أمامية موجّهة للأسفل لإنارة الطريق دون إبهار السائقين القادمين.",
+        "ur": "ہیڈلائٹس جو نیچے کی طرف ہوں تاکہ سڑک روشن ہو اور سامنے والے ڈرائیورز چوندھیا نہ جائیں۔",
+        "ro": "Faruri îndreptate mai jos ca să lumineze drumul fără a orbi șoferii din sens opus."
+      }
+    },
+    {
+      "term": "Front fog lights",
+      "translations": {
+        "en": "Extra front lights used only when visibility is seriously reduced, such as in thick fog.",
+        "ar": "أضواء أمامية إضافية تُستخدم فقط عندما تكون الرؤية ضعيفة جداً، كالضباب الكثيف.",
+        "ur": "اضافی سامنے والی لائٹس جو صرف اس وقت جب نظر بہت خراب ہو، جیسے گھنی دھند۔",
+        "ro": "Lumini față suplimentare folosite doar când vizibilitatea e serios redusă, ca în ceață densă."
+      }
+    },
+    {
+      "term": "rear fog lights",
+      "translations": {
+        "en": "Bright red lights at the back of a vehicle used only in thick fog to help others see you.",
+        "ar": "أضواء حمراء ساطعة في مؤخرة المركبة تُستخدم فقط في الضباب الكثيف ليراك الآخرون.",
+        "ur": "گاڑی کے پیچھے روشن سرخ لائٹس جو صرف گہرے دھند میں دوسروں کو آپ دکھانے کے لیے استعمال ہوتی ہیں۔",
+        "ro": "Lumini roșii puternice în spatele vehiculului, folosite doar în ceață densă ca alții să vă vadă."
+      }
+    }
+  ],
+  "VH-41": [
+    {
+      "term": "snow chains",
+      "translations": {
+        "en": "Metal chains fitted around tyres to improve grip in deep snow or ice.",
+        "ar": "سلاسل معدنية تُركَّب حول الإطارات لتحسين التماسك في الثلج العميق أو الجليد.",
+        "ur": "ٹائروں پر لگنے والی دھاتی زنجیریں جو گہری برف یا برفیلی سطح پر گرفت بڑھاتی ہیں۔",
+        "ro": "Lanțuri metalice montate pe anvelope pentru aderență mai bună pe zăpadă adâncă sau gheață."
+      }
+    },
+    {
+      "term": "skidding",
+      "translations": {
+        "en": "When tyres lose grip and the vehicle slides instead of staying under control.",
+        "ar": "عندما تفقد الإطارات التماسك وتنزلق المركبة بدل البقاء تحت السيطرة.",
+        "ur": "جب ٹائر گرفت کھوئیں اور گاڑی کنٹرول میں رہنے کے بجائے پھسل جائے۔",
+        "ro": "Când anvelopele pierd aderența și vehiculul derapează în loc să rămână sub control."
+      }
+    }
+  ],
+  "VH-42": [
+    {
+      "term": "front fog lights",
+      "translations": {
+        "en": "Extra front lights used only when visibility is seriously reduced, such as in thick fog.",
+        "ar": "أضواء أمامية إضافية تُستخدم فقط عندما تكون الرؤية ضعيفة جداً، كالضباب الكثيف.",
+        "ur": "اضافی سامنے والی لائٹس جو صرف اس وقت جب نظر بہت خراب ہو، جیسے گھنی دھند۔",
+        "ro": "Lumini față suplimentare folosite doar când vizibilitatea e serios redusă, ca în ceață densă."
+      }
+    },
+    {
+      "term": "visibility is seriously reduced",
+      "translations": {
+        "en": "UK phrase meaning you can see only a short distance, often under about 100 metres.",
+        "ar": "عبارة بريطانية تعني أن مدى الرؤية قصير جداً، غالباً أقل من نحو 100 متر.",
+        "ur": "برطانوی اصطلاح: نظر بہت کم فاصلے تک ہو، اکثر تقریباً 100 میٹر سے کم۔",
+        "ro": "Expresie din Regatul Unit: vedeți doar pe distanță scurtă, deseori sub circa 100 m."
+      }
+    }
+  ],
+  "VH-43": [
+    {
+      "term": "front fog lights",
+      "translations": {
+        "en": "Extra front lights used only when visibility is seriously reduced, such as in thick fog.",
+        "ar": "أضواء أمامية إضافية تُستخدم فقط عندما تكون الرؤية ضعيفة جداً، كالضباب الكثيف.",
+        "ur": "اضافی سامنے والی لائٹس جو صرف اس وقت جب نظر بہت خراب ہو، جیسے گھنی دھند۔",
+        "ro": "Lumini față suplimentare folosite doar când vizibilitatea e serios redusă, ca în ceață densă."
+      }
+    }
+  ],
+  "VH-44": [
+    {
+      "term": "rear fog lights",
+      "translations": {
+        "en": "Bright red lights at the back of a vehicle used only in thick fog to help others see you.",
+        "ar": "أضواء حمراء ساطعة في مؤخرة المركبة تُستخدم فقط في الضباب الكثيف ليراك الآخرون.",
+        "ur": "گاڑی کے پیچھے روشن سرخ لائٹس جو صرف گہرے دھند میں دوسروں کو آپ دکھانے کے لیے استعمال ہوتی ہیں۔",
+        "ro": "Lumini roșii puternice în spatele vehiculului, folosite doar în ceață densă ca alții să vă vadă."
+      }
+    }
+  ],
+  "VH-45": [],
+  "MW-11": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "MW-12": [
+    {
+      "term": "slip road",
+      "translations": {
+        "en": "The short linking road used to join or leave a motorway.",
+        "ar": "الطريق القصير الرابط المستخدم للدخول إلى الطريق السريع أو الخروج منه.",
+        "ur": "موٹروے میں داخل ہونے یا باہر نکلنے والی مختصر جوڑنے والی سڑک۔",
+        "ro": "Drumul scurt de legătură folosit pentru a intra pe autostradă sau a ieși de pe ea."
+      }
+    },
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    }
+  ],
+  "MW-13": [],
+  "MW-14": [
+    {
+      "term": "emergency phone",
+      "translations": {
+        "en": "A roadside phone on motorways for contacting emergency services if you break down.",
+        "ar": "هاتف على جانب الطريق السريع للاتصال بخدمات الطوارئ عند تعطل المركبة.",
+        "ur": "موٹروے کے کنارے فون تاکہ خراب ہونے پر ایمرجنسی سروسز سے رابطہ کریں۔",
+        "ro": "Telefon de pe marginea autostrăzii pentru a contacta serviciile de urgență la pană."
+      }
+    },
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "MW-15": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "carriageway",
+      "translations": {
+        "en": "The part of the road used by vehicles, not the pavement or verge.",
+        "ar": "جزء الطريق الذي تستخدمه المركبات، وليس الرصيف أو الحافة.",
+        "ur": "سڑک کا وہ حصہ جو گاڑیوں کے لیے ہے، فٹ پاتھ یا کنارہ نہیں۔",
+        "ro": "Partea drumului folosită de vehicule, nu trotuarul sau acostamentul."
+      }
+    },
+    {
+      "term": "hazard lights",
+      "translations": {
+        "en": "All indicators flashing together to warn others of a hazard or breakdown.",
+        "ar": "تشغيل جميع الإشارات معاً لتحذير الآخرين من خطر أو عطل.",
+        "ur": "سب اشارے ایک ساتھ چمکانا تاکہ خطرے یا خرابی سے آگاہ کریں۔",
+        "ro": "Toți semnalizatorii intermitenți împreună pentru a avertiza asupra unui pericol sau a unei pene."
+      }
+    }
+  ],
+  "MW-16": [
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing another vehicle travelling in the same direction to move ahead of it.",
+        "ar": "تجاوز مركبة أخرى تسير في نفس الاتجاه للانتقال أمامها.",
+        "ur": "اسی سمت میں چلتی دوسری گاڑی کو پیچھے چھوڑ کر آگے نکلنا۔",
+        "ro": "Depășirea unui alt vehicul care merge în același sens pentru a trece înaintea lui."
+      }
+    }
+  ],
+  "MW-17": [
+    {
+      "term": "central reservation",
+      "translations": {
+        "en": "The strip or barrier that separates the two directions of traffic on a dual carriageway.",
+        "ar": "الشريط أو الحاجز الذي يفصل اتجاهي السير على الطريق المزدوج.",
+        "ur": "دوہری کیریج وے پر دونوں سمتوں کی ٹریفک کو الگ کرنے والی پٹی یا رکاوٹ۔",
+        "ro": "Fâșia sau bariera care desparte cele două sensuri de circulație pe un drum cu dublă bandă."
+      }
+    },
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "carriageway",
+      "translations": {
+        "en": "The part of the road used by vehicles, not the pavement or verge.",
+        "ar": "جزء الطريق الذي تستخدمه المركبات، وليس الرصيف أو الحافة.",
+        "ur": "سڑک کا وہ حصہ جو گاڑیوں کے لیے ہے، فٹ پاتھ یا کنارہ نہیں۔",
+        "ro": "Partea drumului folosită de vehicule, nu trotuarul sau acostamentul."
+      }
+    }
+  ]
+}

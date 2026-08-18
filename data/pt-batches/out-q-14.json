@@ -1,0 +1,856 @@
+{
+  "road-signs": {
+    "RS-6001": {
+      "promptPt": "O que indica sempre um sinal rodoviário triangular com bordo vermelho?",
+      "options": [
+        {
+          "pt": "Informação"
+        },
+        {
+          "pt": "Instrução obrigatória"
+        },
+        {
+          "pt": "Aviso de um perigo à frente"
+        },
+        {
+          "pt": "Direção para um destino"
+        }
+      ]
+    },
+    "RS-6002": {
+      "promptPt": "O que lhe indica normalmente um sinal circular azul?",
+      "options": [
+        {
+          "pt": "Um aviso"
+        },
+        {
+          "pt": "Uma proibição"
+        },
+        {
+          "pt": "Uma instrução obrigatória"
+        },
+        {
+          "pt": "Informação temporária"
+        }
+      ]
+    },
+    "RS-6003": {
+      "promptPt": "O que indica normalmente um sinal circular vermelho?",
+      "options": [
+        {
+          "pt": "Apenas informação"
+        },
+        {
+          "pt": "Um aviso"
+        },
+        {
+          "pt": "Uma restrição ou proibição"
+        },
+        {
+          "pt": "Um itinerário recomendado"
+        }
+      ]
+    },
+    "RS-6004": {
+      "promptPt": "O que fornecem normalmente os sinais retangulares brancos?",
+      "options": [
+        {
+          "pt": "Regras obrigatórias"
+        },
+        {
+          "pt": "Apenas avisos"
+        },
+        {
+          "pt": "Informação e direções"
+        },
+        {
+          "pt": "Perigos temporários"
+        }
+      ]
+    },
+    "RS-6005": {
+      "promptPt": "O que exige um sinal STOP?",
+      "options": [
+        {
+          "pt": "Abrandar e olhar"
+        },
+        {
+          "pt": "Parar só se vier trânsito"
+        },
+        {
+          "pt": "Parar completamente antes da linha"
+        },
+        {
+          "pt": "Ceder a passagem sem parar"
+        }
+      ]
+    },
+    "RS-6006": {
+      "promptPt": "Vê linhas brancas em ziguezague pintadas na estrada junto a uma passagem de peões. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Parar e esperar pelos peões"
+        },
+        {
+          "pt": "Não parar nem estacionar nesta zona"
+        },
+        {
+          "pt": "Reduzir a velocidade para 20 mph"
+        },
+        {
+          "pt": "Ultrapassar só se for seguro"
+        }
+      ]
+    },
+    "RS-6007": {
+      "promptPt": "Aproxima-se de um cruzamento e vê uma linha branca interrompida atravessando a sua faixa. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Parar completamente antes da linha"
+        },
+        {
+          "pt": "Ceder a passagem ao trânsito na via principal"
+        },
+        {
+          "pt": "Continuar à mesma velocidade"
+        },
+        {
+          "pt": "Tocar a buzina antes de avançar"
+        }
+      ]
+    },
+    "RS-6008": {
+      "promptPt": "Vê uma linha amarela simples pintada ao longo do lancil. O que significa e o que deve fazer?",
+      "options": [
+        {
+          "pt": "Espera proibida em qualquer altura — não pare aqui"
+        },
+        {
+          "pt": "Espera restrita a certas horas — consulte os sinais próximos quanto aos horários"
+        },
+        {
+          "pt": "Só carga e descarga — pode carregar ou descarregar"
+        },
+        {
+          "pt": "Só residentes — estacionamento para residentes"
+        }
+      ]
+    },
+    "RS-6009": {
+      "promptPt": "Vê linhas amarelas duplas pintadas ao longo do lancil. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Não esperar nem estacionar aqui em qualquer altura"
+        },
+        {
+          "pt": "Estacionamento permitido só durante o dia"
+        },
+        {
+          "pt": "Carga e descarga permitidas"
+        },
+        {
+          "pt": "Estacionamento só para residentes"
+        }
+      ]
+    },
+    "RS-6009A": {
+      "promptPt": "Vê uma linha branca contínua atravessando a sua faixa num cruzamento com um sinal STOP. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Parar completamente na linha ou antes dela e depois avançar quando for seguro"
+        },
+        {
+          "pt": "Abrandar e ceder a passagem se necessário"
+        },
+        {
+          "pt": "Parar só se houver outro trânsito"
+        },
+        {
+          "pt": "Continuar se a estrada parecer livre"
+        }
+      ]
+    },
+    "RS-6010": {
+      "promptPt": "O que indicam normalmente os sinais rodoviários temporários com fundo amarelo?",
+      "options": [
+        {
+          "pt": "Regras de trânsito permanentes"
+        },
+        {
+          "pt": "Informação de autoestrada"
+        },
+        {
+          "pt": "Obras ou condições temporárias na estrada"
+        },
+        {
+          "pt": "Atrações turísticas"
+        }
+      ]
+    },
+    "RS-6011": {
+      "promptPt": "O que indica normalmente um sinal de limite de velocidade sem círculo vermelho?",
+      "options": [
+        {
+          "pt": "Velocidade máxima legal"
+        },
+        {
+          "pt": "Apenas velocidade aconselhada"
+        },
+        {
+          "pt": "Velocidade mínima"
+        },
+        {
+          "pt": "Zona de velocidade média"
+        }
+      ]
+    },
+    "RS-6012": {
+      "promptPt": "O que mostra normalmente um sinal retangular azul numa autoestrada?",
+      "options": [
+        {
+          "pt": "Avisos"
+        },
+        {
+          "pt": "Atrações turísticas"
+        },
+        {
+          "pt": "Direções e serviços"
+        },
+        {
+          "pt": "Desvios temporários"
+        }
+      ]
+    },
+    "RS-6013": {
+      "promptPt": "O que significa uma seta branca num sinal circular azul?",
+      "options": [
+        {
+          "pt": "Direção aconselhada"
+        },
+        {
+          "pt": "Direção que deve seguir"
+        },
+        {
+          "pt": "Entrada proibida"
+        },
+        {
+          "pt": "Estrada de sentido único"
+        }
+      ]
+    },
+    "RS-6014": {
+      "promptPt": "O que indica uma linha branca contínua ao longo do bordo da estrada?",
+      "options": [
+        {
+          "pt": "Proibição de ultrapassagem"
+        },
+        {
+          "pt": "Bordo da faixa de rodagem"
+        },
+        {
+          "pt": "Ciclovia"
+        },
+        {
+          "pt": "Faixa de autocarros"
+        }
+      ]
+    },
+    "RS-6015": {
+      "promptPt": "O que deve fazer se os sinais rodoviários parecerem contradizer as marcas na estrada?",
+      "options": [
+        {
+          "pt": "Seguir as marcas na estrada"
+        },
+        {
+          "pt": "Seguir os sinais rodoviários"
+        },
+        {
+          "pt": "Ignorar ambos"
+        },
+        {
+          "pt": "Parar e esperar"
+        }
+      ]
+    },
+    "RS-6016": {
+      "promptPt": "O que significa um sinal triangular invertido num cruzamento?",
+      "options": [
+        {
+          "pt": "Parar"
+        },
+        {
+          "pt": "Ceder a passagem"
+        },
+        {
+          "pt": "Entrada proibida"
+        },
+        {
+          "pt": "Aviso de perigo"
+        }
+      ]
+    },
+    "RS-6017": {
+      "promptPt": "O que indica um sinal circular azul a mostrar uma mini-rotunda?",
+      "options": [
+        {
+          "pt": "Mini-rotunda à frente — ceder a passagem ao trânsito da direita"
+        },
+        {
+          "pt": "Só trânsito de sentido único"
+        },
+        {
+          "pt": "Entrada proibida a veículos"
+        },
+        {
+          "pt": "Trânsito nos dois sentidos atravessa à frente"
+        }
+      ]
+    },
+    "RS-6018": {
+      "promptPt": "O que mostra normalmente um poste ou baliza com riscas vermelhas e brancas?",
+      "options": [
+        {
+          "pt": "Estrada a estreitar"
+        },
+        {
+          "pt": "Lado de um obstáculo"
+        },
+        {
+          "pt": "Alteração do limite de velocidade"
+        },
+        {
+          "pt": "Passagem de peões"
+        }
+      ]
+    },
+    "RS-6019": {
+      "promptPt": "O que significa uma série de linhas brancas diagonais atravessando a estrada antes de um perigo?",
+      "options": [
+        {
+          "pt": "Zona de proibição de ultrapassagem"
+        },
+        {
+          "pt": "Apenas acalmamento de trânsito"
+        },
+        {
+          "pt": "Reduzir a velocidade e preparar-se para parar"
+        },
+        {
+          "pt": "Fim do limite de velocidade"
+        }
+      ]
+    },
+    "RS-6020": {
+      "promptPt": "O que indica normalmente um sinal retangular verde?",
+      "options": [
+        {
+          "pt": "Direções de autoestrada"
+        },
+        {
+          "pt": "Direções de itinerário principal"
+        },
+        {
+          "pt": "Informação turística"
+        },
+        {
+          "pt": "Desvio temporário"
+        }
+      ]
+    },
+    "RS-6021": {
+      "promptPt": "O que significa um sinal de limite de velocidade com uma linha diagonal preta a atravessá-lo?",
+      "options": [
+        {
+          "pt": "Velocidade aconselhada"
+        },
+        {
+          "pt": "Fim do limite de velocidade"
+        },
+        {
+          "pt": "Velocidade mínima"
+        },
+        {
+          "pt": "Zona de velocidade média"
+        }
+      ]
+    },
+    "RS-6022": {
+      "promptPt": "O que indicam as linhas brancas em ziguezague junto a uma passagem escolar?",
+      "options": [
+        {
+          "pt": "Estacionamento permitido por breve período"
+        },
+        {
+          "pt": "Paragem ou estacionamento proibidos"
+        },
+        {
+          "pt": "Zona de paragem de autocarros"
+        },
+        {
+          "pt": "Só zona de deixar passageiros"
+        }
+      ]
+    },
+    "RS-6023": {
+      "promptPt": "O que exige um sinal temporário de limite de velocidade em obras?",
+      "options": [
+        {
+          "pt": "Tratá-lo como recomendação"
+        },
+        {
+          "pt": "Cumpri-lo como limite legal"
+        },
+        {
+          "pt": "Ignorá-lo à noite"
+        },
+        {
+          "pt": "Seguir os outros condutores"
+        }
+      ]
+    },
+    "RS-6024": {
+      "promptPt": "Vê uma linha branca contínua ao longo do centro da estrada. O que significa e o que deve fazer?",
+      "options": [
+        {
+          "pt": "Não atravessar nem montar esta linha para ultrapassar"
+        },
+        {
+          "pt": "Ultrapassagem permitida se for segura"
+        },
+        {
+          "pt": "Estrada de sentido único à frente"
+        },
+        {
+          "pt": "Marcação de faixa de autocarros"
+        }
+      ]
+    },
+    "RS-6025": {
+      "promptPt": "Sobre o que o avisa um sinal triangular de aviso com um ponto de exclamação e uma placa a dizer 'Hidden dip'?",
+      "options": [
+        {
+          "pt": "Uma depressão súbita na estrada que pode não ser visível à frente"
+        },
+        {
+          "pt": "Pavimento escorregadio"
+        },
+        {
+          "pt": "Estrada estreita à frente"
+        },
+        {
+          "pt": "Ladeira íngreme à frente"
+        }
+      ]
+    },
+    "RS-6026": {
+      "promptPt": "O que indica normalmente um sinal a mostrar semáforos riscados?",
+      "options": [
+        {
+          "pt": "Os semáforos não estão a funcionar e deve seguir os sinais ou marcas na estrada"
+        },
+        {
+          "pt": "Semáforos temporários à frente"
+        },
+        {
+          "pt": "Passagem de peões controlada por sinais"
+        },
+        {
+          "pt": "Semáforos a funcionar normalmente"
+        }
+      ]
+    },
+    "RS-6027": {
+      "promptPt": "Sobre o que o avisa normalmente um sinal triangular de aviso a mostrar um floco de neve?",
+      "options": [
+        {
+          "pt": "Estrada escorregadia devido a neve ou gelo à frente"
+        },
+        {
+          "pt": "Ventos fortes prováveis"
+        },
+        {
+          "pt": "Condições de nevoeiro à frente"
+        },
+        {
+          "pt": "Gravilha solta na estrada"
+        }
+      ]
+    },
+    "RS-6028": {
+      "promptPt": "O que indica normalmente uma linha amarela interrompida no bordo da estrada?",
+      "options": [
+        {
+          "pt": "Espera proibida em qualquer altura"
+        },
+        {
+          "pt": "Restrições de espera a certas horas"
+        },
+        {
+          "pt": "Proibição de carga e descarga"
+        },
+        {
+          "pt": "Paragem de autocarros"
+        }
+      ]
+    },
+    "RS-6029": {
+      "promptPt": "O que deve fazer se um sinal estiver parcialmente tapado mas as marcas na estrada estiverem claras?",
+      "options": [
+        {
+          "pt": "Ignorar ambos"
+        },
+        {
+          "pt": "Seguir as marcas na estrada"
+        },
+        {
+          "pt": "Parar e esperar"
+        },
+        {
+          "pt": "Seguir os outros veículos"
+        }
+      ]
+    },
+    "RS-6030": {
+      "promptPt": "Porque deve ler sempre as placas suplementares por baixo dos sinais rodoviários?",
+      "options": [
+        {
+          "pt": "Repetem a mesma regra"
+        },
+        {
+          "pt": "Dão pormenores extra, como horários ou condições"
+        },
+        {
+          "pt": "São informação opcional"
+        },
+        {
+          "pt": "Aplicam-se só a autocarros"
+        }
+      ]
+    }
+  },
+  "incidents": {
+    "IN-17": {
+      "promptPt": "Como pode ajudar pessoas feridas num acidente?",
+      "options": [
+        {
+          "pt": "Dar comida"
+        },
+        {
+          "pt": "Mantê-las em movimento"
+        },
+        {
+          "pt": "Mantê-las quentes e tranquilizadas"
+        },
+        {
+          "pt": "Oferecer uma bebida"
+        }
+      ]
+    },
+    "IN-18": {
+      "promptPt": "Se uma luz de aviso no painel se acender durante a condução, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Ignorá-la"
+        },
+        {
+          "pt": "Esperar para mais tarde"
+        },
+        {
+          "pt": "Parar em segurança e investigar"
+        },
+        {
+          "pt": "Continuar a conduzir"
+        }
+      ]
+    },
+    "IN-19": {
+      "promptPt": "Uma pessoa ferida está deitada numa estrada movimentada após um acidente. O que deve fazer primeiro?",
+      "options": [
+        {
+          "pt": "Tratar o choque"
+        },
+        {
+          "pt": "Avisar o trânsito que se aproxima"
+        },
+        {
+          "pt": "Mover o ferido"
+        },
+        {
+          "pt": "Cobri-lo"
+        }
+      ]
+    },
+    "IN-20": {
+      "promptPt": "Quando deve interromper o CPR?",
+      "options": [
+        {
+          "pt": "Após 5 minutos"
+        },
+        {
+          "pt": "Ao chamar os serviços de emergência"
+        },
+        {
+          "pt": "Quando a respiração retomar ou os profissionais assumirem"
+        },
+        {
+          "pt": "Quando se sentir cansado"
+        }
+      ]
+    },
+    "IN-21": {
+      "promptPt": "Após um incidente, uma vez a zona segura, como deve cuidar dos feridos?",
+      "options": [
+        {
+          "pt": "Afastá-los dos veículos"
+        },
+        {
+          "pt": "Perguntar-lhes como aconteceu o acidente"
+        },
+        {
+          "pt": "Dar-lhes comida"
+        },
+        {
+          "pt": "Mantê-los imóveis e observá-los"
+        }
+      ]
+    },
+    "IN-22": {
+      "promptPt": "Um ferido está inconsciente mas respira normalmente na posição lateral de segurança. O que deve fazer a seguir?",
+      "options": [
+        {
+          "pt": "Pressionar entre as omoplatas"
+        },
+        {
+          "pt": "Esticar-lhe os braços"
+        },
+        {
+          "pt": "Dar-lhe uma bebida quente"
+        },
+        {
+          "pt": "Continuar a verificar que as vias aéreas permanecem abertas"
+        }
+      ]
+    },
+    "IN-23": {
+      "promptPt": "Como pode ajudar melhor alguém em choque após um acidente?",
+      "options": [
+        {
+          "pt": "Mantê-lo a andar"
+        },
+        {
+          "pt": "Dar-lhe comida"
+        },
+        {
+          "pt": "Dar-lhe uma bebida quente"
+        },
+        {
+          "pt": "Falar com calma e tranquilizá-lo"
+        }
+      ]
+    },
+    "IN-24": {
+      "promptPt": "É o primeiro a chegar a um acidente grave. Os motores estão desligados e os quatro piscas ligados. O que deve fazer a seguir?",
+      "options": [
+        {
+          "pt": "Pedir ajuda aos condutores próximos"
+        },
+        {
+          "pt": "Dar bebidas aos feridos"
+        },
+        {
+          "pt": "Retirar os feridos dos veículos"
+        },
+        {
+          "pt": "Assegurar que os serviços de emergência são chamados"
+        }
+      ]
+    },
+    "IN-25": {
+      "promptPt": "No local de um acidente, como pode ajudar um ferido inconsciente?",
+      "options": [
+        {
+          "pt": "Tirar fotografias"
+        },
+        {
+          "pt": "Verificar se respira normalmente"
+        },
+        {
+          "pt": "Movê-lo para o confortar"
+        },
+        {
+          "pt": "Deitar-lhe água na cara"
+        }
+      ]
+    },
+    "IN-26": {
+      "promptPt": "Como saberá como usar um desfibrilhador público (AED)?",
+      "options": [
+        {
+          "pt": "Tem de ter formação"
+        },
+        {
+          "pt": "Ler o manual primeiro"
+        },
+        {
+          "pt": "O ferido explica"
+        },
+        {
+          "pt": "O AED dá instruções claras faladas e visuais"
+        }
+      ]
+    },
+    "IN-27": {
+      "promptPt": "Danifica acidentalmente propriedade e o proprietário não está presente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Informar o proprietário mais tarde"
+        },
+        {
+          "pt": "Informar só o seguro"
+        },
+        {
+          "pt": "Encontrar imediatamente alguém próximo"
+        },
+        {
+          "pt": "Participar à polícia no prazo de 24 horas"
+        }
+      ]
+    },
+    "IN-28": {
+      "promptPt": "Quando deve mover um ferido inconsciente mas que respira?",
+      "options": [
+        {
+          "pt": "Quando outros lhe disserem"
+        },
+        {
+          "pt": "Quando a ambulância estiver a caminho"
+        },
+        {
+          "pt": "Só se houver mais perigo"
+        },
+        {
+          "pt": "Quando chegarem ajudantes"
+        }
+      ]
+    },
+    "IN-29": {
+      "promptPt": "O que deve fazer primeiro se estiver envolvido numa colisão?",
+      "options": [
+        {
+          "pt": "Ligar para o seguro"
+        },
+        {
+          "pt": "Chamar os serviços de emergência"
+        },
+        {
+          "pt": "Parar no local"
+        },
+        {
+          "pt": "Continuar a conduzir"
+        }
+      ]
+    },
+    "IN-30": {
+      "promptPt": "Que dados deve fornecer após uma colisão que cause danos a um veículo?",
+      "options": [
+        {
+          "pt": "Dados profissionais"
+        },
+        {
+          "pt": "Número de Segurança Social"
+        },
+        {
+          "pt": "Fornecedor de internet"
+        },
+        {
+          "pt": "Nome, morada e matrícula do veículo"
+        }
+      ]
+    },
+    "IN-31": {
+      "promptPt": "O que deve fazer se um pneu rebentar durante a condução?",
+      "options": [
+        {
+          "pt": "Usar o travão de mão"
+        },
+        {
+          "pt": "Travar a fundo"
+        },
+        {
+          "pt": "Abrandar e parar em segurança à beira da estrada"
+        },
+        {
+          "pt": "Continuar a conduzir"
+        }
+      ]
+    },
+    "IN-32": {
+      "promptPt": "Se o seu carro avariar num túnel, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Ficar no carro"
+        },
+        {
+          "pt": "Ficar atrás do carro"
+        },
+        {
+          "pt": "Ficar à frente dele"
+        },
+        {
+          "pt": "Ligar os quatro piscas e ir pedir ajuda"
+        }
+      ]
+    },
+    "IN-33": {
+      "promptPt": "Um motociclista está inconsciente na estrada após um acidente. Qual é a sua primeira ação?",
+      "options": [
+        {
+          "pt": "Mover o condutor"
+        },
+        {
+          "pt": "Remover destroços"
+        },
+        {
+          "pt": "Avisar o trânsito que se aproxima"
+        },
+        {
+          "pt": "Tranquilizar o condutor"
+        }
+      ]
+    },
+    "IN-34": {
+      "promptPt": "Um motociclista está inconsciente na estrada. O trânsito parou e não há perigo. O que o poderia ajudar?",
+      "options": [
+        {
+          "pt": "Retirar-lhe o capacete"
+        },
+        {
+          "pt": "Obter ajuda médica"
+        },
+        {
+          "pt": "Retirá-lo da estrada"
+        },
+        {
+          "pt": "Retirar-lhe o casaco"
+        }
+      ]
+    },
+    "IN-35": {
+      "promptPt": "Um ferido precisa de CPR. Qual é a frequência correta de compressões torácicas num adulto?",
+      "options": [
+        {
+          "pt": "10 por minuto"
+        },
+        {
+          "pt": "60 por minuto"
+        },
+        {
+          "pt": "120 por minuto"
+        },
+        {
+          "pt": "240 por minuto"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,860 @@
+{
+  "documents": {
+    "DC-13": {
+      "promptPt": "Qual é a pena máxima por conduzir sem seguro?",
+      "options": [
+        {
+          "pt": "£500"
+        },
+        {
+          "pt": "£1,000"
+        },
+        {
+          "pt": "£5,000"
+        },
+        {
+          "pt": "Multa ilimitada"
+        }
+      ]
+    },
+    "DC-14": {
+      "promptPt": "Quando deve um veículo ter cobertura de seguro válida?",
+      "options": [
+        {
+          "pt": "Antes de o declarar fora de circulação"
+        },
+        {
+          "pt": "Antes de o vender"
+        },
+        {
+          "pt": "Antes de o enviar para abate"
+        },
+        {
+          "pt": "Antes de pagar o imposto do veículo"
+        }
+      ]
+    },
+    "DC-15": {
+      "promptPt": "Durante quanto tempo permanece válida uma Statutory Off-Road Notification (SORN)?",
+      "options": [
+        {
+          "pt": "Até o veículo estar segurado"
+        },
+        {
+          "pt": "Até o veículo ser reparado"
+        },
+        {
+          "pt": "Até o veículo ser taxado, vendido ou abatido"
+        },
+        {
+          "pt": "Até o veículo voltar a ser usado"
+        }
+      ]
+    },
+    "DC-16": {
+      "promptPt": "Quem é responsável pelo pagamento do imposto do veículo?",
+      "options": [
+        {
+          "pt": "O condutor"
+        },
+        {
+          "pt": "O concessionário"
+        },
+        {
+          "pt": "O detentor registado"
+        },
+        {
+          "pt": "A autoridade de licenciamento"
+        }
+      ]
+    },
+    "DC-17": {
+      "promptPt": "Qual é o seguro mínimo legal exigido para conduzir em vias públicas?",
+      "options": [
+        {
+          "pt": "Cobertura total (comprehensive)"
+        },
+        {
+          "pt": "Responsabilidade civil, incêndio e roubo"
+        },
+        {
+          "pt": "Apenas responsabilidade civil (third party)"
+        },
+        {
+          "pt": "Cobertura de lesões pessoais"
+        }
+      ]
+    },
+    "DC-18": {
+      "promptPt": "Quando poderia o custo do seu seguro ser reduzido?",
+      "options": [
+        {
+          "pt": "Se tiver menos de 25 anos"
+        },
+        {
+          "pt": "Se não usar óculos"
+        },
+        {
+          "pt": "Se passar o exame à primeira"
+        },
+        {
+          "pt": "Se concluir um curso de condução aprovado"
+        }
+      ]
+    },
+    "DC-19": {
+      "promptPt": "O que cobre o seguro de responsabilidade civil (third-party)?",
+      "options": [
+        {
+          "pt": "Danos no seu próprio veículo"
+        },
+        {
+          "pt": "Danos por incêndio no seu veículo"
+        },
+        {
+          "pt": "Danos por inundação no seu veículo"
+        },
+        {
+          "pt": "Danos noutros veículos e bens"
+        }
+      ]
+    },
+    "DC-20": {
+      "promptPt": "O que pode ser afetado se conduzir um veículo sem MOT válido?",
+      "options": [
+        {
+          "pt": "O historial de manutenção"
+        },
+        {
+          "pt": "A cobertura do seguro"
+        },
+        {
+          "pt": "O documento de registo"
+        },
+        {
+          "pt": "Os dados do proprietário"
+        }
+      ]
+    },
+    "DC-21": {
+      "promptPt": "Que requisito legal se aplica a um condutor recém-habilitado?",
+      "options": [
+        {
+          "pt": "Exibir placas verdes"
+        },
+        {
+          "pt": "Tirar uma foto de imediato"
+        },
+        {
+          "pt": "Ser acompanhado em autoestradas"
+        },
+        {
+          "pt": "Ter seguro automóvel válido"
+        }
+      ]
+    },
+    "DC-22": {
+      "promptPt": "Em que situação deve notificar a autoridade de licenciamento?",
+      "options": [
+        {
+          "pt": "Quando trabalha no estrangeiro"
+        },
+        {
+          "pt": "Quando empresta o veículo"
+        },
+        {
+          "pt": "Quando a sua saúde afeta a condução"
+        },
+        {
+          "pt": "Quando marca um MOT"
+        }
+      ]
+    },
+    "DC-23": {
+      "promptPt": "Quando deve contactar a autoridade de licenciamento?",
+      "options": [
+        {
+          "pt": "Após uma multa de estacionamento"
+        },
+        {
+          "pt": "Quando altera a propriedade do veículo"
+        },
+        {
+          "pt": "Quando usa o veículo para trabalho"
+        },
+        {
+          "pt": "Quando o seguro está a vencer"
+        }
+      ]
+    },
+    "DC-24": {
+      "promptPt": "Que informação consta do documento de registo do veículo?",
+      "options": [
+        {
+          "pt": "Dados do seguro"
+        },
+        {
+          "pt": "Data de validade do MOT"
+        },
+        {
+          "pt": "Historial de manutenção"
+        },
+        {
+          "pt": "Dados do detentor registado"
+        }
+      ]
+    },
+    "DC-25": {
+      "promptPt": "O que deve verificar antes de conduzir o veículo de outra pessoa?",
+      "options": [
+        {
+          "pt": "Que o proprietário tem seguro"
+        },
+        {
+          "pt": "Que o seu próprio veículo está segurado"
+        },
+        {
+          "pt": "Que o veículo está segurado para a sua utilização"
+        },
+        {
+          "pt": "Que os papéis do seguro estão dentro do carro"
+        }
+      ]
+    },
+    "DC-26": {
+      "promptPt": "O que significa uma franquia de seguro de £500?",
+      "options": [
+        {
+          "pt": "A seguradora paga os primeiros £500"
+        },
+        {
+          "pt": "Recebe £500 se não fizer um pedido de indemnização"
+        },
+        {
+          "pt": "O veículo está segurado até £500"
+        },
+        {
+          "pt": "Tem de pagar os primeiros £500 de qualquer pedido de indemnização"
+        }
+      ]
+    },
+    "DC-27": {
+      "promptPt": "Quando deve atualizar o certificado de registo do veículo?",
+      "options": [
+        {
+          "pt": "Depois de passar o exame de condução"
+        },
+        {
+          "pt": "Quando muda de casa"
+        },
+        {
+          "pt": "Quando o veículo precisa de MOT"
+        },
+        {
+          "pt": "Após uma colisão"
+        }
+      ]
+    }
+  },
+  "motorway-driving": {
+    "MW-01": {
+      "promptPt": "Quando deve usar a berma numa autoestrada se esta não estiver a funcionar como via de circulação?",
+      "options": [
+        {
+          "pt": "Ao sair da autoestrada"
+        },
+        {
+          "pt": "Ao parar para descansar"
+        },
+        {
+          "pt": "Ao entrar na autoestrada"
+        },
+        {
+          "pt": "Ao parar numa emergência"
+        }
+      ]
+    },
+    "MW-02": {
+      "promptPt": "Quando pode parar numa autoestrada?",
+      "options": [
+        {
+          "pt": "Para usar um telemóvel"
+        },
+        {
+          "pt": "Para apanhar ar fresco"
+        },
+        {
+          "pt": "Quando for indicado por sinais de trânsito ou pelas autoridades"
+        },
+        {
+          "pt": "Para apanhar passageiros"
+        }
+      ]
+    },
+    "MW-03": {
+      "promptPt": "O que deve fazer ao conduzir numa autoestrada?",
+      "options": [
+        {
+          "pt": "Conduzir mais depressa do que noutras estradas"
+        },
+        {
+          "pt": "Manter uma distância de seguimento menor"
+        },
+        {
+          "pt": "Olhar muito mais à frente do que o habitual"
+        },
+        {
+          "pt": "Relaxar a concentração"
+        }
+      ]
+    },
+    "MW-04": {
+      "promptPt": "Quando deve usar a via da direita numa autoestrada de três vias?",
+      "options": [
+        {
+          "pt": "Para poupar combustível"
+        },
+        {
+          "pt": "Quando circula acima do limite de velocidade"
+        },
+        {
+          "pt": "Ao ultrapassar trânsito mais lento"
+        },
+        {
+          "pt": "Ao preparar-se para sair"
+        }
+      ]
+    },
+    "MW-05": {
+      "promptPt": "Quando deve usar uma zona de emergência numa autoestrada?",
+      "options": [
+        {
+          "pt": "Para verificar o percurso"
+        },
+        {
+          "pt": "Para fazer uma chamada telefónica"
+        },
+        {
+          "pt": "Durante uma avaria ou emergência"
+        },
+        {
+          "pt": "Para evitar atrasos no trânsito"
+        }
+      ]
+    },
+    "MW-06": {
+      "promptPt": "De que cor são os pinos refletivos entre uma autoestrada e uma via de acesso/saída?",
+      "options": [
+        {
+          "pt": "Brancos"
+        },
+        {
+          "pt": "Vermelhos"
+        },
+        {
+          "pt": "Verdes"
+        },
+        {
+          "pt": "Âmbar"
+        }
+      ]
+    },
+    "MW-07": {
+      "promptPt": "Se o seu veículo avariar na berma e pedir ajuda, o que deve verificar?",
+      "options": [
+        {
+          "pt": "Ficar atrás do veículo"
+        },
+        {
+          "pt": "Ligar a um amigo"
+        },
+        {
+          "pt": "Ficar dentro do veículo"
+        },
+        {
+          "pt": "Identificar a sua localização usando os postes de marcação"
+        }
+      ]
+    },
+    "MW-08": {
+      "promptPt": "O que deve fazer ao aproximar-se de obras numa autoestrada?",
+      "options": [
+        {
+          "pt": "Aumentar a velocidade"
+        },
+        {
+          "pt": "Respeitar o limite de velocidade indicado"
+        },
+        {
+          "pt": "Usar a berma"
+        },
+        {
+          "pt": "Circular muito perto do veículo da frente"
+        }
+      ]
+    },
+    "MW-09": {
+      "promptPt": "O que significa um limite de velocidade obrigatório mostrado acima da berma?",
+      "options": [
+        {
+          "pt": "Pode estacionar aí"
+        },
+        {
+          "pt": "Pode usá-la para descansar"
+        },
+        {
+          "pt": "A berma está aberta ao trânsito"
+        },
+        {
+          "pt": "É permitido usar o telemóvel"
+        }
+      ]
+    },
+    "MW-10": {
+      "promptPt": "O que significa se um veículo usar brevemente as luzes de perigo numa autoestrada?",
+      "options": [
+        {
+          "pt": "Há um radar à frente"
+        },
+        {
+          "pt": "O condutor quer que o ultrapasse"
+        },
+        {
+          "pt": "O trânsito à frente está a abrandar de repente"
+        },
+        {
+          "pt": "O veículo está a mudar de via"
+        }
+      ]
+    }
+  },
+  "other-vehicles": {
+    "OV-01": {
+      "promptPt": "Está à espera para virar à direita a partir de uma estrada lateral. Um camião grande aproxima-se pela direita. Porque deve esperar antes de virar?",
+      "options": [
+        {
+          "pt": "O camião pode acelerar de repente"
+        },
+        {
+          "pt": "A carga do camião pode estar instável"
+        },
+        {
+          "pt": "Outro veículo a ultrapassar o camião pode estar oculto"
+        },
+        {
+          "pt": "O camião pode estar a abrandar"
+        }
+      ]
+    },
+    "OV-02": {
+      "promptPt": "Vê um veículo grande a criar um espaço estreito à frente. Para o que deve estar preparado?",
+      "options": [
+        {
+          "pt": "Tocar a buzina e continuar"
+        },
+        {
+          "pt": "Passar pelo espaço apertado"
+        },
+        {
+          "pt": "Abrandar e ceder a passagem"
+        },
+        {
+          "pt": "Denunciar o condutor"
+        }
+      ]
+    },
+    "OV-03": {
+      "promptPt": "Ultrapassa um ciclista num dia muito ventoso. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ultrapassar muito devagar"
+        },
+        {
+          "pt": "Manter-se perto ao passar"
+        },
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Deixar espaço extra"
+        }
+      ]
+    },
+    "OV-04": {
+      "promptPt": "Está a rebocar uma caravana. Que configuração de espelhos lhe dá a visão traseira mais segura?",
+      "options": [
+        {
+          "pt": "Espelho interior de grande angular"
+        },
+        {
+          "pt": "Espelhos laterais normais"
+        },
+        {
+          "pt": "Espelho interior normal"
+        },
+        {
+          "pt": "Espelhos laterais de braço prolongado"
+        }
+      ]
+    },
+    "OV-05": {
+      "promptPt": "Conduz atrás de um autocarro que para numa paragem. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar e ultrapassar o autocarro"
+        },
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Aproximar-se logo atrás"
+        },
+        {
+          "pt": "Vigiar com atenção os peões"
+        }
+      ]
+    },
+    "OV-06": {
+      "promptPt": "Um veículo grande à frente sinaliza esquerda num cruzamento. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ultrapassar se a estrada parecer livre"
+        },
+        {
+          "pt": "Esperar até o veículo concluir a viragem"
+        },
+        {
+          "pt": "Ultrapassar depressa"
+        },
+        {
+          "pt": "Assumir que o sinal está errado"
+        }
+      ]
+    },
+    "OV-07": {
+      "promptPt": "Conduz em trânsito intenso numa estrada molhada com muita água projetada. Que luzes deve usar?",
+      "options": [
+        {
+          "pt": "Máximos"
+        },
+        {
+          "pt": "Apenas luzes de presença"
+        },
+        {
+          "pt": "Faróis de nevoeiro traseiros"
+        },
+        {
+          "pt": "Médios"
+        }
+      ]
+    },
+    "OV-08": {
+      "promptPt": "Está muito vento e um motociclista ultrapassa um veículo alto à frente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ultrapassar de imediato"
+        },
+        {
+          "pt": "Manter-se ao mesmo nível do motociclista"
+        },
+        {
+          "pt": "Manter-se bem atrás"
+        },
+        {
+          "pt": "Ficar logo atrás"
+        }
+      ]
+    },
+    "OV-09": {
+      "promptPt": "Está prestes a ultrapassar um motociclista lento. Quando deve ter cuidado extra?",
+      "options": [
+        {
+          "pt": "Quando as marcações na estrada avisam de perigos à frente"
+        },
+        {
+          "pt": "Quando o trânsito é ligeiro"
+        },
+        {
+          "pt": "Quando o motociclista sinaliza à esquerda"
+        },
+        {
+          "pt": "Quando a visibilidade é boa"
+        }
+      ]
+    },
+    "OV-10": {
+      "promptPt": "Um veículo longo sinaliza à esquerda mas desloca-se para a direita antes de virar. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Aproximar-se e passar"
+        },
+        {
+          "pt": "Ultrapassar enquanto abranda"
+        },
+        {
+          "pt": "Manter-se bem atrás e dar-lhe espaço"
+        },
+        {
+          "pt": "Assumir que vai virar à direita"
+        }
+      ]
+    },
+    "OV-11": {
+      "promptPt": "Porque deve manter uma distância segura atrás de um veículo grande numa via única?",
+      "options": [
+        {
+          "pt": "Para acelerar rapidamente"
+        },
+        {
+          "pt": "Para ter uma visão clara da estrada à frente"
+        },
+        {
+          "pt": "Para ajudar outros a ultrapassá-lo"
+        },
+        {
+          "pt": "Para impedir que role para trás"
+        }
+      ]
+    },
+    "OV-12": {
+      "promptPt": "Um veículo longo à frente sinaliza à esquerda numa mini-rotunda mas posiciona-se à direita. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Ultrapassar pela esquerda"
+        },
+        {
+          "pt": "Seguir de perto"
+        },
+        {
+          "pt": "Manter-se bem atrás"
+        }
+      ]
+    },
+    "OV-13": {
+      "promptPt": "Porque é mais difícil ultrapassar um veículo grande do que um carro?",
+      "options": [
+        {
+          "pt": "Os veículos grandes aceleram lentamente"
+        },
+        {
+          "pt": "Têm limitadores de velocidade"
+        },
+        {
+          "pt": "Demora mais tempo a ultrapassá-los em segurança"
+        },
+        {
+          "pt": "Usam travões a ar"
+        }
+      ]
+    },
+    "OV-14": {
+      "promptPt": "Ao aproximar-se de um camião lento à frente, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Piscar os máximos"
+        },
+        {
+          "pt": "Deslocar-se para o lado direito"
+        },
+        {
+          "pt": "Fazer o camião esperar"
+        },
+        {
+          "pt": "Abrandar e estar preparado para esperar"
+        }
+      ]
+    },
+    "OV-15": {
+      "promptPt": "Um veículo longo à frente sinaliza à direita mas mantém-se junto ao passeio esquerdo. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Avisar o condutor"
+        },
+        {
+          "pt": "Ultrapassar pela direita"
+        },
+        {
+          "pt": "Denunciar à polícia"
+        },
+        {
+          "pt": "Esperar atrás do veículo"
+        }
+      ]
+    },
+    "OV-16": {
+      "promptPt": "Porque devem os condutores ter cuidado extra onde circulam elétricos?",
+      "options": [
+        {
+          "pt": "Os elétricos não têm buzina"
+        },
+        {
+          "pt": "Os elétricos não conseguem parar"
+        },
+        {
+          "pt": "Os elétricos não têm luzes"
+        },
+        {
+          "pt": "Os elétricos não conseguem desviar para evitar obstáculos"
+        }
+      ]
+    },
+    "OV-17": {
+      "promptPt": "Deixa uma distância segura atrás de um veículo grande. Outro carro entra nesse espaço. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Piscar os máximos"
+        },
+        {
+          "pt": "Começar a ultrapassar"
+        },
+        {
+          "pt": "Afastar-se para restabelecer a distância"
+        }
+      ]
+    },
+    "OV-18": {
+      "promptPt": "Vê um autocarro parado numa paragem à frente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Piscar as luzes"
+        },
+        {
+          "pt": "Passar depressa"
+        },
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Vigiar peões a atravessar"
+        }
+      ]
+    },
+    "OV-19": {
+      "promptPt": "Quer ultrapassar um veículo longo e lento numa estrada movimentada. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Seguir de perto para ver à frente"
+        },
+        {
+          "pt": "Piscar os máximos"
+        },
+        {
+          "pt": "Esperar que lhe façam sinal para passar"
+        },
+        {
+          "pt": "Manter-se bem atrás para ter uma visão clara"
+        }
+      ]
+    },
+    "OV-20": {
+      "promptPt": "Um autocarro à frente sinaliza para sair de uma paragem. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Passar antes que se mova"
+        },
+        {
+          "pt": "Piscar os máximos"
+        },
+        {
+          "pt": "Sinalizar e fazer sinal ao autocarro para avançar"
+        },
+        {
+          "pt": "Permitir que saia se for seguro"
+        }
+      ]
+    },
+    "OV-21": {
+      "promptPt": "Segue um camião numa estrada molhada. A água projetada reduz a visibilidade. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar e ultrapassar"
+        },
+        {
+          "pt": "Ficar logo atrás"
+        },
+        {
+          "pt": "Usar os máximos"
+        },
+        {
+          "pt": "Afastar-se até a visibilidade melhorar"
+        }
+      ]
+    },
+    "OV-22": {
+      "promptPt": "Que veículos são menos afetados por ventos laterais fortes?",
+      "options": [
+        {
+          "pt": "Ciclistas"
+        },
+        {
+          "pt": "Motociclistas"
+        },
+        {
+          "pt": "Veículos altos"
+        },
+        {
+          "pt": "Carros"
+        }
+      ]
+    }
+  },
+  "vehicle-loading": {
+    "VL-01": {
+      "promptPt": "Antes de rebocar um reboque, onde pode encontrar o peso máximo permitido no olhal (nose weight) para o engate do seu veículo?",
+      "options": [
+        {
+          "pt": "No manual do veículo"
+        },
+        {
+          "pt": "No Highway Code"
+        },
+        {
+          "pt": "No documento de registo"
+        },
+        {
+          "pt": "Na carta de condução"
+        }
+      ]
+    },
+    "VL-02": {
+      "promptPt": "Como afeta o seu carro transportar uma carga pesada no tejadilho?",
+      "options": [
+        {
+          "pt": "Melhora o comportamento"
+        },
+        {
+          "pt": "Encurta a distância de paragem"
+        },
+        {
+          "pt": "Torna a direção mais leve"
+        },
+        {
+          "pt": "Reduz a estabilidade"
+        }
+      ]
+    },
+    "VL-03": {
+      "promptPt": "Que retenção deve ser usada para uma criança com menos de 3 anos num carro?",
+      "options": [
+        {
+          "pt": "Cadeira de criança"
+        },
+        {
+          "pt": "Um adulto a segurar a criança"
+        },
+        {
+          "pt": "Cinto de segurança de adulto"
+        },
+        {
+          "pt": "Cinto abdominal"
+        }
+      ]
+    }
+  }
+}

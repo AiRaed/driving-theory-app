@@ -1,0 +1,860 @@
+{
+  "hazard-awareness": {
+    "HZ-75": {
+      "promptPl": "Jedziesz drogą wiejską i widzisz przed sobą jeźdźca konnego. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Użyć klaksonu, żeby go ostrzec"
+        },
+        {
+          "pl": "Wyprzedzić jak najszybciej"
+        },
+        {
+          "pl": "Zwolnić i wyprzedzić szeroko, zostawiając dużo miejsca"
+        },
+        {
+          "pl": "Wielokrotnie mrugać światłami"
+        }
+      ]
+    },
+    "HZ-76": {
+      "promptPl": "Zauważasz, że pojazd przed Tobą nagle zjeżdża z toru jazdy i hamuje. Co powinieneś zrobić natychmiast?",
+      "options": [
+        {
+          "pl": "Natychmiast wyprzedzić, aby uniknąć zagrożenia"
+        },
+        {
+          "pl": "Zwiększyć odległość za nim i być gotowym do hamowania"
+        },
+        {
+          "pl": "Utrzymać obecną prędkość"
+        },
+        {
+          "pl": "Użyć klaksonu, żeby go ostrzec"
+        }
+      ]
+    },
+    "HZ-77": {
+      "promptPl": "Zbliżasz się do szkoły po południu. Na co powinieneś szczególnie uważać?",
+      "options": [
+        {
+          "pl": "Tylko na autobusy szkolne"
+        },
+        {
+          "pl": "Na dzieci przechodzące lub biegnące w pobliżu drogi"
+        },
+        {
+          "pl": "Na ograniczenia parkowania"
+        },
+        {
+          "pl": "Na fotoradary"
+        }
+      ]
+    },
+    "HZ-78": {
+      "promptPl": "Podczas jazdy we mgle widzisz światła pojazdu przed Tobą, ale nie możesz wyraźnie ocenić odległości. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przyspieszyć, żeby szybko wyprzedzić"
+        },
+        {
+          "pl": "Zwolnić i zwiększyć odległość za pojazdem"
+        },
+        {
+          "pl": "Użyć świateł drogowych"
+        },
+        {
+          "pl": "Utrzymać normalną prędkość"
+        }
+      ]
+    },
+    "HZ-79": {
+      "promptPl": "Jedziesz za dużym pojazdem, który sygnalizuje skręt w lewo, ale jest ustawiony w prawo. Czego się spodziewać?",
+      "options": [
+        {
+          "pl": "Pojazd natychmiast skręci w lewo"
+        },
+        {
+          "pl": "Pojazd potrzebuje miejsca do skrętu w lewo i może najpierw wychylić się w prawo"
+        },
+        {
+          "pl": "Kierunkowskaz jest uszkodzony"
+        },
+        {
+          "pl": "Pojazd pojedzie prosto"
+        }
+      ]
+    },
+    "HZ-80": {
+      "promptPl": "Jedziesz po mokrej jezdni i zbliżasz się do ostrego zakrętu. Co powinieneś zrobić przed wejściem w zakręt?",
+      "options": [
+        {
+          "pl": "Przyspieszyć, aby utrzymać prędkość w zakręcie"
+        },
+        {
+          "pl": "Zwolnić przed zakrętem i unikać gwałtownego skręcania lub hamowania"
+        },
+        {
+          "pl": "Tylko zmienić bieg na niższy"
+        },
+        {
+          "pl": "Użyć hamulca ręcznego do kontroli prędkości"
+        }
+      ]
+    }
+  },
+  "road-signs": {
+    "RS-01": {
+      "promptPl": "Znak przedstawiający czerwony samochód obok czarnego oznacza:",
+      "options": [
+        {
+          "pl": "Zakaz wyprzedzania"
+        },
+        {
+          "pl": "Wyprzedzanie dozwolone"
+        },
+        {
+          "pl": "Koniec ograniczenia"
+        },
+        {
+          "pl": "Ruch dwukierunkowy"
+        }
+      ]
+    },
+    "RS-02": {
+      "promptPl": "Znak z dwiema strzałkami skierowanymi w przeciwne strony oznacza:",
+      "options": [
+        {
+          "pl": "Ruch dwukierunkowy"
+        },
+        {
+          "pl": "Drogę dwujezdniową"
+        },
+        {
+          "pl": "Ustąp pierwszeństwa"
+        },
+        {
+          "pl": "Koniec autostrady"
+        }
+      ]
+    },
+    "RS-03": {
+      "promptPl": "Jedziesz drogą wiejską po ulewnym deszczu i widzisz trójkątny znak ostrzegawczy z samochodem i śladami poślizgu. Na jakie zagrożenie się przygotować?",
+      "options": [
+        {
+          "pl": "Nawierzchnia przed Tobą może być śliska"
+        },
+        {
+          "pl": "Przed Tobą są roboty drogowe"
+        },
+        {
+          "pl": "W pobliżu jest warsztat opon"
+        },
+        {
+          "pl": "Przed Tobą są progi zwalniające"
+        }
+      ]
+    },
+    "RS-04": {
+      "promptPl": "Czerwony odwrócony trójkąt oznacza:",
+      "options": [
+        {
+          "pl": "Ustąp pierwszeństwa"
+        },
+        {
+          "pl": "Zatrzymaj się"
+        },
+        {
+          "pl": "Zakaz zatrzymywania"
+        },
+        {
+          "pl": "Prędkość maksymalną"
+        }
+      ]
+    },
+    "RS-05": {
+      "promptPl": "Zbliżasz się do skrzyżowania i widzisz trójkątny znak ostrzegawczy w kształcie krzyża. Czego się spodziewać przed Tobą?",
+      "options": [
+        {
+          "pl": "Skrzyżowania, na którym ruch może przeciąć Twój tor jazdy"
+        },
+        {
+          "pl": "Przejazdu kolejowego"
+        },
+        {
+          "pl": "Ulicy jednokierunkowej przed Tobą"
+        },
+        {
+          "pl": "Wjazdu do szpitala"
+        }
+      ]
+    },
+    "RS-06": {
+      "promptPl": "Znak z symbolem rękawa wiatrowego ostrzega przed:",
+      "options": [
+        {
+          "pl": "Wiatrem bocznym"
+        },
+        {
+          "pl": "Śniegiem"
+        },
+        {
+          "pl": "Tunelem przed Tobą"
+        },
+        {
+          "pl": "Zwężeniem drogi"
+        }
+      ]
+    }
+  },
+  "safety-margins": {
+    "SM-01": {
+      "promptPl": "Jaka jest najczęstsza przyczyna rozpoczęcia poślizgu pojazdu?",
+      "options": [
+        {
+          "pl": "Zła nawierzchnia drogi"
+        },
+        {
+          "pl": "Działania kierowcy"
+        },
+        {
+          "pl": "Awaria mechaniczna"
+        },
+        {
+          "pl": "Silny wiatr"
+        }
+      ]
+    },
+    "SM-02": {
+      "promptPl": "Jakich świateł należy używać na mokrej autostradzie przy intensywnych bryzgach wody?",
+      "options": [
+        {
+          "pl": "Światła awaryjne"
+        },
+        {
+          "pl": "Światła mijania"
+        },
+        {
+          "pl": "Tylne światła przeciwmgielne"
+        },
+        {
+          "pl": "Światła pozycyjne"
+        }
+      ]
+    },
+    "SM-03": {
+      "promptPl": "Jakie ryzyko wzrasta, gdy jedziesz w dół na luzie (coasting)?",
+      "options": [
+        {
+          "pl": "Lepsza kontrola kierowania"
+        },
+        {
+          "pl": "Lepsza ekonomia paliwa"
+        },
+        {
+          "pl": "Zmniejszona kontrola nad pojazdem"
+        },
+        {
+          "pl": "Mniejszy wysiłek przy hamowaniu"
+        }
+      ]
+    },
+    "SM-04": {
+      "promptPl": "Dlaczego przed prawym zakrętem należy ustawić pojazd bardziej w lewo?",
+      "options": [
+        {
+          "pl": "Aby bezpiecznie wyprzedzać"
+        },
+        {
+          "pl": "Aby poprawić widok drogi przed Tobą"
+        },
+        {
+          "pl": "Aby uniknąć pieszych"
+        },
+        {
+          "pl": "Aby zmniejszyć zużycie paliwa"
+        }
+      ]
+    },
+    "SM-05": {
+      "promptPl": "Parkując w dół, w którą stronę skręcić koła?",
+      "options": [
+        {
+          "pl": "Od krawężnika"
+        },
+        {
+          "pl": "Prosto"
+        },
+        {
+          "pl": "W stronę krawężnika"
+        },
+        {
+          "pl": "To nie ma znaczenia"
+        }
+      ]
+    },
+    "SM-06": {
+      "promptPl": "Co powinieneś zrobić, zbliżając się do progu zwalniającego na osiedlu?",
+      "options": [
+        {
+          "pl": "Przyspieszyć, żeby szybko przejechać"
+        },
+        {
+          "pl": "Przesunąć się na środek jezdni"
+        },
+        {
+          "pl": "Sprawdzić lusterka i zwolnić"
+        },
+        {
+          "pl": "Całkowicie się zatrzymać"
+        }
+      ]
+    },
+    "SM-07": {
+      "promptPl": "Jeśli na autostradzie pojazd jedzie za Tobą zbyt blisko, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Gwałtownie zahamować"
+        },
+        {
+          "pl": "Zwiększyć prędkość"
+        },
+        {
+          "pl": "Zwiększyć odstęp przed sobą"
+        },
+        {
+          "pl": "Użyć świateł awaryjnych"
+        }
+      ]
+    },
+    "SM-08": {
+      "promptPl": "Jak używać hamulców ABS przy awaryjnym zatrzymaniu?",
+      "options": [
+        {
+          "pl": "Pompować hamulec"
+        },
+        {
+          "pl": "Hamować stanowczo i kierować"
+        },
+        {
+          "pl": "Użyć hamulca ręcznego"
+        },
+        {
+          "pl": "Hamować lekko"
+        }
+      ]
+    },
+    "SM-09": {
+      "promptPl": "Co często wskazuje na oblodzoną nawierzchnię?",
+      "options": [
+        {
+          "pl": "Głośniejszy szum opon"
+        },
+        {
+          "pl": "Cichszy dźwięk silnika"
+        },
+        {
+          "pl": "Cichszy szum opon"
+        },
+        {
+          "pl": "Wyraźniejsze odczucie kierowania"
+        }
+      ]
+    },
+    "SM-10": {
+      "promptPl": "Jak zbliżać się do ostrego zakrętu w warunkach mrozu?",
+      "options": [
+        {
+          "pl": "Przejechać zakręt na luzie"
+        },
+        {
+          "pl": "Hamować mocno"
+        },
+        {
+          "pl": "Delikatnie zwolnić"
+        },
+        {
+          "pl": "Użyć hamulca ręcznego"
+        }
+      ]
+    },
+    "SM-11": {
+      "promptPl": "Przy ABS, jak naciskać pedał hamulca w sytuacji awaryjnej?",
+      "options": [
+        {
+          "pl": "Delikatnie i powoli"
+        },
+        {
+          "pl": "Szybko i stanowczo"
+        },
+        {
+          "pl": "Tylko lekkim naciskiem"
+        },
+        {
+          "pl": "Wielokrotnie pompując"
+        }
+      ]
+    },
+    "SM-12": {
+      "promptPl": "Co zwykle oznacza bardzo lekkie kierowanie na mokrej jezdni?",
+      "options": [
+        {
+          "pl": "Awarię silnika"
+        },
+        {
+          "pl": "Utratę przyczepności opon"
+        },
+        {
+          "pl": "Przepompowane opony"
+        },
+        {
+          "pl": "Usterkę układu kierowniczego"
+        }
+      ]
+    },
+    "SM-13": {
+      "promptPl": "W której sytuacji przy silnym wietrze trzeba zachować szczególną ostrożność?",
+      "options": [
+        {
+          "pl": "Przy hamowaniu"
+        },
+        {
+          "pl": "Przy ruszaniu pod górę"
+        },
+        {
+          "pl": "Przy wjeżdżaniu na wąskie drogi"
+        },
+        {
+          "pl": "Przy mijaniu rowerzystów"
+        }
+      ]
+    },
+    "SM-14": {
+      "promptPl": "Jak hamować podczas jazdy po śniegu?",
+      "options": [
+        {
+          "pl": "Szybko i stanowczo"
+        },
+        {
+          "pl": "Delikatnie, hamując wcześnie"
+        },
+        {
+          "pl": "Używając hamulca ręcznego"
+        },
+        {
+          "pl": "Gwałtownie skręcając"
+        }
+      ]
+    },
+    "SM-15": {
+      "promptPl": "Jak zmniejszyć buksowanie kół na oblodzonej jezdni?",
+      "options": [
+        {
+          "pl": "Niski bieg"
+        },
+        {
+          "pl": "Jak najwyższy możliwy bieg przy niskiej prędkości"
+        },
+        {
+          "pl": "Użycie hamulca ręcznego"
+        },
+        {
+          "pl": "Gwałtowne przyspieszenie"
+        }
+      ]
+    },
+    "SM-16": {
+      "promptPl": "Jak bezpiecznie wykorzystać hamowanie silnikiem?",
+      "options": [
+        {
+          "pl": "Zmienić na niższy bieg"
+        },
+        {
+          "pl": "Włączyć luz"
+        },
+        {
+          "pl": "Włączyć bieg wsteczny"
+        },
+        {
+          "pl": "Wyłączyć silnik"
+        }
+      ]
+    },
+    "SM-17": {
+      "promptPl": "Gdzie wiatr boczny najprawdopodobniej wpłynie na Twój pojazd?",
+      "options": [
+        {
+          "pl": "Na ruchliwych drogach"
+        },
+        {
+          "pl": "Na wąskich pasach"
+        },
+        {
+          "pl": "Na otwartych odcinkach drogi"
+        },
+        {
+          "pl": "Na ulicach miejskich"
+        }
+      ]
+    },
+    "SM-18": {
+      "promptPl": "Co powinieneś zrobić przed jazdą we mgle?",
+      "options": [
+        {
+          "pl": "Zmniejszyć ciśnienie w oponach"
+        },
+        {
+          "pl": "Wypić kofeinę"
+        },
+        {
+          "pl": "Zaplanować więcej czasu"
+        },
+        {
+          "pl": "Założyć kamizelkę odblaskową"
+        }
+      ]
+    },
+    "SM-19": {
+      "promptPl": "Co powinieneś zrobić, jeśli inny pojazd wjeżdża w Twój bezpieczny odstęp na mokrej jezdni?",
+      "options": [
+        {
+          "pl": "Mrugnąć światłami"
+        },
+        {
+          "pl": "Natychmiast wyprzedzić"
+        },
+        {
+          "pl": "Cofnąć się, aby zwiększyć odległość"
+        },
+        {
+          "pl": "Jeździć blisko"
+        }
+      ]
+    },
+    "SM-20": {
+      "promptPl": "Jaka jest główna zaleta napędu na cztery koła?",
+      "options": [
+        {
+          "pl": "Krótsza droga hamowania"
+        },
+        {
+          "pl": "Lepsza przyczepność w trudnych warunkach"
+        },
+        {
+          "pl": "Niższe zużycie paliwa"
+        },
+        {
+          "pl": "Szybsze przyspieszenie"
+        }
+      ]
+    },
+    "SM-21": {
+      "promptPl": "Co pomaga bezpieczniej ruszyć na zaśnieżonej nawierzchni?",
+      "options": [
+        {
+          "pl": "Użycie niskiego biegu"
+        },
+        {
+          "pl": "Użycie wyższego biegu niż zwykle"
+        },
+        {
+          "pl": "Użycie wysokich obrotów silnika"
+        },
+        {
+          "pl": "Użycie hamulca postojowego"
+        }
+      ]
+    },
+    "SM-22": {
+      "promptPl": "Po minięciu znaku ostrzegawczego o zagrożeniu na drodze wiejskiej, co powinieneś zrobić, gdy będzie bezpiecznie?",
+      "options": [
+        {
+          "pl": "Sprawdzić ciśnienie w oponach"
+        },
+        {
+          "pl": "Włączyć światła awaryjne"
+        },
+        {
+          "pl": "Płynnie przyspieszyć"
+        },
+        {
+          "pl": "Sprawdzić hamulce"
+        }
+      ]
+    },
+    "SM-23": {
+      "promptPl": "Na suchej, otwartej drodze, jaki odstęp należy zwykle zachować?",
+      "options": [
+        {
+          "pl": "Odstęp dwóch sekund"
+        },
+        {
+          "pl": "Długość jednego samochodu"
+        },
+        {
+          "pl": "Dwa metry"
+        },
+        {
+          "pl": "Długość dwóch samochodów"
+        }
+      ]
+    },
+    "SM-24": {
+      "promptPl": "Co zwykle oznacza, jeśli kontrolka ESC miga krótko podczas jazdy?",
+      "options": [
+        {
+          "pl": "System jest uszkodzony"
+        },
+        {
+          "pl": "System został wyłączony"
+        },
+        {
+          "pl": "System aktywnie pomaga kontrolować samochód"
+        },
+        {
+          "pl": "Trwa rutynowy test"
+        }
+      ]
+    },
+    "SM-25": {
+      "promptPl": "Co jest najbardziej narażone, gdy nawierzchnia mięknie w bardzo upalne dni?",
+      "options": [
+        {
+          "pl": "Zawieszenie"
+        },
+        {
+          "pl": "Zużycie paliwa"
+        },
+        {
+          "pl": "Przyczepność opon"
+        },
+        {
+          "pl": "Układ wydechowy"
+        }
+      ]
+    },
+    "SM-26": {
+      "promptPl": "Jak wyprzedzać motocyklistę w wietrzny dzień?",
+      "options": [
+        {
+          "pl": "Blisko"
+        },
+        {
+          "pl": "Bardzo wolno"
+        },
+        {
+          "pl": "Z dodatkowym odstępem"
+        },
+        {
+          "pl": "Jak najszybciej"
+        }
+      ]
+    },
+    "SM-27": {
+      "promptPl": "Po przejechaniu przez wodę powodziową, jak sprawdzić, czy hamulce działają?",
+      "options": [
+        {
+          "pl": "Jeździć szybko na krótkim odcinku"
+        },
+        {
+          "pl": "Unikać używania hamulców"
+        },
+        {
+          "pl": "Delikatnie naciskać hamulce, jadąc wolno"
+        },
+        {
+          "pl": "Zatrzymać się na godzinę"
+        }
+      ]
+    },
+    "SM-28": {
+      "promptPl": "Na jakim rodzaju nawierzchni ABS może być mniej skuteczny?",
+      "options": [
+        {
+          "pl": "Suchej"
+        },
+        {
+          "pl": "Luźnej"
+        },
+        {
+          "pl": "Twardej"
+        },
+        {
+          "pl": "Gładkiej"
+        }
+      ]
+    },
+    "SM-29": {
+      "promptPl": "Podczas jazdy we mgle, co jeszcze powinieneś zrobić oprócz używania świateł mijania?",
+      "options": [
+        {
+          "pl": "Jeździć blisko pojazdu przed Tobą"
+        },
+        {
+          "pl": "Używać świateł drogowych"
+        },
+        {
+          "pl": "Zachować bezpieczną odległość"
+        },
+        {
+          "pl": "Dostosować się do szybszego ruchu"
+        }
+      ]
+    },
+    "SM-30": {
+      "promptPl": "Przed jazdą w mroźną pogodę, które części samochodu muszą być oczyszczone z lodu?",
+      "options": [
+        {
+          "pl": "Zderzak"
+        },
+        {
+          "pl": "Szyby"
+        },
+        {
+          "pl": "Antena"
+        },
+        {
+          "pl": "Bagażnik"
+        }
+      ]
+    },
+    "SM-31": {
+      "promptPl": "Podczas jazdy przez system ruchu przeciwprądowego (contraflow), co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Często zmieniać pasy"
+        },
+        {
+          "pl": "Zwiększyć prędkość"
+        },
+        {
+          "pl": "Wcześnie wybrać swój pas"
+        },
+        {
+          "pl": "Jeździć blisko innych pojazdów"
+        }
+      ]
+    },
+    "SM-32": {
+      "promptPl": "W jakim warunku droga hamowania wydłuża się najbardziej?",
+      "options": [
+        {
+          "pl": "Mgła"
+        },
+        {
+          "pl": "Silny wiatr"
+        },
+        {
+          "pl": "Deszcz"
+        },
+        {
+          "pl": "Lód"
+        }
+      ]
+    },
+    "SM-33": {
+      "promptPl": "O ile może wydłużyć się droga hamowania na oblodzonej jezdni?",
+      "options": [
+        {
+          "pl": "2 razy"
+        },
+        {
+          "pl": "3 razy"
+        },
+        {
+          "pl": "5 razy"
+        },
+        {
+          "pl": "10 razy"
+        }
+      ]
+    },
+    "SM-34": {
+      "promptPl": "Jak kontrolować prędkość podczas jazdy w dół?",
+      "options": [
+        {
+          "pl": "Wysoki bieg z mocnym hamowaniem"
+        },
+        {
+          "pl": "Wysoki bieg bez hamowania"
+        },
+        {
+          "pl": "Niski bieg z delikatnym hamowaniem"
+        },
+        {
+          "pl": "Niski bieg bez hamowania"
+        }
+      ]
+    }
+  },
+  "rules-of-the-road": {
+    "RR-01": {
+      "promptPl": "O czym zwykle ostrzegają czerwono-białe słupki przy drodze?",
+      "options": [
+        {
+          "pl": "Koniec autostrady"
+        },
+        {
+          "pl": "Ukryty przejazd kolejowy przed Tobą"
+        },
+        {
+          "pl": "Zmiana limitu prędkości"
+        },
+        {
+          "pl": "Koniec drogi dwujezdniowej"
+        }
+      ]
+    },
+    "RR-02": {
+      "promptPl": "Chcesz wyprzedzić wolno jadący traktor, ale nie jesteś pewien, czy jest to bezpieczne. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Podążyć za innym samochodem wyprzedzającym"
+        },
+        {
+          "pl": "Użyć klaksonu"
+        },
+        {
+          "pl": "Szybko wyprzedzić"
+        },
+        {
+          "pl": "Zostać z tyłu, aż będzie wyraźnie bezpiecznie"
+        }
+      ]
+    },
+    "RR-03": {
+      "promptPl": "Jaki jest krajowy limit prędkości na drodze jednojezdniowej dla samochodów i motocykli (o ile znaki nie stanowią inaczej)?",
+      "options": [
+        {
+          "pl": "30 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        },
+        {
+          "pl": "70 mph"
+        }
+      ]
+    },
+    "RR-04": {
+      "promptPl": "Używasz świateł drogowych w nocy, a inny pojazd zaczyna Cię wyprzedzać. Kiedy przełączyć na światła mijania?",
+      "options": [
+        {
+          "pl": "Po tym, jak Cię minie"
+        },
+        {
+          "pl": "Gdy skończy wyprzedzanie"
+        },
+        {
+          "pl": "Tylko jeśli on przełączy swoje"
+        },
+        {
+          "pl": "Zanim zacznie Cię mijać"
+        }
+      ]
+    }
+  }
+}

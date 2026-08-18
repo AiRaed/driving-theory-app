@@ -1,0 +1,140 @@
+[
+  {
+    "id": "RS-W-04",
+    "topic": "road-signs",
+    "promptEn": "You're driving on a main road and see a triangular warning sign showing a side road joining from the right. What hazard should you anticipate?",
+    "options": [
+      {
+        "en": "Vehicles may emerge from the side road and join your path",
+        "correct": true
+      },
+      {
+        "en": "Traffic from the right always has priority",
+        "correct": false
+      },
+      {
+        "en": "You must overtake before the junction",
+        "correct": false
+      },
+      {
+        "en": "The road becomes one-way ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-I-01",
+    "topic": "road-signs",
+    "promptEn": "You see this warning sign. What does it indicate?",
+    "options": [
+      {
+        "en": "Crossroads ahead",
+        "correct": false
+      },
+      {
+        "en": "Staggered junction ahead",
+        "correct": true
+      },
+      {
+        "en": "Road narrows on both sides",
+        "correct": false
+      },
+      {
+        "en": "Side road on the left only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-I-02",
+    "topic": "road-signs",
+    "promptEn": "You see this warning sign. What does it indicate?",
+    "options": [
+      {
+        "en": "Slippery road ahead",
+        "correct": false
+      },
+      {
+        "en": "Uneven road surface ahead",
+        "correct": true
+      },
+      {
+        "en": "Road narrows ahead",
+        "correct": false
+      },
+      {
+        "en": "Speed humps ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-I-03",
+    "topic": "road-signs",
+    "promptEn": "A rectangular blue sign with white text showing 'M' followed by a number indicates:",
+    "options": [
+      {
+        "en": "Motorway ahead with route number",
+        "correct": true
+      },
+      {
+        "en": "Maximum speed limit",
+        "correct": false
+      },
+      {
+        "en": "Mileage marker",
+        "correct": false
+      },
+      {
+        "en": "Mandatory route",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-I-04",
+    "topic": "road-signs",
+    "promptEn": "A rectangular green sign with white text and route numbers provides:",
+    "options": [
+      {
+        "en": "Primary route directions and destinations",
+        "correct": true
+      },
+      {
+        "en": "Speed limit for primary routes",
+        "correct": false
+      },
+      {
+        "en": "Restriction on primary routes",
+        "correct": false
+      },
+      {
+        "en": "End of primary route",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-I-05",
+    "topic": "road-signs",
+    "promptEn": "You see a warning sign for loose chippings. What should you do?",
+    "options": [
+      {
+        "en": "Speed up to clear the area quickly",
+        "correct": false
+      },
+      {
+        "en": "Reduce speed and keep a greater distance from the vehicle ahead",
+        "correct": true
+      },
+      {
+        "en": "Brake sharply to test your tyres",
+        "correct": false
+      },
+      {
+        "en": "Drive close to the kerb to avoid the chippings",
+        "correct": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,856 @@
+{
+  "vehicle-loading": {
+    "VL-04": {
+      "promptPl": "Przed holowaniem przyczepy zauważasz, że jedno z jej świateł nie działa. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Kontynuować jazdę"
+        },
+        {
+          "pl": "Odłączyć przyczepę"
+        },
+        {
+          "pl": "Naprawić usterkę przed jazdą"
+        },
+        {
+          "pl": "Naprawić później"
+        }
+      ]
+    },
+    "VL-05": {
+      "promptPl": "Jeśli przyczepa jest szersza niż Twój samochód, co musisz zamontować?",
+      "options": [
+        {
+          "pl": "Zewnętrzne lusterka holownicze"
+        },
+        {
+          "pl": "Czujniki parkowania"
+        },
+        {
+          "pl": "Kamerę cofania"
+        },
+        {
+          "pl": "Znaczniki wystawania"
+        }
+      ]
+    },
+    "VL-06": {
+      "promptPl": "Jakie urządzenie bezpieczeństwa musi być zamontowane w układzie hamulcowym przyczepy?",
+      "options": [
+        {
+          "pl": "Stabilizator"
+        },
+        {
+          "pl": "Koło podporowe"
+        },
+        {
+          "pl": "Podpory narożne"
+        },
+        {
+          "pl": "Linka bezpieczeństwa (breakaway)"
+        }
+      ]
+    },
+    "VL-07": {
+      "promptPl": "Co pomaga poprawić stabilność podczas holowania przyczepy kempingowej?",
+      "options": [
+        {
+          "pl": "Koło podporowe"
+        },
+        {
+          "pl": "Wspomaganie kierownicy"
+        },
+        {
+          "pl": "Hamulce ABS"
+        },
+        {
+          "pl": "Stabilizator haka holowniczego"
+        }
+      ]
+    },
+    "VL-08": {
+      "promptPl": "Kto jest prawnie odpowiedzialny za to, by pojazd nie był przeciążony?",
+      "options": [
+        {
+          "pl": "Właściciel pojazdu"
+        },
+        {
+          "pl": "Osoba ładująca ładunek"
+        },
+        {
+          "pl": "Organ wydający uprawnienia"
+        },
+        {
+          "pl": "Kierowca pojazdu"
+        }
+      ]
+    },
+    "VL-09": {
+      "promptPl": "Co oznacza maksymalna masa całkowita (MAM) przyczepy?",
+      "options": [
+        {
+          "pl": "Tylko ładunek"
+        },
+        {
+          "pl": "Masa pustej przyczepy"
+        },
+        {
+          "pl": "Łączna masa holowania"
+        },
+        {
+          "pl": "Masa przyczepy wraz z ładunkiem"
+        }
+      ]
+    },
+    "VL-10": {
+      "promptPl": "Podłączając przyczepę bez hamulców, o czym musisz się upewnić?",
+      "options": [
+        {
+          "pl": "Zamontować dodatkowe zabezpieczenie sprzęgu"
+        },
+        {
+          "pl": "Nasmarować kulę haka"
+        },
+        {
+          "pl": "Wyłączyć czujniki"
+        },
+        {
+          "pl": "Tylko wyregulować lusterka"
+        }
+      ]
+    },
+    "VL-11": {
+      "promptPl": "Który aspekt pojazdu najbardziej wpływa na przewożenie bardzo ciężkiego ładunku?",
+      "options": [
+        {
+          "pl": "Akumulator"
+        },
+        {
+          "pl": "Wentylacja"
+        },
+        {
+          "pl": "Prowadzenie pojazdu"
+        },
+        {
+          "pl": "Skrzynia biegów"
+        }
+      ]
+    },
+    "VL-12": {
+      "promptPl": "Przed pierwszym holowaniem przyczepy, co jest zalecane?",
+      "options": [
+        {
+          "pl": "Zaktualizować prawo jazdy"
+        },
+        {
+          "pl": "Założyć tablice P"
+        },
+        {
+          "pl": "Odbyć profesjonalne szkolenie"
+        },
+        {
+          "pl": "Zdać kolejny egzamin"
+        }
+      ]
+    },
+    "VL-13": {
+      "promptPl": "Po zdaniu egzaminu, jaka jest maksymalna masa całkowita przyczepy, którą możesz holować?",
+      "options": [
+        {
+          "pl": "6500 kg"
+        },
+        {
+          "pl": "5500 kg"
+        },
+        {
+          "pl": "4500 kg"
+        },
+        {
+          "pl": "3500 kg"
+        }
+      ]
+    },
+    "VL-14": {
+      "promptPl": "Jeśli przyczepa zaczyna się kołysać podczas jazdy, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Gwałtownie zahamować"
+        },
+        {
+          "pl": "Zwiększyć prędkość"
+        },
+        {
+          "pl": "Gwałtownie skręcić"
+        },
+        {
+          "pl": "Łagodnie zmniejszyć prędkość"
+        }
+      ]
+    },
+    "VL-15": {
+      "promptPl": "Podczas holowania na autostradzie trzypasowej, jakie ograniczenie obowiązuje?",
+      "options": [
+        {
+          "pl": "Maks. 50 mph"
+        },
+        {
+          "pl": "Zakaz wyprzedzania"
+        },
+        {
+          "pl": "Wymagany stabilizator"
+        },
+        {
+          "pl": "Zakaz używania prawego pasa"
+        }
+      ]
+    },
+    "VL-16": {
+      "promptPl": "Kiedy należy zwiększyć ciśnienie w oponach powyżej normalnego?",
+      "options": [
+        {
+          "pl": "Na śliskiej drodze"
+        },
+        {
+          "pl": "Gdy jest ABS"
+        },
+        {
+          "pl": "Przy zużytym bieżniku"
+        },
+        {
+          "pl": "Przy przewożeniu ciężkiego ładunku"
+        }
+      ]
+    },
+    "VL-17": {
+      "promptPl": "Jeśli przyczepa zaczyna się bujać na boki, jakie jest najbezpieczniejsze działanie?",
+      "options": [
+        {
+          "pl": "Przyspieszyć"
+        },
+        {
+          "pl": "Mocno zahamować"
+        },
+        {
+          "pl": "Puścić kierownicę"
+        },
+        {
+          "pl": "Puścić gaz"
+        }
+      ]
+    },
+    "VL-18": {
+      "promptPl": "Jaka jest prawnie wymagana minimalna głębokość bieżnika opon przyczepy?",
+      "options": [
+        {
+          "pl": "1 mm"
+        },
+        {
+          "pl": "1,6 mm"
+        },
+        {
+          "pl": "2 mm"
+        },
+        {
+          "pl": "2,2 mm"
+        }
+      ]
+    },
+    "VL-19": {
+      "promptPl": "Czy pasażerowie mogą podróżować w holowanej przyczepie kempingowej?",
+      "options": [
+        {
+          "pl": "Tak, powyżej 14 lat"
+        },
+        {
+          "pl": "Nie, nigdy"
+        },
+        {
+          "pl": "Jeśli miejsca siedzące są zajęte"
+        },
+        {
+          "pl": "Ze stabilizatorem"
+        }
+      ]
+    },
+    "VL-20": {
+      "promptPl": "Jak należy umieszczać ciężkie przedmioty przy ładowaniu przyczepy?",
+      "options": [
+        {
+          "pl": "Z przodu"
+        },
+        {
+          "pl": "Z tyłu"
+        },
+        {
+          "pl": "Nad osiami"
+        },
+        {
+          "pl": "W narożnikach"
+        }
+      ]
+    },
+    "VL-21": {
+      "promptPl": "Jak należy przewozić ładunek na bagażniku dachowym?",
+      "options": [
+        {
+          "pl": "Pewnie zamocowany odpowiednimi zabezpieczeniami"
+        },
+        {
+          "pl": "W kierunku tyłu"
+        },
+        {
+          "pl": "Widoczny w lusterkach"
+        },
+        {
+          "pl": "Przykryty folią"
+        }
+      ]
+    }
+  },
+  "attitude": {
+    "AT-01": {
+      "promptPl": "Zbliżasz się do przejścia dla pieszych, a ludzie czekają. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zatrzymać się tylko dla osób starszych"
+        },
+        {
+          "pl": "Zwolnić i być gotowym do zatrzymania"
+        },
+        {
+          "pl": "Mrugać światłami, by ich zaprosić"
+        },
+        {
+          "pl": "Machnąć im, by przeszli"
+        }
+      ]
+    },
+    "AT-02": {
+      "promptPl": "Ruch jest wolny, a kierowca z tyłu jedzie bardzo blisko. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zignorować go"
+        },
+        {
+          "pl": "Stopniowo zwiększyć odstęp z przodu"
+        },
+        {
+          "pl": "Machnąć, by przejechał"
+        },
+        {
+          "pl": "Przesunąć się na środek drogi"
+        }
+      ]
+    },
+    "AT-03": {
+      "promptPl": "Dlaczego jazda zbyt blisko pojazdu z przodu jest niebezpieczna?",
+      "options": [
+        {
+          "pl": "Silnik może się przegrzać"
+        },
+        {
+          "pl": "Lusterka stają się nieskuteczne"
+        },
+        {
+          "pl": "Skraca się Twój czas na zatrzymanie"
+        },
+        {
+          "pl": "Nawigacja staje się niedokładna"
+        }
+      ]
+    },
+    "AT-04": {
+      "promptPl": "Kiedy zazwyczaj zalecany jest odstęp dwóch sekund?",
+      "options": [
+        {
+          "pl": "W suchych warunkach"
+        },
+        {
+          "pl": "We mgle"
+        },
+        {
+          "pl": "Na oblodzonej drodze"
+        },
+        {
+          "pl": "Przy ulewnym deszczu"
+        }
+      ]
+    },
+    "AT-05": {
+      "promptPl": "Duży pojazd sygnalizuje skręt w lewo, ale przed skrętem wychyla się w prawo. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Przejechać z lewej strony"
+        },
+        {
+          "pl": "Szybko wyprzedzić"
+        },
+        {
+          "pl": "Zwolnić i pozwolić mu skręcić"
+        }
+      ]
+    },
+    "AT-06": {
+      "promptPl": "Kto musi stosować się do rombowych znaków pasów ruchu?",
+      "options": [
+        {
+          "pl": "Tramwaje"
+        },
+        {
+          "pl": "Autobusy"
+        },
+        {
+          "pl": "Ciężarówki"
+        },
+        {
+          "pl": "Taksówki"
+        }
+      ]
+    },
+    "AT-07": {
+      "promptPl": "Kiedy powinieneś migać światłami innemu użytkownikowi drogi?",
+      "options": [
+        {
+          "pl": "Aby domagać się pierwszeństwa"
+        },
+        {
+          "pl": "Aby ostrzec o skręcie"
+        },
+        {
+          "pl": "Aby pokazać, że jesteś"
+        },
+        {
+          "pl": "Aby zmusić go do zatrzymania"
+        }
+      ]
+    },
+    "AT-08": {
+      "promptPl": "Znak pasa autobusowego nie pokazuje godzin obowiązywania. Co to oznacza?",
+      "options": [
+        {
+          "pl": "Tylko w godzinach szczytu"
+        },
+        {
+          "pl": "Tylko w ciągu dnia"
+        },
+        {
+          "pl": "Obecnie nieaktywny"
+        },
+        {
+          "pl": "Obowiązuje cały czas"
+        }
+      ]
+    },
+    "AT-09": {
+      "promptPl": "Na przejściu pelican z migającym bursztynowym światłem, co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Natychmiast się zatrzymać"
+        },
+        {
+          "pl": "Ostrożnie jechać dalej"
+        },
+        {
+          "pl": "Ustąpić pieszym, którzy już przechodzą"
+        },
+        {
+          "pl": "Czekać na czerwone światło"
+        }
+      ]
+    },
+    "AT-10": {
+      "promptPl": "Jaki minimalny odstęp powinieneś zachować na mokrej drodze?",
+      "options": [
+        {
+          "pl": "1 sekunda"
+        },
+        {
+          "pl": "2 sekundy"
+        },
+        {
+          "pl": "3 sekundy"
+        },
+        {
+          "pl": "4 sekundy"
+        }
+      ]
+    },
+    "AT-11": {
+      "promptPl": "Pojazd nagle wyjeżdża ze skrzyżowania. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przyspieszyć"
+        },
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Gwałtownie zjechać"
+        },
+        {
+          "pl": "Zwolnić i przygotować się do zatrzymania"
+        }
+      ]
+    },
+    "AT-12": {
+      "promptPl": "Długa ciężarówka wolno Cię wyprzedza. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przyspieszyć"
+        },
+        {
+          "pl": "Zmienić kierunek"
+        },
+        {
+          "pl": "Utrzymać prędkość"
+        },
+        {
+          "pl": "Nagle zahamować"
+        }
+      ]
+    },
+    "AT-13": {
+      "promptPl": "Jaki styl jazdy zwiększa zagrożenie dla wszystkich?",
+      "options": [
+        {
+          "pl": "Uprzejmy"
+        },
+        {
+          "pl": "Defensywny"
+        },
+        {
+          "pl": "Rywalizacyjny"
+        },
+        {
+          "pl": "Odpowiedzialny"
+        }
+      ]
+    },
+    "AT-14": {
+      "promptPl": "Na wąskiej drodze jednopasmowej, gdzie powinieneś zaczekać, gdy zbliża się pojazd?",
+      "options": [
+        {
+          "pl": "W mijance po przeciwnej stronie"
+        },
+        {
+          "pl": "Na poboczu"
+        },
+        {
+          "pl": "W mijance po swojej stronie"
+        },
+        {
+          "pl": "Na środku drogi"
+        }
+      ]
+    },
+    "AT-15": {
+      "promptPl": "Osoba pędząca zwierzęta prosi Cię o zatrzymanie. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zignorować ją"
+        },
+        {
+          "pl": "Zatrzymać się i wyłączyć silnik"
+        },
+        {
+          "pl": "Powoli przejechać obok"
+        },
+        {
+          "pl": "Zatrąbić"
+        }
+      ]
+    },
+    "AT-16": {
+      "promptPl": "Dlaczego nigdy nie powinieneś machać pieszym, by przeszli przez jezdnię?",
+      "options": [
+        {
+          "pl": "Mogą się rozproszyć"
+        },
+        {
+          "pl": "Inne pojazdy mogą się nie zatrzymać"
+        },
+        {
+          "pl": "Opóźnia to ruch"
+        },
+        {
+          "pl": "To zbędne"
+        }
+      ]
+    },
+    "AT-17": {
+      "promptPl": "Jedziesz z dozwoloną prędkością, a pojazd z tyłu chce Cię wyprzedzić. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przyspieszyć"
+        },
+        {
+          "pl": "Zablokować go"
+        },
+        {
+          "pl": "Utrzymać prędkość i pozwolić na wyprzedzenie"
+        },
+        {
+          "pl": "Zatrąbić"
+        }
+      ]
+    },
+    "AT-18": {
+      "promptPl": "Który pojazd używa niebieskiego migającego sygnału świetlnego?",
+      "options": [
+        {
+          "pl": "Pług śnieżny"
+        },
+        {
+          "pl": "Pomoc drogowa"
+        },
+        {
+          "pl": "Pojazd saperski (rozminowywanie)"
+        },
+        {
+          "pl": "Pojazd utrzymania drogi"
+        }
+      ]
+    },
+    "AT-19": {
+      "promptPl": "Jak powinieneś zbliżyć się do nieoznakowanego skrzyżowania?",
+      "options": [
+        {
+          "pl": "Przyspieszyć"
+        },
+        {
+          "pl": "Trzymać się prawej strony"
+        },
+        {
+          "pl": "Zwolnić i sprawdzić obie strony"
+        },
+        {
+          "pl": "Patrzeć tylko w lewo"
+        }
+      ]
+    },
+    "AT-20": {
+      "promptPl": "Nocą na przejrzystej drodze z nadjeżdżającym ruchem, których świateł powinieneś użyć?",
+      "options": [
+        {
+          "pl": "Światła drogowe"
+        },
+        {
+          "pl": "Światła przeciwmgielne"
+        },
+        {
+          "pl": "Światła pozycyjne"
+        },
+        {
+          "pl": "Światła mijania"
+        }
+      ]
+    },
+    "AT-21": {
+      "promptPl": "Na przejściu dla pieszych sterowanym przyciskiem, jakie światło następuje po zielonym?",
+      "options": [
+        {
+          "pl": "Stałe czerwone"
+        },
+        {
+          "pl": "Migające bursztynowe"
+        },
+        {
+          "pl": "Stałe bursztynowe"
+        },
+        {
+          "pl": "Migające zielone"
+        }
+      ]
+    },
+    "AT-22": {
+      "promptPl": "W dobrych, suchych warunkach, kiedy stosować zasadę odstępu dwóch sekund?",
+      "options": [
+        {
+          "pl": "Przy sprawdzaniu odległości od pojazdu z przodu"
+        },
+        {
+          "pl": "Przed ponownym uruchomieniem silnika"
+        },
+        {
+          "pl": "Przed sygnalizacją"
+        },
+        {
+          "pl": "Gdy światła zmieniają się na zielone"
+        }
+      ]
+    },
+    "AT-23": {
+      "promptPl": "Jaki problem może spowodować luźny korek wlewu oleju napędowego podczas jazdy?",
+      "options": [
+        {
+          "pl": "Trudny rozruch"
+        },
+        {
+          "pl": "Śliską nawierzchnię dla innych"
+        },
+        {
+          "pl": "Lepsze zużycie paliwa"
+        },
+        {
+          "pl": "Niższe emisje"
+        }
+      ]
+    },
+    "AT-24": {
+      "promptPl": "Która kontrolka na desce rozdzielczej pokazuje, że włączone są światła drogowe?",
+      "options": [
+        {
+          "pl": "Zielony symbol reflektorów z prostymi liniami"
+        },
+        {
+          "pl": "Bursztynowy symbol świateł przeciwmgielnych"
+        },
+        {
+          "pl": "Czerwony symbol akumulatora"
+        },
+        {
+          "pl": "Niebieski symbol świateł pozycyjnych"
+        }
+      ]
+    },
+    "AT-25": {
+      "promptPl": "Prowadzisz wolny pojazd na wąskiej, krętej drodze. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Blokować wyprzedzanie"
+        },
+        {
+          "pl": "Zjechać, gdy to bezpieczne, by inni mogli przejechać"
+        },
+        {
+          "pl": "Wciąż przyspieszać"
+        },
+        {
+          "pl": "Sygnalizować bez przerwy"
+        }
+      ]
+    },
+    "AT-26": {
+      "promptPl": "Jedziesz z dozwoloną prędkością, a pojazd z tyłu miga światłami. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przyspieszyć"
+        },
+        {
+          "pl": "Gwałtownie zahamować"
+        },
+        {
+          "pl": "Zablokować wyprzedzanie"
+        },
+        {
+          "pl": "Bezpiecznie pozwolić pojazdowi przejechać"
+        }
+      ]
+    },
+    "AT-27": {
+      "promptPl": "Jak najlepiej zapobiec wylewaniu się paliwa na drogę?",
+      "options": [
+        {
+          "pl": "Trzymać bak częściowo pełny"
+        },
+        {
+          "pl": "Używać korka z zamkiem"
+        },
+        {
+          "pl": "Regularnie sprawdzać wskaźnik"
+        },
+        {
+          "pl": "Upewnić się, że korek wlewu jest dobrze dokręcony"
+        }
+      ]
+    },
+    "AT-28": {
+      "promptPl": "Który pojazd uprzywilejowany używa zielonego migającego sygnału świetlnego?",
+      "options": [
+        {
+          "pl": "Wóz strażacki"
+        },
+        {
+          "pl": "Pojazd posypujący drogi"
+        },
+        {
+          "pl": "Karetka"
+        },
+        {
+          "pl": "Samochód lekarza"
+        }
+      ]
+    },
+    "AT-29": {
+      "promptPl": "Jak bezpiecznie wyprzedzić konia z jeźdźcem?",
+      "options": [
+        {
+          "pl": "Użyć klaksonu"
+        },
+        {
+          "pl": "Przejechać szybko"
+        },
+        {
+          "pl": "Mrugać światłami"
+        },
+        {
+          "pl": "Przejechać powoli i ostrożnie"
+        }
+      ]
+    },
+    "AT-30": {
+      "promptPl": "Na drogach, gdzie jeżdżą tramwaje, którzy użytkownicy są najbardziej narażeni przez szyny?",
+      "options": [
+        {
+          "pl": "Samochody"
+        },
+        {
+          "pl": "Autobusy"
+        },
+        {
+          "pl": "Ciężarówki"
+        },
+        {
+          "pl": "Rowery"
+        }
+      ]
+    },
+    "AT-31": {
+      "promptPl": "Dlaczego powinieneś wcześnie prawidłowo ustawić pojazd przed skrętem w prawo?",
+      "options": [
+        {
+          "pl": "Aby inni mogli przejechać"
+        },
+        {
+          "pl": "Aby jasno pokazać swoje zamiary"
+        },
+        {
+          "pl": "Aby zwiększyć prędkość"
+        },
+        {
+          "pl": "Aby zablokować ruch"
+        }
+      ]
+    },
+    "AT-32": {
+      "promptPl": "Nocą na nieoświetlonej drodze, jakich świateł powinieneś użyć, jadąc za innym pojazdem?",
+      "options": [
+        {
+          "pl": "Mrugać światłami"
+        },
+        {
+          "pl": "Światła drogowe"
+        },
+        {
+          "pl": "Wyłączyć światła"
+        },
+        {
+          "pl": "Światła mijania"
+        }
+      ]
+    }
+  }
+}

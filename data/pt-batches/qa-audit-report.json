@@ -1,0 +1,399 @@
+{
+  "questions": {
+    "totalEn": 742,
+    "totalPt": 742,
+    "missing": [],
+    "optionCountMismatch": [],
+    "promptStillEn": [],
+    "optionStillEn": [],
+    "mixed": [
+      {
+        "id": "AL-17",
+        "text": "Antes de virar à direita para uma dual carriageway, o que deve verificar?"
+      },
+      {
+        "id": "AL-25",
+        "text": "Parar no hard shoulder"
+      },
+      {
+        "id": "HZ-08",
+        "text": "Parar no hard shoulder e trocar de condutor"
+      },
+      {
+        "id": "HZ-63",
+        "text": "Parar no hard shoulder"
+      },
+      {
+        "id": "RR-01",
+        "text": "Fim da dual carriageway"
+      },
+      {
+        "id": "RR-15",
+        "text": "Quando pode parar e aguardar dentro de um box junction?"
+      },
+      {
+        "id": "RR-46",
+        "text": "Está a virar à direita para uma dual carriageway. O separador central é demasiado estreito para o seu veículo. O que dev"
+      }
+    ],
+    "suspiciousEnglishInPt": [],
+    "emptyOpts": [],
+    "optionStillEnCount": 0,
+    "mixedCount": 7
+  },
+  "vocab": {
+    "total": 1029,
+    "missingPt": 0,
+    "missingTerm": 0,
+    "identicalEn": 0,
+    "mixed": [
+      {
+        "id": "AL-17",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation.",
+        "label": "estrada de duas faixas"
+      },
+      {
+        "id": "AL-17",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation."
+      },
+      {
+        "id": "AL-17",
+        "term": "central reservation",
+        "pt": "A faixa ou barreira que separa os dois sentidos de trânsito numa dual carriageway."
+      },
+      {
+        "id": "MW-01",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "AL-06",
+        "term": "dual carriageways",
+        "pt": "Estradas principais com trânsito em sentidos opostos, separados por uma central reservation.",
+        "label": "estradas de duas faixas"
+      },
+      {
+        "id": "AL-06",
+        "term": "dual carriageways",
+        "pt": "Estradas principais com trânsito em sentidos opostos, separados por uma central reservation."
+      },
+      {
+        "id": "AL-22",
+        "term": "dual carriageways",
+        "pt": "Estradas principais com trânsito em sentidos opostos, separados por uma central reservation.",
+        "label": "estradas de duas faixas"
+      },
+      {
+        "id": "AL-22",
+        "term": "dual carriageways",
+        "pt": "Estradas principais com trânsito em sentidos opostos, separados por uma central reservation."
+      },
+      {
+        "id": "AL-25",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "HZ-08",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "HZ-12",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation.",
+        "label": "estrada de duas faixas"
+      },
+      {
+        "id": "HZ-12",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation."
+      },
+      {
+        "id": "RS-20",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-11",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-12",
+        "term": "slip road",
+        "pt": "A estrada curta de ligação usada para entrar ou sair de uma motorway.",
+        "label": "via de acesso/saída"
+      },
+      {
+        "id": "MW-12",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-14",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-15",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-17",
+        "term": "central reservation",
+        "pt": "A faixa ou barreira que separa os dois sentidos de trânsito numa dual carriageway."
+      },
+      {
+        "id": "MW-17",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "VU-64",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation.",
+        "label": "estrada de duas faixas"
+      },
+      {
+        "id": "VU-64",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation."
+      },
+      {
+        "id": "VH-01",
+        "term": "slip road",
+        "pt": "A estrada curta de ligação usada para entrar ou sair de uma motorway.",
+        "label": "via de acesso/saída"
+      },
+      {
+        "id": "MW-18",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-21",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-22",
+        "term": "emergency area",
+        "pt": "Lugar marcado ao lado de uma motorway para parar em emergência quando não há hard shoulder.",
+        "label": "área de emergência"
+      },
+      {
+        "id": "MW-22",
+        "term": "emergency area",
+        "pt": "Lugar marcado ao lado de uma motorway para parar em emergência quando não há hard shoulder."
+      },
+      {
+        "id": "MW-26",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-28",
+        "term": "countdown markers",
+        "pt": "Postes com barras decrescentes (3, 2, 1) que mostram a proximidade de uma saída de motorway.",
+        "label": "marcadores de contagem"
+      },
+      {
+        "id": "MW-30",
+        "term": "slip road",
+        "pt": "A estrada curta de ligação usada para entrar ou sair de uma motorway.",
+        "label": "via de acesso/saída"
+      },
+      {
+        "id": "MW-33",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-34",
+        "term": "emergency telephone",
+        "pt": "Telefone gratuito à beira da motorway que o liga a operadores que podem enviar ajuda.",
+        "label": "telefone de emergência"
+      },
+      {
+        "id": "MW-34",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-36",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-37",
+        "term": "emergency telephone",
+        "pt": "Telefone gratuito à beira da motorway que o liga a operadores que podem enviar ajuda.",
+        "label": "telefone de emergência"
+      },
+      {
+        "id": "MW-40",
+        "term": "slip road",
+        "pt": "A estrada curta de ligação usada para entrar ou sair de uma motorway.",
+        "label": "via de acesso/saída"
+      },
+      {
+        "id": "MW-42",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-42",
+        "term": "central reservation",
+        "pt": "A faixa ou barreira que separa os dois sentidos de trânsito numa dual carriageway."
+      },
+      {
+        "id": "MW-44",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-44",
+        "term": "service area",
+        "pt": "Área de serviço de motorway com estacionamento, combustível e instalações onde pode parar em seguran",
+        "label": "área de serviço"
+      },
+      {
+        "id": "MW-44",
+        "term": "central reservation",
+        "pt": "A faixa ou barreira que separa os dois sentidos de trânsito numa dual carriageway."
+      },
+      {
+        "id": "MW-46",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-47",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-48",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-54",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-55",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "MW-57",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "RR-08",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation.",
+        "label": "estrada de duas faixas"
+      },
+      {
+        "id": "RR-08",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation."
+      },
+      {
+        "id": "HZ-63",
+        "term": "hard shoulder",
+        "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+        "label": "berma"
+      },
+      {
+        "id": "HZ-65",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation.",
+        "label": "estrada de duas faixas"
+      },
+      {
+        "id": "HZ-65",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation."
+      },
+      {
+        "id": "RS-02",
+        "term": "Dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation.",
+        "label": "estrada de duas faixas"
+      },
+      {
+        "id": "RS-02",
+        "term": "Dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation."
+      },
+      {
+        "id": "SV-42",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation.",
+        "label": "estrada de duas faixas"
+      },
+      {
+        "id": "SV-42",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation."
+      },
+      {
+        "id": "RR-01",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation.",
+        "label": "estrada de duas faixas"
+      },
+      {
+        "id": "RR-01",
+        "term": "dual carriageway",
+        "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation."
+      },
+      {
+        "id": "VU-11",
+        "term": "dual carriageways",
+        "pt": "Estradas principais com trânsito em sentidos opostos, separados por uma central reservation.",
+        "label": "estradas de duas faixas"
+      },
+      {
+        "id": "VU-11",
+        "term": "dual carriageways",
+        "pt": "Estradas principais com trânsito em sentidos opostos, separados por uma central reservation."
+      }
+    ],
+    "leakSuspect": [],
+    "samples": [],
+    "mixedCount": 81
+  }
+}

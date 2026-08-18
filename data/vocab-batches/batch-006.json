@@ -1,0 +1,1382 @@
+[
+  {
+    "id": "VL-18",
+    "topic": "vehicle-loading",
+    "promptEn": "What's the legal minimum tread depth for trailer tyres?",
+    "options": [
+      {
+        "en": "1 mm",
+        "correct": false
+      },
+      {
+        "en": "1.6 mm",
+        "correct": true
+      },
+      {
+        "en": "2 mm",
+        "correct": false
+      },
+      {
+        "en": "2.2 mm",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VL-19",
+    "topic": "vehicle-loading",
+    "promptEn": "Are passengers allowed to travel in a towed caravan?",
+    "options": [
+      {
+        "en": "Yes, over 14",
+        "correct": false
+      },
+      {
+        "en": "No, never",
+        "correct": true
+      },
+      {
+        "en": "If seats are full",
+        "correct": false
+      },
+      {
+        "en": "With stabiliser",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VL-20",
+    "topic": "vehicle-loading",
+    "promptEn": "How should heavy items be positioned when loading a trailer?",
+    "options": [
+      {
+        "en": "At the front",
+        "correct": false
+      },
+      {
+        "en": "At the back",
+        "correct": false
+      },
+      {
+        "en": "Over the axles",
+        "correct": true
+      },
+      {
+        "en": "In corners",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VL-21",
+    "topic": "vehicle-loading",
+    "promptEn": "How should a load be carried on a roof rack?",
+    "options": [
+      {
+        "en": "Securely fastened with proper restraints",
+        "correct": true
+      },
+      {
+        "en": "Toward the rear",
+        "correct": false
+      },
+      {
+        "en": "Visible in mirrors",
+        "correct": false
+      },
+      {
+        "en": "Covered with plastic",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-01",
+    "topic": "attitude",
+    "promptEn": "As you approach a pedestrian crossing and people are waiting, what should you do?",
+    "options": [
+      {
+        "en": "Only stop for elderly people",
+        "correct": false
+      },
+      {
+        "en": "Slow down and be ready to stop",
+        "correct": true
+      },
+      {
+        "en": "Flash headlights to invite them",
+        "correct": false
+      },
+      {
+        "en": "Wave them across",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-02",
+    "topic": "attitude",
+    "promptEn": "Traffic is slow and the driver behind is following very closely. What should you do?",
+    "options": [
+      {
+        "en": "Ignore them",
+        "correct": false
+      },
+      {
+        "en": "Gradually increase the gap ahead",
+        "correct": true
+      },
+      {
+        "en": "Wave them past",
+        "correct": false
+      },
+      {
+        "en": "Move to the centre of the road",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-03",
+    "topic": "attitude",
+    "promptEn": "Why is driving too close to the vehicle in front dangerous?",
+    "options": [
+      {
+        "en": "Engine may overheat",
+        "correct": false
+      },
+      {
+        "en": "Mirrors become ineffective",
+        "correct": false
+      },
+      {
+        "en": "Your stopping time is reduced",
+        "correct": true
+      },
+      {
+        "en": "Navigation becomes inaccurate",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-04",
+    "topic": "attitude",
+    "promptEn": "When is a two-second following gap generally recommended?",
+    "options": [
+      {
+        "en": "In dry conditions",
+        "correct": true
+      },
+      {
+        "en": "In fog",
+        "correct": false
+      },
+      {
+        "en": "On icy roads",
+        "correct": false
+      },
+      {
+        "en": "In heavy rain",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-05",
+    "topic": "attitude",
+    "promptEn": "A large vehicle signals left but swings right before turning. What should you do?",
+    "options": [
+      {
+        "en": "Sound your horn",
+        "correct": false
+      },
+      {
+        "en": "Drive past on the left",
+        "correct": false
+      },
+      {
+        "en": "Overtake quickly",
+        "correct": false
+      },
+      {
+        "en": "Slow down and allow it to turn",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-06",
+    "topic": "attitude",
+    "promptEn": "Who must obey diamond-shaped lane signs?",
+    "options": [
+      {
+        "en": "Trams",
+        "correct": false
+      },
+      {
+        "en": "Buses",
+        "correct": false
+      },
+      {
+        "en": "Lorries",
+        "correct": false
+      },
+      {
+        "en": "Taxis",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-07",
+    "topic": "attitude",
+    "promptEn": "When should you flash your headlights at another road user?",
+    "options": [
+      {
+        "en": "To claim right of way",
+        "correct": false
+      },
+      {
+        "en": "To warn of a turn",
+        "correct": false
+      },
+      {
+        "en": "To show you're there",
+        "correct": true
+      },
+      {
+        "en": "To force them to stop",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-08",
+    "topic": "attitude",
+    "promptEn": "A bus lane sign shows no operating times. What does this mean?",
+    "options": [
+      {
+        "en": "Only peak hours",
+        "correct": false
+      },
+      {
+        "en": "Daytime only",
+        "correct": false
+      },
+      {
+        "en": "Not currently active",
+        "correct": false
+      },
+      {
+        "en": "Operates all the time",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-09",
+    "topic": "attitude",
+    "promptEn": "At a pelican crossing with flashing amber, what must you do?",
+    "options": [
+      {
+        "en": "Stop immediately",
+        "correct": false
+      },
+      {
+        "en": "Proceed carefully",
+        "correct": false
+      },
+      {
+        "en": "Give way to pedestrians already crossing",
+        "correct": true
+      },
+      {
+        "en": "Wait for red light",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-10",
+    "topic": "attitude",
+    "promptEn": "What minimum following distance should you allow on wet roads?",
+    "options": [
+      {
+        "en": "1 second",
+        "correct": false
+      },
+      {
+        "en": "2 seconds",
+        "correct": false
+      },
+      {
+        "en": "3 seconds",
+        "correct": false
+      },
+      {
+        "en": "4 seconds",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-11",
+    "topic": "attitude",
+    "promptEn": "A vehicle pulls out suddenly at a junction. What should you do?",
+    "options": [
+      {
+        "en": "Accelerate",
+        "correct": false
+      },
+      {
+        "en": "Sound your horn",
+        "correct": false
+      },
+      {
+        "en": "Swerve sharply",
+        "correct": false
+      },
+      {
+        "en": "Slow down and prepare to stop",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-12",
+    "topic": "attitude",
+    "promptEn": "A long lorry is overtaking you slowly. What should you do?",
+    "options": [
+      {
+        "en": "Speed up",
+        "correct": false
+      },
+      {
+        "en": "Change direction",
+        "correct": false
+      },
+      {
+        "en": "Hold your speed",
+        "correct": true
+      },
+      {
+        "en": "Brake suddenly",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-13",
+    "topic": "attitude",
+    "promptEn": "Which driving style increases danger for everyone?",
+    "options": [
+      {
+        "en": "Considerate",
+        "correct": false
+      },
+      {
+        "en": "Defensive",
+        "correct": false
+      },
+      {
+        "en": "Competitive",
+        "correct": true
+      },
+      {
+        "en": "Responsible",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-14",
+    "topic": "attitude",
+    "promptEn": "On a narrow single-track road, where should you wait if a vehicle is approaching?",
+    "options": [
+      {
+        "en": "In the passing place opposite",
+        "correct": false
+      },
+      {
+        "en": "On the verge",
+        "correct": false
+      },
+      {
+        "en": "In the passing place on your side",
+        "correct": true
+      },
+      {
+        "en": "In the centre of the road",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-15",
+    "topic": "attitude",
+    "promptEn": "A person herding animals asks you to stop. What should you do?",
+    "options": [
+      {
+        "en": "Ignore them",
+        "correct": false
+      },
+      {
+        "en": "Stop and switch off the engine",
+        "correct": true
+      },
+      {
+        "en": "Drive slowly past",
+        "correct": false
+      },
+      {
+        "en": "Sound your horn",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-16",
+    "topic": "attitude",
+    "promptEn": "Why should you never wave pedestrians across the road?",
+    "options": [
+      {
+        "en": "They may be distracted",
+        "correct": false
+      },
+      {
+        "en": "Other vehicles may not stop",
+        "correct": true
+      },
+      {
+        "en": "It delays traffic",
+        "correct": false
+      },
+      {
+        "en": "It's unnecessary",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-17",
+    "topic": "attitude",
+    "promptEn": "You're driving at the speed limit and a vehicle behind wants to overtake. What should you do?",
+    "options": [
+      {
+        "en": "Accelerate",
+        "correct": false
+      },
+      {
+        "en": "Block them",
+        "correct": false
+      },
+      {
+        "en": "Hold steady and allow overtaking",
+        "correct": true
+      },
+      {
+        "en": "Sound your horn",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-18",
+    "topic": "attitude",
+    "promptEn": "Which vehicle uses a blue flashing beacon?",
+    "options": [
+      {
+        "en": "Snow plough",
+        "correct": false
+      },
+      {
+        "en": "Breakdown recovery",
+        "correct": false
+      },
+      {
+        "en": "Bomb disposal",
+        "correct": true
+      },
+      {
+        "en": "Road maintenance",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-19",
+    "topic": "attitude",
+    "promptEn": "How should you approach an unmarked crossroads?",
+    "options": [
+      {
+        "en": "Accelerate",
+        "correct": false
+      },
+      {
+        "en": "Keep right",
+        "correct": false
+      },
+      {
+        "en": "Slow down and check both ways",
+        "correct": true
+      },
+      {
+        "en": "Look left only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-20",
+    "topic": "attitude",
+    "promptEn": "At night on a clear road with oncoming traffic, which lights should you use?",
+    "options": [
+      {
+        "en": "Full beam",
+        "correct": false
+      },
+      {
+        "en": "Fog lights",
+        "correct": false
+      },
+      {
+        "en": "Sidelights",
+        "correct": false
+      },
+      {
+        "en": "Dipped headlights",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-21",
+    "topic": "attitude",
+    "promptEn": "At a pedestrian crossing controlled by push-button signals, what light comes after green?",
+    "options": [
+      {
+        "en": "Steady red",
+        "correct": false
+      },
+      {
+        "en": "Flashing amber",
+        "correct": true
+      },
+      {
+        "en": "Steady amber",
+        "correct": false
+      },
+      {
+        "en": "Flashing green",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-22",
+    "topic": "attitude",
+    "promptEn": "In good, dry conditions, when should you apply the two-second following rule?",
+    "options": [
+      {
+        "en": "When checking distance from the vehicle ahead",
+        "correct": true
+      },
+      {
+        "en": "Before restarting the engine",
+        "correct": false
+      },
+      {
+        "en": "Before signalling",
+        "correct": false
+      },
+      {
+        "en": "When lights turn green",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-23",
+    "topic": "attitude",
+    "promptEn": "What problem can a loose diesel fuel cap cause while driving?",
+    "options": [
+      {
+        "en": "Hard starting",
+        "correct": false
+      },
+      {
+        "en": "Slippery road surface for others",
+        "correct": true
+      },
+      {
+        "en": "Better fuel economy",
+        "correct": false
+      },
+      {
+        "en": "Lower emissions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-24",
+    "topic": "attitude",
+    "promptEn": "Which dashboard light shows that main-beam headlights are on?",
+    "options": [
+      {
+        "en": "Green headlamp symbol with straight lines",
+        "correct": true
+      },
+      {
+        "en": "Amber fog light symbol",
+        "correct": false
+      },
+      {
+        "en": "Red battery symbol",
+        "correct": false
+      },
+      {
+        "en": "Blue sidelights symbol",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-25",
+    "topic": "attitude",
+    "promptEn": "You're driving a slow vehicle on a narrow, winding road. What should you do?",
+    "options": [
+      {
+        "en": "Block overtaking",
+        "correct": false
+      },
+      {
+        "en": "Pull in when safe to let others pass",
+        "correct": true
+      },
+      {
+        "en": "Keep speeding up",
+        "correct": false
+      },
+      {
+        "en": "Signal continuously",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-26",
+    "topic": "attitude",
+    "promptEn": "You're driving at the speed limit and a vehicle behind flashes headlights. What should you do?",
+    "options": [
+      {
+        "en": "Accelerate",
+        "correct": false
+      },
+      {
+        "en": "Brake sharply",
+        "correct": false
+      },
+      {
+        "en": "Block overtaking",
+        "correct": false
+      },
+      {
+        "en": "Allow the vehicle to pass safely",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-27",
+    "topic": "attitude",
+    "promptEn": "How can you best prevent fuel from spilling onto the road?",
+    "options": [
+      {
+        "en": "Keep tank partially full",
+        "correct": false
+      },
+      {
+        "en": "Use locking cap",
+        "correct": false
+      },
+      {
+        "en": "Check gauge regularly",
+        "correct": false
+      },
+      {
+        "en": "Ensure the filler cap is secure",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-28",
+    "topic": "attitude",
+    "promptEn": "Which emergency vehicle uses a green flashing beacon?",
+    "options": [
+      {
+        "en": "Fire engine",
+        "correct": false
+      },
+      {
+        "en": "Road gritter",
+        "correct": false
+      },
+      {
+        "en": "Ambulance",
+        "correct": false
+      },
+      {
+        "en": "Doctor's car",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-29",
+    "topic": "attitude",
+    "promptEn": "How should you overtake a horse and rider safely?",
+    "options": [
+      {
+        "en": "Use the horn",
+        "correct": false
+      },
+      {
+        "en": "Pass quickly",
+        "correct": false
+      },
+      {
+        "en": "Flash headlights",
+        "correct": false
+      },
+      {
+        "en": "Pass slowly and carefully",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-30",
+    "topic": "attitude",
+    "promptEn": "On roads where trams operate, which road users are most at risk from rails?",
+    "options": [
+      {
+        "en": "Cars",
+        "correct": false
+      },
+      {
+        "en": "Buses",
+        "correct": false
+      },
+      {
+        "en": "Lorries",
+        "correct": false
+      },
+      {
+        "en": "Bicycles",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-31",
+    "topic": "attitude",
+    "promptEn": "Why should you position your vehicle correctly early before turning right?",
+    "options": [
+      {
+        "en": "To let others pass",
+        "correct": false
+      },
+      {
+        "en": "To signal your intentions clearly",
+        "correct": true
+      },
+      {
+        "en": "To increase speed",
+        "correct": false
+      },
+      {
+        "en": "To block traffic",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-32",
+    "topic": "attitude",
+    "promptEn": "At night on an unlit road, what lights should you use when following another vehicle?",
+    "options": [
+      {
+        "en": "Flash headlights",
+        "correct": false
+      },
+      {
+        "en": "Full beam",
+        "correct": false
+      },
+      {
+        "en": "Switch off lights",
+        "correct": false
+      },
+      {
+        "en": "Dipped headlights",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-33",
+    "topic": "attitude",
+    "promptEn": "In a one-way street with two lanes, where should you position to turn right?",
+    "options": [
+      {
+        "en": "Left lane",
+        "correct": false
+      },
+      {
+        "en": "Right lane",
+        "correct": true
+      },
+      {
+        "en": "Either lane",
+        "correct": false
+      },
+      {
+        "en": "Centre of road",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-34",
+    "topic": "attitude",
+    "promptEn": "A car cuts in very close ahead of you. What should you do?",
+    "options": [
+      {
+        "en": "Accelerate",
+        "correct": false
+      },
+      {
+        "en": "Sound horn",
+        "correct": false
+      },
+      {
+        "en": "Drop back to a safe distance",
+        "correct": true
+      },
+      {
+        "en": "Flash lights",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-35",
+    "topic": "attitude",
+    "promptEn": "An ambulance with blue flashing lights is behind you. What should you do?",
+    "options": [
+      {
+        "en": "Speed up",
+        "correct": false
+      },
+      {
+        "en": "Maintain speed",
+        "correct": false
+      },
+      {
+        "en": "Pull over safely and let it pass",
+        "correct": true
+      },
+      {
+        "en": "Brake sharply",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-36",
+    "topic": "attitude",
+    "promptEn": "Which crossing allows cyclists to ride across with pedestrians?",
+    "options": [
+      {
+        "en": "Puffin",
+        "correct": false
+      },
+      {
+        "en": "Pelican",
+        "correct": false
+      },
+      {
+        "en": "Zebra",
+        "correct": false
+      },
+      {
+        "en": "Toucan",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-37",
+    "topic": "attitude",
+    "promptEn": "What danger results from following a vehicle too closely?",
+    "options": [
+      {
+        "en": "Engine overheating",
+        "correct": false
+      },
+      {
+        "en": "Higher fuel use",
+        "correct": false
+      },
+      {
+        "en": "Reduced forward view",
+        "correct": true
+      },
+      {
+        "en": "Tyre damage",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-38",
+    "topic": "attitude",
+    "promptEn": "At night in a queue, how can you avoid dazzling drivers behind you?",
+    "options": [
+      {
+        "en": "Keep foot on brake",
+        "correct": false
+      },
+      {
+        "en": "Use parking brake and release footbrake",
+        "correct": true
+      },
+      {
+        "en": "Balance clutch",
+        "correct": false
+      },
+      {
+        "en": "Use both brakes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-01",
+    "topic": "safety-vehicle",
+    "promptEn": "In which situation would parking your vehicle cause an obstruction?",
+    "options": [
+      {
+        "en": "Next to a parking meter",
+        "correct": false
+      },
+      {
+        "en": "In front of a property entrance",
+        "correct": true
+      },
+      {
+        "en": "On your own driveway",
+        "correct": false
+      },
+      {
+        "en": "In a marked parking bay",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-02",
+    "topic": "safety-vehicle",
+    "promptEn": "What should you do when leaving your vehicle parked and unattended?",
+    "options": [
+      {
+        "en": "Leave the indicator on",
+        "correct": false
+      },
+      {
+        "en": "Park near a junction",
+        "correct": false
+      },
+      {
+        "en": "Lock the vehicle and remove the key",
+        "correct": true
+      },
+      {
+        "en": "Leave a window open",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-03",
+    "topic": "safety-vehicle",
+    "promptEn": "If your vehicle continues to bounce after pressing down on the bodywork, what does this indicate?",
+    "options": [
+      {
+        "en": "Worn tyres",
+        "correct": false
+      },
+      {
+        "en": "Under-inflated tyres",
+        "correct": false
+      },
+      {
+        "en": "Soft ground",
+        "correct": false
+      },
+      {
+        "en": "Worn shock absorbers",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-04",
+    "topic": "safety-vehicle",
+    "promptEn": "How is your journey likely to change if you travel outside peak traffic hours?",
+    "options": [
+      {
+        "en": "More fuel used",
+        "correct": false
+      },
+      {
+        "en": "Longer journey",
+        "correct": false
+      },
+      {
+        "en": "Greater danger",
+        "correct": false
+      },
+      {
+        "en": "Fewer delays",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-05",
+    "topic": "safety-vehicle",
+    "promptEn": "What benefit can smooth driving provide?",
+    "options": [
+      {
+        "en": "Longer journey times",
+        "correct": false
+      },
+      {
+        "en": "Increased fuel use",
+        "correct": false
+      },
+      {
+        "en": "Reduced fuel consumption by about 15%",
+        "correct": true
+      },
+      {
+        "en": "Increased emissions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-06",
+    "topic": "safety-vehicle",
+    "promptEn": "Where is a catalytic converter located on a vehicle?",
+    "options": [
+      {
+        "en": "Fuel tank",
+        "correct": false
+      },
+      {
+        "en": "Air filter",
+        "correct": false
+      },
+      {
+        "en": "Cooling system",
+        "correct": false
+      },
+      {
+        "en": "Exhaust system",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-07",
+    "topic": "safety-vehicle",
+    "promptEn": "Allowing which fluid level to fall too low could cause a crash?",
+    "options": [
+      {
+        "en": "Antifreeze",
+        "correct": false
+      },
+      {
+        "en": "Brake fluid",
+        "correct": true
+      },
+      {
+        "en": "Battery water",
+        "correct": false
+      },
+      {
+        "en": "Fuel",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-08",
+    "topic": "safety-vehicle",
+    "promptEn": "How can you reduce the risk of your vehicle being broken into at night?",
+    "options": [
+      {
+        "en": "Park in a dark area",
+        "correct": false
+      },
+      {
+        "en": "Leave steering unlocked",
+        "correct": false
+      },
+      {
+        "en": "Park in a well-lit area",
+        "correct": true
+      },
+      {
+        "en": "Park on a quiet road",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-09",
+    "topic": "safety-vehicle",
+    "promptEn": "When must you use parking lights when parked at night?",
+    "options": [
+      {
+        "en": "Near a bus stop",
+        "correct": false
+      },
+      {
+        "en": "Facing oncoming traffic",
+        "correct": false
+      },
+      {
+        "en": "When the speed limit exceeds 30 mph",
+        "correct": true
+      },
+      {
+        "en": "On private land",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-10",
+    "topic": "safety-vehicle",
+    "promptEn": "How much more fuel is typically used at 70 mph compared to 50 mph?",
+    "options": [
+      {
+        "en": "About 5%",
+        "correct": false
+      },
+      {
+        "en": "About 15%",
+        "correct": true
+      },
+      {
+        "en": "About 75%",
+        "correct": false
+      },
+      {
+        "en": "About 100%",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-11",
+    "topic": "safety-vehicle",
+    "promptEn": "Who is responsible for ensuring children wear seat belts in your car?",
+    "options": [
+      {
+        "en": "Parents",
+        "correct": false
+      },
+      {
+        "en": "Front passenger",
+        "correct": false
+      },
+      {
+        "en": "The children",
+        "correct": false
+      },
+      {
+        "en": "The driver",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-12",
+    "topic": "safety-vehicle",
+    "promptEn": "When may you leave your vehicle's engine running while parked?",
+    "options": [
+      {
+        "en": "Under 5 minutes",
+        "correct": false
+      },
+      {
+        "en": "Battery issues",
+        "correct": false
+      },
+      {
+        "en": "In a 20 mph zone",
+        "correct": false
+      },
+      {
+        "en": "Never when unattended",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-13",
+    "topic": "safety-vehicle",
+    "promptEn": "What does fuel-efficient driving help achieve?",
+    "options": [
+      {
+        "en": "More emissions",
+        "correct": false
+      },
+      {
+        "en": "Environmental protection and safety",
+        "correct": true
+      },
+      {
+        "en": "Engine damage",
+        "correct": false
+      },
+      {
+        "en": "Higher fuel bills",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-14",
+    "topic": "safety-vehicle",
+    "promptEn": "What's the safest way to leave valuables in your car?",
+    "options": [
+      {
+        "en": "In a visible bag",
+        "correct": false
+      },
+      {
+        "en": "Near a school",
+        "correct": false
+      },
+      {
+        "en": "Locked and out of sight",
+        "correct": true
+      },
+      {
+        "en": "Near a bus stop",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-15",
+    "topic": "safety-vehicle",
+    "promptEn": "What can be damaged by turning the steering wheel while stationary?",
+    "options": [
+      {
+        "en": "Engine",
+        "correct": false
+      },
+      {
+        "en": "Gearbox",
+        "correct": false
+      },
+      {
+        "en": "Brakes",
+        "correct": false
+      },
+      {
+        "en": "Tyres",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-16",
+    "topic": "safety-vehicle",
+    "promptEn": "What document should you remove from your vehicle when leaving it unattended?",
+    "options": [
+      {
+        "en": "Owner's manual",
+        "correct": false
+      },
+      {
+        "en": "Service record",
+        "correct": false
+      },
+      {
+        "en": "Dealer details",
+        "correct": false
+      },
+      {
+        "en": "Vehicle registration document",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-17",
+    "topic": "safety-vehicle",
+    "promptEn": "What is the main purpose of a catalytic converter?",
+    "options": [
+      {
+        "en": "Reduce fuel use",
+        "correct": false
+      },
+      {
+        "en": "Reduce fire risk",
+        "correct": false
+      },
+      {
+        "en": "Reduce harmful exhaust gases",
+        "correct": true
+      },
+      {
+        "en": "Reduce engine wear",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-18",
+    "topic": "safety-vehicle",
+    "promptEn": "How can you help prevent your car radio from being stolen?",
+    "options": [
+      {
+        "en": "Park in darkness",
+        "correct": false
+      },
+      {
+        "en": "Leave it on",
+        "correct": false
+      },
+      {
+        "en": "Park near junction",
+        "correct": false
+      },
+      {
+        "en": "Use a security-coded radio",
+        "correct": true
+      }
+    ]
+  }
+]

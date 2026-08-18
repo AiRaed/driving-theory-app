@@ -1,0 +1,27 @@
+{
+  "totalQuestions": 742,
+  "questionsProcessedInStore": 742,
+  "questionsWithHints": 609,
+  "questionsWithNoHints": 133,
+  "unprocessedCount": 0,
+  "unprocessedSample": [],
+  "totalVocabularyTermOccurrences": 1029,
+  "uniqueTerms": 530,
+  "failedIds": [],
+  "missingTranslationsByLanguage": {
+    "en": 0,
+    "ar": 0,
+    "ur": 0,
+    "ro": 0,
+    "pl": 0,
+    "pt": 0,
+    "bn": 0
+  },
+  "duplicateTermsInQuestion": 0,
+  "duplicateSamples": [],
+  "termNotInQuestion": 0,
+  "termNotInQuestionSamples": [],
+  "suspiciousLeakage": 0,
+  "suspiciousSamples": [],
+  "tooManyHints": []
+}

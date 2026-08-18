@@ -1,0 +1,856 @@
+{
+  "rules-of-the-road": {
+    "RR-30": {
+      "promptPt": "Uma ciclovia marcada com uma linha branca contínua está em vigor. O que significa isto para os condutores?",
+      "options": [
+        {
+          "pt": "Os condutores podem entrar se tiverem cuidado"
+        },
+        {
+          "pt": "Os condutores não devem utilizar a via"
+        },
+        {
+          "pt": "O estacionamento é permitido"
+        },
+        {
+          "pt": "Os motociclos devem usá-la"
+        }
+      ]
+    },
+    "RR-31": {
+      "promptPt": "Quando deve utilizar normalmente a via da direita numa estrada de duas vias com três faixas (dual carriageway)?",
+      "options": [
+        {
+          "pt": "Apenas ao ultrapassar"
+        },
+        {
+          "pt": "Ao virar à direita"
+        },
+        {
+          "pt": "Ao usar o controlo de cruzeiro"
+        },
+        {
+          "pt": "Ao conduzir depressa"
+        }
+      ]
+    },
+    "RR-32": {
+      "promptPt": "Numa rua de sentido único, por que lado pode ultrapassar outro veículo?",
+      "options": [
+        {
+          "pt": "Apenas pelo lado esquerdo"
+        },
+        {
+          "pt": "Apenas pelo lado direito"
+        },
+        {
+          "pt": "Por qualquer dos lados, se for seguro"
+        },
+        {
+          "pt": "A ultrapassagem não é permitida"
+        }
+      ]
+    },
+    "RR-33": {
+      "promptPt": "As restrições de estacionamento são indicadas para certos dias e horários. O que deve fazer durante esses períodos?",
+      "options": [
+        {
+          "pt": "Estacionar gratuitamente em qualquer sítio"
+        },
+        {
+          "pt": "Estacionar sobre linhas amarelas"
+        },
+        {
+          "pt": "Estacionar nos lugares e pagar se for exigido"
+        },
+        {
+          "pt": "Ignorar o sinal"
+        }
+      ]
+    },
+    "RR-34": {
+      "promptPt": "Numa rotunda, como deve sinalizar ao seguir em frente?",
+      "options": [
+        {
+          "pt": "Sinalizar à direita e depois à esquerda"
+        },
+        {
+          "pt": "Sem sinal na aproximação; sinalizar à esquerda para sair"
+        },
+        {
+          "pt": "Sinalizar à direita durante todo o percurso"
+        },
+        {
+          "pt": "Sinalizar depois de sair"
+        }
+      ]
+    },
+    "RR-35": {
+      "promptPt": "Quem está legalmente autorizado a sinalizar-lhe para parar?",
+      "options": [
+        {
+          "pt": "Um peão"
+        },
+        {
+          "pt": "Um motorista de autocarro"
+        },
+        {
+          "pt": "Um agente da polícia"
+        },
+        {
+          "pt": "Um motociclista"
+        }
+      ]
+    },
+    "RR-36": {
+      "promptPt": "Qual é o local mais seguro para estacionar o automóvel durante a noite?",
+      "options": [
+        {
+          "pt": "Numa estrada movimentada"
+        },
+        {
+          "pt": "Numa garagem"
+        },
+        {
+          "pt": "Perto de red routes"
+        },
+        {
+          "pt": "Num parque de estacionamento escuro"
+        }
+      ]
+    },
+    "RR-37": {
+      "promptPt": "Há um obstáculo do seu lado da estrada. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Continuar com prioridade"
+        },
+        {
+          "pt": "Acelerar para passar"
+        },
+        {
+          "pt": "Ceder a passagem ao trânsito em sentido contrário"
+        },
+        {
+          "pt": "Fazer sinal para os outros passarem"
+        }
+      ]
+    },
+    "RR-38": {
+      "promptPt": "Quando pode parar num clearway urbano (via com restrições de paragem)?",
+      "options": [
+        {
+          "pt": "Para usar o telemóvel"
+        },
+        {
+          "pt": "Para carregar/descarregar"
+        },
+        {
+          "pt": "Para deixar ou recolher passageiros"
+        },
+        {
+          "pt": "Para pedir indicações"
+        }
+      ]
+    },
+    "RR-39": {
+      "promptPt": "Qual é o limite nacional de velocidade para automóveis numa estrada de duas faixas (dual carriageway)?",
+      "options": [
+        {
+          "pt": "30 mph"
+        },
+        {
+          "pt": "50 mph"
+        },
+        {
+          "pt": "60 mph"
+        },
+        {
+          "pt": "70 mph"
+        }
+      ]
+    },
+    "RR-40": {
+      "promptPt": "Qual é a forma mais segura de inverter o sentido numa rua principal movimentada?",
+      "options": [
+        {
+          "pt": "Inversão de marcha"
+        },
+        {
+          "pt": "Marcha-atrás na estrada principal"
+        },
+        {
+          "pt": "Pedir a alguém que pare o trânsito"
+        },
+        {
+          "pt": "Virar numa estrada lateral sossegada"
+        }
+      ]
+    },
+    "RR-41": {
+      "promptPt": "Está à espera para virar à direita numa caixa de cruzamento (box junction) com trânsito em sentido contrário. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Entrar e esperar no interior"
+        },
+        {
+          "pt": "Esperar antes do cruzamento até a saída estar livre"
+        },
+        {
+          "pt": "Virar na mesma"
+        },
+        {
+          "pt": "Entrar quando alguém fizer sinal"
+        }
+      ]
+    },
+    "RR-42": {
+      "promptPt": "Que utentes da estrada podem utilizar legalmente as passagens Toucan?",
+      "options": [
+        {
+          "pt": "Automóveis e motociclos"
+        },
+        {
+          "pt": "Ciclistas e peões"
+        },
+        {
+          "pt": "Autocarros e camiões"
+        },
+        {
+          "pt": "Elétricos"
+        }
+      ]
+    },
+    "RR-43": {
+      "promptPt": "Está à espera numa passagem de nível. Passa um comboio, mas as luzes de aviso vermelhas continuam a piscar. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Sair e investigar"
+        },
+        {
+          "pt": "Telefonar ao operador de sinalização"
+        },
+        {
+          "pt": "Continuar à espera"
+        },
+        {
+          "pt": "Atravessar com cuidado"
+        }
+      ]
+    },
+    "RR-44": {
+      "promptPt": "Qual é a distância mínima a que pode estacionar de um cruzamento?",
+      "options": [
+        {
+          "pt": "10 metros (32 pés)"
+        },
+        {
+          "pt": "12 metros"
+        },
+        {
+          "pt": "15 metros"
+        },
+        {
+          "pt": "20 metros"
+        }
+      ]
+    },
+    "RR-45": {
+      "promptPt": "Quando pode estacionar num lugar reservado a condutores com deficiência?",
+      "options": [
+        {
+          "pt": "Quando tem um Blue Badge"
+        },
+        {
+          "pt": "Quando tem uma cadeira de rodas"
+        },
+        {
+          "pt": "Quando tem uma carta avançada"
+        },
+        {
+          "pt": "Quando o veículo está adaptado"
+        }
+      ]
+    },
+    "RR-46": {
+      "promptPt": "Está a virar à direita para uma estrada de duas faixas (dual carriageway). O separador central é demasiado estreito para o seu veículo. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Esperar no separador"
+        },
+        {
+          "pt": "Parar na primeira via"
+        },
+        {
+          "pt": "Esperar até a estrada estar livre nos dois sentidos"
+        },
+        {
+          "pt": "Avançar para mostrar a intenção"
+        }
+      ]
+    },
+    "RR-47": {
+      "promptPt": "Ao aproximar-se de uma viragem à esquerda a partir de uma estrada principal, como deve posicionar o veículo?",
+      "options": [
+        {
+          "pt": "Perto do centro"
+        },
+        {
+          "pt": "No meio"
+        },
+        {
+          "pt": "Desviar para a direita"
+        },
+        {
+          "pt": "Manter-se bem à esquerda"
+        }
+      ]
+    },
+    "RR-48": {
+      "promptPt": "Que tipo de veículo tem mais probabilidade de seguir um percurso invulgar numa rotunda?",
+      "options": [
+        {
+          "pt": "Carrinha familiar (estate)"
+        },
+        {
+          "pt": "Táxi"
+        },
+        {
+          "pt": "Carrinha de entregas"
+        },
+        {
+          "pt": "Veículo longo"
+        }
+      ]
+    },
+    "RR-49": {
+      "promptPt": "Porque deve conduzir devagar em ruas residenciais com automóveis estacionados?",
+      "options": [
+        {
+          "pt": "Para evitar alarmes"
+        },
+        {
+          "pt": "Para ver veículos de entregas"
+        },
+        {
+          "pt": "As crianças podem sair inesperadamente"
+        },
+        {
+          "pt": "Para permitir ultrapassagens"
+        }
+      ]
+    },
+    "RR-50": {
+      "promptPt": "Um sinal indica uma patrulha de atravessamento escolar. O que significa isto para os condutores?",
+      "options": [
+        {
+          "pt": "Limite nacional de velocidade"
+        },
+        {
+          "pt": "Entrada proibida"
+        },
+        {
+          "pt": "Estar preparado para parar para as crianças"
+        },
+        {
+          "pt": "Restrições de espera"
+        }
+      ]
+    },
+    "RR-51": {
+      "promptPt": "Numa autoestrada em Inglaterra, quando deve parar o veículo?",
+      "options": [
+        {
+          "pt": "Quando um peão lhe fizer sinal"
+        },
+        {
+          "pt": "Quando outro condutor parar"
+        },
+        {
+          "pt": "Quando um agente de trânsito (traffic officer) o indicar"
+        },
+        {
+          "pt": "Quando o pessoal das obras fizer sinal"
+        }
+      ]
+    },
+    "RR-52": {
+      "promptPt": "Ao seguir em frente numa rotunda, que sinal deve dar?",
+      "options": [
+        {
+          "pt": "Sinalizar à direita"
+        },
+        {
+          "pt": "Não sinalizar em nenhum momento"
+        },
+        {
+          "pt": "Sinalizar à esquerda na aproximação"
+        },
+        {
+          "pt": "Sinalizar à esquerda ao sair"
+        }
+      ]
+    },
+    "RR-53": {
+      "promptPt": "Quando deve, por lei, parar o veículo?",
+      "options": [
+        {
+          "pt": "Nas linhas de cedência de passagem"
+        },
+        {
+          "pt": "Antes de uma autoestrada"
+        },
+        {
+          "pt": "Após qualquer colisão que cause ferimentos ou danos"
+        },
+        {
+          "pt": "Em ruas de sentido único"
+        }
+      ]
+    },
+    "RR-54": {
+      "promptPt": "Que veículo pode precisar de mais espaço numa rotunda devido ao seu tamanho?",
+      "options": [
+        {
+          "pt": "Desportivo"
+        },
+        {
+          "pt": "Carrinha familiar (estate)"
+        },
+        {
+          "pt": "Carrinha"
+        },
+        {
+          "pt": "Veículo longo"
+        }
+      ]
+    },
+    "RR-55": {
+      "promptPt": "Quando pode entrar numa caixa de cruzamento (box junction)?",
+      "options": [
+        {
+          "pt": "Quando os semáforos o permitirem"
+        },
+        {
+          "pt": "Quando alguém fizer sinal para avançar"
+        },
+        {
+          "pt": "Quando a sua estrada de saída estiver livre"
+        },
+        {
+          "pt": "Quando o trânsito estiver lento"
+        }
+      ]
+    },
+    "RR-56": {
+      "promptPt": "À noite numa estrada com limite de 40 mph, o que deve fazer ao estacionar?",
+      "options": [
+        {
+          "pt": "Ficar de frente para o trânsito"
+        },
+        {
+          "pt": "Usar os médios"
+        },
+        {
+          "pt": "Usar as luzes de estacionamento"
+        },
+        {
+          "pt": "Estacionar sob um candeeiro"
+        }
+      ]
+    },
+    "RR-57": {
+      "promptPt": "Ao fazer marcha-atrás para uma estrada lateral, quando o seu veículo representa o maior risco para os outros?",
+      "options": [
+        {
+          "pt": "Depois de terminar"
+        },
+        {
+          "pt": "Antes de começar"
+        },
+        {
+          "pt": "Quando está totalmente na estrada lateral"
+        },
+        {
+          "pt": "Quando a frente do veículo se desvia para fora"
+        }
+      ]
+    },
+    "RR-58": {
+      "promptPt": "Qual é o local mais seguro para estacionar o veículo à noite?",
+      "options": [
+        {
+          "pt": "Perto de uma esquadra da polícia"
+        },
+        {
+          "pt": "Numa estrada sossegada"
+        },
+        {
+          "pt": "Numa red route (via vermelha)"
+        },
+        {
+          "pt": "Numa zona bem iluminada"
+        }
+      ]
+    },
+    "RR-59": {
+      "promptPt": "Enquanto atravessa uma passagem de nível, as luzes de aviso ativam-se e soa um alarme. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Parar imediatamente"
+        },
+        {
+          "pt": "Fazer marcha-atrás"
+        },
+        {
+          "pt": "Desimpedir a passagem imediatamente"
+        },
+        {
+          "pt": "Usar as luzes de emergência"
+        }
+      ]
+    },
+    "RR-60": {
+      "promptPt": "Quando pode parar num clearway (via onde parar normalmente não é permitido)?",
+      "options": [
+        {
+          "pt": "Nunca"
+        },
+        {
+          "pt": "Durante o dia"
+        },
+        {
+          "pt": "Nas horas de ponta"
+        },
+        {
+          "pt": "Quando estiver movimentado"
+        }
+      ]
+    },
+    "RR-61": {
+      "promptPt": "Um sinal mostra o limite de velocidade numa single carriageway. Qual é a velocidade máxima para um automóvel a rebocar um reboque?",
+      "options": [
+        {
+          "pt": "30 mph"
+        },
+        {
+          "pt": "40 mph"
+        },
+        {
+          "pt": "50 mph"
+        },
+        {
+          "pt": "60 mph"
+        }
+      ]
+    },
+    "RR-62": {
+      "promptPt": "Vê obras na estrada com um limite de velocidade temporário. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ignorá-lo"
+        },
+        {
+          "pt": "Usar o seu critério"
+        },
+        {
+          "pt": "Respeitar o limite indicado"
+        },
+        {
+          "pt": "Segui-lo apenas nas horas de ponta"
+        }
+      ]
+    },
+    "RR-63": {
+      "promptPt": "Um sinal indica o fim de uma zona de estacionamento controlado. O que significa isto?",
+      "options": [
+        {
+          "pt": "Sem saída"
+        },
+        {
+          "pt": "Aplica-se agora o estacionamento gratuito"
+        },
+        {
+          "pt": "Terminam as medidas de acalmia de trânsito"
+        },
+        {
+          "pt": "Entrada proibida"
+        }
+      ]
+    },
+    "RR-64": {
+      "promptPt": "Há linhas brancas duplas ao longo do centro da estrada. Quando pode estacionar à esquerda?",
+      "options": [
+        {
+          "pt": "Se a linha for interrompida"
+        },
+        {
+          "pt": "Durante o dia"
+        },
+        {
+          "pt": "Para recolher passageiros"
+        },
+        {
+          "pt": "Em nenhum momento"
+        }
+      ]
+    },
+    "RR-65": {
+      "promptPt": "Só há lugares para pessoas com deficiência disponíveis e não tem deficiência. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Usá-lo brevemente"
+        },
+        {
+          "pt": "Ficar junto ao veículo"
+        },
+        {
+          "pt": "Deixar um lugar livre"
+        },
+        {
+          "pt": "Esperar por um lugar normal"
+        }
+      ]
+    },
+    "RR-66": {
+      "promptPt": "Até que distância pode fazer marcha-atrás?",
+      "options": [
+        {
+          "pt": "O comprimento do automóvel"
+        },
+        {
+          "pt": "À volta de uma esquina"
+        },
+        {
+          "pt": "O quanto for necessário e seguro"
+        },
+        {
+          "pt": "O comprimento da rua"
+        }
+      ]
+    },
+    "RR-67": {
+      "promptPt": "Qual é o limite de velocidade para um automóvel a rebocar uma caravana numa estrada de duas faixas (dual carriageway)?",
+      "options": [
+        {
+          "pt": "40 mph"
+        },
+        {
+          "pt": "50 mph"
+        },
+        {
+          "pt": "60 mph"
+        },
+        {
+          "pt": "70 mph"
+        }
+      ]
+    }
+  },
+  "safety-vehicle": {
+    "SV-21": {
+      "promptPt": "Se o seu automóvel tiver monitorização do ângulo morto, o que deve verificar regularmente para garantir que funciona corretamente?",
+      "options": [
+        {
+          "pt": "Pressão dos pneus"
+        },
+        {
+          "pt": "Sinal GPS"
+        },
+        {
+          "pt": "Limpar as zonas dos sensores no veículo"
+        },
+        {
+          "pt": "Posição da dash cam"
+        }
+      ]
+    },
+    "SV-22": {
+      "promptPt": "Qual é a melhor forma de reduzir o risco de arrombamento do automóvel quando estiver desacompanhado?",
+      "options": [
+        {
+          "pt": "Estacionar perto de uma praça de táxis"
+        },
+        {
+          "pt": "Deixar objetos de valor no chão"
+        },
+        {
+          "pt": "Levar todos os objetos de valor consigo"
+        },
+        {
+          "pt": "Estacionar perto de um quartel de bombeiros"
+        }
+      ]
+    },
+    "SV-23": {
+      "promptPt": "Porque é importante usar calçado adequado ao conduzir?",
+      "options": [
+        {
+          "pt": "Para ajustar o banco"
+        },
+        {
+          "pt": "Para caminhar após uma avaria"
+        },
+        {
+          "pt": "Para evitar o desgaste dos pedais"
+        },
+        {
+          "pt": "Para manter o controlo adequado dos pedais"
+        }
+      ]
+    },
+    "SV-24": {
+      "promptPt": "O que tem mais probabilidade de aumentar o desperdício de combustível?",
+      "options": [
+        {
+          "pt": "Reduzir a velocidade"
+        },
+        {
+          "pt": "Conduzir em autoestradas"
+        },
+        {
+          "pt": "Usar diferentes marcas de combustível"
+        },
+        {
+          "pt": "Pneus com pressão insuficiente"
+        }
+      ]
+    },
+    "SV-25": {
+      "promptPt": "Quando pode um passageiro viajar legalmente sem cinto de segurança?",
+      "options": [
+        {
+          "pt": "Sentado no banco traseiro"
+        },
+        {
+          "pt": "Com menos de 14 anos"
+        },
+        {
+          "pt": "Em viagens curtas"
+        },
+        {
+          "pt": "Quando tem isenção médica"
+        }
+      ]
+    },
+    "SV-26": {
+      "promptPt": "Como é que a instalação de um suporte de tejadilho (roof rack) afeta o automóvel?",
+      "options": [
+        {
+          "pt": "Menos ruído do vento"
+        },
+        {
+          "pt": "Aceleração mais rápida"
+        },
+        {
+          "pt": "Maior consumo de combustível"
+        },
+        {
+          "pt": "Menor consumo de óleo"
+        }
+      ]
+    },
+    "SV-27": {
+      "promptPt": "Que sistema de assistência ao condutor é concebido para prevenir ativamente colisões?",
+      "options": [
+        {
+          "pt": "Controlo de cruzeiro"
+        },
+        {
+          "pt": "Visão noturna"
+        },
+        {
+          "pt": "Alerta de sonolência"
+        },
+        {
+          "pt": "Sistema de travagem de emergência"
+        }
+      ]
+    },
+    "SV-28": {
+      "promptPt": "O que indica normalmente se uma luz de aviso vermelha dos travões permanecer acesa durante a condução?",
+      "options": [
+        {
+          "pt": "Óleo do motor baixo"
+        },
+        {
+          "pt": "Avaria no sistema de travagem"
+        },
+        {
+          "pt": "Cinto de segurança não colocado"
+        },
+        {
+          "pt": "Falha de uma luz traseira"
+        }
+      ]
+    },
+    "SV-29": {
+      "promptPt": "Uma criança de 11 anos está sentada no banco da frente e tem menos de 1,35 m de altura. Que retenção deve ser usada?",
+      "options": [
+        {
+          "pt": "Cinto de adulto"
+        },
+        {
+          "pt": "Sistema de retenção infantil adequado"
+        },
+        {
+          "pt": "Cinto apertado pela própria criança"
+        },
+        {
+          "pt": "Visão clara à frente"
+        }
+      ]
+    },
+    "SV-30": {
+      "promptPt": "Porque se recomenda estacionar num parque de estacionamento seguro?",
+      "options": [
+        {
+          "pt": "É mais fácil encontrar o automóvel"
+        },
+        {
+          "pt": "Proteção contra o tempo"
+        },
+        {
+          "pt": "Custos de estacionamento mais baixos"
+        },
+        {
+          "pt": "Ajuda a dissuadir o roubo"
+        }
+      ]
+    },
+    "SV-31": {
+      "promptPt": "Como deve eliminar uma bateria de automóvel usada?",
+      "options": [
+        {
+          "pt": "Enterrá-la"
+        },
+        {
+          "pt": "Pô-la no lixo doméstico"
+        },
+        {
+          "pt": "Levá-la a um local de reciclagem autorizado"
+        },
+        {
+          "pt": "Deixá-la num terreno baldio"
+        }
+      ]
+    },
+    "SV-32": {
+      "promptPt": "Tem de chegar a horas a uma marcação. Como deve planear a viagem?",
+      "options": [
+        {
+          "pt": "Viajar nas horas de maior movimento"
+        },
+        {
+          "pt": "Impedir ultrapassagens"
+        },
+        {
+          "pt": "Prever tempo extra"
+        },
+        {
+          "pt": "Evitar estradas com limite nacional de velocidade"
+        }
+      ]
+    }
+  }
+}

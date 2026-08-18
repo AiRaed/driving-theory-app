@@ -1,0 +1,322 @@
+[
+  {
+    "term": "dual carriageway",
+    "en": "A major road with traffic travelling in opposite directions, separated by a central reservation."
+  },
+  {
+    "term": "central reservation",
+    "en": "The strip or barrier that separates the two directions of traffic on a dual carriageway."
+  },
+  {
+    "term": "hard shoulder",
+    "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency."
+  },
+  {
+    "term": "motorway",
+    "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK."
+  },
+  {
+    "term": "contraflow",
+    "en": "A temporary traffic system where vehicles travel in the opposite direction to normal, often during roadworks."
+  },
+  {
+    "term": "give way",
+    "en": "Let other traffic go first when they have priority, instead of continuing ahead of them."
+  },
+  {
+    "term": "stopping distance",
+    "en": "The total distance needed to stop: thinking distance plus braking distance."
+  },
+  {
+    "term": "level crossing",
+    "en": "A place where a road crosses a railway line, often with barriers and warning lights."
+  },
+  {
+    "term": "box junction",
+    "en": "A road junction painted with yellow criss-cross lines on the road surface."
+  },
+  {
+    "term": "pelican crossing",
+    "en": "A pedestrian crossing controlled by traffic lights, including a flashing amber phase."
+  },
+  {
+    "term": "zebra crossing",
+    "en": "A pedestrian crossing with black-and-white stripes where drivers must give way to people waiting to cross."
+  },
+  {
+    "term": "rear fog lights",
+    "en": "Bright red lights at the back of a vehicle used only in thick fog to help others see you."
+  },
+  {
+    "term": "tyre pressures",
+    "en": "How much air is in each tyre; incorrect pressure affects handling, braking, and tyre wear."
+  },
+  {
+    "term": "national speed limit",
+    "en": "The default UK speed limit when no numbered limit signs are shown (varies by road type and vehicle)."
+  },
+  {
+    "term": "single carriageway",
+    "en": "A road without a central reservation separating opposite directions of traffic."
+  },
+  {
+    "term": "one-way street",
+    "en": "A street where traffic is allowed to travel in only one direction."
+  },
+  {
+    "term": "overtaken",
+    "en": "When another vehicle has passed you and moved ahead of you."
+  },
+  {
+    "term": "skid marks",
+    "en": "Marks left on the road when tyres lose grip; on warning signs they often mean a slippery road ahead."
+  },
+  {
+    "term": "triangular warning sign",
+    "en": "A red-bordered triangle road sign that warns of a hazard ahead."
+  },
+  {
+    "term": "main road",
+    "en": "A larger, busier road that smaller side roads join onto."
+  },
+  {
+    "term": "emerge",
+    "en": "Come out onto the road from a side road, driveway, or similar entrance."
+  },
+  {
+    "term": "staggered junction",
+    "en": "A junction where side roads join from left and right at slightly different points, not opposite each other."
+  },
+  {
+    "term": "crossroads",
+    "en": "A junction where two roads cross, usually forming a plus-sign shape."
+  },
+  {
+    "term": "road narrows",
+    "en": "The carriageway becomes narrower ahead, so there is less space for vehicles."
+  },
+  {
+    "term": "speed humps",
+    "en": "Raised ridges across the road that force drivers to slow down (also called sleeping policemen)."
+  },
+  {
+    "term": "slippery road",
+    "en": "A road surface with poor tyre grip, so vehicles can skid more easily."
+  },
+  {
+    "term": "uneven road surface",
+    "en": "A road that is bumpy or irregular rather than smooth."
+  },
+  {
+    "term": "mileage marker",
+    "en": "A roadside post or sign showing distance along a route, often in miles."
+  },
+  {
+    "term": "mandatory route",
+    "en": "A route you are required to follow, not just a suggested direction."
+  },
+  {
+    "term": "primary route",
+    "en": "A major UK road between towns and cities, usually signed in green with white lettering."
+  },
+  {
+    "term": "route numbers",
+    "en": "Official road identifiers such as A1 or M25 shown on direction signs."
+  },
+  {
+    "term": "loose chippings",
+    "en": "Small loose stones on a newly surfaced road that can fly up and damage vehicles."
+  },
+  {
+    "term": "kerb",
+    "en": "The raised stone or concrete edge between the road and the pavement (US: curb)."
+  },
+  {
+    "term": "hands-free phone",
+    "en": "A phone you can use without holding it, for example with a speaker or Bluetooth kit."
+  },
+  {
+    "term": "GPS",
+    "en": "A sat-nav system that gives turn-by-turn directions while you drive."
+  },
+  {
+    "term": "reversing",
+    "en": "Driving the vehicle backwards."
+  },
+  {
+    "term": "road camber",
+    "en": "The slight slope built across the road surface, usually higher in the middle."
+  },
+  {
+    "term": "overtaking",
+    "en": "Passing a slower vehicle by moving alongside and ahead of it."
+  },
+  {
+    "term": "dual carriageways",
+    "en": "A major road with traffic travelling in opposite directions, separated by a central reservation."
+  },
+  {
+    "term": "dips",
+    "en": "Low points in the road that can hide traffic until you are close."
+  },
+  {
+    "term": "hand-held mobile phone",
+    "en": "A mobile phone that you hold in your hand while using it."
+  },
+  {
+    "term": "automatic transmission",
+    "en": "A gearbox that changes gears for you, without a clutch pedal."
+  },
+  {
+    "term": "demisters",
+    "en": "Controls that clear mist from the windows so you can see clearly."
+  },
+  {
+    "term": "interior mirror",
+    "en": "The rear-view mirror inside the car, usually at the top of the windscreen."
+  },
+  {
+    "term": "U-turn",
+    "en": "Turning the vehicle all the way round to go back the way you came."
+  },
+  {
+    "term": "shoulder check",
+    "en": "Looking over your shoulder to see areas the mirrors may miss."
+  },
+  {
+    "term": "moving off",
+    "en": "Starting to drive away after you have been stationary."
+  },
+  {
+    "term": "parking brake",
+    "en": "The brake (often a handbrake) that holds the vehicle still when parked."
+  },
+  {
+    "term": "arm signal",
+    "en": "A hand signal given by the driver to show other road users what you intend to do."
+  },
+  {
+    "term": "windscreen pillars",
+    "en": "The upright frames at the edges of the windscreen that can block part of your view."
+  },
+  {
+    "term": "one-way streets",
+    "en": "A street where traffic is allowed to travel in only one direction."
+  },
+  {
+    "term": "hazard",
+    "en": "Anything on or near the road that could cause danger or force you to change speed or direction."
+  },
+  {
+    "term": "transverse yellow road markings",
+    "en": "Yellow lines painted across the road (from side to side), not along it."
+  },
+  {
+    "term": "emerging",
+    "en": "Coming out from a junction or side road onto another road."
+  },
+  {
+    "term": "licensing authority",
+    "en": "The official body that issues and manages driving licences (in Great Britain, the DVLA)."
+  },
+  {
+    "term": "demister",
+    "en": "A control that clears mist from the windows so you can see clearly."
+  },
+  {
+    "term": "overhead lane signals",
+    "en": "Lights above each lane that show whether that lane is open or closed to traffic."
+  },
+  {
+    "term": "amber flashing beacon",
+    "en": "An orange warning light that flashes on a vehicle to make it more noticeable."
+  },
+  {
+    "term": "two-way roads",
+    "en": "Roads where traffic travels in both directions."
+  },
+  {
+    "term": "stop line",
+    "en": "The solid white line at a junction that marks where you must stop when required."
+  },
+  {
+    "term": "verge",
+    "en": "The soft or grassy edge beside the road, not meant for normal driving."
+  },
+  {
+    "term": "level crossings",
+    "en": "A place where a road crosses a railway line, often with barriers and warning lights."
+  },
+  {
+    "term": "driveway",
+    "en": "A private path from a house or property that joins the public road."
+  },
+  {
+    "term": "door mirrors",
+    "en": "The side mirrors mounted on the doors, used to see traffic beside and behind you."
+  },
+  {
+    "term": "blind spots",
+    "en": "Areas around the vehicle that you cannot see in your mirrors alone."
+  },
+  {
+    "term": "licensing authority (DVLA)",
+    "en": "The official body that issues and manages driving licences (Driver and Vehicle Licensing Agency)."
+  },
+  {
+    "term": "number plate",
+    "en": "The plate on a vehicle that shows its registration number."
+  },
+  {
+    "term": "lorry",
+    "en": "A large goods vehicle used for carrying cargo (also called a truck)."
+  },
+  {
+    "term": "fuel-efficient driving",
+    "en": "Driving in a way that uses less fuel, often by smoother acceleration and steadier speed."
+  },
+  {
+    "term": "exhaust emissions",
+    "en": "Gases and particles released from a vehicle’s exhaust into the air."
+  },
+  {
+    "term": "residential area",
+    "en": "A neighbourhood of homes where traffic and pedestrians are often close together."
+  },
+  {
+    "term": "No stopping",
+    "en": "A ban on stopping your vehicle at all, even briefly (stricter than no parking)."
+  },
+  {
+    "term": "No parking",
+    "en": "You must not leave the vehicle parked, but brief stopping to drop off may be allowed."
+  },
+  {
+    "term": "End of restrictions",
+    "en": "A sign meaning earlier parking or waiting limits no longer apply beyond that point."
+  },
+  {
+    "term": "motor vehicles",
+    "en": "Powered road vehicles such as cars, vans, and motorcycles (not bicycles or pedestrians)."
+  },
+  {
+    "term": "roundabout",
+    "en": "A circular junction where traffic usually travels clockwise and you give way to traffic already on it."
+  },
+  {
+    "term": "mini-roundabout",
+    "en": "A small roundabout, often marked by a white painted circle on the road."
+  },
+  {
+    "term": "Cycle route",
+    "en": "A path or lane intended for bicycles."
+  },
+  {
+    "term": "speed camera zone",
+    "en": "An area where cameras check vehicle speeds for enforcement."
+  },
+  {
+    "term": "Roadworks",
+    "en": "Road repairs or construction that may change layout, lanes, or speed limits."
+  }
+]

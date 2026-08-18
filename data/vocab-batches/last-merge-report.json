@@ -1,0 +1,21 @@
+{
+  "mergedQuestions": 120,
+  "mergedHints": 198,
+  "rejected": 0,
+  "failed": [],
+  "outFiles": [
+    "out-001.json",
+    "out-002.json",
+    "out-003.json",
+    "out-004.json",
+    "out-005.json",
+    "out-006.json",
+    "out-007.json",
+    "out-008.json",
+    "out-009.json",
+    "out-010.json",
+    "out-011.json",
+    "out-012.json",
+    "out-013.json"
+  ]
+}

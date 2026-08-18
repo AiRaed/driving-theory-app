@@ -1,0 +1,952 @@
+[
+  {
+    "id": "RR-30",
+    "topic": "rules-of-the-road",
+    "promptEn": "A cycle lane marked with a solid white line is in operation. What does this mean for drivers?",
+    "options": [
+      {
+        "en": "Drivers may enter if careful"
+      },
+      {
+        "en": "Drivers must not use the lane"
+      },
+      {
+        "en": "Parking is allowed"
+      },
+      {
+        "en": "Motorcycles must use it"
+      }
+    ]
+  },
+  {
+    "id": "RR-31",
+    "topic": "rules-of-the-road",
+    "promptEn": "When should you normally use the right-hand lane on a three-lane dual carriageway?",
+    "options": [
+      {
+        "en": "When overtaking only"
+      },
+      {
+        "en": "When turning right"
+      },
+      {
+        "en": "Using cruise control"
+      },
+      {
+        "en": "Driving fast"
+      }
+    ]
+  },
+  {
+    "id": "RR-32",
+    "topic": "rules-of-the-road",
+    "promptEn": "On a one-way street, where may you overtake another vehicle?",
+    "options": [
+      {
+        "en": "Left side only"
+      },
+      {
+        "en": "Right side only"
+      },
+      {
+        "en": "Either side if safe"
+      },
+      {
+        "en": "Overtaking not allowed"
+      }
+    ]
+  },
+  {
+    "id": "RR-33",
+    "topic": "rules-of-the-road",
+    "promptEn": "Parking restrictions are shown for certain days and times. What should you do during those times?",
+    "options": [
+      {
+        "en": "Park free anywhere"
+      },
+      {
+        "en": "Park on yellow lines"
+      },
+      {
+        "en": "Park in bays and pay if required"
+      },
+      {
+        "en": "Ignore the sign"
+      }
+    ]
+  },
+  {
+    "id": "RR-34",
+    "topic": "rules-of-the-road",
+    "promptEn": "At a roundabout, how should you signal when going straight ahead?",
+    "options": [
+      {
+        "en": "Signal right then left"
+      },
+      {
+        "en": "No signal on approach, signal left to exit"
+      },
+      {
+        "en": "Signal right throughout"
+      },
+      {
+        "en": "Signal after leaving"
+      }
+    ]
+  },
+  {
+    "id": "RR-35",
+    "topic": "rules-of-the-road",
+    "promptEn": "Who is legally authorised to signal you to stop?",
+    "options": [
+      {
+        "en": "Pedestrian"
+      },
+      {
+        "en": "Bus driver"
+      },
+      {
+        "en": "Police officer"
+      },
+      {
+        "en": "Motorcyclist"
+      }
+    ]
+  },
+  {
+    "id": "RR-36",
+    "topic": "rules-of-the-road",
+    "promptEn": "Where is the safest place to park your car overnight?",
+    "options": [
+      {
+        "en": "On a busy road"
+      },
+      {
+        "en": "In a garage"
+      },
+      {
+        "en": "Near red routes"
+      },
+      {
+        "en": "In a dark car park"
+      }
+    ]
+  },
+  {
+    "id": "RR-37",
+    "topic": "rules-of-the-road",
+    "promptEn": "There's an obstruction on your side of the road. What should you do?",
+    "options": [
+      {
+        "en": "Continue with priority"
+      },
+      {
+        "en": "Accelerate past"
+      },
+      {
+        "en": "Give way to oncoming traffic"
+      },
+      {
+        "en": "Wave others through"
+      }
+    ]
+  },
+  {
+    "id": "RR-38",
+    "topic": "rules-of-the-road",
+    "promptEn": "When may you stop on an urban clearway?",
+    "options": [
+      {
+        "en": "To use phone"
+      },
+      {
+        "en": "To load/unload"
+      },
+      {
+        "en": "To set down or pick up passengers"
+      },
+      {
+        "en": "To ask directions"
+      }
+    ]
+  },
+  {
+    "id": "RR-39",
+    "topic": "rules-of-the-road",
+    "promptEn": "What is the national speed limit for cars on a dual carriageway?",
+    "options": [
+      {
+        "en": "30 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      },
+      {
+        "en": "70 mph"
+      }
+    ]
+  },
+  {
+    "id": "RR-40",
+    "topic": "rules-of-the-road",
+    "promptEn": "What's the safest way to turn around on a busy high street?",
+    "options": [
+      {
+        "en": "U-turn"
+      },
+      {
+        "en": "Reverse on main road"
+      },
+      {
+        "en": "Ask someone to stop traffic"
+      },
+      {
+        "en": "Turn around in a quiet side road"
+      }
+    ]
+  },
+  {
+    "id": "RR-41",
+    "topic": "rules-of-the-road",
+    "promptEn": "You're waiting to turn right at a box junction with oncoming traffic. What should you do?",
+    "options": [
+      {
+        "en": "Enter and wait inside"
+      },
+      {
+        "en": "Wait before the junction until exit is clear"
+      },
+      {
+        "en": "Turn anyway"
+      },
+      {
+        "en": "Enter when waved"
+      }
+    ]
+  },
+  {
+    "id": "RR-42",
+    "topic": "rules-of-the-road",
+    "promptEn": "Which road users can legally use toucan crossings?",
+    "options": [
+      {
+        "en": "Cars and motorcycles"
+      },
+      {
+        "en": "Cyclists and pedestrians"
+      },
+      {
+        "en": "Buses and lorries"
+      },
+      {
+        "en": "Trams"
+      }
+    ]
+  },
+  {
+    "id": "RR-43",
+    "topic": "rules-of-the-road",
+    "promptEn": "You're waiting at a level crossing. A train passes, but the red warning lights continue flashing. What should you do?",
+    "options": [
+      {
+        "en": "Get out and investigate"
+      },
+      {
+        "en": "Telephone the signal operator"
+      },
+      {
+        "en": "Continue waiting"
+      },
+      {
+        "en": "Drive across carefully"
+      }
+    ]
+  },
+  {
+    "id": "RR-44",
+    "topic": "rules-of-the-road",
+    "promptEn": "What is the minimum distance you may park from a junction?",
+    "options": [
+      {
+        "en": "10 metres (32 feet)"
+      },
+      {
+        "en": "12 metres"
+      },
+      {
+        "en": "15 metres"
+      },
+      {
+        "en": "20 metres"
+      }
+    ]
+  },
+  {
+    "id": "RR-45",
+    "topic": "rules-of-the-road",
+    "promptEn": "When are you allowed to park in a bay reserved for disabled drivers?",
+    "options": [
+      {
+        "en": "When you have a Blue Badge"
+      },
+      {
+        "en": "When you have a wheelchair"
+      },
+      {
+        "en": "When you hold an advanced licence"
+      },
+      {
+        "en": "When the vehicle is adapted"
+      }
+    ]
+  },
+  {
+    "id": "RR-46",
+    "topic": "rules-of-the-road",
+    "promptEn": "You're turning right onto a dual carriageway. The central reservation is too narrow for your vehicle. What should you do?",
+    "options": [
+      {
+        "en": "Wait in the reservation"
+      },
+      {
+        "en": "Stop in the first lane"
+      },
+      {
+        "en": "Wait until the road is clear both ways"
+      },
+      {
+        "en": "Move forward to show intent"
+      }
+    ]
+  },
+  {
+    "id": "RR-47",
+    "topic": "rules-of-the-road",
+    "promptEn": "As you approach a left turn from a main road, how should you position your vehicle?",
+    "options": [
+      {
+        "en": "Near the centre"
+      },
+      {
+        "en": "In the middle"
+      },
+      {
+        "en": "Swing right"
+      },
+      {
+        "en": "Keep well to the left"
+      }
+    ]
+  },
+  {
+    "id": "RR-48",
+    "topic": "rules-of-the-road",
+    "promptEn": "Which type of vehicle is most likely to take an unusual path at a roundabout?",
+    "options": [
+      {
+        "en": "Estate car"
+      },
+      {
+        "en": "Taxi"
+      },
+      {
+        "en": "Delivery van"
+      },
+      {
+        "en": "Long vehicle"
+      }
+    ]
+  },
+  {
+    "id": "RR-49",
+    "topic": "rules-of-the-road",
+    "promptEn": "Why should you drive slowly along residential streets with parked cars?",
+    "options": [
+      {
+        "en": "To avoid alarms"
+      },
+      {
+        "en": "To see delivery vehicles"
+      },
+      {
+        "en": "Children may run out unexpectedly"
+      },
+      {
+        "en": "To allow overtaking"
+      }
+    ]
+  },
+  {
+    "id": "RR-50",
+    "topic": "rules-of-the-road",
+    "promptEn": "A sign indicates a school crossing patrol. What does this mean for drivers?",
+    "options": [
+      {
+        "en": "National speed limit"
+      },
+      {
+        "en": "No entry"
+      },
+      {
+        "en": "Be ready to stop for children"
+      },
+      {
+        "en": "Waiting restrictions"
+      }
+    ]
+  },
+  {
+    "id": "RR-51",
+    "topic": "rules-of-the-road",
+    "promptEn": "On a motorway in England, when must you stop your vehicle?",
+    "options": [
+      {
+        "en": "When signalled by a pedestrian"
+      },
+      {
+        "en": "When another driver stops"
+      },
+      {
+        "en": "When directed by a traffic officer"
+      },
+      {
+        "en": "When roadworks staff wave"
+      }
+    ]
+  },
+  {
+    "id": "RR-52",
+    "topic": "rules-of-the-road",
+    "promptEn": "When going straight ahead at a roundabout, what signal should you give?",
+    "options": [
+      {
+        "en": "Signal right"
+      },
+      {
+        "en": "No signal at any time"
+      },
+      {
+        "en": "Signal left on approach"
+      },
+      {
+        "en": "Signal left when exiting"
+      }
+    ]
+  },
+  {
+    "id": "RR-53",
+    "topic": "rules-of-the-road",
+    "promptEn": "When must you stop your vehicle by law?",
+    "options": [
+      {
+        "en": "At give-way lines"
+      },
+      {
+        "en": "Before a motorway"
+      },
+      {
+        "en": "After any collision causing injury or damage"
+      },
+      {
+        "en": "At one-way streets"
+      }
+    ]
+  },
+  {
+    "id": "RR-54",
+    "topic": "rules-of-the-road",
+    "promptEn": "Which vehicle may need extra room at a roundabout due to its size?",
+    "options": [
+      {
+        "en": "Sports car"
+      },
+      {
+        "en": "Estate car"
+      },
+      {
+        "en": "Van"
+      },
+      {
+        "en": "Long vehicle"
+      }
+    ]
+  },
+  {
+    "id": "RR-55",
+    "topic": "rules-of-the-road",
+    "promptEn": "When may you enter a box junction?",
+    "options": [
+      {
+        "en": "When traffic signals allow"
+      },
+      {
+        "en": "When waved through"
+      },
+      {
+        "en": "When your exit road is clear"
+      },
+      {
+        "en": "When traffic is slow"
+      }
+    ]
+  },
+  {
+    "id": "RR-56",
+    "topic": "rules-of-the-road",
+    "promptEn": "At night on a road with a 40 mph limit, what should you do when parking?",
+    "options": [
+      {
+        "en": "Face traffic"
+      },
+      {
+        "en": "Use dipped headlights"
+      },
+      {
+        "en": "Use parking lights"
+      },
+      {
+        "en": "Park under a lamp"
+      }
+    ]
+  },
+  {
+    "id": "RR-57",
+    "topic": "rules-of-the-road",
+    "promptEn": "When reversing into a side road, when does your vehicle pose the greatest risk to others?",
+    "options": [
+      {
+        "en": "After finishing"
+      },
+      {
+        "en": "Before starting"
+      },
+      {
+        "en": "When fully in the side road"
+      },
+      {
+        "en": "When the front swings out"
+      }
+    ]
+  },
+  {
+    "id": "RR-58",
+    "topic": "rules-of-the-road",
+    "promptEn": "Where is the safest place to park your vehicle at night?",
+    "options": [
+      {
+        "en": "Near police station"
+      },
+      {
+        "en": "Quiet road"
+      },
+      {
+        "en": "Red route"
+      },
+      {
+        "en": "Well-lit area"
+      }
+    ]
+  },
+  {
+    "id": "RR-59",
+    "topic": "rules-of-the-road",
+    "promptEn": "While driving over a level crossing, warning lights activate and an alarm sounds. What should you do?",
+    "options": [
+      {
+        "en": "Stop immediately"
+      },
+      {
+        "en": "Reverse"
+      },
+      {
+        "en": "Clear the crossing immediately"
+      },
+      {
+        "en": "Use hazard lights"
+      }
+    ]
+  },
+  {
+    "id": "RR-60",
+    "topic": "rules-of-the-road",
+    "promptEn": "When may you stop on a clearway?",
+    "options": [
+      {
+        "en": "Never"
+      },
+      {
+        "en": "During daylight"
+      },
+      {
+        "en": "Rush hour"
+      },
+      {
+        "en": "When busy"
+      }
+    ]
+  },
+  {
+    "id": "RR-61",
+    "topic": "rules-of-the-road",
+    "promptEn": "A sign shows a single carriageway speed limit. What is the maximum speed for a car towing a trailer?",
+    "options": [
+      {
+        "en": "30 mph"
+      },
+      {
+        "en": "40 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      }
+    ]
+  },
+  {
+    "id": "RR-62",
+    "topic": "rules-of-the-road",
+    "promptEn": "You see roadworks with a temporary speed limit. What must you do?",
+    "options": [
+      {
+        "en": "Ignore it"
+      },
+      {
+        "en": "Use judgement"
+      },
+      {
+        "en": "Obey the displayed limit"
+      },
+      {
+        "en": "Only follow during rush hour"
+      }
+    ]
+  },
+  {
+    "id": "RR-63",
+    "topic": "rules-of-the-road",
+    "promptEn": "A sign indicates the end of a controlled parking zone. What does this mean?",
+    "options": [
+      {
+        "en": "No through road"
+      },
+      {
+        "en": "Free parking now applies"
+      },
+      {
+        "en": "Traffic calming ends"
+      },
+      {
+        "en": "No entry"
+      }
+    ]
+  },
+  {
+    "id": "RR-64",
+    "topic": "rules-of-the-road",
+    "promptEn": "Double white lines run along the centre of the road. When may you park on the left?",
+    "options": [
+      {
+        "en": "If line is broken"
+      },
+      {
+        "en": "During daylight"
+      },
+      {
+        "en": "To pick up passengers"
+      },
+      {
+        "en": "Not at any time"
+      }
+    ]
+  },
+  {
+    "id": "RR-65",
+    "topic": "rules-of-the-road",
+    "promptEn": "Only disabled bays are available and you are not disabled. What should you do?",
+    "options": [
+      {
+        "en": "Use it briefly"
+      },
+      {
+        "en": "Stay with vehicle"
+      },
+      {
+        "en": "Keep one space free"
+      },
+      {
+        "en": "Wait for a regular space"
+      }
+    ]
+  },
+  {
+    "id": "RR-66",
+    "topic": "rules-of-the-road",
+    "promptEn": "How far are you allowed to reverse?",
+    "options": [
+      {
+        "en": "Car length"
+      },
+      {
+        "en": "Around a corner"
+      },
+      {
+        "en": "As far as necessary and safe"
+      },
+      {
+        "en": "Length of street"
+      }
+    ]
+  },
+  {
+    "id": "RR-67",
+    "topic": "rules-of-the-road",
+    "promptEn": "What's the speed limit for a car towing a caravan on a dual carriageway?",
+    "options": [
+      {
+        "en": "40 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      },
+      {
+        "en": "70 mph"
+      }
+    ]
+  },
+  {
+    "id": "SV-21",
+    "topic": "safety-vehicle",
+    "promptEn": "If your car has blind-spot monitoring, what should you check regularly to ensure it works correctly?",
+    "options": [
+      {
+        "en": "Tyre pressure"
+      },
+      {
+        "en": "GPS signal"
+      },
+      {
+        "en": "Clean sensor areas on the vehicle"
+      },
+      {
+        "en": "Dash cam position"
+      }
+    ]
+  },
+  {
+    "id": "SV-22",
+    "topic": "safety-vehicle",
+    "promptEn": "What's the best way to reduce the risk of your car being broken into when unattended?",
+    "options": [
+      {
+        "en": "Park near a taxi rank"
+      },
+      {
+        "en": "Leave valuables on the floor"
+      },
+      {
+        "en": "Take all valuables with you"
+      },
+      {
+        "en": "Park near a fire station"
+      }
+    ]
+  },
+  {
+    "id": "SV-23",
+    "topic": "safety-vehicle",
+    "promptEn": "Why is it important to wear suitable footwear while driving?",
+    "options": [
+      {
+        "en": "To adjust the seat"
+      },
+      {
+        "en": "To walk after breakdown"
+      },
+      {
+        "en": "To prevent pedal wear"
+      },
+      {
+        "en": "To maintain proper pedal control"
+      }
+    ]
+  },
+  {
+    "id": "SV-24",
+    "topic": "safety-vehicle",
+    "promptEn": "What is most likely to increase fuel waste?",
+    "options": [
+      {
+        "en": "Reducing speed"
+      },
+      {
+        "en": "Driving on motorways"
+      },
+      {
+        "en": "Using different fuel brands"
+      },
+      {
+        "en": "Under-inflated tyres"
+      }
+    ]
+  },
+  {
+    "id": "SV-25",
+    "topic": "safety-vehicle",
+    "promptEn": "When may a passenger legally travel without wearing a seat belt?",
+    "options": [
+      {
+        "en": "Sitting in the rear seat"
+      },
+      {
+        "en": "Under 14 years old"
+      },
+      {
+        "en": "Short journeys"
+      },
+      {
+        "en": "When medically exempt"
+      }
+    ]
+  },
+  {
+    "id": "SV-26",
+    "topic": "safety-vehicle",
+    "promptEn": "How does fitting a roof rack affect your car?",
+    "options": [
+      {
+        "en": "Less wind noise"
+      },
+      {
+        "en": "Faster acceleration"
+      },
+      {
+        "en": "Increased fuel consumption"
+      },
+      {
+        "en": "Lower oil usage"
+      }
+    ]
+  },
+  {
+    "id": "SV-27",
+    "topic": "safety-vehicle",
+    "promptEn": "Which driver-assistance system is designed to actively prevent collisions?",
+    "options": [
+      {
+        "en": "Cruise control"
+      },
+      {
+        "en": "Night vision"
+      },
+      {
+        "en": "Drowsiness alert"
+      },
+      {
+        "en": "Emergency braking system"
+      }
+    ]
+  },
+  {
+    "id": "SV-28",
+    "topic": "safety-vehicle",
+    "promptEn": "What does it usually indicate if a red brake warning light stays on while driving?",
+    "options": [
+      {
+        "en": "Low engine oil"
+      },
+      {
+        "en": "Fault in braking system"
+      },
+      {
+        "en": "Seat belt not fastened"
+      },
+      {
+        "en": "Rear light failure"
+      }
+    ]
+  },
+  {
+    "id": "SV-29",
+    "topic": "safety-vehicle",
+    "promptEn": "An 11-year-old child is sitting in the front seat and is under 1.35 m tall. What restraint must be used?",
+    "options": [
+      {
+        "en": "Adult seat belt"
+      },
+      {
+        "en": "Suitable child restraint"
+      },
+      {
+        "en": "Self-fastened belt"
+      },
+      {
+        "en": "Clear view ahead"
+      }
+    ]
+  },
+  {
+    "id": "SV-30",
+    "topic": "safety-vehicle",
+    "promptEn": "Why is parking in a secure car park recommended?",
+    "options": [
+      {
+        "en": "Easier to find car"
+      },
+      {
+        "en": "Protection from weather"
+      },
+      {
+        "en": "Lower parking costs"
+      },
+      {
+        "en": "Helps deter theft"
+      }
+    ]
+  },
+  {
+    "id": "SV-31",
+    "topic": "safety-vehicle",
+    "promptEn": "How should you dispose of a used car battery?",
+    "options": [
+      {
+        "en": "Bury it"
+      },
+      {
+        "en": "Put in household bin"
+      },
+      {
+        "en": "Take to authorised recycling site"
+      },
+      {
+        "en": "Leave on waste land"
+      }
+    ]
+  },
+  {
+    "id": "SV-32",
+    "topic": "safety-vehicle",
+    "promptEn": "You must arrive on time for an appointment. How should you plan your journey?",
+    "options": [
+      {
+        "en": "Travel at busy times"
+      },
+      {
+        "en": "Prevent overtaking"
+      },
+      {
+        "en": "Allow extra time"
+      },
+      {
+        "en": "Avoid national speed limit roads"
+      }
+    ]
+  }
+]

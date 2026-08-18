@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { isNativeAndroid } from '@/lib/capacitor-utils';
+import { useLanguage } from '@/lib/i18n/LanguageProvider';
 
 interface TTSButtonProps {
   text: string;
@@ -11,6 +12,7 @@ interface TTSButtonProps {
 }
 
 export default function TTSButton({ text, options, className }: TTSButtonProps) {
+  const { t } = useLanguage();
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [isAvailable, setIsAvailable] = useState(false);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
@@ -268,8 +270,8 @@ export default function TTSButton({ text, options, className }: TTSButtonProps) 
         isSpeaking && "bg-[var(--teal-soft)]/40",
         className
       )}
-      aria-label={isSpeaking ? "Stop speaking" : "Read question aloud"}
-      title={isSpeaking ? "Stop speaking" : "Read question aloud"}
+      aria-label={isSpeaking ? t('stopSpeaking') : t('readAloud')}
+      title={isSpeaking ? t('stopSpeaking') : t('readAloud')}
     >
       <span 
         className={cn(
@@ -289,7 +291,7 @@ export default function TTSButton({ text, options, className }: TTSButtonProps) 
           "hidden sm:inline"
         )}
       >
-        Play voice
+        {t('playVoice')}
       </span>
     </button>
   );

@@ -1,0 +1,362 @@
+[
+  {
+    "id": "AL-01",
+    "topic": "alertness",
+    "ok": true,
+    "prompt": "Dlaczego należy włączyć reflektory, gdy zaczyna się ściemniać?",
+    "opts": "Aby lepiej widzieć wskaźniki na desce rozdzielczej | Aby wtopić się w ruch | Aby inni użyt",
+    "issues": []
+  },
+  {
+    "id": "AL-09",
+    "topic": "alertness",
+    "ok": true,
+    "prompt": "Czym jest „martwy punkt”?",
+    "opts": "Obszar widoczny w prawym lusterku | Obszar nieoświetlony przez reflektory | Obszar widoczn",
+    "issues": []
+  },
+  {
+    "id": "AL-17",
+    "topic": "alertness",
+    "ok": true,
+    "prompt": "Przed skrętem w prawo na drogę dwujezdniową, co powinieneś sprawdzić?",
+    "opts": "Hamulec postojowy | Pozycję po lewej stronie | Szerokość pasa dzielącego jezdnie | Wolne m",
+    "issues": []
+  },
+  {
+    "id": "AL-25",
+    "topic": "alertness",
+    "ok": true,
+    "prompt": "Podczas długiej podróży autostradą, co powinieneś zrobić, jeśli czujes",
+    "opts": "Głośna muzyka | Zatrzymać się na pasie awaryjnym | Jeździć szybciej | Zjechać z autostrady",
+    "issues": []
+  },
+  {
+    "id": "HZ-01",
+    "topic": "hazard-awareness",
+    "ok": true,
+    "prompt": "Dlaczego należy zmniejszyć prędkość, gdy droga przed Tobą się zwęża?",
+    "opts": "Bo przed Tobą jest skrzyżowanie przesunięte | Bo jest mniej miejsca na błąd i bezpieczne m",
+    "issues": []
+  },
+  {
+    "id": "HZ-27",
+    "topic": "hazard-awareness",
+    "ok": true,
+    "prompt": "Pieszy jest już na jezdni przed Tobą i powoli przechodzi. Jakie jest n",
+    "opts": "Machnąć ręką, żeby się pospieszył | Szybko przejechać za nim | Zwolnić i być gotowym do za",
+    "issues": []
+  },
+  {
+    "id": "HZ-53",
+    "topic": "hazard-awareness",
+    "ok": true,
+    "prompt": "Jeśli lekarz przepisze lek, który może wpływać na jazdę, co powinieneś",
+    "opts": "Jeździć tylko na krótkich dystansach | Unikać tylko autostrad | Pozwolić komuś innemu prow",
+    "issues": []
+  },
+  {
+    "id": "HZ-79",
+    "topic": "hazard-awareness",
+    "ok": true,
+    "prompt": "Jedziesz za dużym pojazdem, który sygnalizuje skręt w lewo, ale jest u",
+    "opts": "Pojazd natychmiast skręci w lewo | Pojazd potrzebuje miejsca do skrętu w lewo i może najpi",
+    "issues": []
+  },
+  {
+    "id": "RS-01",
+    "topic": "road-signs",
+    "ok": true,
+    "prompt": "Znak przedstawiający czerwony samochód obok czarnego oznacza:",
+    "opts": "Zakaz wyprzedzania | Wyprzedzanie dozwolone | Koniec ograniczenia | Ruch dwukierunkowy",
+    "issues": []
+  },
+  {
+    "id": "RS-2024",
+    "topic": "road-signs",
+    "ok": true,
+    "prompt": "Widzisz niebieski znak z białą strzałką wskazującą w lewo i w prawo. C",
+    "opts": "Musisz skręcić w lewo albo w prawo | Zakaz zawracania | Ruch dwukierunkowy przed Tobą | Dr",
+    "issues": []
+  },
+  {
+    "id": "RS-6012",
+    "topic": "road-signs",
+    "ok": true,
+    "prompt": "Co zwykle pokazuje niebieski prostokątny znak na autostradzie?",
+    "opts": "Ostrzeżenia | Atrakcje turystyczne | Kierunki i usługi | Tymczasowe objazdy",
+    "issues": []
+  },
+  {
+    "id": "RS-I-04",
+    "topic": "road-signs",
+    "ok": true,
+    "prompt": "Zielony prostokątny znak z białym tekstem i numerami tras podaje:",
+    "opts": "Kierunki i cele na drodze głównej (primary route) | Ograniczenie prędkości na drogach głów",
+    "issues": []
+  },
+  {
+    "id": "SM-01",
+    "topic": "safety-margins",
+    "ok": true,
+    "prompt": "Jaka jest najczęstsza przyczyna rozpoczęcia poślizgu pojazdu?",
+    "opts": "Zła nawierzchnia drogi | Działania kierowcy | Awaria mechaniczna | Silny wiatr",
+    "issues": []
+  },
+  {
+    "id": "SM-12",
+    "topic": "safety-margins",
+    "ok": true,
+    "prompt": "Co zwykle oznacza bardzo lekkie kierowanie na mokrej jezdni?",
+    "opts": "Awarię silnika | Utratę przyczepności opon | Przepompowane opony | Usterkę układu kierowni",
+    "issues": []
+  },
+  {
+    "id": "SM-23",
+    "topic": "safety-margins",
+    "ok": true,
+    "prompt": "Na suchej, otwartej drodze, jaki odstęp należy zwykle zachować?",
+    "opts": "Odstęp dwóch sekund | Długość jednego samochodu | Dwa metry | Długość dwóch samochodów",
+    "issues": []
+  },
+  {
+    "id": "SM-34",
+    "topic": "safety-margins",
+    "ok": true,
+    "prompt": "Jak kontrolować prędkość podczas jazdy w dół?",
+    "opts": "Wysoki bieg z mocnym hamowaniem | Wysoki bieg bez hamowania | Niski bieg z delikatnym hamo",
+    "issues": []
+  },
+  {
+    "id": "RR-01",
+    "topic": "rules-of-the-road",
+    "ok": true,
+    "prompt": "O czym zwykle ostrzegają czerwono-białe słupki przy drodze?",
+    "opts": "Koniec autostrady | Ukryty przejazd kolejowy przed Tobą | Zmiana limitu prędkości | Koniec",
+    "issues": []
+  },
+  {
+    "id": "RR-23",
+    "topic": "rules-of-the-road",
+    "ok": true,
+    "prompt": "Zbyt późno zauważasz, że jesteś na złym pasie na ruchliwym skrzyżowani",
+    "opts": "Przepchnąć się na właściwy pas | Zatrzymać się i zablokować ruch | Bezpiecznie kontynuować",
+    "issues": []
+  },
+  {
+    "id": "RR-45",
+    "topic": "rules-of-the-road",
+    "ok": true,
+    "prompt": "Kiedy wolno parkować w miejscu zarezerwowanym dla kierowców niepełnosp",
+    "opts": "Gdy masz Blue Badge | Gdy masz wózek inwalidzki | Gdy masz zaawansowane prawo jazdy | Gdy ",
+    "issues": []
+  },
+  {
+    "id": "RR-67",
+    "topic": "rules-of-the-road",
+    "ok": true,
+    "prompt": "Jaki jest limit prędkości dla samochodu ciągnącego przyczepę kempingow",
+    "opts": "40 mph | 50 mph | 60 mph | 70 mph",
+    "issues": []
+  },
+  {
+    "id": "VU-01",
+    "topic": "vulnerable-road-users",
+    "ok": true,
+    "prompt": "Co powinieneś zrobić, zbliżając się do przejścia dla pieszych, gdzie l",
+    "opts": "Przygotować się do zwolnienia i być gotowym do zatrzymania | Przyspieszyć i szybko przejec",
+    "issues": []
+  },
+  {
+    "id": "VU-24",
+    "topic": "vulnerable-road-users",
+    "ok": true,
+    "prompt": "Widzisz migające żółte światła pod znakiem ostrzegającym o szkole. Co ",
+    "opts": "Zmniejszyć prędkość, aż miniesz ten obszar | Utrzymać prędkość i zatrąbić | Przyspieszyć, ",
+    "issues": []
+  },
+  {
+    "id": "VU-47",
+    "topic": "vulnerable-road-users",
+    "ok": true,
+    "prompt": "Na przejściu pelican osoba niepełnosprawna przechodzi wolno, a światła",
+    "opts": "Przejechać | Powoli podjechać | Zatrąbić | Poczekać, aż skończy przechodzić",
+    "issues": []
+  },
+  {
+    "id": "VU-70",
+    "topic": "vulnerable-road-users",
+    "ok": true,
+    "prompt": "Skręcasz w lewo, a pieszy czeka, żeby przejść przez drogę boczną. Co p",
+    "opts": "Mignąć światłami | Jechać dalej | Zatrąbić | Ustąpić",
+    "issues": []
+  },
+  {
+    "id": "VH-01",
+    "topic": "vehicle-handling",
+    "ok": true,
+    "prompt": "Kiedy wolno minąć inny pojazd z lewej strony?",
+    "opts": "Gdy pojazd przed Tobą sygnalizuje skręt w lewo | Gdy zbliżasz się do zjazdu, którym chcesz",
+    "issues": []
+  },
+  {
+    "id": "VH-16",
+    "topic": "vehicle-handling",
+    "ok": true,
+    "prompt": "Kiedy wolno zatrzymać się na żółtej kratce (box junction)?",
+    "opts": "Gdy stoisz w kolejce prosto | Gdy zbliżasz się do przejścia | Gdy zbliżasz się do przejści",
+    "issues": []
+  },
+  {
+    "id": "VH-31",
+    "topic": "vehicle-handling",
+    "ok": true,
+    "prompt": "Kiedy najbardziej wyczuwasz hamowanie silnikiem?",
+    "opts": "Gdy polegasz tylko na hamulcu ręcznym | Gdy wrzucasz luz | Gdy redukujesz na niższy bieg |",
+    "issues": []
+  },
+  {
+    "id": "IN-01",
+    "topic": "incidents",
+    "ok": true,
+    "prompt": "Jaka jest najbezpieczniejsza czynność, jeśli Twój samochód zapali się ",
+    "opts": "Zostawić silnik włączony i natychmiast wyjść | Zatrzymać się i iść do telefonu awaryjnego ",
+    "issues": []
+  },
+  {
+    "id": "IN-19",
+    "topic": "incidents",
+    "ok": true,
+    "prompt": "Ranna osoba leży na ruchliwej drodze po wypadku. Co powinieneś zrobić ",
+    "opts": "Leczyć wstrząs | Ostrzec nadjeżdżający ruch | Przenieść poszkodowanego | Przykryć go",
+    "issues": []
+  },
+  {
+    "id": "IN-37",
+    "topic": "incidents",
+    "ok": true,
+    "prompt": "Na miejscu zdarzenia nieprzytomna osoba potrzebuje pomocy. Co sprawdzi",
+    "opts": "Jej ubezpieczenie | Jej alergie | Jej komfort | Jej drogi oddechowe",
+    "issues": []
+  },
+  {
+    "id": "IN-55",
+    "topic": "incidents",
+    "ok": true,
+    "prompt": "Twój samochód psuje się na przejeździe kolejowym. Co zrobić najpierw?",
+    "opts": "Ostrzec kierowców z tyłu | Opuścić pojazd i odprowadzić wszystkich z dala | Iść wzdłuż tor",
+    "issues": []
+  },
+  {
+    "id": "DC-01",
+    "topic": "documents",
+    "ok": true,
+    "prompt": "Kiedy wolno legalnie jeździć pojazdem bez ważnego certyfikatu MOT?",
+    "opts": "Przez 7 dni po wygaśnięciu | Za zgodą właściciela | Gdy jedziesz na wcześniej umówiony prz",
+    "issues": []
+  },
+  {
+    "id": "DC-10",
+    "topic": "documents",
+    "ok": true,
+    "prompt": "Co musisz mieć, aby legalnie prowadzić pojazd silnikowy po drodze?",
+    "opts": "Assistance drogowe | Dowód tożsamości | Instrukcję obsługi pojazdu | Ważne prawo jazdy",
+    "issues": []
+  },
+  {
+    "id": "DC-19",
+    "topic": "documents",
+    "ok": true,
+    "prompt": "Co obejmuje ubezpieczenie third-party?",
+    "opts": "Szkody w Twoim własnym pojeździe | Szkody pożarowe w Twoim pojeździe | Szkody powodziowe w",
+    "issues": []
+  },
+  {
+    "id": "MW-01",
+    "topic": "motorway-driving",
+    "ok": true,
+    "prompt": "Kiedy powinieneś użyć pasa awaryjnego (hard shoulder) na autostradzie,",
+    "opts": "Przy zjeździe z autostrady | Przy zatrzymaniu się na odpoczynek | Przy wjeździe na autostr",
+    "issues": []
+  },
+  {
+    "id": "MW-20",
+    "topic": "motorway-driving",
+    "ok": true,
+    "prompt": "Jakie ograniczenie dotyczy kierowców z prawem jazdy tymczasowym (provi",
+    "opts": "Zakaz jazdy nocą | Zakaz jazdy powyżej 30 mph | Musi towarzyszyć im uprawniony kierowca | ",
+    "issues": []
+  },
+  {
+    "id": "MW-39",
+    "topic": "motorway-driving",
+    "ok": true,
+    "prompt": "Na trzyjezdniowej autostradzie, którego pasa powinieneś zwykle używać,",
+    "opts": "Lewego | Środkowego | Prawego | Środkowego lub prawego",
+    "issues": []
+  },
+  {
+    "id": "OV-01",
+    "topic": "other-vehicles",
+    "ok": true,
+    "prompt": "Czekasz, żeby skręcić w prawo z drogi bocznej. Z prawej zbliża się duż",
+    "opts": "Ciężarówka może nagle przyspieszyć | Ładunek ciężarówki może być niestabilny | Inny pojazd",
+    "issues": []
+  },
+  {
+    "id": "OV-08",
+    "topic": "other-vehicles",
+    "ok": true,
+    "prompt": "Jest bardzo wietrznie, a motocyklista wyprzedza przed Tobą pojazd o wy",
+    "opts": "Natychmiast wyprzedzić | Jechać równo z motocyklistą | Trzymać się odpowiednio z tyłu | Je",
+    "issues": []
+  },
+  {
+    "id": "OV-15",
+    "topic": "other-vehicles",
+    "ok": true,
+    "prompt": "Długi pojazd przed Tobą sygnalizuje skręt w prawo, ale trzyma się blis",
+    "opts": "Ostrzec kierowcę | Wyprzedzić z prawej | Zgłosić na policję | Poczekać za pojazdem",
+    "issues": []
+  },
+  {
+    "id": "OV-22",
+    "topic": "other-vehicles",
+    "ok": true,
+    "prompt": "Które pojazdy są najmniej podatne na silny boczny wiatr?",
+    "opts": "Rowery | Motocykle | Pojazdy o wysokiej zabudowie | Samochody",
+    "issues": []
+  },
+  {
+    "id": "VL-01",
+    "topic": "vehicle-loading",
+    "ok": true,
+    "prompt": "Przed holowaniem przyczepy — gdzie znajdziesz maksymalny dopuszczalny ",
+    "opts": "W instrukcji obsługi pojazdu | W Highway Code | W dokumencie rejestracyjnym | W Twoim praw",
+    "issues": []
+  },
+  {
+    "id": "VL-08",
+    "topic": "vehicle-loading",
+    "ok": true,
+    "prompt": "Kto jest prawnie odpowiedzialny za to, by pojazd nie był przeciążony?",
+    "opts": "Właściciel pojazdu | Osoba ładująca ładunek | Organ wydający uprawnienia | Kierowca pojazd",
+    "issues": []
+  },
+  {
+    "id": "VL-15",
+    "topic": "vehicle-loading",
+    "ok": true,
+    "prompt": "Podczas holowania na autostradzie trzypasowej, jakie ograniczenie obow",
+    "opts": "Maks. 50 mph | Zakaz wyprzedzania | Wymagany stabilizator | Zakaz używania prawego pasa",
+    "issues": []
+  },
+  {
+    "id": "AT-01",
+    "topic": "attitude",
+    "ok": true,
+    "prompt": "Zbliżasz się do przejścia dla pieszych, a ludzie czekają. Co powiniene",
+    "opts": "Zatrzymać się tylko dla osób starszych | Zwolnić i być gotowym do zatrzymania | Mrugać świ",
+    "issues": []
+  }
+]

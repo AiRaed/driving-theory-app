@@ -1,0 +1,1051 @@
+{
+  "DC-15": [
+    {
+      "term": "SORN",
+      "translations": {
+        "en": "Statutory Off-Road Notification: a DVLA declaration that a vehicle is kept off public roads and is not taxed for road use.",
+        "ar": "إشعار إخراج المركبة من الطريق: إعلان للـ DVLA بأن المركبة خارج الاستخدام على الطرق العامة وغير خاضعة لضريبة الطريق.",
+        "ur": "سڑک سے باہر رکھنے کا قانونی نوٹس: DVLA کو اعلان کہ گاڑی عوامی سڑکوں پر استعمال نہیں ہو رہی اور روڈ ٹیکس نہیں ہے۔",
+        "ro": "Notificare legală că vehiculul este ținut în afara drumurilor publice și nu este taxat pentru circulație."
+      }
+    },
+    {
+      "term": "scrapped",
+      "translations": {
+        "en": "When a vehicle is officially destroyed or broken up and removed from the road fleet.",
+        "ar": "عندما تُتلف المركبة رسمياً أو تُفكك وتُخرج من أسطول المركبات على الطريق.",
+        "ur": "جب گاڑی سرکاری طور پر تباہ یا توڑ دی جائے اور سڑک کے بیڑے سے ہٹا دی جائے۔",
+        "ro": "Când un vehicul este distrus sau dezmembrat oficial și scos din circulație."
+      }
+    }
+  ],
+  "DC-16": [
+    {
+      "term": "registered keeper",
+      "translations": {
+        "en": "The person named on the vehicle’s registration document as responsible for it (not always the owner).",
+        "ar": "الشخص المسجّل في وثيقة تسجيل المركبة كمسؤول عنها (وليس بالضرورة المالك).",
+        "ur": "وہ شخص جو گاڑی کے رجسٹریشن دستاویز پر اس کا ذمہ دار درج ہو (ہمیشہ مالک نہیں ہوتا)۔",
+        "ro": "Persoana trecută pe certificatul de înmatriculare ca responsabilă de vehicul (nu neapărat proprietarul)."
+      }
+    },
+    {
+      "term": "vehicle tax",
+      "translations": {
+        "en": "The UK road tax (VED) that must usually be paid to keep a vehicle legal for public roads.",
+        "ar": "ضريبة الطريق في المملكة المتحدة (VED) التي يجب دفعها عادةً لإبقاء المركبة قانونية على الطرق العامة.",
+        "ur": "برطانیہ کا روڈ ٹیکس (VED) جو عام طور پر عوامی سڑکوں پر گاڑی قانونی رکھنے کے لیے ادا کرنا ہوتا ہے۔",
+        "ro": "Taxa de drum din Regatul Unit (VED) care trebuie plătită de obicei pentru a circula legal pe drumuri publice."
+      }
+    },
+    {
+      "term": "licensing authority",
+      "translations": {
+        "en": "The official body that issues and manages driving licences and related vehicle records (e.g. DVLA).",
+        "ar": "الجهة الرسمية التي تصدر وتدير رخص القيادة وسجلات المركبات ذات الصلة (مثل DVLA).",
+        "ur": "سرکاری ادارہ جو ڈرائیونگ لائسنس اور متعلقہ گاڑی کے ریکارڈ جاری و منظم کرتا ہے (جیسے DVLA)۔",
+        "ro": "Autoritatea care eliberează și gestionează permisele de conducere și evidențele vehiculelor (ex. DVLA)."
+      }
+    }
+  ],
+  "DC-17": [
+    {
+      "term": "Comprehensive",
+      "translations": {
+        "en": "A wide motor insurance level that can cover your own vehicle as well as damage to others.",
+        "ar": "مستوى تأمين شامل قد يغطي مركبتك وأيضاً الضرر للآخرين.",
+        "ur": "موٹر انشورنس کی وسیع سطح جو آپ کی اپنی گاڑی اور دوسروں کے نقصان دونوں کا احاطہ کر سکتی ہے۔",
+        "ro": "Nivel larg de asigurare auto care poate acoperi și propriul vehicul, nu doar daunele altora."
+      }
+    },
+    {
+      "term": "Third party, fire and theft",
+      "translations": {
+        "en": "Insurance that covers injury/damage to others, plus fire damage and theft of your vehicle.",
+        "ar": "تأمين يغطي إصابة/ضرر الآخرين، إضافةً إلى الحريق وسرقة مركبتك.",
+        "ur": "انشورنس جو دوسروں کی چوٹ/نقصان کے ساتھ آپ کی گاڑی کی آگ اور چوری کا احاطہ کرتی ہے۔",
+        "ro": "Asigurare care acoperă daunele altora, plus incendiu și furtul propriului vehicul."
+      }
+    }
+  ],
+  "DC-18": [
+    {
+      "term": "approved driving course",
+      "translations": {
+        "en": "A recognised training course (often for safer driving) that insurers may treat as a discount factor.",
+        "ar": "دورة تدريب معتمدة (غالباً للقيادة الآمنة) قد تعتبرها شركات التأمين عاملاً لخفض السعر.",
+        "ur": "منظور شدہ تربیتی کورس (اکثر محفوظ ڈرائیونگ کے لیے) جسے انشوررز رعایتی عنصر مان سکتے ہیں۔",
+        "ro": "Curs de instruire recunoscut (adesea pentru condus mai sigur) pe care asigurătorii îl pot trata ca factor de reducere."
+      }
+    }
+  ],
+  "DC-19": [],
+  "DC-20": [
+    {
+      "term": "MOT",
+      "translations": {
+        "en": "The annual UK roadworthiness test required for most vehicles over a certain age.",
+        "ar": "الفحص الفني السنوي في المملكة المتحدة المطلوب لمعظم المركبات بعد عمر معيّن.",
+        "ur": "برطانیہ کا سالانہ روڈ ورتھنیس ٹیسٹ جو ایک عمر کے بعد زیادہ تر گاڑیوں کے لیے ضروری ہے۔",
+        "ro": "Testul anual de stare tehnică din Regatul Unit, obligatoriu pentru majoritatea vehiculelor peste o anumită vârstă."
+      }
+    },
+    {
+      "term": "registration document",
+      "translations": {
+        "en": "The V5C paper that records the vehicle’s details and its registered keeper.",
+        "ar": "وثيقة V5C التي تسجّل بيانات المركبة والحارس المسجّل لها.",
+        "ur": "V5C دستاویز جس میں گاڑی کی تفصیلات اور رجسٹرڈ کیپر درج ہوتے ہیں۔",
+        "ro": "Documentul V5C care înregistrează datele vehiculului și deținătorul înregistrat."
+      }
+    }
+  ],
+  "DC-21": [
+    {
+      "term": "green plates",
+      "translations": {
+        "en": "Optional green ‘P’ plates some new drivers display to show they are newly qualified.",
+        "ar": "لوحات خضراء اختيارية بحرف P يعرضها بعض السائقين الجدد لإظهار أنهم حديثو التأهيل.",
+        "ur": "اختیاری سبز P پلیٹس جو کچھ نئے ڈرائیورز نیا پاس ہونے کا اظہار کرنے کے لیے لگاتے ہیں۔",
+        "ro": "Plăcuțe verzi opționale cu „P” pe care unii șoferi noi le afișează după promovarea examenului."
+      }
+    },
+    {
+      "term": "motor insurance",
+      "translations": {
+        "en": "Legal cover for using a motor vehicle on public roads, protecting against claims from others at minimum.",
+        "ar": "تغطية قانونية لاستخدام مركبة على الطرق العامة، وتحمي على الأقل من مطالبات الآخرين.",
+        "ur": "عوامی سڑکوں پر موٹر گاڑی چلانے کا قانونی کَوَر؛ کم از کم دوسروں کے دعووں سے حفاظت۔",
+        "ro": "Acoperire legală pentru folosirea unui vehicul pe drumuri publice, cel puțin împotriva pretențiilor altora."
+      }
+    }
+  ],
+  "DC-22": [
+    {
+      "term": "licensing authority",
+      "translations": {
+        "en": "The official body that issues and manages driving licences and related vehicle records (e.g. DVLA).",
+        "ar": "الجهة الرسمية التي تصدر وتدير رخص القيادة وسجلات المركبات ذات الصلة (مثل DVLA).",
+        "ur": "سرکاری ادارہ جو ڈرائیونگ لائسنس اور متعلقہ گاڑی کے ریکارڈ جاری و منظم کرتا ہے (جیسے DVLA)۔",
+        "ro": "Autoritatea care eliberează și gestionează permisele de conducere și evidențele vehiculelor (ex. DVLA)."
+      }
+    },
+    {
+      "term": "MOT",
+      "translations": {
+        "en": "The annual UK roadworthiness test required for most vehicles over a certain age.",
+        "ar": "الفحص الفني السنوي في المملكة المتحدة المطلوب لمعظم المركبات بعد عمر معيّن.",
+        "ur": "برطانیہ کا سالانہ روڈ ورتھنیس ٹیسٹ جو ایک عمر کے بعد زیادہ تر گاڑیوں کے لیے ضروری ہے۔",
+        "ro": "Testul anual de stare tehnică din Regatul Unit, obligatoriu pentru majoritatea vehiculelor peste o anumită vârstă."
+      }
+    }
+  ],
+  "DC-23": [
+    {
+      "term": "licensing authority",
+      "translations": {
+        "en": "The official body that issues and manages driving licences and related vehicle records (e.g. DVLA).",
+        "ar": "الجهة الرسمية التي تصدر وتدير رخص القيادة وسجلات المركبات ذات الصلة (مثل DVLA).",
+        "ur": "سرکاری ادارہ جو ڈرائیونگ لائسنس اور متعلقہ گاڑی کے ریکارڈ جاری و منظم کرتا ہے (جیسے DVLA)۔",
+        "ro": "Autoritatea care eliberează și gestionează permisele de conducere și evidențele vehiculelor (ex. DVLA)."
+      }
+    },
+    {
+      "term": "vehicle ownership",
+      "translations": {
+        "en": "Who legally owns the vehicle; changes of ownership must be recorded with the DVLA.",
+        "ar": "من يملك المركبة قانونياً؛ يجب تسجيل تغيير الملكية لدى DVLA.",
+        "ur": "گاڑی کا قانونی مالک کون ہے؛ ملکیت کی تبدیلی DVLA کے پاس درج کرنی ہوتی ہے۔",
+        "ro": "Cine deține legal vehiculul; schimbările de proprietate trebuie înregistrate la DVLA."
+      }
+    }
+  ],
+  "DC-24": [
+    {
+      "term": "vehicle registration document",
+      "translations": {
+        "en": "The V5C paper that records the vehicle’s details and its registered keeper.",
+        "ar": "وثيقة V5C التي تسجّل بيانات المركبة والحارس المسجّل لها.",
+        "ur": "V5C دستاویز جس میں گاڑی کی تفصیلات اور رجسٹرڈ کیپر درج ہوتے ہیں۔",
+        "ro": "Documentul V5C care înregistrează datele vehiculului și deținătorul înregistrat."
+      }
+    },
+    {
+      "term": "Registered keeper",
+      "translations": {
+        "en": "The person named on the vehicle’s registration document as responsible for it (not always the owner).",
+        "ar": "الشخص المسجّل في وثيقة تسجيل المركبة كمسؤول عنها (وليس بالضرورة المالك).",
+        "ur": "وہ شخص جو گاڑی کے رجسٹریشن دستاویز پر اس کا ذمہ دار درج ہو (ہمیشہ مالک نہیں ہوتا)۔",
+        "ro": "Persoana trecută pe certificatul de înmatriculare ca responsabilă de vehicul (nu neapărat proprietarul)."
+      }
+    },
+    {
+      "term": "MOT expiry date",
+      "translations": {
+        "en": "The date when the current MOT certificate runs out and a new test is needed.",
+        "ar": "التاريخ الذي ينتهي فيه شهادة الفحص الفني الحالية ويُطلب فحص جديد.",
+        "ur": "وہ تاریخ جب موجودہ MOT سرٹیفکیٹ ختم ہوتا ہے اور نیا ٹیسٹ درکار ہوتا ہے۔",
+        "ro": "Data la care expiră certificatul MOT curent și este nevoie de un test nou."
+      }
+    }
+  ],
+  "DC-25": [],
+  "DC-26": [],
+  "DC-27": [
+    {
+      "term": "vehicle registration certificate",
+      "translations": {
+        "en": "Another name for the V5C registration document showing vehicle and keeper details.",
+        "ar": "اسم آخر لوثيقة التسجيل V5C التي تُظهر بيانات المركبة والحارس.",
+        "ur": "V5C رجسٹریشن دستاویز کا دوسرا نام جو گاڑی اور کیپر کی تفصیلات دکھاتا ہے۔",
+        "ro": "Altă denumire pentru documentul V5C cu datele vehiculului și ale deținătorului."
+      }
+    },
+    {
+      "term": "MOT",
+      "translations": {
+        "en": "The annual UK roadworthiness test required for most vehicles over a certain age.",
+        "ar": "الفحص الفني السنوي في المملكة المتحدة المطلوب لمعظم المركبات بعد عمر معيّن.",
+        "ur": "برطانیہ کا سالانہ روڈ ورتھنیس ٹیسٹ جو ایک عمر کے بعد زیادہ تر گاڑیوں کے لیے ضروری ہے۔",
+        "ro": "Testul anual de stare tehnică din Regatul Unit, obligatoriu pentru majoritatea vehiculelor peste o anumită vârstă."
+      }
+    }
+  ],
+  "MW-02": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "MW-03": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    },
+    {
+      "term": "following distance",
+      "translations": {
+        "en": "The gap you keep behind the vehicle in front so you have time to react and stop safely.",
+        "ar": "المسافة التي تبقيها خلف المركبة أمامك لتتمكن من الرد والتوقف بأمان.",
+        "ur": "سامنے والی گاڑی کے پیچھے فاصلہ تاکہ ردِعمل اور محفوظ رکنے کا وقت ملے۔",
+        "ro": "Distanța pe care o păstrați față de vehiculul din față pentru a avea timp să reacționați și să opriți în siguranță."
+      }
+    }
+  ],
+  "MW-04": [
+    {
+      "term": "right-hand lane",
+      "translations": {
+        "en": "On a UK multi-lane motorway, the lane furthest to the right, normally for overtaking.",
+        "ar": "على طريق سريع متعدد المسارات في المملكة المتحدة، المسار الأقصى يميناً ويُستخدم عادةً للتجاوز.",
+        "ur": "برطانوی کثیر لین موٹروے پر سب سے دائیں لین، عام طور پر اوورٹیکنگ کے لیے۔",
+        "ro": "Pe o autostradă cu mai multe benzi în Regatul Unit, banda cea mai din dreapta, folosită de obicei la depășire."
+      }
+    },
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing a slower vehicle ahead and moving back into lane when it is safe.",
+        "ar": "تجاوز مركبة أبطأ أمامك ثم العودة إلى المسار عندما يكون ذلك آمناً.",
+        "ur": "آگے سست گاڑی سے آگے نکلنا اور محفوظ ہونے پر لین میں واپس آنا۔",
+        "ro": "Depășirea unui vehicul mai lent din față și revenirea pe bandă când este sigur."
+      }
+    },
+    {
+      "term": "three-lane motorway",
+      "translations": {
+        "en": "A motorway with three lanes in each direction of travel.",
+        "ar": "طريق سريع بثلاثة مسارات في كل اتجاه سير.",
+        "ur": "ایسی موٹروے جس میں ہر سمت تین لینیں ہوں۔",
+        "ro": "Autostradă cu trei benzi pe fiecare sens de mers."
+      }
+    }
+  ],
+  "MW-05": [
+    {
+      "term": "emergency area",
+      "translations": {
+        "en": "A signed lay-by on some motorways for stopping clear of the live traffic lanes.",
+        "ar": "منطقة توقف معلّمة على بعض الطرق السريعة للوقوف بعيداً عن مسارات السير النشطة.",
+        "ur": "کچھ موٹرویز پر نشان زدہ لی بائی جہاں زندہ ٹریفک لینوں سے ہٹ کر رکا جا سکتا ہے۔",
+        "ro": "Refugiu semnalizat pe unele autostrăzi pentru oprire în afara benzilor active."
+      }
+    },
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "MW-06": [
+    {
+      "term": "reflective studs",
+      "translations": {
+        "en": "Cats’-eye markers set in the road that reflect headlights to show lane and road edges at night.",
+        "ar": "علامات عاكسة مثبتة في الطريق تعكس أضواء المركبات لتوضيح المسارات والحواف ليلاً.",
+        "ur": "سڑک میں لگی عکاس سٹڈز (کیٹس آئز) جو رات کو لین اور کنارے دکھاتی ہیں۔",
+        "ro": "Marcaje reflectorizante în carosabil care arată benzile și marginile drumului noaptea."
+      }
+    },
+    {
+      "term": "slip road",
+      "translations": {
+        "en": "The short linking road used to join or leave a motorway.",
+        "ar": "الطريق القصير الرابط المستخدم للدخول إلى الطريق السريع أو الخروج منه.",
+        "ur": "موٹروے میں داخلے یا خروج کے لیے استعمال ہونے والی مختصر جوڑ سڑک۔",
+        "ro": "Drumul scurt de legătură folosit pentru a intra pe autostradă sau a ieși de pe ea."
+      }
+    }
+  ],
+  "MW-07": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "marker posts",
+      "translations": {
+        "en": "Small roadside posts that show location details so you can tell emergency services where you are.",
+        "ar": "أعمدة صغيرة على جانب الطريق تُظهر تفاصيل الموقع لإبلاغ خدمات الطوارئ بمكانك.",
+        "ur": "سڑک کنارے چھوٹے کھمبے جن پر مقام کی تفصیل ہوتی ہے تاکہ ایمرجنسی سروسز کو بتایا جا سکے۔",
+        "ro": "Stâlpi mici pe marginea drumului cu detalii de locație pentru a anunța serviciile de urgență."
+      }
+    }
+  ],
+  "MW-08": [
+    {
+      "term": "roadworks",
+      "translations": {
+        "en": "Temporary construction or repair work on the road, often with lower speed limits and lane changes.",
+        "ar": "أعمال بناء أو صيانة مؤقتة على الطريق، وغالباً بحدود سرعة أقل وتغييرات في المسارات.",
+        "ur": "سڑک پر عارضی تعمیر یا مرمت؛ اکثر کم رفتار کی حد اور لین تبدیلیوں کے ساتھ۔",
+        "ro": "Lucrări temporare de construcție sau reparație pe drum, adesea cu limite mai mici și schimbări de benzi."
+      }
+    },
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    }
+  ],
+  "MW-09": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "mandatory speed limit",
+      "translations": {
+        "en": "A speed limit you must obey by law, often shown in a red circle or on overhead gantry signs.",
+        "ar": "حد سرعة يجب الالتزام به قانوناً، وغالباً يظهر داخل دائرة حمراء أو على لافتات علوية.",
+        "ur": "رفتار کی وہ حد جس کی قانونی طور پر پابندی ضروری ہے؛ اکثر سرخ دائرے یا اوپر والے سائنز پر۔",
+        "ro": "Limită de viteză pe care trebuie să o respectați legal, adesea în cerc roșu sau pe panouri suspendate."
+      }
+    }
+  ],
+  "MW-10": [
+    {
+      "term": "hazard warning lights",
+      "translations": {
+        "en": "All indicators flashing together to warn other drivers of a hazard or sudden problem.",
+        "ar": "تشغيل جميع إشارات الاتجاه معاً لتحذير السائقين الآخرين من خطر أو مشكلة مفاجئة.",
+        "ur": "تمام انڈیکیٹرز ایک ساتھ چمکانا تاکہ دوسروں کو خطرے یا اچانک مسئلے سے آگاہ کیا جائے۔",
+        "ro": "Toate semnalizatoarele intermitente împreună, pentru a avertiza alți șoferi despre un pericol sau o problemă bruscă."
+      }
+    },
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "OV-01": [
+    {
+      "term": "lorry",
+      "translations": {
+        "en": "A large goods vehicle (truck) used to carry heavy loads.",
+        "ar": "مركبة بضائع كبيرة (شاحنة) تُستخدم لنقل الأحمال الثقيلة.",
+        "ur": "بڑی مال بردار گاڑی (ٹرک) جو بھاری سامان لے جاتی ہے۔",
+        "ro": "Vehicul mare de marfă (camion) folosit pentru încărcături grele."
+      }
+    },
+    {
+      "term": "side road",
+      "translations": {
+        "en": "A smaller road that joins a main road at a junction.",
+        "ar": "طريق أصغر يلتقي بطريق رئيسي عند تقاطع.",
+        "ur": "چھوٹی سڑک جو جنکشن پر بڑی سڑک سے ملتی ہے۔",
+        "ro": "Drum mai mic care se unește cu un drum principal la o intersecție."
+      }
+    },
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing a slower vehicle ahead and moving back into lane when it is safe.",
+        "ar": "تجاوز مركبة أبطأ أمامك ثم العودة إلى المسار عندما يكون ذلك آمناً.",
+        "ur": "آگے سست گاڑی سے آگے نکلنا اور محفوظ ہونے پر لین میں واپس آنا۔",
+        "ro": "Depășirea unui vehicul mai lent din față și revenirea pe bandă când este sigur."
+      }
+    }
+  ],
+  "OV-02": [
+    {
+      "term": "give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    }
+  ],
+  "OV-03": [
+    {
+      "term": "overtake",
+      "translations": {
+        "en": "To pass another road user moving in the same direction and go ahead of them.",
+        "ar": "تجاوز مستخدم طريق آخر يسير في نفس الاتجاه والمرور أمامه.",
+        "ur": "اسی سمت چلتے ہوئے دوسرے روڈ یوزر سے آگے نکل جانا۔",
+        "ro": "A depăși un alt participant la trafic care merge în aceeași direcție."
+      }
+    },
+    {
+      "term": "cyclist",
+      "translations": {
+        "en": "A person riding a bicycle on the road.",
+        "ar": "شخص يقود دراجة هوائية على الطريق.",
+        "ur": "سڑک پر سائیکل چلانے والا شخص۔",
+        "ro": "Persoană care conduce o bicicletă pe drum."
+      }
+    }
+  ],
+  "OV-04": [
+    {
+      "term": "towing",
+      "translations": {
+        "en": "Pulling a trailer, caravan, or another vehicle behind your car using a tow bar or hitch.",
+        "ar": "سحب مقطورة أو كرفان أو مركبة أخرى خلف سيارتك باستخدام قضيب سحب.",
+        "ur": "ٹو بار سے اپنے پیچھے ٹریلر، کاروان یا دوسری گاڑی کھینچنا۔",
+        "ro": "Tractarea unei remorci, rulote sau a altui vehicul cu o bară de remorcare."
+      }
+    },
+    {
+      "term": "caravan",
+      "translations": {
+        "en": "A trailer home designed to be towed behind a car for living or holidays.",
+        "ar": "مقطورة سكنية تُسحب خلف السيارة للسكن أو العطل.",
+        "ur": "رہائشی ٹریلر جو کار کے پیچھے کھینچا جاتا ہے، رہنے یا چھٹیوں کے لیے۔",
+        "ro": "Rulotă tractată de o mașină, folosită pentru locuit sau vacanțe."
+      }
+    },
+    {
+      "term": "Extended-arm side mirrors",
+      "translations": {
+        "en": "Door mirrors on longer arms so you can still see past a wide trailer or caravan.",
+        "ar": "مرايا جانبية بذراعين أطول لتظل ترى خلف مقطورة أو كرفان عريض.",
+        "ur": "لمبی بازوؤں والے سائیڈ مرر تاکہ چوڑے ٹریلر/کاروان کے پار نظر آئے۔",
+        "ro": "Oglinzi laterale pe brațe mai lungi ca să vedeți dincolo de o remorcă sau rulotă lată."
+      }
+    }
+  ],
+  "OV-05": [],
+  "OV-06": [
+    {
+      "term": "crossroads",
+      "translations": {
+        "en": "A junction where two roads cross each other.",
+        "ar": "تقاطع تلتقي فيه طريقان بشكل متقاطع.",
+        "ur": "وہ جنکشن جہاں دو سڑکیں ایک دوسرے کو کاٹتی ہیں۔",
+        "ro": "Intersecție în care două drumuri se intersectează."
+      }
+    },
+    {
+      "term": "Overtake",
+      "translations": {
+        "en": "To pass another road user moving in the same direction and go ahead of them.",
+        "ar": "تجاوز مستخدم طريق آخر يسير في نفس الاتجاه والمرور أمامه.",
+        "ur": "اسی سمت چلتے ہوئے دوسرے روڈ یوزر سے آگے نکل جانا۔",
+        "ro": "A depăși un alt participant la trafic care merge în aceeași direcție."
+      }
+    }
+  ],
+  "OV-07": [
+    {
+      "term": "spray",
+      "translations": {
+        "en": "Water thrown up by tyres on a wet road that reduces how far you can see.",
+        "ar": "ماء يتطاير من الإطارات على طريق مبلل فيقلل مدى رؤيتك.",
+        "ur": "گیلی سڑک پر ٹائروں سے اڑتا پانی جو نظر کم کر دیتا ہے۔",
+        "ro": "Apă aruncată de anvelope pe drum ud, care reduce vizibilitatea."
+      }
+    },
+    {
+      "term": "Main beam headlights",
+      "translations": {
+        "en": "Full, bright forward lights for dark empty roads; they can dazzle other drivers.",
+        "ar": "الأضواء الأمامية العالية الساطعة للطرق المظلمة الخالية؛ قد تُبهر السائقين الآخرين.",
+        "ur": "اندھیری خالی سڑکوں کے لیے تیز فل بیم لائٹس؛ دوسرے ڈرائیورز کو چکاچوند کر سکتی ہیں۔",
+        "ro": "Faza lungă puternică pentru drumuri întunecate goale; poate orbi alți șoferi."
+      }
+    },
+    {
+      "term": "Dipped headlights",
+      "translations": {
+        "en": "Lower-beam headlights that light the road ahead without dazzling oncoming drivers.",
+        "ar": "أضواء أمامية منخفضة تضيء الطريق دون إبهار السائقين القادمين.",
+        "ur": "کم بیم ہیڈ لائٹس جو آگے سڑک روشن کرتی ہیں بغیر آنے والے ڈرائیورز کو چکاچوند کیے۔",
+        "ro": "Faza scurtă care luminează drumul fără a orbi șoferii din sens opus."
+      }
+    }
+  ],
+  "OV-08": [
+    {
+      "term": "high-sided vehicle",
+      "translations": {
+        "en": "A tall vehicle such as a lorry or van that can be pushed sideways by strong wind.",
+        "ar": "مركبة مرتفعة مثل شاحنة أو فان يمكن أن تدفعها الرياح القوية جانبياً.",
+        "ur": "اونچی گاڑی جیسے لاری یا وین جسے تیز ہوا کنارے دھکیل سکتی ہے۔",
+        "ro": "Vehicul înalt (camion, dubă) pe care vântul puternic îl poate împinge lateral."
+      }
+    },
+    {
+      "term": "motorcyclist",
+      "translations": {
+        "en": "A person riding a motorcycle, more easily affected by wind and road surface than car drivers.",
+        "ar": "شخص يقود دراجة نارية، ويتأثر بالرياح وسطح الطريق أكثر من سائقي السيارات.",
+        "ur": "موٹر سائیکل سوار؛ ہوا اور سڑک کی سطح سے کار ڈرائیورز کے مقابلے زیادہ متاثر ہوتا ہے۔",
+        "ro": "Persoană pe motocicletă, mai afectată de vânt și de starea drumului decât șoferii de mașini."
+      }
+    }
+  ],
+  "OV-09": [
+    {
+      "term": "motorcyclist",
+      "translations": {
+        "en": "A person riding a motorcycle, more easily affected by wind and road surface than car drivers.",
+        "ar": "شخص يقود دراجة نارية، ويتأثر بالرياح وسطح الطريق أكثر من سائقي السيارات.",
+        "ur": "موٹر سائیکل سوار؛ ہوا اور سڑک کی سطح سے کار ڈرائیورز کے مقابلے زیادہ متاثر ہوتا ہے۔",
+        "ro": "Persoană pe motocicletă, mai afectată de vânt și de starea drumului decât șoferii de mașini."
+      }
+    },
+    {
+      "term": "road markings",
+      "translations": {
+        "en": "Painted lines and symbols on the road surface that give rules or warnings to drivers.",
+        "ar": "خطوط ورموز مرسومة على سطح الطريق تعطي قواعد أو تحذيرات للسائقين.",
+        "ur": "سڑک کی سطح پر رنگے ہوئے خطوط اور علامات جو قواعد یا انتباہ دیتی ہیں۔",
+        "ro": "Linii și simboluri vopsite pe carosabil care dau reguli sau avertismente șoferilor."
+      }
+    }
+  ],
+  "OV-10": [
+    {
+      "term": "long vehicle",
+      "translations": {
+        "en": "A lengthy vehicle such as an articulated lorry that needs extra space to turn.",
+        "ar": "مركبة طويلة مثل شاحنة مفصلية تحتاج مساحة إضافية للالتفاف.",
+        "ur": "لمبی گاڑی جیسے آرٹیکیولیٹڈ لاری جسے مڑنے کے لیے زیادہ جگہ چاہیے۔",
+        "ro": "Vehicul lung (ex. camion articulat) care are nevoie de spațiu suplimentar la viraj."
+      }
+    }
+  ],
+  "OV-11": [
+    {
+      "term": "single carriageway",
+      "translations": {
+        "en": "A road without a central reservation separating opposite directions of traffic.",
+        "ar": "طريق بلا حاجز وسط يفصل اتجاهي السير المتعاكسين.",
+        "ur": "ایسی سڑک جس میں مخالف سمتوں کی ٹریفک الگ کرنے والی درمیانی ریزرویشن نہ ہو۔",
+        "ro": "Drum fără rezervație centrală care să separe sensurile opuse de circulație."
+      }
+    }
+  ],
+  "OV-12": [
+    {
+      "term": "mini-roundabout",
+      "translations": {
+        "en": "A small roundabout, often marked by a painted circle, where traffic circles and gives way to the right.",
+        "ar": "دوار صغير غالباً بدائرة مرسومة؛ تدور حوله المركبات وتعطي الأولوية لليمين.",
+        "ur": "چھوٹا راؤنڈ اباؤٹ، اکثر پینٹ شدہ دائرے سے؛ ٹریفک گھومتی ہے اور دائیں کو راستہ دیتی ہے۔",
+        "ro": "Sens giratoriu mic, adesea marcat cu un cerc vopsit; circulația ocolește și cedează dreapta."
+      }
+    },
+    {
+      "term": "long vehicle",
+      "translations": {
+        "en": "A lengthy vehicle such as an articulated lorry that needs extra space to turn.",
+        "ar": "مركبة طويلة مثل شاحنة مفصلية تحتاج مساحة إضافية للالتفاف.",
+        "ur": "لمبی گاڑی جیسے آرٹیکیولیٹڈ لاری جسے مڑنے کے لیے زیادہ جگہ چاہیے۔",
+        "ro": "Vehicul lung (ex. camion articulat) care are nevoie de spațiu suplimentar la viraj."
+      }
+    }
+  ],
+  "OV-13": [
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing a slower vehicle ahead and moving back into lane when it is safe.",
+        "ar": "تجاوز مركبة أبطأ أمامك ثم العودة إلى المسار عندما يكون ذلك آمناً.",
+        "ur": "آگے سست گاڑی سے آگے نکلنا اور محفوظ ہونے پر لین میں واپس آنا۔",
+        "ro": "Depășirea unui vehicul mai lent din față și revenirea pe bandă când este sigur."
+      }
+    },
+    {
+      "term": "speed limiters",
+      "translations": {
+        "en": "Devices that restrict how fast a large vehicle can go, often required by law for lorries.",
+        "ar": "أجهزة تحد أقصى سرعة المركبة الكبيرة، وغالباً مطلوبة قانوناً للشاحنات.",
+        "ur": "آلات جو بڑی گاڑی کی زیادہ سے زیادہ رفتار محدود کرتی ہیں؛ لاریوں کے لیے اکثر قانونی۔",
+        "ro": "Dispozitive care limitează viteza maximă a vehiculelor mari, adesea obligatorii pentru camioane."
+      }
+    },
+    {
+      "term": "air brakes",
+      "translations": {
+        "en": "A braking system on many large vehicles that uses compressed air instead of only hydraulic fluid.",
+        "ar": "نظام فرملة في كثير من المركبات الكبيرة يستخدم هواءً مضغوطاً بدل السائل الهيدروليكي فقط.",
+        "ur": "بڑی گاڑیوں کا بریک سسٹم جو صرف ہائیڈرولک فلویڈ کے بجائے کمپریسڈ ہوا استعمال کرتا ہے۔",
+        "ro": "Sistem de frânare pe multe vehicule mari care folosește aer comprimat, nu doar lichid hidraulic."
+      }
+    }
+  ],
+  "OV-14": [
+    {
+      "term": "lorry",
+      "translations": {
+        "en": "A large goods vehicle (truck) used to carry heavy loads.",
+        "ar": "مركبة بضائع كبيرة (شاحنة) تُستخدم لنقل الأحمال الثقيلة.",
+        "ur": "بڑی مال بردار گاڑی (ٹرک) جو بھاری سامان لے جاتی ہے۔",
+        "ro": "Vehicul mare de marfă (camion) folosit pentru încărcături grele."
+      }
+    }
+  ],
+  "OV-15": [
+    {
+      "term": "kerb",
+      "translations": {
+        "en": "The raised stone or concrete edge between the road and the pavement.",
+        "ar": "الحافة المرتفعة من حجر أو خرسانة بين الطريق والرصيف.",
+        "ur": "سڑک اور فٹ پاتھ کے درمیان اٹھی ہوئی پتھر/کنکریٹ کی کنارہ۔",
+        "ro": "Marginea ridicată de piatră sau beton dintre carosabil și trotuar."
+      }
+    },
+    {
+      "term": "long vehicle",
+      "translations": {
+        "en": "A lengthy vehicle such as an articulated lorry that needs extra space to turn.",
+        "ar": "مركبة طويلة مثل شاحنة مفصلية تحتاج مساحة إضافية للالتفاف.",
+        "ur": "لمبی گاڑی جیسے آرٹیکیولیٹڈ لاری جسے مڑنے کے لیے زیادہ جگہ چاہیے۔",
+        "ro": "Vehicul lung (ex. camion articulat) care are nevoie de spațiu suplimentar la viraj."
+      }
+    }
+  ],
+  "OV-16": [
+    {
+      "term": "trams",
+      "translations": {
+        "en": "Electric passenger vehicles that run on fixed rails embedded in the road.",
+        "ar": "مركبات ركاب كهربائية تسير على قضبان ثابتة مدمجة في الطريق.",
+        "ur": "بجلی سے چلنے والی مسافر گاڑیاں جو سڑک میں لگی پٹریوں پر چلتی ہیں۔",
+        "ro": "Vehicule electrice de călători care circulă pe șine fixe în carosabil."
+      }
+    }
+  ],
+  "OV-17": [],
+  "OV-18": [],
+  "OV-19": [
+    {
+      "term": "overtake",
+      "translations": {
+        "en": "To pass another road user moving in the same direction and go ahead of them.",
+        "ar": "تجاوز مستخدم طريق آخر يسير في نفس الاتجاه والمرور أمامه.",
+        "ur": "اسی سمت چلتے ہوئے دوسرے روڈ یوزر سے آگے نکل جانا۔",
+        "ro": "A depăși un alt participant la trafic care merge în aceeași direcție."
+      }
+    }
+  ],
+  "OV-20": [
+    {
+      "term": "pull away",
+      "translations": {
+        "en": "When a vehicle starts moving off from a stop, such as leaving a bus stop.",
+        "ar": "عندما تبدأ مركبة بالحركة من التوقف، مثل مغادرة موقف حافلة.",
+        "ur": "جب گاڑی رکی ہوئی جگہ سے چلنا شروع کرے، جیسے بس اسٹاپ سے نکلنا۔",
+        "ro": "Când un vehicul pornește din staționare, de exemplu părăsind o stație de autobuz."
+      }
+    }
+  ],
+  "OV-21": [
+    {
+      "term": "spray",
+      "translations": {
+        "en": "Water thrown up by tyres on a wet road that reduces how far you can see.",
+        "ar": "ماء يتطاير من الإطارات على طريق مبلل فيقلل مدى رؤيتك.",
+        "ur": "گیلی سڑک پر ٹائروں سے اڑتا پانی جو نظر کم کر دیتا ہے۔",
+        "ro": "Apă aruncată de anvelope pe drum ud, care reduce vizibilitatea."
+      }
+    },
+    {
+      "term": "full beam headlights",
+      "translations": {
+        "en": "Main-beam lights at full brightness; avoid them when they would dazzle other drivers.",
+        "ar": "الأضواء العالية بأقصى سطوع؛ تجنّبها عندما قد تُبهر السائقين الآخرين.",
+        "ur": "فل برائٹ مین بیم لائٹس؛ جب دوسروں کو چکاچوند ہوں تو استعمال نہ کریں۔",
+        "ro": "Faza lungă la intensitate maximă; evitați-o când ar orbi alți șoferi."
+      }
+    }
+  ],
+  "OV-22": [
+    {
+      "term": "High-sided vehicles",
+      "translations": {
+        "en": "Tall vehicles such as lorries or vans that can be pushed sideways by strong wind.",
+        "ar": "مركبات مرتفعة مثل الشاحنات أو الفانات يمكن أن تدفعها الرياح القوية جانبياً.",
+        "ur": "اونچی گاڑیاں جیسے لاریاں یا وین جنہیں تیز ہوا کنارے دھکیل سکتی ہے۔",
+        "ro": "Vehicule înalte (camioane, dube) pe care vântul puternic le poate împinge lateral."
+      }
+    },
+    {
+      "term": "side winds",
+      "translations": {
+        "en": "Strong wind blowing across the road that can push lighter or taller vehicles off line.",
+        "ar": "رياح قوية تهب عبر الطريق وقد تدفع المركبات الخفيفة أو المرتفعة عن مسارها.",
+        "ur": "سڑک کے آر پار تیز ہوا جو ہلکی یا اونچی گاڑیوں کو لائن سے ہٹا سکتی ہے۔",
+        "ro": "Vânt puternic lateral pe drum care poate abate vehiculele ușoare sau înalte."
+      }
+    }
+  ],
+  "VL-01": [
+    {
+      "term": "nose weight",
+      "translations": {
+        "en": "The downward weight a trailer’s hitch puts on the vehicle’s tow ball; it must stay within limits.",
+        "ar": "الوزن الهابط الذي تضعه وصلة المقطورة على كرة السحب؛ ويجب ألا يتجاوز الحدود المسموحة.",
+        "ur": "ٹریلر ہچ کا نیچے کی طرف وزن جو ٹو بال پر پڑتا ہے؛ حد کے اندر رہنا چاہیے۔",
+        "ro": "Greutatea în jos pe bila de remorcare; trebuie să rămână în limitele admise."
+      }
+    },
+    {
+      "term": "tow bar",
+      "translations": {
+        "en": "The metal bar fitted to a vehicle for attaching and towing a trailer or caravan.",
+        "ar": "قضيب معدني يُركَّب على المركبة لربط وسحب مقطورة أو كرفان.",
+        "ur": "گاڑی پر لگا دھاتی بار جس سے ٹریلر یا کاروان جوڑا اور کھینچا جاتا ہے۔",
+        "ro": "Bara metalică montată pe vehicul pentru a atașa și tracta o remorcă sau rulotă."
+      }
+    },
+    {
+      "term": "Highway Code",
+      "translations": {
+        "en": "The official UK rules and advice for road users, including drivers and pedestrians.",
+        "ar": "القواعد والنصائح الرسمية في المملكة المتحدة لمستخدمي الطريق بما فيهم السائقون والمشاة.",
+        "ur": "برطانیہ کے روڈ یوزرز (ڈرائیورز اور پیدل چلنے والوں) کے لیے سرکاری قواعد و مشورے۔",
+        "ro": "Regulile și sfaturile oficiale din Regatul Unit pentru participanții la trafic."
+      }
+    }
+  ],
+  "VL-02": [
+    {
+      "term": "roof rack",
+      "translations": {
+        "en": "A frame on top of a car used to carry luggage or equipment outside the cabin.",
+        "ar": "إطار فوق السيارة لحمل الأمتعة أو المعدات خارج المقصورة.",
+        "ur": "کار کی چھت پر فریم جس پر سامان باہر رکھا جاتا ہے۔",
+        "ro": "Cadru pe plafonul mașinii pentru bagaje sau echipamente în afara habitaclului."
+      }
+    },
+    {
+      "term": "stopping distance",
+      "translations": {
+        "en": "The total distance needed to stop: thinking distance plus braking distance.",
+        "ar": "المسافة الإجمالية اللازمة للتوقف: مسافة التفكير زائد مسافة الفرملة.",
+        "ur": "رکنے کے لیے درکار کل فاصلہ: سوچنے کا فاصلہ جمع بریک لگانے کا فاصلہ۔",
+        "ro": "Distanța totală necesară pentru a opri: distanța de reacție plus distanța de frânare."
+      }
+    }
+  ],
+  "VL-03": [
+    {
+      "term": "restraint",
+      "translations": {
+        "en": "A safety device that holds a young passenger securely while travelling in a vehicle.",
+        "ar": "جهاز أمان يُثبّت الراكب الصغير بأمان أثناء السفر في المركبة.",
+        "ur": "حفاظتی آلہ جو سفر کے دوران چھوٹے مسافر کو گاڑی میں محفوظ پکڑتا ہے۔",
+        "ro": "Dispozitiv de siguranță care ține un pasager tânăr fix în timpul deplasării."
+      }
+    },
+    {
+      "term": "Lap belt",
+      "translations": {
+        "en": "A seat belt that goes only across the hips, without a diagonal shoulder strap.",
+        "ar": "حزام أمان يمر على الوركين فقط دون شريط كتف قطري.",
+        "ur": "صرف کولہوں پر آنے والا سیٹ بیلٹ، بغیر کندھے کی پٹی کے۔",
+        "ro": "Centură care trece doar peste șolduri, fără bandă diagonală pe umăr."
+      }
+    }
+  ],
+  "VL-04": [
+    {
+      "term": "towing",
+      "translations": {
+        "en": "Pulling a trailer, caravan, or another vehicle behind your car using a tow bar or hitch.",
+        "ar": "سحب مقطورة أو كرفان أو مركبة أخرى خلف سيارتك باستخدام قضيب سحب.",
+        "ur": "ٹو بار سے اپنے پیچھے ٹریلر، کاروان یا دوسری گاڑی کھینچنا۔",
+        "ro": "Tractarea unei remorci, rulote sau a altui vehicul cu o bară de remorcare."
+      }
+    },
+    {
+      "term": "trailer",
+      "translations": {
+        "en": "An unpowered wheeled unit designed to be towed behind a vehicle to carry loads.",
+        "ar": "وحدة بعجلات بلا محرك تُسحب خلف مركبة لنقل الأحمال.",
+        "ur": "بغیر انجن والی پہیوں والی یونٹ جو سامان لے جانے کے لیے گاڑی کے پیچھے کھینچی جاتی ہے۔",
+        "ro": "Unitate pe roți fără motor, tractată de un vehicul pentru a transporta încărcături."
+      }
+    }
+  ],
+  "VL-05": [
+    {
+      "term": "Exterior towing mirrors",
+      "translations": {
+        "en": "Extra or extended side mirrors required when a trailer is wider than the towing vehicle.",
+        "ar": "مرايا جانبية إضافية أو ممتدة مطلوبة عندما تكون المقطورة أعرض من مركبة السحب.",
+        "ur": "اضافی یا لمبے سائیڈ مرر جب ٹریلر کھینچنے والی گاڑی سے چوڑا ہو۔",
+        "ro": "Oglinzi laterale suplimentare sau prelungite, necesare când remorca e mai lată decât vehiculul."
+      }
+    },
+    {
+      "term": "Projection markers",
+      "translations": {
+        "en": "Flags or lights that mark an overhanging load so other road users can see it.",
+        "ar": "أعلام أو أضواء تُعلّم حملاً بارزاً ليراه مستخدمو الطريق الآخرون.",
+        "ur": "جھنڈے یا لائٹس جو باہر نکلا ہوا سامان نشان زد کریں تاکہ دوسرے دیکھ سکیں۔",
+        "ro": "Steaguri sau lumini care marchează o încărcătură ieșită în afară ca alții să o vadă."
+      }
+    }
+  ],
+  "VL-06": [
+    {
+      "term": "Jockey wheel",
+      "translations": {
+        "en": "A small wheel near the trailer hitch used to support and manoeuvre the trailer when unhitched.",
+        "ar": "عجلة صغيرة قرب وصلة المقطورة لدعمها وتحريكها عندما تكون غير مربوطة.",
+        "ur": "ٹریلر ہچ کے قریب چھوٹا پہیہ جو الگ ہونے پر سہارا اور حرکت دیتا ہے۔",
+        "ro": "Roată mică lângă cuplaj, folosită să susțină și să manevreze remorca când e decuplată."
+      }
+    },
+    {
+      "term": "Corner steadies",
+      "translations": {
+        "en": "Support legs at the corners of a caravan used to keep it stable when parked, not while towing.",
+        "ar": "أرجل دعم في زوايا الكرفان لتثبيته عند التوقف، وليس أثناء السحب.",
+        "ur": "کاروان کے کونوں پر سپورٹ ٹانگیں جو پارک ہونے پر مستحکم رکھتی ہیں، ٹو کرتے وقت نہیں۔",
+        "ro": "Picioare de sprijin la colțurile rulotei pentru stabilitate când e staționată, nu în timpul tractării."
+      }
+    },
+    {
+      "term": "Stabiliser",
+      "translations": {
+        "en": "A device that reduces unwanted swinging or swaying of a trailer while towing.",
+        "ar": "جهاز يقلل التأرجح غير المرغوب للمقطورة أثناء السحب.",
+        "ur": "آلہ جو ٹو کرتے وقت ٹریلر کے غیر مطلوب جھول/لڑکھڑاہٹ کو کم کرتا ہے۔",
+        "ro": "Dispozitiv care reduce balansul nedorit al remorcii în timpul tractării."
+      }
+    }
+  ],
+  "VL-07": [
+    {
+      "term": "caravan",
+      "translations": {
+        "en": "A trailer home designed to be towed behind a car for living or holidays.",
+        "ar": "مقطورة سكنية تُسحب خلف السيارة للسكن أو العطل.",
+        "ur": "رہائشی ٹریلر جو کار کے پیچھے کھینچا جاتا ہے، رہنے یا چھٹیوں کے لیے۔",
+        "ro": "Rulotă tractată de o mașină, folosită pentru locuit sau vacanțe."
+      }
+    },
+    {
+      "term": "Jockey wheel",
+      "translations": {
+        "en": "A small wheel near the trailer hitch used to support and manoeuvre the trailer when unhitched.",
+        "ar": "عجلة صغيرة قرب وصلة المقطورة لدعمها وتحريكها عندما تكون غير مربوطة.",
+        "ur": "ٹریلر ہچ کے قریب چھوٹا پہیہ جو الگ ہونے پر سہارا اور حرکت دیتا ہے۔",
+        "ro": "Roată mică lângă cuplaj, folosită să susțină și să manevreze remorca când e decuplată."
+      }
+    }
+  ],
+  "VL-08": [
+    {
+      "term": "overloaded",
+      "translations": {
+        "en": "Carrying more weight than the vehicle or trailer is legally allowed to carry.",
+        "ar": "تحميل وزن أكبر مما يُسمح به قانوناً للمركبة أو المقطورة.",
+        "ur": "گاڑی یا ٹریلر کی قانونی اجازت سے زیادہ وزن لے جانا۔",
+        "ro": "Transportul unei greutăți mai mari decât limita legală a vehiculului sau remorcii."
+      }
+    },
+    {
+      "term": "Licensing authority",
+      "translations": {
+        "en": "The official body that issues and manages driving licences and related vehicle records (e.g. DVLA).",
+        "ar": "الجهة الرسمية التي تصدر وتدير رخص القيادة وسجلات المركبات ذات الصلة (مثل DVLA).",
+        "ur": "سرکاری ادارہ جو ڈرائیونگ لائسنس اور متعلقہ گاڑی کے ریکارڈ جاری و منظم کرتا ہے (جیسے DVLA)۔",
+        "ro": "Autoritatea care eliberează și gestionează permisele de conducere și evidențele vehiculelor (ex. DVLA)."
+      }
+    }
+  ],
+  "VL-09": [],
+  "VL-10": [
+    {
+      "term": "unbraked trailer",
+      "translations": {
+        "en": "A trailer without its own brakes; coupling safety devices are especially important.",
+        "ar": "مقطورة بلا فرامل خاصة بها؛ أجهزة ربط الأمان مهمة جداً.",
+        "ur": "بغیر اپنی بریکوں والا ٹریلر؛ جوڑنے کے حفاظتی آلات خاص طور پر اہم۔",
+        "ro": "Remorcă fără frâne proprii; dispozitivele de cuplare de siguranță sunt esențiale."
+      }
+    },
+    {
+      "term": "secondary coupling device",
+      "translations": {
+        "en": "A backup link (often a chain or cable) that keeps the trailer attached if the main coupling fails.",
+        "ar": "وصلة احتياطية (غالباً سلسلة أو كابل) تُبقي المقطورة مربوطة إذا فشلت الوصلة الرئيسية.",
+        "ur": "بیک اپ لنک (اکثر زنجیر یا کیبل) جو مین جوڑ ٹوٹے تو ٹریلر کو جکڑے رکھے۔",
+        "ro": "Legătură de rezervă (lanț sau cablu) care ține remorca atașată dacă cuplajul principal cedează."
+      }
+    },
+    {
+      "term": "tow ball",
+      "translations": {
+        "en": "The ball-shaped coupling on a tow bar that the trailer hitch locks onto.",
+        "ar": "الكرة على قضيب السحب التي تُقفل عليها وصلة المقطورة.",
+        "ur": "ٹو بار پر گیند نما جوڑ جس پر ٹریلر ہچ لاک ہوتا ہے۔",
+        "ro": "Bila de pe bara de remorcare pe care se blochează cuplajul remorcii."
+      }
+    }
+  ],
+  "VL-11": [
+    {
+      "term": "Handling",
+      "translations": {
+        "en": "How the car steers, corners, and responds; a heavy load can make this worse.",
+        "ar": "كيف تستجيب السيارة للتوجيه والانعطاف؛ الحمل الثقيل قد يسيء إلى ذلك.",
+        "ur": "کار کی سٹیئرنگ، موڑ اور ردِعمل؛ بھاری بوجھ اسے خراب کر سکتا ہے۔",
+        "ro": "Cum virează și răspunde mașina; o încărcătură grea poate înrăutăți asta."
+      }
+    }
+  ],
+  "VL-12": [
+    {
+      "term": "P plates",
+      "translations": {
+        "en": "Optional plates some newly qualified drivers display to show they have just passed their test.",
+        "ar": "لوحات اختيارية يعرضها بعض السائقين حديثي التأهيل لإظهار نجاحهم حديثاً في الاختبار.",
+        "ur": "اختیاری پلیٹس جو کچھ نئے پاس ڈرائیورز لگاتے ہیں تاکہ بتائیں ابھی ٹیسٹ پاس ہوا ہے۔",
+        "ro": "Plăcuțe opționale pe care unii șoferi noi le afișează după ce au trecut examenul."
+      }
+    },
+    {
+      "term": "towing",
+      "translations": {
+        "en": "Pulling a trailer, caravan, or another vehicle behind your car using a tow bar or hitch.",
+        "ar": "سحب مقطورة أو كرفان أو مركبة أخرى خلف سيارتك باستخدام قضيب سحب.",
+        "ur": "ٹو بار سے اپنے پیچھے ٹریلر، کاروان یا دوسری گاڑی کھینچنا۔",
+        "ro": "Tractarea unei remorci, rulote sau a altui vehicul cu o bară de remorcare."
+      }
+    }
+  ],
+  "VL-13": [
+    {
+      "term": "maximum authorised mass",
+      "translations": {
+        "en": "The heaviest legal weight of a vehicle or trailer including its load (also called MAM).",
+        "ar": "أقصى وزن قانوني للمركبة أو المقطورة مع حمولتها (يُسمى أيضاً MAM).",
+        "ur": "گاڑی یا ٹریلر کا بوجھ سمیت قانونی زیادہ سے زیادہ وزن (MAM بھی کہلاتا ہے)۔",
+        "ro": "Cea mai mare greutate legală a unui vehicul sau remorci, inclusiv încărcătura (și MAM)."
+      }
+    }
+  ],
+  "VL-14": [
+    {
+      "term": "sway",
+      "translations": {
+        "en": "Side-to-side swinging of a trailer or caravan while being towed, which can become dangerous.",
+        "ar": "تأرجح المقطورة أو الكرفان يميناً ويساراً أثناء السحب وقد يصبح خطراً.",
+        "ur": "ٹو کرتے وقت ٹریلر/کاروان کا دائیں بائیں جھولنا جو خطرناک ہو سکتا ہے۔",
+        "ro": "Balans stânga-dreapta al remorcii sau rulotei în timpul tractării, care poate deveni periculos."
+      }
+    }
+  ],
+  "VL-15": [
+    {
+      "term": "three-lane motorway",
+      "translations": {
+        "en": "A motorway with three lanes in each direction of travel.",
+        "ar": "طريق سريع بثلاثة مسارات في كل اتجاه سير.",
+        "ur": "ایسی موٹروے جس میں ہر سمت تین لینیں ہوں۔",
+        "ro": "Autostradă cu trei benzi pe fiecare sens de mers."
+      }
+    },
+    {
+      "term": "right-hand lane",
+      "translations": {
+        "en": "On a UK multi-lane motorway, the lane furthest to the right, normally for overtaking.",
+        "ar": "على طريق سريع متعدد المسارات في المملكة المتحدة، المسار الأقصى يميناً ويُستخدم عادةً للتجاوز.",
+        "ur": "برطانوی کثیر لین موٹروے پر سب سے دائیں لین، عام طور پر اوورٹیکنگ کے لیے۔",
+        "ro": "Pe o autostradă cu mai multe benzi în Regatul Unit, banda cea mai din dreapta, folosită de obicei la depășire."
+      }
+    },
+    {
+      "term": "Stabiliser",
+      "translations": {
+        "en": "A device that reduces unwanted swinging or swaying of a trailer while towing.",
+        "ar": "جهاز يقلل التأرجح غير المرغوب للمقطورة أثناء السحب.",
+        "ur": "آلہ جو ٹو کرتے وقت ٹریلر کے غیر مطلوب جھول/لڑکھڑاہٹ کو کم کرتا ہے۔",
+        "ro": "Dispozitiv care reduce balansul nedorit al remorcii în timpul tractării."
+      }
+    }
+  ],
+  "VL-17": [
+    {
+      "term": "accelerator",
+      "translations": {
+        "en": "The pedal that increases engine power and vehicle speed (also called the gas pedal).",
+        "ar": "الدواسة التي تزيد قوة المحرك وسرعة المركبة (دواسة البنزين).",
+        "ur": "پیڈل جو انجن کی طاقت اور رفتار بڑھاتا ہے (گیس پیڈل)۔",
+        "ro": "Pedala care crește puterea motorului și viteza (pedala de accelerație)."
+      }
+    }
+  ]
+}

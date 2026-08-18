@@ -1,0 +1,1143 @@
+{
+  "RS-6026": [
+    {
+      "term": "traffic signals",
+      "translations": {
+        "en": "Lights that control traffic at junctions and crossings.",
+        "ar": "أضواء تنظم حركة المرور عند التقاطعات والمعابر.",
+        "ur": "لائٹس جو جنکشن اور کراسنگ پر ٹریفک کنٹرول کرتی ہیں۔",
+        "ro": "Lumini care controlează traficul la intersecții și treceri."
+      }
+    },
+    {
+      "term": "pedestrian crossing",
+      "translations": {
+        "en": "A marked place on the road where people on foot can cross safely.",
+        "ar": "مكان مُعلَّم على الطريق يعبر منه المشاة بأمان.",
+        "ur": "سڑک پر نشان زدہ جگہ جہاں پیدل چلنے والے محفوظ طریقے سے عبور کرتے ہیں۔",
+        "ro": "Loc marcat pe drum unde pietonii pot traversa în siguranță."
+      }
+    }
+  ],
+  "RS-6027": [
+    {
+      "term": "Loose gravel",
+      "translations": {
+        "en": "Small loose stones on the road surface that can reduce tyre grip.",
+        "ar": "حصى صغير مفكوك على سطح الطريق قد يقلل تماسك الإطارات.",
+        "ur": "سڑک پر ڈھیلے کنکر جو ٹائر کی گرفت کم کر سکتے ہیں۔",
+        "ro": "Pietriș afânat pe carosabil care poate reduce aderența anvelopelor."
+      }
+    },
+    {
+      "term": "slippery road",
+      "translations": {
+        "en": "A road surface with poor tyre grip, so vehicles can skid more easily.",
+        "ar": "سطح طريق بتماسك ضعيف للإطارات، فيسهل انزلاق المركبات.",
+        "ur": "سڑک کی سطح جس پر ٹائروں کی گرفت کم ہو، اس لیے گاڑی پھسل سکتی ہے۔",
+        "ro": "Suprafață de drum cu aderență slabă a anvelopelor, deci vehiculele pot derapa mai ușor."
+      }
+    }
+  ],
+  "RS-6028": [
+    {
+      "term": "No waiting",
+      "translations": {
+        "en": "A UK restriction meaning you must not wait or park there at the times shown.",
+        "ar": "قيد بريطاني يعني أنه لا يجوز الانتظار أو الوقوف هناك في الأوقات المبينة.",
+        "ur": "برطانوی پابندی: دکھائے گئے اوقات میں وہاں انتظار یا پارک نہیں کر سکتے۔",
+        "ro": "Restricție din Regatul Unit: nu aveți voie să așteptați sau să parcați acolo în intervalele afișate."
+      }
+    },
+    {
+      "term": "Waiting restrictions",
+      "translations": {
+        "en": "Rules that limit when you may wait or park along a stretch of road.",
+        "ar": "قواعد تحدد متى يُسمح بالانتظار أو الوقوف على جزء من الطريق.",
+        "ur": "قواعد جو بتاتی ہیں کہ سڑک کے کسی حصے پر کب انتظار یا پارکنگ کی جا سکتی ہے۔",
+        "ro": "Reguli care limitează când puteți aștepta sau parca pe o porțiune de drum."
+      }
+    },
+    {
+      "term": "No loading",
+      "translations": {
+        "en": "A restriction meaning goods must not be loaded or unloaded there at the times shown.",
+        "ar": "قيد يعني عدم تحميل أو تفريغ البضائع هناك في الأوقات المبينة.",
+        "ur": "پابندی کہ دکھائے گئے اوقات میں وہاں سامان اتارنا یا چڑھانا نہیں چاہیے۔",
+        "ro": "Restricție: nu se încarcă/descarcă mărfuri acolo în intervalele afișate."
+      }
+    }
+  ],
+  "RS-6029": [
+    {
+      "term": "obscured",
+      "translations": {
+        "en": "Partly hidden or hard to see, for example by dirt, trees, or another object.",
+        "ar": "مخفي جزئياً أو صعب الرؤية، مثلاً بسبب الأوساخ أو الأشجار أو جسم آخر.",
+        "ur": "جزوی طور پر چھپا یا دیکھنا مشکل، مثلاً گندگی، درخت یا کسی چیز کی وجہ سے۔",
+        "ro": "Parțial ascuns sau greu de văzut, de exemplu din cauza murdăriei, copacilor sau altui obiect."
+      }
+    },
+    {
+      "term": "road markings",
+      "translations": {
+        "en": "Lines, symbols, or writing painted on the road surface to guide or control traffic.",
+        "ar": "خطوط أو رموز أو كتابات مرسومة على سطح الطريق لتوجيه أو تنظيم المرور.",
+        "ur": "سڑک کی سطح پر بنی لکیریں، علامات یا تحریر جو ٹریفک کی رہنمائی یا کنٹرول کرتی ہیں۔",
+        "ro": "Linii, simboluri sau texte pictate pe carosabil pentru a ghida sau controla traficul."
+      }
+    }
+  ],
+  "RS-6030": [
+    {
+      "term": "supplementary plates",
+      "translations": {
+        "en": "Small rectangular signs placed under a main road sign that add details such as times or exceptions.",
+        "ar": "لوحات مستطيلة صغيرة تحت الإشارة الرئيسية تضيف تفاصيل مثل الأوقات أو الاستثناءات.",
+        "ur": "بڑے سائن کے نیچے چھوٹی مستطیل پلیٹیں جو اوقات یا استثنات جیسی تفصیل دیتی ہیں۔",
+        "ro": "Plăcuțe dreptunghiulare sub indicatorul principal, cu detalii precum ore sau excepții."
+      }
+    }
+  ],
+  "IN-17": [],
+  "IN-18": [
+    {
+      "term": "dashboard warning light",
+      "translations": {
+        "en": "A light on the instrument panel that alerts you to a vehicle fault or important status.",
+        "ar": "ضوء على لوحة العدادات ينبهك إلى عطل في المركبة أو حالة مهمة.",
+        "ur": "ڈیش بورڈ کی روشنی جو گاڑی کے مسئلے یا اہم حالت سے آگاہ کرتی ہے۔",
+        "ro": "Martor pe bord care semnalează o defecțiune sau o stare importantă a vehiculului."
+      }
+    }
+  ],
+  "IN-19": [
+    {
+      "term": "casualty",
+      "translations": {
+        "en": "An injured person in an accident.",
+        "ar": "شخص مصاب في حادث.",
+        "ur": "حادثے میں زخمی شخص۔",
+        "ro": "Persoană rănită într-un accident."
+      }
+    },
+    {
+      "term": "shock",
+      "translations": {
+        "en": "A serious medical condition after injury when the body is not circulating blood well.",
+        "ar": "حالة طبية خطيرة بعد الإصابة عندما لا يدور الدم بشكل كافٍ في الجسم.",
+        "ur": "زخم کے بعد سنگین طبی حالت جب جسم میں خون ٹھیک نہیں گردش کرتا۔",
+        "ro": "Stare medicală gravă după o accidentare, când circulația sângelui este insuficientă."
+      }
+    }
+  ],
+  "IN-20": [
+    {
+      "term": "CPR",
+      "translations": {
+        "en": "Cardiopulmonary resuscitation: chest compressions (and breaths) to help someone not breathing.",
+        "ar": "إنعاش قلبي رئوي: ضغطات صدر (وتنفس) لمن لا يتنفس.",
+        "ur": "سی پی آر: سینے کی دباؤ (اور سانس) اس کے لیے جو سانس نہیں لے رہا۔",
+        "ro": "Resuscitare cardiopulmonară: compresii toracice (și respirații) pentru cine nu respiră."
+      }
+    }
+  ],
+  "IN-21": [
+    {
+      "term": "casualties",
+      "translations": {
+        "en": "People injured in an accident or emergency.",
+        "ar": "الأشخاص المصابون في حادث أو حالة طوارئ.",
+        "ur": "حادثے یا ایمرجنسی میں زخمی افراد۔",
+        "ro": "Persoane rănite într-un accident sau o urgență."
+      }
+    },
+    {
+      "term": "incident",
+      "translations": {
+        "en": "An accident, breakdown, or other unexpected event on the road.",
+        "ar": "حادث أو تعطل أو حدث غير متوقع على الطريق.",
+        "ur": "سڑک پر حادثہ، خرابی یا کوئی غیر متوقع واقعہ۔",
+        "ro": "Accident, pană sau alt eveniment neașteptat pe drum."
+      }
+    }
+  ],
+  "IN-22": [
+    {
+      "term": "recovery position",
+      "translations": {
+        "en": "A side-lying first-aid position that helps keep an unconscious breathing person’s airway clear.",
+        "ar": "وضعية إسعافية على الجنب تساعد على إبقاء مجرى الهواء مفتوحاً لمن فقد الوعي وهو يتنفس.",
+        "ur": "پہلی امداد کی پہلو کی حالت جو بے ہوش مگر سانس لینے والے کی ایئر وے کھلی رکھتی ہے۔",
+        "ro": "Poziție laterală de prim ajutor care ajută la menținerea căilor aeriene libere."
+      }
+    },
+    {
+      "term": "airway",
+      "translations": {
+        "en": "The passage that lets air reach the lungs for breathing.",
+        "ar": "الممر الذي يسمح للهواء بالوصول إلى الرئتين للتنفس.",
+        "ur": "وہ راستہ جس سے سانس کے لیے ہوا پھیپھڑوں تک پہنچتی ہے۔",
+        "ro": "Pasajul care permite aerului să ajungă la plămâni pentru respirație."
+      }
+    },
+    {
+      "term": "unconscious",
+      "translations": {
+        "en": "Not awake and not responding; may need emergency help.",
+        "ar": "فاقد للوعي ولا يستجيب؛ قد يحتاج مساعدة طارئة.",
+        "ur": "بے ہوش اور بغیر ردعمل؛ ہنگامی مدد درکار ہو سکتی ہے۔",
+        "ro": "Inconștient, fără răspuns; poate necesita ajutor de urgență."
+      }
+    }
+  ],
+  "IN-23": [
+    {
+      "term": "shock",
+      "translations": {
+        "en": "A serious medical condition after injury when the body is not circulating blood well.",
+        "ar": "حالة طبية خطيرة بعد الإصابة عندما لا يدور الدم بشكل كافٍ في الجسم.",
+        "ur": "زخم کے بعد سنگین طبی حالت جب جسم میں خون ٹھیک نہیں گردش کرتا۔",
+        "ro": "Stare medicală gravă după o accidentare, când circulația sângelui este insuficientă."
+      }
+    }
+  ],
+  "IN-24": [
+    {
+      "term": "hazards",
+      "translations": {
+        "en": "Short for hazard warning lights: all indicators flashing to warn of danger or a stop.",
+        "ar": "اختصار لأضواء التحذير من الخطر: جميع الإشارات وامضة للتنبيه بخطر أو توقف.",
+        "ur": "ہیزرڈ وارننگ لائٹس کا مختصر نام: خطرے یا رکنے کی خبر کے لیے سب اشارے چمکتے ہیں۔",
+        "ro": "Prescurtare pentru luminile de avarie: toți indicatoarele clipesc pentru a semnala pericolul."
+      }
+    },
+    {
+      "term": "emergency services",
+      "translations": {
+        "en": "Police, fire, and ambulance teams called to help at serious incidents.",
+        "ar": "الشرطة والإطفاء والإسعاف الذين يُستدعون للمساعدة في الحوادث الخطيرة.",
+        "ur": "پولیس، فائر اور ایمبولینس جو سنگین واقعات پر مدد کے لیے بلوائی جاتی ہیں۔",
+        "ro": "Poliție, pompieri și ambulanță chemate la incidente grave."
+      }
+    }
+  ],
+  "IN-25": [
+    {
+      "term": "casualty",
+      "translations": {
+        "en": "An injured person in an accident.",
+        "ar": "شخص مصاب في حادث.",
+        "ur": "حادثے میں زخمی شخص۔",
+        "ro": "Persoană rănită într-un accident."
+      }
+    },
+    {
+      "term": "unconscious",
+      "translations": {
+        "en": "Not awake and not responding; may need emergency help.",
+        "ar": "فاقد للوعي ولا يستجيب؛ قد يحتاج مساعدة طارئة.",
+        "ur": "بے ہوش اور بغیر ردعمل؛ ہنگامی مدد درکار ہو سکتی ہے۔",
+        "ro": "Inconștient, fără răspuns; poate necesita ajutor de urgență."
+      }
+    }
+  ],
+  "IN-26": [
+    {
+      "term": "defibrillator (AED)",
+      "translations": {
+        "en": "A portable device that can deliver an electric shock to try to restart a heart in cardiac arrest.",
+        "ar": "جهاز محمول قد يطلق صدمة كهربائية لمحاولة إعادة تشغيل القلب في التوقف القلبي.",
+        "ur": "پورٹیبل آلہ جو دل رک جانے پر بجلی کے جھٹکے سے دل دوبارہ چلانے کی کوشش کرتا ہے۔",
+        "ro": "Dispozitiv portabil care poate da un șoc electric pentru a reporni inima în stop cardiac."
+      }
+    }
+  ],
+  "IN-27": [
+    {
+      "term": "insurance",
+      "translations": {
+        "en": "A policy that can cover costs after an accident, damage, or claim.",
+        "ar": "بوليصة قد تغطي التكاليف بعد حادث أو ضرر أو مطالبة.",
+        "ur": "پالیسی جو حادثے، نقصان یا کلیم کے بعد اخراجات کا بوجھ اٹھا سکتی ہے۔",
+        "ro": "Poliță care poate acoperi costuri după accident, daună sau revendicare."
+      }
+    }
+  ],
+  "IN-28": [
+    {
+      "term": "casualty",
+      "translations": {
+        "en": "An injured person in an accident.",
+        "ar": "شخص مصاب في حادث.",
+        "ur": "حادثے میں زخمی شخص۔",
+        "ro": "Persoană rănită într-un accident."
+      }
+    },
+    {
+      "term": "unconscious",
+      "translations": {
+        "en": "Not awake and not responding; may need emergency help.",
+        "ar": "فاقد للوعي ولا يستجيب؛ قد يحتاج مساعدة طارئة.",
+        "ur": "بے ہوش اور بغیر ردعمل؛ ہنگامی مدد درکار ہو سکتی ہے۔",
+        "ro": "Inconștient, fără răspuns; poate necesita ajutor de urgență."
+      }
+    }
+  ],
+  "IN-29": [
+    {
+      "term": "collision",
+      "translations": {
+        "en": "A crash when vehicles or objects hit each other.",
+        "ar": "اصطدام عندما ترتطم مركبات أو أجسام ببعضها.",
+        "ur": "ٹکر جب گاڑیاں یا اشیاء آپس میں ٹکراتی ہیں۔",
+        "ro": "Accident în care vehicule sau obiecte se lovesc între ele."
+      }
+    }
+  ],
+  "IN-30": [
+    {
+      "term": "vehicle registration",
+      "translations": {
+        "en": "The official number plate details that identify a vehicle.",
+        "ar": "بيانات لوحة الأرقام الرسمية التي تُعرّف المركبة.",
+        "ur": "گاڑی کی سرکاری نمبر پلیٹ کی تفصیلات جو اسے شناخت کرتی ہیں۔",
+        "ro": "Datele oficiale de pe numărul de înmatriculare care identifică vehiculul."
+      }
+    },
+    {
+      "term": "collision",
+      "translations": {
+        "en": "A crash when vehicles or objects hit each other.",
+        "ar": "اصطدام عندما ترتطم مركبات أو أجسام ببعضها.",
+        "ur": "ٹکر جب گاڑیاں یا اشیاء آپس میں ٹکراتی ہیں۔",
+        "ro": "Accident în care vehicule sau obiecte se lovesc între ele."
+      }
+    },
+    {
+      "term": "National Insurance number",
+      "translations": {
+        "en": "A UK personal tax and benefits reference number, not a driving document.",
+        "ar": "رقم مرجعي بريطاني للضرائب والمزايا، وليس مستنداً للقيادة.",
+        "ur": "برطانیہ کا ذاتی ٹیکس/فوائد حوالہ نمبر؛ ڈرائیونگ دستاویز نہیں۔",
+        "ro": "Număr personal din Regatul Unit pentru taxe/beneficii, nu un document auto."
+      }
+    }
+  ],
+  "IN-31": [
+    {
+      "term": "Handbrake",
+      "translations": {
+        "en": "The parking brake that holds the vehicle still when stopped.",
+        "ar": "فرامل التوقف التي تثبّت المركبة عند الوقوف.",
+        "ur": "پارکنگ بریک جو گاڑی کو رکی حالت میں روکے رکھتی ہے۔",
+        "ro": "Frâna de mână care ține vehiculul pe loc când este oprit."
+      }
+    },
+    {
+      "term": "pull over",
+      "translations": {
+        "en": "Move to the side of the road and stop safely.",
+        "ar": "الانتقال إلى جانب الطريق والتوقف بأمان.",
+        "ur": "سڑک کے کنارے ہٹ کر محفوظ طریقے سے رکنا۔",
+        "ro": "A trage pe marginea drumului și a opri în siguranță."
+      }
+    }
+  ],
+  "IN-32": [
+    {
+      "term": "breaks down",
+      "translations": {
+        "en": "Stops working so the vehicle cannot continue normally.",
+        "ar": "يتوقف عن العمل فلا تستطيع المركبة المتابعة بشكل طبيعي.",
+        "ur": "خراب ہو جانا تاکہ گاڑی عام طور پر چل نہ سکے۔",
+        "ro": "Se defectează, astfel că vehiculul nu mai poate continua normal."
+      }
+    },
+    {
+      "term": "hazards",
+      "translations": {
+        "en": "Short for hazard warning lights: all indicators flashing to warn of danger or a stop.",
+        "ar": "اختصار لأضواء التحذير من الخطر: جميع الإشارات وامضة للتنبيه بخطر أو توقف.",
+        "ur": "ہیزرڈ وارننگ لائٹس کا مختصر نام: خطرے یا رکنے کی خبر کے لیے سب اشارے چمکتے ہیں۔",
+        "ro": "Prescurtare pentru luminile de avarie: toți indicatoarele clipesc pentru a semnala pericolul."
+      }
+    }
+  ],
+  "IN-33": [
+    {
+      "term": "motorcyclist",
+      "translations": {
+        "en": "A person riding a motorcycle; they can be less stable and harder to see than cars.",
+        "ar": "شخص يقود دراجة نارية؛ قد يكون أقل ثباتاً وأصعب رؤية من السيارات.",
+        "ur": "موٹر سائیکل چلانے والا؛ کاروں سے کم مستحکم اور دکھائی دینا مشکل ہو سکتا ہے۔",
+        "ro": "Persoană pe motocicletă; poate fi mai puțin stabilă și mai greu de văzut decât mașinile."
+      }
+    },
+    {
+      "term": "debris",
+      "translations": {
+        "en": "Scattered pieces of wreckage, objects, or rubbish left after a crash.",
+        "ar": "قطع متناثرة من الحطام أو الأجسام أو الفضلات بعد الاصطدام.",
+        "ur": "حادثے کے بعد بکھرا ہوا ملبہ، اشیاء یا کچرا۔",
+        "ro": "Resturi împrăștiate de la accident, obiecte sau gunoi lăsat pe drum."
+      }
+    }
+  ],
+  "IN-34": [
+    {
+      "term": "motorcyclist",
+      "translations": {
+        "en": "A person riding a motorcycle; they can be less stable and harder to see than cars.",
+        "ar": "شخص يقود دراجة نارية؛ قد يكون أقل ثباتاً وأصعب رؤية من السيارات.",
+        "ur": "موٹر سائیکل چلانے والا؛ کاروں سے کم مستحکم اور دکھائی دینا مشکل ہو سکتا ہے۔",
+        "ro": "Persoană pe motocicletă; poate fi mai puțin stabilă și mai greu de văzut decât mașinile."
+      }
+    },
+    {
+      "term": "unconscious",
+      "translations": {
+        "en": "Not awake and not responding; may need emergency help.",
+        "ar": "فاقد للوعي ولا يستجيب؛ قد يحتاج مساعدة طارئة.",
+        "ur": "بے ہوش اور بغیر ردعمل؛ ہنگامی مدد درکار ہو سکتی ہے۔",
+        "ro": "Inconștient, fără răspuns; poate necesita ajutor de urgență."
+      }
+    }
+  ],
+  "IN-35": [
+    {
+      "term": "CPR",
+      "translations": {
+        "en": "Cardiopulmonary resuscitation: chest compressions (and breaths) to help someone not breathing.",
+        "ar": "إنعاش قلبي رئوي: ضغطات صدر (وتنفس) لمن لا يتنفس.",
+        "ur": "سی پی آر: سینے کی دباؤ (اور سانس) اس کے لیے جو سانس نہیں لے رہا۔",
+        "ro": "Resuscitare cardiopulmonară: compresii toracice (și respirații) pentru cine nu respiră."
+      }
+    },
+    {
+      "term": "chest compression",
+      "translations": {
+        "en": "Pushing firmly on the centre of the chest during CPR to pump blood.",
+        "ar": "الضغط بقوة على منتصف الصدر أثناء الإنعاش لدفع الدم.",
+        "ur": "سی پی آر میں سینے کے بیچ مضبوط دباؤ تاکہ خون پمپ ہو۔",
+        "ro": "Apăsare fermă pe mijlocul pieptului în CPR pentru a pompa sângele."
+      }
+    }
+  ],
+  "IN-36": [
+    {
+      "term": "motorcyclist",
+      "translations": {
+        "en": "A person riding a motorcycle; they can be less stable and harder to see than cars.",
+        "ar": "شخص يقود دراجة نارية؛ قد يكون أقل ثباتاً وأصعب رؤية من السيارات.",
+        "ur": "موٹر سائیکل چلانے والا؛ کاروں سے کم مستحکم اور دکھائی دینا مشکل ہو سکتا ہے۔",
+        "ro": "Persoană pe motocicletă; poate fi mai puțin stabilă și mai greu de văzut decât mașinile."
+      }
+    },
+    {
+      "term": "neck injuries",
+      "translations": {
+        "en": "Damage to the neck bones, muscles, or spinal cord that can be serious after a crash.",
+        "ar": "إصابة في عظام الرقبة أو عضلاتها أو الحبل الشوكي قد تكون خطيرة بعد الحادث.",
+        "ur": "گردن کی ہڈیوں، پٹھوں یا ریڑھ کی ہڈی کو نقصان جو حادثے کے بعد سنگین ہو سکتا ہے۔",
+        "ro": "Leziuni ale gâtului (oase, mușchi sau măduvă) care pot fi grave după accident."
+      }
+    }
+  ],
+  "IN-37": [
+    {
+      "term": "airway",
+      "translations": {
+        "en": "The passage that lets air reach the lungs for breathing.",
+        "ar": "الممر الذي يسمح للهواء بالوصول إلى الرئتين للتنفس.",
+        "ur": "وہ راستہ جس سے سانس کے لیے ہوا پھیپھڑوں تک پہنچتی ہے۔",
+        "ro": "Pasajul care permite aerului să ajungă la plămâni pentru respirație."
+      }
+    },
+    {
+      "term": "unconscious",
+      "translations": {
+        "en": "Not awake and not responding; may need emergency help.",
+        "ar": "فاقد للوعي ولا يستجيب؛ قد يحتاج مساعدة طارئة.",
+        "ur": "بے ہوش اور بغیر ردعمل؛ ہنگامی مدد درکار ہو سکتی ہے۔",
+        "ro": "Inconștient, fără răspuns; poate necesita ajutor de urgență."
+      }
+    }
+  ],
+  "IN-38": [
+    {
+      "term": "hazard warning lights",
+      "translations": {
+        "en": "Both indicators flashing together to warn other drivers of a hazard or sudden slowing.",
+        "ar": "إشارتا الانعطاف تومضان معاً لتحذير السائقين الآخرين من خطر أو تباطؤ مفاجئ.",
+        "ur": "دونوں انڈیکیٹرز ایک ساتھ چمکتے ہیں تاکہ خطرے یا اچانک سست ہونے کی خبر دیں۔",
+        "ro": "Ambele semnalizatoare care clipeșc împreună pentru a avertiza alți șoferi de un pericol sau o încetinire bruscă."
+      }
+    },
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    },
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    }
+  ],
+  "IN-39": [
+    {
+      "term": "motorcyclist",
+      "translations": {
+        "en": "A person riding a motorcycle; they can be less stable and harder to see than cars.",
+        "ar": "شخص يقود دراجة نارية؛ قد يكون أقل ثباتاً وأصعب رؤية من السيارات.",
+        "ur": "موٹر سائیکل چلانے والا؛ کاروں سے کم مستحکم اور دکھائی دینا مشکل ہو سکتا ہے۔",
+        "ro": "Persoană pe motocicletă; poate fi mai puțin stabilă și mai greu de văzut decât mașinile."
+      }
+    },
+    {
+      "term": "unconscious",
+      "translations": {
+        "en": "Not awake and not responding; may need emergency help.",
+        "ar": "فاقد للوعي ولا يستجيب؛ قد يحتاج مساعدة طارئة.",
+        "ur": "بے ہوش اور بغیر ردعمل؛ ہنگامی مدد درکار ہو سکتی ہے۔",
+        "ro": "Inconștient, fără răspuns; poate necesita ajutor de urgență."
+      }
+    }
+  ],
+  "IN-40": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    },
+    {
+      "term": "emergency phone",
+      "translations": {
+        "en": "A roadside phone on motorways for contacting emergency services if you break down.",
+        "ar": "هاتف على جانب الطريق السريع للاتصال بخدمات الطوارئ عند تعطل المركبة.",
+        "ur": "موٹروے کے کنارے فون تاکہ خراب ہونے پر ایمرجنسی سروسز سے رابطہ کریں۔",
+        "ro": "Telefon de pe marginea autostrăzii pentru a contacta serviciile de urgență la pană."
+      }
+    }
+  ],
+  "IN-41": [
+    {
+      "term": "CPR",
+      "translations": {
+        "en": "Cardiopulmonary resuscitation: chest compressions (and breaths) to help someone not breathing.",
+        "ar": "إنعاش قلبي رئوي: ضغطات صدر (وتنفس) لمن لا يتنفس.",
+        "ur": "سی پی آر: سینے کی دباؤ (اور سانس) اس کے لیے جو سانس نہیں لے رہا۔",
+        "ro": "Resuscitare cardiopulmonară: compresii toracice (și respirații) pentru cine nu respiră."
+      }
+    }
+  ],
+  "IN-42": [
+    {
+      "term": "puncture",
+      "translations": {
+        "en": "A flat tyre caused by a hole that lets the air out.",
+        "ar": "إطار مفرّغ بسبب ثقب يخرج منه الهواء.",
+        "ur": "ٹائر میں سوراخ سے ہوا نکل جانے سے پنچر۔",
+        "ro": "Anvelopă dezumflată din cauza unei găuri prin care iese aerul."
+      }
+    },
+    {
+      "term": "refuge area",
+      "translations": {
+        "en": "A safe lay-by beside a motorway where you can stop if you have a problem.",
+        "ar": "منطقة آمنة بجانب الطريق السريع يمكنك التوقف فيها عند حدوث مشكلة.",
+        "ur": "موٹروے کے کنارے محفوظ جگہ جہاں مسئلہ ہو تو رک سکتے ہیں۔",
+        "ro": "Zonă de refugiu lângă autostradă unde puteți opri dacă aveți o problemă."
+      }
+    },
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "IN-43": [
+    {
+      "term": "recovery position",
+      "translations": {
+        "en": "A side-lying first-aid position that helps keep an unconscious breathing person’s airway clear.",
+        "ar": "وضعية إسعافية على الجنب تساعد على إبقاء مجرى الهواء مفتوحاً لمن فقد الوعي وهو يتنفس.",
+        "ur": "پہلی امداد کی پہلو کی حالت جو بے ہوش مگر سانس لینے والے کی ایئر وے کھلی رکھتی ہے۔",
+        "ro": "Poziție laterală de prim ajutor care ajută la menținerea căilor aeriene libere."
+      }
+    },
+    {
+      "term": "CPR",
+      "translations": {
+        "en": "Cardiopulmonary resuscitation: chest compressions (and breaths) to help someone not breathing.",
+        "ar": "إنعاش قلبي رئوي: ضغطات صدر (وتنفس) لمن لا يتنفس.",
+        "ur": "سی پی آر: سینے کی دباؤ (اور سانس) اس کے لیے جو سانس نہیں لے رہا۔",
+        "ro": "Resuscitare cardiopulmonară: compresii toracice (și respirații) pentru cine nu respiră."
+      }
+    },
+    {
+      "term": "airway",
+      "translations": {
+        "en": "The passage that lets air reach the lungs for breathing.",
+        "ar": "الممر الذي يسمح للهواء بالوصول إلى الرئتين للتنفس.",
+        "ur": "وہ راستہ جس سے سانس کے لیے ہوا پھیپھڑوں تک پہنچتی ہے۔",
+        "ro": "Pasajul care permite aerului să ajungă la plămâni pentru respirație."
+      }
+    }
+  ],
+  "IN-44": [
+    {
+      "term": "collision",
+      "translations": {
+        "en": "A crash when vehicles or objects hit each other.",
+        "ar": "اصطدام عندما ترتطم مركبات أو أجسام ببعضها.",
+        "ur": "ٹکر جب گاڑیاں یا اشیاء آپس میں ٹکراتی ہیں۔",
+        "ro": "Accident în care vehicule sau obiecte se lovesc între ele."
+      }
+    },
+    {
+      "term": "Vehicle registration document",
+      "translations": {
+        "en": "The official paper (V5C / log book) that records who the vehicle is registered to.",
+        "ar": "الوثيقة الرسمية (V5C) التي تُسجل باسم من مُسجَّلة المركبة.",
+        "ur": "سرکاری دستاویز (V5C / لاگ بک) جو بتاتی ہے گاڑی کس کے نام درج ہے۔",
+        "ro": "Documentul oficial (V5C) care consemnează pe cine este înmatricat vehiculul."
+      }
+    },
+    {
+      "term": "Driving licence",
+      "translations": {
+        "en": "The official card that shows you are allowed to drive certain vehicles.",
+        "ar": "البطاقة الرسمية التي تُظهر أنك مسموح لك بقيادة أنواع معينة من المركبات.",
+        "ur": "سرکاری کارڈ جو بتاتا ہے کہ آپ مخصوص گاڑیاں چلا سکتے ہیں۔",
+        "ro": "Cardul oficial care arată că aveți dreptul de a conduce anumite vehicule."
+      }
+    }
+  ],
+  "IN-45": [
+    {
+      "term": "CPR",
+      "translations": {
+        "en": "Cardiopulmonary resuscitation: chest compressions (and breaths) to help someone not breathing.",
+        "ar": "إنعاش قلبي رئوي: ضغطات صدر (وتنفس) لمن لا يتنفس.",
+        "ur": "سی پی آر: سینے کی دباؤ (اور سانس) اس کے لیے جو سانس نہیں لے رہا۔",
+        "ro": "Resuscitare cardiopulmonară: compresii toracice (și respirații) pentru cine nu respiră."
+      }
+    },
+    {
+      "term": "chest compressions",
+      "translations": {
+        "en": "Repeated firm pushes on the centre of the chest during CPR to pump blood.",
+        "ar": "ضغطات متكررة قوية على منتصف الصدر أثناء الإنعاش لدفع الدم.",
+        "ur": "سی پی آر میں سینے کے بیچ بار بار مضبوط دباؤ تاکہ خون پمپ ہو۔",
+        "ro": "Apăsări ferme repetate pe mijlocul pieptului în CPR pentru a pompa sângele."
+      }
+    }
+  ],
+  "IN-46": [
+    {
+      "term": "coolant",
+      "translations": {
+        "en": "The liquid in the engine cooling system that helps stop the engine overheating.",
+        "ar": "السائل في نظام تبريد المحرك الذي يساعد على منع ارتفاع حرارته.",
+        "ur": "انجن کولنگ سسٹم کا مائع جو انجن کو زیادہ گرم ہونے سے روکنے میں مدد دیتا ہے۔",
+        "ro": "Lichidul din sistemul de răcire care ajută la prevenirea supraîncălzirii motorului."
+      }
+    }
+  ],
+  "IN-47": [
+    {
+      "term": "embedded",
+      "translations": {
+        "en": "Stuck inside the wound (for example glass or metal); do not pull it out yourself.",
+        "ar": "عالقة داخل الجرح (مثل زجاج أو معدن)؛ لا تسحبها بنفسك.",
+        "ur": "زخم میں دھنسی ہوئی چیز (جیسے شیشہ یا دھات)؛ خود نہ نکالیں۔",
+        "ro": "Blocat în rană (de exemplu sticlă sau metal); nu îl scoateți singur."
+      }
+    },
+    {
+      "term": "heavy bleeding",
+      "translations": {
+        "en": "A lot of blood loss from a wound that needs urgent pressure and help.",
+        "ar": "نزيف غزير من جرح يحتاج ضغطاً عاجلاً ومساعدة.",
+        "ur": "زخم سے شدید خون بہنا جس کے لیے فوری دباؤ اور مدد درکار ہو۔",
+        "ro": "Sângerare abundentă dintr-o rană care necesită presiune urgentă și ajutor."
+      }
+    }
+  ],
+  "IN-48": [
+    {
+      "term": "defibrillator (AED)",
+      "translations": {
+        "en": "A portable device that can deliver an electric shock to try to restart a heart in cardiac arrest.",
+        "ar": "جهاز محمول قد يطلق صدمة كهربائية لمحاولة إعادة تشغيل القلب في التوقف القلبي.",
+        "ur": "پورٹیبل آلہ جو دل رک جانے پر بجلی کے جھٹکے سے دل دوبارہ چلانے کی کوشش کرتا ہے۔",
+        "ro": "Dispozitiv portabil care poate da un șoc electric pentru a reporni inima în stop cardiac."
+      }
+    },
+    {
+      "term": "CPR",
+      "translations": {
+        "en": "Cardiopulmonary resuscitation: chest compressions (and breaths) to help someone not breathing.",
+        "ar": "إنعاش قلبي رئوي: ضغطات صدر (وتنفس) لمن لا يتنفس.",
+        "ur": "سی پی آر: سینے کی دباؤ (اور سانس) اس کے لیے جو سانس نہیں لے رہا۔",
+        "ro": "Resuscitare cardiopulmonară: compresii toracice (și respirații) pentru cine nu respiră."
+      }
+    },
+    {
+      "term": "first aid kit",
+      "translations": {
+        "en": "A set of basic medical supplies for treating minor injuries at the scene.",
+        "ar": "مجموعة مستلزمات طبية أساسية لعلاج إصابات بسيطة في الموقع.",
+        "ur": "بنیادی طبی سامان کا سیٹ جو معمولی زخموں کے لیے ہوتا ہے۔",
+        "ro": "Trusă cu materiale medicale de bază pentru răni minore la fața locului."
+      }
+    }
+  ],
+  "IN-49": [
+    {
+      "term": "defibrillator (AED)",
+      "translations": {
+        "en": "A portable device that can deliver an electric shock to try to restart a heart in cardiac arrest.",
+        "ar": "جهاز محمول قد يطلق صدمة كهربائية لمحاولة إعادة تشغيل القلب في التوقف القلبي.",
+        "ur": "پورٹیبل آلہ جو دل رک جانے پر بجلی کے جھٹکے سے دل دوبارہ چلانے کی کوشش کرتا ہے۔",
+        "ro": "Dispozitiv portabil care poate da un șoc electric pentru a reporni inima în stop cardiac."
+      }
+    },
+    {
+      "term": "sat nav",
+      "translations": {
+        "en": "Satellite navigation: a GPS device or app that gives driving directions.",
+        "ar": "الملاحة عبر الأقمار الصناعية: جهاز أو تطبيق GPS يعطي اتجاهات القيادة.",
+        "ur": "سیٹلائٹ نیویگیشن: جی پی ایس ڈیوائس یا ایپ جو راستہ بتاتی ہے۔",
+        "ro": "Navigație prin satelit: dispozitiv sau aplicație GPS cu indicații de drum."
+      }
+    },
+    {
+      "term": "casualty",
+      "translations": {
+        "en": "An injured person in an accident.",
+        "ar": "شخص مصاب في حادث.",
+        "ur": "حادثے میں زخمی شخص۔",
+        "ro": "Persoană rănită într-un accident."
+      }
+    }
+  ],
+  "IN-50": [],
+  "IN-51": [
+    {
+      "term": "railway crossing",
+      "translations": {
+        "en": "A place where a road crosses railway tracks, often with lights, barriers, or alarms.",
+        "ar": "مكان يتقاطع فيه الطريق مع خطوط السكة الحديدية، وغالباً بأضواء أو حواجز أو صفارات.",
+        "ur": "وہ جگہ جہاں سڑک ریلوے پٹریوں کو کاٹتی ہے؛ اکثر لائٹس، رکاوٹیں یا الارم ہوتے ہیں۔",
+        "ro": "Locul unde un drum traversează șinele de cale ferată, adesea cu lumini, bariere sau alarme."
+      }
+    }
+  ],
+  "IN-52": [
+    {
+      "term": "lorry",
+      "translations": {
+        "en": "A large goods vehicle used for carrying cargo (also called a truck).",
+        "ar": "شاحنة كبيرة لنقل البضائع.",
+        "ur": "مال لے جانے والی بڑی گاڑی (ٹرک)۔",
+        "ro": "Vehicul mare de marfă (camion)."
+      }
+    },
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    },
+    {
+      "term": "emergency phone",
+      "translations": {
+        "en": "A roadside phone on motorways for contacting emergency services if you break down.",
+        "ar": "هاتف على جانب الطريق السريع للاتصال بخدمات الطوارئ عند تعطل المركبة.",
+        "ur": "موٹروے کے کنارے فون تاکہ خراب ہونے پر ایمرجنسی سروسز سے رابطہ کریں۔",
+        "ro": "Telefon de pe marginea autostrăzii pentru a contacta serviciile de urgență la pană."
+      }
+    }
+  ],
+  "IN-53": [
+    {
+      "term": "severe burns",
+      "translations": {
+        "en": "Serious burn injuries that need careful cooling and urgent medical help.",
+        "ar": "حروق خطيرة تحتاج تبريداً حذراً ومساعدة طبية عاجلة.",
+        "ur": "شدید جلنے والے زخم جنہیں احتیاط سے ٹھنڈا کریں اور فوری طبی مدد لیں۔",
+        "ro": "Arsuri grave care necesită răcire atentă și ajutor medical urgent."
+      }
+    },
+    {
+      "term": "blisters",
+      "translations": {
+        "en": "Fluid-filled swellings on the skin that can form after burns; do not burst them.",
+        "ar": "انتفاخات مليئة بالسائل على الجلد بعد الحروق؛ لا تثقبها.",
+        "ur": "جلن کے بعد جلد پر سیال بھری آبلے؛ انہیں نہ پھوڑیں۔",
+        "ro": "Bășici cu lichid pe piele după arsuri; nu le spargeți."
+      }
+    }
+  ],
+  "IN-54": [
+    {
+      "term": "shock",
+      "translations": {
+        "en": "A serious medical condition after injury when the body is not circulating blood well.",
+        "ar": "حالة طبية خطيرة بعد الإصابة عندما لا يدور الدم بشكل كافٍ في الجسم.",
+        "ur": "زخم کے بعد سنگین طبی حالت جب جسم میں خون ٹھیک نہیں گردش کرتا۔",
+        "ro": "Stare medicală gravă după o accidentare, când circulația sângelui este insuficientă."
+      }
+    },
+    {
+      "term": "collision",
+      "translations": {
+        "en": "A crash when vehicles or objects hit each other.",
+        "ar": "اصطدام عندما ترتطم مركبات أو أجسام ببعضها.",
+        "ur": "ٹکر جب گاڑیاں یا اشیاء آپس میں ٹکراتی ہیں۔",
+        "ro": "Accident în care vehicule sau obiecte se lovesc între ele."
+      }
+    },
+    {
+      "term": "Flushed skin",
+      "translations": {
+        "en": "Skin that looks unusually red or warm, for example from heat or emotion.",
+        "ar": "جلد يبدو أحمر أو دافئاً بشكل غير معتاد، مثلاً بسبب الحرارة أو الانفعال.",
+        "ur": "جلد جو غیر معمولی طور پر سرخ یا گرم دکھے، مثلاً گرمی یا جذبات سے۔",
+        "ro": "Piele neobișnuit de roșie sau caldă, de exemplu din cauza căldurii sau emoției."
+      }
+    }
+  ],
+  "IN-55": [
+    {
+      "term": "railway crossing",
+      "translations": {
+        "en": "A place where a road crosses railway tracks, often with lights, barriers, or alarms.",
+        "ar": "مكان يتقاطع فيه الطريق مع خطوط السكة الحديدية، وغالباً بأضواء أو حواجز أو صفارات.",
+        "ur": "وہ جگہ جہاں سڑک ریلوے پٹریوں کو کاٹتی ہے؛ اکثر لائٹس، رکاوٹیں یا الارم ہوتے ہیں۔",
+        "ro": "Locul unde un drum traversează șinele de cale ferată, adesea cu lumini, bariere sau alarme."
+      }
+    }
+  ],
+  "IN-56": [
+    {
+      "term": "hazard warning lights",
+      "translations": {
+        "en": "Both indicators flashing together to warn other drivers of a hazard or sudden slowing.",
+        "ar": "إشارتا الانعطاف تومضان معاً لتحذير السائقين الآخرين من خطر أو تباطؤ مفاجئ.",
+        "ur": "دونوں انڈیکیٹرز ایک ساتھ چمکتے ہیں تاکہ خطرے یا اچانک سست ہونے کی خبر دیں۔",
+        "ro": "Ambele semnalizatoare care clipeșc împreună pentru a avertiza alți șoferi de un pericol sau o încetinire bruscă."
+      }
+    },
+    {
+      "term": "temporary obstruction",
+      "translations": {
+        "en": "Something briefly blocking or slowing traffic, such as a stopped vehicle.",
+        "ar": "شيء يعيق أو يبطئ المرور لفترة قصيرة، مثل مركبة متوقفة.",
+        "ur": "کوئی چیز جو عارضی طور پر ٹریفک روکے یا سست کرے، جیسے رکی گاڑی۔",
+        "ro": "Ceva care blochează sau încetinește temporar traficul, cum ar fi un vehicul oprit."
+      }
+    },
+    {
+      "term": "double yellow lines",
+      "translations": {
+        "en": "Two yellow lines at the kerb meaning no waiting at any time (unless signs say otherwise).",
+        "ar": "خطان أصفران عند الرصيف يعنيان منع الانتظار في أي وقت (ما لم تُشر اللافتات بخلاف ذلك).",
+        "ur": "کرب پر دو پیلی لکیریں: عام طور پر کسی بھی وقت انتظار ممنوع (جب تک سائن کچھ اور نہ کہے)۔",
+        "ro": "Două linii galbene la bordură: interzisă așteptarea oricând (dacă semnele nu spun altfel)."
+      }
+    }
+  ],
+  "RS-R-01": [],
+  "RS-R-02": [
+    {
+      "term": "dual carriageway",
+      "translations": {
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      }
+    },
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing a slower vehicle by moving alongside and ahead of it.",
+        "ar": "تجاوز مركبة أبطأ بالسير بجانبها ثم أمامها.",
+        "ur": "سست گاڑی کے ساتھ سے نکل کر اس سے آگے بڑھنا۔",
+        "ro": "Depășirea unui vehicul mai lent trecând pe lângă el și înaintea lui."
+      }
+    }
+  ],
+  "RS-R-03": [
+    {
+      "term": "road narrows",
+      "translations": {
+        "en": "The carriageway becomes narrower ahead, so there is less space for vehicles.",
+        "ar": "يصبح عرض الطريق أضيق أمامك، فيقلّت المساحة للمركبات.",
+        "ur": "آگے سڑک تنگ ہو جاتی ہے، اس لیے گاڑیوں کے لیے کم جگہ ہوتی ہے۔",
+        "ro": "Carosabilul se îngustează în față, deci rămâne mai puțin spațiu pentru vehicule."
+      }
+    },
+    {
+      "term": "Two-way traffic",
+      "translations": {
+        "en": "Traffic moving in both directions on the same road.",
+        "ar": "حركة مرور تسير في الاتجاهين على الطريق نفسه.",
+        "ur": "ایک ہی سڑک پر دونوں سمتوں میں چلتی ٹریفک۔",
+        "ro": "Trafic care circulă pe ambele sensuri pe același drum."
+      }
+    }
+  ],
+  "RS-R-04": [],
+  "RS-R-05": [
+    {
+      "term": "T-junction",
+      "translations": {
+        "en": "A junction where one road meets another and ends, forming a ‘T’ shape.",
+        "ar": "تقاطع يلتقي فيه طريق بآخر وينتهي، فيشكّل شكل حرف T.",
+        "ur": "جنکشن جہاں ایک سڑک دوسری سے مل کر ختم ہوتی ہے اور T کی شکل بنتی ہے۔",
+        "ro": "Intersecție unde un drum se termină în altul, formând un „T”."
+      }
+    },
+    {
+      "term": "give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    },
+    {
+      "term": "crossroads",
+      "translations": {
+        "en": "A junction where two roads cross, usually forming a plus-sign shape.",
+        "ar": "تقاطع يتقاطع فيه طريقان، وغالباً بشكل يشبه علامة الزائد.",
+        "ur": "ایسا جنکشن جہاں دو سڑکیں ایک دوسرے کو کاٹتی ہیں، عام طور پر پلس (+) کی شکل میں۔",
+        "ro": "Intersecție unde două drumuri se intersectează, de obicei în formă de cruce."
+      }
+    }
+  ],
+  "RS-R-06": [
+    {
+      "term": "Junction on a bend",
+      "translations": {
+        "en": "A side road joining the main road on a curve, which can reduce visibility.",
+        "ar": "طريق جانبي يلتقي بالطريق الرئيسي على منعطف، مما قد يقلل الرؤية.",
+        "ur": "موڑ پر مرکزی سڑک سے ملنے والی سائیڈ روڈ، جس سے نظر کم ہو سکتی ہے۔",
+        "ro": "Drum lateral care se unește cu drumul principal pe curbă, reducând vizibilitatea."
+      }
+    },
+    {
+      "term": "T-junction",
+      "translations": {
+        "en": "A junction where one road meets another and ends, forming a ‘T’ shape.",
+        "ar": "تقاطع يلتقي فيه طريق بآخر وينتهي، فيشكّل شكل حرف T.",
+        "ur": "جنکشن جہاں ایک سڑک دوسری سے مل کر ختم ہوتی ہے اور T کی شکل بنتی ہے۔",
+        "ro": "Intersecție unde un drum se termină în altul, formând un „T”."
+      }
+    }
+  ],
+  "RS-R-07": [
+    {
+      "term": "level crossing",
+      "translations": {
+        "en": "A place where a road crosses a railway line, often with barriers and warning lights.",
+        "ar": "مكان يتقاطع فيه الطريق مع خط السكة الحديدية، وغالباً توجد حواجز وأضواء تحذير.",
+        "ur": "وہ جگہ جہاں سڑک ریلوے لائن کو کاٹتی ہے؛ اکثر رکاوٹیں اور وارننگ لائٹس ہوتی ہیں۔",
+        "ro": "Locul unde un drum traversează o cale ferată, adesea cu bariere și lumini de avertizare."
+      }
+    },
+    {
+      "term": "Temporary traffic lights",
+      "translations": {
+        "en": "Portable signals used for a limited time, often at road works.",
+        "ar": "إشارات مؤقتة تُستخدم لفترة محدودة، غالباً عند أعمال الطريق.",
+        "ur": "عارضی سگنل جو محدود وقت کے لیے، اکثر روڈ ورکس پر لگتے ہیں۔",
+        "ro": "Semafoare portabile folosite o perioadă limitată, deseori la lucrări."
+      }
+    }
+  ],
+  "RS-R-08": [
+    {
+      "term": "level crossing",
+      "translations": {
+        "en": "A place where a road crosses a railway line, often with barriers and warning lights.",
+        "ar": "مكان يتقاطع فيه الطريق مع خط السكة الحديدية، وغالباً توجد حواجز وأضواء تحذير.",
+        "ur": "وہ جگہ جہاں سڑک ریلوے لائن کو کاٹتی ہے؛ اکثر رکاوٹیں اور وارننگ لائٹس ہوتی ہیں۔",
+        "ro": "Locul unde un drum traversează o cale ferată, adesea cu bariere și lumini de avertizare."
+      }
+    },
+    {
+      "term": "barrier",
+      "translations": {
+        "en": "A gate or arm that can block the road when a train is coming.",
+        "ar": "بوابة أو ذراع يمكن أن يغلق الطريق عند اقتراب قطار.",
+        "ur": "گیٹ یا بازو جو ٹرین آنے پر سڑک روک سکتا ہے۔",
+        "ro": "Poartă sau braț care poate bloca drumul când vine un tren."
+      }
+    }
+  ],
+  "RS-R-09": [
+    {
+      "term": "obstruction",
+      "translations": {
+        "en": "Something blocking the road so traffic cannot pass freely.",
+        "ar": "شيء يسد الطريق فلا تستطيع حركة المرور المرور بحرية.",
+        "ur": "کچھ جو سڑک روکے تاکہ ٹریفک آزادانہ نہ گزر سکے۔",
+        "ro": "Ceva care blochează drumul, împiedicând trecerea liberă a traficului."
+      }
+    },
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing a slower vehicle by moving alongside and ahead of it.",
+        "ar": "تجاوز مركبة أبطأ بالسير بجانبها ثم أمامها.",
+        "ur": "سست گاڑی کے ساتھ سے نکل کر اس سے آگے بڑھنا۔",
+        "ro": "Depășirea unui vehicul mai lent trecând pe lângă el și înaintea lui."
+      }
+    }
+  ],
+  "RS-R-10": [],
+  "RS-R-11": [
+    {
+      "term": "Road works",
+      "translations": {
+        "en": "Construction or repairs on the road that may change lanes or reduce speed.",
+        "ar": "أعمال بناء أو إصلاح على الطريق قد تغيّر المسارات أو تخفض السرعة.",
+        "ur": "سڑک پر تعمیر یا مرمت جس سے لین بدل یا رفتار کم ہو سکتی ہے۔",
+        "ro": "Lucrări de construcție sau reparații pe drum care pot schimba benzile sau reduce viteza."
+      }
+    },
+    {
+      "term": "slippery road",
+      "translations": {
+        "en": "A road surface with poor tyre grip, so vehicles can skid more easily.",
+        "ar": "سطح طريق بتماسك ضعيف للإطارات، فيسهل انزلاق المركبات.",
+        "ur": "سڑک کی سطح جس پر ٹائروں کی گرفت کم ہو، اس لیے گاڑی پھسل سکتی ہے۔",
+        "ro": "Suprafață de drum cu aderență slabă a anvelopelor, deci vehiculele pot derapa mai ușor."
+      }
+    },
+    {
+      "term": "uneven road surface",
+      "translations": {
+        "en": "A road that is bumpy or irregular rather than smooth.",
+        "ar": "طريق غير مستوٍ أو وعر بدلاً من أن يكون ناعماً.",
+        "ur": "ایسی سڑک جو ہموار کے بجائے اونچی نیچی یا ناہموار ہو۔",
+        "ro": "Drum denivelat sau neregulat, nu neted."
+      }
+    }
+  ],
+  "RS-R-12": [
+    {
+      "term": "Temporary lane closure",
+      "translations": {
+        "en": "One or more lanes closed for a limited time, often during road works.",
+        "ar": "إغلاق مسار أو أكثر لفترة محدودة، غالباً أثناء أعمال الطريق.",
+        "ur": "محدود وقت کے لیے ایک یا زیادہ لین بند، اکثر روڈ ورکس کے دوران۔",
+        "ro": "Una sau mai multe benzi închise temporar, deseori în timpul lucrărilor."
+      }
+    },
+    {
+      "term": "Road works",
+      "translations": {
+        "en": "Construction or repairs on the road that may change lanes or reduce speed.",
+        "ar": "أعمال بناء أو إصلاح على الطريق قد تغيّر المسارات أو تخفض السرعة.",
+        "ur": "سڑک پر تعمیر یا مرمت جس سے لین بدل یا رفتار کم ہو سکتی ہے۔",
+        "ro": "Lucrări de construcție sau reparații pe drum care pot schimba benzile sau reduce viteza."
+      }
+    }
+  ],
+  "RS-W-01": [
+    {
+      "term": "country lane",
+      "translations": {
+        "en": "A narrow rural road, often with limited space and visibility.",
+        "ar": "طريق ريفي ضيق، وغالباً بمساحة ورؤية محدودة.",
+        "ur": "تنگ دیہی سڑک، اکثر جگہ اور نظر محدود ہوتی ہے۔",
+        "ro": "Drum rural îngust, adesea cu spațiu și vizibilitate limitate."
+      }
+    },
+    {
+      "term": "road narrowing",
+      "translations": {
+        "en": "The road becoming less wide, so careful positioning is needed.",
+        "ar": "الطريق يصبح أضيق، فيلزم اختيار موضع بحذر.",
+        "ur": "سڑک تنگ ہونا، اس لیے احتیاط سے پوزیشن لینی چاہیے۔",
+        "ro": "Îngustarea drumului, deci este nevoie de poziționare atentă."
+      }
+    },
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing a slower vehicle by moving alongside and ahead of it.",
+        "ar": "تجاوز مركبة أبطأ بالسير بجانبها ثم أمامها.",
+        "ur": "سست گاڑی کے ساتھ سے نکل کر اس سے آگے بڑھنا۔",
+        "ro": "Depășirea unui vehicul mai lent trecând pe lângă el și înaintea lui."
+      }
+    }
+  ],
+  "RS-W-02": [
+    {
+      "term": "steep upward slope",
+      "translations": {
+        "en": "A sharp uphill climb where the road rises quickly.",
+        "ar": "صعود حاد حيث يرتفع الطريق بسرعة.",
+        "ur": "تیز چڑھائی جہاں سڑک تیزی سے اوپر جاتی ہے۔",
+        "ro": "Urcare abruptă unde drumul urcă rapid."
+      }
+    },
+    {
+      "term": "lower gears",
+      "translations": {
+        "en": "Gears with more engine power and less speed, useful on hills.",
+        "ar": "تروس بقوة محرك أكبر وسرعة أقل، مفيدة على المنحدرات.",
+        "ur": "وہ گیئرز جن میں طاقت زیادہ اور رفتار کم ہو؛ پہاڑیوں پر مفید۔",
+        "ro": "Viteze cu mai multă forță și mai puțină viteză, utile pe dealuri."
+      }
+    }
+  ],
+  "RS-W-03": [
+    {
+      "term": "farmland",
+      "translations": {
+        "en": "Countryside used for farming, where animals or slow farm vehicles may be near the road.",
+        "ar": "أراضٍ زراعية قد تكون فيها حيوانات أو مركبات زراعية بطيئة قرب الطريق.",
+        "ur": "زرعی علاقہ جہاں سڑک کے قریب جانور یا سست فارم گاڑیاں ہو سکتی ہیں۔",
+        "ro": "Teren agricol unde pot apărea animale sau vehicule agricole lente lângă drum."
+      }
+    },
+    {
+      "term": "livestock",
+      "translations": {
+        "en": "Farm animals such as sheep or cattle that may be on or near the road.",
+        "ar": "حيوانات المزرعة مثل الأغنام أو الأبقار التي قد تكون على الطريق أو قربه.",
+        "ur": "فارم کے جانور جیسے بھیڑ یا مویشی جو سڑک پر یا قریب ہو سکتے ہیں۔",
+        "ro": "Animale de fermă precum oi sau bovine care pot fi pe drum sau lângă el."
+      }
+    }
+  ]
+}

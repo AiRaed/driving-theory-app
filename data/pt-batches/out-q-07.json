@@ -1,0 +1,856 @@
+{
+  "vehicle-loading": {
+    "VL-04": {
+      "promptPt": "Antes de rebocar um atrelado, repara que uma das luzes não funciona. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Continuar a conduzir"
+        },
+        {
+          "pt": "Desligar o atrelado"
+        },
+        {
+          "pt": "Reparar a avaria antes de conduzir"
+        },
+        {
+          "pt": "Repará-la mais tarde"
+        }
+      ]
+    },
+    "VL-05": {
+      "promptPt": "Se o atrelado for mais largo do que o seu carro, o que deve montar?",
+      "options": [
+        {
+          "pt": "Espelhos exteriores de reboque"
+        },
+        {
+          "pt": "Sensores de estacionamento"
+        },
+        {
+          "pt": "Câmara de marcha-atrás"
+        },
+        {
+          "pt": "Marcadores de saliência"
+        }
+      ]
+    },
+    "VL-06": {
+      "promptPt": "Que dispositivo de segurança deve estar montado no sistema de travagem do atrelado?",
+      "options": [
+        {
+          "pt": "Estabilizador"
+        },
+        {
+          "pt": "Roda de manobra (jockey)"
+        },
+        {
+          "pt": "Estabilizadores de canto"
+        },
+        {
+          "pt": "Cabo de rutura (breakaway)"
+        }
+      ]
+    },
+    "VL-07": {
+      "promptPt": "O que ajuda a melhorar a estabilidade ao rebocar uma caravana?",
+      "options": [
+        {
+          "pt": "Roda de manobra (jockey)"
+        },
+        {
+          "pt": "Direção assistida"
+        },
+        {
+          "pt": "Travões ABS"
+        },
+        {
+          "pt": "Estabilizador do gancho de reboque"
+        }
+      ]
+    },
+    "VL-08": {
+      "promptPt": "Quem é legalmente responsável por garantir que um veículo não circula sobrecarregado?",
+      "options": [
+        {
+          "pt": "O proprietário do veículo"
+        },
+        {
+          "pt": "A pessoa que carrega os objetos"
+        },
+        {
+          "pt": "A autoridade de licenciamento"
+        },
+        {
+          "pt": "O condutor do veículo"
+        }
+      ]
+    },
+    "VL-09": {
+      "promptPt": "O que significa a Massa Máxima Autorizada (MAM) de um atrelado?",
+      "options": [
+        {
+          "pt": "Apenas a carga"
+        },
+        {
+          "pt": "O peso do atrelado vazio"
+        },
+        {
+          "pt": "O peso combinado de reboque"
+        },
+        {
+          "pt": "O peso do atrelado mais a carga"
+        }
+      ]
+    },
+    "VL-10": {
+      "promptPt": "Ao atrelar um atrelado sem travões, o que deve garantir?",
+      "options": [
+        {
+          "pt": "Montar um dispositivo de acoplamento secundário"
+        },
+        {
+          "pt": "Lubrificar a bola de reboque"
+        },
+        {
+          "pt": "Desligar os sensores"
+        },
+        {
+          "pt": "Ajustar apenas os espelhos"
+        }
+      ]
+    },
+    "VL-11": {
+      "promptPt": "Que aspeto do seu veículo é mais afetado por transportar uma carga muito pesada?",
+      "options": [
+        {
+          "pt": "A bateria"
+        },
+        {
+          "pt": "A ventilação"
+        },
+        {
+          "pt": "O comportamento dinâmico"
+        },
+        {
+          "pt": "A caixa de velocidades"
+        }
+      ]
+    },
+    "VL-12": {
+      "promptPt": "Antes de rebocar um atrelado pela primeira vez, o que é recomendado?",
+      "options": [
+        {
+          "pt": "Atualizar a carta de condução"
+        },
+        {
+          "pt": "Colocar placas P"
+        },
+        {
+          "pt": "Fazer formação profissional"
+        },
+        {
+          "pt": "Fazer outro exame"
+        }
+      ]
+    },
+    "VL-13": {
+      "promptPt": "Depois de passar no exame, qual é a massa máxima autorizada de um atrelado que pode rebocar?",
+      "options": [
+        {
+          "pt": "6 500 kg"
+        },
+        {
+          "pt": "5 500 kg"
+        },
+        {
+          "pt": "4 500 kg"
+        },
+        {
+          "pt": "3 500 kg"
+        }
+      ]
+    },
+    "VL-14": {
+      "promptPt": "Se o atrelado começar a oscilar durante a condução, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Travar a fundo"
+        },
+        {
+          "pt": "Aumentar a velocidade"
+        },
+        {
+          "pt": "Virar o volante bruscamente"
+        },
+        {
+          "pt": "Reduzir a velocidade suavemente"
+        }
+      ]
+    },
+    "VL-15": {
+      "promptPt": "Ao rebocar numa autoestrada de três vias, que restrição se aplica?",
+      "options": [
+        {
+          "pt": "Máximo 50 mph"
+        },
+        {
+          "pt": "Proibido ultrapassar"
+        },
+        {
+          "pt": "Estabilizador obrigatório"
+        },
+        {
+          "pt": "Proibido usar a via da direita"
+        }
+      ]
+    },
+    "VL-16": {
+      "promptPt": "Quando deve aumentar a pressão dos pneus acima do normal?",
+      "options": [
+        {
+          "pt": "Em estradas escorregadias"
+        },
+        {
+          "pt": "Se tiver ABS"
+        },
+        {
+          "pt": "Com piso gasto"
+        },
+        {
+          "pt": "Ao transportar uma carga pesada"
+        }
+      ]
+    },
+    "VL-17": {
+      "promptPt": "Se um atrelado começar a balançar de um lado para o outro, qual é a ação mais segura?",
+      "options": [
+        {
+          "pt": "Acelerar"
+        },
+        {
+          "pt": "Travar a fundo"
+        },
+        {
+          "pt": "Largar o volante"
+        },
+        {
+          "pt": "Aliviar o acelerador"
+        }
+      ]
+    },
+    "VL-18": {
+      "promptPt": "Qual é a profundidade mínima legal do piso dos pneus de um atrelado?",
+      "options": [
+        {
+          "pt": "1 mm"
+        },
+        {
+          "pt": "1,6 mm"
+        },
+        {
+          "pt": "2 mm"
+        },
+        {
+          "pt": "2,2 mm"
+        }
+      ]
+    },
+    "VL-19": {
+      "promptPt": "É permitido transportar passageiros numa caravana rebocada?",
+      "options": [
+        {
+          "pt": "Sim, com mais de 14 anos"
+        },
+        {
+          "pt": "Não, nunca"
+        },
+        {
+          "pt": "Se os bancos estiverem cheios"
+        },
+        {
+          "pt": "Com estabilizador"
+        }
+      ]
+    },
+    "VL-20": {
+      "promptPt": "Como devem ser posicionados os objetos pesados ao carregar um atrelado?",
+      "options": [
+        {
+          "pt": "À frente"
+        },
+        {
+          "pt": "Atrás"
+        },
+        {
+          "pt": "Sobre os eixos"
+        },
+        {
+          "pt": "Nos cantos"
+        }
+      ]
+    },
+    "VL-21": {
+      "promptPt": "Como deve ser transportada uma carga no porta-bagagens de tejadilho?",
+      "options": [
+        {
+          "pt": "Bem fixada com dispositivos de retenção adequados"
+        },
+        {
+          "pt": "Mais para a traseira"
+        },
+        {
+          "pt": "Visível nos espelhos"
+        },
+        {
+          "pt": "Coberta com plástico"
+        }
+      ]
+    }
+  },
+  "attitude": {
+    "AT-01": {
+      "promptPt": "Ao aproximar-se de uma passagem de peões com pessoas à espera, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Parar apenas para idosos"
+        },
+        {
+          "pt": "Abrandar e preparar-se para parar"
+        },
+        {
+          "pt": "Piscar os médios para os convidar a atravessar"
+        },
+        {
+          "pt": "Fazer-lhes sinal para atravessarem"
+        }
+      ]
+    },
+    "AT-02": {
+      "promptPt": "O trânsito está lento e o condutor atrás segue demasiado perto. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ignorá-lo"
+        },
+        {
+          "pt": "Aumentar gradualmente a distância à frente"
+        },
+        {
+          "pt": "Fazer-lhe sinal para ultrapassar"
+        },
+        {
+          "pt": "Deslocar-se para o centro da estrada"
+        }
+      ]
+    },
+    "AT-03": {
+      "promptPt": "Porque é perigoso circular demasiado perto do veículo da frente?",
+      "options": [
+        {
+          "pt": "O motor pode sobreaquecer"
+        },
+        {
+          "pt": "Os espelhos deixam de ser eficazes"
+        },
+        {
+          "pt": "O seu tempo de paragem fica reduzido"
+        },
+        {
+          "pt": "A navegação fica imprecisa"
+        }
+      ]
+    },
+    "AT-04": {
+      "promptPt": "Quando se recomenda geralmente uma distância de seguimento de dois segundos?",
+      "options": [
+        {
+          "pt": "Em condições secas"
+        },
+        {
+          "pt": "Com nevoeiro"
+        },
+        {
+          "pt": "Em estradas geladas"
+        },
+        {
+          "pt": "Com chuva intensa"
+        }
+      ]
+    },
+    "AT-05": {
+      "promptPt": "Um veículo de grandes dimensões sinaliza à esquerda mas desvia-se para a direita antes de virar. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Buzinar"
+        },
+        {
+          "pt": "Passar pela esquerda"
+        },
+        {
+          "pt": "Ultrapassar rapidamente"
+        },
+        {
+          "pt": "Abrandar e deixá-lo virar"
+        }
+      ]
+    },
+    "AT-06": {
+      "promptPt": "Quem deve obedecer aos sinais de via em forma de losango?",
+      "options": [
+        {
+          "pt": "Elétricos"
+        },
+        {
+          "pt": "Autocarros"
+        },
+        {
+          "pt": "Camiões"
+        },
+        {
+          "pt": "Táxis"
+        }
+      ]
+    },
+    "AT-07": {
+      "promptPt": "Quando deve piscar os médios a outro utilizador da estrada?",
+      "options": [
+        {
+          "pt": "Para reivindicar prioridade"
+        },
+        {
+          "pt": "Para avisar de uma mudança de direção"
+        },
+        {
+          "pt": "Para indicar a sua presença"
+        },
+        {
+          "pt": "Para o obrigar a parar"
+        }
+      ]
+    },
+    "AT-08": {
+      "promptPt": "Um sinal de via de autocarros não indica horários. O que significa?",
+      "options": [
+        {
+          "pt": "Apenas nas horas de ponta"
+        },
+        {
+          "pt": "Apenas de dia"
+        },
+        {
+          "pt": "Não está ativa de momento"
+        },
+        {
+          "pt": "Funciona permanentemente"
+        }
+      ]
+    },
+    "AT-09": {
+      "promptPt": "Numa passagem pelican com âmbar intermitente, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Parar imediatamente"
+        },
+        {
+          "pt": "Avançar com cuidado"
+        },
+        {
+          "pt": "Ceder a passagem aos peões que já estejam a atravessar"
+        },
+        {
+          "pt": "Esperar pela luz vermelha"
+        }
+      ]
+    },
+    "AT-10": {
+      "promptPt": "Qual deve ser a distância mínima de seguimento em estradas molhadas?",
+      "options": [
+        {
+          "pt": "1 segundo"
+        },
+        {
+          "pt": "2 segundos"
+        },
+        {
+          "pt": "3 segundos"
+        },
+        {
+          "pt": "4 segundos"
+        }
+      ]
+    },
+    "AT-11": {
+      "promptPt": "Um veículo entra de repente num cruzamento. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar"
+        },
+        {
+          "pt": "Buzinar"
+        },
+        {
+          "pt": "Desviar bruscamente"
+        },
+        {
+          "pt": "Abrandar e preparar-se para parar"
+        }
+      ]
+    },
+    "AT-12": {
+      "promptPt": "Um camião longo está a ultrapassá-lo lentamente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar"
+        },
+        {
+          "pt": "Mudar de direção"
+        },
+        {
+          "pt": "Manter a velocidade"
+        },
+        {
+          "pt": "Travar de repente"
+        }
+      ]
+    },
+    "AT-13": {
+      "promptPt": "Que estilo de condução aumenta o perigo para todos?",
+      "options": [
+        {
+          "pt": "Considerado"
+        },
+        {
+          "pt": "Defensivo"
+        },
+        {
+          "pt": "Competitivo"
+        },
+        {
+          "pt": "Responsável"
+        }
+      ]
+    },
+    "AT-14": {
+      "promptPt": "Numa estrada estreita de uma só via, onde deve aguardar se se aproximar um veículo?",
+      "options": [
+        {
+          "pt": "No apartadouro do lado oposto"
+        },
+        {
+          "pt": "Na berma"
+        },
+        {
+          "pt": "No apartadouro do seu lado"
+        },
+        {
+          "pt": "No centro da estrada"
+        }
+      ]
+    },
+    "AT-15": {
+      "promptPt": "Uma pessoa a conduzir animais pede-lhe para parar. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ignorá-la"
+        },
+        {
+          "pt": "Parar e desligar o motor"
+        },
+        {
+          "pt": "Passar lentamente"
+        },
+        {
+          "pt": "Buzinar"
+        }
+      ]
+    },
+    "AT-16": {
+      "promptPt": "Porque nunca deve fazer sinal aos peões para atravessarem a estrada?",
+      "options": [
+        {
+          "pt": "Podem estar distraídos"
+        },
+        {
+          "pt": "Outros veículos podem não parar"
+        },
+        {
+          "pt": "Atrasa o trânsito"
+        },
+        {
+          "pt": "É desnecessário"
+        }
+      ]
+    },
+    "AT-17": {
+      "promptPt": "Conduz no limite de velocidade e um veículo atrás quer ultrapassar. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar"
+        },
+        {
+          "pt": "Bloqueá-lo"
+        },
+        {
+          "pt": "Manter velocidade constante e permitir a ultrapassagem"
+        },
+        {
+          "pt": "Buzinar"
+        }
+      ]
+    },
+    "AT-18": {
+      "promptPt": "Que veículo usa um sinal luminoso azul intermitente?",
+      "options": [
+        {
+          "pt": "Limpa-neves"
+        },
+        {
+          "pt": "Reboque de avarias"
+        },
+        {
+          "pt": "Desativação de explosivos"
+        },
+        {
+          "pt": "Manutenção rodoviária"
+        }
+      ]
+    },
+    "AT-19": {
+      "promptPt": "Como deve aproximar-se de um cruzamento sem sinalização?",
+      "options": [
+        {
+          "pt": "Acelerar"
+        },
+        {
+          "pt": "Manter-se à direita"
+        },
+        {
+          "pt": "Abrandar e olhar para ambos os lados"
+        },
+        {
+          "pt": "Olhar apenas para a esquerda"
+        }
+      ]
+    },
+    "AT-20": {
+      "promptPt": "À noite, numa estrada desimpedida com trânsito em sentido contrário, que luzes deve usar?",
+      "options": [
+        {
+          "pt": "Máximos"
+        },
+        {
+          "pt": "Luzes de nevoeiro"
+        },
+        {
+          "pt": "Luzes de presença"
+        },
+        {
+          "pt": "Médios"
+        }
+      ]
+    },
+    "AT-21": {
+      "promptPt": "Numa passagem de peões controlada por sinais com botão, que luz vem a seguir ao verde?",
+      "options": [
+        {
+          "pt": "Vermelho fixo"
+        },
+        {
+          "pt": "Âmbar intermitente"
+        },
+        {
+          "pt": "Âmbar fixo"
+        },
+        {
+          "pt": "Verde intermitente"
+        }
+      ]
+    },
+    "AT-22": {
+      "promptPt": "Em boas condições secas, quando deve aplicar a regra dos dois segundos?",
+      "options": [
+        {
+          "pt": "Ao verificar a distância ao veículo da frente"
+        },
+        {
+          "pt": "Antes de voltar a ligar o motor"
+        },
+        {
+          "pt": "Antes de sinalizar"
+        },
+        {
+          "pt": "Quando as luzes ficam verdes"
+        }
+      ]
+    },
+    "AT-23": {
+      "promptPt": "Que problema pode causar uma tampa do depósito de gasóleo solta durante a condução?",
+      "options": [
+        {
+          "pt": "Dificuldade em arrancar"
+        },
+        {
+          "pt": "Piso escorregadio para os outros"
+        },
+        {
+          "pt": "Melhor consumo de combustível"
+        },
+        {
+          "pt": "Menores emissões"
+        }
+      ]
+    },
+    "AT-24": {
+      "promptPt": "Que luz no painel indica que os máximos estão ligados?",
+      "options": [
+        {
+          "pt": "Símbolo verde do farol com linhas retas"
+        },
+        {
+          "pt": "Símbolo âmbar das luzes de nevoeiro"
+        },
+        {
+          "pt": "Símbolo vermelho da bateria"
+        },
+        {
+          "pt": "Símbolo azul das luzes de presença"
+        }
+      ]
+    },
+    "AT-25": {
+      "promptPt": "Conduz um veículo lento numa estrada estreita e sinuosa. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Impedir ultrapassagens"
+        },
+        {
+          "pt": "Encostar quando for seguro para deixar passar os outros"
+        },
+        {
+          "pt": "Continuar a acelerar"
+        },
+        {
+          "pt": "Sinalizar continuamente"
+        }
+      ]
+    },
+    "AT-26": {
+      "promptPt": "Conduz no limite de velocidade e um veículo atrás pisca os médios. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar"
+        },
+        {
+          "pt": "Travar a fundo"
+        },
+        {
+          "pt": "Impedir a ultrapassagem"
+        },
+        {
+          "pt": "Permitir que o veículo ultrapasse em segurança"
+        }
+      ]
+    },
+    "AT-27": {
+      "promptPt": "Como pode melhor evitar que o combustível se derrame na estrada?",
+      "options": [
+        {
+          "pt": "Manter o depósito parcialmente cheio"
+        },
+        {
+          "pt": "Usar tampa com fecho"
+        },
+        {
+          "pt": "Verificar o indicador regularmente"
+        },
+        {
+          "pt": "Garantir que a tampa do depósito está bem fechada"
+        }
+      ]
+    },
+    "AT-28": {
+      "promptPt": "Que veículo de emergência usa um sinal luminoso verde intermitente?",
+      "options": [
+        {
+          "pt": "Bombeiros"
+        },
+        {
+          "pt": "Veículo de salgamento"
+        },
+        {
+          "pt": "Ambulância"
+        },
+        {
+          "pt": "Carro de médico"
+        }
+      ]
+    },
+    "AT-29": {
+      "promptPt": "Como deve ultrapassar um cavalo e cavaleiro em segurança?",
+      "options": [
+        {
+          "pt": "Usar a buzina"
+        },
+        {
+          "pt": "Passar rapidamente"
+        },
+        {
+          "pt": "Piscar os médios"
+        },
+        {
+          "pt": "Passar lentamente e com cuidado"
+        }
+      ]
+    },
+    "AT-30": {
+      "promptPt": "Em estradas com elétricos, que utilizadores correm mais risco por causa dos carris?",
+      "options": [
+        {
+          "pt": "Carros"
+        },
+        {
+          "pt": "Autocarros"
+        },
+        {
+          "pt": "Camiões"
+        },
+        {
+          "pt": "Bicicletas"
+        }
+      ]
+    },
+    "AT-31": {
+      "promptPt": "Porque deve posicionar o veículo corretamente com antecedência antes de virar à direita?",
+      "options": [
+        {
+          "pt": "Para deixar os outros passar"
+        },
+        {
+          "pt": "Para sinalizar claramente as suas intenções"
+        },
+        {
+          "pt": "Para aumentar a velocidade"
+        },
+        {
+          "pt": "Para bloquear o trânsito"
+        }
+      ]
+    },
+    "AT-32": {
+      "promptPt": "À noite, numa estrada sem iluminação, que luzes deve usar ao seguir outro veículo?",
+      "options": [
+        {
+          "pt": "Piscar os médios"
+        },
+        {
+          "pt": "Máximos"
+        },
+        {
+          "pt": "Desligar as luzes"
+        },
+        {
+          "pt": "Médios"
+        }
+      ]
+    }
+  }
+}

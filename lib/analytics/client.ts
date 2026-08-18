@@ -3,6 +3,7 @@
  */
 import { trackEvent } from '@/lib/analytics/trackEvent';
 import type { AnalyticsMode } from '@/lib/analytics/types';
+import { toAnalyticsLanguage } from '@/lib/i18n/languages';
 
 export { trackEvent };
 
@@ -71,10 +72,7 @@ export function trackSessionComplete(payload: {
   postJson('/api/analytics/session', { action: 'complete', ...payload });
 }
 
-/** Map TranslationLang ('off'|'ar'|'ur'|'ro') to analytics language label. */
+/** Map TranslationLang to analytics language label. */
 export function analyticsLanguage(lang: string | null | undefined): string {
-  if (lang === 'ar') return 'ar';
-  if (lang === 'ur') return 'ur';
-  if (lang === 'ro') return 'ro';
-  return 'en';
+  return toAnalyticsLanguage(lang);
 }

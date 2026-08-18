@@ -1,0 +1,856 @@
+{
+  "rules-of-the-road": {
+    "RR-30": {
+      "promptPl": "Pas dla rowerów oznaczony ciągłą białą linią jest w użyciu. Co to oznacza dla kierowców?",
+      "options": [
+        {
+          "pl": "Kierowcy mogą wjechać, jeśli są ostrożni"
+        },
+        {
+          "pl": "Kierowcy nie mogą korzystać z tego pasa"
+        },
+        {
+          "pl": "Parkowanie jest dozwolone"
+        },
+        {
+          "pl": "Motocykle muszą z niego korzystać"
+        }
+      ]
+    },
+    "RR-31": {
+      "promptPl": "Kiedy zwykle powinieneś korzystać z prawego pasa na trzyjezdniowej drodze dwujezdniowej?",
+      "options": [
+        {
+          "pl": "Tylko przy wyprzedzaniu"
+        },
+        {
+          "pl": "Przy skręcie w prawo"
+        },
+        {
+          "pl": "Przy użyciu tempomatu"
+        },
+        {
+          "pl": "Przy szybkiej jeździe"
+        }
+      ]
+    },
+    "RR-32": {
+      "promptPl": "Na ulicy jednokierunkowej, z której strony wolno wyprzedzać inny pojazd?",
+      "options": [
+        {
+          "pl": "Tylko z lewej"
+        },
+        {
+          "pl": "Tylko z prawej"
+        },
+        {
+          "pl": "Z dowolnej strony, jeśli jest bezpiecznie"
+        },
+        {
+          "pl": "Wyprzedzanie jest zabronione"
+        }
+      ]
+    },
+    "RR-33": {
+      "promptPl": "Ograniczenia parkowania obowiązują w określonych dniach i godzinach. Co powinieneś robić w tych godzinach?",
+      "options": [
+        {
+          "pl": "Parkować za darmo gdziekolwiek"
+        },
+        {
+          "pl": "Parkować na żółtych liniach"
+        },
+        {
+          "pl": "Parkować w zatokach i płacić, jeśli jest to wymagane"
+        },
+        {
+          "pl": "Zignorować znak"
+        }
+      ]
+    },
+    "RR-34": {
+      "promptPl": "Na rondzie, jak powinieneś sygnalizować, jadąc prosto?",
+      "options": [
+        {
+          "pl": "Sygnał w prawo, potem w lewo"
+        },
+        {
+          "pl": "Bez sygnału na dojeździe, sygnał w lewo przy zjeździe"
+        },
+        {
+          "pl": "Sygnał w prawo przez cały czas"
+        },
+        {
+          "pl": "Sygnał dopiero po zjeździe"
+        }
+      ]
+    },
+    "RR-35": {
+      "promptPl": "Kto jest prawnie upoważniony, aby dać Ci sygnał do zatrzymania?",
+      "options": [
+        {
+          "pl": "Pieszy"
+        },
+        {
+          "pl": "Kierowca autobusu"
+        },
+        {
+          "pl": "Policjant"
+        },
+        {
+          "pl": "Motocyklista"
+        }
+      ]
+    },
+    "RR-36": {
+      "promptPl": "Gdzie jest najbezpieczniejsze miejsce do zaparkowania samochodu na noc?",
+      "options": [
+        {
+          "pl": "Na ruchliwej drodze"
+        },
+        {
+          "pl": "W garażu"
+        },
+        {
+          "pl": "W pobliżu red routes"
+        },
+        {
+          "pl": "Na ciemnym parkingu"
+        }
+      ]
+    },
+    "RR-37": {
+      "promptPl": "Po Twojej stronie drogi jest przeszkoda. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Jechać dalej z pierwszeństwem"
+        },
+        {
+          "pl": "Przyspieszyć i ominąć"
+        },
+        {
+          "pl": "Ustąpić pierwszeństwa ruchowi z naprzeciwka"
+        },
+        {
+          "pl": "Machaniem przepuszczać innych"
+        }
+      ]
+    },
+    "RR-38": {
+      "promptPl": "Kiedy wolno się zatrzymać na miejskim clearway?",
+      "options": [
+        {
+          "pl": "Aby skorzystać z telefonu"
+        },
+        {
+          "pl": "Aby załadować/rozładować"
+        },
+        {
+          "pl": "Aby wysadzić lub zabrać pasażerów"
+        },
+        {
+          "pl": "Aby spytać o drogę"
+        }
+      ]
+    },
+    "RR-39": {
+      "promptPl": "Jaki jest krajowy limit prędkości dla samochodów na drodze dwujezdniowej?",
+      "options": [
+        {
+          "pl": "30 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        },
+        {
+          "pl": "70 mph"
+        }
+      ]
+    },
+    "RR-40": {
+      "promptPl": "Jaki jest najbezpieczniejszy sposób zawrócenia na ruchliwej głównej ulicy?",
+      "options": [
+        {
+          "pl": "Zawrócenie (U-turn)"
+        },
+        {
+          "pl": "Cofanie na drodze głównej"
+        },
+        {
+          "pl": "Poprosić kogoś o zatrzymanie ruchu"
+        },
+        {
+          "pl": "Zawrócić na spokojnej bocznej drodze"
+        }
+      ]
+    },
+    "RR-41": {
+      "promptPl": "Czekasz na skręt w prawo na skrzyżowaniu z kratą (box junction) przy ruchu z naprzeciwka. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Wjechać i czekać wewnątrz"
+        },
+        {
+          "pl": "Czekać przed skrzyżowaniem, aż wyjazd będzie wolny"
+        },
+        {
+          "pl": "Skręcić mimo wszystko"
+        },
+        {
+          "pl": "Wjechać, gdy ktoś machnie"
+        }
+      ]
+    },
+    "RR-42": {
+      "promptPl": "Którzy użytkownicy drogi mogą legalnie korzystać z przejść toucan?",
+      "options": [
+        {
+          "pl": "Samochody i motocykle"
+        },
+        {
+          "pl": "Rowerzyści i piesi"
+        },
+        {
+          "pl": "Autobusy i ciężarówki"
+        },
+        {
+          "pl": "Tramwaje"
+        }
+      ]
+    },
+    "RR-43": {
+      "promptPl": "Czekasz na przejeździe kolejowym. Pociąg przejechał, ale czerwone światła ostrzegawcze nadal migają. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Wysiąść i sprawdzić"
+        },
+        {
+          "pl": "Zatelefonować do dyżurnego ruchu"
+        },
+        {
+          "pl": "Dalej czekać"
+        },
+        {
+          "pl": "Ostrożnie przejechać"
+        }
+      ]
+    },
+    "RR-44": {
+      "promptPl": "Jaka jest minimalna odległość, w jakiej wolno parkować od skrzyżowania?",
+      "options": [
+        {
+          "pl": "10 metrów (32 stopy)"
+        },
+        {
+          "pl": "12 metrów"
+        },
+        {
+          "pl": "15 metrów"
+        },
+        {
+          "pl": "20 metrów"
+        }
+      ]
+    },
+    "RR-45": {
+      "promptPl": "Kiedy wolno parkować w miejscu zarezerwowanym dla kierowców niepełnosprawnych?",
+      "options": [
+        {
+          "pl": "Gdy masz Blue Badge"
+        },
+        {
+          "pl": "Gdy masz wózek inwalidzki"
+        },
+        {
+          "pl": "Gdy masz zaawansowane prawo jazdy"
+        },
+        {
+          "pl": "Gdy pojazd jest przystosowany"
+        }
+      ]
+    },
+    "RR-46": {
+      "promptPl": "Skręcasz w prawo na drogę dwujezdniową. Pas dzielący jest za wąski na Twój pojazd. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Czekać na pasie dzielącym"
+        },
+        {
+          "pl": "Zatrzymać się na pierwszym pasie"
+        },
+        {
+          "pl": "Czekać, aż droga będzie wolna w obie strony"
+        },
+        {
+          "pl": "Podjechać do przodu, aby pokazać zamiar"
+        }
+      ]
+    },
+    "RR-47": {
+      "promptPl": "Zbliżając się do skrętu w lewo z drogi głównej, jak powinieneś ustawić pojazd?",
+      "options": [
+        {
+          "pl": "Blisko środka"
+        },
+        {
+          "pl": "Na środku"
+        },
+        {
+          "pl": "Wykonać łuk w prawo"
+        },
+        {
+          "pl": "Trzymać się dobrze lewej strony"
+        }
+      ]
+    },
+    "RR-48": {
+      "promptPl": "Jaki typ pojazdu najprawdopodobniej zajmie nietypową ścieżkę na rondzie?",
+      "options": [
+        {
+          "pl": "Kombi"
+        },
+        {
+          "pl": "Taksówka"
+        },
+        {
+          "pl": "Dostawczak"
+        },
+        {
+          "pl": "Długi pojazd"
+        }
+      ]
+    },
+    "RR-49": {
+      "promptPl": "Dlaczego powinieneś jechać wolno ulicami mieszkalnymi z zaparkowanymi samochodami?",
+      "options": [
+        {
+          "pl": "Aby uniknąć alarmów"
+        },
+        {
+          "pl": "Aby zobaczyć pojazdy dostawcze"
+        },
+        {
+          "pl": "Dzieci mogą niespodziewanie wypaść na jezdnię"
+        },
+        {
+          "pl": "Aby umożliwić wyprzedzanie"
+        }
+      ]
+    },
+    "RR-50": {
+      "promptPl": "Znak wskazuje patrol przejścia szkolnego. Co to oznacza dla kierowców?",
+      "options": [
+        {
+          "pl": "Krajowy limit prędkości"
+        },
+        {
+          "pl": "Zakaz wjazdu"
+        },
+        {
+          "pl": "Być gotowym zatrzymać się dla dzieci"
+        },
+        {
+          "pl": "Ograniczenia postoju"
+        }
+      ]
+    },
+    "RR-51": {
+      "promptPl": "Na autostradzie w Anglii, kiedy musisz zatrzymać pojazd?",
+      "options": [
+        {
+          "pl": "Gdy pieszy daje sygnał"
+        },
+        {
+          "pl": "Gdy inny kierowca się zatrzymuje"
+        },
+        {
+          "pl": "Gdy nakazuje to funkcjonariusz ruchu drogowego (traffic officer)"
+        },
+        {
+          "pl": "Gdy machają pracownicy robót drogowych"
+        }
+      ]
+    },
+    "RR-52": {
+      "promptPl": "Jadąc prosto na rondzie, jaki sygnał powinieneś dać?",
+      "options": [
+        {
+          "pl": "Sygnał w prawo"
+        },
+        {
+          "pl": "Żadnego sygnału w żadnym momencie"
+        },
+        {
+          "pl": "Sygnał w lewo na dojeździe"
+        },
+        {
+          "pl": "Sygnał w lewo przy zjeździe"
+        }
+      ]
+    },
+    "RR-53": {
+      "promptPl": "Kiedy musisz zatrzymać pojazd zgodnie z prawem?",
+      "options": [
+        {
+          "pl": "Przy liniach ustąp pierwszeństwa"
+        },
+        {
+          "pl": "Przed autostradą"
+        },
+        {
+          "pl": "Po każdej kolizji powodującej obrażenia lub szkody"
+        },
+        {
+          "pl": "Na ulicach jednokierunkowych"
+        }
+      ]
+    },
+    "RR-54": {
+      "promptPl": "Który pojazd może potrzebować więcej miejsca na rondzie ze względu na swoje rozmiary?",
+      "options": [
+        {
+          "pl": "Samochód sportowy"
+        },
+        {
+          "pl": "Kombi"
+        },
+        {
+          "pl": "Van"
+        },
+        {
+          "pl": "Długi pojazd"
+        }
+      ]
+    },
+    "RR-55": {
+      "promptPl": "Kiedy wolno wjechać na skrzyżowanie z kratą (box junction)?",
+      "options": [
+        {
+          "pl": "Gdy sygnalizacja na to pozwala"
+        },
+        {
+          "pl": "Gdy ktoś machnie"
+        },
+        {
+          "pl": "Gdy Twój wyjazd jest wolny"
+        },
+        {
+          "pl": "Gdy ruch jest wolny"
+        }
+      ]
+    },
+    "RR-56": {
+      "promptPl": "W nocy na drodze z limitem 40 mph, co powinieneś zrobić przy parkowaniu?",
+      "options": [
+        {
+          "pl": "Ustawić się twarzą do ruchu"
+        },
+        {
+          "pl": "Użyć świateł mijania"
+        },
+        {
+          "pl": "Użyć świateł postojowych"
+        },
+        {
+          "pl": "Parkować pod latarnią"
+        }
+      ]
+    },
+    "RR-57": {
+      "promptPl": "Przy cofaniu na drogę boczną, kiedy Twój pojazd stwarza największe zagrożenie dla innych?",
+      "options": [
+        {
+          "pl": "Po zakończeniu manewru"
+        },
+        {
+          "pl": "Przed rozpoczęciem"
+        },
+        {
+          "pl": "Gdy jest już całkowicie na drodze bocznej"
+        },
+        {
+          "pl": "Gdy przód wychyla się na zewnątrz"
+        }
+      ]
+    },
+    "RR-58": {
+      "promptPl": "Gdzie jest najbezpieczniejsze miejsce do zaparkowania pojazdu w nocy?",
+      "options": [
+        {
+          "pl": "W pobliżu posterunku policji"
+        },
+        {
+          "pl": "Na spokojnej drodze"
+        },
+        {
+          "pl": "Na red route"
+        },
+        {
+          "pl": "W dobrze oświetlonym miejscu"
+        }
+      ]
+    },
+    "RR-59": {
+      "promptPl": "Jadąc przez przejazd kolejowy, włączają się światła ostrzegawcze i alarm. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Natychmiast się zatrzymać"
+        },
+        {
+          "pl": "Cofnąć"
+        },
+        {
+          "pl": "Natychmiast zjechać z przejazdu"
+        },
+        {
+          "pl": "Włączyć światła awaryjne"
+        }
+      ]
+    },
+    "RR-60": {
+      "promptPl": "Kiedy wolno zatrzymać się na clearway?",
+      "options": [
+        {
+          "pl": "Nigdy"
+        },
+        {
+          "pl": "W ciągu dnia"
+        },
+        {
+          "pl": "W godzinach szczytu"
+        },
+        {
+          "pl": "Gdy jest tłoczno"
+        }
+      ]
+    },
+    "RR-61": {
+      "promptPl": "Znak pokazuje limit prędkości na drodze jednojezdniowej. Jaka jest maksymalna prędkość dla samochodu ciągnącego przyczepę?",
+      "options": [
+        {
+          "pl": "30 mph"
+        },
+        {
+          "pl": "40 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        }
+      ]
+    },
+    "RR-62": {
+      "promptPl": "Widzisz roboty drogowe z tymczasowym limitem prędkości. Co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Zignorować go"
+        },
+        {
+          "pl": "Kierować się własną oceną"
+        },
+        {
+          "pl": "Przestrzegać wyświetlonego limitu"
+        },
+        {
+          "pl": "Przestrzegać go tylko w godzinach szczytu"
+        }
+      ]
+    },
+    "RR-63": {
+      "promptPl": "Znak wskazuje koniec strefy kontrolowanego parkowania. Co to oznacza?",
+      "options": [
+        {
+          "pl": "Brak przejazdu"
+        },
+        {
+          "pl": "Od teraz obowiązuje darmowe parkowanie"
+        },
+        {
+          "pl": "Koniec uspokojenia ruchu"
+        },
+        {
+          "pl": "Zakaz wjazdu"
+        }
+      ]
+    },
+    "RR-64": {
+      "promptPl": "Podwójne białe linie biegną środkiem drogi. Kiedy wolno parkować po lewej stronie?",
+      "options": [
+        {
+          "pl": "Jeśli linia jest przerywana"
+        },
+        {
+          "pl": "W ciągu dnia"
+        },
+        {
+          "pl": "Aby zabrać pasażerów"
+        },
+        {
+          "pl": "W żadnym momencie"
+        }
+      ]
+    },
+    "RR-65": {
+      "promptPl": "Dostępne są tylko miejsca dla niepełnosprawnych, a Ty nie jesteś osobą niepełnosprawną. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Użyć go na krótko"
+        },
+        {
+          "pl": "Zostać przy pojeździe"
+        },
+        {
+          "pl": "Zostawić jedno miejsce wolne"
+        },
+        {
+          "pl": "Poczekać na zwykłe miejsce"
+        }
+      ]
+    },
+    "RR-66": {
+      "promptPl": "Jak daleko wolno cofać?",
+      "options": [
+        {
+          "pl": "Na długość samochodu"
+        },
+        {
+          "pl": "Za róg"
+        },
+        {
+          "pl": "Tak daleko, jak to konieczne i bezpieczne"
+        },
+        {
+          "pl": "Na długość ulicy"
+        }
+      ]
+    },
+    "RR-67": {
+      "promptPl": "Jaki jest limit prędkości dla samochodu ciągnącego przyczepę kempingową na drodze dwujezdniowej?",
+      "options": [
+        {
+          "pl": "40 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        },
+        {
+          "pl": "70 mph"
+        }
+      ]
+    }
+  },
+  "safety-vehicle": {
+    "SV-21": {
+      "promptPl": "Jeśli Twój samochód ma monitoring martwego pola, co powinieneś regularnie sprawdzać, aby działał prawidłowo?",
+      "options": [
+        {
+          "pl": "Ciśnienie w oponach"
+        },
+        {
+          "pl": "Sygnał GPS"
+        },
+        {
+          "pl": "Czystość obszarów czujników na pojeździe"
+        },
+        {
+          "pl": "Pozycję kamery samochodowej"
+        }
+      ]
+    },
+    "SV-22": {
+      "promptPl": "Jaki jest najlepszy sposób, aby zmniejszyć ryzyko włamania do samochodu, gdy jest bez opieki?",
+      "options": [
+        {
+          "pl": "Parkować przy postoju taksówek"
+        },
+        {
+          "pl": "Zostawić wartościowe rzeczy na podłodze"
+        },
+        {
+          "pl": "Zabrać ze sobą wszystkie wartościowe rzeczy"
+        },
+        {
+          "pl": "Parkować przy remizie strażackiej"
+        }
+      ]
+    },
+    "SV-23": {
+      "promptPl": "Dlaczego ważne jest noszenie odpowiedniego obuwia podczas jazdy?",
+      "options": [
+        {
+          "pl": "Aby wyregulować fotel"
+        },
+        {
+          "pl": "Aby chodzić po awarii"
+        },
+        {
+          "pl": "Aby zapobiec zużyciu pedałów"
+        },
+        {
+          "pl": "Aby zachować właściwą kontrolę nad pedałami"
+        }
+      ]
+    },
+    "SV-24": {
+      "promptPl": "Co najprawdopodobniej zwiększa marnowanie paliwa?",
+      "options": [
+        {
+          "pl": "Zmniejszenie prędkości"
+        },
+        {
+          "pl": "Jazda autostradami"
+        },
+        {
+          "pl": "Używanie różnych marek paliwa"
+        },
+        {
+          "pl": "Niedopompowane opony"
+        }
+      ]
+    },
+    "SV-25": {
+      "promptPl": "Kiedy pasażer może legalnie podróżować bez zapiętego pasa bezpieczeństwa?",
+      "options": [
+        {
+          "pl": "Siedząc na tylnym siedzeniu"
+        },
+        {
+          "pl": "Mając poniżej 14 lat"
+        },
+        {
+          "pl": "Na krótkich trasach"
+        },
+        {
+          "pl": "Gdy ma zwolnienie medyczne"
+        }
+      ]
+    },
+    "SV-26": {
+      "promptPl": "Jak zamontowanie bagażnika dachowego wpływa na Twój samochód?",
+      "options": [
+        {
+          "pl": "Mniejszy hałas wiatru"
+        },
+        {
+          "pl": "Szybsze przyspieszanie"
+        },
+        {
+          "pl": "Zwiększone zużycie paliwa"
+        },
+        {
+          "pl": "Niższe zużycie oleju"
+        }
+      ]
+    },
+    "SV-27": {
+      "promptPl": "Który system wspomagania kierowcy jest zaprojektowany, aby aktywnie zapobiegać kolizjom?",
+      "options": [
+        {
+          "pl": "Tempomat"
+        },
+        {
+          "pl": "Widzenie nocne"
+        },
+        {
+          "pl": "Alert o senności"
+        },
+        {
+          "pl": "System awaryjnego hamowania"
+        }
+      ]
+    },
+    "SV-28": {
+      "promptPl": "Co zwykle oznacza, jeśli czerwona kontrolka hamulców świeci się podczas jazdy?",
+      "options": [
+        {
+          "pl": "Niski poziom oleju silnikowego"
+        },
+        {
+          "pl": "Usterka w układzie hamulcowym"
+        },
+        {
+          "pl": "Niezapięty pas bezpieczeństwa"
+        },
+        {
+          "pl": "Awaria światła tylnego"
+        }
+      ]
+    },
+    "SV-29": {
+      "promptPl": "11-letnie dziecko siedzi z przodu i ma mniej niż 1,35 m wzrostu. Jakiego zabezpieczenia trzeba użyć?",
+      "options": [
+        {
+          "pl": "Pasa dla dorosłych"
+        },
+        {
+          "pl": "Odpowiedniego fotelika dziecięcego"
+        },
+        {
+          "pl": "Samodzielnie zapiętego pasa"
+        },
+        {
+          "pl": "Dobrej widoczności do przodu"
+        }
+      ]
+    },
+    "SV-30": {
+      "promptPl": "Dlaczego zaleca się parkowanie na strzeżonym parkingu?",
+      "options": [
+        {
+          "pl": "Łatwiej znaleźć samochód"
+        },
+        {
+          "pl": "Ochrona przed pogodą"
+        },
+        {
+          "pl": "Niższe koszty parkowania"
+        },
+        {
+          "pl": "Pomaga odstraszyć kradzież"
+        }
+      ]
+    },
+    "SV-31": {
+      "promptPl": "Jak powinieneś zutylizować zużyty akumulator samochodowy?",
+      "options": [
+        {
+          "pl": "Zakopać go"
+        },
+        {
+          "pl": "Wrzucić do domowego kosza"
+        },
+        {
+          "pl": "Oddać w autoryzowanym punkcie recyklingu"
+        },
+        {
+          "pl": "Zostawić na nieużytku"
+        }
+      ]
+    },
+    "SV-32": {
+      "promptPl": "Musisz dotrzeć na czas na spotkanie. Jak powinieneś zaplanować podróż?",
+      "options": [
+        {
+          "pl": "Jeździć w godzinach szczytu"
+        },
+        {
+          "pl": "Unikać wyprzedzania"
+        },
+        {
+          "pl": "Zaplanować dodatkowy czas"
+        },
+        {
+          "pl": "Unikać dróg z krajowym limitem prędkości"
+        }
+      ]
+    }
+  }
+}

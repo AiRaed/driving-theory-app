@@ -1,0 +1,856 @@
+{
+  "motorway-driving": {
+    "MW-32": {
+      "promptPl": "W jaki sposób zmienne ograniczenia prędkości pomagają ruchowi na autostradzie?",
+      "options": [
+        {
+          "pl": "Podnosząc limity przez cały czas"
+        },
+        {
+          "pl": "Ustalając prędkość minimalną"
+        },
+        {
+          "pl": "Dostosowując dozwolone prędkości, aby ruch płynął sprawniej"
+        },
+        {
+          "pl": "Umożliwiając szybsze wyprzedzanie"
+        }
+      ]
+    },
+    "MW-33": {
+      "promptPl": "Na którym pasie powinieneś znaleźć się na długo przed zjazdem z autostrady?",
+      "options": [
+        {
+          "pl": "Na prawym pasie"
+        },
+        {
+          "pl": "Na środkowym pasie"
+        },
+        {
+          "pl": "Na lewym pasie"
+        },
+        {
+          "pl": "Na pasie awaryjnym"
+        }
+      ]
+    },
+    "MW-34": {
+      "promptPl": "Korzystając z telefonu awaryjnego na autostradzie, jak powinieneś stać?",
+      "options": [
+        {
+          "pl": "Blisko jezdni"
+        },
+        {
+          "pl": "Twarzą w stronę nadjeżdżającego ruchu"
+        },
+        {
+          "pl": "Tyłem do ruchu"
+        },
+        {
+          "pl": "Na pasie awaryjnym, twarzą do telefonu i odwrócony od ruchu"
+        }
+      ]
+    },
+    "MW-35": {
+      "promptPl": "Jaki jest krajowy limit prędkości dla samochodów i motocykli na autostradzie (o ile znaki nie wskazują inaczej)?",
+      "options": [
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        },
+        {
+          "pl": "70 mph"
+        },
+        {
+          "pl": "80 mph"
+        }
+      ]
+    },
+    "MW-36": {
+      "promptPl": "Kiedy na autostradzie dozwolone jest wyprzedzanie z lewej strony?",
+      "options": [
+        {
+          "pl": "Zawsze, gdy pas awaryjny jest wolny"
+        },
+        {
+          "pl": "Gdy ruch po Twojej prawej stronie porusza się wolniej w korku"
+        },
+        {
+          "pl": "Gdy dajesz sygnał w lewo, aby ostrzec innych"
+        },
+        {
+          "pl": "Gdy prawy pas sygnalizuje skręt w prawo"
+        }
+      ]
+    },
+    "MW-37": {
+      "promptPl": "Jeśli musisz dojść do najbliższego telefonu awaryjnego na autostradzie, w którą stronę powinieneś iść?",
+      "options": [
+        {
+          "pl": "Zgodnie z kierunkiem ruchu"
+        },
+        {
+          "pl": "Twarzą do nadjeżdżającego ruchu"
+        },
+        {
+          "pl": "W kierunku wskazanym przez słupki oznaczeniowe"
+        },
+        {
+          "pl": "W stronę najbliższego zjazdu"
+        }
+      ]
+    },
+    "MW-38": {
+      "promptPl": "Jaki jest limit prędkości na autostradzie dla samochodów i motocykli, o ile znaki nie stanowią inaczej?",
+      "options": [
+        {
+          "pl": "30 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        },
+        {
+          "pl": "70 mph"
+        }
+      ]
+    },
+    "MW-39": {
+      "promptPl": "Na trzyjezdniowej autostradzie, którego pasa powinieneś zwykle używać, gdy droga przed Tobą jest wolna?",
+      "options": [
+        {
+          "pl": "Lewego"
+        },
+        {
+          "pl": "Środkowego"
+        },
+        {
+          "pl": "Prawego"
+        },
+        {
+          "pl": "Środkowego lub prawego"
+        }
+      ]
+    },
+    "MW-40": {
+      "promptPl": "Jedziesz lewym pasem, a ruch włącza się z pasa dojazdowego. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przyspieszyć, żeby musieli włączyć się za Tobą"
+        },
+        {
+          "pl": "Dostosować prędkość lub zmienić pas, jeśli jest to bezpieczne"
+        },
+        {
+          "pl": "Utrzymywać prędkość bez względu na wszystko"
+        },
+        {
+          "pl": "Włączyć światła awaryjne"
+        }
+      ]
+    },
+    "MW-41": {
+      "promptPl": "Jaki typ pojazdu nie może korzystać z autostrady?",
+      "options": [
+        {
+          "pl": "Elektryczne skutery inwalidzkie"
+        },
+        {
+          "pl": "Motocykle powyżej 50 cm³"
+        },
+        {
+          "pl": "Autobusy piętrowe"
+        },
+        {
+          "pl": "Samochody z automatyczną skrzynią biegów"
+        }
+      ]
+    },
+    "MW-42": {
+      "promptPl": "Jeśli przegapisz zjazd z autostrady, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Cofnąć się pasem awaryjnym"
+        },
+        {
+          "pl": "Jechać do następnego zjazdu"
+        },
+        {
+          "pl": "Ostrożnie cofnąć się lewym pasem"
+        },
+        {
+          "pl": "Zawrócić przez pas dzielący jezdnie"
+        }
+      ]
+    },
+    "MW-43": {
+      "promptPl": "Jakiego koloru są odblaskowe znaczniki (studsy) między pasami na autostradzie?",
+      "options": [
+        {
+          "pl": "Zielone"
+        },
+        {
+          "pl": "Bursztynowe"
+        },
+        {
+          "pl": "Białe"
+        },
+        {
+          "pl": "Czerwone"
+        }
+      ]
+    },
+    "MW-44": {
+      "promptPl": "Gdzie powinieneś się zatrzymać, aby odpocząć, jeśli czujesz zmęczenie na autostradzie?",
+      "options": [
+        {
+          "pl": "Na pasie awaryjnym"
+        },
+        {
+          "pl": "Na najbliższej stacji obsługi (services)"
+        },
+        {
+          "pl": "Na pasie dojazdowym"
+        },
+        {
+          "pl": "Na pasie dzielącym jezdnie"
+        }
+      ]
+    },
+    "MW-45": {
+      "promptPl": "Dlaczego na autostradzie lepiej użyć przydrożnego telefonu awaryjnego niż telefonu komórkowego?",
+      "options": [
+        {
+          "pl": "Łączy Cię z lokalnym warsztatem"
+        },
+        {
+          "pl": "Telefony komórkowe rozpraszają innych kierowców"
+        },
+        {
+          "pl": "Umożliwia służbom ratunkowym łatwe zlokalizowanie Ciebie"
+        },
+        {
+          "pl": "Telefony komórkowe nie działają na autostradach"
+        }
+      ]
+    },
+    "MW-46": {
+      "promptPl": "Widzisz czerwone znaczniki (studsy) po lewej i białe po prawej. Na którym pasie jesteś?",
+      "options": [
+        {
+          "pl": "Na prawym pasie"
+        },
+        {
+          "pl": "Na środkowym pasie"
+        },
+        {
+          "pl": "Na pasie awaryjnym"
+        },
+        {
+          "pl": "Na lewym pasie"
+        }
+      ]
+    },
+    "MW-47": {
+      "promptPl": "Co musisz zrobić, gdy nad każdym pasem autostrady wyświetlony jest czerwony krzyżyk?",
+      "options": [
+        {
+          "pl": "Zjechać na pas awaryjny"
+        },
+        {
+          "pl": "Zwolnić i czekać"
+        },
+        {
+          "pl": "Zjechać następnym zjazdem"
+        },
+        {
+          "pl": "Zatrzymać się i czekać"
+        }
+      ]
+    },
+    "MW-48": {
+      "promptPl": "Twój pojazd się psuje i nie możesz dojechać do pasa awaryjnego. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Włączyć światła awaryjne"
+        },
+        {
+          "pl": "Stanąć za pojazdem"
+        },
+        {
+          "pl": "Szybko spróbować go naprawić"
+        },
+        {
+          "pl": "Zatrzymać ruch za sobą"
+        }
+      ]
+    },
+    "MW-49": {
+      "promptPl": "Kiedy zwykle powinieneś korzystać z lewego pasa na autostradzie?",
+      "options": [
+        {
+          "pl": "Podczas wyprzedzania"
+        },
+        {
+          "pl": "Gdy droga przed Tobą jest wolna i nie wyprzedzasz"
+        },
+        {
+          "pl": "Podczas rozmowy telefonicznej"
+        },
+        {
+          "pl": "Gdy jedziesz wolno"
+        }
+      ]
+    },
+    "MW-50": {
+      "promptPl": "Co powinieneś robić, jadąc przez system ruchu przeciwnego (contraflow)?",
+      "options": [
+        {
+          "pl": "Zmieniać pasy, aby jechać szybciej"
+        },
+        {
+          "pl": "Utrzymywać bezpieczną odległość od pojazdu z przodu"
+        },
+        {
+          "pl": "Jechać blisko, aby skrócić korki"
+        },
+        {
+          "pl": "Używać świateł awaryjnych"
+        }
+      ]
+    },
+    "MW-51": {
+      "promptPl": "Czego zwykle możesz się spodziewać w systemie ruchu przeciwnego (contraflow)?",
+      "options": [
+        {
+          "pl": "Tymczasowych sygnalizacji świetlnych"
+        },
+        {
+          "pl": "Niższych limitów prędkości"
+        },
+        {
+          "pl": "Szerszych pasów"
+        },
+        {
+          "pl": "Progów zwalniających"
+        }
+      ]
+    },
+    "MW-52": {
+      "promptPl": "Dlaczego sprawdzenie pojazdu przed długą podróżą autostradą jest ważne?",
+      "options": [
+        {
+          "pl": "Autostrady szybciej zużywają opony"
+        },
+        {
+          "pl": "Stacje obsługi nie pomagają przy awariach"
+        },
+        {
+          "pl": "Ciągła jazda z dużą prędkością zwiększa ryzyko awarii"
+        },
+        {
+          "pl": "Hamulce są używane częściej"
+        }
+      ]
+    },
+    "MW-53": {
+      "promptPl": "Co wolno robić funkcjonariuszom ruchu drogowego (traffic officers) na autostradach?",
+      "options": [
+        {
+          "pl": "Aresztować kierowców"
+        },
+        {
+          "pl": "Naprawiać pojazdy"
+        },
+        {
+          "pl": "Wystawiać mandaty"
+        },
+        {
+          "pl": "Zatrzymywać i kierować ruchem"
+        }
+      ]
+    },
+    "MW-54": {
+      "promptPl": "Jakiego koloru są znaczniki (studsy) między pasem awaryjnym a lewym pasem?",
+      "options": [
+        {
+          "pl": "Zielone"
+        },
+        {
+          "pl": "Czerwone"
+        },
+        {
+          "pl": "Białe"
+        },
+        {
+          "pl": "Bursztynowe"
+        }
+      ]
+    },
+    "MW-55": {
+      "promptPl": "Nad pasem awaryjnym wyświetlony jest czerwony krzyżyk, a nad innymi pasami limity prędkości. Co to oznacza?",
+      "options": [
+        {
+          "pl": "Pas awaryjny można używać jako zwykły pas"
+        },
+        {
+          "pl": "Pas awaryjny jest tylko do użytku awaryjnego"
+        },
+        {
+          "pl": "Na pasie awaryjnym obowiązuje limit 50 mph"
+        },
+        {
+          "pl": "Możesz tam odpocząć"
+        }
+      ]
+    },
+    "MW-56": {
+      "promptPl": "Gdzie na autostradzie znajdziesz pas dla pojazdów wolniejszych (crawler/climbing lane)?",
+      "options": [
+        {
+          "pl": "W pobliżu stacji obsługi"
+        },
+        {
+          "pl": "Przed skrzyżowaniem"
+        },
+        {
+          "pl": "Na stromym odcinku pod górę"
+        },
+        {
+          "pl": "Wzdłuż pasa awaryjnego"
+        }
+      ]
+    },
+    "MW-57": {
+      "promptPl": "Po awarii na pasie awaryjnym, jak powinieneś ponownie włączyć się do ruchu na autostradzie?",
+      "options": [
+        {
+          "pl": "Wjechać prosto w ruch"
+        },
+        {
+          "pl": "Czekać, aż inny kierowca da sygnał"
+        },
+        {
+          "pl": "Nabierać prędkości na pasie awaryjnym, a potem bezpiecznie się włączyć"
+        },
+        {
+          "pl": "Jechać ze światłami awaryjnymi podczas włączania się"
+        }
+      ]
+    }
+  },
+  "rules-of-the-road": {
+    "RR-06": {
+      "promptPl": "Pas dla rowerów oznaczony jest przerywaną białą linią. Co to oznacza dla kierowców?",
+      "options": [
+        {
+          "pl": "Kierowcy nie mogą na niego wjeżdżać"
+        },
+        {
+          "pl": "Kierowcy mogą wjechać, jeśli jest to konieczne i bezpieczne"
+        },
+        {
+          "pl": "Rowerzyści jeżdżą w obu kierunkach"
+        },
+        {
+          "pl": "Motocykle muszą z niego korzystać"
+        }
+      ]
+    },
+    "RR-07": {
+      "promptPl": "Znak wskazuje, że wcześniej obowiązujące ograniczenie prędkości się skończyło. Co to oznacza?",
+      "options": [
+        {
+          "pl": "Obowiązuje prędkość minimalna"
+        },
+        {
+          "pl": "Koniec prędkości maksymalnej"
+        },
+        {
+          "pl": "Koniec prędkości minimalnej"
+        },
+        {
+          "pl": "Od teraz obowiązuje krajowy limit prędkości"
+        }
+      ]
+    },
+    "RR-08": {
+      "promptPl": "Kiedy zwykle powinieneś korzystać z prawego pasa na drodze dwujezdniowej?",
+      "options": [
+        {
+          "pl": "Przy skręcie w prawo lub wyprzedzaniu"
+        },
+        {
+          "pl": "Przy mijaniu dróg bocznych"
+        },
+        {
+          "pl": "Przy stałej dużej prędkości"
+        },
+        {
+          "pl": "Przy prędkości minimalnej"
+        }
+      ]
+    },
+    "RR-09": {
+      "promptPl": "Nie jesteś pewien, czy bezpiecznie jest cofnąć pojazdem. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Użyć klaksonu"
+        },
+        {
+          "pl": "Dodać gazu"
+        },
+        {
+          "pl": "Wysiąść i sprawdzić"
+        },
+        {
+          "pl": "Cofać powoli"
+        }
+      ]
+    },
+    "RR-10": {
+      "promptPl": "Gdzie jest najbezpieczniejsze miejsce do zaparkowania pojazdu?",
+      "options": [
+        {
+          "pl": "W pobliżu przystanku autobusowego"
+        },
+        {
+          "pl": "Na grzbiecie wzniesienia"
+        },
+        {
+          "pl": "W pobliżu przejazdu kolejowego"
+        },
+        {
+          "pl": "W oznaczonym miejscu parkingowym"
+        }
+      ]
+    },
+    "RR-11": {
+      "promptPl": "Na terenach zabudowanych bez znaków ograniczenia prędkości, jak zwykle oznaczony jest limit 30 mph?",
+      "options": [
+        {
+          "pl": "Liniami ostrzegawczymi"
+        },
+        {
+          "pl": "Obecnością oświetlenia ulicznego"
+        },
+        {
+          "pl": "Wysepkami dla pieszych"
+        },
+        {
+          "pl": "Żółtymi liniami"
+        }
+      ]
+    },
+    "RR-12": {
+      "promptPl": "Jedziesz wąską drogą z mijankami. Z naprzeciwka nadjeżdża pojazd. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zmusić drugiego kierowcę do cofania"
+        },
+        {
+          "pl": "Zjechać do najbliższej mijanki po lewej stronie"
+        },
+        {
+          "pl": "Użyć pobocza"
+        },
+        {
+          "pl": "Jechać dalej"
+        }
+      ]
+    },
+    "RR-13": {
+      "promptPl": "Co oznacza brak lokalnych znaków ograniczenia prędkości na otwartej drodze?",
+      "options": [
+        {
+          "pl": "Zakaz postoju"
+        },
+        {
+          "pl": "Zakaz wjazdu"
+        },
+        {
+          "pl": "Obowiązuje krajowy limit prędkości"
+        },
+        {
+          "pl": "Obowiązuje limit tymczasowy"
+        }
+      ]
+    },
+    "RR-14": {
+      "promptPl": "Dlaczego cofanie z drogi bocznej na drogę główną może być niebezpieczne?",
+      "options": [
+        {
+          "pl": "Czujniki mogą zawieść"
+        },
+        {
+          "pl": "Ograniczona widoczność ruchu"
+        },
+        {
+          "pl": "Światła nie będą widoczne"
+        },
+        {
+          "pl": "Lusterka wymagają regulacji"
+        }
+      ]
+    },
+    "RR-15": {
+      "promptPl": "Kiedy wolno zatrzymać się i czekać wewnątrz skrzyżowania z kratą (box junction)?",
+      "options": [
+        {
+          "pl": "Skręcając w lewo w korku"
+        },
+        {
+          "pl": "Jadąc prosto"
+        },
+        {
+          "pl": "Gdy czekasz na skręt w prawo i blokuje Cię ruch z naprzeciwka"
+        },
+        {
+          "pl": "Na rondach"
+        }
+      ]
+    },
+    "RR-16": {
+      "promptPl": "Kto ma pierwszeństwo na nieoznakowanym skrzyżowaniu?",
+      "options": [
+        {
+          "pl": "Większy pojazd"
+        },
+        {
+          "pl": "Szybszy pojazd"
+        },
+        {
+          "pl": "Mniejszy pojazd"
+        },
+        {
+          "pl": "Nikt nie ma pierwszeństwa"
+        }
+      ]
+    },
+    "RR-17": {
+      "promptPl": "Dlaczego bezpieczniej jest skręcać za nadjeżdżającym pojazdem, gdy obaj skręcacie w prawo?",
+      "options": [
+        {
+          "pl": "Lepsze zużycie paliwa"
+        },
+        {
+          "pl": "Lepsza widoczność ruchu"
+        },
+        {
+          "pl": "Szybszy skręt"
+        },
+        {
+          "pl": "Uniknięcie zatrzymania"
+        }
+      ]
+    },
+    "RR-18": {
+      "promptPl": "Na przejściu pelican czerwone światło zmienia się na migające bursztynowe. Co to oznacza?",
+      "options": [
+        {
+          "pl": "Natychmiast się zatrzymać"
+        },
+        {
+          "pl": "Jechać dalej bez sprawdzania"
+        },
+        {
+          "pl": "Ustąpić pierwszeństwa pieszym, którzy nadal przechodzą"
+        },
+        {
+          "pl": "Czekać na zielone"
+        }
+      ]
+    },
+    "RR-19": {
+      "promptPl": "Widzisz pieszego czekającego przy przejściu zebra. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zignorować go"
+        },
+        {
+          "pl": "Przejechać szybko"
+        },
+        {
+          "pl": "Być gotowym zwolnić lub zatrzymać się, aby pozwolić mu przejść"
+        },
+        {
+          "pl": "Użyć klaksonu"
+        }
+      ]
+    },
+    "RR-20": {
+      "promptPl": "Kiedy wolno jechać pasem autobusowym?",
+      "options": [
+        {
+          "pl": "W każdej chwili"
+        },
+        {
+          "pl": "Aby wyprzedzić ruch"
+        },
+        {
+          "pl": "Poza godzinami jego obowiązywania"
+        },
+        {
+          "pl": "Nigdy"
+        }
+      ]
+    },
+    "RR-21": {
+      "promptPl": "Poza kierunkowskazami, w jaki sposób kierowcy mogą komunikować swoje zamiary innym?",
+      "options": [
+        {
+          "pl": "Światłami przeciwmgielnymi"
+        },
+        {
+          "pl": "Światłami hamowania"
+        },
+        {
+          "pl": "Światłami wewnętrznymi"
+        },
+        {
+          "pl": "Pozycją i ruchem pojazdu"
+        }
+      ]
+    },
+    "RR-22": {
+      "promptPl": "Jedziesz ruchliwą drogą i zauważasz, że jedziesz w złym kierunku. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Cofnąć się na drodze głównej"
+        },
+        {
+          "pl": "Zawrócić"
+        },
+        {
+          "pl": "Bezpiecznie zawrócić na bocznej drodze"
+        },
+        {
+          "pl": "Zatrzymać się i zablokować ruch"
+        }
+      ]
+    },
+    "RR-23": {
+      "promptPl": "Zbyt późno zauważasz, że jesteś na złym pasie na ruchliwym skrzyżowaniu. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przepchnąć się na właściwy pas"
+        },
+        {
+          "pl": "Zatrzymać się i zablokować ruch"
+        },
+        {
+          "pl": "Bezpiecznie kontynuować jazdę tym samym pasem"
+        },
+        {
+          "pl": "Użyć sygnałów ręcznych"
+        }
+      ]
+    },
+    "RR-24": {
+      "promptPl": "Na dobrze oświetlonej drodze w nocy na terenie zabudowanym, dlaczego powinieneś używać świateł mijania?",
+      "options": [
+        {
+          "pl": "Aby widzieć dalej"
+        },
+        {
+          "pl": "Aby jechać szybciej"
+        },
+        {
+          "pl": "Aby szybko przełączyć się na długie"
+        },
+        {
+          "pl": "Aby inni wyraźnie Cię widzieli"
+        }
+      ]
+    },
+    "RR-25": {
+      "promptPl": "Kiedy wolno legalnie prowadzić bez zapiętych pasów bezpieczeństwa?",
+      "options": [
+        {
+          "pl": "Podczas cofania w ramach manewru"
+        },
+        {
+          "pl": "Przy ruszaniu pod górę"
+        },
+        {
+          "pl": "W wolnym ruchu"
+        },
+        {
+          "pl": "Przy sprawdzaniu hamulców"
+        }
+      ]
+    },
+    "RR-26": {
+      "promptPl": "Czekasz na przejeździe kolejowym. Pociąg przejechał, ale czerwone światła nadal migają. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Ostrożnie ruszyć do przodu"
+        },
+        {
+          "pl": "Wysiąść i sprawdzić"
+        },
+        {
+          "pl": "Zadzwonić do dyżurnego ruchu"
+        },
+        {
+          "pl": "Dalej czekać"
+        }
+      ]
+    },
+    "RR-27": {
+      "promptPl": "Jedziesz prawym pasem i widzisz znak, że ten pas jest zamknięty dalej. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zostać aż do korka"
+        },
+        {
+          "pl": "Natychmiast zjechać w lewo"
+        },
+        {
+          "pl": "Zjechać w lewo z odpowiednim wyprzedzeniem"
+        },
+        {
+          "pl": "Poczekać i zdecydować później"
+        }
+      ]
+    },
+    "RR-28": {
+      "promptPl": "W nocy, kiedy wolno parkować po prawej stronie drogi?",
+      "options": [
+        {
+          "pl": "Pod latarniami"
+        },
+        {
+          "pl": "Ponad 10 m od skrzyżowania"
+        },
+        {
+          "pl": "Tylko na ulicy jednokierunkowej"
+        },
+        {
+          "pl": "Ze światłami pozycyjnymi"
+        }
+      ]
+    },
+    "RR-29": {
+      "promptPl": "W Wielkiej Brytanii, jaki limit prędkości zwykle obowiązuje tam, gdzie są latarnie uliczne, ale nie ma znaków prędkości?",
+      "options": [
+        {
+          "pl": "30 mph"
+        },
+        {
+          "pl": "40 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        }
+      ]
+    }
+  }
+}

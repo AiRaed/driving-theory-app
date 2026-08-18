@@ -1,0 +1,720 @@
+{
+  "incidents": {
+    "IN-36": {
+      "promptPt": "Porque só deve retirar o capacete de um motociclista se for essencial?",
+      "options": [
+        {
+          "pt": "Pode objetar"
+        },
+        {
+          "pt": "Pode agravar lesões no pescoço"
+        },
+        {
+          "pt": "Permite-lhe arrefecer"
+        },
+        {
+          "pt": "Pode danificar o capacete"
+        }
+      ]
+    },
+    "IN-37": {
+      "promptPt": "Num incidente, uma pessoa inconsciente precisa de ajuda. O que deve verificar primeiro?",
+      "options": [
+        {
+          "pt": "O seguro"
+        },
+        {
+          "pt": "As alergias"
+        },
+        {
+          "pt": "O conforto"
+        },
+        {
+          "pt": "As vias aéreas"
+        }
+      ]
+    },
+    "IN-38": {
+      "promptPt": "Quando pode usar os quatro piscas numa autoestrada?",
+      "options": [
+        {
+          "pt": "Quando for seguido de perto"
+        },
+        {
+          "pt": "Quando abranda de súbito devido a perigo à frente"
+        },
+        {
+          "pt": "Quando está a ser rebocado"
+        },
+        {
+          "pt": "Quando usa a berma como faixa"
+        }
+      ]
+    },
+    "IN-39": {
+      "promptPt": "Os serviços de emergência estão a caminho e o local está seguro. Qual é a sua primeira prioridade com um motociclista inconsciente?",
+      "options": [
+        {
+          "pt": "Verificar se há ossos partidos"
+        },
+        {
+          "pt": "Verificar se há hemorragia"
+        },
+        {
+          "pt": "Verificar a respiração"
+        },
+        {
+          "pt": "Verificar nódoas negras"
+        }
+      ]
+    },
+    "IN-40": {
+      "promptPt": "Enquanto conduz na autoestrada, bagagem cai do seu veículo. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Parar e recolhê-la"
+        },
+        {
+          "pt": "Voltar a pé para a recuperar"
+        },
+        {
+          "pt": "Parar no próximo telefone de emergência e participá-lo"
+        },
+        {
+          "pt": "Afastar-se para a berma e assinalar o trânsito"
+        }
+      ]
+    },
+    "IN-41": {
+      "promptPt": "Em que difere o CPR numa criança de 6 anos em relação a um adulto?",
+      "options": [
+        {
+          "pt": "Usar só dois dedos"
+        },
+        {
+          "pt": "Comprimir com o dobro da velocidade"
+        },
+        {
+          "pt": "Usar uma mão, comprimindo 4–5 cm"
+        },
+        {
+          "pt": "Comprimir mais devagar e com mais força"
+        }
+      ]
+    },
+    "IN-42": {
+      "promptPt": "O seu veículo tem um furo na autoestrada. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Conduzir lentamente até aos serviços"
+        },
+        {
+          "pt": "Trocar a roda depressa"
+        },
+        {
+          "pt": "Parar numa zona de refúgio e pedir ajuda"
+        },
+        {
+          "pt": "Parar na sua faixa com os quatro piscas ligados"
+        }
+      ]
+    },
+    "IN-43": {
+      "promptPt": "Num incidente, como poderia ajudar uma criança pequena que não respira?",
+      "options": [
+        {
+          "pt": "Procurar os pais"
+        },
+        {
+          "pt": "Abrir as vias aéreas e iniciar CPR"
+        },
+        {
+          "pt": "Colocá-la na posição lateral de segurança"
+        },
+        {
+          "pt": "Falar com ela até chegar ajuda"
+        }
+      ]
+    },
+    "IN-44": {
+      "promptPt": "Após uma colisão, que documento a polícia lhe pode pedir para apresentar?",
+      "options": [
+        {
+          "pt": "Registo de manutenção do veículo"
+        },
+        {
+          "pt": "Certificado do exame teórico"
+        },
+        {
+          "pt": "Documento de registo do veículo"
+        },
+        {
+          "pt": "Carta de condução"
+        }
+      ]
+    },
+    "IN-45": {
+      "promptPt": "Ao fazer CPR num adulto, com que rapidez devem ser as compressões torácicas?",
+      "options": [
+        {
+          "pt": "Uma vez por segundo"
+        },
+        {
+          "pt": "Duas vezes por segundo"
+        },
+        {
+          "pt": "Três vezes por segundo"
+        },
+        {
+          "pt": "Uma vez a cada cinco segundos"
+        }
+      ]
+    },
+    "IN-46": {
+      "promptPt": "O que ajuda a reduzir o risco de o seu veículo apanhar fogo?",
+      "options": [
+        {
+          "pt": "Manter o líquido de refrigeração acima do máximo"
+        },
+        {
+          "pt": "Investigar cheiros fortes a combustível"
+        },
+        {
+          "pt": "Evitar um depósito cheio"
+        },
+        {
+          "pt": "Usar aditivos de combustível"
+        }
+      ]
+    },
+    "IN-47": {
+      "promptPt": "Um peão tem hemorragia grave numa ferida na perna. Nada está cravado. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Tocar de leve na ferida"
+        },
+        {
+          "pt": "Manter a perna esticada"
+        },
+        {
+          "pt": "Dar uma bebida quente"
+        },
+        {
+          "pt": "Aplicar pressão firme"
+        }
+      ]
+    },
+    "IN-48": {
+      "promptPt": "Enquanto faz CPR, alguém oferece ajuda. O que deve pedir-lhe que faça?",
+      "options": [
+        {
+          "pt": "Ir buscar um cobertor"
+        },
+        {
+          "pt": "Ir buscar um kit de primeiros socorros"
+        },
+        {
+          "pt": "Ir buscar um desfibrilhador (AED)"
+        },
+        {
+          "pt": "Ir buscar um biombo de privacidade"
+        }
+      ]
+    },
+    "IN-49": {
+      "promptPt": "Pedem-lhe que encontre um desfibrilhador (AED). Qual é a melhor forma?",
+      "options": [
+        {
+          "pt": "Seguir as setas à beira da estrada"
+        },
+        {
+          "pt": "Perguntar ao operador de emergência"
+        },
+        {
+          "pt": "Usar o GPS"
+        },
+        {
+          "pt": "Procurar nos pertences do ferido"
+        }
+      ]
+    },
+    "IN-50": {
+      "promptPt": "Antes de entrar num túnel, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Desligar o rádio"
+        },
+        {
+          "pt": "Tirar os óculos de sol"
+        },
+        {
+          "pt": "Fechar o teto de abrir"
+        },
+        {
+          "pt": "Ligar os limpa para-brisas"
+        }
+      ]
+    },
+    "IN-51": {
+      "promptPt": "O seu veículo avaria numa passagem de nível automática. O que deve fazer primeiro?",
+      "options": [
+        {
+          "pt": "Chamar os serviços de reboque"
+        },
+        {
+          "pt": "Avisar os comboios que se aproximam"
+        },
+        {
+          "pt": "Empurrar o veículo para fora"
+        },
+        {
+          "pt": "Retirar toda a gente e afastá-la da passagem"
+        }
+      ]
+    },
+    "IN-52": {
+      "promptPt": "Um objeto grande cai de um camião para a autoestrada. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Parar e removê-lo"
+        },
+        {
+          "pt": "Perseguir o camião"
+        },
+        {
+          "pt": "Parar perto"
+        },
+        {
+          "pt": "Participá-lo no próximo telefone de emergência"
+        }
+      ]
+    },
+    "IN-53": {
+      "promptPt": "Alguém tem queimaduras graves após um incidente. Como pode ajudar?",
+      "options": [
+        {
+          "pt": "Aplicar loção"
+        },
+        {
+          "pt": "Rebentar bolhas"
+        },
+        {
+          "pt": "Retirar roupa colada"
+        },
+        {
+          "pt": "Arrefecer as queimaduras com água limpa"
+        }
+      ]
+    },
+    "IN-54": {
+      "promptPt": "Após uma colisão, qual é um sinal de aviso de choque?",
+      "options": [
+        {
+          "pt": "Pele corada"
+        },
+        {
+          "pt": "Pele quente e seca"
+        },
+        {
+          "pt": "Pulso lento"
+        },
+        {
+          "pt": "Respiração rápida e superficial"
+        }
+      ]
+    },
+    "IN-55": {
+      "promptPt": "O seu carro avaria numa passagem de nível. Qual é a primeira coisa a fazer?",
+      "options": [
+        {
+          "pt": "Avisar os condutores atrás"
+        },
+        {
+          "pt": "Sair do veículo e afastar toda a gente"
+        },
+        {
+          "pt": "Andar ao longo dos carris"
+        },
+        {
+          "pt": "Ficar no carro"
+        }
+      ]
+    },
+    "IN-56": {
+      "promptPt": "Quando pode usar os quatro piscas?",
+      "options": [
+        {
+          "pt": "Quando estiver parado e a causar um obstáculo temporário"
+        },
+        {
+          "pt": "Quando conduzir sem faróis"
+        },
+        {
+          "pt": "Quando estacionar brevemente sobre linhas amarelas duplas"
+        },
+        {
+          "pt": "Quando conduzir devagar porque está perdido"
+        }
+      ]
+    }
+  },
+  "road-signs": {
+    "RS-R-01": {
+      "promptPt": "O que significa um sinal circular vermelho a mostrar um símbolo de autocarro?",
+      "options": [
+        {
+          "pt": "Os autocarros não podem entrar nesta estrada"
+        },
+        {
+          "pt": "Itinerário só para autocarros"
+        },
+        {
+          "pt": "Paragem de autocarros à frente"
+        },
+        {
+          "pt": "Faixa de transportes públicos"
+        }
+      ]
+    },
+    "RS-R-02": {
+      "promptPt": "O que indica este sinal triangular de aviso?",
+      "options": [
+        {
+          "pt": "A via de dupla faixa termina à frente"
+        },
+        {
+          "pt": "A estrada torna-se de sentido único"
+        },
+        {
+          "pt": "Ultrapassagem não permitida"
+        },
+        {
+          "pt": "Semáforos à frente"
+        }
+      ]
+    },
+    "RS-R-03": {
+      "promptPt": "O que indica este sinal triangular de aviso?",
+      "options": [
+        {
+          "pt": "A estrada estreita dos dois lados à frente"
+        },
+        {
+          "pt": "A estrada curva acentuadamente"
+        },
+        {
+          "pt": "O trânsito nos dois sentidos termina"
+        },
+        {
+          "pt": "Estrada de sentido único à frente"
+        }
+      ]
+    },
+    "RS-R-04": {
+      "promptPt": "O que significa um sinal circular vermelho com um símbolo de motociclo riscado?",
+      "options": [
+        {
+          "pt": "Motociclos proibidos"
+        },
+        {
+          "pt": "Só motociclos"
+        },
+        {
+          "pt": "Fim da restrição a motociclos"
+        },
+        {
+          "pt": "Itinerário recomendado para motociclos"
+        }
+      ]
+    },
+    "RS-R-05": {
+      "promptPt": "O que indica este sinal triangular de aviso?",
+      "options": [
+        {
+          "pt": "Entroncamento em T à frente onde tem prioridade sobre veículos da direita"
+        },
+        {
+          "pt": "Entroncamento em T à frente onde deve ceder a passagem a veículos da direita"
+        },
+        {
+          "pt": "Cruzamento com prioridade igual"
+        },
+        {
+          "pt": "A estrada termina à frente"
+        }
+      ]
+    },
+    "RS-R-06": {
+      "promptPt": "O que indica este sinal triangular de aviso?",
+      "options": [
+        {
+          "pt": "Cruzamento numa curva à frente"
+        },
+        {
+          "pt": "Só curva apertada à direita"
+        },
+        {
+          "pt": "Estrada estreita de um lado"
+        },
+        {
+          "pt": "Entroncamento em T à frente"
+        }
+      ]
+    },
+    "RS-R-07": {
+      "promptPt": "O que indica este sinal rodoviário?",
+      "options": [
+        {
+          "pt": "Semáforos à frente — parar quando as luzes o indicarem"
+        },
+        {
+          "pt": "Passagem de peões com sinais"
+        },
+        {
+          "pt": "Passagem de nível sem barreiras"
+        },
+        {
+          "pt": "Apenas semáforos temporários"
+        }
+      ]
+    },
+    "RS-R-08": {
+      "promptPt": "O que indica este sinal rodoviário?",
+      "options": [
+        {
+          "pt": "Passagem de nível sem barreira ou cancelas à frente"
+        },
+        {
+          "pt": "Passagem de nível com barreiras à frente"
+        },
+        {
+          "pt": "Só passagem de elétricos"
+        },
+        {
+          "pt": "Estação ferroviária à frente"
+        }
+      ]
+    },
+    "RS-R-09": {
+      "promptPt": "O que indica este sinal circular azul?",
+      "options": [
+        {
+          "pt": "Os veículos devem manter-se à esquerda do obstáculo"
+        },
+        {
+          "pt": "Viragem à esquerda à frente"
+        },
+        {
+          "pt": "Estrada de sentido único para a esquerda"
+        },
+        {
+          "pt": "Ultrapassagem só pela esquerda"
+        }
+      ]
+    },
+    "RS-R-10": {
+      "promptPt": "O que indica este sinal circular azul?",
+      "options": [
+        {
+          "pt": "Os veículos podem passar de qualquer dos lados para chegar ao mesmo destino"
+        },
+        {
+          "pt": "Os veículos devem passar só pela esquerda"
+        },
+        {
+          "pt": "Os veículos devem passar só pela direita"
+        },
+        {
+          "pt": "Trânsito de sentido único à frente"
+        }
+      ]
+    },
+    "RS-R-11": {
+      "promptPt": "O que indica este sinal triangular de aviso?",
+      "options": [
+        {
+          "pt": "Obras na estrada à frente"
+        },
+        {
+          "pt": "Estrada escorregadia à frente"
+        },
+        {
+          "pt": "Estrada estreita à frente"
+        },
+        {
+          "pt": "Pavimento irregular"
+        }
+      ]
+    },
+    "RS-R-12": {
+      "promptPt": "O que indica este sinal rodoviário temporário?",
+      "options": [
+        {
+          "pt": "Encerramento temporário de faixa à frente"
+        },
+        {
+          "pt": "Estreitamento permanente da estrada"
+        },
+        {
+          "pt": "Trânsito nos dois sentidos à frente"
+        },
+        {
+          "pt": "Fim das obras"
+        }
+      ]
+    },
+    "RS-W-01": {
+      "promptPt": "Conduz numa estrada de campo e vê um sinal triangular de aviso a mostrar a estrada a estreitar à esquerda. Para o que se deve preparar?",
+      "options": [
+        {
+          "pt": "Largura reduzida da estrada à esquerda, exigindo posicionamento cuidadoso"
+        },
+        {
+          "pt": "Deve deslocar-se imediatamente para o lado esquerdo"
+        },
+        {
+          "pt": "A ultrapassagem é obrigatória antes do estreitamento"
+        },
+        {
+          "pt": "A estrada torna-se de sentido único à frente"
+        }
+      ]
+    },
+    "RS-W-02": {
+      "promptPt": "Conduz numa zona de colinas e vê um sinal triangular de aviso a mostrar uma subida íngreme. Para o que se deve preparar?",
+      "options": [
+        {
+          "pt": "Uma subida íngreme onde precisará de mudanças mais baixas e poderá encontrar veículos mais lentos"
+        },
+        {
+          "pt": "Uma secção em descida íngreme à frente"
+        },
+        {
+          "pt": "Apenas pavimento irregular"
+        },
+        {
+          "pt": "O fim da secção de ladeira"
+        }
+      ]
+    },
+    "RS-W-03": {
+      "promptPt": "Conduz por terras agrícolas e vê um sinal triangular de aviso a mostrar animais de quinta. A que perigo deve estar atento?",
+      "options": [
+        {
+          "pt": "Animais de quinta podem vaguear ou atravessar a estrada"
+        },
+        {
+          "pt": "Há uma entrada de quinta à frente"
+        },
+        {
+          "pt": "Só veículos agrícolas são permitidos nesta estrada"
+        },
+        {
+          "pt": "Há um mercado de gado nas proximidades"
+        }
+      ]
+    },
+    "RS-W-04": {
+      "promptPt": "Conduz numa via principal e vê um sinal triangular de aviso a mostrar uma estrada lateral a juntar-se pela direita. Que perigo deve antecipar?",
+      "options": [
+        {
+          "pt": "Veículos podem sair da estrada lateral e entrar na sua trajetória"
+        },
+        {
+          "pt": "O trânsito da direita tem sempre prioridade"
+        },
+        {
+          "pt": "Deve ultrapassar antes do cruzamento"
+        },
+        {
+          "pt": "A estrada torna-se de sentido único à frente"
+        }
+      ]
+    },
+    "RS-I-01": {
+      "promptPt": "Vê este sinal de aviso. O que indica?",
+      "options": [
+        {
+          "pt": "Cruzamento à frente"
+        },
+        {
+          "pt": "Cruzamento desencontrado à frente"
+        },
+        {
+          "pt": "Estrada estreita dos dois lados"
+        },
+        {
+          "pt": "Estrada lateral só à esquerda"
+        }
+      ]
+    },
+    "RS-I-02": {
+      "promptPt": "Vê este sinal de aviso. O que indica?",
+      "options": [
+        {
+          "pt": "Estrada escorregadia à frente"
+        },
+        {
+          "pt": "Pavimento irregular à frente"
+        },
+        {
+          "pt": "Estrada estreita à frente"
+        },
+        {
+          "pt": "Lombas à frente"
+        }
+      ]
+    },
+    "RS-I-03": {
+      "promptPt": "Um sinal retangular azul com texto branco a mostrar 'M' seguido de um número indica:",
+      "options": [
+        {
+          "pt": "Autoestrada à frente com número de itinerário"
+        },
+        {
+          "pt": "Limite máximo de velocidade"
+        },
+        {
+          "pt": "Marco quilométrico"
+        },
+        {
+          "pt": "Itinerário obrigatório"
+        }
+      ]
+    },
+    "RS-I-04": {
+      "promptPt": "Um sinal retangular verde com texto branco e números de itinerário fornece:",
+      "options": [
+        {
+          "pt": "Direções e destinos de itinerário principal"
+        },
+        {
+          "pt": "Limite de velocidade para itinerários principais"
+        },
+        {
+          "pt": "Restrição em itinerários principais"
+        },
+        {
+          "pt": "Fim do itinerário principal"
+        }
+      ]
+    },
+    "RS-I-05": {
+      "promptPt": "Vê um sinal de aviso de gravilha solta. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar para atravessar a zona depressa"
+        },
+        {
+          "pt": "Reduzir a velocidade e manter maior distância do veículo da frente"
+        },
+        {
+          "pt": "Travar a fundo para testar os pneus"
+        },
+        {
+          "pt": "Conduzir junto ao lancil para evitar a gravilha"
+        }
+      ]
+    }
+  }
+}

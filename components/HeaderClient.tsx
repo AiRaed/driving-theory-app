@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
+import { UI_EN } from '@/lib/i18n/ui-strings';
 
 export default function HeaderClient() {
   return (
@@ -12,7 +13,7 @@ export default function HeaderClient() {
           <Link
             href="/"
             className="flex items-center gap-3 min-w-0 group"
-            aria-label="LingoTheory home"
+            aria-label={UI_EN.homeAria}
           >
             <Image
               src="/logo-lingotheory.png"
@@ -24,14 +25,14 @@ export default function HeaderClient() {
             />
             <div className="hidden sm:flex flex-col min-w-0 border-l border-[var(--border)] pl-3">
               <span className="text-[13px] md:text-sm font-semibold text-[var(--text-primary)] leading-snug tracking-tight">
-                Driving Theory Test
+                {UI_EN.taglineTitle}
               </span>
               <span className="text-[11px] md:text-xs text-[var(--text-secondary)] leading-snug">
-                In Your Language.
+                {UI_EN.taglineSubtitle}
               </span>
             </div>
           </Link>
-          <div className="sm:flex-shrink-0">
+          <div className="sm:flex-shrink-0 min-w-0">
             <Navigation />
           </div>
         </div>

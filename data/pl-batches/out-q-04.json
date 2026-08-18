@@ -1,0 +1,856 @@
+{
+  "rules-of-the-road": {
+    "RR-05": {
+      "promptPl": "Kiedy wolno legalnie przejechać przez chodnik?",
+      "options": [
+        {
+          "pl": "Aby wyprzedzić ruch"
+        },
+        {
+          "pl": "Gdy jest szeroki"
+        },
+        {
+          "pl": "Jeśli nie ma pieszych"
+        },
+        {
+          "pl": "Aby wjechać na posesję"
+        }
+      ]
+    }
+  },
+  "vulnerable-road-users": {
+    "VU-01": {
+      "promptPl": "Co powinieneś zrobić, zbliżając się do przejścia dla pieszych, gdzie ludzie mogą przechodzić?",
+      "options": [
+        {
+          "pl": "Przygotować się do zwolnienia i być gotowym do zatrzymania"
+        },
+        {
+          "pl": "Przyspieszyć i szybko przejechać"
+        },
+        {
+          "pl": "Machnąć ręką, żeby piesi przeszli"
+        },
+        {
+          "pl": "Jechać dalej, chyba że ktoś wejdzie na jezdnię"
+        }
+      ]
+    },
+    "VU-02": {
+      "promptPl": "Któremu uczestnikowi ruchu powinieneś zostawić więcej miejsca przy wyprzedzaniu?",
+      "options": [
+        {
+          "pl": "Ciężarówce"
+        },
+        {
+          "pl": "Traktorowi"
+        },
+        {
+          "pl": "Rowerowi"
+        },
+        {
+          "pl": "Zamiatarce ulic"
+        }
+      ]
+    },
+    "VU-03": {
+      "promptPl": "Dlaczego przed skrętem w prawo powinieneś sprawdzić, czy nie ma motocyklistów?",
+      "options": [
+        {
+          "pl": "Mogą Cię wyprzedzać z prawej strony"
+        },
+        {
+          "pl": "Mogą nagle się zatrzymać"
+        },
+        {
+          "pl": "Mogą nadjechać z drogi bocznej"
+        },
+        {
+          "pl": "Mogą zwolnić dla Ciebie"
+        }
+      ]
+    },
+    "VU-04": {
+      "promptPl": "Wyprzedzając rowerzystę w strefie 30 mph, ile miejsca powinieneś zostawić?",
+      "options": [
+        {
+          "pl": "Co najmniej tyle samo, co przy wyprzedzaniu samochodu"
+        },
+        {
+          "pl": "Długość jednego samochodu"
+        },
+        {
+          "pl": "Połowę pasa"
+        },
+        {
+          "pl": "Szerokość dwóch samochodów"
+        }
+      ]
+    },
+    "VU-05": {
+      "promptPl": "Jeśli za Twoim samochodem jest pieszy, gdy cofasz, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Ustąpić pieszemu"
+        },
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Szybko cofnąć"
+        },
+        {
+          "pl": "Dać mu znak, żeby się zatrzymał"
+        }
+      ]
+    },
+    "VU-06": {
+      "promptPl": "Kto może korzystać z przejścia typu toucan?",
+      "options": [
+        {
+          "pl": "Rowerzyści i piesi"
+        },
+        {
+          "pl": "Tylko motocykliści"
+        },
+        {
+          "pl": "Tylko piesi"
+        },
+        {
+          "pl": "Tylko pojazdy"
+        }
+      ]
+    },
+    "VU-07": {
+      "promptPl": "Co powinieneś zrobić, jeśli zaparkowane pojazdy zasłaniają widok na skrzyżowaniu?",
+      "options": [
+        {
+          "pl": "Zatrzymać się, a potem powoli wysunąć do przodu"
+        },
+        {
+          "pl": "Szybko wyjechać"
+        },
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Wysiąść i spojrzeć"
+        }
+      ]
+    },
+    "VU-08": {
+      "promptPl": "W nocy — co oznacza pieszy w odzieży odblaskowej z czerwonym światłem?",
+      "options": [
+        {
+          "pl": "Zorganizowany marsz lub grupę"
+        },
+        {
+          "pl": "Roboty drogowe"
+        },
+        {
+          "pl": "Powolny pojazd"
+        },
+        {
+          "pl": "Znak ostrzegający o zagrożeniu"
+        }
+      ]
+    },
+    "VU-09": {
+      "promptPl": "Dlaczego na skrzyżowaniach musisz być szczególnie uważny na rowerzystów i motocyklistów?",
+      "options": [
+        {
+          "pl": "Trudniej ich zauważyć"
+        },
+        {
+          "pl": "Zawsze zwalniają"
+        },
+        {
+          "pl": "Muszą ustąpić pierwszeństwa"
+        },
+        {
+          "pl": "Często się zatrzymują"
+        }
+      ]
+    },
+    "VU-10": {
+      "promptPl": "Dlaczego oznakowanie zygzakowate w pobliżu szkół musi pozostać wolne?",
+      "options": [
+        {
+          "pl": "Aby dzieci mogły widzieć i być widziane"
+        },
+        {
+          "pl": "Dla parkowania nauczycieli"
+        },
+        {
+          "pl": "Dla dostaw"
+        },
+        {
+          "pl": "Dla zatrzymywania się rodziców"
+        }
+      ]
+    },
+    "VU-11": {
+      "promptPl": "W jakiej sytuacji powinieneś być szczególnie uważny na motocyklistów i rowerzystów?",
+      "options": [
+        {
+          "pl": "Na drogach dwujezdniowych"
+        },
+        {
+          "pl": "Na skrzyżowaniach"
+        },
+        {
+          "pl": "Na przejściach typu zebra"
+        },
+        {
+          "pl": "Na ulicach jednokierunkowych"
+        }
+      ]
+    },
+    "VU-12": {
+      "promptPl": "Co powinieneś zrobić, gdy widzisz starszą osobę mającą zamiar przejść przez jezdnię przed Tobą?",
+      "options": [
+        {
+          "pl": "Spodziewać się, że poczeka"
+        },
+        {
+          "pl": "Przyspieszyć, żeby szybko przejechać"
+        },
+        {
+          "pl": "Zatrzymać się i machnąć, żeby przeszła"
+        },
+        {
+          "pl": "Być ostrożnym — może źle ocenić Twoją prędkość"
+        }
+      ]
+    },
+    "VU-13": {
+      "promptPl": "Zbliżasz się do ronda, a rowerzysta przed Tobą sygnalizuje skręt w prawo. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Wyprzedzić z prawej strony"
+        },
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Dać mu znak, żeby przejechał"
+        },
+        {
+          "pl": "Zostawić rowerzyście dużo miejsca"
+        }
+      ]
+    },
+    "VU-14": {
+      "promptPl": "Jak zwykle patrol szkolny sygnalizuje pojazdom zatrzymanie?",
+      "options": [
+        {
+          "pl": "Wskazując na dzieci"
+        },
+        {
+          "pl": "Pokazując czerwone światło"
+        },
+        {
+          "pl": "Podnosząc znak STOP"
+        },
+        {
+          "pl": "Tylko gestem ręki"
+        }
+      ]
+    },
+    "VU-15": {
+      "promptPl": "Na przejściu pelican — co musisz zrobić, gdy miga żółte światło?",
+      "options": [
+        {
+          "pl": "Dać pieszym znak, żeby przeszli"
+        },
+        {
+          "pl": "Zawsze czekać na zielone"
+        },
+        {
+          "pl": "Ustąpić pieszym, którzy już są na przejściu"
+        },
+        {
+          "pl": "Czekać na czerwone z żółtym"
+        }
+      ]
+    },
+    "VU-16": {
+      "promptPl": "Na drodze wiejskiej — kto może iść lub jechać w Twoją stronę po Twojej stronie jezdni?",
+      "options": [
+        {
+          "pl": "Motocykle"
+        },
+        {
+          "pl": "Rowery"
+        },
+        {
+          "pl": "Piesi"
+        },
+        {
+          "pl": "Tylko samochody"
+        }
+      ]
+    },
+    "VU-17": {
+      "promptPl": "Co oznacza znak wspólnej trasy dla pieszych i rowerzystów?",
+      "options": [
+        {
+          "pl": "Tylko dla pieszych"
+        },
+        {
+          "pl": "Tylko dla rowerzystów"
+        },
+        {
+          "pl": "Zakaz dla obu"
+        },
+        {
+          "pl": "Wspólna trasa dla pieszych i rowerzystów"
+        }
+      ]
+    },
+    "VU-18": {
+      "promptPl": "Jedząc za motocyklistą po złej nawierzchni, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Jechać blisko"
+        },
+        {
+          "pl": "Natychmiast wyprzedzić"
+        },
+        {
+          "pl": "Zostawić więcej miejsca na wypadek, gdyby zjechał z toru"
+        },
+        {
+          "pl": "Zachować zwykły odstęp"
+        }
+      ]
+    },
+    "VU-19": {
+      "promptPl": "Jaki jest główny cel szkolnego oznakowania zygzakowatego?",
+      "options": [
+        {
+          "pl": "Umożliwić parkowanie nauczycielom"
+        },
+        {
+          "pl": "Umożliwić dostawy"
+        },
+        {
+          "pl": "Pomóc dzieciom widzieć i być widzianymi przy przechodzeniu"
+        },
+        {
+          "pl": "Strefa odbioru przez rodziców"
+        }
+      ]
+    },
+    "VU-20": {
+      "promptPl": "W wolnym ruchu — co powinieneś zrobić tuż przed zmianą pasa?",
+      "options": [
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Sprawdzić, czy motocykliści nie przeplatają się między pojazdami"
+        },
+        {
+          "pl": "Dać sygnał ręką"
+        },
+        {
+          "pl": "Zmienić bieg na pierwszy"
+        }
+      ]
+    },
+    "VU-21": {
+      "promptPl": "Zbliżasz się do ronda i widzisz jeźdźca konnego sygnalizującego skręt w prawo, ale jadącego po lewej. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Jechać dalej jak zwykle"
+        },
+        {
+          "pl": "Podjechać blisko"
+        },
+        {
+          "pl": "Wciąć się przed nim"
+        },
+        {
+          "pl": "Trzymać się odpowiednio z tyłu"
+        }
+      ]
+    },
+    "VU-22": {
+      "promptPl": "Jak powinieneś zachować się wobec niedoświadczonych kierowców?",
+      "options": [
+        {
+          "pl": "Trąbić, żeby ich ostrzec"
+        },
+        {
+          "pl": "Być cierpliwym i spodziewać się wolniejszych reakcji"
+        },
+        {
+          "pl": "Migać światłami, żeby ich prowadzić"
+        },
+        {
+          "pl": "Natychmiast ich wyprzedzić"
+        }
+      ]
+    },
+    "VU-23": {
+      "promptPl": "Czym przejście toucan różni się od przejścia puffin?",
+      "options": [
+        {
+          "pl": "Mogą z niego korzystać mopedy"
+        },
+        {
+          "pl": "Steruje nim funkcjonariusz ruchu"
+        },
+        {
+          "pl": "Działa tylko na migających światłach"
+        },
+        {
+          "pl": "Pozwala pieszym i rowerzystom przechodzić razem"
+        }
+      ]
+    },
+    "VU-24": {
+      "promptPl": "Widzisz migające żółte światła pod znakiem ostrzegającym o szkole. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zmniejszyć prędkość, aż miniesz ten obszar"
+        },
+        {
+          "pl": "Utrzymać prędkość i zatrąbić"
+        },
+        {
+          "pl": "Przyspieszyć, żeby szybko przejechać"
+        },
+        {
+          "pl": "Zatrzymać się i czekać, aż światła zgasną"
+        }
+      ]
+    },
+    "VU-25": {
+      "promptPl": "Wyprzedzając rowerzystę — dlaczego powinieneś zostawić tyle miejsca, ile dla samochodu?",
+      "options": [
+        {
+          "pl": "Rowerzysta może nagle przyspieszyć"
+        },
+        {
+          "pl": "Rowerzysta może zsiąść z roweru"
+        },
+        {
+          "pl": "Rowerzysta może stracić równowagę, jeśli miniesz go zbyt blisko"
+        },
+        {
+          "pl": "Rowerzysta może skręcić w lewo"
+        }
+      ]
+    },
+    "VU-26": {
+      "promptPl": "Na wąskiej drodze jeździec konny jedzie środkiem pasa. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Pozostać za nim i zaakceptować tę pozycję"
+        },
+        {
+          "pl": "Przesunąć się w prawo i ostrożnie minąć"
+        },
+        {
+          "pl": "Podjechać blisko, żeby zachęcić do przesunięcia się"
+        }
+      ]
+    },
+    "VU-27": {
+      "promptPl": "Chcesz cofnąć w drogę boczną i nie jesteś pewien, czy z tyłu jest wolno. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Sprawdzić tylko lusterka"
+        },
+        {
+          "pl": "Jeździć dalej ostrożnie"
+        },
+        {
+          "pl": "Wysiąść i sprawdzić"
+        },
+        {
+          "pl": "Patrzeć tylko przez tylną szybę"
+        }
+      ]
+    },
+    "VU-28": {
+      "promptPl": "Gdzie zwykle zobaczysz znak ostrzegający kierowców o przechodzących dzieciach?",
+      "options": [
+        {
+          "pl": "W pobliżu szkolnego przejścia"
+        },
+        {
+          "pl": "Przy wejściu na plac zabaw"
+        },
+        {
+          "pl": "Na autobusie szkolnym"
+        },
+        {
+          "pl": "W strefach tylko dla pieszych"
+        }
+      ]
+    },
+    "VU-29": {
+      "promptPl": "Widzisz kilku jeźdźców konnych na drodze przed Tobą. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przesunąć się na środek jezdni"
+        },
+        {
+          "pl": "Zwolnić i być gotowym do zatrzymania"
+        },
+        {
+          "pl": "Włączyć światła awaryjne"
+        },
+        {
+          "pl": "Sygnalizować skręt w prawo"
+        }
+      ]
+    },
+    "VU-30": {
+      "promptPl": "Zbliżasz się do przejścia zebra, a osoba na wózku czeka, żeby przejść. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Jechać dalej"
+        },
+        {
+          "pl": "Machnąć, żeby przeszła"
+        },
+        {
+          "pl": "Machnąć, żeby poczekała"
+        },
+        {
+          "pl": "Być gotowym do zatrzymania"
+        }
+      ]
+    },
+    "VU-31": {
+      "promptPl": "Zbliżasz się do ronda i widzisz konie z jeźdźcami. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Traktować ich jak zwykłe samochody"
+        },
+        {
+          "pl": "Zostawić im dużo miejsca"
+        },
+        {
+          "pl": "Szybko ich minąć"
+        }
+      ]
+    },
+    "VU-32": {
+      "promptPl": "Dlaczego powinieneś być ostrożny, gdy autobus stoi po przeciwnej stronie drogi?",
+      "options": [
+        {
+          "pl": "Autobus może mieć awarię"
+        },
+        {
+          "pl": "Piesi mogą przejść przed nim"
+        },
+        {
+          "pl": "Autobus może pozostać zaparkowany"
+        },
+        {
+          "pl": "Autobus może cofnąć"
+        }
+      ]
+    },
+    "VU-33": {
+      "promptPl": "Dwóch rowerzystów jedzie przed Tobą do ronda lewym pasem. Czego się spodziewać?",
+      "options": [
+        {
+          "pl": "Że skręcą w lewo"
+        },
+        {
+          "pl": "Że mogą skręcić w prawo"
+        },
+        {
+          "pl": "Że nagle się zatrzymają"
+        },
+        {
+          "pl": "Że muszą jechać prosto"
+        }
+      ]
+    },
+    "VU-34": {
+      "promptPl": "Jedziesz za rowerzystą i niedługo chcesz skręcić w lewo. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Wyprzedzić przed skrzyżowaniem"
+        },
+        {
+          "pl": "Podjechać obok i jechać równolegle"
+        },
+        {
+          "pl": "Czekać z tyłu, aż rowerzysta minie skrzyżowanie"
+        },
+        {
+          "pl": "Objechać go na skrzyżowaniu"
+        }
+      ]
+    },
+    "VU-35": {
+      "promptPl": "Zza zaparkowanych samochodów wypada piłka. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Utrzymać prędkość i zatrąbić"
+        },
+        {
+          "pl": "Mignąć światłami i jechać dalej"
+        },
+        {
+          "pl": "Zwolnić i być gotowym do zatrzymania"
+        },
+        {
+          "pl": "Zatrzymać się i machnąć dzieciom, żeby przeszły"
+        }
+      ]
+    },
+    "VU-36": {
+      "promptPl": "W nocy oślepiają Cię światła z tyłu. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Ustawić lusterko w tryb antyoślepiający"
+        },
+        {
+          "pl": "Gwałtownie zahamować"
+        },
+        {
+          "pl": "Migać tylnymi światłami"
+        },
+        {
+          "pl": "Zignorować to"
+        }
+      ]
+    },
+    "VU-37": {
+      "promptPl": "Który uczestnik ruchu jest zwykle najbardziej narażony?",
+      "options": [
+        {
+          "pl": "Kierowca samochodu"
+        },
+        {
+          "pl": "Kierowca traktora"
+        },
+        {
+          "pl": "Kierowca ciężarówki"
+        },
+        {
+          "pl": "Motocyklista"
+        }
+      ]
+    },
+    "VU-38": {
+      "promptPl": "Co oznacza znak wspólnej trasy dla pieszych i rowerzystów?",
+      "options": [
+        {
+          "pl": "Tylko dla pieszych"
+        },
+        {
+          "pl": "Tylko dla rowerzystów"
+        },
+        {
+          "pl": "Zakaz dla pieszych i rowerzystów"
+        },
+        {
+          "pl": "Wspólna trasa dla obu"
+        }
+      ]
+    },
+    "VU-39": {
+      "promptPl": "Jaki jest cel oznaczonego obszaru między dwiema liniami zatrzymania przy sygnalizacji świetlnej?",
+      "options": [
+        {
+          "pl": "Strefa oczekiwania dla taksówek"
+        },
+        {
+          "pl": "Przejście dla pieszych"
+        },
+        {
+          "pl": "Strefa oczekiwania dla rowerzystów"
+        },
+        {
+          "pl": "Dojazd dla służb ratunkowych"
+        }
+      ]
+    },
+    "VU-40": {
+      "promptPl": "Skręcasz w prawo w drogę boczną. Piesi czekają, żeby przejść. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Natychmiast skręcić"
+        },
+        {
+          "pl": "Machnąć im, żeby przeszli"
+        },
+        {
+          "pl": "Poczekać i ustąpić"
+        },
+        {
+          "pl": "Zatrąbić"
+        }
+      ]
+    },
+    "VU-41": {
+      "promptPl": "Rowerzysta przed Tobą sygnalizuje prawo, ale na rondzie trzyma się lewej strony. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Wyprzedzić"
+        },
+        {
+          "pl": "Założyć, że skręci w lewo"
+        },
+        {
+          "pl": "Zostawić miejsce na skręt"
+        },
+        {
+          "pl": "Zatrąbić"
+        }
+      ]
+    },
+    "VU-42": {
+      "promptPl": "Jedziesz za mopedem i niedługo chcesz skręcić w lewo. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Wyprzedzić przed skrzyżowaniem"
+        },
+        {
+          "pl": "Jechać za nim, aż minie skrzyżowanie"
+        },
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Podjechać obok"
+        }
+      ]
+    },
+    "VU-43": {
+      "promptPl": "Na przejściu pelican światła zmieniają się na zielone, ale starsze osoby nadal przechodzą. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zachęcać je do pośpiechu"
+        },
+        {
+          "pl": "Migać światłami"
+        },
+        {
+          "pl": "Cierpliwie poczekać"
+        },
+        {
+          "pl": "Dodawać gazu"
+        }
+      ]
+    },
+    "VU-44": {
+      "promptPl": "Widzisz koło roweru wystające spomiędzy zaparkowanych samochodów. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przyspieszyć i minąć"
+        },
+        {
+          "pl": "Gwałtownie zahamować"
+        },
+        {
+          "pl": "Zwolnić i przygotować się do zatrzymania"
+        },
+        {
+          "pl": "Zatrąbić"
+        }
+      ]
+    },
+    "VU-45": {
+      "promptPl": "Dlaczego przy wyjeździe ze skrzyżowania powinieneś dokładnie rozglądać się za motocyklami?",
+      "options": [
+        {
+          "pl": "Są szybsze niż wszystkie pojazdy"
+        },
+        {
+          "pl": "Mogą być zasłonięte i niewidoczne"
+        },
+        {
+          "pl": "Mają pierwszeństwo"
+        },
+        {
+          "pl": "Często jeżdżą nimi policjanci"
+        }
+      ]
+    },
+    "VU-46": {
+      "promptPl": "Których uczestników ruchu najtrudniej zauważyć przy cofaniu?",
+      "options": [
+        {
+          "pl": "Kierowców samochodów"
+        },
+        {
+          "pl": "Motocyklistów"
+        },
+        {
+          "pl": "Rowerzystów"
+        },
+        {
+          "pl": "Dzieci"
+        }
+      ]
+    },
+    "VU-47": {
+      "promptPl": "Na przejściu pelican osoba niepełnosprawna przechodzi wolno, a światła zmieniają się na zielone. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przejechać"
+        },
+        {
+          "pl": "Powoli podjechać"
+        },
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Poczekać, aż skończy przechodzić"
+        }
+      ]
+    },
+    "VU-48": {
+      "promptPl": "Chodnik jest zamknięty z powodu robót drogowych. Na co powinieneś uważać?",
+      "options": [
+        {
+          "pl": "Na pieszych na jezdni"
+        },
+        {
+          "pl": "Na szybszy ruch"
+        },
+        {
+          "pl": "Na wolne pasy"
+        },
+        {
+          "pl": "Na mniej zagrożeń"
+        }
+      ]
+    },
+    "VU-49": {
+      "promptPl": "Który znak ostrzega, że piesi mogą iść wzdłuż drogi?",
+      "options": [
+        {
+          "pl": "Znak ostrzegający o pieszych"
+        },
+        {
+          "pl": "Znak zakazu wjazdu"
+        },
+        {
+          "pl": "Znak ulicy jednokierunkowej"
+        },
+        {
+          "pl": "Znak ograniczenia prędkości"
+        }
+      ]
+    }
+  }
+}

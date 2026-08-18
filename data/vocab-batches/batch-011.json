@@ -1,0 +1,1382 @@
+[
+  {
+    "id": "RS-2013",
+    "topic": "road-signs",
+    "promptEn": "What does a red circular sign with a white background and a horn symbol crossed out mean?",
+    "options": [
+      {
+        "en": "Use your horn only in emergencies",
+        "correct": false
+      },
+      {
+        "en": "No sounding of horns",
+        "correct": true
+      },
+      {
+        "en": "Quiet zone ahead",
+        "correct": false
+      },
+      {
+        "en": "Horn recommended in this area",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2015",
+    "topic": "road-signs",
+    "promptEn": "You're approaching a bridge and see a triangular warning sign showing the road narrowing on both sides. What should you prepare for?",
+    "options": [
+      {
+        "en": "Reduced road width requiring slower speed and extra caution",
+        "correct": true
+      },
+      {
+        "en": "You should speed up to pass through quickly",
+        "correct": false
+      },
+      {
+        "en": "You can use the centre of the road",
+        "correct": false
+      },
+      {
+        "en": "Overtake vehicles before reaching the narrow section",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2016",
+    "topic": "road-signs",
+    "promptEn": "You see a blue rectangular sign with a white motorway symbol. What does this sign indicate?",
+    "options": [
+      {
+        "en": "End of motorway",
+        "correct": false
+      },
+      {
+        "en": "Motorway ahead",
+        "correct": true
+      },
+      {
+        "en": "Dual carriageway ahead",
+        "correct": false
+      },
+      {
+        "en": "Service area ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2017",
+    "topic": "road-signs",
+    "promptEn": "What does a broken white line across the road at a junction mean?",
+    "options": [
+      {
+        "en": "You must stop completely",
+        "correct": false
+      },
+      {
+        "en": "You must give way if necessary",
+        "correct": true
+      },
+      {
+        "en": "Overtaking is not allowed",
+        "correct": false
+      },
+      {
+        "en": "Parking is prohibited",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2018",
+    "topic": "road-signs",
+    "promptEn": "A blue circular sign shows a white arrow pointing straight ahead. What does it mean?",
+    "options": [
+      {
+        "en": "You must go straight ahead only",
+        "correct": true
+      },
+      {
+        "en": "No entry straight ahead",
+        "correct": false
+      },
+      {
+        "en": "Traffic ahead must turn left",
+        "correct": false
+      },
+      {
+        "en": "Road ends ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2020",
+    "topic": "road-signs",
+    "promptEn": "A warning sign shows a hump in the road. What should you expect?",
+    "options": [
+      {
+        "en": "A steep hill ahead",
+        "correct": false
+      },
+      {
+        "en": "Speed humps ahead",
+        "correct": true
+      },
+      {
+        "en": "Uneven road surface only in wet weather",
+        "correct": false
+      },
+      {
+        "en": "Road closed ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2022",
+    "topic": "road-signs",
+    "promptEn": "What does a circular sign with a red border and a motorcycle symbol indicate?",
+    "options": [
+      {
+        "en": "Motorcycles only",
+        "correct": false
+      },
+      {
+        "en": "No motorcycles allowed",
+        "correct": true
+      },
+      {
+        "en": "End of motorcycle restriction",
+        "correct": false
+      },
+      {
+        "en": "Motorcycle route recommended",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2023",
+    "topic": "road-signs",
+    "promptEn": "A sign shows a red circle with a white background and a lorry symbol. What does it mean?",
+    "options": [
+      {
+        "en": "Lorries must use this route",
+        "correct": false
+      },
+      {
+        "en": "No goods vehicles allowed",
+        "correct": true
+      },
+      {
+        "en": "End of goods vehicle restriction",
+        "correct": false
+      },
+      {
+        "en": "Heavy vehicles only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2024",
+    "topic": "road-signs",
+    "promptEn": "You see a blue sign showing a white arrow pointing both left and right. What does this mean?",
+    "options": [
+      {
+        "en": "You must turn either left or right",
+        "correct": true
+      },
+      {
+        "en": "No U-turns allowed",
+        "correct": false
+      },
+      {
+        "en": "Two-way traffic ahead",
+        "correct": false
+      },
+      {
+        "en": "Road narrows on both sides",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2025",
+    "topic": "road-signs",
+    "promptEn": "You see a hatched area with diagonal white lines bordered by broken white lines. What does this mean and when can you enter it?",
+    "options": [
+      {
+        "en": "Never enter - it separates traffic lanes",
+        "correct": false
+      },
+      {
+        "en": "Enter only if necessary and safe, and only if the broken line is on your side",
+        "correct": true
+      },
+      {
+        "en": "Emergency vehicles only",
+        "correct": false
+      },
+      {
+        "en": "Overtaking mandatory",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2026",
+    "topic": "road-signs",
+    "promptEn": "What does this circular sign with a red border and a crossed right-turn arrow mean?",
+    "options": [
+      {
+        "en": "No right turn",
+        "correct": true
+      },
+      {
+        "en": "Turn right only",
+        "correct": false
+      },
+      {
+        "en": "No U-turn",
+        "correct": false
+      },
+      {
+        "en": "One-way road to the right",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2027",
+    "topic": "road-signs",
+    "promptEn": "You're driving on a main road and see a triangular warning sign showing traffic lights. What should you prepare for?",
+    "options": [
+      {
+        "en": "Traffic lights ahead that may change to red",
+        "correct": true
+      },
+      {
+        "en": "A pedestrian crossing with no lights",
+        "correct": false
+      },
+      {
+        "en": "The road is closed ahead",
+        "correct": false
+      },
+      {
+        "en": "A police checkpoint is ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2028",
+    "topic": "road-signs",
+    "promptEn": "What does a rectangular sign showing a white speed camera symbol on a blue background indicate?",
+    "options": [
+      {
+        "en": "Speed limit ends ahead",
+        "correct": false
+      },
+      {
+        "en": "Average speed check zone",
+        "correct": false
+      },
+      {
+        "en": "Speed camera information",
+        "correct": true
+      },
+      {
+        "en": "Police speed enforcement only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2029",
+    "topic": "road-signs",
+    "promptEn": "You see a triangular warning sign showing a bicycle. What does this warn you about?",
+    "options": [
+      {
+        "en": "Cycle route only",
+        "correct": false
+      },
+      {
+        "en": "Cyclists crossing or using the road",
+        "correct": true
+      },
+      {
+        "en": "End of cycle lane",
+        "correct": false
+      },
+      {
+        "en": "No bicycles allowed",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2030",
+    "topic": "road-signs",
+    "promptEn": "A blue circular sign shows a white horizontal bar. What instruction does this give?",
+    "options": [
+      {
+        "en": "Pass either side to reach the same destination",
+        "correct": true
+      },
+      {
+        "en": "No entry for vehicles",
+        "correct": false
+      },
+      {
+        "en": "Road closed ahead",
+        "correct": false
+      },
+      {
+        "en": "Keep left only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2031",
+    "topic": "road-signs",
+    "promptEn": "You're driving on a main road and see a triangular warning sign showing a side road joining from the left. What hazard should you anticipate?",
+    "options": [
+      {
+        "en": "Vehicles may emerge from the side road and join your path",
+        "correct": true
+      },
+      {
+        "en": "Traffic from the left always has priority",
+        "correct": false
+      },
+      {
+        "en": "You must overtake before the junction",
+        "correct": false
+      },
+      {
+        "en": "The road becomes one-way ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2032",
+    "topic": "road-signs",
+    "promptEn": "What does this triangular warning sign showing two arrows in opposite directions mean?",
+    "options": [
+      {
+        "en": "Two-way traffic crosses a one-way road",
+        "correct": true
+      },
+      {
+        "en": "Road narrows ahead",
+        "correct": false
+      },
+      {
+        "en": "One-way road ends",
+        "correct": false
+      },
+      {
+        "en": "Traffic must turn right",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2033",
+    "topic": "road-signs",
+    "promptEn": "A circular sign with a red border shows '20'. Where is this limit commonly used?",
+    "options": [
+      {
+        "en": "On motorways during roadworks",
+        "correct": false
+      },
+      {
+        "en": "In residential or school areas",
+        "correct": true
+      },
+      {
+        "en": "On rural single carriageways",
+        "correct": false
+      },
+      {
+        "en": "At the end of dual carriageways",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2034",
+    "topic": "road-signs",
+    "promptEn": "A blue circular sign shows white symbols of a pedestrian and a bicycle together. What does this mean?",
+    "options": [
+      {
+        "en": "Shared route for pedestrians and cyclists",
+        "correct": true
+      },
+      {
+        "en": "Cycle route only",
+        "correct": false
+      },
+      {
+        "en": "No pedestrians allowed",
+        "correct": false
+      },
+      {
+        "en": "End of cycle lane",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2035",
+    "topic": "road-signs",
+    "promptEn": "What does a white arrow painted on the road surface pointing left indicate?",
+    "options": [
+      {
+        "en": "You must turn left at the junction ahead",
+        "correct": true
+      },
+      {
+        "en": "No left turn allowed",
+        "correct": false
+      },
+      {
+        "en": "Road narrows on the left",
+        "correct": false
+      },
+      {
+        "en": "Traffic from the left has priority",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2036",
+    "topic": "road-signs",
+    "promptEn": "You're approaching a busy area and see a triangular warning sign showing a queue of vehicles. What should you prepare for?",
+    "options": [
+      {
+        "en": "Slow-moving or stationary traffic ahead requiring reduced speed",
+        "correct": true
+      },
+      {
+        "en": "A one-way traffic system ahead",
+        "correct": false
+      },
+      {
+        "en": "The speed limit increases ahead",
+        "correct": false
+      },
+      {
+        "en": "Roadworks are ending ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2037",
+    "topic": "road-signs",
+    "promptEn": "What does a circular sign with a red border and a weight shown in tonnes indicate?",
+    "options": [
+      {
+        "en": "Minimum weight required to use the road",
+        "correct": false
+      },
+      {
+        "en": "Maximum permitted vehicle weight",
+        "correct": true
+      },
+      {
+        "en": "Recommended weight limit only",
+        "correct": false
+      },
+      {
+        "en": "Weight limit applies only at night",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2038",
+    "topic": "road-signs",
+    "promptEn": "You see a blue rectangular sign showing a fuel pump symbol. What does this indicate?",
+    "options": [
+      {
+        "en": "Fuel station available ahead",
+        "correct": true
+      },
+      {
+        "en": "Fuel vehicles only route",
+        "correct": false
+      },
+      {
+        "en": "End of motorway services",
+        "correct": false
+      },
+      {
+        "en": "Hazardous materials ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2039",
+    "topic": "road-signs",
+    "promptEn": "You're driving on a country road and see a triangular warning sign showing the road narrowing on the right. What should you do?",
+    "options": [
+      {
+        "en": "Be prepared to slow down and position your vehicle for the reduced width",
+        "correct": true
+      },
+      {
+        "en": "Move immediately to the right side",
+        "correct": false
+      },
+      {
+        "en": "Overtake any slower vehicles before the narrowing",
+        "correct": false
+      },
+      {
+        "en": "Stop and wait for oncoming traffic to pass",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2040",
+    "topic": "road-signs",
+    "promptEn": "What does a rectangular sign with white text on a brown background usually indicate?",
+    "options": [
+      {
+        "en": "Tourist attractions or places of interest",
+        "correct": true
+      },
+      {
+        "en": "Motorway directions only",
+        "correct": false
+      },
+      {
+        "en": "Local diversion route",
+        "correct": false
+      },
+      {
+        "en": "Emergency information",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2041",
+    "topic": "road-signs",
+    "promptEn": "You're driving in hilly countryside and see a triangular warning sign showing a steep downward slope. What should you prepare for?",
+    "options": [
+      {
+        "en": "A steep downhill section where you'll need to control your speed carefully",
+        "correct": true
+      },
+      {
+        "en": "A steep uphill climb ahead",
+        "correct": false
+      },
+      {
+        "en": "An uneven road surface only",
+        "correct": false
+      },
+      {
+        "en": "The end of the hill section",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2042",
+    "topic": "road-signs",
+    "promptEn": "What does a circular sign with a red border and a height shown in metres indicate?",
+    "options": [
+      {
+        "en": "Minimum vehicle height required",
+        "correct": false
+      },
+      {
+        "en": "Recommended height only",
+        "correct": false
+      },
+      {
+        "en": "Maximum permitted vehicle height",
+        "correct": true
+      },
+      {
+        "en": "Height restriction applies at night only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2043",
+    "topic": "road-signs",
+    "promptEn": "You see a blue rectangular sign showing a white telephone symbol. What does it indicate?",
+    "options": [
+      {
+        "en": "Mobile phone use permitted",
+        "correct": false
+      },
+      {
+        "en": "Public telephone available nearby",
+        "correct": true
+      },
+      {
+        "en": "Emergency vehicles only",
+        "correct": false
+      },
+      {
+        "en": "Police station ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2044",
+    "topic": "road-signs",
+    "promptEn": "A warning sign shows a humpback bridge. What hazard should you expect?",
+    "options": [
+      {
+        "en": "Limited visibility over the bridge",
+        "correct": true
+      },
+      {
+        "en": "Slippery surface on the bridge",
+        "correct": false
+      },
+      {
+        "en": "Bridge closed to traffic",
+        "correct": false
+      },
+      {
+        "en": "Low height restriction only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2045",
+    "topic": "road-signs",
+    "promptEn": "What does a white arrow painted on the road surface pointing straight ahead indicate?",
+    "options": [
+      {
+        "en": "You must proceed straight ahead",
+        "correct": true
+      },
+      {
+        "en": "No entry straight ahead",
+        "correct": false
+      },
+      {
+        "en": "Road ends ahead",
+        "correct": false
+      },
+      {
+        "en": "Traffic must turn left or right",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2047",
+    "topic": "road-signs",
+    "promptEn": "What does a circular sign with a red border and a width shown in metres indicate?",
+    "options": [
+      {
+        "en": "Minimum road width ahead",
+        "correct": false
+      },
+      {
+        "en": "Recommended vehicle width",
+        "correct": false
+      },
+      {
+        "en": "Maximum permitted vehicle width",
+        "correct": true
+      },
+      {
+        "en": "Width restriction applies to lorries only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2048",
+    "topic": "road-signs",
+    "promptEn": "You see a blue rectangular sign showing a white bus symbol. What does this sign indicate?",
+    "options": [
+      {
+        "en": "Bus lane ahead",
+        "correct": true
+      },
+      {
+        "en": "Buses must stop ahead",
+        "correct": false
+      },
+      {
+        "en": "Bus-only road",
+        "correct": false
+      },
+      {
+        "en": "End of bus lane",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2049",
+    "topic": "road-signs",
+    "promptEn": "A warning sign shows a low-flying aircraft symbol. What does this warn you about?",
+    "options": [
+      {
+        "en": "An airport terminal ahead",
+        "correct": false
+      },
+      {
+        "en": "Noise from low-flying aircraft",
+        "correct": true
+      },
+      {
+        "en": "Restricted airspace",
+        "correct": false
+      },
+      {
+        "en": "Emergency landing area",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-2050",
+    "topic": "road-signs",
+    "promptEn": "You see a solid white line along the left edge of the carriageway. What does this mark and how should you drive?",
+    "options": [
+      {
+        "en": "Edge of carriageway - stay to the right of this line",
+        "correct": true
+      },
+      {
+        "en": "Cycle lane - cyclists only",
+        "correct": false
+      },
+      {
+        "en": "No overtaking zone - do not cross",
+        "correct": false
+      },
+      {
+        "en": "Parking area - you may park here",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6001",
+    "topic": "road-signs",
+    "promptEn": "What does a triangular road sign with a red border always indicate?",
+    "options": [
+      {
+        "en": "Information",
+        "correct": false
+      },
+      {
+        "en": "Mandatory instruction",
+        "correct": false
+      },
+      {
+        "en": "Warning of a hazard ahead",
+        "correct": true
+      },
+      {
+        "en": "Direction to a destination",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6002",
+    "topic": "road-signs",
+    "promptEn": "What does a blue circular sign usually tell you?",
+    "options": [
+      {
+        "en": "A warning",
+        "correct": false
+      },
+      {
+        "en": "A prohibition",
+        "correct": false
+      },
+      {
+        "en": "A mandatory instruction",
+        "correct": true
+      },
+      {
+        "en": "Temporary information",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6003",
+    "topic": "road-signs",
+    "promptEn": "What does a red circular sign usually indicate?",
+    "options": [
+      {
+        "en": "Information only",
+        "correct": false
+      },
+      {
+        "en": "A warning",
+        "correct": false
+      },
+      {
+        "en": "A restriction or prohibition",
+        "correct": true
+      },
+      {
+        "en": "A recommended route",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6004",
+    "topic": "road-signs",
+    "promptEn": "What do white rectangular signs usually provide?",
+    "options": [
+      {
+        "en": "Mandatory rules",
+        "correct": false
+      },
+      {
+        "en": "Warnings only",
+        "correct": false
+      },
+      {
+        "en": "Information and directions",
+        "correct": true
+      },
+      {
+        "en": "Temporary hazards",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6005",
+    "topic": "road-signs",
+    "promptEn": "What does a STOP sign require you to do?",
+    "options": [
+      {
+        "en": "Slow down and look",
+        "correct": false
+      },
+      {
+        "en": "Stop only if traffic is coming",
+        "correct": false
+      },
+      {
+        "en": "Stop completely before the line",
+        "correct": true
+      },
+      {
+        "en": "Give way without stopping",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6006",
+    "topic": "road-signs",
+    "promptEn": "You see white zigzag lines painted on the road near a pedestrian crossing. What must you do?",
+    "options": [
+      {
+        "en": "Stop and wait for pedestrians",
+        "correct": false
+      },
+      {
+        "en": "Do not stop or park in this area",
+        "correct": true
+      },
+      {
+        "en": "Reduce speed to 20 mph",
+        "correct": false
+      },
+      {
+        "en": "Overtake only if safe",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6007",
+    "topic": "road-signs",
+    "promptEn": "You approach a junction and see a broken white line across your lane. What must you do?",
+    "options": [
+      {
+        "en": "Stop completely before the line",
+        "correct": false
+      },
+      {
+        "en": "Give way to traffic on the major road",
+        "correct": true
+      },
+      {
+        "en": "Continue at the same speed",
+        "correct": false
+      },
+      {
+        "en": "Sound your horn before proceeding",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6008",
+    "topic": "road-signs",
+    "promptEn": "You see a single yellow line painted along the kerb. What does this mean and what should you do?",
+    "options": [
+      {
+        "en": "No waiting at any time - do not stop here",
+        "correct": false
+      },
+      {
+        "en": "Waiting restricted at certain times - check nearby signs for times",
+        "correct": true
+      },
+      {
+        "en": "Loading only - you may load or unload",
+        "correct": false
+      },
+      {
+        "en": "Residents only - parking for residents",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6009",
+    "topic": "road-signs",
+    "promptEn": "You see double yellow lines painted along the kerb. What must you do?",
+    "options": [
+      {
+        "en": "Do not wait or park here at any time",
+        "correct": true
+      },
+      {
+        "en": "Parking allowed during the day only",
+        "correct": false
+      },
+      {
+        "en": "Loading and unloading allowed",
+        "correct": false
+      },
+      {
+        "en": "Parking for residents only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6009A",
+    "topic": "road-signs",
+    "promptEn": "You see a solid white line across your lane at a junction with a STOP sign. What must you do?",
+    "options": [
+      {
+        "en": "Stop completely at or before the line, then proceed when safe",
+        "correct": true
+      },
+      {
+        "en": "Slow down and give way if necessary",
+        "correct": false
+      },
+      {
+        "en": "Stop only if there is other traffic",
+        "correct": false
+      },
+      {
+        "en": "Continue if the road looks clear",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6010",
+    "topic": "road-signs",
+    "promptEn": "What do temporary road signs with a yellow background usually indicate?",
+    "options": [
+      {
+        "en": "Permanent traffic rules",
+        "correct": false
+      },
+      {
+        "en": "Motorway information",
+        "correct": false
+      },
+      {
+        "en": "Temporary road works or conditions",
+        "correct": true
+      },
+      {
+        "en": "Tourist attractions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6011",
+    "topic": "road-signs",
+    "promptEn": "What does a speed limit sign without a red circle usually indicate?",
+    "options": [
+      {
+        "en": "Maximum legal speed",
+        "correct": false
+      },
+      {
+        "en": "Advisory speed only",
+        "correct": true
+      },
+      {
+        "en": "Minimum speed",
+        "correct": false
+      },
+      {
+        "en": "Average speed zone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6012",
+    "topic": "road-signs",
+    "promptEn": "What does a blue rectangular sign on a motorway usually show?",
+    "options": [
+      {
+        "en": "Warnings",
+        "correct": false
+      },
+      {
+        "en": "Tourist attractions",
+        "correct": false
+      },
+      {
+        "en": "Directions and services",
+        "correct": true
+      },
+      {
+        "en": "Temporary diversions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6013",
+    "topic": "road-signs",
+    "promptEn": "What does a white arrow on a blue circular sign mean?",
+    "options": [
+      {
+        "en": "Direction advised",
+        "correct": false
+      },
+      {
+        "en": "Direction you must follow",
+        "correct": true
+      },
+      {
+        "en": "No entry",
+        "correct": false
+      },
+      {
+        "en": "One-way road",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6014",
+    "topic": "road-signs",
+    "promptEn": "What does a continuous white line along the edge of the road indicate?",
+    "options": [
+      {
+        "en": "No overtaking",
+        "correct": false
+      },
+      {
+        "en": "Edge of the carriageway",
+        "correct": true
+      },
+      {
+        "en": "Cycle lane",
+        "correct": false
+      },
+      {
+        "en": "Bus lane",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6015",
+    "topic": "road-signs",
+    "promptEn": "What should you do if road signs seem to contradict road markings?",
+    "options": [
+      {
+        "en": "Follow road markings",
+        "correct": false
+      },
+      {
+        "en": "Follow road signs",
+        "correct": true
+      },
+      {
+        "en": "Ignore both",
+        "correct": false
+      },
+      {
+        "en": "Stop and wait",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6016",
+    "topic": "road-signs",
+    "promptEn": "What does an upside-down triangular sign at a junction mean?",
+    "options": [
+      {
+        "en": "Stop",
+        "correct": false
+      },
+      {
+        "en": "Give way",
+        "correct": true
+      },
+      {
+        "en": "No entry",
+        "correct": false
+      },
+      {
+        "en": "Warning of danger",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6017",
+    "topic": "road-signs",
+    "promptEn": "What does a blue circular sign showing a mini-roundabout indicate?",
+    "options": [
+      {
+        "en": "Mini-roundabout ahead – give way to traffic from the right",
+        "correct": true
+      },
+      {
+        "en": "One-way traffic only",
+        "correct": false
+      },
+      {
+        "en": "No entry for vehicles",
+        "correct": false
+      },
+      {
+        "en": "Two-way traffic crosses ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6018",
+    "topic": "road-signs",
+    "promptEn": "What does a red and white striped bollard usually show?",
+    "options": [
+      {
+        "en": "Road narrowing",
+        "correct": false
+      },
+      {
+        "en": "Side of an obstruction",
+        "correct": true
+      },
+      {
+        "en": "Speed limit change",
+        "correct": false
+      },
+      {
+        "en": "Pedestrian crossing",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6019",
+    "topic": "road-signs",
+    "promptEn": "What does a series of diagonal white lines across the road before a hazard mean?",
+    "options": [
+      {
+        "en": "No overtaking zone",
+        "correct": false
+      },
+      {
+        "en": "Traffic calming only",
+        "correct": false
+      },
+      {
+        "en": "Reduce speed and be prepared to stop",
+        "correct": true
+      },
+      {
+        "en": "End of speed limit",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6020",
+    "topic": "road-signs",
+    "promptEn": "What does a green rectangular sign usually indicate?",
+    "options": [
+      {
+        "en": "Motorway directions",
+        "correct": false
+      },
+      {
+        "en": "Primary route directions",
+        "correct": true
+      },
+      {
+        "en": "Tourist information",
+        "correct": false
+      },
+      {
+        "en": "Temporary diversion",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6021",
+    "topic": "road-signs",
+    "promptEn": "What does a speed limit sign with a black diagonal line through it mean?",
+    "options": [
+      {
+        "en": "Advisory speed",
+        "correct": false
+      },
+      {
+        "en": "End of speed limit",
+        "correct": true
+      },
+      {
+        "en": "Minimum speed",
+        "correct": false
+      },
+      {
+        "en": "Average speed zone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6022",
+    "topic": "road-signs",
+    "promptEn": "What do white zigzag lines near a school crossing indicate?",
+    "options": [
+      {
+        "en": "Parking allowed briefly",
+        "correct": false
+      },
+      {
+        "en": "No stopping or parking",
+        "correct": true
+      },
+      {
+        "en": "Bus stop area",
+        "correct": false
+      },
+      {
+        "en": "Drop-off zone only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6023",
+    "topic": "road-signs",
+    "promptEn": "What does a temporary speed limit sign at roadworks require you to do?",
+    "options": [
+      {
+        "en": "Treat it as a recommendation",
+        "correct": false
+      },
+      {
+        "en": "Obey it as a legal limit",
+        "correct": true
+      },
+      {
+        "en": "Ignore it at night",
+        "correct": false
+      },
+      {
+        "en": "Follow other drivers",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6024",
+    "topic": "road-signs",
+    "promptEn": "You see a solid white line along the centre of the road. What does this mean and what must you do?",
+    "options": [
+      {
+        "en": "Do not cross or straddle this line to overtake",
+        "correct": true
+      },
+      {
+        "en": "Overtaking allowed if safe",
+        "correct": false
+      },
+      {
+        "en": "One-way road ahead",
+        "correct": false
+      },
+      {
+        "en": "Bus lane marking",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-6025",
+    "topic": "road-signs",
+    "promptEn": "What does a triangular warning sign with an exclamation mark and a plate reading 'Hidden dip' warn you about?",
+    "options": [
+      {
+        "en": "A sudden dip in the road that may not be visible ahead",
+        "correct": true
+      },
+      {
+        "en": "Slippery road surface",
+        "correct": false
+      },
+      {
+        "en": "Road narrows ahead",
+        "correct": false
+      },
+      {
+        "en": "Steep hill ahead",
+        "correct": false
+      }
+    ]
+  }
+]

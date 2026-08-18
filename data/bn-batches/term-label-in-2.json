@@ -1,0 +1,570 @@
+[
+  {
+    "term": "emergency phone",
+    "en": "A roadside phone on motorways for contacting emergency services if you break down."
+  },
+  {
+    "term": "emergency roadside telephone",
+    "en": "A free phone fixed beside the motorway that links you to help and shows your location."
+  },
+  {
+    "term": "emergency services",
+    "en": "Police, fire, and ambulance teams called to help at serious incidents."
+  },
+  {
+    "term": "emergency stop",
+    "en": "Braking as quickly and safely as possible to avoid a collision."
+  },
+  {
+    "term": "emergency telephone",
+    "en": "A free roadside phone on motorways that connects you to operators who can send help."
+  },
+  {
+    "term": "emerging",
+    "en": "Coming out from a junction or side road onto another road."
+  },
+  {
+    "term": "End of restrictions",
+    "en": "A sign meaning earlier parking or waiting limits no longer apply beyond that point."
+  },
+  {
+    "term": "engine braking",
+    "en": "Slowing the vehicle by changing to a lower gear so the engine helps reduce speed."
+  },
+  {
+    "term": "engine revs",
+    "en": "How fast the engine is turning; often shown on the rev counter (tachometer)."
+  },
+  {
+    "term": "environmentally friendly",
+    "en": "Causing less harm to the environment, e.g. lower emissions."
+  },
+  {
+    "term": "ESC",
+    "en": "Electronic Stability Control: a system that helps keep the car stable if wheels start to lose grip."
+  },
+  {
+    "term": "estate car",
+    "en": "A car with an extended rear area for carrying more luggage."
+  },
+  {
+    "term": "Etching registration",
+    "en": "Permanently marking the vehicle’s number plate onto glass or parts."
+  },
+  {
+    "term": "exhaust emissions",
+    "en": "Gases and particles released from a vehicle’s exhaust into the air."
+  },
+  {
+    "term": "Exhaust system",
+    "en": "The pipes and parts that carry waste gases from the engine out of the vehicle."
+  },
+  {
+    "term": "Extended-arm side mirrors",
+    "en": "Door mirrors on longer arms so you can still see past a wide trailer or caravan."
+  },
+  {
+    "term": "Exterior towing mirrors",
+    "en": "Extra or extended side mirrors required when a trailer is wider than the towing vehicle."
+  },
+  {
+    "term": "farmland",
+    "en": "Countryside used for farming, where animals or slow farm vehicles may be near the road."
+  },
+  {
+    "term": "fatigue",
+    "en": "Extreme tiredness that reduces concentration and safe driving ability."
+  },
+  {
+    "term": "filler cap",
+    "en": "The cover that seals the fuel tank opening after refuelling."
+  },
+  {
+    "term": "filtering",
+    "en": "When motorcyclists or cyclists move carefully between lanes or past slow queues of traffic."
+  },
+  {
+    "term": "first aid",
+    "en": "Immediate care given to an injured person before professional help arrives."
+  },
+  {
+    "term": "first aid kit",
+    "en": "A set of basic medical supplies for treating minor injuries at the scene."
+  },
+  {
+    "term": "First-aiders",
+    "en": "People trained to give basic emergency care before professionals arrive."
+  },
+  {
+    "term": "Flash headlights",
+    "en": "Briefly switch the headlights on and off to get someone's attention."
+  },
+  {
+    "term": "flash your headlights",
+    "en": "Briefly switch headlights on and off only to let others know you are there—not to claim priority."
+  },
+  {
+    "term": "Flash your headlights",
+    "en": "Briefly switching headlights on and off to attract attention; not a reliable way to give instructions."
+  },
+  {
+    "term": "flashes headlights",
+    "en": "Briefly switches headlights on and off—often to ask for room to pass, not to demand you speed up."
+  },
+  {
+    "term": "flashing amber",
+    "en": "An amber traffic light that blinks on and off at a pelican crossing."
+  },
+  {
+    "term": "flashing amber lights",
+    "en": "Orange warning lights that flash to alert drivers, often near schools when children may be about."
+  },
+  {
+    "term": "flood water",
+    "en": "Water covering part of the road after heavy rain or flooding, which can wet the brakes."
+  },
+  {
+    "term": "floodwater",
+    "en": "Deep water covering the road after heavy rain or flooding."
+  },
+  {
+    "term": "Flushed skin",
+    "en": "Skin that looks unusually red or warm, for example from heat or emotion."
+  },
+  {
+    "term": "fog lights",
+    "en": "Extra lights for very poor visibility in fog; use only when conditions are bad enough."
+  },
+  {
+    "term": "following distance",
+    "en": "The gap you leave between your vehicle and the one in front."
+  },
+  {
+    "term": "following very closely",
+    "en": "Driving with too little space behind another vehicle (tailgating), which is unsafe."
+  },
+  {
+    "term": "footbrake",
+    "en": "The main brake pedal operated with your foot to slow or stop the vehicle."
+  },
+  {
+    "term": "footpaths",
+    "en": "Paths for people walking, usually beside a road (pavements/sidewalks)."
+  },
+  {
+    "term": "four-wheel drive",
+    "en": "A system that sends power to all four wheels to improve grip, especially on slippery or uneven surfaces."
+  },
+  {
+    "term": "front fog lights",
+    "en": "Extra front lights used only when visibility is seriously reduced, such as in thick fog."
+  },
+  {
+    "term": "Front fog lights",
+    "en": "Extra front lights used only when visibility is seriously reduced, such as in thick fog."
+  },
+  {
+    "term": "fuel consumption",
+    "en": "How much fuel the vehicle uses; higher use means more cost and emissions."
+  },
+  {
+    "term": "fuel-efficient driving",
+    "en": "Driving in a way that uses less fuel, often by smoother acceleration and steadier speed."
+  },
+  {
+    "term": "full beam",
+    "en": "Headlights on their brightest, longest setting; can dazzle others, so not for use in fog or when meeting traffic."
+  },
+  {
+    "term": "Full beam",
+    "en": "Headlights aimed high for maximum range; can dazzle oncoming drivers."
+  },
+  {
+    "term": "full beam headlights",
+    "en": "Headlights on their brightest setting; can dazzle others if used wrongly."
+  },
+  {
+    "term": "full-beam headlights",
+    "en": "Headlights on their brightest, longest setting; must be dipped so you do not dazzle other drivers."
+  },
+  {
+    "term": "Gearbox",
+    "en": "The part of the car that contains the gears for changing speed and power."
+  },
+  {
+    "term": "give way",
+    "en": "Let other traffic go first when they have priority, instead of continuing ahead of them."
+  },
+  {
+    "term": "Give way",
+    "en": "Let other traffic go first when they have priority, instead of continuing ahead of them."
+  },
+  {
+    "term": "give-way lines",
+    "en": "Road markings at a junction where you must let other traffic go first."
+  },
+  {
+    "term": "goods vehicles",
+    "en": "Vehicles built mainly to carry cargo rather than passengers."
+  },
+  {
+    "term": "GPS",
+    "en": "A sat-nav system that gives turn-by-turn directions while you drive."
+  },
+  {
+    "term": "green flashing beacon",
+    "en": "A flashing green warning light used by certain medical vehicles responding to emergencies."
+  },
+  {
+    "term": "green plates",
+    "en": "Optional green ‘P’ plates some new drivers display to show they are newly qualified."
+  },
+  {
+    "term": "hand-held mobile phone",
+    "en": "A mobile phone that you hold in your hand while using it."
+  },
+  {
+    "term": "handbook",
+    "en": "The vehicle’s owner manual with operating and safety information."
+  },
+  {
+    "term": "handbrake",
+    "en": "The parking brake, normally used to hold the vehicle when stopped, not for slowing in motion."
+  },
+  {
+    "term": "Handbrake",
+    "en": "The parking brake that holds the vehicle still when stopped."
+  },
+  {
+    "term": "Handling",
+    "en": "How the car steers, corners, and responds; a heavy load can make this worse."
+  },
+  {
+    "term": "hands-free phone",
+    "en": "A phone you can use without holding it, for example with a speaker or Bluetooth kit."
+  },
+  {
+    "term": "hard shoulder",
+    "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency."
+  },
+  {
+    "term": "harsh braking",
+    "en": "Braking suddenly and hard instead of smoothly and early."
+  },
+  {
+    "term": "hatched area",
+    "en": "A painted zone with diagonal stripes that separates traffic streams."
+  },
+  {
+    "term": "hazard",
+    "en": "Anything on or near the road that could cause danger or force you to change speed or direction."
+  },
+  {
+    "term": "hazard lights",
+    "en": "All indicators flashing together to warn others of a hazard or breakdown."
+  },
+  {
+    "term": "Hazard lights",
+    "en": "All indicators flashing together to warn others of danger or a problem."
+  },
+  {
+    "term": "hazard markings",
+    "en": "Warning symbols or plates that show a load’s danger type."
+  },
+  {
+    "term": "hazard warning lights",
+    "en": "Both indicators flashing together to warn other drivers of a hazard or sudden slowing."
+  },
+  {
+    "term": "hazard warning sign",
+    "en": "A triangular road sign that warns of a danger or difficult situation ahead on the road."
+  },
+  {
+    "term": "Hazardous materials",
+    "en": "Dangerous substances such as chemicals or fuel that need special care in transport."
+  },
+  {
+    "term": "hazards",
+    "en": "Short for hazard warning lights: all indicators flashing to warn of danger or a stop."
+  },
+  {
+    "term": "head restraint",
+    "en": "The padded support behind your head on the seat, often called a headrest."
+  },
+  {
+    "term": "heavy bleeding",
+    "en": "A lot of blood loss from a wound that needs urgent pressure and help."
+  },
+  {
+    "term": "Heavy goods vehicles",
+    "en": "Large trucks that carry freight; often called HGVs in the UK."
+  },
+  {
+    "term": "heavy spray",
+    "en": "Water thrown up by tyres on a wet road, which can reduce visibility."
+  },
+  {
+    "term": "herding animals",
+    "en": "Moving livestock (such as sheep or cattle) along or across a road."
+  },
+  {
+    "term": "hi-vis",
+    "en": "High-visibility clothing (bright/reflective) that makes a person easier to see, especially in poor light."
+  },
+  {
+    "term": "High gear",
+    "en": "A higher gear used for faster cruising, with less engine braking effect than a low gear."
+  },
+  {
+    "term": "high street",
+    "en": "The main shopping street in a town or city centre."
+  },
+  {
+    "term": "high-sided vehicle",
+    "en": "A tall vehicle such as a lorry or van that can be strongly affected by side winds."
+  },
+  {
+    "term": "High-sided vehicles",
+    "en": "Tall vehicles such as lorries or vans that can be pushed sideways by strong wind."
+  },
+  {
+    "term": "Highway Code",
+    "en": "The official UK rules and advice for road users."
+  },
+  {
+    "term": "hill crest",
+    "en": "The top of a hill where your view of the road ahead is often limited."
+  },
+  {
+    "term": "Hill starts",
+    "en": "Moving off from a standstill on an uphill slope without rolling back."
+  },
+  {
+    "term": "horse rider",
+    "en": "A person riding a horse on or beside the road; treat them as vulnerable road users."
+  },
+  {
+    "term": "horse riders",
+    "en": "People riding horses on or beside the road."
+  },
+  {
+    "term": "humpback bridge",
+    "en": "A bridge with a sharp rise in the middle that can hide traffic beyond it."
+  },
+  {
+    "term": "incident",
+    "en": "An accident, breakdown, or other unexpected event on the road."
+  },
+  {
+    "term": "indicating",
+    "en": "Using your direction indicators to show you intend to turn or change lane."
+  },
+  {
+    "term": "indicators",
+    "en": "Flashing lights on a vehicle used to show you intend to turn or change lane."
+  },
+  {
+    "term": "insurance",
+    "en": "A policy that can cover costs after an accident, damage, or claim."
+  },
+  {
+    "term": "insurance certificate",
+    "en": "A document that proves your vehicle has valid insurance cover."
+  },
+  {
+    "term": "interior mirror",
+    "en": "The rear-view mirror inside the car, usually at the top of the windscreen."
+  },
+  {
+    "term": "Jockey wheel",
+    "en": "A small wheel near the trailer hitch used to support and manoeuvre the trailer when unhitched."
+  },
+  {
+    "term": "junction",
+    "en": "A place where roads meet or cross, such as a T-junction or crossroads."
+  },
+  {
+    "term": "Junction on a bend",
+    "en": "A side road joining the main road on a curve, which can reduce visibility."
+  },
+  {
+    "term": "junctions",
+    "en": "Places where roads meet or cross; smaller road users can be harder to spot there."
+  },
+  {
+    "term": "kerb",
+    "en": "The raised stone or concrete edge between the road and the pavement (US: curb)."
+  },
+  {
+    "term": "Kerbs",
+    "en": "The raised stone or concrete edge between the road and the pavement."
+  },
+  {
+    "term": "kick-down",
+    "en": "Pressing the accelerator hard in an automatic car so it changes to a lower gear for quicker acceleration."
+  },
+  {
+    "term": "lane closures",
+    "en": "When one or more lanes are temporarily closed, often due to roadworks or an incident."
+  },
+  {
+    "term": "lane markings",
+    "en": "Painted lines on the road that show where each traffic lane is."
+  },
+  {
+    "term": "Lap belt",
+    "en": "A seat belt that goes only across the hips, without a diagonal shoulder strap."
+  },
+  {
+    "term": "large goods vehicles",
+    "en": "Big trucks that carry freight; often called LGVs in the UK."
+  },
+  {
+    "term": "leaded fuel",
+    "en": "Older petrol that contained lead; not used for normal road cars today."
+  },
+  {
+    "term": "learner driver",
+    "en": "Someone learning to drive, often showing L plates on the vehicle."
+  },
+  {
+    "term": "left lane",
+    "en": "In the UK, the lane nearest the left-hand side of the road (kerb side) for normal driving."
+  },
+  {
+    "term": "level crossing",
+    "en": "A place where a road crosses a railway line, often with barriers and warning lights."
+  },
+  {
+    "term": "level crossings",
+    "en": "A place where a road crosses a railway line, often with barriers and warning lights."
+  },
+  {
+    "term": "licensing authority",
+    "en": "The official body that issues and manages driving licences (in Great Britain, the DVLA)."
+  },
+  {
+    "term": "Licensing authority",
+    "en": "The official body that issues and manages driving licences and related vehicle records (e.g. DVLA)."
+  },
+  {
+    "term": "licensing authority (DVLA)",
+    "en": "The official body that issues and manages driving licences (Driver and Vehicle Licensing Agency)."
+  },
+  {
+    "term": "limited visibility",
+    "en": "When you cannot see far enough ahead because something blocks your view."
+  },
+  {
+    "term": "live lane",
+    "en": "A lane that is open for normal moving traffic (not closed or for emergency use only)."
+  },
+  {
+    "term": "livestock",
+    "en": "Farm animals such as sheep or cattle that may be on or near the road."
+  },
+  {
+    "term": "Local authority recycling site",
+    "en": "A council tip or recycling centre that accepts items like used engine oil."
+  },
+  {
+    "term": "Local diversion route",
+    "en": "A temporary alternative path around a closed or blocked road."
+  },
+  {
+    "term": "long vehicle",
+    "en": "A very lengthy type of road vehicle, such as a lorry, coach, or articulated truck."
+  },
+  {
+    "term": "loose chippings",
+    "en": "Small loose stones on a newly surfaced road that can fly up and damage vehicles."
+  },
+  {
+    "term": "loose gravel",
+    "en": "Small stones on the road surface that can make tyres slip more easily."
+  },
+  {
+    "term": "Loose gravel",
+    "en": "Small loose stones on the road surface that can reduce tyre grip."
+  },
+  {
+    "term": "lorries",
+    "en": "Large goods vehicles used to carry freight (UK term for trucks)."
+  },
+  {
+    "term": "lorry",
+    "en": "A large goods vehicle used for carrying cargo (also called a truck)."
+  },
+  {
+    "term": "Lorry",
+    "en": "A large goods truck used to carry heavy loads (UK term for a truck)."
+  },
+  {
+    "term": "Low gear",
+    "en": "A lower gear ratio that gives more engine control at slower speeds, often used on hills."
+  },
+  {
+    "term": "low-flying aircraft",
+    "en": "Planes flying near the ground, often near an airport approach."
+  },
+  {
+    "term": "lower gears",
+    "en": "Gears with more engine power and less speed, useful on hills."
+  },
+  {
+    "term": "main beam",
+    "en": "High-beam headlights that light farther ahead but can dazzle other road users."
+  },
+  {
+    "term": "Main beam",
+    "en": "High-beam headlights that light farther ahead but can dazzle other road users."
+  },
+  {
+    "term": "Main beam headlights",
+    "en": "Full high-beam headlights that light farther ahead but can dazzle other drivers."
+  },
+  {
+    "term": "main road",
+    "en": "A larger, busier road that smaller side roads join onto."
+  },
+  {
+    "term": "main-beam headlights",
+    "en": "The high-intensity headlight setting (full beam) for dark roads with no oncoming traffic."
+  },
+  {
+    "term": "major road",
+    "en": "The more important road at a junction, which usually has priority."
+  },
+  {
+    "term": "mandatory instruction",
+    "en": "An order you must follow, not just advice."
+  },
+  {
+    "term": "Mandatory instruction",
+    "en": "An order you must follow, not just advice."
+  },
+  {
+    "term": "mandatory route",
+    "en": "A route you are required to follow, not just a suggested direction."
+  },
+  {
+    "term": "Mandatory rules",
+    "en": "Rules you are legally required to obey."
+  },
+  {
+    "term": "mandatory speed limit",
+    "en": "A speed limit you must obey by law, often shown in a red circle or on overhead gantry signs."
+  },
+  {
+    "term": "manoeuvre",
+    "en": "A controlled driving movement such as reversing, turning, or parking."
+  },
+  {
+    "term": "Manufacturer's handbook",
+    "en": "The official owner’s manual from the car maker explaining controls and systems."
+  },
+  {
+    "term": "marker posts",
+    "en": "Small roadside posts that show distance markers and the direction to the nearest emergency phone."
+  }
+]

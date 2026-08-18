@@ -1,0 +1,720 @@
+{
+  "incidents": {
+    "IN-36": {
+      "promptPl": "Dlaczego kask motocyklisty należy zdejmować tylko wtedy, gdy jest to konieczne?",
+      "options": [
+        {
+          "pl": "Może się sprzeciwić"
+        },
+        {
+          "pl": "Może pogorszyć urazy szyi"
+        },
+        {
+          "pl": "Pozwala mu się ochłodzić"
+        },
+        {
+          "pl": "Może uszkodzić kask"
+        }
+      ]
+    },
+    "IN-37": {
+      "promptPl": "Na miejscu zdarzenia nieprzytomna osoba potrzebuje pomocy. Co sprawdzić najpierw?",
+      "options": [
+        {
+          "pl": "Jej ubezpieczenie"
+        },
+        {
+          "pl": "Jej alergie"
+        },
+        {
+          "pl": "Jej komfort"
+        },
+        {
+          "pl": "Jej drogi oddechowe"
+        }
+      ]
+    },
+    "IN-38": {
+      "promptPl": "Kiedy wolno używać świateł awaryjnych na autostradzie?",
+      "options": [
+        {
+          "pl": "Gdy ktoś jedzie zbyt blisko za Tobą"
+        },
+        {
+          "pl": "Gdy nagle zwalniasz z powodu niebezpieczeństwa przed Tobą"
+        },
+        {
+          "pl": "Gdy jesteś holowany"
+        },
+        {
+          "pl": "Gdy używasz pasa awaryjnego jako pasa ruchu"
+        }
+      ]
+    },
+    "IN-39": {
+      "promptPl": "Służby ratunkowe są w drodze, a miejsce zdarzenia jest bezpieczne. Jaki jest Twój pierwszy priorytet wobec nieprzytomnego motocyklisty?",
+      "options": [
+        {
+          "pl": "Sprawdzić złamania"
+        },
+        {
+          "pl": "Sprawdzić krwawienie"
+        },
+        {
+          "pl": "Sprawdzić oddech"
+        },
+        {
+          "pl": "Sprawdzić siniaki"
+        }
+      ]
+    },
+    "IN-40": {
+      "promptPl": "Podczas jazdy autostradą bagaż wypada z Twojego pojazdu. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zatrzymać się i go zebrać"
+        },
+        {
+          "pl": "Pójść pieszo, by go odzyskać"
+        },
+        {
+          "pl": "Zatrzymać się przy następnym telefonie awaryjnym i zgłosić to"
+        },
+        {
+          "pl": "Zjechać na bok i sygnalizować ruchowi"
+        }
+      ]
+    },
+    "IN-41": {
+      "promptPl": "Czym RKO u 6-letniego dziecka różni się od RKO u dorosłego?",
+      "options": [
+        {
+          "pl": "Używać tylko dwóch palców"
+        },
+        {
+          "pl": "Uciskać dwa razy szybciej"
+        },
+        {
+          "pl": "Używać jednej ręki, uciskając na 4–5 cm"
+        },
+        {
+          "pl": "Uciskać wolniej i mocniej"
+        }
+      ]
+    },
+    "IN-42": {
+      "promptPl": "Twój pojazd ma przebicie na autostradzie. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Jechać wolno do stacji obsługi"
+        },
+        {
+          "pl": "Szybko zmienić koło"
+        },
+        {
+          "pl": "Zatrzymać się w zatoce awaryjnej (refuge area) i wezwać pomoc"
+        },
+        {
+          "pl": "Zatrzymać się na swoim pasie ze światłami awaryjnymi"
+        }
+      ]
+    },
+    "IN-43": {
+      "promptPl": "Na miejscu zdarzenia, jak możesz pomóc małemu dziecku, które nie oddycha?",
+      "options": [
+        {
+          "pl": "Szukać rodziców"
+        },
+        {
+          "pl": "Udrożnić drogi oddechowe i rozpocząć RKO"
+        },
+        {
+          "pl": "Ułożyć je w pozycji bocznej ustalonej"
+        },
+        {
+          "pl": "Rozmawiać z nim, aż przybędzie pomoc"
+        }
+      ]
+    },
+    "IN-44": {
+      "promptPl": "Po kolizji, o jaki dokument może poprosić Cię policja?",
+      "options": [
+        {
+          "pl": "Historię serwisową pojazdu"
+        },
+        {
+          "pl": "Certyfikat egzaminu teoretycznego"
+        },
+        {
+          "pl": "Dokument rejestracyjny pojazdu"
+        },
+        {
+          "pl": "Prawo jazdy"
+        }
+      ]
+    },
+    "IN-45": {
+      "promptPl": "Podczas wykonywania RKO u dorosłego, jak szybko powinny być uciskania klatki piersiowej?",
+      "options": [
+        {
+          "pl": "Raz na sekundę"
+        },
+        {
+          "pl": "Dwa razy na sekundę"
+        },
+        {
+          "pl": "Trzy razy na sekundę"
+        },
+        {
+          "pl": "Raz na pięć sekund"
+        }
+      ]
+    },
+    "IN-46": {
+      "promptPl": "Co pomaga zmniejszyć ryzyko pożaru pojazdu?",
+      "options": [
+        {
+          "pl": "Trzymanie płynu chłodzącego powyżej maksimum"
+        },
+        {
+          "pl": "Sprawdzanie silnego zapachu paliwa"
+        },
+        {
+          "pl": "Unikanie pełnego baku"
+        },
+        {
+          "pl": "Stosowanie dodatków do paliwa"
+        }
+      ]
+    },
+    "IN-47": {
+      "promptPl": "Pieszy mocno krwawi z rany na nodze. Nic nie jest wbite w ranę. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Lekko przykładać opatrunek do rany"
+        },
+        {
+          "pl": "Trzymać nogę płasko"
+        },
+        {
+          "pl": "Podać ciepły napój"
+        },
+        {
+          "pl": "Mocno uciskać ranę"
+        }
+      ]
+    },
+    "IN-48": {
+      "promptPl": "Podczas wykonywania RKO ktoś oferuje pomoc. O co powinieneś go poprosić?",
+      "options": [
+        {
+          "pl": "Przynieść koc"
+        },
+        {
+          "pl": "Przynieść apteczkę"
+        },
+        {
+          "pl": "Przynieść defibrylator (AED)"
+        },
+        {
+          "pl": "Przynieść parawan zapewniający prywatność"
+        }
+      ]
+    },
+    "IN-49": {
+      "promptPl": "Poproszono Cię o znalezienie defibrylatora (AED). Jaki jest najlepszy sposób?",
+      "options": [
+        {
+          "pl": "Iść za strzałkami przy drodze"
+        },
+        {
+          "pl": "Zapytać operatora numeru alarmowego"
+        },
+        {
+          "pl": "Użyć nawigacji satelitarnej"
+        },
+        {
+          "pl": "Przeszukać rzeczy poszkodowanego"
+        }
+      ]
+    },
+    "IN-50": {
+      "promptPl": "Przed wjazdem do tunelu, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Wyłączyć radio"
+        },
+        {
+          "pl": "Zdjąć okulary przeciwsłoneczne"
+        },
+        {
+          "pl": "Zamknąć szyberdach"
+        },
+        {
+          "pl": "Włączyć wycieraczki"
+        }
+      ]
+    },
+    "IN-51": {
+      "promptPl": "Twój pojazd psuje się na automatycznym przejeździe kolejowym. Co zrobić najpierw?",
+      "options": [
+        {
+          "pl": "Wezwać pomoc drogową"
+        },
+        {
+          "pl": "Ostrzec nadjeżdżające pociągi"
+        },
+        {
+          "pl": "Odpchnąć pojazd z przejazdu"
+        },
+        {
+          "pl": "Wysadzić wszystkich i odejść od przejazdu"
+        }
+      ]
+    },
+    "IN-52": {
+      "promptPl": "Duży przedmiot spada z ciężarówki na autostradę. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zatrzymać się i go usunąć"
+        },
+        {
+          "pl": "Gonić ciężarówkę"
+        },
+        {
+          "pl": "Zatrzymać się w pobliżu"
+        },
+        {
+          "pl": "Zgłosić to przy następnym telefonie awaryjnym"
+        }
+      ]
+    },
+    "IN-53": {
+      "promptPl": "Ktoś ma poważne oparzenia po zdarzeniu. Jak możesz pomóc?",
+      "options": [
+        {
+          "pl": "Nałożyć balsam"
+        },
+        {
+          "pl": "Przekłuć pęcherze"
+        },
+        {
+          "pl": "Zdjąć przyklejoną odzież"
+        },
+        {
+          "pl": "Schłodzić oparzenia czystą wodą"
+        }
+      ]
+    },
+    "IN-54": {
+      "promptPl": "Po kolizji, który objaw ostrzega o wstrząsie?",
+      "options": [
+        {
+          "pl": "Zarumieniona skóra"
+        },
+        {
+          "pl": "Ciepła, sucha skóra"
+        },
+        {
+          "pl": "Wolne tętno"
+        },
+        {
+          "pl": "Szybki, płytki oddech"
+        }
+      ]
+    },
+    "IN-55": {
+      "promptPl": "Twój samochód psuje się na przejeździe kolejowym. Co zrobić najpierw?",
+      "options": [
+        {
+          "pl": "Ostrzec kierowców z tyłu"
+        },
+        {
+          "pl": "Opuścić pojazd i odprowadzić wszystkich z dala"
+        },
+        {
+          "pl": "Iść wzdłuż torów"
+        },
+        {
+          "pl": "Zostać w aucie"
+        }
+      ]
+    },
+    "IN-56": {
+      "promptPl": "Kiedy wolno używać świateł awaryjnych?",
+      "options": [
+        {
+          "pl": "Gdy jesteś zatrzymany i tworzysz tymczasową przeszkodę"
+        },
+        {
+          "pl": "Gdy jedziesz bez świateł mijania"
+        },
+        {
+          "pl": "Gdy krótko parkujesz na podwójnych żółtych liniach"
+        },
+        {
+          "pl": "Gdy jedziesz wolno, bo się zgubiłeś"
+        }
+      ]
+    }
+  },
+  "road-signs": {
+    "RS-R-01": {
+      "promptPl": "Co oznacza czerwony okrągły znak z symbolem autobusu?",
+      "options": [
+        {
+          "pl": "Autobusy nie mają wjazdu na tę drogę"
+        },
+        {
+          "pl": "Trasa tylko dla autobusów"
+        },
+        {
+          "pl": "Przystanek autobusowy przed Tobą"
+        },
+        {
+          "pl": "Pas komunikacji publicznej"
+        }
+      ]
+    },
+    "RS-R-02": {
+      "promptPl": "Co oznacza ten trójkątny znak ostrzegawczy?",
+      "options": [
+        {
+          "pl": "Koniec drogi dwujezdniowej przed Tobą"
+        },
+        {
+          "pl": "Droga staje się jednokierunkowa"
+        },
+        {
+          "pl": "Wyprzedzanie jest zabronione"
+        },
+        {
+          "pl": "Sygnalizacja świetlna przed Tobą"
+        }
+      ]
+    },
+    "RS-R-03": {
+      "promptPl": "Co oznacza ten trójkątny znak ostrzegawczy?",
+      "options": [
+        {
+          "pl": "Droga się zwęża po obu stronach przed Tobą"
+        },
+        {
+          "pl": "Droga ostro zakręca"
+        },
+        {
+          "pl": "Koniec ruchu dwukierunkowego"
+        },
+        {
+          "pl": "Droga jednokierunkowa przed Tobą"
+        }
+      ]
+    },
+    "RS-R-04": {
+      "promptPl": "Co oznacza czerwony okrągły znak z przekreślonym symbolem motocykla?",
+      "options": [
+        {
+          "pl": "Zakaz wjazdu motocykli"
+        },
+        {
+          "pl": "Tylko motocykle"
+        },
+        {
+          "pl": "Koniec ograniczenia dla motocykli"
+        },
+        {
+          "pl": "Zalecana trasa dla motocykli"
+        }
+      ]
+    },
+    "RS-R-05": {
+      "promptPl": "Co oznacza ten trójkątny znak ostrzegawczy?",
+      "options": [
+        {
+          "pl": "Skrzyżowanie T przed Tobą, na którym masz pierwszeństwo przed pojazdami z prawej"
+        },
+        {
+          "pl": "Skrzyżowanie T przed Tobą, na którym musisz ustąpić pierwszeństwa pojazdom z prawej"
+        },
+        {
+          "pl": "Skrzyżowanie o równych pierwszeństwach"
+        },
+        {
+          "pl": "Koniec drogi przed Tobą"
+        }
+      ]
+    },
+    "RS-R-06": {
+      "promptPl": "Co oznacza ten trójkątny znak ostrzegawczy?",
+      "options": [
+        {
+          "pl": "Skrzyżowanie na zakręcie przed Tobą"
+        },
+        {
+          "pl": "Tylko ostry zakręt w prawo"
+        },
+        {
+          "pl": "Droga się zwęża po jednej stronie"
+        },
+        {
+          "pl": "Skrzyżowanie T przed Tobą"
+        }
+      ]
+    },
+    "RS-R-07": {
+      "promptPl": "Co oznacza ten znak drogowy?",
+      "options": [
+        {
+          "pl": "Sygnalizacja świetlna przed Tobą – zatrzymaj się, gdy świeci czerwone"
+        },
+        {
+          "pl": "Przejście dla pieszych z sygnalizacją"
+        },
+        {
+          "pl": "Przejazd kolejowy bez szlabanów"
+        },
+        {
+          "pl": "Tylko tymczasowa sygnalizacja świetlna"
+        }
+      ]
+    },
+    "RS-R-08": {
+      "promptPl": "Co oznacza ten znak drogowy?",
+      "options": [
+        {
+          "pl": "Przejazd kolejowy bez szlabanu ani bramy przed Tobą"
+        },
+        {
+          "pl": "Przejazd kolejowy z szlabanami przed Tobą"
+        },
+        {
+          "pl": "Tylko przejazd tramwajowy"
+        },
+        {
+          "pl": "Stacja kolejowa przed Tobą"
+        }
+      ]
+    },
+    "RS-R-09": {
+      "promptPl": "Co oznacza ten niebieski okrągły znak?",
+      "options": [
+        {
+          "pl": "Pojazdy muszą trzymać się lewej strony przeszkody"
+        },
+        {
+          "pl": "Skręt w lewo przed Tobą"
+        },
+        {
+          "pl": "Droga jednokierunkowa w lewo"
+        },
+        {
+          "pl": "Wyprzedzanie tylko z lewej"
+        }
+      ]
+    },
+    "RS-R-10": {
+      "promptPl": "Co oznacza ten niebieski okrągły znak?",
+      "options": [
+        {
+          "pl": "Pojazdy mogą omijać z dowolnej strony, by dojechać do tego samego miejsca"
+        },
+        {
+          "pl": "Pojazdy muszą omijać tylko z lewej"
+        },
+        {
+          "pl": "Pojazdy muszą omijać tylko z prawej"
+        },
+        {
+          "pl": "Ruch jednokierunkowy przed Tobą"
+        }
+      ]
+    },
+    "RS-R-11": {
+      "promptPl": "Co oznacza ten trójkątny znak ostrzegawczy?",
+      "options": [
+        {
+          "pl": "Roboty drogowe przed Tobą"
+        },
+        {
+          "pl": "Śliska jezdnia przed Tobą"
+        },
+        {
+          "pl": "Zwężenie drogi przed Tobą"
+        },
+        {
+          "pl": "Nierówna nawierzchnia"
+        }
+      ]
+    },
+    "RS-R-12": {
+      "promptPl": "Co oznacza ten tymczasowy znak drogowy?",
+      "options": [
+        {
+          "pl": "Tymczasowe zamknięcie pasa przed Tobą"
+        },
+        {
+          "pl": "Stałe zwężenie drogi"
+        },
+        {
+          "pl": "Ruch dwukierunkowy przed Tobą"
+        },
+        {
+          "pl": "Koniec robót drogowych"
+        }
+      ]
+    },
+    "RS-W-01": {
+      "promptPl": "Jedziesz wąską drogą wiejską i widzisz trójkątny znak ostrzegawczy pokazujący zwężenie drogi po lewej. Na co masz się przygotować?",
+      "options": [
+        {
+          "pl": "Mniejszą szerokość drogi po lewej, wymagającą ostrożnego ustawienia pojazdu"
+        },
+        {
+          "pl": "Natychmiast przejechać na lewą stronę"
+        },
+        {
+          "pl": "Wyprzedzanie jest obowiązkowe przed zwężeniem"
+        },
+        {
+          "pl": "Droga staje się jednokierunkowa przed Tobą"
+        }
+      ]
+    },
+    "RS-W-02": {
+      "promptPl": "Jedziesz po terenie pagórkowatym i widzisz trójkątny znak ostrzegawczy pokazujący strome wzniesienie. Na co masz się przygotować?",
+      "options": [
+        {
+          "pl": "Strome wzniesienie, na którym będziesz potrzebować niższych biegów i możesz spotkać wolniejsze pojazdy"
+        },
+        {
+          "pl": "Stromy zjazd przed Tobą"
+        },
+        {
+          "pl": "Tylko nierówną nawierzchnię"
+        },
+        {
+          "pl": "Koniec odcinka górskiego"
+        }
+      ]
+    },
+    "RS-W-03": {
+      "promptPl": "Jedziesz przez tereny rolnicze i widzisz trójkątny znak ostrzegawczy ze zwierzętami gospodarskimi. Na jakie zagrożenie masz uważać?",
+      "options": [
+        {
+          "pl": "Zwierzęta gospodarskie mogą wejść na drogę lub ją przeciąć"
+        },
+        {
+          "pl": "Przed Tobą jest wjazd na farmę"
+        },
+        {
+          "pl": "Na tej drodze dozwolone są tylko pojazdy rolnicze"
+        },
+        {
+          "pl": "W pobliżu jest targ bydła"
+        }
+      ]
+    },
+    "RS-W-04": {
+      "promptPl": "Jedziesz drogą główną i widzisz trójkątny znak ostrzegawczy pokazujący drogę boczną włączającą się z prawej. Jakiego zagrożenia się spodziewać?",
+      "options": [
+        {
+          "pl": "Pojazdy mogą wyjechać z drogi bocznej i włączyć się na Twój tor jazdy"
+        },
+        {
+          "pl": "Ruch z prawej zawsze ma pierwszeństwo"
+        },
+        {
+          "pl": "Musisz wyprzedzić przed skrzyżowaniem"
+        },
+        {
+          "pl": "Droga staje się jednokierunkowa przed Tobą"
+        }
+      ]
+    },
+    "RS-I-01": {
+      "promptPl": "Widzisz ten znak ostrzegawczy. Co oznacza?",
+      "options": [
+        {
+          "pl": "Skrzyżowanie przed Tobą"
+        },
+        {
+          "pl": "Skrzyżowanie przesunięte przed Tobą"
+        },
+        {
+          "pl": "Droga się zwęża po obu stronach"
+        },
+        {
+          "pl": "Tylko droga boczna po lewej"
+        }
+      ]
+    },
+    "RS-I-02": {
+      "promptPl": "Widzisz ten znak ostrzegawczy. Co oznacza?",
+      "options": [
+        {
+          "pl": "Śliska jezdnia przed Tobą"
+        },
+        {
+          "pl": "Nierówna nawierzchnia przed Tobą"
+        },
+        {
+          "pl": "Zwężenie drogi przed Tobą"
+        },
+        {
+          "pl": "Progi zwalniające przed Tobą"
+        }
+      ]
+    },
+    "RS-I-03": {
+      "promptPl": "Niebieski prostokątny znak z białym tekstem pokazujący „M” i numer oznacza:",
+      "options": [
+        {
+          "pl": "Autostradę przed Tobą z numerem trasy"
+        },
+        {
+          "pl": "Maksymalne ograniczenie prędkości"
+        },
+        {
+          "pl": "Znacznik przebytej drogi (mileage)"
+        },
+        {
+          "pl": "Obowiązkową trasę"
+        }
+      ]
+    },
+    "RS-I-04": {
+      "promptPl": "Zielony prostokątny znak z białym tekstem i numerami tras podaje:",
+      "options": [
+        {
+          "pl": "Kierunki i cele na drodze głównej (primary route)"
+        },
+        {
+          "pl": "Ograniczenie prędkości na drogach głównych"
+        },
+        {
+          "pl": "Ograniczenie na drogach głównych"
+        },
+        {
+          "pl": "Koniec drogi głównej"
+        }
+      ]
+    },
+    "RS-I-05": {
+      "promptPl": "Widzisz znak ostrzegający o luźnym żwirze (loose chippings). Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przyspieszyć, by szybko przejechać ten odcinek"
+        },
+        {
+          "pl": "Zmniejszyć prędkość i zwiększyć odległość od pojazdu z przodu"
+        },
+        {
+          "pl": "Gwałtownie zahamować, by sprawdzić opony"
+        },
+        {
+          "pl": "Jeździć blisko krawężnika, by uniknąć żwiru"
+        }
+      ]
+    }
+  }
+}

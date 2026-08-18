@@ -37,6 +37,8 @@ const FILTER_OPTIONS: { value: AdminUserFilter; label: string }[] = [
   { value: 'lang_ar', label: 'Language: Arabic' },
   { value: 'lang_ur', label: 'Language: Urdu' },
   { value: 'lang_ro', label: 'Language: Romanian' },
+  { value: 'lang_pl', label: 'Language: Polish' },
+  { value: 'lang_pt', label: 'Language: Portuguese' },
   { value: 'lang_en', label: 'Language: English' },
   { value: 'mock_started', label: 'Mock started' },
   { value: 'mock_completed', label: 'Mock completed' },

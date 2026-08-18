@@ -1,0 +1,322 @@
+[
+  {
+    "term": "oncoming traffic",
+    "en": "Vehicles travelling toward you from the opposite direction."
+  },
+  {
+    "term": "urban clearway",
+    "en": "An urban road where stopping is restricted during posted times, except briefly for passengers."
+  },
+  {
+    "term": "high street",
+    "en": "The main shopping street in a town or city centre."
+  },
+  {
+    "term": "Blue Badge",
+    "en": "A UK disability parking badge that gives certain parking concessions."
+  },
+  {
+    "term": "long vehicle",
+    "en": "A very lengthy type of road vehicle, such as a lorry, coach, or articulated truck."
+  },
+  {
+    "term": "estate car",
+    "en": "A car with an extended rear area for carrying more luggage."
+  },
+  {
+    "term": "traffic officer",
+    "en": "An official authorised to manage traffic on motorways and some major roads."
+  },
+  {
+    "term": "give-way lines",
+    "en": "Road markings at a junction where you must let other traffic go first."
+  },
+  {
+    "term": "red route",
+    "en": "A road marked with red lines where stopping and parking are tightly controlled."
+  },
+  {
+    "term": "clearway",
+    "en": "A road marked so that stopping on the main carriageway is tightly restricted."
+  },
+  {
+    "term": "temporary speed limit",
+    "en": "A speed limit that applies only for a limited time, often near roadworks."
+  },
+  {
+    "term": "controlled parking zone",
+    "en": "An area where parking is controlled by signs and marked bays at set times."
+  },
+  {
+    "term": "Double white lines",
+    "en": "Two white lines along the centre of the road that restrict crossing and parking."
+  },
+  {
+    "term": "disabled bays",
+    "en": "Parking spaces reserved for vehicles displaying a valid Blue Badge."
+  },
+  {
+    "term": "caravan",
+    "en": "A trailer designed for living or camping, towed behind a vehicle."
+  },
+  {
+    "term": "blind-spot monitoring",
+    "en": "A system that warns you about vehicles in areas you cannot see in the mirrors."
+  },
+  {
+    "term": "medically exempt",
+    "en": "Excused from a legal requirement for approved medical reasons."
+  },
+  {
+    "term": "driver-assistance system",
+    "en": "Technology that helps the driver with safety, control, or alerts."
+  },
+  {
+    "term": "child restraint",
+    "en": "A child seat or similar device that holds a child safely in the vehicle."
+  },
+  {
+    "term": "authorised recycling site",
+    "en": "An approved place that can safely take hazardous items like car batteries."
+  },
+  {
+    "term": "steering vibration",
+    "en": "Shaking felt through the steering wheel while driving."
+  },
+  {
+    "term": "leaded fuel",
+    "en": "Older petrol that contained lead; not used for normal road cars today."
+  },
+  {
+    "term": "sidewall cuts",
+    "en": "Cuts or damage in the side wall of a tyre that can make it illegal or unsafe."
+  },
+  {
+    "term": "loose gravel",
+    "en": "Small stones on the road surface that can make tyres slip more easily."
+  },
+  {
+    "term": "No waiting",
+    "en": "A UK restriction meaning you must not wait or park there at the times shown."
+  },
+  {
+    "term": "Waiting restrictions",
+    "en": "Rules that limit when you may wait or park along a stretch of road."
+  },
+  {
+    "term": "No loading",
+    "en": "A restriction meaning goods must not be loaded or unloaded there at the times shown."
+  },
+  {
+    "term": "obscured",
+    "en": "Partly hidden or hard to see, for example by dirt, trees, or another object."
+  },
+  {
+    "term": "road markings",
+    "en": "Lines, symbols, or writing painted on the road surface to guide or control traffic."
+  },
+  {
+    "term": "supplementary plates",
+    "en": "Small rectangular signs placed under a main road sign that add details such as times or exceptions."
+  },
+  {
+    "term": "dashboard warning light",
+    "en": "A light on the instrument panel that alerts you to a vehicle fault or important status."
+  },
+  {
+    "term": "casualties",
+    "en": "People injured in an accident or emergency."
+  },
+  {
+    "term": "incident",
+    "en": "An accident, breakdown, or other unexpected event on the road."
+  },
+  {
+    "term": "recovery position",
+    "en": "A side-lying first-aid position that helps keep an unconscious breathing person’s airway clear."
+  },
+  {
+    "term": "hazards",
+    "en": "Short for hazard warning lights: all indicators flashing to warn of danger or a stop."
+  },
+  {
+    "term": "emergency services",
+    "en": "Police, fire, and ambulance teams called to help at serious incidents."
+  },
+  {
+    "term": "defibrillator (AED)",
+    "en": "A portable device that can deliver an electric shock to try to restart a heart in cardiac arrest."
+  },
+  {
+    "term": "insurance",
+    "en": "A policy that can cover costs after an accident, damage, or claim."
+  },
+  {
+    "term": "vehicle registration",
+    "en": "The official number plate details that identify a vehicle."
+  },
+  {
+    "term": "National Insurance number",
+    "en": "A UK personal tax and benefits reference number, not a driving document."
+  },
+  {
+    "term": "pull over",
+    "en": "Move to the side of the road and stop safely."
+  },
+  {
+    "term": "breaks down",
+    "en": "Stops working so the vehicle cannot continue normally."
+  },
+  {
+    "term": "debris",
+    "en": "Scattered pieces of wreckage, objects, or rubbish left after a crash."
+  },
+  {
+    "term": "neck injuries",
+    "en": "Damage to the neck bones, muscles, or spinal cord that can be serious after a crash."
+  },
+  {
+    "term": "refuge area",
+    "en": "A safe lay-by beside a motorway where you can stop if you have a problem."
+  },
+  {
+    "term": "Driving licence",
+    "en": "The official card that shows you are allowed to drive certain vehicles."
+  },
+  {
+    "term": "chest compressions",
+    "en": "Repeated firm pushes on the centre of the chest during CPR to pump blood."
+  },
+  {
+    "term": "coolant",
+    "en": "The liquid in the engine cooling system that helps stop the engine overheating."
+  },
+  {
+    "term": "embedded",
+    "en": "Stuck inside the wound (for example glass or metal); do not pull it out yourself."
+  },
+  {
+    "term": "heavy bleeding",
+    "en": "A lot of blood loss from a wound that needs urgent pressure and help."
+  },
+  {
+    "term": "first aid kit",
+    "en": "A set of basic medical supplies for treating minor injuries at the scene."
+  },
+  {
+    "term": "sat nav",
+    "en": "Satellite navigation: a GPS device or app that gives driving directions."
+  },
+  {
+    "term": "railway crossing",
+    "en": "A place where a road crosses railway tracks, often with lights, barriers, or alarms."
+  },
+  {
+    "term": "severe burns",
+    "en": "Serious burn injuries that need careful cooling and urgent medical help."
+  },
+  {
+    "term": "blisters",
+    "en": "Fluid-filled swellings on the skin that can form after burns; do not burst them."
+  },
+  {
+    "term": "Flushed skin",
+    "en": "Skin that looks unusually red or warm, for example from heat or emotion."
+  },
+  {
+    "term": "temporary obstruction",
+    "en": "Something briefly blocking or slowing traffic, such as a stopped vehicle."
+  },
+  {
+    "term": "double yellow lines",
+    "en": "Two yellow lines at the kerb meaning no waiting at any time (unless signs say otherwise)."
+  },
+  {
+    "term": "Overtaking",
+    "en": "Passing a slower vehicle ahead by moving into another lane or the other side of the road."
+  },
+  {
+    "term": "T-junction",
+    "en": "A junction where one road meets another and ends, forming a ‘T’ shape."
+  },
+  {
+    "term": "Crossroads",
+    "en": "A junction where two roads cross each other."
+  },
+  {
+    "term": "Junction on a bend",
+    "en": "A side road joining the main road on a curve, which can reduce visibility."
+  },
+  {
+    "term": "Temporary traffic lights",
+    "en": "Portable signals used for a limited time, often at road works."
+  },
+  {
+    "term": "barrier",
+    "en": "A gate or arm that can block the road when a train is coming."
+  },
+  {
+    "term": "Road works",
+    "en": "Construction or repairs on the road that may change lanes or reduce speed."
+  },
+  {
+    "term": "Slippery road",
+    "en": "A road surface with poor grip, so vehicles can skid more easily."
+  },
+  {
+    "term": "Uneven road surface",
+    "en": "A bumpy or irregular road that can affect control and comfort."
+  },
+  {
+    "term": "Temporary lane closure",
+    "en": "One or more lanes closed for a limited time, often during road works."
+  },
+  {
+    "term": "road works",
+    "en": "Construction or repairs on the road that may change lanes or reduce speed."
+  },
+  {
+    "term": "country lane",
+    "en": "A narrow rural road, often with limited space and visibility."
+  },
+  {
+    "term": "road narrowing",
+    "en": "The road becoming less wide, so careful positioning is needed."
+  },
+  {
+    "term": "steep upward slope",
+    "en": "A sharp uphill climb where the road rises quickly."
+  },
+  {
+    "term": "lower gears",
+    "en": "Gears with more engine power and less speed, useful on hills."
+  },
+  {
+    "term": "farmland",
+    "en": "Countryside used for farming, where animals or slow farm vehicles may be near the road."
+  },
+  {
+    "term": "livestock",
+    "en": "Farm animals such as sheep or cattle that may be on or near the road."
+  },
+  {
+    "term": "scrapped",
+    "en": "When a vehicle is officially destroyed or broken up and removed from the road fleet."
+  },
+  {
+    "term": "Comprehensive",
+    "en": "A wide motor insurance level that can cover your own vehicle as well as damage to others."
+  },
+  {
+    "term": "Third party, fire and theft",
+    "en": "Insurance that covers injury/damage to others, plus fire damage and theft of your vehicle."
+  },
+  {
+    "term": "approved driving course",
+    "en": "A recognised training course (often for safer driving) that insurers may treat as a discount factor."
+  },
+  {
+    "term": "MOT",
+    "en": "The annual UK roadworthiness test required for most vehicles over a certain age."
+  }
+]

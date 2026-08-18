@@ -1,0 +1,856 @@
+{
+  "road-signs": {
+    "RS-6001": {
+      "promptPl": "Co zawsze oznacza trójkątny znak drogowy z czerwoną obwódką?",
+      "options": [
+        {
+          "pl": "Informację"
+        },
+        {
+          "pl": "Nakaz"
+        },
+        {
+          "pl": "Ostrzeżenie o zagrożeniu przed Tobą"
+        },
+        {
+          "pl": "Kierunek do celu podróży"
+        }
+      ]
+    },
+    "RS-6002": {
+      "promptPl": "Co zwykle nakazuje niebieski okrągły znak?",
+      "options": [
+        {
+          "pl": "Ostrzeżenie"
+        },
+        {
+          "pl": "Zakaz"
+        },
+        {
+          "pl": "Nakaz obowiązkowy"
+        },
+        {
+          "pl": "Informację tymczasową"
+        }
+      ]
+    },
+    "RS-6003": {
+      "promptPl": "Co zwykle oznacza czerwony okrągły znak?",
+      "options": [
+        {
+          "pl": "Tylko informację"
+        },
+        {
+          "pl": "Ostrzeżenie"
+        },
+        {
+          "pl": "Ograniczenie lub zakaz"
+        },
+        {
+          "pl": "Zalecaną trasę"
+        }
+      ]
+    },
+    "RS-6004": {
+      "promptPl": "Co zwykle przekazują białe prostokątne znaki?",
+      "options": [
+        {
+          "pl": "Obowiązkowe przepisy"
+        },
+        {
+          "pl": "Tylko ostrzeżenia"
+        },
+        {
+          "pl": "Informacje i kierunki"
+        },
+        {
+          "pl": "Tymczasowe zagrożenia"
+        }
+      ]
+    },
+    "RS-6005": {
+      "promptPl": "Czego wymaga znak STOP?",
+      "options": [
+        {
+          "pl": "Zwolnić i rozejrzeć się"
+        },
+        {
+          "pl": "Zatrzymać się tylko, gdy nadjeżdża ruch"
+        },
+        {
+          "pl": "Całkowicie się zatrzymać przed linią"
+        },
+        {
+          "pl": "Ustąpić pierwszeństwa bez zatrzymywania się"
+        }
+      ]
+    },
+    "RS-6006": {
+      "promptPl": "Widzisz białe linie zygzakowate namalowane na jezdni przy przejściu dla pieszych. Co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Zatrzymać się i poczekać na pieszych"
+        },
+        {
+          "pl": "Nie zatrzymywać się ani nie parkować w tym miejscu"
+        },
+        {
+          "pl": "Zmniejszyć prędkość do 20 mph"
+        },
+        {
+          "pl": "Wyprzedzać tylko, gdy jest bezpiecznie"
+        }
+      ]
+    },
+    "RS-6007": {
+      "promptPl": "Zbliżasz się do skrzyżowania i widzisz przerywaną białą linię w poprzek swojego pasa. Co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Całkowicie się zatrzymać przed linią"
+        },
+        {
+          "pl": "Ustąpić pierwszeństwa pojazdom na drodze głównej"
+        },
+        {
+          "pl": "Jechać dalej z tą samą prędkością"
+        },
+        {
+          "pl": "Użyć klaksonu przed kontynuowaniem jazdy"
+        }
+      ]
+    },
+    "RS-6008": {
+      "promptPl": "Widzisz pojedynczą żółtą linię namalowaną wzdłuż krawężnika. Co to oznacza i co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zakaz postoju o każdej porze – nie zatrzymuj się tu"
+        },
+        {
+          "pl": "Postój ograniczony w określonych godzinach – sprawdź pobliskie znaki z godzinami"
+        },
+        {
+          "pl": "Tylko załadunek – możesz załadować lub rozładować"
+        },
+        {
+          "pl": "Tylko mieszkańcy – parking dla mieszkańców"
+        }
+      ]
+    },
+    "RS-6009": {
+      "promptPl": "Widzisz podwójne żółte linie namalowane wzdłuż krawężnika. Co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Nie stać ani nie parkować tutaj o żadnej porze"
+        },
+        {
+          "pl": "Parkowanie dozwolone tylko w ciągu dnia"
+        },
+        {
+          "pl": "Załadunek i rozładunek dozwolony"
+        },
+        {
+          "pl": "Parkowanie tylko dla mieszkańców"
+        }
+      ]
+    },
+    "RS-6009A": {
+      "promptPl": "Widzisz ciągłą białą linię w poprzek swojego pasa na skrzyżowaniu ze znakiem STOP. Co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Całkowicie się zatrzymać przy linii lub przed nią, a potem jechać, gdy jest bezpiecznie"
+        },
+        {
+          "pl": "Zwolnić i ustąpić pierwszeństwa, jeśli to konieczne"
+        },
+        {
+          "pl": "Zatrzymać się tylko, gdy jest inny ruch"
+        },
+        {
+          "pl": "Jechać dalej, jeśli droga wygląda na wolną"
+        }
+      ]
+    },
+    "RS-6010": {
+      "promptPl": "Co zwykle oznaczają tymczasowe znaki drogowe z żółtym tłem?",
+      "options": [
+        {
+          "pl": "Stałe przepisy ruchu drogowego"
+        },
+        {
+          "pl": "Informacje o autostradzie"
+        },
+        {
+          "pl": "Tymczasowe roboty drogowe lub warunki"
+        },
+        {
+          "pl": "Atrakcje turystyczne"
+        }
+      ]
+    },
+    "RS-6011": {
+      "promptPl": "Co zwykle oznacza znak ograniczenia prędkości bez czerwonego koła?",
+      "options": [
+        {
+          "pl": "Maksymalną prędkość prawną"
+        },
+        {
+          "pl": "Tylko prędkość zalecaną"
+        },
+        {
+          "pl": "Minimalną prędkość"
+        },
+        {
+          "pl": "Strefę średniej prędkości"
+        }
+      ]
+    },
+    "RS-6012": {
+      "promptPl": "Co zwykle pokazuje niebieski prostokątny znak na autostradzie?",
+      "options": [
+        {
+          "pl": "Ostrzeżenia"
+        },
+        {
+          "pl": "Atrakcje turystyczne"
+        },
+        {
+          "pl": "Kierunki i usługi"
+        },
+        {
+          "pl": "Tymczasowe objazdy"
+        }
+      ]
+    },
+    "RS-6013": {
+      "promptPl": "Co oznacza biała strzałka na niebieskim okrągłym znaku?",
+      "options": [
+        {
+          "pl": "Zalecany kierunek"
+        },
+        {
+          "pl": "Kierunek, którego musisz się trzymać"
+        },
+        {
+          "pl": "Zakaz wjazdu"
+        },
+        {
+          "pl": "Droga jednokierunkowa"
+        }
+      ]
+    },
+    "RS-6014": {
+      "promptPl": "Co oznacza ciągła biała linia wzdłuż krawędzi drogi?",
+      "options": [
+        {
+          "pl": "Zakaz wyprzedzania"
+        },
+        {
+          "pl": "Krawędź jezdni"
+        },
+        {
+          "pl": "Pas dla rowerów"
+        },
+        {
+          "pl": "Pas dla autobusów"
+        }
+      ]
+    },
+    "RS-6015": {
+      "promptPl": "Co powinieneś zrobić, jeśli znaki drogowe wydają się przeczyć oznaczeniom na jezdni?",
+      "options": [
+        {
+          "pl": "Stosować się do oznaczeń na jezdni"
+        },
+        {
+          "pl": "Stosować się do znaków drogowych"
+        },
+        {
+          "pl": "Zignorować jedne i drugie"
+        },
+        {
+          "pl": "Zatrzymać się i czekać"
+        }
+      ]
+    },
+    "RS-6016": {
+      "promptPl": "Co oznacza odwrócony trójkątny znak na skrzyżowaniu?",
+      "options": [
+        {
+          "pl": "Zatrzymaj się"
+        },
+        {
+          "pl": "Ustąp pierwszeństwa"
+        },
+        {
+          "pl": "Zakaz wjazdu"
+        },
+        {
+          "pl": "Ostrzeżenie o niebezpieczeństwie"
+        }
+      ]
+    },
+    "RS-6017": {
+      "promptPl": "Co oznacza niebieski okrągły znak pokazujący mini rondo?",
+      "options": [
+        {
+          "pl": "Mini rondo przed Tobą – ustąp pierwszeństwa ruchowi z prawej"
+        },
+        {
+          "pl": "Tylko ruch jednokierunkowy"
+        },
+        {
+          "pl": "Zakaz wjazdu dla pojazdów"
+        },
+        {
+          "pl": "Ruch dwukierunkowy przecina drogę przed Tobą"
+        }
+      ]
+    },
+    "RS-6018": {
+      "promptPl": "Co zwykle wskazuje czerwono-biały pasiasty słupek?",
+      "options": [
+        {
+          "pl": "Zwężenie drogi"
+        },
+        {
+          "pl": "Bok przeszkody"
+        },
+        {
+          "pl": "Zmianę ograniczenia prędkości"
+        },
+        {
+          "pl": "Przejście dla pieszych"
+        }
+      ]
+    },
+    "RS-6019": {
+      "promptPl": "Co oznaczają ukośne białe linie w poprzek drogi przed zagrożeniem?",
+      "options": [
+        {
+          "pl": "Strefę zakazu wyprzedzania"
+        },
+        {
+          "pl": "Tylko uspokojenie ruchu"
+        },
+        {
+          "pl": "Zmniejszyć prędkość i być gotowym do zatrzymania"
+        },
+        {
+          "pl": "Koniec ograniczenia prędkości"
+        }
+      ]
+    },
+    "RS-6020": {
+      "promptPl": "Co zwykle oznacza zielony prostokątny znak?",
+      "options": [
+        {
+          "pl": "Kierunki na autostradzie"
+        },
+        {
+          "pl": "Kierunki na drodze głównej (primary route)"
+        },
+        {
+          "pl": "Informacje turystyczne"
+        },
+        {
+          "pl": "Tymczasowy objazd"
+        }
+      ]
+    },
+    "RS-6021": {
+      "promptPl": "Co oznacza znak ograniczenia prędkości z czarną przekątną linią?",
+      "options": [
+        {
+          "pl": "Prędkość zalecaną"
+        },
+        {
+          "pl": "Koniec ograniczenia prędkości"
+        },
+        {
+          "pl": "Minimalną prędkość"
+        },
+        {
+          "pl": "Strefę średniej prędkości"
+        }
+      ]
+    },
+    "RS-6022": {
+      "promptPl": "Co oznaczają białe linie zygzakowate przy przejściu szkolnym?",
+      "options": [
+        {
+          "pl": "Krótkotrwałe parkowanie dozwolone"
+        },
+        {
+          "pl": "Zakaz zatrzymywania się i parkowania"
+        },
+        {
+          "pl": "Strefę przystanku autobusowego"
+        },
+        {
+          "pl": "Tylko strefę wysiadania"
+        }
+      ]
+    },
+    "RS-6023": {
+      "promptPl": "Czego wymaga tymczasowy znak ograniczenia prędkości przy robotach drogowych?",
+      "options": [
+        {
+          "pl": "Traktować go jako zalecenie"
+        },
+        {
+          "pl": "Przestrzegać go jako limitu prawnego"
+        },
+        {
+          "pl": "Ignorować go w nocy"
+        },
+        {
+          "pl": "Jeździć jak inni kierowcy"
+        }
+      ]
+    },
+    "RS-6024": {
+      "promptPl": "Widzisz ciągłą białą linię wzdłuż środka drogi. Co to oznacza i co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Nie przekraczać ani nie jeździć na tej linii, by wyprzedzać"
+        },
+        {
+          "pl": "Wyprzedzanie dozwolone, jeśli jest bezpiecznie"
+        },
+        {
+          "pl": "Droga jednokierunkowa przed Tobą"
+        },
+        {
+          "pl": "Oznaczenie pasa dla autobusów"
+        }
+      ]
+    },
+    "RS-6025": {
+      "promptPl": "Przed czym ostrzega trójkątny znak ostrzegawczy z wykrzyknikiem i tabliczką „Hidden dip”?",
+      "options": [
+        {
+          "pl": "Nagłe zagłębienie drogi, które może być niewidoczne z przodu"
+        },
+        {
+          "pl": "Śliską nawierzchnię"
+        },
+        {
+          "pl": "Zwężenie drogi przed Tobą"
+        },
+        {
+          "pl": "Strome wzniesienie przed Tobą"
+        }
+      ]
+    },
+    "RS-6026": {
+      "promptPl": "Co zwykle oznacza znak pokazujący przekreśloną sygnalizację świetlną?",
+      "options": [
+        {
+          "pl": "Sygnalizacja nie działa i należy stosować się do znaków lub oznaczeń na jezdni"
+        },
+        {
+          "pl": "Tymczasową sygnalizację świetlną przed Tobą"
+        },
+        {
+          "pl": "Przejście dla pieszych sterowane sygnałami"
+        },
+        {
+          "pl": "Sygnalizację działającą normalnie"
+        }
+      ]
+    },
+    "RS-6027": {
+      "promptPl": "Przed czym zwykle ostrzega trójkątny znak ostrzegawczy z płatkiem śniegu?",
+      "options": [
+        {
+          "pl": "Śliską drogę z powodu śniegu lub lodu przed Tobą"
+        },
+        {
+          "pl": "Prawdopodobny silny wiatr"
+        },
+        {
+          "pl": "Mgłę przed Tobą"
+        },
+        {
+          "pl": "Luźny żwir na drodze"
+        }
+      ]
+    },
+    "RS-6028": {
+      "promptPl": "Co zwykle oznacza przerywana żółta linia przy krawędzi drogi?",
+      "options": [
+        {
+          "pl": "Zakaz postoju o każdej porze"
+        },
+        {
+          "pl": "Ograniczenia postoju w określonych godzinach"
+        },
+        {
+          "pl": "Zakaz załadunku"
+        },
+        {
+          "pl": "Przystanek autobusowy"
+        }
+      ]
+    },
+    "RS-6029": {
+      "promptPl": "Co powinieneś zrobić, jeśli znak jest częściowo zasłonięty, ale oznaczenia na jezdni są wyraźne?",
+      "options": [
+        {
+          "pl": "Zignorować jedne i drugie"
+        },
+        {
+          "pl": "Stosować się do oznaczeń na jezdni"
+        },
+        {
+          "pl": "Zatrzymać się i czekać"
+        },
+        {
+          "pl": "Jeździć za innymi pojazdami"
+        }
+      ]
+    },
+    "RS-6030": {
+      "promptPl": "Dlaczego zawsze powinieneś czytać tabliczki uzupełniające pod znakami drogowymi?",
+      "options": [
+        {
+          "pl": "Powtarzają tę samą regułę"
+        },
+        {
+          "pl": "Podają dodatkowe szczegóły, np. godziny lub warunki"
+        },
+        {
+          "pl": "To opcjonalne informacje"
+        },
+        {
+          "pl": "Dotyczą tylko autobusów"
+        }
+      ]
+    }
+  },
+  "incidents": {
+    "IN-17": {
+      "promptPl": "Jak możesz pomóc rannym osobom na miejscu wypadku?",
+      "options": [
+        {
+          "pl": "Podać jedzenie"
+        },
+        {
+          "pl": "Trzymać je w ruchu"
+        },
+        {
+          "pl": "Utrzymać ciepło i uspokajać"
+        },
+        {
+          "pl": "Zaproponować napój"
+        }
+      ]
+    },
+    "IN-18": {
+      "promptPl": "Jeśli podczas jazdy zapali się kontrolka ostrzegawcza na desce rozdzielczej, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zignorować ją"
+        },
+        {
+          "pl": "Poczekać na później"
+        },
+        {
+          "pl": "Bezpiecznie się zatrzymać i sprawdzić przyczynę"
+        },
+        {
+          "pl": "Jechać dalej"
+        }
+      ]
+    },
+    "IN-19": {
+      "promptPl": "Ranna osoba leży na ruchliwej drodze po wypadku. Co powinieneś zrobić najpierw?",
+      "options": [
+        {
+          "pl": "Leczyć wstrząs"
+        },
+        {
+          "pl": "Ostrzec nadjeżdżający ruch"
+        },
+        {
+          "pl": "Przenieść poszkodowanego"
+        },
+        {
+          "pl": "Przykryć go"
+        }
+      ]
+    },
+    "IN-20": {
+      "promptPl": "Kiedy należy przerwać RKO?",
+      "options": [
+        {
+          "pl": "Po 5 minutach"
+        },
+        {
+          "pl": "Przy wzywaniu służb ratunkowych"
+        },
+        {
+          "pl": "Gdy wróci oddech lub gdy przejmą to profesjonaliści"
+        },
+        {
+          "pl": "Gdy poczujesz zmęczenie"
+        }
+      ]
+    },
+    "IN-21": {
+      "promptPl": "Po zdarzeniu, gdy obszar jest już bezpieczny, jak dbać o poszkodowanych?",
+      "options": [
+        {
+          "pl": "Odsunąć ich od pojazdów"
+        },
+        {
+          "pl": "Pytać, jak doszło do wypadku"
+        },
+        {
+          "pl": "Podać im jedzenie"
+        },
+        {
+          "pl": "Trzymać ich w bezruchu i obserwować"
+        }
+      ]
+    },
+    "IN-22": {
+      "promptPl": "Poszkodowany jest nieprzytomny, ale oddycha prawidłowo w pozycji bocznej ustalonej. Co zrobić dalej?",
+      "options": [
+        {
+          "pl": "Naciskać między łopatkami"
+        },
+        {
+          "pl": "Wyprostować mu ramiona"
+        },
+        {
+          "pl": "Podać ciepły napój"
+        },
+        {
+          "pl": "Cały czas sprawdzać, czy drogi oddechowe pozostają drożne"
+        }
+      ]
+    },
+    "IN-23": {
+      "promptPl": "Jak najlepiej pomóc osobie w stanie wstrząsu po wypadku?",
+      "options": [
+        {
+          "pl": "Trzymać ją w ruchu"
+        },
+        {
+          "pl": "Podać jedzenie"
+        },
+        {
+          "pl": "Podać gorący napój"
+        },
+        {
+          "pl": "Mówić spokojnie i uspokajać"
+        }
+      ]
+    },
+    "IN-24": {
+      "promptPl": "Jesteś pierwszy na miejscu poważnego wypadku. Silniki są wyłączone, a światła awaryjne włączone. Co zrobić dalej?",
+      "options": [
+        {
+          "pl": "Poprosić pobliskich kierowców o pomoc"
+        },
+        {
+          "pl": "Podać rannym napoje"
+        },
+        {
+          "pl": "Wyciągnąć rannych z pojazdów"
+        },
+        {
+          "pl": "Upewnić się, że wezwano służby ratunkowe"
+        }
+      ]
+    },
+    "IN-25": {
+      "promptPl": "Na miejscu wypadku, jak możesz pomóc nieprzytomnemu poszkodowanemu?",
+      "options": [
+        {
+          "pl": "Robić zdjęcia"
+        },
+        {
+          "pl": "Sprawdzić, czy oddycha prawidłowo"
+        },
+        {
+          "pl": "Przenieść go dla wygody"
+        },
+        {
+          "pl": "Polać mu twarz wodą"
+        }
+      ]
+    },
+    "IN-26": {
+      "promptPl": "Skąd będziesz wiedzieć, jak użyć publicznego defibrylatora (AED)?",
+      "options": [
+        {
+          "pl": "Musisz mieć szkolenie"
+        },
+        {
+          "pl": "Najpierw przeczytać instrukcję"
+        },
+        {
+          "pl": "Poszkodowany to wyjaśni"
+        },
+        {
+          "pl": "AED daje wyraźne instrukcje głosowe i wizualne"
+        }
+      ]
+    },
+    "IN-27": {
+      "promptPl": "Przez przypadek uszkodzisz mienie, a właściciela nie ma na miejscu. Co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Powiedzieć właścicielowi później"
+        },
+        {
+          "pl": "Poinformować tylko ubezpieczyciela"
+        },
+        {
+          "pl": "Natychmiast znaleźć kogoś w pobliżu"
+        },
+        {
+          "pl": "Zgłosić to policji w ciągu 24 godzin"
+        }
+      ]
+    },
+    "IN-28": {
+      "promptPl": "Kiedy wolno przenieść nieprzytomnego, ale oddychającego poszkodowanego?",
+      "options": [
+        {
+          "pl": "Gdy inni Ci każą"
+        },
+        {
+          "pl": "Gdy jedzie karetka"
+        },
+        {
+          "pl": "Tylko jeśli grozi dalsze niebezpieczeństwo"
+        },
+        {
+          "pl": "Gdy przybędą pomocnicy"
+        }
+      ]
+    },
+    "IN-29": {
+      "promptPl": "Co musisz zrobić najpierw, jeśli uczestniczysz w kolizji?",
+      "options": [
+        {
+          "pl": "Zadzwonić do ubezpieczyciela"
+        },
+        {
+          "pl": "Wezwać służby ratunkowe"
+        },
+        {
+          "pl": "Zatrzymać się na miejscu zdarzenia"
+        },
+        {
+          "pl": "Jechać dalej"
+        }
+      ]
+    },
+    "IN-30": {
+      "promptPl": "Jakie dane musisz podać po kolizji powodującej uszkodzenie pojazdu?",
+      "options": [
+        {
+          "pl": "Dane o pracy"
+        },
+        {
+          "pl": "Numer National Insurance"
+        },
+        {
+          "pl": "Dostawcę internetu"
+        },
+        {
+          "pl": "Imię i nazwisko, adres oraz numer rejestracyjny pojazdu"
+        }
+      ]
+    },
+    "IN-31": {
+      "promptPl": "Co powinieneś zrobić, jeśli podczas jazdy pęknie opona?",
+      "options": [
+        {
+          "pl": "Użyć hamulca ręcznego"
+        },
+        {
+          "pl": "Mocno zahamować"
+        },
+        {
+          "pl": "Zwolnić i bezpiecznie zjechać na bok"
+        },
+        {
+          "pl": "Jechać dalej"
+        }
+      ]
+    },
+    "IN-32": {
+      "promptPl": "Jeśli Twój samochód zepsuje się w tunelu, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zostać w aucie"
+        },
+        {
+          "pl": "Stanąć za autem"
+        },
+        {
+          "pl": "Stanąć przed nim"
+        },
+        {
+          "pl": "Włączyć światła awaryjne i iść wezwać pomoc"
+        }
+      ]
+    },
+    "IN-33": {
+      "promptPl": "Motocyklista leży nieprzytomny na drodze po wypadku. Jaka jest Twoja pierwsza czynność?",
+      "options": [
+        {
+          "pl": "Przenieść kierowcę"
+        },
+        {
+          "pl": "Usunąć odłamki"
+        },
+        {
+          "pl": "Ostrzec nadjeżdżający ruch"
+        },
+        {
+          "pl": "Uspokajać kierowcę"
+        }
+      ]
+    },
+    "IN-34": {
+      "promptPl": "Motocyklista leży nieprzytomny na drodze. Ruch się zatrzymał i nie ma zagrożenia. Co może mu pomóc?",
+      "options": [
+        {
+          "pl": "Zdjąć kask"
+        },
+        {
+          "pl": "Wezwać pomoc medyczną"
+        },
+        {
+          "pl": "Przenieść go z drogi"
+        },
+        {
+          "pl": "Zdjąć kurtkę"
+        }
+      ]
+    },
+    "IN-35": {
+      "promptPl": "Poszkodowany wymaga RKO. Jaka jest prawidłowa częstotliwość uciskania klatki piersiowej u dorosłego?",
+      "options": [
+        {
+          "pl": "10 na minutę"
+        },
+        {
+          "pl": "60 na minutę"
+        },
+        {
+          "pl": "120 na minutę"
+        },
+        {
+          "pl": "240 na minutę"
+        }
+      ]
+    }
+  }
+}

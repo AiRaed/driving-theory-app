@@ -1,0 +1,777 @@
+[
+  {
+    "id": "AL-09",
+    "topic": "alertness",
+    "prompt": "What is a 'blind spot'?",
+    "correct": "Area not visible to the driver",
+    "hints": []
+  },
+  {
+    "id": "AL-17",
+    "topic": "alertness",
+    "prompt": "Before turning right onto a dual carriageway, what should you check?",
+    "correct": "Central reservation width",
+    "hints": [
+      {
+        "term": "dual carriageway",
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      },
+      {
+        "term": "central reservation",
+        "en": "The strip or barrier that separates the two directions of traffic on a dual carriageway.",
+        "ar": "الشريط أو الحاجز الذي يفصل اتجاهي السير على الطريق المزدوج.",
+        "ur": "دوہری کیریج وے پر دونوں سمتوں کی ٹریفک کو الگ کرنے والی پٹی یا رکاوٹ۔",
+        "ro": "Fâșia sau bariera care desparte cele două sensuri de circulație pe un drum cu dublă bandă."
+      }
+    ]
+  },
+  {
+    "id": "AL-18",
+    "topic": "alertness",
+    "prompt": "What should you do before moving off from behind a parked car?",
+    "correct": "Look around first",
+    "hints": [
+      {
+        "term": "moving off",
+        "en": "Starting to drive away after you have been stationary.",
+        "ar": "الانطلاق بالسيارة بعد التوقف.",
+        "ur": "رکی ہوئی حالت سے گاڑی چال کرنا۔",
+        "ro": "Pornirea de pe loc după ce ai fost staționat."
+      }
+    ]
+  },
+  {
+    "id": "AL-23",
+    "topic": "alertness",
+    "prompt": "Why should you check your mirrors when a hazard appears ahead?",
+    "correct": "Assess traffic behind",
+    "hints": [
+      {
+        "term": "hazard",
+        "en": "Anything on or near the road that could cause danger or force you to change speed or direction.",
+        "ar": "أي شيء على الطريق أو بقربه قد يسبب خطراً أو يضطرك لتغيير السرعة أو الاتجاه.",
+        "ur": "سڑک پر یا قریب کوئی چیز جو خطرہ بنے یا رفتار/رخ بدلواے۔",
+        "ro": "Orice pe drum sau lângă el care poate cauza pericol sau te obligă să schimbi viteza ori direcția."
+      }
+    ]
+  },
+  {
+    "id": "AT-26",
+    "topic": "attitude",
+    "prompt": "You're driving at the speed limit and a vehicle behind flashes headlights. What should you do?",
+    "correct": "Allow the vehicle to pass safely",
+    "hints": [
+      {
+        "term": "flashes headlights",
+        "en": "Briefly switches headlights on and off—often to ask for room to pass, not to demand you speed up.",
+        "ar": "يشغّل ويطفئ المصابيح بسرعة—غالباً لطلب مساحة للتجاوز، لا لإجبارك على التسارع.",
+        "ur": "ہیڈلائٹس تیزی سے آن/آف—اکثر گزرنے کی گنجائش مانگنے کے لیے، تیز چلنے کا حکم نہیں۔",
+        "ro": "Aprinde scurt farurile—adesea ca să ceară spațiu pentru depășire, nu ca să forțeze accelerarea."
+      }
+    ]
+  },
+  {
+    "id": "AT-28",
+    "topic": "attitude",
+    "prompt": "Which emergency vehicle uses a green flashing beacon?",
+    "correct": "Doctor's car",
+    "hints": [
+      {
+        "term": "green flashing beacon",
+        "en": "A flashing green warning light used by certain medical vehicles responding to emergencies.",
+        "ar": "ضوء تحذير أخضر وامض تستخدمه بعض المركبات الطبية عند التوجه لحالات طوارئ.",
+        "ur": "چمکنے والی سبز وارننگ لائٹ جو بعض طبی گاڑیاں ہنگامی ردعمل میں استعمال کرتی ہیں۔",
+        "ro": "Lumină de avertizare verde intermitentă folosită de anumite vehicule medicale la urgențe."
+      },
+      {
+        "term": "Road gritter",
+        "en": "A vehicle that spreads salt or grit on roads to reduce ice in cold weather.",
+        "ar": "مركبة تنثر الملح أو الحصى على الطرق لتقليل الجليد في الطقس البارد.",
+        "ur": "گاڑی جو سرد موسم میں برف کم کرنے کے لیے سڑکوں پر نمک یا گرٹ پھیلاتی ہے۔",
+        "ro": "Vehicul care împrăștie sare sau nisip pe drumuri pentru a reduce gheața pe frig."
+      }
+    ]
+  },
+  {
+    "id": "AT-37",
+    "topic": "attitude",
+    "prompt": "What danger results from following a vehicle too closely?",
+    "correct": "Reduced forward view",
+    "hints": []
+  },
+  {
+    "id": "DC-16",
+    "topic": "documents",
+    "prompt": "Who is responsible for paying vehicle tax?",
+    "correct": "The registered keeper",
+    "hints": [
+      {
+        "term": "registered keeper",
+        "en": "The person named on the vehicle’s registration document as responsible for it (not always the owner).",
+        "ar": "الشخص المسجّل في وثيقة تسجيل المركبة كمسؤول عنها (وليس بالضرورة المالك).",
+        "ur": "وہ شخص جو گاڑی کے رجسٹریشن دستاویز پر اس کا ذمہ دار درج ہو (ہمیشہ مالک نہیں ہوتا)۔",
+        "ro": "Persoana trecută pe certificatul de înmatriculare ca responsabilă de vehicul (nu neapărat proprietarul)."
+      },
+      {
+        "term": "vehicle tax",
+        "en": "The UK road tax (VED) that must usually be paid to keep a vehicle legal for public roads.",
+        "ar": "ضريبة الطريق في المملكة المتحدة (VED) التي يجب دفعها عادةً لإبقاء المركبة قانونية على الطرق العامة.",
+        "ur": "برطانیہ کا روڈ ٹیکس (VED) جو عام طور پر عوامی سڑکوں پر گاڑی قانونی رکھنے کے لیے ادا کرنا ہوتا ہے۔",
+        "ro": "Taxa de drum din Regatul Unit (VED) care trebuie plătită de obicei pentru a circula legal pe drumuri publice."
+      },
+      {
+        "term": "licensing authority",
+        "en": "The official body that issues and manages driving licences and related vehicle records (e.g. DVLA).",
+        "ar": "الجهة الرسمية التي تصدر وتدير رخص القيادة وسجلات المركبات ذات الصلة (مثل DVLA).",
+        "ur": "سرکاری ادارہ جو ڈرائیونگ لائسنس اور متعلقہ گاڑی کے ریکارڈ جاری و منظم کرتا ہے (جیسے DVLA)۔",
+        "ro": "Autoritatea care eliberează și gestionează permisele de conducere și evidențele vehiculelor (ex. DVLA)."
+      }
+    ]
+  },
+  {
+    "id": "DC-24",
+    "topic": "documents",
+    "prompt": "What information is shown on a vehicle registration document?",
+    "correct": "Registered keeper details",
+    "hints": [
+      {
+        "term": "vehicle registration document",
+        "en": "The V5C paper that records the vehicle’s details and its registered keeper.",
+        "ar": "وثيقة V5C التي تسجّل بيانات المركبة والحارس المسجّل لها.",
+        "ur": "V5C دستاویز جس میں گاڑی کی تفصیلات اور رجسٹرڈ کیپر درج ہوتے ہیں۔",
+        "ro": "Documentul V5C care înregistrează datele vehiculului și deținătorul înregistrat."
+      },
+      {
+        "term": "Registered keeper",
+        "en": "The person named on the vehicle’s registration document as responsible for it (not always the owner).",
+        "ar": "الشخص المسجّل في وثيقة تسجيل المركبة كمسؤول عنها (وليس بالضرورة المالك).",
+        "ur": "وہ شخص جو گاڑی کے رجسٹریشن دستاویز پر اس کا ذمہ دار درج ہو (ہمیشہ مالک نہیں ہوتا)۔",
+        "ro": "Persoana trecută pe certificatul de înmatriculare ca responsabilă de vehicul (nu neapărat proprietarul)."
+      },
+      {
+        "term": "MOT expiry date",
+        "en": "The date when the current MOT certificate runs out and a new test is needed.",
+        "ar": "التاريخ الذي ينتهي فيه شهادة الفحص الفني الحالية ويُطلب فحص جديد.",
+        "ur": "وہ تاریخ جب موجودہ MOT سرٹیفکیٹ ختم ہوتا ہے اور نیا ٹیسٹ درکار ہوتا ہے۔",
+        "ro": "Data la care expiră certificatul MOT curent și este nevoie de un test nou."
+      }
+    ]
+  },
+  {
+    "id": "HZ-06",
+    "topic": "hazard-awareness",
+    "prompt": "Red warning lights begin flashing as you approach a level crossing. What should you do?",
+    "correct": "Stop before reaching the barrier",
+    "hints": [
+      {
+        "term": "level crossing",
+        "en": "A place where a road crosses a railway line, often with barriers and warning lights.",
+        "ar": "مكان يتقاطع فيه الطريق مع خط السكة الحديدية، وغالباً توجد حواجز وأضواء تحذير.",
+        "ur": "وہ جگہ جہاں سڑک ریلوے لائن کو کاٹتی ہے؛ اکثر رکاوٹیں اور وارننگ لائٹس ہوتی ہیں۔",
+        "ro": "Locul unde un drum traversează o cale ferată, adesea cu bariere și lumini de avertizare."
+      }
+    ]
+  },
+  {
+    "id": "HZ-13",
+    "topic": "hazard-awareness",
+    "prompt": "You realise you're going the wrong way on a one-way street. What should you do?",
+    "correct": "Continue and find another route",
+    "hints": [
+      {
+        "term": "one-way street",
+        "en": "A street where traffic is allowed to travel in only one direction.",
+        "ar": "شارع يُسمح فيه لحركة المرور بالسير في اتجاه واحد فقط.",
+        "ur": "ایسی گلی جہاں ٹریفک صرف ایک سمت میں چل سکتی ہے۔",
+        "ro": "Stradă pe care circulația este permisă într-un singur sens."
+      }
+    ]
+  },
+  {
+    "id": "HZ-28",
+    "topic": "hazard-awareness",
+    "prompt": "A motorcyclist has just overtaken you and moves back into your lane with little space. What should you do?",
+    "correct": "Drop back to rebuild a safe gap",
+    "hints": [
+      {
+        "term": "overtaken",
+        "en": "When another vehicle has passed you and moved ahead of you.",
+        "ar": "عندما تتجاوزك مركبة أخرى وتنتقل أمامك.",
+        "ur": "جب کوئی دوسری گاڑی آپ کو پیچھے چھوڑ کر آگے نکل جائے۔",
+        "ro": "Când un alt vehicul v-a depășit și a trecut în fața dumneavoastră."
+      }
+    ]
+  },
+  {
+    "id": "HZ-42",
+    "topic": "hazard-awareness",
+    "prompt": "Why should you allow extra time for older drivers?",
+    "correct": "Their reactions may be slower",
+    "hints": []
+  },
+  {
+    "id": "HZ-62",
+    "topic": "hazard-awareness",
+    "prompt": "What hazard is common in residential streets with parked vehicles?",
+    "correct": "Children running out unexpectedly",
+    "hints": [
+      {
+        "term": "residential streets",
+        "en": "Roads in housing areas where people live, often with parked cars and pedestrians.",
+        "ar": "طرق في أحياء سكنية حيث يعيش الناس، وغالباً فيها سيارات متوقفة ومشاة.",
+        "ur": "رہائشی علاقوں کی سڑکیں جہاں اکثر گاڑیاں کھڑی اور پیدل چلنے والے ہوتے ہیں۔",
+        "ro": "Străzi din zone de locuințe, adesea cu mașini parcate și pietoni."
+      },
+      {
+        "term": "Heavy goods vehicles",
+        "en": "Large trucks that carry freight; often called HGVs in the UK.",
+        "ar": "شاحنات كبيرة تنقل البضائع؛ تُعرف غالباً بـ HGV في المملكة المتحدة.",
+        "ur": "سامان لے جانے والی بڑی ٹرکیں؛ برطانیہ میں اکثر HGV کہلاتی ہیں۔",
+        "ro": "Camioane grele de marfă; în Regatul Unit adesea numite HGV."
+      }
+    ]
+  },
+  {
+    "id": "IN-16",
+    "topic": "incidents",
+    "prompt": "What warns you of congestion ahead in a long tunnel?",
+    "correct": "Variable message signs",
+    "hints": [
+      {
+        "term": "Variable message signs",
+        "en": "Electronic signs that change to show live warnings or instructions.",
+        "ar": "لافتات إلكترونية تتغير لعرض تحذيرات أو تعليمات حية.",
+        "ur": "الیکٹرانک سائنز جو تبدیل ہو کر براہِ راست وارننگ/ہدایات دکھاتی ہیں۔",
+        "ro": "Indicatoare electronice care se schimbă pentru avertizări sau instrucțiuni live."
+      },
+      {
+        "term": "congestion",
+        "en": "Heavy, slow-moving traffic when roads are overcrowded.",
+        "ar": "ازدحام مروري كثيف وبطيء عندما تكون الطرق مزدحمة جداً.",
+        "ur": "بھاری، سست ٹریفک جب سڑکیں بہت بھری ہوں۔",
+        "ro": "Trafic dens și lent când drumurile sunt supraaglomerate."
+      }
+    ]
+  },
+  {
+    "id": "IN-29",
+    "topic": "incidents",
+    "prompt": "What must you do first if you're involved in a collision?",
+    "correct": "Stop at the scene",
+    "hints": [
+      {
+        "term": "collision",
+        "en": "When a vehicle hits another vehicle, person, or object.",
+        "ar": "عندما تصطدم مركبة بمركبة أخرى أو بشخص أو بجسم.",
+        "ur": "جب گاڑی کسی دوسری گاڑی، شخص یا چیز سے ٹکرا جائے۔",
+        "ro": "Când un vehicul lovește un alt vehicul, o persoană sau un obiect."
+      }
+    ]
+  },
+  {
+    "id": "MW-01",
+    "topic": "motorway-driving",
+    "prompt": "When should you use the hard shoulder on a motorway if it is not operating as a running lane?",
+    "correct": "When stopping in an emergency",
+    "hints": [
+      {
+        "term": "hard shoulder",
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      },
+      {
+        "term": "motorway",
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    ]
+  },
+  {
+    "id": "MW-42",
+    "topic": "motorway-driving",
+    "prompt": "If you miss your exit on a motorway, what should you do?",
+    "correct": "Continue to the next exit",
+    "hints": [
+      {
+        "term": "hard shoulder",
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      },
+      {
+        "term": "central reservation",
+        "en": "The strip or barrier that separates the two directions of traffic on a dual carriageway.",
+        "ar": "الشريط أو الحاجز الذي يفصل اتجاهي السير على الطريق المزدوج.",
+        "ur": "دوہری کیریج وے پر دونوں سمتوں کی ٹریفک کو الگ کرنے والی پٹی یا رکاوٹ۔",
+        "ro": "Fâșia sau bariera care desparte cele două sensuri de circulație pe un drum cu dublă bandă."
+      }
+    ]
+  },
+  {
+    "id": "MW-55",
+    "topic": "motorway-driving",
+    "prompt": "A red cross is shown above the hard shoulder with speed limits above other lanes. What does this mean?",
+    "correct": "Hard shoulder is emergency use only",
+    "hints": [
+      {
+        "term": "hard shoulder",
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    ]
+  },
+  {
+    "id": "OV-04",
+    "topic": "other-vehicles",
+    "prompt": "You're towing a caravan. Which mirror setup gives you the safest rear view?",
+    "correct": "Extended-arm side mirrors",
+    "hints": [
+      {
+        "term": "towing",
+        "en": "Pulling a trailer, caravan, or another vehicle behind your car using a tow bar or hitch.",
+        "ar": "سحب مقطورة أو كرفان أو مركبة أخرى خلف سيارتك باستخدام قضيب سحب.",
+        "ur": "ٹو بار سے اپنے پیچھے ٹریلر، کاروان یا دوسری گاڑی کھینچنا۔",
+        "ro": "Tractarea unei remorci, rulote sau a altui vehicul cu o bară de remorcare."
+      },
+      {
+        "term": "caravan",
+        "en": "A trailer home designed to be towed behind a car for living or holidays.",
+        "ar": "مقطورة سكنية تُسحب خلف السيارة للسكن أو العطل.",
+        "ur": "رہائشی ٹریلر جو کار کے پیچھے کھینچا جاتا ہے، رہنے یا چھٹیوں کے لیے۔",
+        "ro": "Rulotă tractată de o mașină, folosită pentru locuit sau vacanțe."
+      },
+      {
+        "term": "Extended-arm side mirrors",
+        "en": "Door mirrors on longer arms so you can still see past a wide trailer or caravan.",
+        "ar": "مرايا جانبية بذراعين أطول لتظل ترى خلف مقطورة أو كرفان عريض.",
+        "ur": "لمبی بازوؤں والے سائیڈ مرر تاکہ چوڑے ٹریلر/کاروان کے پار نظر آئے۔",
+        "ro": "Oglinzi laterale pe brațe mai lungi ca să vedeți dincolo de o remorcă sau rulotă lată."
+      }
+    ]
+  },
+  {
+    "id": "OV-16",
+    "topic": "other-vehicles",
+    "prompt": "Why must drivers take extra care where trams operate?",
+    "correct": "Trams cannot steer to avoid obstacles",
+    "hints": [
+      {
+        "term": "trams",
+        "en": "Electric passenger vehicles that run on fixed rails in the road and cannot steer around obstacles.",
+        "ar": "مركبات ركاب كهربائية تسير على قضبان ثابتة في الطريق ولا تستطيع الانحراف حول العوائق.",
+        "ur": "بجلی سے چلنے والی مسافر گاڑیاں جو سڑک کی پٹریوں پر چلتی ہیں اور رکاوٹوں سے مڑ کر نہیں بچ سکتیں۔",
+        "ro": "Vehicule electrice de călători pe șine fixe în carosabil; nu pot vira pentru a evita obstacolele."
+      }
+    ]
+  },
+  {
+    "id": "RR-03",
+    "topic": "rules-of-the-road",
+    "prompt": "What is the national speed limit on a single carriageway for cars and motorcycles (unless signs show otherwise)?",
+    "correct": "60 mph",
+    "hints": [
+      {
+        "term": "national speed limit",
+        "en": "The default UK speed limit when no numbered limit signs are shown (varies by road type and vehicle).",
+        "ar": "الحد الافتراضي للسرعة في المملكة المتحدة عندما لا تظهر إشارات رقمية (يختلف حسب نوع الطريق والمركبة).",
+        "ur": "برطانیہ کی ڈیفالٹ رفتار کی حد جب کوئی عددی حد کا نشان نہ ہو (سڑک اور گاڑی کے مطابق بدل سکتی ہے)۔",
+        "ro": "Limita implicită de viteză din Regatul Unit când nu apar indicatoare cu cifră (variază după tipul drumului și vehicul)."
+      },
+      {
+        "term": "single carriageway",
+        "en": "A road without a central reservation separating opposite directions of traffic.",
+        "ar": "طريق بلا حاجز وسط يفصل اتجاهي السير المتعاكسين.",
+        "ur": "ایسی سڑک جس میں مخالف سمتوں کی ٹریفک الگ کرنے والی درمیانی ریزرویشن نہ ہو۔",
+        "ro": "Drum fără rezervație centrală care să separe sensurile opuse de circulație."
+      }
+    ]
+  },
+  {
+    "id": "RR-07",
+    "topic": "rules-of-the-road",
+    "prompt": "A sign indicates that a previously enforced speed limit has ended. What does this mean?",
+    "correct": "National speed limit now applies",
+    "hints": [
+      {
+        "term": "national speed limit",
+        "en": "The default UK speed limit when no numbered limit signs are shown (varies by road type and vehicle).",
+        "ar": "الحد الافتراضي للسرعة في المملكة المتحدة عندما لا تظهر إشارات رقمية (يختلف حسب نوع الطريق والمركبة).",
+        "ur": "برطانیہ کی ڈیفالٹ رفتار کی حد جب کوئی عددی حد کا نشان نہ ہو (سڑک اور گاڑی کے مطابق بدل سکتی ہے)۔",
+        "ro": "Limita implicită de viteză din Regatul Unit când nu apar indicatoare cu cifră (variază după tipul drumului și vehicul)."
+      }
+    ]
+  },
+  {
+    "id": "RR-08",
+    "topic": "rules-of-the-road",
+    "prompt": "When should you normally use the right-hand lane on a dual carriageway?",
+    "correct": "When turning right or overtaking",
+    "hints": [
+      {
+        "term": "dual carriageway",
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      },
+      {
+        "term": "overtaking",
+        "en": "Passing a slower vehicle to move ahead of it, usually using a lane to the right on UK dual roads.",
+        "ar": "تجاوز مركبة أبطأ للانتقال أمامها، عادةً باستخدام مسار إلى اليمين على الطرق المزدوجة في المملكة المتحدة.",
+        "ur": "سست گاڑی کو پیچھے چھوڑ کر آگے نکلنا؛ برطانیہ میں اکثر دائیں لین سے۔",
+        "ro": "Depășirea unui vehicul mai lent pentru a trece înaintea lui, de obicei pe banda din dreapta pe drumurile cu sensuri separate."
+      }
+    ]
+  },
+  {
+    "id": "RS-01",
+    "topic": "road-signs",
+    "prompt": "A sign showing a red car beside a black car means:",
+    "correct": "No overtaking",
+    "hints": [
+      {
+        "term": "overtaking",
+        "en": "Passing a vehicle ahead by moving past it to go in front.",
+        "ar": "تجاوز مركبة أمامك بالمرور بجانبها لتصبح أمامها.",
+        "ur": "آگے والی گاڑی کے پاس سے نکل کر اس سے آگے نکل جانا۔",
+        "ro": "Depășirea unui vehicul din față trecând pe lângă el."
+      },
+      {
+        "term": "Two-way traffic",
+        "en": "Vehicles travelling in both directions on the same stretch of road.",
+        "ar": "مركبات تسير في الاتجاهين على نفس مقطع الطريق.",
+        "ur": "ایک ہی سڑک پر دونوں سمتوں میں چلتی گاڑیاں۔",
+        "ro": "Vehicule care circulă în ambele sensuri pe aceeași porțiune de drum."
+      }
+    ]
+  },
+  {
+    "id": "RS-03",
+    "topic": "road-signs",
+    "prompt": "You're driving on a country road after heavy rain and see a triangular warning sign showing a car with skid marks. What hazard should you prepare for?",
+    "correct": "The road surface may be slippery ahead",
+    "hints": [
+      {
+        "term": "skid marks",
+        "en": "Marks left on the road when tyres lose grip; on warning signs they often mean a slippery road ahead.",
+        "ar": "آثار تتركها الإطارات عند فقدان التماسك؛ على لافتات التحذير غالباً تعني طريقاً زلقاً أمامك.",
+        "ur": "ٹائروں کے پھسلنے سے سڑک پر نشانات؛ وارننگ سائن پر اکثر آگے پھسلن والی سڑک ظاہر کرتے ہیں۔",
+        "ro": "Urme lăsate când anvelopele pierd aderența; pe indicatoare deseori semnalează un drum alunecos în față."
+      }
+    ]
+  },
+  {
+    "id": "RS-6004",
+    "topic": "road-signs",
+    "prompt": "What do white rectangular signs usually provide?",
+    "correct": "Information and directions",
+    "hints": [
+      {
+        "term": "Mandatory rules",
+        "en": "Rules you are legally required to obey.",
+        "ar": "قواعد يُلزمك القانون باتباعها.",
+        "ur": "قواعد جن کی قانونی طور پر پیروی ضروری ہو۔",
+        "ro": "Reguli pe care sunteți obligați legal să le respectați."
+      }
+    ]
+  },
+  {
+    "id": "SM-19",
+    "topic": "safety-margins",
+    "prompt": "What should you do if another vehicle pulls into your safe gap on a wet road?",
+    "correct": "Drop back to increase distance",
+    "hints": [
+      {
+        "term": "safe gap",
+        "en": "The clear space you keep ahead of your vehicle so you can stop safely if traffic slows or stops.",
+        "ar": "المسافة الخالية التي تتركها أمام مركبتك لتتمكن من التوقف بأمان إذا تباطأ المرور أو توقف.",
+        "ur": "آپ کی گاڑی کے آگے وہ خالی فاصلہ جو ٹریفک سست یا رک جانے پر محفوظ طور پر رکنے دیتا ہے۔",
+        "ro": "Spațiul liber pe care îl păstrați în față ca să puteți opri în siguranță dacă traficul încetinește."
+      },
+      {
+        "term": "Overtake",
+        "en": "To pass another road user moving in the same direction by moving out and going ahead of them.",
+        "ar": "تجاوز مستخدم طريق آخر يسير في نفس الاتجاه بالخروج والمرور أمامه.",
+        "ur": "ایک ہی سمت میں چلنے والے دوسرے روڈ یوزر کو باہر نکل کر آگے چھوڑ دینا۔",
+        "ro": "A trece pe lângă un alt participant la trafic care circulă în același sens, ieșind și trecând înaintea lui."
+      }
+    ]
+  },
+  {
+    "id": "SM-20",
+    "topic": "safety-margins",
+    "prompt": "What is the main advantage of four-wheel drive?",
+    "correct": "Better grip in poor conditions",
+    "hints": [
+      {
+        "term": "stopping distance",
+        "en": "The total distance needed to stop: thinking distance plus braking distance.",
+        "ar": "المسافة الإجمالية اللازمة للتوقف: مسافة التفكير زائد مسافة الفرملة.",
+        "ur": "رکنے کے لیے درکار کل فاصلہ: سوچنے کا فاصلہ جمع بریک لگانے کا فاصلہ۔",
+        "ro": "Distanța totală necesară pentru a opri: distanța de reacție plus distanța de frânare."
+      }
+    ]
+  },
+  {
+    "id": "SM-31",
+    "topic": "safety-margins",
+    "prompt": "When driving through a contraflow system, what should you do?",
+    "correct": "Choose your lane early",
+    "hints": [
+      {
+        "term": "contraflow",
+        "en": "A temporary traffic system where vehicles travel in the opposite direction to normal, often during roadworks.",
+        "ar": "نظام مروري مؤقت تسير فيه المركبات عكس الاتجاه المعتاد، غالباً أثناء أعمال الطريق.",
+        "ur": "عارضی ٹریفک نظام جس میں گاڑیاں عام سمت کے الٹ چلتی ہیں، اکثر سڑک کی مرمت کے دوران۔",
+        "ro": "Sistem temporar de circulație în care vehiculele circulă pe sensul opus celui obișnuit, deseori în timpul lucrărilor."
+      }
+    ]
+  },
+  {
+    "id": "SV-43",
+    "topic": "safety-vehicle",
+    "prompt": "How can you reduce the environmental impact of your vehicle?",
+    "correct": "Keep engine revs low",
+    "hints": [
+      {
+        "term": "engine revs",
+        "en": "How fast the engine is turning; often shown on the rev counter (tachometer).",
+        "ar": "سرعة دوران المحرك؛ غالباً تُعرض على عداد الدورات.",
+        "ur": "انجن کتنی تیزی سے گھوم رہا ہے؛ اکثر ریو کاؤنٹر پر دکھتا ہے۔",
+        "ro": "Cât de repede se învârte motorul; adesea afișat pe turometru."
+      }
+    ]
+  },
+  {
+    "id": "SV-78",
+    "topic": "safety-vehicle",
+    "prompt": "How can people help reduce urban pollution?",
+    "correct": "Walk or cycle",
+    "hints": [
+      {
+        "term": "urban pollution",
+        "en": "Air and noise pollution in towns and cities, often from traffic.",
+        "ar": "تلوث الهواء والضوضاء في المدن، وغالباً من المرور.",
+        "ur": "شہروں میں ہوا اور شور کی آلودگی، اکثر ٹریفک سے۔",
+        "ro": "Poluare a aerului și zgomotului în orașe, deseori din trafic."
+      },
+      {
+        "term": "Over-rev",
+        "en": "Run the engine at very high revs, which wastes fuel and can cause wear.",
+        "ar": "تشغيل المحرك بدورات عالية جداً فيهدر الوقود وقد يسبب تآكلاً.",
+        "ur": "انجن کو بہت تیز ریوز پر چلانا؛ ایندھن ضائع اور گھساؤ ہو سکتا ہے۔",
+        "ro": "A tură motorul foarte sus; risipește combustibil și poate uza motorul."
+      }
+    ]
+  },
+  {
+    "id": "VH-06",
+    "topic": "vehicle-handling",
+    "prompt": "You meet an oncoming vehicle on a single-track road. What should you do?",
+    "correct": "Use a passing place and be prepared to wait",
+    "hints": [
+      {
+        "term": "single-track road",
+        "en": "A narrow road wide enough for only one vehicle, so drivers may need to wait to pass.",
+        "ar": "طريق ضيق يكفي لمركبة واحدة، لذا قد يحتاج السائقون للانتظار للمرور.",
+        "ur": "تنگ سڑک جہاں ایک ہی گاڑی چل سکے؛ گزرنے کے لیے انتظار کرنا پڑ سکتا ہے۔",
+        "ro": "Drum îngust pe care încape un singur vehicul; șoferii pot trebui să aștepte ca să treacă."
+      },
+      {
+        "term": "passing place",
+        "en": "A widened section of a narrow road where vehicles can pass or wait.",
+        "ar": "اتساع في طريق ضيق تسمح فيه المركبات بالمرور أو الانتظار.",
+        "ur": "تنگ سڑک کا چوڑا حصہ جہاں گاڑیاں گزر یا انتظار کر سکتی ہیں۔",
+        "ro": "Porțiune lărgită pe un drum îngust unde vehiculele pot trece sau aștepta."
+      },
+      {
+        "term": "hazard lights",
+        "en": "All indicators flashing together to warn others of danger or a problem.",
+        "ar": "تشغيل جميع الإشارات معاً لتحذير الآخرين من خطر أو مشكلة.",
+        "ur": "خطر یا مسئلے کی وارننگ کے لیے تمام اشارے ایک ساتھ چمکانا۔",
+        "ro": "Toate semnalizatoarele intermitente împreună pentru a avertiza de un pericol."
+      }
+    ]
+  },
+  {
+    "id": "VH-16",
+    "topic": "vehicle-handling",
+    "prompt": "When may you stop inside a yellow box junction?",
+    "correct": "When waiting to turn right and oncoming traffic blocks your exit",
+    "hints": [
+      {
+        "term": "box junction",
+        "en": "A road junction painted with yellow criss-cross lines on the road surface.",
+        "ar": "تقاطع طريق مرسوم على سطحه بخطوط صفراء متقاطعة.",
+        "ur": "سڑک کی سطح پر پیلی کراس لائنوں والا جنکشن۔",
+        "ro": "Intersecție marcată pe carosabil cu linii galbene în cruce."
+      }
+    ]
+  },
+  {
+    "id": "VH-20",
+    "topic": "vehicle-handling",
+    "prompt": "Why are rear fog lights fitted to vehicles?",
+    "correct": "To make the vehicle more visible in thick fog",
+    "hints": [
+      {
+        "term": "rear fog lights",
+        "en": "Bright red lights at the back of a vehicle used only in thick fog to help others see you.",
+        "ar": "أضواء حمراء ساطعة في مؤخرة المركبة تُستخدم فقط في الضباب الكثيف ليراك الآخرون.",
+        "ur": "گاڑی کے پیچھے روشن سرخ لائٹس جو صرف گہرے دھند میں دوسروں کو آپ دکھانے کے لیے استعمال ہوتی ہیں۔",
+        "ro": "Lumini roșii puternice în spatele vehiculului, folosite doar în ceață densă ca alții să vă vadă."
+      }
+    ]
+  },
+  {
+    "id": "VH-44",
+    "topic": "vehicle-handling",
+    "prompt": "Why should you switch off rear fog lights once fog has cleared?",
+    "correct": "To prevent dazzling drivers behind",
+    "hints": [
+      {
+        "term": "rear fog lights",
+        "en": "Bright red lights at the back of a vehicle used only in thick fog to help others see you.",
+        "ar": "أضواء حمراء ساطعة في مؤخرة المركبة تُستخدم فقط في الضباب الكثيف ليراك الآخرون.",
+        "ur": "گاڑی کے پیچھے روشن سرخ لائٹس جو صرف گہرے دھند میں دوسروں کو آپ دکھانے کے لیے استعمال ہوتی ہیں۔",
+        "ro": "Lumini roșii puternice în spatele vehiculului, folosite doar în ceață densă ca alții să vă vadă."
+      }
+    ]
+  },
+  {
+    "id": "VL-16",
+    "topic": "vehicle-loading",
+    "prompt": "When should tyre pressures be increased above normal?",
+    "correct": "Carrying a heavy load",
+    "hints": [
+      {
+        "term": "tyre pressures",
+        "en": "How much air is in each tyre; incorrect pressure affects handling, braking, and tyre wear.",
+        "ar": "كمية الهواء في كل إطار؛ الضغط غير الصحيح يؤثر على التحكم والفرملة وتآكل الإطار.",
+        "ur": "ہر ٹائر میں ہوا کتنی ہے؛ غلط دباؤ ہینڈلنگ، بریکنگ اور ٹائر کی عمر پر اثر ڈالتا ہے۔",
+        "ro": "Cantitatea de aer din fiecare anvelopă; presiunea greșită afectează manevrabilitatea, frânarea și uzura."
+      }
+    ]
+  },
+  {
+    "id": "VL-19",
+    "topic": "vehicle-loading",
+    "prompt": "Are passengers allowed to travel in a towed caravan?",
+    "correct": "No, never",
+    "hints": [
+      {
+        "term": "towed caravan",
+        "en": "A caravan being pulled behind another vehicle on the road.",
+        "ar": "كرفان يُسحب خلف مركبة أخرى على الطريق.",
+        "ur": "ایک کیریوان جو سڑک پر دوسری گاڑی کے پیچھے کھینچا جا رہا ہو۔",
+        "ro": "O rulotă tractată pe drum de un alt vehicul."
+      },
+      {
+        "term": "stabiliser",
+        "en": "A device that helps reduce swaying of a trailer or caravan while towing.",
+        "ar": "جهاز يساعد على تقليل تمايل المقطورة أو الكرفان أثناء السحب.",
+        "ur": "ایک آلہ جو ٹowing کے دوران ٹریلر/کیریوان کے جھولنے کو کم کرنے میں مدد کرتا ہے۔",
+        "ro": "Dispozitiv care reduce balansul remorcii sau rulotei în timpul tractării."
+      }
+    ]
+  },
+  {
+    "id": "VL-20",
+    "topic": "vehicle-loading",
+    "prompt": "How should heavy items be positioned when loading a trailer?",
+    "correct": "Over the axles",
+    "hints": [
+      {
+        "term": "axles",
+        "en": "The shafts that the wheels of a vehicle or trailer turn on.",
+        "ar": "المحاور التي تدور عليها عجلات المركبة أو المقطورة.",
+        "ur": "شافت جن پر گاڑی یا ٹریلر کے پہیے گھومتے ہیں۔",
+        "ro": "Axele pe care se învârt roțile unui vehicul sau ale unei remorci."
+      }
+    ]
+  },
+  {
+    "id": "VU-03",
+    "topic": "vulnerable-road-users",
+    "prompt": "Why should you check for motorcyclists before turning right?",
+    "correct": "They may overtake on your right",
+    "hints": [
+      {
+        "term": "motorcyclists",
+        "en": "People riding motorcycles; they can be hidden in blind spots and move up beside you quickly.",
+        "ar": "سائقو الدراجات النارية؛ قد يختفون في النقاط العمياء ويقتربون بجانبك بسرعة.",
+        "ur": "موٹر سائیکل سوار؛ بلائنڈ سپاٹ میں چھپ سکتے اور تیزی سے آپ کے پہلو میں آ سکتے ہیں۔",
+        "ro": "Persoane pe motociclete; pot fi ascunși în unghiurile moarte și pot ajunge rapid lângă voi."
+      }
+    ]
+  },
+  {
+    "id": "VU-15",
+    "topic": "vulnerable-road-users",
+    "prompt": "At a pelican crossing, what must you do while the amber light is flashing?",
+    "correct": "Give way to pedestrians already on the crossing",
+    "hints": [
+      {
+        "term": "pelican crossing",
+        "en": "A pedestrian crossing controlled by traffic lights, including a flashing amber phase.",
+        "ar": "معبر مشاة تتحكم به إشارات ضوئية، ويتضمن مرحلة كهرمانية وامضة.",
+        "ur": "ٹریفک لائٹس والا پیدل کراسنگ، جس میں چمکتی ہوئی امبر مرحلہ بھی ہوتا ہے۔",
+        "ro": "Trecere de pietoni controlată de semafoare, inclusiv o fază cu amber intermitent."
+      }
+    ]
+  },
+  {
+    "id": "VU-30",
+    "topic": "vulnerable-road-users",
+    "prompt": "You're approaching a zebra crossing and a person in a wheelchair is waiting to cross. What should you do?",
+    "correct": "Be prepared to stop",
+    "hints": [
+      {
+        "term": "zebra crossing",
+        "en": "A pedestrian crossing with black-and-white stripes where drivers must give way to people waiting to cross.",
+        "ar": "معبر مشاة بخطوط سوداء وبيضاء يجب على السائقين فيه إعطاء الأولوية لمن ينتظر العبور.",
+        "ur": "سیاہ و سفید پٹیوں والا پیدل کراسنگ جہاں ڈرائیورز کراس کرنے والوں کو راستہ دیں۔",
+        "ro": "Trecere de pietoni cu dungi alb-negru unde șoferii trebuie să cedeze trecerea persoanelor care așteaptă."
+      }
+    ]
+  },
+  {
+    "id": "VU-49",
+    "topic": "vulnerable-road-users",
+    "prompt": "Which sign warns that pedestrians may be walking along the road?",
+    "correct": "Pedestrian warning sign",
+    "hints": []
+  },
+  {
+    "id": "VU-52",
+    "topic": "vulnerable-road-users",
+    "prompt": "Why might a motorcyclist look over their right shoulder before turning right?",
+    "correct": "To check blind spots",
+    "hints": [
+      {
+        "term": "blind spots",
+        "en": "Areas around the vehicle that you cannot see in your mirrors.",
+        "ar": "مناطق حول المركبة لا تراها في المرايا.",
+        "ur": "گاڑی کے ارد گرد وہ حصے جو آئینوں میں نہیں دکھتے۔",
+        "ro": "Zone din jurul vehiculului pe care nu le poți vedea în oglinzi."
+      }
+    ]
+  },
+  {
+    "id": "VU-54",
+    "topic": "vulnerable-road-users",
+    "prompt": "What does a sign showing a bicycle symbol on a blue background usually mean?",
+    "correct": "Cycle route",
+    "hints": []
+  }
+]

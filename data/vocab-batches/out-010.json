@@ -1,0 +1,830 @@
+{
+  "SV-39": [
+    {
+      "term": "peak traffic times",
+      "translations": {
+        "en": "Busy periods when many people travel, often morning and evening rush hours.",
+        "ar": "فترات مزدحمة يسافر فيها كثير من الناس، غالباً ساعات الذروة صباحاً ومساءً.",
+        "ur": "مصروف اوقات جب بہت سے لوگ سفر کرتے ہیں، اکثر صبح و شام رش کے اوقات۔",
+        "ro": "Perioade aglomerate când mulți oameni călătoresc, deseori orele de vârf dimineața și seara."
+      }
+    },
+    {
+      "term": "congestion",
+      "translations": {
+        "en": "Heavy, slow-moving traffic when roads are overcrowded.",
+        "ar": "ازدحام مروري كثيف وبطيء عندما تكون الطرق مزدحمة جداً.",
+        "ur": "بھاری، سست ٹریفک جب سڑکیں بہت بھری ہوں۔",
+        "ro": "Trafic dens și lent când drumurile sunt supraaglomerate."
+      }
+    }
+  ],
+  "SV-40": [
+    {
+      "term": "fuel consumption",
+      "translations": {
+        "en": "How much fuel the vehicle uses; higher use means more cost and emissions.",
+        "ar": "كمية الوقود التي تستهلكها المركبة؛ الاستهلاك الأعلى يعني تكلفة وانبعاثات أكثر.",
+        "ur": "گاڑی کتنا ایندھن استعمال کرتی ہے؛ زیادہ استعمال سے لاگت اور اخراج بڑھتا ہے۔",
+        "ro": "Cât combustibil consumă vehiculul; consumul mai mare înseamnă costuri și emisii mai mari."
+      }
+    }
+  ],
+  "SV-41": [
+    {
+      "term": "under-inflated tyres",
+      "translations": {
+        "en": "Tyres with too little air pressure, which can worsen handling and wear.",
+        "ar": "إطارات بضغط هواء منخفض جداً، مما قد يضعف التحكم ويزيد التآكل.",
+        "ur": "ٹائر جن میں ہوا کا دباؤ بہت کم ہو؛ ہینڈلنگ خراب اور گھساؤ زیادہ ہو سکتا ہے۔",
+        "ro": "Anvelope cu prea puțină presiune de aer, ceea ce poate înrăutăți manevrabilitatea și uzura."
+      }
+    },
+    {
+      "term": "stopping distance",
+      "translations": {
+        "en": "The total distance needed to stop: thinking distance plus braking distance.",
+        "ar": "المسافة الإجمالية اللازمة للتوقف: مسافة التفكير زائد مسافة الفرملة.",
+        "ur": "رکنے کے لیے درکار کل فاصلہ: سوچنے کا فاصلہ جمع بریک لگانے کا فاصلہ۔",
+        "ro": "Distanța totală necesară pentru a opri: distanța de reacție plus distanța de frânare."
+      }
+    }
+  ],
+  "SV-42": [
+    {
+      "term": "dual carriageway",
+      "translations": {
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      }
+    },
+    {
+      "term": "lane markings",
+      "translations": {
+        "en": "Painted lines on the road that show where each traffic lane is.",
+        "ar": "خطوط مرسومة على الطريق تُبيّن حدود كل مسار مروري.",
+        "ur": "سڑک پر پینٹ شدہ لکیریں جو ہر ٹریفک لین دکھاتی ہیں۔",
+        "ro": "Linii vopsite pe drum care arată unde este fiecare bandă de circulație."
+      }
+    },
+    {
+      "term": "blind-spot assist",
+      "translations": {
+        "en": "A system that warns if a vehicle is in an area you cannot see in your mirrors.",
+        "ar": "نظام يحذّرك إذا كانت مركبة في منطقة لا تراها في المرايا.",
+        "ur": "نظام جو خبردار کرتا ہے اگر گاڑی ایسے علاقے میں ہو جو آئینوں میں نظر نہ آئے۔",
+        "ro": "Sistem care te avertizează dacă un vehicul e într-o zonă pe care nu o vezi în oglinzi."
+      }
+    }
+  ],
+  "SV-43": [
+    {
+      "term": "engine revs",
+      "translations": {
+        "en": "How fast the engine is turning; often shown on the rev counter (tachometer).",
+        "ar": "سرعة دوران المحرك؛ غالباً تُعرض على عداد الدورات.",
+        "ur": "انجن کتنی تیزی سے گھوم رہا ہے؛ اکثر ریو کاؤنٹر پر دکھتا ہے۔",
+        "ro": "Cât de repede se învârte motorul; adesea afișat pe turometru."
+      }
+    }
+  ],
+  "SV-44": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    },
+    {
+      "term": "drifting out of lane",
+      "translations": {
+        "en": "Gradually moving sideways so the vehicle leaves its traffic lane.",
+        "ar": "الانحراف تدريجياً جانباً حتى تخرج المركبة من مسارها.",
+        "ur": "آہستہ آہستہ کنارے کی طرف جانا تاکہ گاڑی اپنی لین سے نکل جائے۔",
+        "ro": "Deplasare treptată laterală astfel încât vehiculul iese de pe banda sa."
+      }
+    }
+  ],
+  "SV-45": [
+    {
+      "term": "built-up area",
+      "translations": {
+        "en": "A town or village area with buildings beside the road; street lighting often marks a 30 mph zone.",
+        "ar": "منطقة مبنية بجانب الطريق؛ غالباً تدل إنارة الشوارع على منطقة 30 ميلاً/ساعة.",
+        "ur": "سڑک کنارے عمارتوں والا علاقہ؛ سٹریٹ لائٹنگ اکثر 30 mph زون ظاہر کرتی ہے۔",
+        "ro": "Zonă construită lângă drum; iluminatul stradal marchează deseori o zonă de 30 mph."
+      }
+    }
+  ],
+  "SV-46": [
+    {
+      "term": "pulls to one side",
+      "translations": {
+        "en": "The vehicle steers or veers left or right by itself when you brake or drive.",
+        "ar": "تنحرف المركبة بنفسها يساراً أو يميناً عند الفرملة أو القيادة.",
+        "ur": "گاڑی بریک یا چلاتے وقت خود بائیں یا دائیں کھینچتی/مڑتی ہے۔",
+        "ro": "Vehiculul trage sau derapează singur stânga sau dreapta la frânare sau mers."
+      }
+    },
+    {
+      "term": "parking brake",
+      "translations": {
+        "en": "The brake (often a handbrake) that holds the vehicle still when parked.",
+        "ar": "الفرامل (غالباً فرامل اليد) التي تُبقي المركبة ثابتة عند التوقف.",
+        "ur": "بریک (اکثر ہینڈ بریک) جو پارک ہونے پر گاڑی کو ساکن رکھتی ہے۔",
+        "ro": "Frâna (adesea de mână) care ține vehiculul pe loc când este parcat."
+      }
+    }
+  ],
+  "SV-47": [
+    {
+      "term": "fuel consumption",
+      "translations": {
+        "en": "How much fuel the vehicle uses; higher use means more cost and emissions.",
+        "ar": "كمية الوقود التي تستهلكها المركبة؛ الاستهلاك الأعلى يعني تكلفة وانبعاثات أكثر.",
+        "ur": "گاڑی کتنا ایندھن استعمال کرتی ہے؛ زیادہ استعمال سے لاگت اور اخراج بڑھتا ہے۔",
+        "ro": "Cât combustibil consumă vehiculul; consumul mai mare înseamnă costuri și emisii mai mari."
+      }
+    },
+    {
+      "term": "harsh braking",
+      "translations": {
+        "en": "Braking suddenly and hard instead of smoothly and early.",
+        "ar": "الفرملة بقوة وبشكل مفاجئ بدل الفرملة السلسة المبكرة.",
+        "ur": "اچانک اور زور سے بریک لگانا بجائے ہموار اور جلد بریک کے۔",
+        "ro": "Frânare bruscă și puternică în loc de frânare lină și din timp."
+      }
+    }
+  ],
+  "SV-48": [
+    {
+      "term": "unattended",
+      "translations": {
+        "en": "Left alone with no one in or watching the vehicle.",
+        "ar": "متروك بلا أحد بداخله أو يراقبه.",
+        "ur": "گاڑی میں یا اس کی نگرانی میں کوئی نہ ہو۔",
+        "ro": "Lăsat singur, fără nimeni înăuntru sau care să-l supravegheze."
+      }
+    },
+    {
+      "term": "warden",
+      "translations": {
+        "en": "A parking or traffic warden who enforces parking rules.",
+        "ar": "مراقب مواقف أو مرور يطبّق قواعد الركن.",
+        "ur": "پارکنگ یا ٹریفک وارڈن جو پارکنگ قواعد نافذ کرتا ہے۔",
+        "ro": "Agent de parcare/trafic care aplică regulile de parcare."
+      }
+    }
+  ],
+  "SV-49": [
+    {
+      "term": "roof rack",
+      "translations": {
+        "en": "A frame fitted on a vehicle’s roof for carrying extra loads.",
+        "ar": "إطار يُثبَّت على سقف المركبة لحمل أحمال إضافية.",
+        "ur": "گاڑی کی چھت پر لگا فریم جو اضافی سامان لے جانے کے لیے ہوتا ہے۔",
+        "ro": "Cadru montat pe plafonul vehiculului pentru încărcături suplimentare."
+      }
+    },
+    {
+      "term": "Rev engine",
+      "translations": {
+        "en": "Make the engine run faster while the vehicle is not moving forward much.",
+        "ar": "رفع سرعة المحرك دون أن تتحرك المركبة كثيراً للأمام.",
+        "ur": "گاڑی زیادہ آگے بڑھے بغیر انجن کی رفتار بڑھانا۔",
+        "ro": "A crește turația motorului fără ca vehiculul să avanseze mult."
+      }
+    }
+  ],
+  "SV-50": [
+    {
+      "term": "Oil seals",
+      "translations": {
+        "en": "Rubber or metal rings that stop oil leaking from the engine.",
+        "ar": "حلقات تمنع تسرب الزيت من المحرك.",
+        "ur": "ربڑ یا دھاتی رنگ جو انجن سے تیل کا اخراج روکتے ہیں۔",
+        "ro": "Inele care împiedică scurgerea uleiului din motor."
+      }
+    },
+    {
+      "term": "Timing belt",
+      "translations": {
+        "en": "A belt that keeps engine valves and pistons moving in the correct timing.",
+        "ar": "حزام يزامن حركة صمامات المكابس في المحرك.",
+        "ur": "بیلٹ جو انجن کے والوز اور پسٹن کی درست وقت بندی رکھتی ہے۔",
+        "ro": "Curea care sincronizează supapele și pistoanele motorului."
+      }
+    },
+    {
+      "term": "Clutch",
+      "translations": {
+        "en": "The pedal that disconnects the engine from the wheels so you can change gear.",
+        "ar": "الدواسة التي تفصل المحرك عن العجلات لتغيير التروس.",
+        "ur": "پیڈل جو گیئر بدلنے کے لیے انجن کو پہیوں سے الگ کرتا ہے۔",
+        "ro": "Pedala care desparte motorul de roți ca să schimbați viteza."
+      }
+    }
+  ],
+  "SV-51": [
+    {
+      "term": "service schedule",
+      "translations": {
+        "en": "The maker’s planned times for checks, oil changes, and maintenance.",
+        "ar": "مواعيد الصيانة والفحص وتغيير الزيت وفق الشركة المصنعة.",
+        "ur": "مینوفیکچرر کا طے شدہ چیک، آئل چینج اور مینٹیننس شیڈول۔",
+        "ro": "Programul producătorului pentru verificări, schimburi de ulei și întreținere."
+      }
+    }
+  ],
+  "SV-52": [
+    {
+      "term": "route planner",
+      "translations": {
+        "en": "A map or app that suggests roads and directions for a journey.",
+        "ar": "خريطة أو تطبيق يقترح الطرق والاتجاهات للرحلة.",
+        "ur": "نقشہ یا ایپ جو سفر کے لیے سڑکیں اور سمت بتاتی ہے۔",
+        "ro": "Hartă sau aplicație care sugerează drumuri și direcții pentru călătorie."
+      }
+    },
+    {
+      "term": "handbook",
+      "translations": {
+        "en": "The vehicle’s owner manual with operating and safety information.",
+        "ar": "دليل المالك للمركبة وفيه معلومات التشغيل والسلامة.",
+        "ur": "گاڑی کی اونر مینوئل؛ چلانے اور سیفٹی کی معلومات۔",
+        "ro": "Manualul proprietarului cu informații de operare și siguranță."
+      }
+    }
+  ],
+  "SV-53": [
+    {
+      "term": "environmentally friendly",
+      "translations": {
+        "en": "Causing less harm to the environment, e.g. lower emissions.",
+        "ar": "أقل ضرراً بالبيئة، مثل انبعاثات أقل.",
+        "ur": "ماحول کو کم نقصان، مثلاً کم اخراج۔",
+        "ro": "Cu impact mai mic asupra mediului, de exemplu emisii mai reduse."
+      }
+    }
+  ],
+  "SV-54": [
+    {
+      "term": "alternative route",
+      "translations": {
+        "en": "A different path to the same destination if the usual road is blocked.",
+        "ar": "طريق بديل لنفس الوجهة إذا كان الطريق المعتاد مغلقاً.",
+        "ur": "اگر عام سڑک بند ہو تو اسی منزل کا دوسرا راستہ۔",
+        "ro": "Alt drum către aceeași destinație dacă ruta obișnuită e blocată."
+      }
+    },
+    {
+      "term": "Congestion charges",
+      "translations": {
+        "en": "Fees charged to drive into certain busy city zones to reduce traffic.",
+        "ar": "رسوم لدخول مناطق مدينة مزدحمة لتقليل المرور.",
+        "ur": "مصروف شہری علاقوں میں گاڑی لے جانے کی فیس تاکہ ٹریفک کم ہو۔",
+        "ro": "Taxe pentru a intra în anumite zone urbane aglomerate, pentru a reduce traficul."
+      }
+    }
+  ],
+  "SV-55": [
+    {
+      "term": "bus lanes",
+      "translations": {
+        "en": "Lanes reserved mainly for buses (and sometimes taxis or cycles).",
+        "ar": "مسارات مخصصة غالباً للحافلات (وأحياناً سيارات الأجرة أو الدراجات).",
+        "ur": "لینیں جو زیادہ تر بسوں کے لیے مخصوص ہیں (کبھی ٹیکسی/سائیکل بھی).",
+        "ro": "Benzi rezervate în principal autobuzelor (uneori și taxiuri sau biciclete)."
+      }
+    }
+  ],
+  "SV-56": [],
+  "SV-57": [],
+  "SV-58": [
+    {
+      "term": "Gearbox",
+      "translations": {
+        "en": "The part of the car that contains the gears for changing speed and power.",
+        "ar": "جزء السيارة الذي يحتوي التروس لتغيير السرعة والقوة.",
+        "ur": "گاڑی کا وہ حصہ جس میں گیئرز ہوتے ہیں رفتار اور پاور بدلنے کے لیے۔",
+        "ro": "Partea mașinii care conține treptele pentru viteză și putere."
+      }
+    },
+    {
+      "term": "Transmission",
+      "translations": {
+        "en": "The system that transfers engine power to the wheels, including the gearbox.",
+        "ar": "نظام ينقل قوة المحرك إلى العجلات، ويشمل صندوق التروس.",
+        "ur": "نظام جو انجن کی طاقت پہیوں تک پہنچاتا ہے، گیئر باکس سمیت۔",
+        "ro": "Sistemul care transmite puterea motorului la roți, inclusiv cutia de viteze."
+      }
+    }
+  ],
+  "SV-59": [
+    {
+      "term": "steering lock",
+      "translations": {
+        "en": "A security lock that stops the steering wheel turning when the key is removed.",
+        "ar": "قفل أمان يمنع دوران المقود عند إزالة المفتاح.",
+        "ur": "سیکیورٹی لاک جو چابی نکالنے پر سٹیئرنگ گھومنے سے روکتا ہے۔",
+        "ro": "Blocaj de securitate care împiedică rotirea volanului când cheia e scoasă."
+      }
+    }
+  ],
+  "SV-60": [
+    {
+      "term": "red routes",
+      "translations": {
+        "en": "UK roads marked with red lines where stopping and parking are tightly restricted.",
+        "ar": "طرق بريطانية بخطوط حمراء يُقيَّد فيها التوقف والركن بشدة.",
+        "ur": "برطانوی سڑکیں سرخ لکیروں سے جہاں رکنے/پارکنگ سخت محدود ہے۔",
+        "ro": "Drumuri din Regatul Unit cu linii roșii unde oprirea și parcarea sunt strict limitate."
+      }
+    }
+  ],
+  "SV-61": [],
+  "SV-62": [
+    {
+      "term": "coasting",
+      "translations": {
+        "en": "Rolling along with the clutch pressed or in neutral, so the engine is not driving the wheels.",
+        "ar": "التدحرج مع الضغط على الدبرياج أو في الوضع المحايد دون أن يدفع المحرك العجلات.",
+        "ur": "کلچ دبا کر یا نیوٹرل میں پہیوں کو انجن سے بغیر جوڑے گھسیٹتے چلنا۔",
+        "ro": "A rula cu ambreiajul apăsat sau în neutru, fără ca motorul să antreneze roțile."
+      }
+    }
+  ],
+  "SV-63": [
+    {
+      "term": "Manufacturer's handbook",
+      "translations": {
+        "en": "The official owner’s manual from the car maker explaining controls and systems.",
+        "ar": "دليل المالك الرسمي من الشركة المصنعة يشرح التحكم والأنظمة.",
+        "ur": "کار ساز کی سرکاری اونر مینوئل جو کنٹرولز اور سسٹمز بتاتی ہے۔",
+        "ro": "Manualul oficial al producătorului care explică comenzile și sistemele."
+      }
+    },
+    {
+      "term": "Highway Code",
+      "translations": {
+        "en": "The official UK rules and advice for road users.",
+        "ar": "القواعد والنصائح الرسمية لمستخدمي الطريق في المملكة المتحدة.",
+        "ur": "برطانیہ میں سڑک استعمال کرنے والوں کے سرکاری قواعد اور مشورے۔",
+        "ro": "Regulile și sfaturile oficiale din Regatul Unit pentru participanții la trafic."
+      }
+    }
+  ],
+  "SV-64": [],
+  "SV-65": [
+    {
+      "term": "cruise control",
+      "translations": {
+        "en": "A system that holds a set speed without keeping your foot on the accelerator.",
+        "ar": "نظام يحافظ على سرعة محددة دون إبقاء قدمك على دواسة الوقود.",
+        "ur": "سسٹم جو ایک سیٹ رفتار برقرار رکھتا ہے بغیر ایکسلریٹر پر پاؤں رکھے۔",
+        "ro": "Sistem care menține o viteză setată fără a ține piciorul pe accelerație."
+      }
+    }
+  ],
+  "SV-66": [
+    {
+      "term": "zigzag lines",
+      "translations": {
+        "en": "Zigzag road markings near crossings; parking and waiting there is restricted.",
+        "ar": "خطوط متعرجة قرب المعابر؛ يُقيَّد الركن والانتظار هناك.",
+        "ur": "کراسنگ کے قریب زیگ زیگ لائنیں؛ وہاں پارکنگ/انتظار محدود ہے۔",
+        "ro": "Marcaje în zigzag lângă treceri; parcarea și așteptarea sunt restricționate."
+      }
+    },
+    {
+      "term": "zebra crossing",
+      "translations": {
+        "en": "A pedestrian crossing with black-and-white stripes where drivers must give way to people waiting to cross.",
+        "ar": "معبر مشاة بخطوط سوداء وبيضاء يجب على السائقين فيه إعطاء الأولوية لمن ينتظر العبور.",
+        "ur": "سیاہ و سفید پٹیوں والا پیدل کراسنگ جہاں ڈرائیورز کراس کرنے والوں کو راستہ دیں۔",
+        "ro": "Trecere de pietoni cu dungi alb-negru unde șoferii trebuie să cedeze trecerea persoanelor care așteaptă."
+      }
+    }
+  ],
+  "SV-67": [
+    {
+      "term": "Tyres under-inflated",
+      "translations": {
+        "en": "Tyres with too little air; can raise fuel use and affect braking.",
+        "ar": "إطارات بضغط هواء منخفض؛ قد تزيد استهلاك الوقود وتؤثر على الفرملة.",
+        "ur": "کم ہوا والے ٹائر؛ ایندھن بڑھ سکتا ہے اور بریک متاثر ہو سکتی ہے۔",
+        "ro": "Anvelope cu prea puțin aer; pot crește consumul și afecta frânarea."
+      }
+    }
+  ],
+  "SV-68": [],
+  "SV-69": [
+    {
+      "term": "head restraint",
+      "translations": {
+        "en": "The padded support behind your head on the seat, often called a headrest.",
+        "ar": "الدعامة المبطنة خلف رأسك على المقعد، وغالباً تُسمى مسند رأس.",
+        "ur": "سیٹ پر سر کے پیچھے گدی دار سہارا، اکثر ہیڈریسٹ کہلاتا ہے۔",
+        "ro": "Suportul tapițat din spatele capului pe scaun, adesea numit tetieră."
+      }
+    }
+  ],
+  "SV-70": [
+    {
+      "term": "driver drowsiness system",
+      "translations": {
+        "en": "A driver-assistance feature that detects tired driving and alerts you.",
+        "ar": "ميزة مساعدة تكشف القيادة المتعبة وتنبهك.",
+        "ur": "ڈرائیور اسسٹنس جو تھکن کی علامات دیکھ کر خبردار کرتی ہے۔",
+        "ro": "Funcție de asistență care detectează somnolența la volan și te avertizează."
+      }
+    }
+  ],
+  "SV-71": [
+    {
+      "term": "Anti-lock brakes",
+      "translations": {
+        "en": "ABS: brakes that help stop the wheels locking under hard braking.",
+        "ar": "فرامل مانعة للانغلاق (ABS) تساعد على منع قفل العجلات عند الفرملة القوية.",
+        "ur": "ABS بریکس جو سخت بریک پر پہیے لاک ہونے سے روکنے میں مدد دیتی ہیں۔",
+        "ro": "ABS: frâne care ajută să nu se blocheze roțile la frânare puternică."
+      }
+    },
+    {
+      "term": "head restraint",
+      "translations": {
+        "en": "The padded support behind your head on the seat, often called a headrest.",
+        "ar": "الدعامة المبطنة خلف رأسك على المقعد، وغالباً تُسمى مسند رأس.",
+        "ur": "سیٹ پر سر کے پیچھے گدی دار سہارا، اکثر ہیڈریسٹ کہلاتا ہے۔",
+        "ro": "Suportul tapițat din spatele capului pe scaun, adesea numit tetieră."
+      }
+    },
+    {
+      "term": "Collapsible steering wheel",
+      "translations": {
+        "en": "A steering column designed to fold in a crash to reduce injury.",
+        "ar": "عمود مقود ينطوي في الاصطدام لتقليل الإصابة.",
+        "ur": "سٹیئرنگ کالم جو حادثے میں مڑ/سمٹ کر چوٹ کم کرے۔",
+        "ro": "Coloană de direcție concepută să se plieze la impact pentru a reduce rănirea."
+      }
+    }
+  ],
+  "SV-72": [
+    {
+      "term": "Local authority recycling site",
+      "translations": {
+        "en": "A council tip or recycling centre that accepts items like used engine oil.",
+        "ar": "مركز تدوير تابع للبلدية يقبل مواد مثل زيت المحرك المستعمل.",
+        "ur": "کونسل کا ری سائیکلنگ مرکز جو استعمال شدہ انجن آئل وغیرہ قبول کرتا ہے۔",
+        "ro": "Centru de reciclare al autorității locale care acceptă, de exemplu, ulei uzat."
+      }
+    }
+  ],
+  "SV-73": [],
+  "SV-74": [
+    {
+      "term": "Etching registration",
+      "translations": {
+        "en": "Permanently marking the vehicle’s number plate onto glass or parts.",
+        "ar": "وسم رقم اللوحة بشكل دائم على الزجاج أو أجزاء المركبة.",
+        "ur": "گاڑی کا نمبر شیشے یا پرزوں پر مستقل طور پر کندہ کرنا۔",
+        "ro": "Marcare permanentă a numărului de înmatriculare pe geamuri sau piese."
+      }
+    }
+  ],
+  "SV-75": [
+    {
+      "term": "MOTs",
+      "translations": {
+        "en": "UK annual roadworthiness tests (MOT) checking safety and emissions.",
+        "ar": "فحوصات صلاحية سنوية بريطانية (MOT) للسلامة والانبعاثات.",
+        "ur": "برطانیہ کا سالانہ روڈ ورتھنس ٹیسٹ (MOT) سیفٹی اور اخراج کے لیے۔",
+        "ro": "Teste anuale britanice de stare tehnică (MOT) pentru siguranță și emisii."
+      }
+    },
+    {
+      "term": "exhaust emissions",
+      "translations": {
+        "en": "Gases and particles released from a vehicle’s exhaust into the air.",
+        "ar": "الغازات والجسيمات المنبعثة من عادم المركبة إلى الهواء.",
+        "ur": "گاڑی کے ایگزاسٹ سے ہوا میں نکلنے والی گیسیں اور ذرات۔",
+        "ro": "Gaze și particule eliberate din eșapamentul vehiculului în aer."
+      }
+    }
+  ],
+  "SV-76": [
+    {
+      "term": "child seat",
+      "translations": {
+        "en": "A special seat that holds a child safely with the correct restraints.",
+        "ar": "مقعد خاص يثبت الطفل بأمان بقيود مناسبة.",
+        "ur": "خاص سیٹ جو بچے کو درست حفاظتی پٹیوں سے محفوظ رکھتی ہے۔",
+        "ro": "Scaun special care ține copilul în siguranță cu fixări potrivite."
+      }
+    }
+  ],
+  "SV-77": [],
+  "SV-78": [
+    {
+      "term": "urban pollution",
+      "translations": {
+        "en": "Air and noise pollution in towns and cities, often from traffic.",
+        "ar": "تلوث الهواء والضوضاء في المدن، وغالباً من المرور.",
+        "ur": "شہروں میں ہوا اور شور کی آلودگی، اکثر ٹریفک سے۔",
+        "ro": "Poluare a aerului și zgomotului în orașe, deseori din trafic."
+      }
+    },
+    {
+      "term": "Over-rev",
+      "translations": {
+        "en": "Run the engine at very high revs, which wastes fuel and can cause wear.",
+        "ar": "تشغيل المحرك بدورات عالية جداً فيهدر الوقود وقد يسبب تآكلاً.",
+        "ur": "انجن کو بہت تیز ریوز پر چلانا؛ ایندھن ضائع اور گھساؤ ہو سکتا ہے۔",
+        "ro": "A tură motorul foarte sus; risipește combustibil și poate uza motorul."
+      }
+    }
+  ],
+  "SV-79": [
+    {
+      "term": "tyre wear",
+      "translations": {
+        "en": "How the tyre rubber wears down; uneven wear can signal a fault.",
+        "ar": "تآكل مطاط الإطار؛ التآكل غير المتساوي قد يشير إلى عطل.",
+        "ur": "ٹائر ربڑ کا گھسنا؛ غیر برابر گھساؤ خرابی کی علامت ہو سکتی ہے۔",
+        "ro": "Uzura cauciucului; uzura neuniformă poate semnala o defecțiune."
+      }
+    },
+    {
+      "term": "Gearbox",
+      "translations": {
+        "en": "The part of the car that contains the gears for changing speed and power.",
+        "ar": "جزء السيارة الذي يحتوي التروس لتغيير السرعة والقوة.",
+        "ur": "گاڑی کا وہ حصہ جس میں گیئرز ہوتے ہیں رفتار اور پاور بدلنے کے لیے۔",
+        "ro": "Partea mașinii care conține treptele pentru viteză și putere."
+      }
+    }
+  ],
+  "SV-80": [
+    {
+      "term": "Anticipate traffic ahead",
+      "translations": {
+        "en": "Look far ahead and prepare early for what other vehicles will do.",
+        "ar": "النظر بعيداً للأمام والاستعداد مبكراً لما ستفعله المركبات الأخرى.",
+        "ur": "آگے دور دیکھنا اور دوسری گاڑیوں کے اعمال کے لیے جلد تیار رہنا۔",
+        "ro": "Privește departe înainte și pregătește-te din timp pentru ce fac alții."
+      }
+    }
+  ],
+  "SV-81": [
+    {
+      "term": "adaptive cruise control",
+      "translations": {
+        "en": "Cruise control that also adjusts speed to keep a gap from the vehicle ahead.",
+        "ar": "تحكم سرعة يضبط أيضاً السرعة للحفاظ على مسافة خلف المركبة الأمامية.",
+        "ur": "کروز کنٹرول جو آگے گاڑی سے فاصلہ رکھنے کے لیے رفتار بھی بدلتا ہے۔",
+        "ro": "Tempomat care ajustează și viteza pentru a păstra distanța față de vehiculul din față."
+      }
+    }
+  ],
+  "SV-82": [
+    {
+      "term": "rear-facing baby seat",
+      "translations": {
+        "en": "A child seat that faces backwards, safer for infants in a crash.",
+        "ar": "مقعد طفل يواجه الخلف، أكثر أماناً للرضع عند الاصطدام.",
+        "ur": "بچے کی سیٹ جو پیچھے رخ کرتی ہے؛ حادثے میں بچوں کے لیے محفوظ تر۔",
+        "ro": "Scaun pentru bebeluși orientat spre spate, mai sigur la impact."
+      }
+    },
+    {
+      "term": "airbag",
+      "translations": {
+        "en": "A safety cushion that inflates quickly in a crash to protect occupants.",
+        "ar": "وسادة أمان تنتفخ بسرعة في الاصطدام لحماية الركاب.",
+        "ur": "حفاظتی تکیہ جو حادثے میں تیزی سے پھول کر مسافروں کی حفاظت کرتا ہے۔",
+        "ro": "Pernă de siguranță care se umflă rapid la impact pentru a proteja ocupanții."
+      }
+    }
+  ],
+  "IN-09": [
+    {
+      "term": "casualty",
+      "translations": {
+        "en": "An injured person in an accident.",
+        "ar": "شخص مصاب في حادث.",
+        "ur": "حادثے میں زخمی شخص۔",
+        "ro": "Persoană rănită într-un accident."
+      }
+    },
+    {
+      "term": "CPR",
+      "translations": {
+        "en": "Cardiopulmonary resuscitation: chest compressions (and breaths) to help someone not breathing.",
+        "ar": "إنعاش قلبي رئوي: ضغطات صدر (وتنفس) لمن لا يتنفس.",
+        "ur": "سی پی آر: سینے کی دباؤ (اور سانس) اس کے لیے جو سانس نہیں لے رہا۔",
+        "ro": "Resuscitare cardiopulmonară: compresii toracice (și respirații) pentru cine nu respiră."
+      }
+    }
+  ],
+  "IN-10": [
+    {
+      "term": "unconscious",
+      "translations": {
+        "en": "Not awake and not responding; may need emergency help.",
+        "ar": "فاقد للوعي ولا يستجيب؛ قد يحتاج مساعدة طارئة.",
+        "ur": "بے ہوش اور بغیر ردعمل؛ ہنگامی مدد درکار ہو سکتی ہے۔",
+        "ro": "Inconștient, fără răspuns; poate necesita ajutor de urgență."
+      }
+    }
+  ],
+  "IN-11": [
+    {
+      "term": "AED",
+      "translations": {
+        "en": "Automated external defibrillator: a device that can shock the heart back to rhythm.",
+        "ar": "جهاز صدمات كهربائية آلي يمكنه إعادة نظم القلب.",
+        "ur": "خودکار ڈیفبریلیٹر جو دل کی دھڑکن درست کرنے کے لیے جھٹکا دے سکتا ہے۔",
+        "ro": "Defibrilator extern automat care poate șoca inima pentru a-i restabili ritmul."
+      }
+    },
+    {
+      "term": "casualty",
+      "translations": {
+        "en": "An injured person in an accident.",
+        "ar": "شخص مصاب في حادث.",
+        "ur": "حادثے میں زخمی شخص۔",
+        "ro": "Persoană rănită într-un accident."
+      }
+    }
+  ],
+  "IN-12": [],
+  "IN-13": [
+    {
+      "term": "AED",
+      "translations": {
+        "en": "Automated external defibrillator: a device that can shock the heart back to rhythm.",
+        "ar": "جهاز صدمات كهربائية آلي يمكنه إعادة نظم القلب.",
+        "ur": "خودکار ڈیفبریلیٹر جو دل کی دھڑکن درست کرنے کے لیے جھٹکا دے سکتا ہے۔",
+        "ro": "Defibrilator extern automat care poate șoca inima pentru a-i restabili ritmul."
+      }
+    },
+    {
+      "term": "First-aiders",
+      "translations": {
+        "en": "People trained to give basic emergency care before professionals arrive.",
+        "ar": "أشخاص مدرَّبون على الإسعافات الأولية قبل وصول المختصين.",
+        "ur": "لوگ جو پیشہ ور مدد سے پہلے بنیادی ایمرجنسی دیکھ بھال کر سکیں۔",
+        "ro": "Persoane instruite să acorde primul ajutor înainte de sosirea profesioniștilor."
+      }
+    },
+    {
+      "term": "Paramedics",
+      "translations": {
+        "en": "Emergency medical staff who treat patients at the scene and in ambulances.",
+        "ar": "طاقم طبي طارئ يعالج في الموقع وفي سيارات الإسعاف.",
+        "ur": "ایمرجنسی طبی عملہ جو موقع اور ایمبولنس میں علاج کرتا ہے۔",
+        "ro": "Personal medical de urgență care tratează la fața locului și în ambulanță."
+      }
+    }
+  ],
+  "IN-14": [],
+  "IN-15": [
+    {
+      "term": "dangerous goods",
+      "translations": {
+        "en": "Hazardous materials (chemicals, fuels, etc.) needing special transport rules.",
+        "ar": "مواد خطرة (كيماويات ووقود وغيرها) بقواعد نقل خاصة.",
+        "ur": "خطرناک مواد (کیمیکل، ایندھن وغیرہ) جن کے لیے خاص ٹرانسپورٹ قواعد ہیں۔",
+        "ro": "Materiale periculoase (chimicale, combustibili etc.) cu reguli speciale de transport."
+      }
+    },
+    {
+      "term": "hazard markings",
+      "translations": {
+        "en": "Warning symbols or plates that show a load’s danger type.",
+        "ar": "رموز أو لوحات تحذير تُظهر نوع خطر الحمولة.",
+        "ur": "وارننگ علامتیں/پلیٹیں جو مال کے خطرے کی قسم دکھاتی ہیں۔",
+        "ro": "Simboluri sau plăci de avertizare care arată tipul de pericol al încărcăturii."
+      }
+    }
+  ],
+  "IN-16": [
+    {
+      "term": "Variable message signs",
+      "translations": {
+        "en": "Electronic signs that change to show live warnings or instructions.",
+        "ar": "لافتات إلكترونية تتغير لعرض تحذيرات أو تعليمات حية.",
+        "ur": "الیکٹرانک سائنز جو تبدیل ہو کر براہِ راست وارننگ/ہدایات دکھاتی ہیں۔",
+        "ro": "Indicatoare electronice care se schimbă pentru avertizări sau instrucțiuni live."
+      }
+    },
+    {
+      "term": "congestion",
+      "translations": {
+        "en": "Heavy, slow-moving traffic when roads are overcrowded.",
+        "ar": "ازدحام مروري كثيف وبطيء عندما تكون الطرق مزدحمة جداً.",
+        "ur": "بھاری، سست ٹریفک جب سڑکیں بہت بھری ہوں۔",
+        "ro": "Trafic dens și lent când drumurile sunt supraaglomerate."
+      }
+    }
+  ],
+  "RS-2001": [
+    {
+      "term": "junction",
+      "translations": {
+        "en": "A place where roads meet or cross, such as a T-junction or crossroads.",
+        "ar": "مكان تلتقي فيه الطرق أو تتقاطع، مثل تقاطع على شكل T أو مفترق.",
+        "ur": "وہ جگہ جہاں سڑکیں ملتی یا کاٹتی ہیں، جیسے T-جنکشن۔",
+        "ro": "Locul unde drumurile se întâlnesc sau se intersectează, de exemplu o intersecție în T."
+      }
+    },
+    {
+      "term": "give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    }
+  ],
+  "RS-2002": [
+    {
+      "term": "octagonal",
+      "translations": {
+        "en": "Eight-sided shape; in the UK the STOP sign is octagonal.",
+        "ar": "شكل ثماني الأضلاع؛ في المملكة المتحدة إشارة STOP ثمانية.",
+        "ur": "آٹھ اطراف والی شکل؛ برطانیہ میں STOP سائن آکٹَیگونل ہے۔",
+        "ro": "Formă cu opt laturi; în Regatul Unit indicatorul STOP este octogonal."
+      }
+    },
+    {
+      "term": "stop line",
+      "translations": {
+        "en": "The solid white line at a junction that marks where you must stop when required.",
+        "ar": "الخط الأبيض المتصل عند التقاطع الذي يحدد أين يجب التوقف عند اللزوم.",
+        "ur": "جنکشن پر ٹھوس سفید لکیر جو بتاتی ہے کہاں رکنا ضروری ہو۔",
+        "ro": "Linia albă continuă de la intersecție care marchează unde trebuie să oprești când e necesar."
+      }
+    }
+  ],
+  "RS-2003": [],
+  "RS-2006": [],
+  "RS-2009": [
+    {
+      "term": "zebra crossing",
+      "translations": {
+        "en": "A pedestrian crossing with black-and-white stripes where drivers must give way to people waiting to cross.",
+        "ar": "معبر مشاة بخطوط سوداء وبيضاء يجب على السائقين فيه إعطاء الأولوية لمن ينتظر العبور.",
+        "ur": "سیاہ و سفید پٹیوں والا پیدل کراسنگ جہاں ڈرائیورز کراس کرنے والوں کو راستہ دیں۔",
+        "ro": "Trecere de pietoni cu dungi alb-negru unde șoferii trebuie să cedeze trecerea persoanelor care așteaptă."
+      }
+    }
+  ],
+  "RS-2010": [
+    {
+      "term": "Double bend ahead",
+      "translations": {
+        "en": "A warning that two bends follow closely, one after the other.",
+        "ar": "تحذير بانعطافين متتاليين قريبين.",
+        "ur": "وارننگ کہ دو موڑ لگاتار آ رہے ہیں۔",
+        "ro": "Avertizare că urmează două curbe una după alta."
+      }
+    },
+    {
+      "term": "Slippery road ahead",
+      "translations": {
+        "en": "A warning that the road surface may be slippery.",
+        "ar": "تحذير بأن سطح الطريق قد يكون زلقاً.",
+        "ur": "وارننگ کہ سڑک کی سطح پھسلن والی ہو سکتی ہے۔",
+        "ro": "Avertizare că suprafața drumului poate fi alunecoasă."
+      }
+    },
+    {
+      "term": "Road narrows",
+      "translations": {
+        "en": "The carriageway becomes narrower ahead, so there is less space for vehicles.",
+        "ar": "يصبح عرض الطريق أضيق أمامك، فيقلّت المساحة للمركبات.",
+        "ur": "آگے سڑک تنگ ہو جاتی ہے، اس لیے گاڑیوں کے لیے کم جگہ ہوتی ہے۔",
+        "ro": "Carosabilul se îngustează în față, deci rămâne mai puțin spațiu pentru vehicule."
+      }
+    }
+  ],
+  "RS-2011": [],
+  "RS-2012": [
+    {
+      "term": "dusk",
+      "translations": {
+        "en": "The period of fading light after sunset when visibility drops.",
+        "ar": "فترة الضوء الخافت بعد الغروب حين تقل الرؤية.",
+        "ur": "غروب کے بعد مدھم روشنی کا وقت جب نظر کمزور پڑتی ہے۔",
+        "ro": "Perioada de lumină slabă după apus, când vizibilitatea scade."
+      }
+    }
+  ]
+}

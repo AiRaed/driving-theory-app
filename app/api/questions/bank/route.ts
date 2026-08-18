@@ -10,6 +10,8 @@ export async function GET() {
     questions: bank.questions,
     urduByTopic: bank.urduByTopic,
     romanianByTopic: bank.romanianByTopic,
+    polishByTopic: bank.polishByTopic,
+    portugueseByTopic: bank.portugueseByTopic,
     source: bank.source,
     count: bank.count,
   });

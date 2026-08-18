@@ -1,0 +1,856 @@
+{
+  "motorway-driving": {
+    "MW-32": {
+      "promptPt": "De que forma os limites de velocidade variáveis ajudam o trânsito na autoestrada?",
+      "options": [
+        {
+          "pt": "Ao aumentar os limites em todos os momentos"
+        },
+        {
+          "pt": "Ao estabelecer uma velocidade mínima"
+        },
+        {
+          "pt": "Ao ajustar as velocidades legais para manter o trânsito a fluir de forma suave"
+        },
+        {
+          "pt": "Ao permitir ultrapassagens mais rápidas"
+        }
+      ]
+    },
+    "MW-33": {
+      "promptPt": "Em que via deve estar bem antes da saída da autoestrada?",
+      "options": [
+        {
+          "pt": "Via da direita"
+        },
+        {
+          "pt": "Via do meio"
+        },
+        {
+          "pt": "Via da esquerda"
+        },
+        {
+          "pt": "Berma de emergência"
+        }
+      ]
+    },
+    "MW-34": {
+      "promptPt": "Ao utilizar um telefone de emergência na autoestrada, como deve posicionar-se?",
+      "options": [
+        {
+          "pt": "Perto da faixa de rodagem"
+        },
+        {
+          "pt": "De frente para o trânsito que se aproxima"
+        },
+        {
+          "pt": "De costas para o trânsito"
+        },
+        {
+          "pt": "Na berma de emergência, de frente para o telefone e de costas para o trânsito"
+        }
+      ]
+    },
+    "MW-35": {
+      "promptPt": "Qual é o limite nacional de velocidade para automóveis e motociclos numa autoestrada (salvo indicação em contrário)?",
+      "options": [
+        {
+          "pt": "50 mph"
+        },
+        {
+          "pt": "60 mph"
+        },
+        {
+          "pt": "70 mph"
+        },
+        {
+          "pt": "80 mph"
+        }
+      ]
+    },
+    "MW-36": {
+      "promptPt": "Quando é permitida a ultrapassagem pela esquerda numa autoestrada?",
+      "options": [
+        {
+          "pt": "Sempre que a berma de emergência estiver livre"
+        },
+        {
+          "pt": "Quando o trânsito à sua direita se move mais lentamente em filas"
+        },
+        {
+          "pt": "Quando sinaliza à esquerda para avisar os outros"
+        },
+        {
+          "pt": "Quando a via da direita está a sinalizar à direita"
+        }
+      ]
+    },
+    "MW-37": {
+      "promptPt": "Se precisar de chegar ao telefone de emergência mais próximo na autoestrada, em que direção deve caminhar?",
+      "options": [
+        {
+          "pt": "No sentido do trânsito"
+        },
+        {
+          "pt": "De frente para o trânsito que se aproxima"
+        },
+        {
+          "pt": "Na direção indicada pelos postes marcadores"
+        },
+        {
+          "pt": "Em direção à saída mais próxima"
+        }
+      ]
+    },
+    "MW-38": {
+      "promptPt": "Qual é o limite de velocidade na autoestrada para automóveis e motociclos, salvo indicação em contrário?",
+      "options": [
+        {
+          "pt": "30 mph"
+        },
+        {
+          "pt": "50 mph"
+        },
+        {
+          "pt": "60 mph"
+        },
+        {
+          "pt": "70 mph"
+        }
+      ]
+    },
+    "MW-39": {
+      "promptPt": "Numa autoestrada de três vias, que via deve utilizar normalmente quando a estrada à frente está livre?",
+      "options": [
+        {
+          "pt": "Esquerda"
+        },
+        {
+          "pt": "Centro"
+        },
+        {
+          "pt": "Direita"
+        },
+        {
+          "pt": "Centro ou direita"
+        }
+      ]
+    },
+    "MW-40": {
+      "promptPt": "Está na via da esquerda e há veículos a entrar a partir de uma via de acesso. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar para que tenham de entrar atrás de si"
+        },
+        {
+          "pt": "Ajustar a velocidade ou mudar de via se for seguro"
+        },
+        {
+          "pt": "Manter a velocidade independentemente"
+        },
+        {
+          "pt": "Ligar as luzes de emergência"
+        }
+      ]
+    },
+    "MW-41": {
+      "promptPt": "Que tipo de veículo não é permitido numa autoestrada?",
+      "options": [
+        {
+          "pt": "Scooters de mobilidade motorizadas"
+        },
+        {
+          "pt": "Motociclos com mais de 50 cc"
+        },
+        {
+          "pt": "Autocarros de dois andares"
+        },
+        {
+          "pt": "Automóveis com transmissão automática"
+        }
+      ]
+    },
+    "MW-42": {
+      "promptPt": "Se falhar a sua saída numa autoestrada, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Recuar pela berma de emergência"
+        },
+        {
+          "pt": "Continuar até à saída seguinte"
+        },
+        {
+          "pt": "Recuar com cuidado na via da esquerda"
+        },
+        {
+          "pt": "Fazer uma inversão de marcha pelo separador central"
+        }
+      ]
+    },
+    "MW-43": {
+      "promptPt": "De que cor são os catadióptricos refletivos entre as vias numa autoestrada?",
+      "options": [
+        {
+          "pt": "Verde"
+        },
+        {
+          "pt": "Âmbar"
+        },
+        {
+          "pt": "Branco"
+        },
+        {
+          "pt": "Vermelho"
+        }
+      ]
+    },
+    "MW-44": {
+      "promptPt": "Onde deve parar para descansar se se sentir cansado numa autoestrada?",
+      "options": [
+        {
+          "pt": "Na berma de emergência"
+        },
+        {
+          "pt": "Na área de serviço mais próxima"
+        },
+        {
+          "pt": "Numa via de acesso"
+        },
+        {
+          "pt": "No separador central"
+        }
+      ]
+    },
+    "MW-45": {
+      "promptPt": "Porque é melhor usar um telefone de emergência na berma do que um telemóvel numa autoestrada?",
+      "options": [
+        {
+          "pt": "Liga-o a uma oficina local"
+        },
+        {
+          "pt": "Os telemóveis distraem os outros condutores"
+        },
+        {
+          "pt": "Permite que os serviços de emergência o localizem facilmente"
+        },
+        {
+          "pt": "Os telemóveis não funcionam nas autoestradas"
+        }
+      ]
+    },
+    "MW-46": {
+      "promptPt": "Vê catadióptricos vermelhos à esquerda e brancos à direita. Em que via está?",
+      "options": [
+        {
+          "pt": "Via da direita"
+        },
+        {
+          "pt": "Via do meio"
+        },
+        {
+          "pt": "Berma de emergência"
+        },
+        {
+          "pt": "Via da esquerda"
+        }
+      ]
+    },
+    "MW-47": {
+      "promptPt": "O que deve fazer se for mostrada uma cruz vermelha por cima de todas as vias da autoestrada?",
+      "options": [
+        {
+          "pt": "Entrar na berma de emergência"
+        },
+        {
+          "pt": "Abrandar e esperar"
+        },
+        {
+          "pt": "Sair na saída seguinte"
+        },
+        {
+          "pt": "Parar e esperar"
+        }
+      ]
+    },
+    "MW-48": {
+      "promptPt": "O seu veículo avaria e não consegue alcançar a berma de emergência. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ligar as luzes de emergência"
+        },
+        {
+          "pt": "Ficar atrás do veículo"
+        },
+        {
+          "pt": "Tentar repará-lo rapidamente"
+        },
+        {
+          "pt": "Parar o trânsito atrás de si"
+        }
+      ]
+    },
+    "MW-49": {
+      "promptPt": "Quando deve utilizar normalmente a via da esquerda numa autoestrada?",
+      "options": [
+        {
+          "pt": "Ao ultrapassar"
+        },
+        {
+          "pt": "Quando a estrada à frente está livre e não está a ultrapassar"
+        },
+        {
+          "pt": "Ao fazer uma chamada telefónica"
+        },
+        {
+          "pt": "Ao conduzir lentamente"
+        }
+      ]
+    },
+    "MW-50": {
+      "promptPt": "O que deve fazer ao circular num sistema de sentido contrário (contraflow)?",
+      "options": [
+        {
+          "pt": "Mudar de via para avançar mais depressa"
+        },
+        {
+          "pt": "Manter uma distância segura do veículo à frente"
+        },
+        {
+          "pt": "Aproximar-se para reduzir as filas"
+        },
+        {
+          "pt": "Usar as luzes de emergência"
+        }
+      ]
+    },
+    "MW-51": {
+      "promptPt": "O que esperaria normalmente num sistema de sentido contrário (contraflow)?",
+      "options": [
+        {
+          "pt": "Semáforos temporários"
+        },
+        {
+          "pt": "Limites de velocidade mais baixos"
+        },
+        {
+          "pt": "Vias mais largas"
+        },
+        {
+          "pt": "Lombas"
+        }
+      ]
+    },
+    "MW-52": {
+      "promptPt": "Porque é importante verificar o veículo antes de uma viagem longa em autoestrada?",
+      "options": [
+        {
+          "pt": "As autoestradas desgastam os pneus mais depressa"
+        },
+        {
+          "pt": "As áreas de serviço não ajudam em avarias"
+        },
+        {
+          "pt": "Velocidades elevadas contínuas aumentam o risco de avaria"
+        },
+        {
+          "pt": "Os travões são usados mais"
+        }
+      ]
+    },
+    "MW-53": {
+      "promptPt": "O que estão os agentes de trânsito (traffic officers) autorizados a fazer nas autoestradas?",
+      "options": [
+        {
+          "pt": "Prender condutores"
+        },
+        {
+          "pt": "Reparar veículos"
+        },
+        {
+          "pt": "Emitir avisos de multa"
+        },
+        {
+          "pt": "Parar e dirigir o trânsito"
+        }
+      ]
+    },
+    "MW-54": {
+      "promptPt": "De que cor são os catadióptricos entre a berma de emergência e a via da esquerda?",
+      "options": [
+        {
+          "pt": "Verde"
+        },
+        {
+          "pt": "Vermelho"
+        },
+        {
+          "pt": "Branco"
+        },
+        {
+          "pt": "Âmbar"
+        }
+      ]
+    },
+    "MW-55": {
+      "promptPt": "É mostrada uma cruz vermelha por cima da berma de emergência, com limites de velocidade por cima das outras vias. O que significa isto?",
+      "options": [
+        {
+          "pt": "A berma pode ser usada como via"
+        },
+        {
+          "pt": "A berma é apenas para uso de emergência"
+        },
+        {
+          "pt": "A berma tem um limite de 50 mph"
+        },
+        {
+          "pt": "Pode descansar aí"
+        }
+      ]
+    },
+    "MW-56": {
+      "promptPt": "Onde encontraria uma via para veículos lentos (crawler) ou de subida numa autoestrada?",
+      "options": [
+        {
+          "pt": "Perto de uma área de serviço"
+        },
+        {
+          "pt": "Antes de um nó"
+        },
+        {
+          "pt": "Num troço íngreme em subida"
+        },
+        {
+          "pt": "Ao longo da berma de emergência"
+        }
+      ]
+    },
+    "MW-57": {
+      "promptPt": "Após uma avaria na berma de emergência, como deve regressar à autoestrada?",
+      "options": [
+        {
+          "pt": "Entrar diretamente no trânsito"
+        },
+        {
+          "pt": "Esperar que outro condutor sinalize"
+        },
+        {
+          "pt": "Ganhar velocidade na berma e depois integrar-se com segurança"
+        },
+        {
+          "pt": "Manter as luzes de emergência ligadas ao entrar"
+        }
+      ]
+    }
+  },
+  "rules-of-the-road": {
+    "RR-06": {
+      "promptPt": "Uma ciclovia está marcada com uma linha branca interrompida. O que significa isto para os condutores?",
+      "options": [
+        {
+          "pt": "Os condutores não devem entrar"
+        },
+        {
+          "pt": "Os condutores podem entrar se for necessário e seguro"
+        },
+        {
+          "pt": "Os ciclistas circulam nos dois sentidos"
+        },
+        {
+          "pt": "Os motociclos devem usá-la"
+        }
+      ]
+    },
+    "RR-07": {
+      "promptPt": "Um sinal indica que um limite de velocidade anteriormente em vigor terminou. O que significa isto?",
+      "options": [
+        {
+          "pt": "Aplica-se uma velocidade mínima"
+        },
+        {
+          "pt": "Fim da velocidade máxima"
+        },
+        {
+          "pt": "Fim da velocidade mínima"
+        },
+        {
+          "pt": "Aplica-se agora o limite nacional de velocidade"
+        }
+      ]
+    },
+    "RR-08": {
+      "promptPt": "Quando deve utilizar normalmente a via da direita numa estrada de duas vias (dual carriageway)?",
+      "options": [
+        {
+          "pt": "Ao virar à direita ou a ultrapassar"
+        },
+        {
+          "pt": "Ao passar por estradas laterais"
+        },
+        {
+          "pt": "Quando circula a velocidade elevada constante"
+        },
+        {
+          "pt": "À velocidade mínima"
+        }
+      ]
+    },
+    "RR-09": {
+      "promptPt": "Não tem a certeza se é seguro fazer marcha-atrás com o veículo. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Buzinar"
+        },
+        {
+          "pt": "Acelerar o motor"
+        },
+        {
+          "pt": "Sair e verificar"
+        },
+        {
+          "pt": "Recuar lentamente"
+        }
+      ]
+    },
+    "RR-10": {
+      "promptPt": "Qual é o local mais seguro para estacionar o veículo?",
+      "options": [
+        {
+          "pt": "Perto de uma paragem de autocarro"
+        },
+        {
+          "pt": "No cimo de uma colina"
+        },
+        {
+          "pt": "Perto de uma passagem de nível"
+        },
+        {
+          "pt": "Num lugar de estacionamento marcado"
+        }
+      ]
+    },
+    "RR-11": {
+      "promptPt": "Em zonas urbanas sem sinais de limite de velocidade, como é normalmente indicado um limite de 30 mph?",
+      "options": [
+        {
+          "pt": "Linhas de perigo"
+        },
+        {
+          "pt": "Presença de iluminação pública"
+        },
+        {
+          "pt": "Ilhas para peões"
+        },
+        {
+          "pt": "Linhas amarelas"
+        }
+      ]
+    },
+    "RR-12": {
+      "promptPt": "Está numa estrada estreita com locais de cruzamento. Aproxima-se um veículo à frente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Obrigar o outro a recuar"
+        },
+        {
+          "pt": "Entrar no local de cruzamento mais próximo à sua esquerda"
+        },
+        {
+          "pt": "Usar a berma"
+        },
+        {
+          "pt": "Continuar a conduzir"
+        }
+      ]
+    },
+    "RR-13": {
+      "promptPt": "O que significa quando não há sinais locais de limite de velocidade numa estrada aberta?",
+      "options": [
+        {
+          "pt": "Não é permitido aguardar"
+        },
+        {
+          "pt": "Entrada proibida"
+        },
+        {
+          "pt": "Aplica-se o limite nacional de velocidade"
+        },
+        {
+          "pt": "Aplica-se um limite temporário"
+        }
+      ]
+    },
+    "RR-14": {
+      "promptPt": "Porque pode ser perigoso fazer marcha-atrás de uma estrada lateral para uma estrada principal?",
+      "options": [
+        {
+          "pt": "Os sensores podem falhar"
+        },
+        {
+          "pt": "Visão limitada do trânsito"
+        },
+        {
+          "pt": "As luzes não se veem"
+        },
+        {
+          "pt": "Os espelhos precisam de ajuste"
+        }
+      ]
+    },
+    "RR-15": {
+      "promptPt": "Quando pode parar e aguardar dentro de uma caixa de cruzamento (box junction)?",
+      "options": [
+        {
+          "pt": "Ao virar à esquerda no trânsito"
+        },
+        {
+          "pt": "Ao seguir em frente"
+        },
+        {
+          "pt": "Ao aguardar para virar à direita e estiver bloqueado pelo trânsito em sentido contrário"
+        },
+        {
+          "pt": "Em rotundas"
+        }
+      ]
+    },
+    "RR-16": {
+      "promptPt": "Quem tem prioridade num cruzamento sem marcação?",
+      "options": [
+        {
+          "pt": "O veículo maior"
+        },
+        {
+          "pt": "O veículo mais rápido"
+        },
+        {
+          "pt": "O veículo mais pequeno"
+        },
+        {
+          "pt": "Ninguém tem prioridade"
+        }
+      ]
+    },
+    "RR-17": {
+      "promptPt": "Porque é mais seguro virar por detrás de um veículo em sentido contrário quando ambos viram à direita?",
+      "options": [
+        {
+          "pt": "Melhor consumo de combustível"
+        },
+        {
+          "pt": "Visão mais clara do trânsito"
+        },
+        {
+          "pt": "Viragem mais rápida"
+        },
+        {
+          "pt": "Evitar parar"
+        }
+      ]
+    },
+    "RR-18": {
+      "promptPt": "Numa passagem Pelican, a luz vermelha muda para âmbar intermitente. O que significa isto?",
+      "options": [
+        {
+          "pt": "Parar imediatamente"
+        },
+        {
+          "pt": "Avançar sem verificar"
+        },
+        {
+          "pt": "Ceder a passagem aos peões que ainda estejam a atravessar"
+        },
+        {
+          "pt": "Esperar pelo verde"
+        }
+      ]
+    },
+    "RR-19": {
+      "promptPt": "Vê um peão à espera numa passagem Zebra. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ignorá-lo"
+        },
+        {
+          "pt": "Passar a alta velocidade"
+        },
+        {
+          "pt": "Estar preparado para abrandar ou parar para o deixar atravessar"
+        },
+        {
+          "pt": "Buzinar"
+        }
+      ]
+    },
+    "RR-20": {
+      "promptPt": "Quando pode circular numa via de autocarros (bus lane)?",
+      "options": [
+        {
+          "pt": "A qualquer hora"
+        },
+        {
+          "pt": "Para ultrapassar o trânsito"
+        },
+        {
+          "pt": "Fora do horário de funcionamento"
+        },
+        {
+          "pt": "Nunca"
+        }
+      ]
+    },
+    "RR-21": {
+      "promptPt": "Além dos indicadores de mudança de direção, como podem os condutores comunicar as suas intenções aos outros?",
+      "options": [
+        {
+          "pt": "Faróis de nevoeiro"
+        },
+        {
+          "pt": "Luzes de travão"
+        },
+        {
+          "pt": "Luzes interiores"
+        },
+        {
+          "pt": "Posição e movimento do veículo"
+        }
+      ]
+    },
+    "RR-22": {
+      "promptPt": "Está a conduzir numa estrada movimentada e apercebe-se de que segue no sentido errado. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Fazer marcha-atrás na estrada principal"
+        },
+        {
+          "pt": "Fazer uma inversão de marcha"
+        },
+        {
+          "pt": "Virar com segurança numa estrada lateral"
+        },
+        {
+          "pt": "Parar e bloquear o trânsito"
+        }
+      ]
+    },
+    "RR-23": {
+      "promptPt": "Apercebe-se demasiado tarde de que está na via errada num cruzamento movimentado. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Forçar a passagem"
+        },
+        {
+          "pt": "Parar e bloquear o trânsito"
+        },
+        {
+          "pt": "Continuar em segurança na mesma via"
+        },
+        {
+          "pt": "Usar sinais manuais"
+        }
+      ]
+    },
+    "RR-24": {
+      "promptPt": "Numa estrada bem iluminada à noite numa zona urbana, porque deve usar os médios?",
+      "options": [
+        {
+          "pt": "Para ver mais longe"
+        },
+        {
+          "pt": "Para conduzir mais depressa"
+        },
+        {
+          "pt": "Para mudar rapidamente para os máximos"
+        },
+        {
+          "pt": "Para que os outros o vejam claramente"
+        }
+      ]
+    },
+    "RR-25": {
+      "promptPt": "Quando pode conduzir legalmente sem cinto de segurança?",
+      "options": [
+        {
+          "pt": "Ao fazer marcha-atrás como parte de uma manobra"
+        },
+        {
+          "pt": "Ao arrancar em subida"
+        },
+        {
+          "pt": "No trânsito lento"
+        },
+        {
+          "pt": "Ao testar os travões"
+        }
+      ]
+    },
+    "RR-26": {
+      "promptPt": "Está à espera numa passagem de nível. Passa um comboio, mas as luzes vermelhas continuam a piscar. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Avançar com cuidado"
+        },
+        {
+          "pt": "Sair e investigar"
+        },
+        {
+          "pt": "Telefonar ao operador de sinalização"
+        },
+        {
+          "pt": "Continuar à espera"
+        }
+      ]
+    },
+    "RR-27": {
+      "promptPt": "Está na via da direita e vê um sinal de que esta via está fechada mais à frente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ficar até à fila"
+        },
+        {
+          "pt": "Mudar para a esquerda imediatamente"
+        },
+        {
+          "pt": "Mudar para a esquerda com antecedência"
+        },
+        {
+          "pt": "Esperar e decidir mais tarde"
+        }
+      ]
+    },
+    "RR-28": {
+      "promptPt": "À noite, quando pode estacionar do lado direito da estrada?",
+      "options": [
+        {
+          "pt": "Sob iluminação pública"
+        },
+        {
+          "pt": "A mais de 10 m de um cruzamento"
+        },
+        {
+          "pt": "Apenas numa rua de sentido único"
+        },
+        {
+          "pt": "Com as luzes de presença ligadas"
+        }
+      ]
+    },
+    "RR-29": {
+      "promptPt": "No Reino Unido, que limite de velocidade se aplica normalmente onde há iluminação pública mas não há sinais de velocidade?",
+      "options": [
+        {
+          "pt": "30 mph"
+        },
+        {
+          "pt": "40 mph"
+        },
+        {
+          "pt": "50 mph"
+        },
+        {
+          "pt": "60 mph"
+        }
+      ]
+    }
+  }
+}

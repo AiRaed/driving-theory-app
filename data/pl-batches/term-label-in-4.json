@@ -1,0 +1,697 @@
+[
+  {
+    "term": "severe burns",
+    "enExplain": "Serious burn injuries that need careful cooling and urgent medical help.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Shared route",
+    "enExplain": "A path that pedestrians and cyclists may both use.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "sharp bend",
+    "enExplain": "A curve in the road that turns tightly and may need a clear speed reduction.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "shock",
+    "enExplain": "A serious medical condition after injury when the body is not circulating blood well.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "shoulder check",
+    "enExplain": "Looking over your shoulder to see areas the mirrors may miss.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "side road",
+    "enExplain": "A smaller road that joins a main road.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "side winds",
+    "enExplain": "Strong wind blowing across the road from the side, which can push a vehicle off its line.",
+    "existingKeywordPl": "wiatry boczne"
+  },
+  {
+    "term": "sidecar",
+    "enExplain": "A one-wheeled passenger compartment fixed to the side of a motorcycle.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "sidelights",
+    "enExplain": "Small, low-power lights used to make a parked or moving vehicle more visible.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Sidelights",
+    "enExplain": "Low-power front and rear position lights; not bright enough alone for driving at speed.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "sidewall cuts",
+    "enExplain": "Cuts or damage in the side wall of a tyre that can make it illegal or unsafe.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "signal operator",
+    "enExplain": "The person who controls railway signals and barriers at a level crossing.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "signalling",
+    "enExplain": "Using indicators (or other signals) to show other road users what you intend to do.",
+    "existingKeywordPl": "sygnalizowanie"
+  },
+  {
+    "term": "single carriageway",
+    "enExplain": "A road without a central reservation separating opposite directions of traffic.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "single carriageways",
+    "enExplain": "A road without a central reservation separating opposite directions of traffic.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "single-track road",
+    "enExplain": "A narrow road wide enough for only one vehicle, so drivers may need to wait to pass.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "skid marks",
+    "enExplain": "Marks left on the road when tyres lose grip; on warning signs they often mean a slippery road ahead.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "skidding",
+    "enExplain": "When tyres lose grip and the vehicle slides instead of staying under control.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "slip road",
+    "enExplain": "The short linking road used to join or leave a motorway.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "slippery road",
+    "enExplain": "A road surface with poor tyre grip, so vehicles can skid more easily.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Slippery road",
+    "enExplain": "A road surface with poor grip, so vehicles can skid more easily.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Slippery road ahead",
+    "enExplain": "A warning that the road surface may be slippery.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Slippery road surface",
+    "enExplain": "A road that is wet, icy, or otherwise hard for tyres to grip.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "snow chains",
+    "enExplain": "Metal chains fitted around tyres to improve grip in deep snow or ice.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Snow plough",
+    "enExplain": "A vehicle that clears snow from the road, often with a blade at the front.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "solid white line",
+    "enExplain": "An unbroken white road marking that often means you must not cross or enter.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "SORN",
+    "enExplain": "A declaration that a vehicle is kept off public roads and is not taxed for road use.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "sounding of horns",
+    "enExplain": "Using the vehicle horn to make a warning sound.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Speed camera",
+    "enExplain": "A camera that records vehicles breaking the speed limit.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "speed camera zone",
+    "enExplain": "An area where cameras check vehicle speeds for enforcement.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Speed cameras",
+    "enExplain": "Cameras that detect vehicles exceeding the speed limit.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "speed hump",
+    "enExplain": "A raised ridge across the road that forces drivers to slow down.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "speed humps",
+    "enExplain": "Raised ridges across the road that force drivers to slow down (also called sleeping policemen).",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Speed humps",
+    "enExplain": "Raised sections across the road designed to slow traffic down.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "speed limiters",
+    "enExplain": "Devices that restrict how fast a large vehicle can go, often required by law for lorries.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "spray",
+    "enExplain": "Water thrown up by tyres on a wet road that reduces how far you can see.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "stabiliser",
+    "enExplain": "A device that helps reduce swaying of a trailer or caravan while towing.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Stabiliser",
+    "enExplain": "A device that reduces unwanted swinging or swaying of a trailer while towing.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "staggered junction",
+    "enExplain": "A junction where side roads join from left and right at slightly different points, not opposite each other.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "stalls",
+    "enExplain": "The engine stops unexpectedly, often when starting or changing gear.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "stationary",
+    "enExplain": "Not moving; the vehicle is at a complete stop.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "stationary traffic",
+    "enExplain": "Vehicles that have stopped and are not moving, often in a queue.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "steep downhill",
+    "enExplain": "A sharp slope going downwards where speed can increase quickly.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "steep upward slope",
+    "enExplain": "A sharp uphill climb where the road rises quickly.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "steering lock",
+    "enExplain": "A security lock that stops the steering wheel turning when the key is removed.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "steering vibration",
+    "enExplain": "Shaking felt through the steering wheel while driving.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "stop line",
+    "enExplain": "The solid white line at a junction that marks where you must stop when required.",
+    "existingKeywordPl": "linia zatrzymania"
+  },
+  {
+    "term": "stopping distance",
+    "enExplain": "The total distance needed to stop: thinking distance plus braking distance.",
+    "existingKeywordPl": "droga hamowania"
+  },
+  {
+    "term": "stopping time",
+    "enExplain": "How long you have to react and brake before you would hit the vehicle ahead.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "straddle",
+    "enExplain": "Drive with wheels on both sides of a line, partly crossing it.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "studs",
+    "enExplain": "Raised reflective road markers that help show where lanes and edges are, especially at night.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "supplementary plates",
+    "enExplain": "Small rectangular signs placed under a main road sign that add details such as times or exceptions.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Suspension",
+    "enExplain": "The springs and related parts that connect the wheels to the car body and absorb bumps.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "sway",
+    "enExplain": "Side-to-side swinging of a trailer or caravan while being towed, which can become dangerous.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "swerve",
+    "enExplain": "A sudden change of direction to avoid something, such as a pothole or slippery patch.",
+    "existingKeywordPl": "gwałtowny skręt"
+  },
+  {
+    "term": "swerving",
+    "enExplain": "Suddenly changing direction, often to avoid something in the road.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "swings right",
+    "enExplain": "Moves out to the right before turning left—common for long vehicles that need more space.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "T-junction",
+    "enExplain": "A junction where one road meets another and ends, forming a ‘T’ shape.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "tail lights",
+    "enExplain": "The red lights at the rear of a vehicle that show its position to drivers behind.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "taxing the vehicle",
+    "enExplain": "Paying UK vehicle tax (VED) so the vehicle can be used on public roads.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Temporary diversion",
+    "enExplain": "A short-term alternative route when the normal road cannot be used.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Temporary diversions",
+    "enExplain": "Short-term alternative routes when the normal road is closed or blocked.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Temporary lane closure",
+    "enExplain": "One or more lanes closed for a limited time, often during road works.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "temporary obstruction",
+    "enExplain": "Something briefly blocking or slowing traffic, such as a stopped vehicle.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Temporary road works",
+    "enExplain": "Short-term construction or repairs that change normal road conditions.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "temporary speed limit",
+    "enExplain": "A speed limit that applies only for a limited time, often near roadworks.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Temporary traffic lights",
+    "enExplain": "Portable signals used for a limited time, often at road works.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Third party, fire and theft",
+    "enExplain": "Insurance that covers injury/damage to others, plus fire damage and theft of your vehicle.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "three-lane motorway",
+    "enExplain": "A motorway with three lanes in each direction of travel.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Timing belt",
+    "enExplain": "A belt that keeps engine valves and pistons moving in the correct timing.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "tinted lenses",
+    "enExplain": "Lenses that are darkened or coloured, reducing how much light reaches your eyes.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "tonnes",
+    "enExplain": "A metric unit of weight used on UK restriction signs for heavy vehicles.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Tourist attractions",
+    "enExplain": "Places of interest for visitors, such as landmarks or museums.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "tow ball",
+    "enExplain": "The ball-shaped coupling on a tow bar that the trailer hitch locks onto.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "tow bar",
+    "enExplain": "The metal bar fitted to a vehicle for attaching and towing a trailer or caravan.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "towed caravan",
+    "enExplain": "A caravan being pulled behind another vehicle on the road.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "towing",
+    "enExplain": "Pulling a trailer, caravan, or another vehicle behind your car using a tow bar or hitch.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "towing a trailer",
+    "enExplain": "Pulling a trailer attached behind your vehicle.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "tractor",
+    "enExplain": "A slow agricultural vehicle often seen on country roads; overtaking needs clear space and time.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Traffic calming",
+    "enExplain": "Road features designed to slow vehicles down, such as humps or narrowings.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "traffic officer",
+    "enExplain": "An official authorised to manage traffic on motorways and some major roads.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "traffic officers",
+    "enExplain": "Specialist road staff who manage incidents and traffic on motorways and major A-roads.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "traffic-calming measures",
+    "enExplain": "Road features such as humps or narrowings designed to keep vehicle speeds lower.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "trailer",
+    "enExplain": "An unpowered wheeled unit designed to be towed behind a vehicle to carry loads.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "trams",
+    "enExplain": "Electric passenger vehicles that run on rails set into the road surface.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Transmission",
+    "enExplain": "The system that transfers engine power to the wheels, including the gearbox.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "transverse lines",
+    "enExplain": "Lines painted across the road (often yellow) to alert you as you approach a hazard.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "transverse yellow road markings",
+    "enExplain": "Yellow lines painted across the road (from side to side), not along it.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "tread depth",
+    "enExplain": "How deep the grooves in a tyre are; worn-down tread reduces grip, especially in wet weather.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "triangular warning sign",
+    "enExplain": "A red-bordered triangle road sign that warns of a hazard ahead.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "tunnel",
+    "enExplain": "A road passage that goes under ground or through a hill.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "two-second following gap",
+    "enExplain": "A rule of thumb: stay at least two seconds behind the vehicle ahead in good, dry conditions.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "two-second following rule",
+    "enExplain": "In good, dry conditions, keep at least a two-second gap behind the vehicle ahead.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "two-way road",
+    "enExplain": "A road where traffic travels in both directions.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "two-way roads",
+    "enExplain": "Roads where traffic travels in both directions.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Two-way traffic",
+    "enExplain": "Traffic moving in both directions on the same road.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "tyre grip",
+    "enExplain": "How well the tyres hold the road surface for steering and braking.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Tyre grip",
+    "enExplain": "How well the tyres hold onto the road surface without sliding.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "tyre pressure",
+    "enExplain": "How much air is in each tyre; incorrect pressure affects handling, braking, and tyre wear.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "tyre pressures",
+    "enExplain": "How much air is in each tyre; incorrect pressure affects handling, braking, and tyre wear.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "tyre wear",
+    "enExplain": "How the tyre rubber wears down; uneven wear can signal a fault.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Tyres under-inflated",
+    "enExplain": "Tyres with too little air; can raise fuel use and affect braking.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "U-turn",
+    "enExplain": "Turning the vehicle all the way round to go back the way you came.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "U-turns",
+    "enExplain": "Turning the vehicle around in a U-shape to go back the way you came.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "unattended",
+    "enExplain": "Left alone with no one in or watching the vehicle.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "unbraked trailer",
+    "enExplain": "A trailer without its own brakes; coupling safety devices are especially important.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "unconscious",
+    "enExplain": "Not awake and not responding; may need emergency help.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "under-inflated tyres",
+    "enExplain": "Tyres with too little air pressure, which can worsen handling and wear.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "uneven road surface",
+    "enExplain": "A road that is bumpy or irregular rather than smooth.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Uneven road surface",
+    "enExplain": "A bumpy or irregular road that can affect control and comfort.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "unlit road",
+    "enExplain": "A road with no street lighting at night.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "unmarked crossroads",
+    "enExplain": "A junction where roads meet with no give-way or stop signs or road markings.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "uphill climb",
+    "enExplain": "A section of road going up a slope.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "urban clearway",
+    "enExplain": "An urban road where stopping is restricted during posted times, except briefly for passengers.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "urban pollution",
+    "enExplain": "Air and noise pollution in towns and cities, often from traffic.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Variable message signs",
+    "enExplain": "Electronic signs that change to show live warnings or instructions.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "variable speed limits",
+    "enExplain": "Temporary speed limits shown on overhead signs that change with traffic conditions.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "vehicle ownership",
+    "enExplain": "Who legally owns the vehicle; changes of ownership must be recorded with the DVLA.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "vehicle registration",
+    "enExplain": "The official number plate details that identify a vehicle.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "vehicle registration certificate",
+    "enExplain": "Another name for the V5C registration document showing vehicle and keeper details.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "vehicle registration document",
+    "enExplain": "The V5C paper that records the vehicle’s details and its registered keeper.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Vehicle registration document",
+    "enExplain": "The official paper (V5C / log book) that records who the vehicle is registered to.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "vehicle tax",
+    "enExplain": "The UK road tax (VED) you must pay to use a vehicle on public roads.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "verge",
+    "enExplain": "The soft or grassy edge beside the road, not meant for normal driving.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "visibility is seriously reduced",
+    "enExplain": "UK phrase meaning you can see only a short distance, often under about 100 metres.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "vulnerable",
+    "enExplain": "More at risk of injury in a collision because of little physical protection (e.g. bikes, motorcycles, pedestrians).",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Waiting restrictions",
+    "enExplain": "Rules that limit when you may wait or park along a stretch of road.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "warden",
+    "enExplain": "A parking or traffic warden who enforces parking rules.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "warning triangle",
+    "enExplain": "A red reflective triangle placed on the road to warn others of a broken-down vehicle.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "water pooling",
+    "enExplain": "Water collecting in low spots on the road after rain.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "wheelspin",
+    "enExplain": "When drive wheels spin too fast on a slippery surface and lose grip.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "winding road",
+    "enExplain": "A road with many bends, where overtaking is often difficult and slow traffic can build up.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "windscreen pillars",
+    "enExplain": "The upright frames at the edges of the windscreen that can block part of your view.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "windsock",
+    "enExplain": "A cone-shaped cloth tube that shows wind direction and strength; used as a road-sign symbol.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "yellow lines",
+    "enExplain": "Yellow road markings at the kerb that restrict waiting or parking.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "zebra crossing",
+    "enExplain": "A pedestrian crossing with black-and-white stripes where drivers must give way to people waiting to cross.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "zebra crossings",
+    "enExplain": "A pedestrian crossing with black-and-white stripes where drivers must give way to people waiting to cross.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "zig-zag road markings",
+    "enExplain": "Yellow zig-zag lines near crossings or schools where you must not park or stop and block the view.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "zigzag lines",
+    "enExplain": "Zigzag road markings near crossings; parking and waiting there is restricted.",
+    "existingKeywordPl": null
+  }
+]

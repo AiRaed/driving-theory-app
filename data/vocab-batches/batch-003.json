@@ -1,0 +1,1382 @@
+[
+  {
+    "id": "SM-16",
+    "topic": "safety-margins",
+    "promptEn": "How can engine braking be used safely?",
+    "options": [
+      {
+        "en": "Shift to a lower gear",
+        "correct": true
+      },
+      {
+        "en": "Use neutral",
+        "correct": false
+      },
+      {
+        "en": "Select reverse",
+        "correct": false
+      },
+      {
+        "en": "Turn off engine",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-17",
+    "topic": "safety-margins",
+    "promptEn": "Where are side winds most likely to affect your vehicle?",
+    "options": [
+      {
+        "en": "Busy roads",
+        "correct": false
+      },
+      {
+        "en": "Narrow lanes",
+        "correct": false
+      },
+      {
+        "en": "Open stretches of road",
+        "correct": true
+      },
+      {
+        "en": "City streets",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-18",
+    "topic": "safety-margins",
+    "promptEn": "What should you do before driving in fog?",
+    "options": [
+      {
+        "en": "Reduce tyre pressure",
+        "correct": false
+      },
+      {
+        "en": "Drink caffeine",
+        "correct": false
+      },
+      {
+        "en": "Allow extra time",
+        "correct": true
+      },
+      {
+        "en": "Wear hi-vis",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-19",
+    "topic": "safety-margins",
+    "promptEn": "What should you do if another vehicle pulls into your safe gap on a wet road?",
+    "options": [
+      {
+        "en": "Flash headlights",
+        "correct": false
+      },
+      {
+        "en": "Overtake immediately",
+        "correct": false
+      },
+      {
+        "en": "Drop back to increase distance",
+        "correct": true
+      },
+      {
+        "en": "Stay close",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-20",
+    "topic": "safety-margins",
+    "promptEn": "What is the main advantage of four-wheel drive?",
+    "options": [
+      {
+        "en": "Shorter stopping distance",
+        "correct": false
+      },
+      {
+        "en": "Better grip in poor conditions",
+        "correct": true
+      },
+      {
+        "en": "Lower fuel use",
+        "correct": false
+      },
+      {
+        "en": "Faster acceleration",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-21",
+    "topic": "safety-margins",
+    "promptEn": "What helps a car move off more safely on a snowy road surface?",
+    "options": [
+      {
+        "en": "Using a low gear",
+        "correct": false
+      },
+      {
+        "en": "Using a higher gear than usual",
+        "correct": true
+      },
+      {
+        "en": "Using high engine speed",
+        "correct": false
+      },
+      {
+        "en": "Using the parking brake",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-22",
+    "topic": "safety-margins",
+    "promptEn": "After passing a hazard warning sign on a country road, what should you do once it's safe?",
+    "options": [
+      {
+        "en": "Check tyre pressures",
+        "correct": false
+      },
+      {
+        "en": "Switch on hazard lights",
+        "correct": false
+      },
+      {
+        "en": "Accelerate smoothly",
+        "correct": true
+      },
+      {
+        "en": "Test the brakes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-23",
+    "topic": "safety-margins",
+    "promptEn": "On a dry open road, what following distance should you normally keep?",
+    "options": [
+      {
+        "en": "A two-second gap",
+        "correct": true
+      },
+      {
+        "en": "One car length",
+        "correct": false
+      },
+      {
+        "en": "Two metres",
+        "correct": false
+      },
+      {
+        "en": "Two car lengths",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-24",
+    "topic": "safety-margins",
+    "promptEn": "What does it usually mean if the ESC warning light flashes briefly while driving?",
+    "options": [
+      {
+        "en": "The system is faulty",
+        "correct": false
+      },
+      {
+        "en": "The system has been switched off",
+        "correct": false
+      },
+      {
+        "en": "The system is actively helping control the car",
+        "correct": true
+      },
+      {
+        "en": "A routine test is running",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-25",
+    "topic": "safety-margins",
+    "promptEn": "What is most affected when road surfaces soften in very hot weather?",
+    "options": [
+      {
+        "en": "Suspension",
+        "correct": false
+      },
+      {
+        "en": "Fuel consumption",
+        "correct": false
+      },
+      {
+        "en": "Tyre grip",
+        "correct": true
+      },
+      {
+        "en": "Exhaust system",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-26",
+    "topic": "safety-margins",
+    "promptEn": "How should you overtake a motorcyclist on a windy day?",
+    "options": [
+      {
+        "en": "Closely",
+        "correct": false
+      },
+      {
+        "en": "Very slowly",
+        "correct": false
+      },
+      {
+        "en": "With extra space",
+        "correct": true
+      },
+      {
+        "en": "As quickly as possible",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-27",
+    "topic": "safety-margins",
+    "promptEn": "After driving through flood water, how can you check your brakes are working?",
+    "options": [
+      {
+        "en": "Drive fast for a short distance",
+        "correct": false
+      },
+      {
+        "en": "Avoid using brakes",
+        "correct": false
+      },
+      {
+        "en": "Apply brakes gently while driving slowly",
+        "correct": true
+      },
+      {
+        "en": "Stop for an hour",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-28",
+    "topic": "safety-margins",
+    "promptEn": "On which type of road surface may ABS be less effective?",
+    "options": [
+      {
+        "en": "Dry",
+        "correct": false
+      },
+      {
+        "en": "Loose",
+        "correct": true
+      },
+      {
+        "en": "Firm",
+        "correct": false
+      },
+      {
+        "en": "Smooth",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-29",
+    "topic": "safety-margins",
+    "promptEn": "When driving in fog, what else should you do besides using dipped headlights?",
+    "options": [
+      {
+        "en": "Stay close to the vehicle ahead",
+        "correct": false
+      },
+      {
+        "en": "Use full beam",
+        "correct": false
+      },
+      {
+        "en": "Keep a safe distance",
+        "correct": true
+      },
+      {
+        "en": "Match faster traffic speed",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-30",
+    "topic": "safety-margins",
+    "promptEn": "Before driving in freezing weather, which parts of the car must be cleared of ice?",
+    "options": [
+      {
+        "en": "Bumper",
+        "correct": false
+      },
+      {
+        "en": "Windows",
+        "correct": true
+      },
+      {
+        "en": "Aerial",
+        "correct": false
+      },
+      {
+        "en": "Boot",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SM-33",
+    "topic": "safety-margins",
+    "promptEn": "By how much can stopping distance increase on icy roads?",
+    "options": [
+      {
+        "en": "2 times",
+        "correct": false
+      },
+      {
+        "en": "3 times",
+        "correct": false
+      },
+      {
+        "en": "5 times",
+        "correct": false
+      },
+      {
+        "en": "10 times",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SM-34",
+    "topic": "safety-margins",
+    "promptEn": "How should you control speed when driving downhill?",
+    "options": [
+      {
+        "en": "High gear with firm braking",
+        "correct": false
+      },
+      {
+        "en": "High gear without braking",
+        "correct": false
+      },
+      {
+        "en": "Low gear with gentle braking",
+        "correct": true
+      },
+      {
+        "en": "Low gear without braking",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RR-01",
+    "topic": "rules-of-the-road",
+    "promptEn": "What do red and white roadside marker posts usually warn drivers about?",
+    "options": [
+      {
+        "en": "End of motorway",
+        "correct": false
+      },
+      {
+        "en": "Hidden railway crossing ahead",
+        "correct": true
+      },
+      {
+        "en": "Speed limit change",
+        "correct": false
+      },
+      {
+        "en": "End of dual carriageway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RR-02",
+    "topic": "rules-of-the-road",
+    "promptEn": "You want to overtake a slow-moving tractor but you're unsure it's safe. What should you do?",
+    "options": [
+      {
+        "en": "Follow another car overtaking",
+        "correct": false
+      },
+      {
+        "en": "Sound your horn",
+        "correct": false
+      },
+      {
+        "en": "Overtake quickly",
+        "correct": false
+      },
+      {
+        "en": "Stay behind until it's clearly safe",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "RR-04",
+    "topic": "rules-of-the-road",
+    "promptEn": "You're using full-beam headlights at night and another vehicle begins overtaking you. When should you dip your headlights?",
+    "options": [
+      {
+        "en": "After they pass",
+        "correct": false
+      },
+      {
+        "en": "When they finish overtaking",
+        "correct": false
+      },
+      {
+        "en": "Only if they dip theirs",
+        "correct": false
+      },
+      {
+        "en": "Before they start to pass you",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "RR-05",
+    "topic": "rules-of-the-road",
+    "promptEn": "When is it legal to drive across a pavement?",
+    "options": [
+      {
+        "en": "To overtake traffic",
+        "correct": false
+      },
+      {
+        "en": "When it's wide",
+        "correct": false
+      },
+      {
+        "en": "If no pedestrians are present",
+        "correct": false
+      },
+      {
+        "en": "To access a property",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VU-01",
+    "topic": "vulnerable-road-users",
+    "promptEn": "What should you do when approaching a pedestrian crossing where people may cross?",
+    "options": [
+      {
+        "en": "Prepare to slow down and be ready to stop",
+        "correct": true
+      },
+      {
+        "en": "Speed up and pass quickly",
+        "correct": false
+      },
+      {
+        "en": "Wave pedestrians across",
+        "correct": false
+      },
+      {
+        "en": "Continue unless someone steps out",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-02",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Which road user should you allow extra space when overtaking?",
+    "options": [
+      {
+        "en": "Lorry",
+        "correct": false
+      },
+      {
+        "en": "Tractor",
+        "correct": false
+      },
+      {
+        "en": "Bicycle",
+        "correct": true
+      },
+      {
+        "en": "Road sweeper",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-03",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Why should you check for motorcyclists before turning right?",
+    "options": [
+      {
+        "en": "They may overtake on your right",
+        "correct": true
+      },
+      {
+        "en": "They may stop suddenly",
+        "correct": false
+      },
+      {
+        "en": "They may come from the side road",
+        "correct": false
+      },
+      {
+        "en": "They may slow down for you",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-04",
+    "topic": "vulnerable-road-users",
+    "promptEn": "When overtaking a cyclist in a 30 mph zone, how much space should you leave?",
+    "options": [
+      {
+        "en": "At least the same space as overtaking a car",
+        "correct": true
+      },
+      {
+        "en": "One car length",
+        "correct": false
+      },
+      {
+        "en": "Half a lane",
+        "correct": false
+      },
+      {
+        "en": "Two car widths",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-05",
+    "topic": "vulnerable-road-users",
+    "promptEn": "If a pedestrian is behind your car while you are reversing, what should you do?",
+    "options": [
+      {
+        "en": "Give way to the pedestrian",
+        "correct": true
+      },
+      {
+        "en": "Sound the horn",
+        "correct": false
+      },
+      {
+        "en": "Reverse quickly",
+        "correct": false
+      },
+      {
+        "en": "Signal them to stop",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-06",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Who is allowed to use a toucan crossing?",
+    "options": [
+      {
+        "en": "Cyclists and pedestrians",
+        "correct": true
+      },
+      {
+        "en": "Motorcyclists only",
+        "correct": false
+      },
+      {
+        "en": "Pedestrians only",
+        "correct": false
+      },
+      {
+        "en": "Vehicles only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-07",
+    "topic": "vulnerable-road-users",
+    "promptEn": "What should you do if parked vehicles block your view at a junction?",
+    "options": [
+      {
+        "en": "Stop, then edge forward slowly",
+        "correct": true
+      },
+      {
+        "en": "Move out quickly",
+        "correct": false
+      },
+      {
+        "en": "Sound the horn",
+        "correct": false
+      },
+      {
+        "en": "Get out and look",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-08",
+    "topic": "vulnerable-road-users",
+    "promptEn": "At night, what does a pedestrian with reflective clothing and a red light indicate?",
+    "options": [
+      {
+        "en": "An organised walk or group",
+        "correct": true
+      },
+      {
+        "en": "Roadworks",
+        "correct": false
+      },
+      {
+        "en": "A slow vehicle",
+        "correct": false
+      },
+      {
+        "en": "A hazard sign",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-09",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Why must you be extra alert for cyclists and motorcyclists at junctions?",
+    "options": [
+      {
+        "en": "They are harder to see",
+        "correct": true
+      },
+      {
+        "en": "They always slow down",
+        "correct": false
+      },
+      {
+        "en": "They must give way",
+        "correct": false
+      },
+      {
+        "en": "They stop often",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-10",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Why must zig-zag road markings near schools be kept clear?",
+    "options": [
+      {
+        "en": "To help children see and be seen",
+        "correct": true
+      },
+      {
+        "en": "For teachers parking",
+        "correct": false
+      },
+      {
+        "en": "For deliveries",
+        "correct": false
+      },
+      {
+        "en": "For parents stopping",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-11",
+    "topic": "vulnerable-road-users",
+    "promptEn": "In which situation should you be especially alert for motorcyclists and cyclists?",
+    "options": [
+      {
+        "en": "On dual carriageways",
+        "correct": false
+      },
+      {
+        "en": "At junctions",
+        "correct": true
+      },
+      {
+        "en": "At zebra crossings",
+        "correct": false
+      },
+      {
+        "en": "On one-way streets",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-12",
+    "topic": "vulnerable-road-users",
+    "promptEn": "What should you do when you see an older person about to cross the road ahead?",
+    "options": [
+      {
+        "en": "Expect them to wait for you",
+        "correct": false
+      },
+      {
+        "en": "Speed up to pass quickly",
+        "correct": false
+      },
+      {
+        "en": "Stop and wave them across",
+        "correct": false
+      },
+      {
+        "en": "Be cautious as they may misjudge your speed",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VU-13",
+    "topic": "vulnerable-road-users",
+    "promptEn": "You're approaching a roundabout and a cyclist ahead is signalling to turn right. What should you do?",
+    "options": [
+      {
+        "en": "Overtake on the right",
+        "correct": false
+      },
+      {
+        "en": "Sound your horn",
+        "correct": false
+      },
+      {
+        "en": "Signal them to move across",
+        "correct": false
+      },
+      {
+        "en": "Give the cyclist plenty of room",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VU-14",
+    "topic": "vulnerable-road-users",
+    "promptEn": "How does a school crossing patrol normally signal traffic to stop?",
+    "options": [
+      {
+        "en": "By pointing at children",
+        "correct": false
+      },
+      {
+        "en": "By showing a red light",
+        "correct": false
+      },
+      {
+        "en": "By holding up a STOP sign",
+        "correct": true
+      },
+      {
+        "en": "By giving an arm signal only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-16",
+    "topic": "vulnerable-road-users",
+    "promptEn": "On a country road, who may be travelling towards you on your side of the road?",
+    "options": [
+      {
+        "en": "Motorcycles",
+        "correct": false
+      },
+      {
+        "en": "Bicycles",
+        "correct": false
+      },
+      {
+        "en": "Pedestrians",
+        "correct": true
+      },
+      {
+        "en": "Cars only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-17",
+    "topic": "vulnerable-road-users",
+    "promptEn": "What does a shared route sign for pedestrians and cyclists indicate?",
+    "options": [
+      {
+        "en": "Pedestrians only",
+        "correct": false
+      },
+      {
+        "en": "Cyclists only",
+        "correct": false
+      },
+      {
+        "en": "No access for either",
+        "correct": false
+      },
+      {
+        "en": "Shared route for pedestrians and cyclists",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VU-18",
+    "topic": "vulnerable-road-users",
+    "promptEn": "When following a motorcyclist on a poor road surface, what should you do?",
+    "options": [
+      {
+        "en": "Follow closely",
+        "correct": false
+      },
+      {
+        "en": "Overtake immediately",
+        "correct": false
+      },
+      {
+        "en": "Allow extra space in case they swerve",
+        "correct": true
+      },
+      {
+        "en": "Keep normal distance",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-19",
+    "topic": "vulnerable-road-users",
+    "promptEn": "What is the main purpose of school zig-zag road markings?",
+    "options": [
+      {
+        "en": "Allow teachers to park",
+        "correct": false
+      },
+      {
+        "en": "Allow deliveries",
+        "correct": false
+      },
+      {
+        "en": "Help children see and be seen when crossing",
+        "correct": true
+      },
+      {
+        "en": "Parent pick-up area",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-20",
+    "topic": "vulnerable-road-users",
+    "promptEn": "In slow-moving traffic, what should you do just before changing lanes?",
+    "options": [
+      {
+        "en": "Sound the horn",
+        "correct": false
+      },
+      {
+        "en": "Look for motorcyclists filtering through traffic",
+        "correct": true
+      },
+      {
+        "en": "Give a hand signal",
+        "correct": false
+      },
+      {
+        "en": "Change down to first gear",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-21",
+    "topic": "vulnerable-road-users",
+    "promptEn": "You approach a roundabout and see a horse rider signalling to turn right while staying to the left. What should you do?",
+    "options": [
+      {
+        "en": "Continue as normal",
+        "correct": false
+      },
+      {
+        "en": "Drive close to them",
+        "correct": false
+      },
+      {
+        "en": "Cut in front of them",
+        "correct": false
+      },
+      {
+        "en": "Stay well back",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VU-22",
+    "topic": "vulnerable-road-users",
+    "promptEn": "How should you behave when dealing with inexperienced drivers?",
+    "options": [
+      {
+        "en": "Use your horn to warn them",
+        "correct": false
+      },
+      {
+        "en": "Be patient and expect slower reactions",
+        "correct": true
+      },
+      {
+        "en": "Flash your headlights to guide them",
+        "correct": false
+      },
+      {
+        "en": "Overtake them immediately",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-23",
+    "topic": "vulnerable-road-users",
+    "promptEn": "What makes a toucan crossing different from a puffin crossing?",
+    "options": [
+      {
+        "en": "It can be used by mopeds",
+        "correct": false
+      },
+      {
+        "en": "It's controlled by a traffic officer",
+        "correct": false
+      },
+      {
+        "en": "It uses flashing lights only",
+        "correct": false
+      },
+      {
+        "en": "It allows pedestrians and cyclists together",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VU-24",
+    "topic": "vulnerable-road-users",
+    "promptEn": "You see flashing amber lights below a school warning sign. What should you do?",
+    "options": [
+      {
+        "en": "Reduce speed until clear of the area",
+        "correct": true
+      },
+      {
+        "en": "Maintain speed and sound the horn",
+        "correct": false
+      },
+      {
+        "en": "Increase speed to pass quickly",
+        "correct": false
+      },
+      {
+        "en": "Stop and wait until lights stop",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-25",
+    "topic": "vulnerable-road-users",
+    "promptEn": "When overtaking a cyclist, why should you leave as much space as you would for a car?",
+    "options": [
+      {
+        "en": "The cyclist may suddenly speed up",
+        "correct": false
+      },
+      {
+        "en": "The cyclist may get off the bike",
+        "correct": false
+      },
+      {
+        "en": "The cyclist may become unstable if passed closely",
+        "correct": true
+      },
+      {
+        "en": "The cyclist may turn left",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-26",
+    "topic": "vulnerable-road-users",
+    "promptEn": "On a narrow road, a horse rider ahead is riding in the centre of the lane. What should you do?",
+    "options": [
+      {
+        "en": "Sound the horn",
+        "correct": false
+      },
+      {
+        "en": "Stay behind and allow this position",
+        "correct": true
+      },
+      {
+        "en": "Move right and pass carefully",
+        "correct": false
+      },
+      {
+        "en": "Drive close to encourage movement",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-27",
+    "topic": "vulnerable-road-users",
+    "promptEn": "You want to reverse into a side road and you're unsure if the area behind is clear. What should you do?",
+    "options": [
+      {
+        "en": "Check mirrors only",
+        "correct": false
+      },
+      {
+        "en": "Continue carefully",
+        "correct": false
+      },
+      {
+        "en": "Get out and check",
+        "correct": true
+      },
+      {
+        "en": "Look through rear window only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-28",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Where would you normally see a sign warning drivers about children crossing?",
+    "options": [
+      {
+        "en": "Near a school crossing",
+        "correct": true
+      },
+      {
+        "en": "At a playground entrance",
+        "correct": false
+      },
+      {
+        "en": "On a school bus",
+        "correct": false
+      },
+      {
+        "en": "In pedestrian-only zones",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-29",
+    "topic": "vulnerable-road-users",
+    "promptEn": "You see several horse riders ahead on the road. What should you do?",
+    "options": [
+      {
+        "en": "Move to the centre of the road",
+        "correct": false
+      },
+      {
+        "en": "Slow down and be ready to stop",
+        "correct": true
+      },
+      {
+        "en": "Switch on hazard lights",
+        "correct": false
+      },
+      {
+        "en": "Signal to turn right",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-31",
+    "topic": "vulnerable-road-users",
+    "promptEn": "You're approaching a roundabout and see horses being ridden ahead. What should you do?",
+    "options": [
+      {
+        "en": "Sound your horn",
+        "correct": false
+      },
+      {
+        "en": "Treat them like normal cars",
+        "correct": false
+      },
+      {
+        "en": "Give them plenty of space",
+        "correct": true
+      },
+      {
+        "en": "Accelerate past quickly",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-32",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Why should you be cautious when there's a bus stopped on the opposite side of the road?",
+    "options": [
+      {
+        "en": "The bus may be broken down",
+        "correct": false
+      },
+      {
+        "en": "Pedestrians may cross in front of it",
+        "correct": true
+      },
+      {
+        "en": "The bus may stay parked",
+        "correct": false
+      },
+      {
+        "en": "The bus may reverse",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-33",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Two cyclists are riding ahead toward a roundabout in the left lane. What should you expect?",
+    "options": [
+      {
+        "en": "They will turn left",
+        "correct": false
+      },
+      {
+        "en": "They may turn right",
+        "correct": true
+      },
+      {
+        "en": "They will stop suddenly",
+        "correct": false
+      },
+      {
+        "en": "They must go straight",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-34",
+    "topic": "vulnerable-road-users",
+    "promptEn": "You're following a cyclist and want to turn left shortly ahead. What should you do?",
+    "options": [
+      {
+        "en": "Overtake before the junction",
+        "correct": false
+      },
+      {
+        "en": "Pull alongside and stay level",
+        "correct": false
+      },
+      {
+        "en": "Wait behind until the cyclist passes",
+        "correct": true
+      },
+      {
+        "en": "Go around them at the junction",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-35",
+    "topic": "vulnerable-road-users",
+    "promptEn": "A ball rolls out from between parked cars ahead. What should you do?",
+    "options": [
+      {
+        "en": "Maintain speed and sound the horn",
+        "correct": false
+      },
+      {
+        "en": "Flash headlights and continue",
+        "correct": false
+      },
+      {
+        "en": "Slow down and be ready to stop",
+        "correct": true
+      },
+      {
+        "en": "Stop and wave children across",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-36",
+    "topic": "vulnerable-road-users",
+    "promptEn": "At night, you're dazzled by headlights from behind. What should you do?",
+    "options": [
+      {
+        "en": "Adjust mirror to anti-dazzle",
+        "correct": true
+      },
+      {
+        "en": "Brake sharply",
+        "correct": false
+      },
+      {
+        "en": "Flash rear lights",
+        "correct": false
+      },
+      {
+        "en": "Ignore it",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-37",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Which road user is generally most vulnerable?",
+    "options": [
+      {
+        "en": "Car driver",
+        "correct": false
+      },
+      {
+        "en": "Tractor driver",
+        "correct": false
+      },
+      {
+        "en": "Lorry driver",
+        "correct": false
+      },
+      {
+        "en": "Motorcyclist",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VU-38",
+    "topic": "vulnerable-road-users",
+    "promptEn": "What does a sign showing a shared route for pedestrians and cyclists mean?",
+    "options": [
+      {
+        "en": "Pedestrians only",
+        "correct": false
+      },
+      {
+        "en": "Cyclists only",
+        "correct": false
+      },
+      {
+        "en": "No pedestrians or cyclists",
+        "correct": false
+      },
+      {
+        "en": "Shared route for both",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VU-39",
+    "topic": "vulnerable-road-users",
+    "promptEn": "What is the purpose of the marked area between two stop lines at traffic lights?",
+    "options": [
+      {
+        "en": "Taxi waiting area",
+        "correct": false
+      },
+      {
+        "en": "Pedestrian crossing",
+        "correct": false
+      },
+      {
+        "en": "Cycle waiting area",
+        "correct": true
+      },
+      {
+        "en": "Emergency access",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-40",
+    "topic": "vulnerable-road-users",
+    "promptEn": "You're turning right into a side road. Pedestrians are waiting to cross. What should you do?",
+    "options": [
+      {
+        "en": "Turn immediately",
+        "correct": false
+      },
+      {
+        "en": "Wave them across",
+        "correct": false
+      },
+      {
+        "en": "Wait and give way",
+        "correct": true
+      },
+      {
+        "en": "Sound the horn",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VU-41",
+    "topic": "vulnerable-road-users",
+    "promptEn": "A cyclist ahead is signalling right but keeping left on a roundabout. What should you do?",
+    "options": [
+      {
+        "en": "Overtake",
+        "correct": false
+      },
+      {
+        "en": "Assume left turn",
+        "correct": false
+      },
+      {
+        "en": "Allow space to turn",
+        "correct": true
+      },
+      {
+        "en": "Sound the horn",
+        "correct": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,359 @@
+{
+  "qHits": [
+    {
+      "id": "AL-06",
+      "where": "opt1",
+      "hits": [
+        "dual carriageways"
+      ],
+      "text": "Em dual carriageways"
+    },
+    {
+      "id": "AL-17",
+      "where": "prompt",
+      "hits": [
+        "dual carriageway"
+      ],
+      "text": "Antes de virar à direita para uma dual carriageway, o que deve verificar?"
+    },
+    {
+      "id": "AL-22",
+      "where": "opt1",
+      "hits": [
+        "dual carriageways"
+      ],
+      "text": "Nas dual carriageways"
+    },
+    {
+      "id": "AL-25",
+      "where": "opt1",
+      "hits": [
+        "hard shoulder"
+      ],
+      "text": "Parar no hard shoulder"
+    },
+    {
+      "id": "HZ-08",
+      "where": "opt0",
+      "hits": [
+        "hard shoulder"
+      ],
+      "text": "Parar no hard shoulder e trocar de condutor"
+    },
+    {
+      "id": "HZ-12",
+      "where": "prompt",
+      "hits": [
+        "dual carriageway"
+      ],
+      "text": "Que veículo usa normalmente um farol âmbar intermitente numa dual carriageway?"
+    },
+    {
+      "id": "HZ-63",
+      "where": "opt0",
+      "hits": [
+        "hard shoulder"
+      ],
+      "text": "Parar no hard shoulder"
+    },
+    {
+      "id": "HZ-65",
+      "where": "prompt",
+      "hits": [
+        "dual carriageway"
+      ],
+      "text": "Porque poderá precisar de abrandar numa dual carriageway?"
+    },
+    {
+      "id": "RR-01",
+      "where": "opt3",
+      "hits": [
+        "dual carriageway"
+      ],
+      "text": "Fim da dual carriageway"
+    },
+    {
+      "id": "RR-08",
+      "where": "prompt",
+      "hits": [
+        "dual carriageway"
+      ],
+      "text": "Quando deve utilizar normalmente a via da direita numa estrada de duas vias (dual carriageway)?"
+    },
+    {
+      "id": "RR-15",
+      "where": "prompt",
+      "hits": [
+        "box junction"
+      ],
+      "text": "Quando pode parar e aguardar dentro de um box junction?"
+    },
+    {
+      "id": "RR-31",
+      "where": "prompt",
+      "hits": [
+        "dual carriageway"
+      ],
+      "text": "Quando deve utilizar normalmente a via da direita numa estrada de duas vias com três faixas (dual carriageway)?"
+    },
+    {
+      "id": "RR-38",
+      "where": "prompt",
+      "hits": [
+        "clearway"
+      ],
+      "text": "Quando pode parar num urban clearway?"
+    },
+    {
+      "id": "RR-39",
+      "where": "prompt",
+      "hits": [
+        "dual carriageway"
+      ],
+      "text": "Qual é o limite nacional de velocidade para automóveis numa dual carriageway?"
+    },
+    {
+      "id": "RR-41",
+      "where": "prompt",
+      "hits": [
+        "box junction"
+      ],
+      "text": "Está à espera para virar à direita num box junction com trânsito em sentido contrário. O que deve fazer?"
+    },
+    {
+      "id": "RR-46",
+      "where": "prompt",
+      "hits": [
+        "dual carriageway"
+      ],
+      "text": "Está a virar à direita para uma dual carriageway. O separador central é demasiado estreito para o seu veículo. O que deve fazer?"
+    },
+    {
+      "id": "RR-55",
+      "where": "prompt",
+      "hits": [
+        "box junction"
+      ],
+      "text": "Quando pode entrar num box junction?"
+    },
+    {
+      "id": "RR-58",
+      "where": "opt2",
+      "hits": [
+        "red route"
+      ],
+      "text": "Numa red route"
+    },
+    {
+      "id": "RR-60",
+      "where": "prompt",
+      "hits": [
+        "clearway"
+      ],
+      "text": "Quando pode parar num clearway?"
+    },
+    {
+      "id": "RR-67",
+      "where": "prompt",
+      "hits": [
+        "dual carriageway"
+      ],
+      "text": "Qual é o limite de velocidade para um automóvel a rebocar uma caravana numa dual carriageway?"
+    },
+    {
+      "id": "VH-16",
+      "where": "prompt",
+      "hits": [
+        "box junction"
+      ],
+      "text": "Quando pode parar dentro de uma caixa amarela (box junction)?"
+    },
+    {
+      "id": "MW-50",
+      "where": "prompt",
+      "hits": [
+        "contraflow"
+      ],
+      "text": "O que deve fazer ao circular num sistema de sentido contrário (contraflow)?"
+    },
+    {
+      "id": "MW-51",
+      "where": "prompt",
+      "hits": [
+        "contraflow"
+      ],
+      "text": "O que esperaria normalmente num sistema de sentido contrário (contraflow)?"
+    },
+    {
+      "id": "VL-01",
+      "where": "prompt",
+      "hits": [
+        "nose weight"
+      ],
+      "text": "Antes de rebocar um reboque, onde pode encontrar o peso máximo permitido no olhal (nose weight) para o engate do seu veículo?"
+    },
+    {
+      "id": "SV-42",
+      "where": "prompt",
+      "hits": [
+        "dual carriageway"
+      ],
+      "text": "Ao conduzir numa dual carriageway, que sistema de assistência ao condutor ajuda a manter o automóvel dentro das marcações da via?"
+    }
+  ],
+  "vHits": [
+    {
+      "term": "dual carriageway",
+      "hits": [
+        "central reservation"
+      ],
+      "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation.",
+      "label": "estrada de duas faixas"
+    },
+    {
+      "term": "central reservation",
+      "hits": [
+        "dual carriageway"
+      ],
+      "pt": "A faixa ou barreira que separa os dois sentidos de trânsito numa dual carriageway.",
+      "label": "separador central"
+    },
+    {
+      "term": "hard shoulder",
+      "hits": [
+        "motorway"
+      ],
+      "pt": "A faixa de emergência à beira de uma motorway, normalmente só para parar em caso de emergência.",
+      "label": "berma"
+    },
+    {
+      "term": "dual carriageways",
+      "hits": [
+        "central reservation"
+      ],
+      "pt": "Estradas principais com trânsito em sentidos opostos, separados por uma central reservation.",
+      "label": "estradas de duas faixas"
+    },
+    {
+      "term": "slip road",
+      "hits": [
+        "motorway"
+      ],
+      "pt": "A estrada curta de ligação usada para entrar ou sair de uma motorway.",
+      "label": "via de acesso/saída"
+    },
+    {
+      "term": "emergency phone",
+      "hits": [
+        "motorways"
+      ],
+      "pt": "Telefone à beira da estrada em motorways para contactar os serviços de emergência se avariar.",
+      "label": "telefone de emergência"
+    },
+    {
+      "term": "emergency area",
+      "hits": [
+        "hard shoulder",
+        "motorway"
+      ],
+      "pt": "Lugar marcado ao lado de uma motorway para parar em emergência quando não há hard shoulder.",
+      "label": "área de emergência"
+    },
+    {
+      "term": "countdown markers",
+      "hits": [
+        "motorway"
+      ],
+      "pt": "Postes com barras decrescentes (3, 2, 1) que mostram a proximidade de uma saída de motorway.",
+      "label": "marcadores de contagem"
+    },
+    {
+      "term": "emergency telephone",
+      "hits": [
+        "motorway"
+      ],
+      "pt": "Telefone gratuito à beira da motorway que o liga a operadores que podem enviar ajuda.",
+      "label": "telefone de emergência"
+    },
+    {
+      "term": "service area",
+      "hits": [
+        "motorway"
+      ],
+      "pt": "Área de serviço de motorway com estacionamento, combustível e instalações onde pode parar em segurança para descansar.",
+      "label": "área de serviço"
+    },
+    {
+      "term": "emergency roadside telephone",
+      "hits": [
+        "motorway"
+      ],
+      "pt": "Telefone gratuito fixo junto à motorway que o liga a ajuda e indica a sua localização.",
+      "label": "telefone de emergência na berma"
+    },
+    {
+      "term": "traffic officers",
+      "hits": [
+        "motorways"
+      ],
+      "pt": "Pessoal especializado das estradas que gere incidentes e trânsito em motorways e grandes A-roads.",
+      "label": "agentes de trânsito"
+    },
+    {
+      "term": "Dual carriageway",
+      "hits": [
+        "central reservation"
+      ],
+      "pt": "Estrada principal com trânsito em sentidos opostos, separados por uma central reservation.",
+      "label": "estrada de duas faixas"
+    },
+    {
+      "term": "signal operator",
+      "hits": [
+        "level crossing"
+      ],
+      "pt": "A pessoa que controla os sinais ferroviários e as barreiras num level crossing.",
+      "label": "operador de sinais"
+    },
+    {
+      "term": "traffic officer",
+      "hits": [
+        "motorways"
+      ],
+      "pt": "Funcionário autorizado a gerir o trânsito em motorways e em algumas estradas principais.",
+      "label": "agente de trânsito"
+    },
+    {
+      "term": "refuge area",
+      "hits": [
+        "motorway"
+      ],
+      "pt": "Baía segura ao lado de uma motorway onde pode parar se tiver um problema.",
+      "label": "zona de refúgio"
+    },
+    {
+      "term": "right-hand lane",
+      "hits": [
+        "motorway"
+      ],
+      "pt": "Numa motorway britânica com várias vias, a via mais à direita, normalmente para ultrapassagens.",
+      "label": "via da direita"
+    },
+    {
+      "term": "three-lane motorway",
+      "hits": [
+        "motorway"
+      ],
+      "pt": "Motorway com três vias em cada sentido de marcha.",
+      "label": "autoestrada de três vias"
+    },
+    {
+      "term": "motorway services",
+      "hits": [
+        "motorway"
+      ],
+      "pt": "Áreas de serviço numa autoestrada (motorway) com combustível, comida e casas de banho.",
+      "label": "área de serviço"
+    }
+  ]
+}

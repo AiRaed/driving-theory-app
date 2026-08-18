@@ -1,0 +1,856 @@
+{
+  "rules-of-the-road": {
+    "RR-05": {
+      "promptPt": "Quando é legal atravessar um passeio de carro?",
+      "options": [
+        {
+          "pt": "Para ultrapassar o trânsito"
+        },
+        {
+          "pt": "Quando é largo"
+        },
+        {
+          "pt": "Se não houver peões"
+        },
+        {
+          "pt": "Para aceder a uma propriedade"
+        }
+      ]
+    }
+  },
+  "vulnerable-road-users": {
+    "VU-01": {
+      "promptPt": "O que deve fazer ao aproximar-se de uma passagem para peões onde as pessoas podem atravessar?",
+      "options": [
+        {
+          "pt": "Preparar-se para abrandar e estar pronto a parar"
+        },
+        {
+          "pt": "Acelerar e passar rapidamente"
+        },
+        {
+          "pt": "Fazer sinal com a mão para os peões atravessarem"
+        },
+        {
+          "pt": "Continuar a menos que alguém saia para a estrada"
+        }
+      ]
+    },
+    "VU-02": {
+      "promptPt": "A que utilizador da estrada deve deixar espaço extra ao ultrapassar?",
+      "options": [
+        {
+          "pt": "Camião"
+        },
+        {
+          "pt": "Trator"
+        },
+        {
+          "pt": "Bicicleta"
+        },
+        {
+          "pt": "Varredora de estrada"
+        }
+      ]
+    },
+    "VU-03": {
+      "promptPt": "Porque deve verificar se há motociclistas antes de virar à direita?",
+      "options": [
+        {
+          "pt": "Podem ultrapassar pela sua direita"
+        },
+        {
+          "pt": "Podem parar de repente"
+        },
+        {
+          "pt": "Podem vir da estrada lateral"
+        },
+        {
+          "pt": "Podem abrandar por si"
+        }
+      ]
+    },
+    "VU-04": {
+      "promptPt": "Ao ultrapassar um ciclista numa zona de 30 mph, quanto espaço deve deixar?",
+      "options": [
+        {
+          "pt": "Pelo menos o mesmo espaço que ao ultrapassar um carro"
+        },
+        {
+          "pt": "O comprimento de um carro"
+        },
+        {
+          "pt": "Meia via"
+        },
+        {
+          "pt": "Duas larguras de carro"
+        }
+      ]
+    },
+    "VU-05": {
+      "promptPt": "Se um peão estiver atrás do seu carro enquanto faz marcha-atrás, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Ceder a passagem ao peão"
+        },
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Fazer marcha-atrás depressa"
+        },
+        {
+          "pt": "Fazer-lhe sinal para parar"
+        }
+      ]
+    },
+    "VU-06": {
+      "promptPt": "Quem pode usar uma passagem toucan?",
+      "options": [
+        {
+          "pt": "Ciclistas e peões"
+        },
+        {
+          "pt": "Apenas motociclistas"
+        },
+        {
+          "pt": "Apenas peões"
+        },
+        {
+          "pt": "Apenas veículos"
+        }
+      ]
+    },
+    "VU-07": {
+      "promptPt": "O que deve fazer se veículos estacionados bloquearem a sua visão num cruzamento?",
+      "options": [
+        {
+          "pt": "Parar e depois avançar lentamente"
+        },
+        {
+          "pt": "Sair rapidamente"
+        },
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Sair do carro e olhar"
+        }
+      ]
+    },
+    "VU-08": {
+      "promptPt": "À noite, o que indica um peão com roupa refletora e uma luz vermelha?",
+      "options": [
+        {
+          "pt": "Uma caminhada ou grupo organizado"
+        },
+        {
+          "pt": "Obras na estrada"
+        },
+        {
+          "pt": "Um veículo lento"
+        },
+        {
+          "pt": "Um sinal de perigo"
+        }
+      ]
+    },
+    "VU-09": {
+      "promptPt": "Porque deve estar especialmente atento a ciclistas e motociclistas nos cruzamentos?",
+      "options": [
+        {
+          "pt": "São mais difíceis de ver"
+        },
+        {
+          "pt": "Abrandam sempre"
+        },
+        {
+          "pt": "Devem ceder a passagem"
+        },
+        {
+          "pt": "Param com frequência"
+        }
+      ]
+    },
+    "VU-10": {
+      "promptPt": "Porque devem as marcações em ziguezague junto a escolas ser mantidas livres?",
+      "options": [
+        {
+          "pt": "Para ajudar as crianças a ver e a serem vistas"
+        },
+        {
+          "pt": "Para os professores estacionarem"
+        },
+        {
+          "pt": "Para entregas"
+        },
+        {
+          "pt": "Para os pais pararem"
+        }
+      ]
+    },
+    "VU-11": {
+      "promptPt": "Em que situação deve estar especialmente atento a motociclistas e ciclistas?",
+      "options": [
+        {
+          "pt": "Em vias de dois sentidos com separador"
+        },
+        {
+          "pt": "Nos cruzamentos"
+        },
+        {
+          "pt": "Nas passadeiras (zebra)"
+        },
+        {
+          "pt": "Em ruas de sentido único"
+        }
+      ]
+    },
+    "VU-12": {
+      "promptPt": "O que deve fazer quando vê uma pessoa idosa prestes a atravessar a estrada à sua frente?",
+      "options": [
+        {
+          "pt": "Esperar que ela o deixe passar"
+        },
+        {
+          "pt": "Acelerar para passar rapidamente"
+        },
+        {
+          "pt": "Parar e fazer-lhe sinal para atravessar"
+        },
+        {
+          "pt": "Ter cuidado, pois pode calcular mal a sua velocidade"
+        }
+      ]
+    },
+    "VU-13": {
+      "promptPt": "Aproxima-se de uma rotunda e um ciclista à frente faz sinal para virar à direita. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ultrapassar pela direita"
+        },
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Fazer-lhe sinal para atravessar"
+        },
+        {
+          "pt": "Dar ao ciclista bastante espaço"
+        }
+      ]
+    },
+    "VU-14": {
+      "promptPt": "Como assinala normalmente uma patrulha de passagem escolar que o trânsito deve parar?",
+      "options": [
+        {
+          "pt": "Apontando para as crianças"
+        },
+        {
+          "pt": "Mostrando uma luz vermelha"
+        },
+        {
+          "pt": "Erguendo um sinal STOP"
+        },
+        {
+          "pt": "Apenas com um sinal de braço"
+        }
+      ]
+    },
+    "VU-15": {
+      "promptPt": "Numa passagem pelican, o que deve fazer enquanto a luz âmbar pisca?",
+      "options": [
+        {
+          "pt": "Fazer sinal aos peões para atravessarem"
+        },
+        {
+          "pt": "Esperar sempre pelo verde"
+        },
+        {
+          "pt": "Ceder a passagem aos peões que já estão na passagem"
+        },
+        {
+          "pt": "Esperar pelo vermelho e âmbar"
+        }
+      ]
+    },
+    "VU-16": {
+      "promptPt": "Numa estrada de campo, quem pode circular na sua direção do seu lado da estrada?",
+      "options": [
+        {
+          "pt": "Motociclos"
+        },
+        {
+          "pt": "Bicicletas"
+        },
+        {
+          "pt": "Peões"
+        },
+        {
+          "pt": "Apenas carros"
+        }
+      ]
+    },
+    "VU-17": {
+      "promptPt": "O que indica um sinal de percurso partilhado para peões e ciclistas?",
+      "options": [
+        {
+          "pt": "Apenas peões"
+        },
+        {
+          "pt": "Apenas ciclistas"
+        },
+        {
+          "pt": "Sem acesso para ambos"
+        },
+        {
+          "pt": "Percurso partilhado para peões e ciclistas"
+        }
+      ]
+    },
+    "VU-18": {
+      "promptPt": "Ao seguir um motociclista num piso em mau estado, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Seguir de perto"
+        },
+        {
+          "pt": "Ultrapassar de imediato"
+        },
+        {
+          "pt": "Deixar espaço extra caso ele desvie"
+        },
+        {
+          "pt": "Manter a distância normal"
+        }
+      ]
+    },
+    "VU-19": {
+      "promptPt": "Qual é o principal objetivo das marcações em ziguezague junto a escolas?",
+      "options": [
+        {
+          "pt": "Permitir que os professores estacionem"
+        },
+        {
+          "pt": "Permitir entregas"
+        },
+        {
+          "pt": "Ajudar as crianças a ver e a serem vistas ao atravessar"
+        },
+        {
+          "pt": "Zona de recolha pelos pais"
+        }
+      ]
+    },
+    "VU-20": {
+      "promptPt": "Em trânsito lento, o que deve fazer imediatamente antes de mudar de via?",
+      "options": [
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Procurar motociclistas a filtrar pelo trânsito"
+        },
+        {
+          "pt": "Fazer um sinal de mão"
+        },
+        {
+          "pt": "Passar à primeira velocidade"
+        }
+      ]
+    },
+    "VU-21": {
+      "promptPt": "Aproxima-se de uma rotunda e vê um cavaleiro a fazer sinal para virar à direita, mantendo-se à esquerda. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Continuar normalmente"
+        },
+        {
+          "pt": "Circular perto dele"
+        },
+        {
+          "pt": "Cortar-lhe a frente"
+        },
+        {
+          "pt": "Manter-se bem atrás"
+        }
+      ]
+    },
+    "VU-22": {
+      "promptPt": "Como deve comportar-se com condutores inexperientes?",
+      "options": [
+        {
+          "pt": "Usar a buzina para os avisar"
+        },
+        {
+          "pt": "Ser paciente e contar com reações mais lentas"
+        },
+        {
+          "pt": "Piscar os máximos para os orientar"
+        },
+        {
+          "pt": "Ultrapassá-los de imediato"
+        }
+      ]
+    },
+    "VU-23": {
+      "promptPt": "O que torna uma passagem toucan diferente de uma passagem puffin?",
+      "options": [
+        {
+          "pt": "Pode ser usada por ciclomotores"
+        },
+        {
+          "pt": "É controlada por um agente de trânsito"
+        },
+        {
+          "pt": "Usa apenas luzes a piscar"
+        },
+        {
+          "pt": "Permite peões e ciclistas em conjunto"
+        }
+      ]
+    },
+    "VU-24": {
+      "promptPt": "Vê luzes âmbar a piscar por baixo de um sinal de aviso de escola. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Reduzir a velocidade até sair da zona"
+        },
+        {
+          "pt": "Manter a velocidade e tocar a buzina"
+        },
+        {
+          "pt": "Aumentar a velocidade para passar depressa"
+        },
+        {
+          "pt": "Parar e esperar até as luzes se apagarem"
+        }
+      ]
+    },
+    "VU-25": {
+      "promptPt": "Ao ultrapassar um ciclista, porque deve deixar tanto espaço como deixaria para um carro?",
+      "options": [
+        {
+          "pt": "O ciclista pode acelerar de repente"
+        },
+        {
+          "pt": "O ciclista pode descer da bicicleta"
+        },
+        {
+          "pt": "O ciclista pode desequilibrar-se se for ultrapassado de perto"
+        },
+        {
+          "pt": "O ciclista pode virar à esquerda"
+        }
+      ]
+    },
+    "VU-26": {
+      "promptPt": "Numa estrada estreita, um cavaleiro à frente circula no centro da via. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Ficar atrás e permitir essa posição"
+        },
+        {
+          "pt": "Desviar para a direita e passar com cuidado"
+        },
+        {
+          "pt": "Circular perto para o incentivar a mover-se"
+        }
+      ]
+    },
+    "VU-27": {
+      "promptPt": "Quer fazer marcha-atrás para uma estrada lateral e não tem a certeza se a zona atrás está livre. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Verificar apenas os espelhos"
+        },
+        {
+          "pt": "Continuar com cuidado"
+        },
+        {
+          "pt": "Sair e verificar"
+        },
+        {
+          "pt": "Olhar apenas pela janela traseira"
+        }
+      ]
+    },
+    "VU-28": {
+      "promptPt": "Onde veria normalmente um sinal a avisar os condutores sobre crianças a atravessar?",
+      "options": [
+        {
+          "pt": "Perto de uma passagem escolar"
+        },
+        {
+          "pt": "À entrada de um parque infantil"
+        },
+        {
+          "pt": "Num autocarro escolar"
+        },
+        {
+          "pt": "Em zonas só para peões"
+        }
+      ]
+    },
+    "VU-29": {
+      "promptPt": "Vê vários cavaleiros à frente na estrada. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Deslocar-se para o centro da estrada"
+        },
+        {
+          "pt": "Abrandar e estar pronto a parar"
+        },
+        {
+          "pt": "Ligar as luzes de perigo"
+        },
+        {
+          "pt": "Sinalizar viragem à direita"
+        }
+      ]
+    },
+    "VU-30": {
+      "promptPt": "Aproxima-se de uma passadeira (zebra) e uma pessoa em cadeira de rodas espera para atravessar. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Continuar a conduzir"
+        },
+        {
+          "pt": "Fazer-lhe sinal para atravessar"
+        },
+        {
+          "pt": "Fazer-lhe sinal para esperar"
+        },
+        {
+          "pt": "Estar preparado para parar"
+        }
+      ]
+    },
+    "VU-31": {
+      "promptPt": "Aproxima-se de uma rotunda e vê cavalos a serem montados à frente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Tratá-los como carros normais"
+        },
+        {
+          "pt": "Dar-lhes bastante espaço"
+        },
+        {
+          "pt": "Acelerar e passar depressa"
+        }
+      ]
+    },
+    "VU-32": {
+      "promptPt": "Porque deve ter cuidado quando há um autocarro parado do outro lado da estrada?",
+      "options": [
+        {
+          "pt": "O autocarro pode ter avariado"
+        },
+        {
+          "pt": "Peões podem atravessar à frente dele"
+        },
+        {
+          "pt": "O autocarro pode ficar estacionado"
+        },
+        {
+          "pt": "O autocarro pode fazer marcha-atrás"
+        }
+      ]
+    },
+    "VU-33": {
+      "promptPt": "Dois ciclistas circulam à frente, na via da esquerda, a aproximar-se de uma rotunda. O que deve esperar?",
+      "options": [
+        {
+          "pt": "Que virem à esquerda"
+        },
+        {
+          "pt": "Que possam virar à direita"
+        },
+        {
+          "pt": "Que parem de repente"
+        },
+        {
+          "pt": "Que tenham de seguir em frente"
+        }
+      ]
+    },
+    "VU-34": {
+      "promptPt": "Segue um ciclista e quer virar à esquerda pouco à frente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ultrapassar antes do cruzamento"
+        },
+        {
+          "pt": "Colocar-se ao lado e manter-se ao mesmo nível"
+        },
+        {
+          "pt": "Esperar atrás até o ciclista passar"
+        },
+        {
+          "pt": "Contorná-lo no cruzamento"
+        }
+      ]
+    },
+    "VU-35": {
+      "promptPt": "Uma bola sai de entre carros estacionados à sua frente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Manter a velocidade e tocar a buzina"
+        },
+        {
+          "pt": "Piscar os máximos e continuar"
+        },
+        {
+          "pt": "Abrandar e estar pronto a parar"
+        },
+        {
+          "pt": "Parar e fazer sinal às crianças para atravessarem"
+        }
+      ]
+    },
+    "VU-36": {
+      "promptPt": "À noite, é ofuscado pelos faróis de trás. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ajustar o espelho para a posição anti-ofuscamento"
+        },
+        {
+          "pt": "Travar a fundo"
+        },
+        {
+          "pt": "Piscar as luzes traseiras"
+        },
+        {
+          "pt": "Ignorar"
+        }
+      ]
+    },
+    "VU-37": {
+      "promptPt": "Qual utilizador da estrada é geralmente o mais vulnerável?",
+      "options": [
+        {
+          "pt": "Condutor de carro"
+        },
+        {
+          "pt": "Condutor de trator"
+        },
+        {
+          "pt": "Condutor de camião"
+        },
+        {
+          "pt": "Motociclista"
+        }
+      ]
+    },
+    "VU-38": {
+      "promptPt": "O que significa um sinal que mostra um percurso partilhado para peões e ciclistas?",
+      "options": [
+        {
+          "pt": "Apenas peões"
+        },
+        {
+          "pt": "Apenas ciclistas"
+        },
+        {
+          "pt": "Sem peões nem ciclistas"
+        },
+        {
+          "pt": "Percurso partilhado para ambos"
+        }
+      ]
+    },
+    "VU-39": {
+      "promptPt": "Qual é o objetivo da zona marcada entre duas linhas de paragem nos semáforos?",
+      "options": [
+        {
+          "pt": "Zona de espera de táxis"
+        },
+        {
+          "pt": "Passagem para peões"
+        },
+        {
+          "pt": "Zona de espera para ciclistas"
+        },
+        {
+          "pt": "Acesso de emergência"
+        }
+      ]
+    },
+    "VU-40": {
+      "promptPt": "Vai virar à direita para uma estrada lateral. Peões esperam para atravessar. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Virar de imediato"
+        },
+        {
+          "pt": "Fazer-lhes sinal para atravessar"
+        },
+        {
+          "pt": "Esperar e ceder a passagem"
+        },
+        {
+          "pt": "Tocar a buzina"
+        }
+      ]
+    },
+    "VU-41": {
+      "promptPt": "Um ciclista à frente faz sinal à direita mas mantém-se à esquerda numa rotunda. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ultrapassar"
+        },
+        {
+          "pt": "Assumir que vai virar à esquerda"
+        },
+        {
+          "pt": "Deixar espaço para ele virar"
+        },
+        {
+          "pt": "Tocar a buzina"
+        }
+      ]
+    },
+    "VU-42": {
+      "promptPt": "Está atrás de um ciclomotor e quer virar à esquerda em breve. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ultrapassar antes do cruzamento"
+        },
+        {
+          "pt": "Ficar atrás até ele passar"
+        },
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Colocar-se ao lado"
+        }
+      ]
+    },
+    "VU-43": {
+      "promptPt": "Numa passagem pelican, as luzes passam a verde mas pessoas idosas ainda estão a atravessar. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Incentivá-las a apressar-se"
+        },
+        {
+          "pt": "Piscar os máximos"
+        },
+        {
+          "pt": "Esperar com paciência"
+        },
+        {
+          "pt": "Acelerar o motor"
+        }
+      ]
+    },
+    "VU-44": {
+      "promptPt": "Vê uma roda de bicicleta a sair de entre carros estacionados à frente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar e passar"
+        },
+        {
+          "pt": "Travar a fundo"
+        },
+        {
+          "pt": "Abrandar e preparar-se para parar"
+        },
+        {
+          "pt": "Tocar a buzina"
+        }
+      ]
+    },
+    "VU-45": {
+      "promptPt": "Porque deve olhar com atenção para motociclos ao sair de um cruzamento?",
+      "options": [
+        {
+          "pt": "São mais rápidos do que todos os veículos"
+        },
+        {
+          "pt": "Podem estar escondidos da vista"
+        },
+        {
+          "pt": "Têm prioridade"
+        },
+        {
+          "pt": "A polícia usa-os frequentemente"
+        }
+      ]
+    },
+    "VU-46": {
+      "promptPt": "Que utilizadores da estrada são mais difíceis de ver ao fazer marcha-atrás?",
+      "options": [
+        {
+          "pt": "Condutores de carro"
+        },
+        {
+          "pt": "Motociclistas"
+        },
+        {
+          "pt": "Ciclistas"
+        },
+        {
+          "pt": "Crianças"
+        }
+      ]
+    },
+    "VU-47": {
+      "promptPt": "Numa passagem pelican, uma pessoa com deficiência atravessa lentamente e as luzes passam a verde. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Avançar"
+        },
+        {
+          "pt": "Avançar aos poucos"
+        },
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Esperar até terminar"
+        }
+      ]
+    },
+    "VU-48": {
+      "promptPt": "O passeio está encerrado devido a obras. Para o que deve estar atento?",
+      "options": [
+        {
+          "pt": "Peões na estrada"
+        },
+        {
+          "pt": "Trânsito mais rápido"
+        },
+        {
+          "pt": "Vias livres"
+        },
+        {
+          "pt": "Menos perigos"
+        }
+      ]
+    },
+    "VU-49": {
+      "promptPt": "Que sinal avisa que peões podem estar a caminhar ao longo da estrada?",
+      "options": [
+        {
+          "pt": "Sinal de aviso de peões"
+        },
+        {
+          "pt": "Sinal de entrada proibida"
+        },
+        {
+          "pt": "Sinal de sentido único"
+        },
+        {
+          "pt": "Sinal de limite de velocidade"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,856 @@
+{
+  "alertness": {
+    "AL-01": {
+      "promptPt": "Porque deve ligar os faróis quando a luz do dia começa a diminuir?",
+      "options": [
+        {
+          "pt": "Para ver os instrumentos do painel"
+        },
+        {
+          "pt": "Para se misturar com o trânsito"
+        },
+        {
+          "pt": "Para ajudar os outros utentes da estrada a vê-lo"
+        },
+        {
+          "pt": "Porque as luzes da rua estão acesas"
+        }
+      ]
+    },
+    "AL-02": {
+      "promptPt": "O que é mais provável acontecer se usar um telemóvel hands-free ao conduzir?",
+      "options": [
+        {
+          "pt": "Maior segurança"
+        },
+        {
+          "pt": "Melhor concentração"
+        },
+        {
+          "pt": "Visão reduzida"
+        },
+        {
+          "pt": "Atenção desviada"
+        }
+      ]
+    },
+    "AL-03": {
+      "promptPt": "Como pode impedir que o GPS o distraia ao conduzir?",
+      "options": [
+        {
+          "pt": "Desligá-lo nas localidades"
+        },
+        {
+          "pt": "Escolher uma voz calmante"
+        },
+        {
+          "pt": "Definir o destino antes de partir"
+        },
+        {
+          "pt": "Definí-lo só quando estiver perdido"
+        }
+      ]
+    },
+    "AL-04": {
+      "promptPt": "Se não conseguir ver claramente atrás ao fazer marcha-atrás, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Abrir o vidro"
+        },
+        {
+          "pt": "Abrir a porta"
+        },
+        {
+          "pt": "Usar apenas os espelhos"
+        },
+        {
+          "pt": "Pedir a alguém que o guie"
+        }
+      ]
+    },
+    "AL-05": {
+      "promptPt": "Uma seta curva marcada na estrada indica o quê?",
+      "options": [
+        {
+          "pt": "Veículos pesados viram à esquerda"
+        },
+        {
+          "pt": "A estrada curva à esquerda mais à frente"
+        },
+        {
+          "pt": "Regresse à via da esquerda"
+        },
+        {
+          "pt": "A inclinação transversal da estrada muda"
+        }
+      ]
+    },
+    "AL-06": {
+      "promptPt": "Onde deve evitar ultrapassar outros veículos?",
+      "options": [
+        {
+          "pt": "Em ruas de sentido único"
+        },
+        {
+          "pt": "Em estradas de duas faixas (dual carriageways)"
+        },
+        {
+          "pt": "Logo após curvas ou depressões"
+        },
+        {
+          "pt": "Em estradas largas e abertas"
+        }
+      ]
+    },
+    "AL-07": {
+      "promptPt": "O que deve fazer antes de abrandar ou parar?",
+      "options": [
+        {
+          "pt": "Buzinar"
+        },
+        {
+          "pt": "Verificar os espelhos"
+        },
+        {
+          "pt": "Mudar de velocidade"
+        },
+        {
+          "pt": "Piscar os faróis"
+        }
+      ]
+    },
+    "AL-08": {
+      "promptPt": "Como deve ultrapassar um ciclista em segurança na estrada?",
+      "options": [
+        {
+          "pt": "Buzinar"
+        },
+        {
+          "pt": "Passar muito perto"
+        },
+        {
+          "pt": "Deixar bastante espaço"
+        },
+        {
+          "pt": "Acelerar para o ultrapassar"
+        }
+      ]
+    },
+    "AL-09": {
+      "promptPt": "O que é um «ângulo morto» (blind spot)?",
+      "options": [
+        {
+          "pt": "Visível no espelho direito"
+        },
+        {
+          "pt": "Não iluminado pelos faróis"
+        },
+        {
+          "pt": "Visível no espelho esquerdo"
+        },
+        {
+          "pt": "Área não visível para o condutor"
+        }
+      ]
+    },
+    "AL-10": {
+      "promptPt": "Os semáforos à frente estão verdes há algum tempo. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar"
+        },
+        {
+          "pt": "Manter a velocidade"
+        },
+        {
+          "pt": "Estar preparado para parar"
+        },
+        {
+          "pt": "Travar a fundo"
+        }
+      ]
+    },
+    "AL-11": {
+      "promptPt": "Porque deve manter uma distância segura atrás de um veículo grande?",
+      "options": [
+        {
+          "pt": "Melhor curvas"
+        },
+        {
+          "pt": "Paragem mais fácil"
+        },
+        {
+          "pt": "Para ser visto pelo condutor"
+        },
+        {
+          "pt": "Evitar o vento"
+        }
+      ]
+    },
+    "AL-12": {
+      "promptPt": "Quando pode usar legalmente um telemóvel na mão ao conduzir?",
+      "options": [
+        {
+          "pt": "Ao receber uma chamada"
+        },
+        {
+          "pt": "Ao conduzir lentamente"
+        },
+        {
+          "pt": "Com caixa automática"
+        },
+        {
+          "pt": "Quando estiver estacionado em segurança"
+        }
+      ]
+    },
+    "AL-13": {
+      "promptPt": "O que é mais provável distraí-lo ao conduzir?",
+      "options": [
+        {
+          "pt": "Limpa-para-brisas"
+        },
+        {
+          "pt": "Desembaciadores"
+        },
+        {
+          "pt": "Espelhos"
+        },
+        {
+          "pt": "Utilização do telemóvel"
+        }
+      ]
+    },
+    "AL-14": {
+      "promptPt": "Porque podem objetos pendurados no espelho interior ser perigosos?",
+      "options": [
+        {
+          "pt": "Obstruem a sua visão"
+        },
+        {
+          "pt": "Afetam o rádio"
+        },
+        {
+          "pt": "Enroscam na pala de sol"
+        },
+        {
+          "pt": "Embaciam o para-brisas"
+        }
+      ]
+    },
+    "AL-15": {
+      "promptPt": "O que deve verificar antes de fazer um U-turn?",
+      "options": [
+        {
+          "pt": "Sinalização com o braço"
+        },
+        {
+          "pt": "Seleção da mudança"
+        },
+        {
+          "pt": "Se as marcações na estrada o permitem"
+        },
+        {
+          "pt": "Olhar por cima do ombro"
+        }
+      ]
+    },
+    "AL-16": {
+      "promptPt": "O telemóvel toca enquanto conduz. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Atender de imediato"
+        },
+        {
+          "pt": "Parar de súbito"
+        },
+        {
+          "pt": "Encostar em segurança primeiro"
+        },
+        {
+          "pt": "Atender em movimento"
+        }
+      ]
+    },
+    "AL-17": {
+      "promptPt": "Antes de virar à direita para uma estrada de duas faixas (dual carriageway), o que deve verificar?",
+      "options": [
+        {
+          "pt": "Travão de mão"
+        },
+        {
+          "pt": "Posição à esquerda"
+        },
+        {
+          "pt": "Largura da reserva central"
+        },
+        {
+          "pt": "Espaço atrás"
+        }
+      ]
+    },
+    "AL-18": {
+      "promptPt": "O que deve fazer antes de arrancar de trás de um carro estacionado?",
+      "options": [
+        {
+          "pt": "Sinalizar depois de arrancar"
+        },
+        {
+          "pt": "Olhar à volta primeiro"
+        },
+        {
+          "pt": "Apenas os espelhos"
+        },
+        {
+          "pt": "Olhar depois de arrancar"
+        }
+      ]
+    },
+    "AL-19": {
+      "promptPt": "Numa estrada molhada, o que deve fazer se tiver de parar em emergência?",
+      "options": [
+        {
+          "pt": "Travão de mão"
+        },
+        {
+          "pt": "Ambas as mãos no volante"
+        },
+        {
+          "pt": "Marcha-atrás"
+        },
+        {
+          "pt": "Sinalização com o braço"
+        }
+      ]
+    },
+    "AL-20": {
+      "promptPt": "A sua visão num cruzamento está bloqueada por veículos estacionados. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Avançar rapidamente"
+        },
+        {
+          "pt": "Avançar lentamente e com cuidado"
+        },
+        {
+          "pt": "Perguntar aos peões"
+        },
+        {
+          "pt": "Dar a volta"
+        }
+      ]
+    },
+    "AL-21": {
+      "promptPt": "Ao aproximar-se de uma ponte numa estrada estreita, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Desviar-se para a direita"
+        },
+        {
+          "pt": "Mudar de velocidade"
+        },
+        {
+          "pt": "Abrandar"
+        },
+        {
+          "pt": "Manter 30 mph"
+        }
+      ]
+    },
+    "AL-22": {
+      "promptPt": "Quando é que os pilares do para-brisas restringem mais a sua visão?",
+      "options": [
+        {
+          "pt": "Nas autoestradas"
+        },
+        {
+          "pt": "Nas estradas de duas faixas (dual carriageways)"
+        },
+        {
+          "pt": "Em curvas e cruzamentos"
+        },
+        {
+          "pt": "Em ruas de sentido único"
+        }
+      ]
+    },
+    "AL-23": {
+      "promptPt": "Porque deve verificar os espelhos quando surge um perigo à frente?",
+      "options": [
+        {
+          "pt": "Acelerar"
+        },
+        {
+          "pt": "Avaliar o trânsito atrás"
+        },
+        {
+          "pt": "Travar bruscamente"
+        },
+        {
+          "pt": "Verificar apenas à frente"
+        }
+      ]
+    },
+    "AL-24": {
+      "promptPt": "Porque são pintadas marcações amarelas transversais na estrada?",
+      "options": [
+        {
+          "pt": "Seleção de via"
+        },
+        {
+          "pt": "Distância de separação"
+        },
+        {
+          "pt": "Consciencialização da velocidade"
+        },
+        {
+          "pt": "Distância até à rotunda"
+        }
+      ]
+    },
+    "AL-25": {
+      "promptPt": "Numa viagem longa na autoestrada, o que deve fazer se se sentir sonolento?",
+      "options": [
+        {
+          "pt": "Música alta"
+        },
+        {
+          "pt": "Parar na berma (hard shoulder)"
+        },
+        {
+          "pt": "Conduzir mais depressa"
+        },
+        {
+          "pt": "Sair da autoestrada e descansar em segurança"
+        }
+      ]
+    },
+    "AL-26": {
+      "promptPt": "Ao sair de um cruzamento com a visão bloqueada, a quem deve prestar mais atenção?",
+      "options": [
+        {
+          "pt": "Camiões"
+        },
+        {
+          "pt": "Autocarros"
+        },
+        {
+          "pt": "Motociclistas"
+        },
+        {
+          "pt": "Autocarros de longo curso"
+        }
+      ]
+    }
+  },
+  "hazard-awareness": {
+    "HZ-01": {
+      "promptPt": "Porque deve reduzir a velocidade quando a estrada à frente se estreita?",
+      "options": [
+        {
+          "pt": "Porque há um cruzamento desencontrado à frente"
+        },
+        {
+          "pt": "Porque há menos margem de erro e para os veículos passarem em segurança"
+        },
+        {
+          "pt": "Porque o piso muda de súbito"
+        },
+        {
+          "pt": "Porque se aproxima uma ponte baixa"
+        }
+      ]
+    },
+    "HZ-02": {
+      "promptPt": "Ao aproximar-se de um ciclista perto de um cruzamento, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Tentar ultrapassar antes de o ciclista chegar ao cruzamento"
+        },
+        {
+          "pt": "Piscar os faróis para o avisar"
+        },
+        {
+          "pt": "Reduzir a velocidade e deixar o ciclista concluir a manobra"
+        },
+        {
+          "pt": "Acelerar o motor para que ele o note"
+        }
+      ]
+    },
+    "HZ-03": {
+      "promptPt": "Está à espera num cruzamento e veículos estacionados restringem a sua visão. O que o pode ajudar a avaliar o trânsito que se aproxima?",
+      "options": [
+        {
+          "pt": "Observar o trânsito atrás de si"
+        },
+        {
+          "pt": "Usar reflexos nas janelas próximas"
+        },
+        {
+          "pt": "Fazer contacto visual com peões"
+        },
+        {
+          "pt": "Verificar apenas o espelho interior"
+        }
+      ]
+    },
+    "HZ-04": {
+      "promptPt": "Se a sua visão piorou e já não cumpre os padrões legais para conduzir, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Informar a autoridade de licenciamento"
+        },
+        {
+          "pt": "Dizer apenas ao seu ótico"
+        },
+        {
+          "pt": "Contactar a polícia"
+        },
+        {
+          "pt": "Falar com o médico e continuar a conduzir"
+        }
+      ]
+    },
+    "HZ-05": {
+      "promptPt": "Qual das seguintes opções o distraíria gravemente ao conduzir?",
+      "options": [
+        {
+          "pt": "Ler um mapa rodoviário"
+        },
+        {
+          "pt": "Usar o desembaciador"
+        },
+        {
+          "pt": "Acionar os limpa-para-brisas"
+        },
+        {
+          "pt": "Verificar o espelho exterior"
+        }
+      ]
+    },
+    "HZ-06": {
+      "promptPt": "Luzes de aviso vermelhas começam a piscar ao aproximar-se de uma passagem de nível. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Atravessar rapidamente antes de as barreiras baixarem"
+        },
+        {
+          "pt": "Continuar com cuidado"
+        },
+        {
+          "pt": "Parar antes de chegar à barreira"
+        },
+        {
+          "pt": "Ligar as luzes de emergência e continuar"
+        }
+      ]
+    },
+    "HZ-07": {
+      "promptPt": "Está a conduzir numa estrada com várias vias. O que significam sinais aéreos de via que mostram uma cruz vermelha?",
+      "options": [
+        {
+          "pt": "As vias da direita estão abertas"
+        },
+        {
+          "pt": "As vias da esquerda estão abertas"
+        },
+        {
+          "pt": "Os veículos nas vias da esquerda devem parar"
+        },
+        {
+          "pt": "Os veículos nas vias da direita devem parar"
+        }
+      ]
+    },
+    "HZ-08": {
+      "promptPt": "O que deve fazer se começar a sentir-se cansado ao conduzir numa autoestrada?",
+      "options": [
+        {
+          "pt": "Parar na berma (hard shoulder) e trocar de condutor"
+        },
+        {
+          "pt": "Sair na próxima saída e fazer uma pausa"
+        },
+        {
+          "pt": "Aumentar a velocidade e subir o volume do rádio"
+        },
+        {
+          "pt": "Fechar os vidros e aumentar o aquecimento"
+        }
+      ]
+    },
+    "HZ-09": {
+      "promptPt": "Porque deve um cruzamento à esquerda ser mantido livre?",
+      "options": [
+        {
+          "pt": "Para permitir que os veículos entrem e saiam em segurança"
+        },
+        {
+          "pt": "Para permitir que os autocarros façam marcha-atrás"
+        },
+        {
+          "pt": "Para permitir U-turns"
+        },
+        {
+          "pt": "Para permitir estacionamento"
+        }
+      ]
+    },
+    "HZ-10": {
+      "promptPt": "Está atrás de um ciclista nos semáforos. Quando as luzes mudam, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Arrancar depressa antes do ciclista"
+        },
+        {
+          "pt": "Dar tempo e espaço ao ciclista"
+        },
+        {
+          "pt": "Virar à direita de imediato"
+        },
+        {
+          "pt": "Buzinar e continuar"
+        }
+      ]
+    },
+    "HZ-11": {
+      "promptPt": "Qual é o perigo mais provável que um condutor deve vigiar ao passar um autocarro parado à beira da estrada?",
+      "options": [
+        {
+          "pt": "O carro preto a parar de súbito"
+        },
+        {
+          "pt": "Trânsito em sentido contrário a assumir uma viragem à direita"
+        },
+        {
+          "pt": "Um autocarro a sair inesperadamente"
+        },
+        {
+          "pt": "Reflexo do sol a afetar a visão"
+        }
+      ]
+    },
+    "HZ-12": {
+      "promptPt": "Que veículo usa normalmente um farol âmbar intermitente numa estrada de duas faixas (dual carriageway)?",
+      "options": [
+        {
+          "pt": "Ambulância"
+        },
+        {
+          "pt": "Bombeiros"
+        },
+        {
+          "pt": "Carro de médico"
+        },
+        {
+          "pt": "Trator"
+        }
+      ]
+    },
+    "HZ-13": {
+      "promptPt": "Apercebe-se de que vai no sentido errado numa rua de sentido único. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Fazer marcha-atrás para sair"
+        },
+        {
+          "pt": "Dar a volta numa rua lateral"
+        },
+        {
+          "pt": "Continuar e encontrar outro percurso"
+        },
+        {
+          "pt": "Fazer marcha-atrás para uma entrada"
+        }
+      ]
+    },
+    "HZ-14": {
+      "promptPt": "Porque são particularmente perigosas as estradas de dois sentidos com três vias?",
+      "options": [
+        {
+          "pt": "O trânsito de ambos os sentidos pode ultrapassar usando a via do meio"
+        },
+        {
+          "pt": "Os veículos circulam mais depressa com mau tempo"
+        },
+        {
+          "pt": "A ultrapassagem faz-se pela esquerda"
+        },
+        {
+          "pt": "A via do meio é só para emergências"
+        }
+      ]
+    },
+    "HZ-15": {
+      "promptPt": "Num cruzamento com linha de paragem, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Parar atrás da linha e depois avançar lentamente para ver bem"
+        },
+        {
+          "pt": "Parar além da linha"
+        },
+        {
+          "pt": "Parar só se houver trânsito"
+        },
+        {
+          "pt": "Parar só ao virar à direita"
+        }
+      ]
+    },
+    "HZ-16": {
+      "promptPt": "Ao aproximar-se de uma passagem de peões, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Manter a velocidade"
+        },
+        {
+          "pt": "Usar a buzina"
+        },
+        {
+          "pt": "Atravessar depressa"
+        },
+        {
+          "pt": "Abrandar e estar preparado para parar"
+        }
+      ]
+    },
+    "HZ-17": {
+      "promptPt": "Que utente da estrada é mais provável criar um perigo ao bloquear a visibilidade perto de um cruzamento?",
+      "options": [
+        {
+          "pt": "O peão à espera"
+        },
+        {
+          "pt": "O carro em movimento"
+        },
+        {
+          "pt": "O veículo a virar"
+        },
+        {
+          "pt": "O carro estacionado"
+        }
+      ]
+    },
+    "HZ-18": {
+      "promptPt": "Segue um veículo lento e há um cruzamento à direita à frente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ultrapassar antes do cruzamento"
+        },
+        {
+          "pt": "Ultrapassar só depois de passar o cruzamento"
+        },
+        {
+          "pt": "Acelerar bruscamente para passar"
+        },
+        {
+          "pt": "Preparar-se para ultrapassar pela esquerda"
+        }
+      ]
+    },
+    "HZ-19": {
+      "promptPt": "O trânsito na via da esquerda está a abrandar. Qual é a ação mais segura?",
+      "options": [
+        {
+          "pt": "Reduzir a velocidade e manter uma distância segura"
+        },
+        {
+          "pt": "Acelerar para passar o trânsito"
+        },
+        {
+          "pt": "Entrar na berma"
+        },
+        {
+          "pt": "Mudar para a direita e continuar"
+        }
+      ]
+    },
+    "HZ-20": {
+      "promptPt": "Um agente de polícia faz um sinal com a mão ao trânsito em sentido contrário. O que significa?",
+      "options": [
+        {
+          "pt": "Avance"
+        },
+        {
+          "pt": "Pare"
+        },
+        {
+          "pt": "Vire à esquerda"
+        },
+        {
+          "pt": "Vire à direita"
+        }
+      ]
+    },
+    "HZ-21": {
+      "promptPt": "Acabou de ter uma discussão acesa e sente-se zangado. O que deve fazer antes de conduzir?",
+      "options": [
+        {
+          "pt": "Começar a conduzir para «acalmar»"
+        },
+        {
+          "pt": "Aumentar o volume do rádio para se distrair"
+        },
+        {
+          "pt": "Beber álcool para relaxar"
+        },
+        {
+          "pt": "Esperar até se acalmar antes de partir"
+        }
+      ]
+    },
+    "HZ-22": {
+      "promptPt": "Aproxima-se de um cruzamento numa estrada rural e a visão à direita está parcialmente bloqueada por uma sebe. Porque deve abrandar cedo?",
+      "options": [
+        {
+          "pt": "Porque os animais atravessam sempre aqui"
+        },
+        {
+          "pt": "Porque pode haver trânsito que só vê tarde demais"
+        },
+        {
+          "pt": "Porque as passagens de nível são comuns em estradas rurais"
+        },
+        {
+          "pt": "Porque o limite de velocidade muda automaticamente nos cruzamentos"
+        }
+      ]
+    },
+    "HZ-23": {
+      "promptPt": "Um carro à frente começa a fazer marcha-atrás de uma entrada para a estrada. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar para passar antes de bloquear a estrada"
+        },
+        {
+          "pt": "Buzinar e continuar"
+        },
+        {
+          "pt": "Estar preparado para parar e ceder a passagem"
+        },
+        {
+          "pt": "Mudar para o lado oposto à mesma velocidade"
+        }
+      ]
+    },
+    "HZ-24": {
+      "promptPt": "Porque são muitos espelhos exteriores ligeiramente curvos?",
+      "options": [
+        {
+          "pt": "Fazem os veículos atrás parecerem maiores"
+        },
+        {
+          "pt": "Dão um campo de visão mais amplo"
+        },
+        {
+          "pt": "Eliminam a necessidade de verificar os ângulos mortos"
+        },
+        {
+          "pt": "Reduzem o encandeamento dos faróis"
+        }
+      ]
+    }
+  }
+}

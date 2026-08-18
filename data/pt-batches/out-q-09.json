@@ -1,0 +1,850 @@
+{
+  "vehicle-handling": {
+    "VH-17": {
+      "promptPt": "Ao ultrapassar à noite, porque deve ter especial cuidado?",
+      "options": [
+        {
+          "pt": "Os máximos em sentido contrário facilitam"
+        },
+        {
+          "pt": "Não consegue ver tão longe à frente como de dia"
+        },
+        {
+          "pt": "É obrigatório usar a buzina"
+        },
+        {
+          "pt": "Ultrapassar é sempre proibido à noite"
+        }
+      ]
+    },
+    "VH-18": {
+      "promptPt": "À noite, fica encandeado pelos máximos em sentido contrário. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Baixar o pala-sol"
+        },
+        {
+          "pt": "Abrandar ou parar se necessário"
+        },
+        {
+          "pt": "Piscar os máximos"
+        },
+        {
+          "pt": "Proteger os olhos com a mão"
+        }
+      ]
+    },
+    "VH-19": {
+      "promptPt": "Depois de conduzir com nevoeiro, o que deve fazer quando a visibilidade melhorar?",
+      "options": [
+        {
+          "pt": "Desligar as luzes de nevoeiro"
+        },
+        {
+          "pt": "Manter as luzes de nevoeiro traseiras ligadas"
+        },
+        {
+          "pt": "Manter as luzes de nevoeiro dianteiras ligadas"
+        },
+        {
+          "pt": "Deixá-las ligadas por precaução"
+        }
+      ]
+    },
+    "VH-20": {
+      "promptPt": "Porque são montadas luzes de nevoeiro traseiras nos veículos?",
+      "options": [
+        {
+          "pt": "Para melhorar a visibilidade a alta velocidade"
+        },
+        {
+          "pt": "Para indicar que o veículo avariou"
+        },
+        {
+          "pt": "Para tornar o veículo mais visível com nevoeiro denso"
+        },
+        {
+          "pt": "Para avisar os condutores atrás para se afastarem"
+        }
+      ]
+    },
+    "VH-21": {
+      "promptPt": "Porque é perigoso deixar as luzes de nevoeiro traseiras ligadas depois de o nevoeiro dissipar?",
+      "options": [
+        {
+          "pt": "Podem ser confundidas com as luzes de travão"
+        },
+        {
+          "pt": "Danificam o sistema elétrico"
+        },
+        {
+          "pt": "Reduzem o desempenho do motor"
+        },
+        {
+          "pt": "Causam desgaste dos pneus"
+        }
+      ]
+    },
+    "VH-22": {
+      "promptPt": "Qual é o principal objetivo das medidas de acalmia de tráfego?",
+      "options": [
+        {
+          "pt": "Reduzir a condução agressiva"
+        },
+        {
+          "pt": "Facilitar o estacionamento"
+        },
+        {
+          "pt": "Abrandar os veículos"
+        },
+        {
+          "pt": "Melhorar as ultrapassagens"
+        }
+      ]
+    },
+    "VH-23": {
+      "promptPt": "Porque é má prática circular em ponto morto durante longas distâncias?",
+      "options": [
+        {
+          "pt": "Aumenta o risco de derrapagem"
+        },
+        {
+          "pt": "O motor pode ir abaixo"
+        },
+        {
+          "pt": "Perde a travagem pelo motor"
+        },
+        {
+          "pt": "O consumo de combustível aumenta"
+        }
+      ]
+    },
+    "VH-24": {
+      "promptPt": "Ao ultrapassar à noite, o que é essencial evitar?",
+      "options": [
+        {
+          "pt": "Usar os faróis"
+        },
+        {
+          "pt": "Encandear outros utilizadores da estrada"
+        },
+        {
+          "pt": "Mudar de velocidade"
+        },
+        {
+          "pt": "Abrandar"
+        }
+      ]
+    },
+    "VH-25": {
+      "promptPt": "Numa estrada gelada, a que distância deve ficar do veículo da frente?",
+      "options": [
+        {
+          "pt": "4 vezes a distância normal"
+        },
+        {
+          "pt": "6 vezes a distância normal"
+        },
+        {
+          "pt": "8 vezes a distância normal"
+        },
+        {
+          "pt": "10 vezes a distância normal"
+        }
+      ]
+    },
+    "VH-26": {
+      "promptPt": "Porque deve evitar descer em ponto morto?",
+      "options": [
+        {
+          "pt": "Consome mais combustível"
+        },
+        {
+          "pt": "O motor pode sobreaquecer"
+        },
+        {
+          "pt": "O veículo pode ganhar velocidade com demasiada facilidade"
+        },
+        {
+          "pt": "Os pneus gastam-se mais depressa"
+        }
+      ]
+    },
+    "VH-27": {
+      "promptPt": "Qual é o efeito de usar luzes de nevoeiro traseiras com boa visibilidade?",
+      "options": [
+        {
+          "pt": "Melhora a segurança no reboque"
+        },
+        {
+          "pt": "Avisa veículos grandes"
+        },
+        {
+          "pt": "Encandeia os condutores atrás"
+        },
+        {
+          "pt": "Mantém o trânsito afastado"
+        }
+      ]
+    },
+    "VH-28": {
+      "promptPt": "Ao conduzir num piso escorregadio, que técnica ajuda a evitar a patinagem das rodas?",
+      "options": [
+        {
+          "pt": "Usar uma mudança baixa e acelerar a fundo"
+        },
+        {
+          "pt": "Usar uma mudança alta e acelerar suavemente"
+        },
+        {
+          "pt": "Travar com firmeza"
+        },
+        {
+          "pt": "Virar o volante bruscamente"
+        }
+      ]
+    },
+    "VH-29": {
+      "promptPt": "Que luzes deve usar numa autoestrada bem iluminada à noite?",
+      "options": [
+        {
+          "pt": "Apenas luzes de presença"
+        },
+        {
+          "pt": "Faróis"
+        },
+        {
+          "pt": "Luzes de nevoeiro traseiras"
+        },
+        {
+          "pt": "Luzes de nevoeiro dianteiras"
+        }
+      ]
+    },
+    "VH-30": {
+      "promptPt": "Para que serve um dispositivo de vibração (rumble)?",
+      "options": [
+        {
+          "pt": "Dar indicações"
+        },
+        {
+          "pt": "Impedir a fuga de animais"
+        },
+        {
+          "pt": "Alertá-lo para um perigo"
+        },
+        {
+          "pt": "Verificar a pressão dos pneus"
+        }
+      ]
+    },
+    "VH-31": {
+      "promptPt": "Quando sente mais claramente a travagem pelo motor?",
+      "options": [
+        {
+          "pt": "Quando depende apenas do travão de estacionamento"
+        },
+        {
+          "pt": "Quando seleciona o ponto morto"
+        },
+        {
+          "pt": "Quando reduz para uma mudança mais baixa"
+        },
+        {
+          "pt": "Quando sobe para uma mudança mais alta"
+        }
+      ]
+    },
+    "VH-32": {
+      "promptPt": "Com chuva muito intensa, o que acontece à distância total de paragem?",
+      "options": [
+        {
+          "pt": "É provável que seja maior (muitas vezes cerca do dobro)"
+        },
+        {
+          "pt": "É provável que seja menor"
+        },
+        {
+          "pt": "Torna-se dez vezes maior"
+        },
+        {
+          "pt": "Mantém-se igual"
+        }
+      ]
+    },
+    "VH-33": {
+      "promptPt": "Porque deve abrandar ao conduzir com nevoeiro?",
+      "options": [
+        {
+          "pt": "Porque os travões funcionam menos eficazmente"
+        },
+        {
+          "pt": "Porque os faróis o encandeiam sempre"
+        },
+        {
+          "pt": "Porque o motor aquece mais lentamente"
+        },
+        {
+          "pt": "Porque não consegue ver os perigos tão cedo"
+        }
+      ]
+    },
+    "VH-34": {
+      "promptPt": "Depois de atravessar água profunda ou uma inundação, o que deve fazer pouco depois?",
+      "options": [
+        {
+          "pt": "Testar os travões suavemente para verificar se funcionam"
+        },
+        {
+          "pt": "Acelerar a fundo para secar os pneus"
+        },
+        {
+          "pt": "Evitar usar os travões durante vários quilómetros"
+        },
+        {
+          "pt": "Parar durante uma hora para os travões secarem"
+        }
+      ]
+    },
+    "VH-35": {
+      "promptPt": "Numa autoestrada à noite, se houver veículos à sua frente, que faróis deve usar normalmente?",
+      "options": [
+        {
+          "pt": "Luzes de nevoeiro dianteiras"
+        },
+        {
+          "pt": "Máximos"
+        },
+        {
+          "pt": "Apenas luzes de presença"
+        },
+        {
+          "pt": "Médios"
+        }
+      ]
+    },
+    "VH-36": {
+      "promptPt": "Que cor têm os catadióptricos refletivos que marcam o bordo esquerdo de uma autoestrada?",
+      "options": [
+        {
+          "pt": "Verde"
+        },
+        {
+          "pt": "Âmbar"
+        },
+        {
+          "pt": "Vermelho"
+        },
+        {
+          "pt": "Branco"
+        }
+      ]
+    },
+    "VH-37": {
+      "promptPt": "Que fator mais afeta a sua distância de paragem?",
+      "options": [
+        {
+          "pt": "O limite de velocidade indicado"
+        },
+        {
+          "pt": "A iluminação pública"
+        },
+        {
+          "pt": "A hora do dia"
+        },
+        {
+          "pt": "O estado e a aderência dos pneus"
+        }
+      ]
+    },
+    "VH-38": {
+      "promptPt": "Depois de uma forte nevada, o que deve considerar antes de iniciar uma viagem?",
+      "options": [
+        {
+          "pt": "Montar um sinal âmbar"
+        },
+        {
+          "pt": "Conduzir sem cinto de segurança"
+        },
+        {
+          "pt": "Usar óculos de sol"
+        },
+        {
+          "pt": "Se a viagem é essencial"
+        }
+      ]
+    },
+    "VH-39": {
+      "promptPt": "Quando deve usar os médios durante o dia?",
+      "options": [
+        {
+          "pt": "Sempre"
+        },
+        {
+          "pt": "Apenas em ruas estreitas"
+        },
+        {
+          "pt": "Quando a visibilidade é má"
+        },
+        {
+          "pt": "Ao estacionar"
+        }
+      ]
+    },
+    "VH-40": {
+      "promptPt": "A visibilidade de dia é má, mas não está seriamente reduzida. Que luzes deve usar?",
+      "options": [
+        {
+          "pt": "Faróis e luzes de nevoeiro"
+        },
+        {
+          "pt": "Luzes de nevoeiro dianteiras"
+        },
+        {
+          "pt": "Médios"
+        },
+        {
+          "pt": "Luzes de nevoeiro traseiras"
+        }
+      ]
+    },
+    "VH-41": {
+      "promptPt": "Porque podem os condutores montar correntes de neve nas rodas?",
+      "options": [
+        {
+          "pt": "Para proteger o pavimento"
+        },
+        {
+          "pt": "Para reduzir o desgaste dos pneus"
+        },
+        {
+          "pt": "Para reduzir a derrapagem na neve profunda"
+        },
+        {
+          "pt": "Para impedir o bloqueio dos travões"
+        }
+      ]
+    },
+    "VH-42": {
+      "promptPt": "Quando é permitido usar as luzes de nevoeiro dianteiras?",
+      "options": [
+        {
+          "pt": "Quando a visibilidade está seriamente reduzida"
+        },
+        {
+          "pt": "Quando estão montadas acima do para-choques"
+        },
+        {
+          "pt": "Quando são mais fracas do que os faróis"
+        },
+        {
+          "pt": "Quando se usa um aviso sonoro"
+        }
+      ]
+    },
+    "VH-43": {
+      "promptPt": "Está a usar luzes de nevoeiro dianteiras e o nevoeiro dissipa. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Mantê-las ligadas se outros usarem luzes"
+        },
+        {
+          "pt": "Desligá-las se a visibilidade for boa"
+        },
+        {
+          "pt": "Piscá-las para avisar os outros"
+        },
+        {
+          "pt": "Usá-las em vez dos faróis"
+        }
+      ]
+    },
+    "VH-44": {
+      "promptPt": "Porque deve desligar as luzes de nevoeiro traseiras assim que o nevoeiro dissipar?",
+      "options": [
+        {
+          "pt": "Para ajudar os faróis a funcionar"
+        },
+        {
+          "pt": "Apenas para evitar o desgaste da bateria"
+        },
+        {
+          "pt": "Para evitar perda de potência do motor"
+        },
+        {
+          "pt": "Para não encandear os condutores atrás"
+        }
+      ]
+    },
+    "VH-45": {
+      "promptPt": "Como pode usar o motor para ajudar a controlar a velocidade?",
+      "options": [
+        {
+          "pt": "Mudando para uma mudança mais baixa"
+        },
+        {
+          "pt": "Selecionando a marcha-atrás"
+        },
+        {
+          "pt": "Mudando para uma mudança mais alta"
+        },
+        {
+          "pt": "Selecionando o ponto morto"
+        }
+      ]
+    }
+  },
+  "motorway-driving": {
+    "MW-11": {
+      "promptPt": "Sinais suspensos mostram uma cruz vermelha acima da sua via. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Sair da autoestrada na próxima saída"
+        },
+        {
+          "pt": "Continuar com cuidado"
+        },
+        {
+          "pt": "Usar a berma"
+        },
+        {
+          "pt": "Sair imediatamente dessa via"
+        }
+      ]
+    },
+    "MW-12": {
+      "promptPt": "Como deve entrar numa autoestrada a partir de uma via de aceleração?",
+      "options": [
+        {
+          "pt": "Parar no fim da via de aceleração"
+        },
+        {
+          "pt": "Circular pela berma"
+        },
+        {
+          "pt": "Acelerar para igualar a velocidade do trânsito e integrar-se em segurança"
+        },
+        {
+          "pt": "Entrar a uma velocidade muito baixa"
+        }
+      ]
+    },
+    "MW-13": {
+      "promptPt": "Qual é a velocidade máxima para um carro a rebocar um atrelado numa autoestrada?",
+      "options": [
+        {
+          "pt": "40 mph"
+        },
+        {
+          "pt": "50 mph"
+        },
+        {
+          "pt": "60 mph"
+        },
+        {
+          "pt": "70 mph"
+        }
+      ]
+    },
+    "MW-14": {
+      "promptPt": "Depois de usar um telefone de emergência na autoestrada, onde deve aguardar?",
+      "options": [
+        {
+          "pt": "Junto ao seu veículo"
+        },
+        {
+          "pt": "Na berma"
+        },
+        {
+          "pt": "Junto ao telefone"
+        },
+        {
+          "pt": "Bem afastado do trânsito"
+        }
+      ]
+    },
+    "MW-15": {
+      "promptPt": "Depois de reparar o veículo na berma, como deve voltar ao trânsito?",
+      "options": [
+        {
+          "pt": "Sair lentamente e acelerar na faixa de rodagem"
+        },
+        {
+          "pt": "Esperar que outro condutor lhe pisque as luzes"
+        },
+        {
+          "pt": "Acelerar na berma antes de se integrar"
+        },
+        {
+          "pt": "Usar os quatro piscas ao sair"
+        }
+      ]
+    },
+    "MW-16": {
+      "promptPt": "Como devem ser usadas normalmente as vias numa autoestrada?",
+      "options": [
+        {
+          "pt": "Permanecer numa via"
+        },
+        {
+          "pt": "Usar a via mais desimpedida"
+        },
+        {
+          "pt": "Manter-se à esquerda salvo para ultrapassar"
+        },
+        {
+          "pt": "Mudar de via com frequência"
+        }
+      ]
+    },
+    "MW-17": {
+      "promptPt": "Onde se encontram os catadióptricos âmbar numa autoestrada?",
+      "options": [
+        {
+          "pt": "Entre as vias"
+        },
+        {
+          "pt": "Entre a faixa de rodagem e a reserva central"
+        },
+        {
+          "pt": "Entre a berma e a faixa de rodagem"
+        },
+        {
+          "pt": "Apenas nas vias de aceleração"
+        }
+      ]
+    },
+    "MW-18": {
+      "promptPt": "O que significa uma cruz vermelha acima da berma?",
+      "options": [
+        {
+          "pt": "Pode parar aí"
+        },
+        {
+          "pt": "Pode circular nessa via"
+        },
+        {
+          "pt": "Não deve usar essa via"
+        },
+        {
+          "pt": "É uma área de descanso"
+        }
+      ]
+    },
+    "MW-19": {
+      "promptPt": "Que veículos devem usar normalmente a via da esquerda numa autoestrada?",
+      "options": [
+        {
+          "pt": "Apenas veículos lentos"
+        },
+        {
+          "pt": "Apenas veículos de emergência"
+        },
+        {
+          "pt": "Apenas veículos grandes"
+        },
+        {
+          "pt": "Qualquer veículo que não esteja a ultrapassar"
+        }
+      ]
+    },
+    "MW-20": {
+      "promptPt": "Que restrição se aplica a condutores com carta provisória?",
+      "options": [
+        {
+          "pt": "Proibida a condução noturna"
+        },
+        {
+          "pt": "Proibido circular acima de 30 mph"
+        },
+        {
+          "pt": "Devem ser acompanhados por um condutor qualificado"
+        },
+        {
+          "pt": "Limitados a um passageiro"
+        }
+      ]
+    },
+    "MW-21": {
+      "promptPt": "Um limite de velocidade apresentado acima da berma significa normalmente que esta está a ser usada como via ativa.",
+      "options": [
+        {
+          "pt": "Verdadeiro"
+        },
+        {
+          "pt": "Falso"
+        }
+      ]
+    },
+    "MW-22": {
+      "promptPt": "Parou numa área de emergência. O que deve fazer antes de voltar à autoestrada?",
+      "options": [
+        {
+          "pt": "Usar um telefone de emergência se precisar de ajuda e depois reentrar quando for seguro"
+        },
+        {
+          "pt": "Fazer um sinal com o braço ao arrancar"
+        },
+        {
+          "pt": "Ligar os faróis antes de arrancar"
+        },
+        {
+          "pt": "Arrancar sempre com os quatro piscas ligados"
+        }
+      ]
+    },
+    "MW-23": {
+      "promptPt": "Está numa autoestrada e precisa de abrandar rapidamente porque o trânsito à frente está a parar. Como pode avisar os condutores atrás?",
+      "options": [
+        {
+          "pt": "Usar brevemente os quatro piscas"
+        },
+        {
+          "pt": "Piscar os médios repetidamente"
+        },
+        {
+          "pt": "Buzinar"
+        },
+        {
+          "pt": "Ligar e desligar os faróis"
+        }
+      ]
+    },
+    "MW-24": {
+      "promptPt": "Qual destes NÃO deve usar a via da direita numa autoestrada de três vias?",
+      "options": [
+        {
+          "pt": "Carrinhas de entregas pequenas"
+        },
+        {
+          "pt": "Motas"
+        },
+        {
+          "pt": "Veículos a rebocar um atrelado"
+        },
+        {
+          "pt": "Mota com sidecar"
+        }
+      ]
+    },
+    "MW-25": {
+      "promptPt": "Está a rebocar um atrelado numa autoestrada de três vias. Quando pode usar a via da direita?",
+      "options": [
+        {
+          "pt": "Quando há vias encerradas"
+        },
+        {
+          "pt": "Quando o trânsito circula lentamente"
+        },
+        {
+          "pt": "Nunca (atrelados não devem usar a via da direita)"
+        },
+        {
+          "pt": "Quando há veículos grandes nas vias da esquerda e do centro"
+        }
+      ]
+    },
+    "MW-26": {
+      "promptPt": "Fura um pneu na autoestrada e para na berma. O que deve fazer a seguir?",
+      "options": [
+        {
+          "pt": "Trocar a roda imediatamente"
+        },
+        {
+          "pt": "Usar um telefone de emergência ou pedir assistência"
+        },
+        {
+          "pt": "Fazer sinal a outros veículos para pedirem ajuda"
+        },
+        {
+          "pt": "Trocar a roda apenas se alguém estiver consigo"
+        }
+      ]
+    },
+    "MW-27": {
+      "promptPt": "Quando pode parar numa autoestrada?",
+      "options": [
+        {
+          "pt": "Para ler um mapa"
+        },
+        {
+          "pt": "Para descansar quando estiver cansado"
+        },
+        {
+          "pt": "Se o telemóvel tocar"
+        },
+        {
+          "pt": "Apenas em emergência ou avaria"
+        }
+      ]
+    },
+    "MW-28": {
+      "promptPt": "Vê marcadores de contagem decrescente na autoestrada (3 barras, depois 2, depois 1). O que indicam?",
+      "options": [
+        {
+          "pt": "Distância a uma ponte"
+        },
+        {
+          "pt": "Distância ao próximo telefone de emergência"
+        },
+        {
+          "pt": "Distância à próxima saída/nó"
+        },
+        {
+          "pt": "Um posto de controlo policial à frente"
+        }
+      ]
+    },
+    "MW-29": {
+      "promptPt": "Imediatamente depois de entrar numa autoestrada, o que deve fazer normalmente?",
+      "options": [
+        {
+          "pt": "Tentar ultrapassar de imediato"
+        },
+        {
+          "pt": "Voltar a verificar os espelhos e a posição no trânsito"
+        },
+        {
+          "pt": "Passar para a via do centro"
+        },
+        {
+          "pt": "Travar para criar espaço"
+        }
+      ]
+    },
+    "MW-30": {
+      "promptPt": "Porque deve usar toda a extensão da via de aceleração ao entrar numa autoestrada?",
+      "options": [
+        {
+          "pt": "Para poder dar a volta se necessário"
+        },
+        {
+          "pt": "Para entrar diretamente nas vias de ultrapassagem"
+        },
+        {
+          "pt": "Para ganhar velocidade e integrar-se em segurança no fluxo de trânsito"
+        },
+        {
+          "pt": "Porque pode continuar pela berma"
+        }
+      ]
+    },
+    "MW-31": {
+      "promptPt": "O que pode ajudar a reduzir a acumulação de veículos e as travagens bruscas numa autoestrada?",
+      "options": [
+        {
+          "pt": "Apenas os limites nacionais de velocidade"
+        },
+        {
+          "pt": "Encerramentos de vias"
+        },
+        {
+          "pt": "Limites de velocidade variáveis"
+        },
+        {
+          "pt": "Sistemas de sentido contrário"
+        }
+      ]
+    }
+  }
+}

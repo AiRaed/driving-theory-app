@@ -1,0 +1,13 @@
+{
+  "totalQuestions": 742,
+  "portugueseQuestions": 742,
+  "missingQuestions": 0,
+  "missingSample": [],
+  "stillEnglishPrompts": 0,
+  "badOptions": 0,
+  "optionsFullyTranslated": 742,
+  "arUrContamination": 0,
+  "vocabHintOccurrences": 1029,
+  "vocabWithPt": 1029,
+  "vocabMissingPt": 0
+}

@@ -1,0 +1,1152 @@
+[
+  {
+    "id": "AL-01",
+    "topic": "alertness",
+    "promptEn": "Why should you switch on your headlights as daylight starts to fade?",
+    "options": [
+      {
+        "en": "To see dashboard instruments",
+        "correct": false
+      },
+      {
+        "en": "To blend in with traffic",
+        "correct": false
+      },
+      {
+        "en": "To help other road users see you",
+        "correct": true
+      },
+      {
+        "en": "Because street lights are on",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-02",
+    "topic": "alertness",
+    "promptEn": "What's most likely to happen if you use a hands-free phone while driving?",
+    "options": [
+      {
+        "en": "Improved safety",
+        "correct": false
+      },
+      {
+        "en": "Better concentration",
+        "correct": false
+      },
+      {
+        "en": "Reduced vision",
+        "correct": false
+      },
+      {
+        "en": "Diverted attention",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AL-03",
+    "topic": "alertness",
+    "promptEn": "How can you prevent a GPS from distracting you while driving?",
+    "options": [
+      {
+        "en": "Turn it off in towns",
+        "correct": false
+      },
+      {
+        "en": "Choose a calming voice",
+        "correct": false
+      },
+      {
+        "en": "Set destination before starting",
+        "correct": true
+      },
+      {
+        "en": "Set it only when lost",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-04",
+    "topic": "alertness",
+    "promptEn": "If you can't see clearly behind when reversing, what should you do?",
+    "options": [
+      {
+        "en": "Open the window",
+        "correct": false
+      },
+      {
+        "en": "Open the door",
+        "correct": false
+      },
+      {
+        "en": "Use mirrors only",
+        "correct": false
+      },
+      {
+        "en": "Ask someone to guide you",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AL-05",
+    "topic": "alertness",
+    "promptEn": "A curved arrow marking on the road indicates what?",
+    "options": [
+      {
+        "en": "Heavy vehicles turn left",
+        "correct": false
+      },
+      {
+        "en": "Road bends left ahead",
+        "correct": true
+      },
+      {
+        "en": "Move back to left lane",
+        "correct": false
+      },
+      {
+        "en": "Road camber changes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-06",
+    "topic": "alertness",
+    "promptEn": "Where should you avoid overtaking other vehicles?",
+    "options": [
+      {
+        "en": "One-way streets",
+        "correct": false
+      },
+      {
+        "en": "Dual carriageways",
+        "correct": false
+      },
+      {
+        "en": "Just after bends or dips",
+        "correct": true
+      },
+      {
+        "en": "Wide open roads",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-07",
+    "topic": "alertness",
+    "promptEn": "What should you do before slowing down or stopping?",
+    "options": [
+      {
+        "en": "Sound horn",
+        "correct": false
+      },
+      {
+        "en": "Check mirrors",
+        "correct": true
+      },
+      {
+        "en": "Change gear",
+        "correct": false
+      },
+      {
+        "en": "Flash headlights",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-08",
+    "topic": "alertness",
+    "promptEn": "How should you pass a cyclist safely on the road?",
+    "options": [
+      {
+        "en": "Sound the horn",
+        "correct": false
+      },
+      {
+        "en": "Pass closely",
+        "correct": false
+      },
+      {
+        "en": "Leave plenty of space",
+        "correct": true
+      },
+      {
+        "en": "Accelerate past",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-09",
+    "topic": "alertness",
+    "promptEn": "What is a 'blind spot'?",
+    "options": [
+      {
+        "en": "Seen in right mirror",
+        "correct": false
+      },
+      {
+        "en": "Not lit by headlights",
+        "correct": false
+      },
+      {
+        "en": "Seen in left mirror",
+        "correct": false
+      },
+      {
+        "en": "Area not visible to the driver",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AL-10",
+    "topic": "alertness",
+    "promptEn": "Traffic lights ahead have been green for some time. What should you do?",
+    "options": [
+      {
+        "en": "Accelerate",
+        "correct": false
+      },
+      {
+        "en": "Maintain speed",
+        "correct": false
+      },
+      {
+        "en": "Be ready to stop",
+        "correct": true
+      },
+      {
+        "en": "Brake hard",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-11",
+    "topic": "alertness",
+    "promptEn": "Why should you keep a safe distance behind a large vehicle?",
+    "options": [
+      {
+        "en": "Better cornering",
+        "correct": false
+      },
+      {
+        "en": "Easier stopping",
+        "correct": false
+      },
+      {
+        "en": "To be seen by the driver",
+        "correct": true
+      },
+      {
+        "en": "Avoid wind",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-12",
+    "topic": "alertness",
+    "promptEn": "When may you legally use a hand-held mobile phone while driving?",
+    "options": [
+      {
+        "en": "Receiving a call",
+        "correct": false
+      },
+      {
+        "en": "Driving slowly",
+        "correct": false
+      },
+      {
+        "en": "Automatic transmission",
+        "correct": false
+      },
+      {
+        "en": "When parked safely",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AL-13",
+    "topic": "alertness",
+    "promptEn": "What's most likely to distract you while driving?",
+    "options": [
+      {
+        "en": "Windscreen wipers",
+        "correct": false
+      },
+      {
+        "en": "Demisters",
+        "correct": false
+      },
+      {
+        "en": "Mirrors",
+        "correct": false
+      },
+      {
+        "en": "Mobile phone use",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AL-14",
+    "topic": "alertness",
+    "promptEn": "Why can objects hanging from the interior mirror be dangerous?",
+    "options": [
+      {
+        "en": "Obstruct your view",
+        "correct": true
+      },
+      {
+        "en": "Affect radio",
+        "correct": false
+      },
+      {
+        "en": "Tangle visor",
+        "correct": false
+      },
+      {
+        "en": "Mist windscreen",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-15",
+    "topic": "alertness",
+    "promptEn": "What should you check before making a U-turn?",
+    "options": [
+      {
+        "en": "Arm signal",
+        "correct": false
+      },
+      {
+        "en": "Gear selection",
+        "correct": false
+      },
+      {
+        "en": "Road markings allow it",
+        "correct": true
+      },
+      {
+        "en": "Shoulder check",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-16",
+    "topic": "alertness",
+    "promptEn": "Your phone rings while driving. What should you do?",
+    "options": [
+      {
+        "en": "Answer immediately",
+        "correct": false
+      },
+      {
+        "en": "Stop suddenly",
+        "correct": false
+      },
+      {
+        "en": "Pull over safely first",
+        "correct": true
+      },
+      {
+        "en": "Answer while moving",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-17",
+    "topic": "alertness",
+    "promptEn": "Before turning right onto a dual carriageway, what should you check?",
+    "options": [
+      {
+        "en": "Parking brake",
+        "correct": false
+      },
+      {
+        "en": "Left position",
+        "correct": false
+      },
+      {
+        "en": "Central reservation width",
+        "correct": true
+      },
+      {
+        "en": "Space behind",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-18",
+    "topic": "alertness",
+    "promptEn": "What should you do before moving off from behind a parked car?",
+    "options": [
+      {
+        "en": "Signal after moving",
+        "correct": false
+      },
+      {
+        "en": "Look around first",
+        "correct": true
+      },
+      {
+        "en": "Mirrors only",
+        "correct": false
+      },
+      {
+        "en": "Look after moving",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-19",
+    "topic": "alertness",
+    "promptEn": "On a wet road, what should you do if you must stop in an emergency?",
+    "options": [
+      {
+        "en": "Parking brake",
+        "correct": false
+      },
+      {
+        "en": "Both hands on wheel",
+        "correct": true
+      },
+      {
+        "en": "Reverse gear",
+        "correct": false
+      },
+      {
+        "en": "Arm signal",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-20",
+    "topic": "alertness",
+    "promptEn": "Your view at a junction is blocked by parked vehicles. What should you do?",
+    "options": [
+      {
+        "en": "Move quickly",
+        "correct": false
+      },
+      {
+        "en": "Edge forward slowly and carefully",
+        "correct": true
+      },
+      {
+        "en": "Ask pedestrians",
+        "correct": false
+      },
+      {
+        "en": "Turn around",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-21",
+    "topic": "alertness",
+    "promptEn": "As you approach a bridge on a narrow road, what should you do?",
+    "options": [
+      {
+        "en": "Move right",
+        "correct": false
+      },
+      {
+        "en": "Change gear",
+        "correct": false
+      },
+      {
+        "en": "Slow down",
+        "correct": true
+      },
+      {
+        "en": "Keep 30 mph",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-22",
+    "topic": "alertness",
+    "promptEn": "When do windscreen pillars most seriously restrict your view?",
+    "options": [
+      {
+        "en": "Motorways",
+        "correct": false
+      },
+      {
+        "en": "Dual carriageways",
+        "correct": false
+      },
+      {
+        "en": "Bends and junctions",
+        "correct": true
+      },
+      {
+        "en": "One-way streets",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-23",
+    "topic": "alertness",
+    "promptEn": "Why should you check your mirrors when a hazard appears ahead?",
+    "options": [
+      {
+        "en": "Accelerate",
+        "correct": false
+      },
+      {
+        "en": "Assess traffic behind",
+        "correct": true
+      },
+      {
+        "en": "Brake sharply",
+        "correct": false
+      },
+      {
+        "en": "Check ahead only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-24",
+    "topic": "alertness",
+    "promptEn": "Why are transverse yellow road markings painted across the road?",
+    "options": [
+      {
+        "en": "Lane selection",
+        "correct": false
+      },
+      {
+        "en": "Separation distance",
+        "correct": false
+      },
+      {
+        "en": "Speed awareness",
+        "correct": true
+      },
+      {
+        "en": "Roundabout distance",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AL-25",
+    "topic": "alertness",
+    "promptEn": "On a long motorway journey, what should you do if you feel sleepy?",
+    "options": [
+      {
+        "en": "Loud music",
+        "correct": false
+      },
+      {
+        "en": "Stop on hard shoulder",
+        "correct": false
+      },
+      {
+        "en": "Drive faster",
+        "correct": false
+      },
+      {
+        "en": "Leave motorway and rest safely",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AL-26",
+    "topic": "alertness",
+    "promptEn": "When emerging from a junction with a blocked view, who should you watch for most carefully?",
+    "options": [
+      {
+        "en": "Lorries",
+        "correct": false
+      },
+      {
+        "en": "Buses",
+        "correct": false
+      },
+      {
+        "en": "Motorcyclists",
+        "correct": true
+      },
+      {
+        "en": "Coaches",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-01",
+    "topic": "hazard-awareness",
+    "promptEn": "Why should you reduce your speed when the road ahead becomes narrower?",
+    "options": [
+      {
+        "en": "Because there is a staggered junction ahead",
+        "correct": false
+      },
+      {
+        "en": "Because there's less room for error and vehicles passing safely",
+        "correct": true
+      },
+      {
+        "en": "Because the surface suddenly changes",
+        "correct": false
+      },
+      {
+        "en": "Because a low bridge is coming",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-02",
+    "topic": "hazard-awareness",
+    "promptEn": "As you approach a cyclist near a junction, what should you do?",
+    "options": [
+      {
+        "en": "Try to pass before the cyclist reaches the junction",
+        "correct": false
+      },
+      {
+        "en": "Flash your headlights to warn them",
+        "correct": false
+      },
+      {
+        "en": "Reduce speed and allow the cyclist to complete the turn",
+        "correct": true
+      },
+      {
+        "en": "Rev your engine so they notice you",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-03",
+    "topic": "hazard-awareness",
+    "promptEn": "You're waiting at a junction and parked vehicles restrict your view. What can help you judge approaching traffic?",
+    "options": [
+      {
+        "en": "Watching traffic behind you",
+        "correct": false
+      },
+      {
+        "en": "Using reflections in nearby windows",
+        "correct": true
+      },
+      {
+        "en": "Making eye contact with pedestrians",
+        "correct": false
+      },
+      {
+        "en": "Checking only your interior mirror",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-04",
+    "topic": "hazard-awareness",
+    "promptEn": "If your eyesight has worsened and no longer meets legal driving standards, what must you do?",
+    "options": [
+      {
+        "en": "Inform the licensing authority",
+        "correct": true
+      },
+      {
+        "en": "Tell your optician only",
+        "correct": false
+      },
+      {
+        "en": "Contact the police",
+        "correct": false
+      },
+      {
+        "en": "Speak to your doctor and continue driving",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-05",
+    "topic": "hazard-awareness",
+    "promptEn": "Which of the following would seriously distract you while driving?",
+    "options": [
+      {
+        "en": "Reading a road map",
+        "correct": true
+      },
+      {
+        "en": "Using the demister",
+        "correct": false
+      },
+      {
+        "en": "Operating windscreen washers",
+        "correct": false
+      },
+      {
+        "en": "Checking your door mirror",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-06",
+    "topic": "hazard-awareness",
+    "promptEn": "Red warning lights begin flashing as you approach a level crossing. What should you do?",
+    "options": [
+      {
+        "en": "Cross quickly before barriers lower",
+        "correct": false
+      },
+      {
+        "en": "Continue carefully across",
+        "correct": false
+      },
+      {
+        "en": "Stop before reaching the barrier",
+        "correct": true
+      },
+      {
+        "en": "Switch on hazard lights and continue",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-07",
+    "topic": "hazard-awareness",
+    "promptEn": "You're driving on a multi-lane road. What do overhead lane signals showing a red cross mean?",
+    "options": [
+      {
+        "en": "The right lanes are open",
+        "correct": false
+      },
+      {
+        "en": "The left lanes are open",
+        "correct": false
+      },
+      {
+        "en": "Vehicles in the left lanes must stop",
+        "correct": false
+      },
+      {
+        "en": "Vehicles in the right lanes must stop",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "HZ-08",
+    "topic": "hazard-awareness",
+    "promptEn": "What should you do if you start to feel tired while driving on a motorway?",
+    "options": [
+      {
+        "en": "Stop on the hard shoulder and swap drivers",
+        "correct": false
+      },
+      {
+        "en": "Leave at the next exit and take a break",
+        "correct": true
+      },
+      {
+        "en": "Increase speed and raise radio volume",
+        "correct": false
+      },
+      {
+        "en": "Close windows and turn the heater up",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-09",
+    "topic": "hazard-awareness",
+    "promptEn": "Why must a junction on the left be kept clear?",
+    "options": [
+      {
+        "en": "To allow vehicles to enter and exit safely",
+        "correct": true
+      },
+      {
+        "en": "To allow buses to reverse",
+        "correct": false
+      },
+      {
+        "en": "To permit U-turns",
+        "correct": false
+      },
+      {
+        "en": "To allow parking",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-10",
+    "topic": "hazard-awareness",
+    "promptEn": "You're behind a cyclist at traffic lights. When the lights change, what should you do?",
+    "options": [
+      {
+        "en": "Move off quickly before the cyclist",
+        "correct": false
+      },
+      {
+        "en": "Give the cyclist time and space",
+        "correct": true
+      },
+      {
+        "en": "Turn right immediately",
+        "correct": false
+      },
+      {
+        "en": "Sound the horn and continue",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-11",
+    "topic": "hazard-awareness",
+    "promptEn": "What is the most likely hazard a driver should watch for when passing a bus that has stopped at the roadside?",
+    "options": [
+      {
+        "en": "The black car stopping suddenly",
+        "correct": false
+      },
+      {
+        "en": "Oncoming traffic assuming a right turn",
+        "correct": false
+      },
+      {
+        "en": "A bus pulling out unexpectedly",
+        "correct": true
+      },
+      {
+        "en": "Sun glare affecting vision",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-12",
+    "topic": "hazard-awareness",
+    "promptEn": "Which vehicle commonly uses an amber flashing beacon on a dual carriageway?",
+    "options": [
+      {
+        "en": "Ambulance",
+        "correct": false
+      },
+      {
+        "en": "Fire engine",
+        "correct": false
+      },
+      {
+        "en": "Doctor's car",
+        "correct": false
+      },
+      {
+        "en": "Tractor",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "HZ-13",
+    "topic": "hazard-awareness",
+    "promptEn": "You realise you're going the wrong way on a one-way street. What should you do?",
+    "options": [
+      {
+        "en": "Reverse back out",
+        "correct": false
+      },
+      {
+        "en": "Turn around in a side road",
+        "correct": false
+      },
+      {
+        "en": "Continue and find another route",
+        "correct": true
+      },
+      {
+        "en": "Reverse into a driveway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-14",
+    "topic": "hazard-awareness",
+    "promptEn": "Why are two-way roads with three lanes particularly dangerous?",
+    "options": [
+      {
+        "en": "Traffic from both directions may overtake using the middle lane",
+        "correct": true
+      },
+      {
+        "en": "Vehicles travel faster in poor weather",
+        "correct": false
+      },
+      {
+        "en": "Overtaking happens on the left",
+        "correct": false
+      },
+      {
+        "en": "The middle lane is only for emergencies",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-15",
+    "topic": "hazard-awareness",
+    "promptEn": "At a junction with a stop line, what must you do?",
+    "options": [
+      {
+        "en": "Stop behind the line, then edge forward to see clearly",
+        "correct": true
+      },
+      {
+        "en": "Stop beyond the line",
+        "correct": false
+      },
+      {
+        "en": "Stop only if traffic is present",
+        "correct": false
+      },
+      {
+        "en": "Stop only when turning right",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-16",
+    "topic": "hazard-awareness",
+    "promptEn": "As you approach a pedestrian crossing, what should you do?",
+    "options": [
+      {
+        "en": "Maintain speed",
+        "correct": false
+      },
+      {
+        "en": "Use the horn",
+        "correct": false
+      },
+      {
+        "en": "Drive through quickly",
+        "correct": false
+      },
+      {
+        "en": "Slow down and be ready to stop",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "HZ-17",
+    "topic": "hazard-awareness",
+    "promptEn": "Which road user is most likely to create a danger by blocking visibility near a junction?",
+    "options": [
+      {
+        "en": "The pedestrian waiting",
+        "correct": false
+      },
+      {
+        "en": "The moving car",
+        "correct": false
+      },
+      {
+        "en": "The turning vehicle",
+        "correct": false
+      },
+      {
+        "en": "The parked car",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "HZ-18",
+    "topic": "hazard-awareness",
+    "promptEn": "You're following a slow vehicle and there's a junction ahead on the right. What should you do?",
+    "options": [
+      {
+        "en": "Overtake before the junction",
+        "correct": false
+      },
+      {
+        "en": "Only overtake once past the junction",
+        "correct": true
+      },
+      {
+        "en": "Accelerate sharply to pass",
+        "correct": false
+      },
+      {
+        "en": "Prepare to overtake on the left",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-19",
+    "topic": "hazard-awareness",
+    "promptEn": "Traffic in the left-hand lane is slowing. What's the safest action?",
+    "options": [
+      {
+        "en": "Reduce speed and maintain safe distance",
+        "correct": true
+      },
+      {
+        "en": "Accelerate past traffic",
+        "correct": false
+      },
+      {
+        "en": "Pull onto the verge",
+        "correct": false
+      },
+      {
+        "en": "Move right and continue",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-20",
+    "topic": "hazard-awareness",
+    "promptEn": "A police officer gives a hand signal to oncoming traffic. What does it mean?",
+    "options": [
+      {
+        "en": "Proceed",
+        "correct": false
+      },
+      {
+        "en": "Stop",
+        "correct": true
+      },
+      {
+        "en": "Turn left",
+        "correct": false
+      },
+      {
+        "en": "Turn right",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-21",
+    "topic": "hazard-awareness",
+    "promptEn": "You've just had a heated argument and you feel angry. What should you do before you drive?",
+    "options": [
+      {
+        "en": "Start driving to \"cool off\"",
+        "correct": false
+      },
+      {
+        "en": "Turn the radio up to distract yourself",
+        "correct": false
+      },
+      {
+        "en": "Have an alcoholic drink to relax",
+        "correct": false
+      },
+      {
+        "en": "Wait until you've calmed down before setting off",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "HZ-22",
+    "topic": "hazard-awareness",
+    "promptEn": "You're approaching a junction on a country road and your view to the right is partly blocked by a hedge. Why should you slow down early?",
+    "options": [
+      {
+        "en": "Because animals always cross here",
+        "correct": false
+      },
+      {
+        "en": "Because there might be traffic you can't see until late",
+        "correct": true
+      },
+      {
+        "en": "Because level crossings are common on rural roads",
+        "correct": false
+      },
+      {
+        "en": "Because the speed limit automatically changes at junctions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-23",
+    "topic": "hazard-awareness",
+    "promptEn": "A car ahead begins reversing out of a driveway into the road. What should you do?",
+    "options": [
+      {
+        "en": "Speed up to pass before it blocks the road",
+        "correct": false
+      },
+      {
+        "en": "Sound the horn and keep going",
+        "correct": false
+      },
+      {
+        "en": "Be ready to stop and give way",
+        "correct": true
+      },
+      {
+        "en": "Move to the opposite side at the same speed",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "HZ-24",
+    "topic": "hazard-awareness",
+    "promptEn": "Why are many door mirrors slightly curved?",
+    "options": [
+      {
+        "en": "They make vehicles behind look larger",
+        "correct": false
+      },
+      {
+        "en": "They give a wider field of view",
+        "correct": true
+      },
+      {
+        "en": "They remove the need to check blind spots",
+        "correct": false
+      },
+      {
+        "en": "They reduce glare from headlights",
+        "correct": false
+      }
+    ]
+  }
+]

@@ -1,0 +1,450 @@
+[
+  {
+    "id": "AL-01",
+    "topic": "alertness",
+    "hasHint": false,
+    "optCount": 4,
+    "prompt": "Porque deve ligar os faróis quando a luz do dia começa a diminuir?",
+    "issues": []
+  },
+  {
+    "id": "AL-07",
+    "topic": "alertness",
+    "hasHint": false,
+    "optCount": 4,
+    "prompt": "O que deve fazer antes de abrandar ou parar?",
+    "issues": []
+  },
+  {
+    "id": "AL-13",
+    "topic": "alertness",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "O que é mais provável distraí-lo ao conduzir?",
+    "issues": []
+  },
+  {
+    "id": "AL-19",
+    "topic": "alertness",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Numa estrada molhada, o que deve fazer se tiver de parar em emergência",
+    "issues": []
+  },
+  {
+    "id": "HZ-01",
+    "topic": "hazard-awareness",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Porque deve reduzir a velocidade quando a estrada à frente se estreita",
+    "issues": []
+  },
+  {
+    "id": "HZ-21",
+    "topic": "hazard-awareness",
+    "hasHint": false,
+    "optCount": 4,
+    "prompt": "Acabou de ter uma discussão acesa e sente-se zangado. O que deve fazer",
+    "issues": []
+  },
+  {
+    "id": "HZ-41",
+    "topic": "hazard-awareness",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Os semáforos falham num cruzamento. O que deve fazer?",
+    "issues": []
+  },
+  {
+    "id": "HZ-61",
+    "topic": "hazard-awareness",
+    "hasHint": false,
+    "optCount": 4,
+    "prompt": "Se planear conduzir mais tarde, qual é a escolha mais segura num event",
+    "issues": []
+  },
+  {
+    "id": "RS-01",
+    "topic": "road-signs",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Um sinal que mostra um carro vermelho ao lado de um carro preto signif",
+    "issues": []
+  },
+  {
+    "id": "RS-2012",
+    "topic": "road-signs",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Conduz numa zona de floresta ao anoitecer e vê um sinal triangular de ",
+    "issues": []
+  },
+  {
+    "id": "RS-2044",
+    "topic": "road-signs",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Um sinal de aviso mostra uma ponte em lombada. Que perigo deve esperar",
+    "issues": []
+  },
+  {
+    "id": "RS-6023",
+    "topic": "road-signs",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "O que exige um sinal temporário de limite de velocidade em obras?",
+    "issues": []
+  },
+  {
+    "id": "SM-01",
+    "topic": "safety-margins",
+    "hasHint": false,
+    "optCount": 4,
+    "prompt": "Qual é a razão mais comum para um veículo começar a derrapar?",
+    "issues": []
+  },
+  {
+    "id": "SM-09",
+    "topic": "safety-margins",
+    "hasHint": false,
+    "optCount": 4,
+    "prompt": "O que indica frequentemente condições de gelo na estrada?",
+    "issues": []
+  },
+  {
+    "id": "SM-17",
+    "topic": "safety-margins",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Onde é mais provável que os ventos laterais afetem o seu veículo?",
+    "issues": []
+  },
+  {
+    "id": "SM-25",
+    "topic": "safety-margins",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "O que é mais afetado quando o piso amolece com calor extremo?",
+    "issues": []
+  },
+  {
+    "id": "RR-01",
+    "topic": "rules-of-the-road",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Sobre o que costumam avisar os postes marcadores vermelhos e brancos à",
+    "issues": []
+  },
+  {
+    "id": "RR-17",
+    "topic": "rules-of-the-road",
+    "hasHint": false,
+    "optCount": 4,
+    "prompt": "Porque é mais seguro virar por detrás de um veículo em sentido contrár",
+    "issues": []
+  },
+  {
+    "id": "RR-33",
+    "topic": "rules-of-the-road",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "As restrições de estacionamento são indicadas para certos dias e horár",
+    "issues": []
+  },
+  {
+    "id": "RR-49",
+    "topic": "rules-of-the-road",
+    "hasHint": false,
+    "optCount": 4,
+    "prompt": "Porque deve conduzir devagar em ruas residenciais com automóveis estac",
+    "issues": []
+  },
+  {
+    "id": "VU-01",
+    "topic": "vulnerable-road-users",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "O que deve fazer ao aproximar-se de uma passagem para peões onde as pe",
+    "issues": []
+  },
+  {
+    "id": "VU-18",
+    "topic": "vulnerable-road-users",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Ao seguir um motociclista num piso em mau estado, o que deve fazer?",
+    "issues": []
+  },
+  {
+    "id": "VU-35",
+    "topic": "vulnerable-road-users",
+    "hasHint": false,
+    "optCount": 4,
+    "prompt": "Uma bola sai de entre carros estacionados à sua frente. O que deve faz",
+    "issues": []
+  },
+  {
+    "id": "VU-52",
+    "topic": "vulnerable-road-users",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Porque pode um motociclista olhar por cima do ombro direito antes de v",
+    "issues": []
+  },
+  {
+    "id": "VH-01",
+    "topic": "vehicle-handling",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Quando é aceitável ultrapassar outro veículo pela esquerda?",
+    "issues": []
+  },
+  {
+    "id": "VH-12",
+    "topic": "vehicle-handling",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Conduz por uma série de lombares. Qual é a abordagem mais segura?",
+    "issues": []
+  },
+  {
+    "id": "VH-23",
+    "topic": "vehicle-handling",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Porque é má prática circular em ponto morto durante longas distâncias?",
+    "issues": []
+  },
+  {
+    "id": "VH-34",
+    "topic": "vehicle-handling",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Depois de atravessar água profunda ou uma inundação, o que deve fazer ",
+    "issues": []
+  },
+  {
+    "id": "IN-01",
+    "topic": "incidents",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Qual é a ação mais segura se o seu carro se incendiar ao atravessar um",
+    "issues": []
+  },
+  {
+    "id": "IN-15",
+    "topic": "incidents",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Como podem os serviços de emergência identificar um veículo que transp",
+    "issues": []
+  },
+  {
+    "id": "IN-29",
+    "topic": "incidents",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "O que deve fazer primeiro se estiver envolvido numa colisão?",
+    "issues": []
+  },
+  {
+    "id": "IN-43",
+    "topic": "incidents",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Num incidente, como poderia ajudar uma criança pequena que não respira",
+    "issues": []
+  },
+  {
+    "id": "DC-01",
+    "topic": "documents",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Quando é legal conduzir um veículo sem certificado MOT válido?",
+    "issues": []
+  },
+  {
+    "id": "DC-07",
+    "topic": "documents",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Passa o primeiro exame de condução e recebe 6 pontos de penalização no",
+    "issues": []
+  },
+  {
+    "id": "DC-13",
+    "topic": "documents",
+    "hasHint": false,
+    "optCount": 4,
+    "prompt": "Qual é a pena máxima por conduzir sem seguro?",
+    "issues": []
+  },
+  {
+    "id": "DC-19",
+    "topic": "documents",
+    "hasHint": false,
+    "optCount": 4,
+    "prompt": "O que cobre o seguro de responsabilidade civil (third-party)?",
+    "issues": []
+  },
+  {
+    "id": "MW-01",
+    "topic": "motorway-driving",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Quando deve usar a berma numa autoestrada se esta não estiver a funcio",
+    "issues": []
+  },
+  {
+    "id": "MW-15",
+    "topic": "motorway-driving",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Depois de reparar o veículo na berma, como deve voltar ao trânsito?",
+    "issues": []
+  },
+  {
+    "id": "MW-29",
+    "topic": "motorway-driving",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Imediatamente depois de entrar numa autoestrada, o que deve fazer norm",
+    "issues": []
+  },
+  {
+    "id": "MW-43",
+    "topic": "motorway-driving",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "De que cor são os catadióptricos refletivos entre as vias numa autoest",
+    "issues": []
+  },
+  {
+    "id": "OV-01",
+    "topic": "other-vehicles",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Está à espera para virar à direita a partir de uma estrada lateral. Um",
+    "issues": []
+  },
+  {
+    "id": "OV-06",
+    "topic": "other-vehicles",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Um veículo grande à frente sinaliza esquerda num cruzamento. O que dev",
+    "issues": []
+  },
+  {
+    "id": "OV-11",
+    "topic": "other-vehicles",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Porque deve manter uma distância segura atrás de um veículo grande num",
+    "issues": []
+  },
+  {
+    "id": "OV-16",
+    "topic": "other-vehicles",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Porque devem os condutores ter cuidado extra onde circulam elétricos?",
+    "issues": []
+  },
+  {
+    "id": "VL-01",
+    "topic": "vehicle-loading",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Antes de rebocar um reboque, onde pode encontrar o peso máximo permiti",
+    "issues": []
+  },
+  {
+    "id": "VL-06",
+    "topic": "vehicle-loading",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Que dispositivo de segurança deve estar montado no sistema de travagem",
+    "issues": []
+  },
+  {
+    "id": "VL-11",
+    "topic": "vehicle-loading",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Que aspeto do seu veículo é mais afetado por transportar uma carga mui",
+    "issues": []
+  },
+  {
+    "id": "VL-16",
+    "topic": "vehicle-loading",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Quando deve aumentar a pressão dos pneus acima do normal?",
+    "issues": []
+  },
+  {
+    "id": "AT-01",
+    "topic": "attitude",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Ao aproximar-se de uma passagem de peões com pessoas à espera, o que d",
+    "issues": []
+  },
+  {
+    "id": "AT-10",
+    "topic": "attitude",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Qual deve ser a distância mínima de seguimento em estradas molhadas?",
+    "issues": []
+  },
+  {
+    "id": "AT-19",
+    "topic": "attitude",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Como deve aproximar-se de um cruzamento sem sinalização?",
+    "issues": []
+  },
+  {
+    "id": "AT-28",
+    "topic": "attitude",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Que veículo de emergência usa um sinal luminoso verde intermitente?",
+    "issues": []
+  },
+  {
+    "id": "SV-01",
+    "topic": "safety-vehicle",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Em que situação estacionar o veículo causaria uma obstrução?",
+    "issues": []
+  },
+  {
+    "id": "SV-21",
+    "topic": "safety-vehicle",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Se o seu automóvel tiver monitorização do ângulo morto, o que deve ver",
+    "issues": []
+  },
+  {
+    "id": "SV-41",
+    "topic": "safety-vehicle",
+    "hasHint": true,
+    "optCount": 4,
+    "prompt": "Como afetam os pneus com pressão insuficiente o veículo?",
+    "issues": []
+  },
+  {
+    "id": "SV-61",
+    "topic": "safety-vehicle",
+    "hasHint": false,
+    "optCount": 4,
+    "prompt": "Qual é o principal objetivo das lombas, chicanes e estreitamentos da e",
+    "issues": []
+  }
+]

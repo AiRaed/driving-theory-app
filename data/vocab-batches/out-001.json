@@ -1,0 +1,490 @@
+{
+  "AL-01": [],
+  "AL-02": [
+    {
+      "term": "hands-free phone",
+      "translations": {
+        "en": "A phone you can use without holding it, for example with a speaker or Bluetooth kit.",
+        "ar": "هاتف يمكنك استخدامه دون مسكه باليد، مثلاً عبر مكبر صوت أو جهاز بلوتوث.",
+        "ur": "فون جسے ہاتھ میں پکڑے بغیر استعمال کریں، مثلاً اسپیکر یا بلوٹوتھ سے۔",
+        "ro": "Telefon pe care îl poți folosi fără să-l ții în mână, de exemplu cu difuzor sau Bluetooth."
+      }
+    }
+  ],
+  "AL-03": [
+    {
+      "term": "GPS",
+      "translations": {
+        "en": "A sat-nav system that gives turn-by-turn directions while you drive.",
+        "ar": "نظام ملاحة عبر الأقمار الصناعية يعطي توجيهات أثناء القيادة.",
+        "ur": "سیٹ-نیو نظام جو ڈرائیونگ کے دوران راستے کی ہدایات دیتا ہے۔",
+        "ro": "Sistem de navigație care oferă indicații pas cu pas în timpul condusului."
+      }
+    }
+  ],
+  "AL-04": [
+    {
+      "term": "reversing",
+      "translations": {
+        "en": "Driving the vehicle backwards.",
+        "ar": "قيادة المركبة إلى الخلف.",
+        "ur": "گاڑی کو پیچھے کی طرف چلانا۔",
+        "ro": "Deplasarea vehiculului cu spatele."
+      }
+    }
+  ],
+  "AL-05": [
+    {
+      "term": "road camber",
+      "translations": {
+        "en": "The slight slope built across the road surface, usually higher in the middle.",
+        "ar": "الميل الطفيف عبر سطح الطريق، وغالباً يكون أعلى في الوسط.",
+        "ur": "سڑک کی سطح کا ہلکا ڈھلوان، اکثر بیچ میں اونچی۔",
+        "ro": "Înclinația ușoară a carosabilului, de obicei mai înaltă la mijloc."
+      }
+    }
+  ],
+  "AL-06": [
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing a slower vehicle by moving alongside and ahead of it.",
+        "ar": "تجاوز مركبة أبطأ بالسير بجانبها ثم أمامها.",
+        "ur": "سست گاڑی کے ساتھ سے نکل کر اس سے آگے بڑھنا۔",
+        "ro": "Depășirea unui vehicul mai lent trecând pe lângă el și înaintea lui."
+      }
+    },
+    {
+      "term": "dual carriageways",
+      "translations": {
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      }
+    },
+    {
+      "term": "dips",
+      "translations": {
+        "en": "Low points in the road that can hide traffic until you are close.",
+        "ar": "انخفاضات في الطريق قد تخفي المركبات حتى تقترب منها.",
+        "ur": "سڑک کے گڑھے/نیچی جگہیں جو قریب آنے تک گاڑیاں چھپا سکتی ہیں۔",
+        "ro": "Porțiuni joase ale drumului care pot ascunde traficul până aproape."
+      }
+    }
+  ],
+  "AL-07": [],
+  "AL-08": [],
+  "AL-10": [],
+  "AL-11": [],
+  "AL-12": [
+    {
+      "term": "hand-held mobile phone",
+      "translations": {
+        "en": "A mobile phone that you hold in your hand while using it.",
+        "ar": "هاتف محمول تمسكه بيدك أثناء استخدامه.",
+        "ur": "موبائل فون جو استعمال کرتے وقت ہاتھ میں پکڑتے ہیں۔",
+        "ro": "Telefon mobil pe care îl ții în mână în timp ce îl folosești."
+      }
+    },
+    {
+      "term": "automatic transmission",
+      "translations": {
+        "en": "A gearbox that changes gears for you, without a clutch pedal.",
+        "ar": "علبة تروس تغيّر السرعات تلقائياً دون دواسة قابض.",
+        "ur": "گیئر باکس جو کلچ پیڈل کے بغیر خود گیئر بدلتا ہے۔",
+        "ro": "Cutie de viteze care schimbă treptele automat, fără pedală de ambreiaj."
+      }
+    }
+  ],
+  "AL-13": [
+    {
+      "term": "demisters",
+      "translations": {
+        "en": "Controls that clear mist from the windows so you can see clearly.",
+        "ar": "أدوات تزيل الضباب عن النوافذ لترى بوضوح.",
+        "ur": "کنٹرولز جو کھڑکیوں سے کہر صاف کر کے نظر واضح رکھتے ہیں۔",
+        "ro": "Comenzi care îndepărtează aburirea geamurilor ca să vezi clar."
+      }
+    }
+  ],
+  "AL-14": [
+    {
+      "term": "interior mirror",
+      "translations": {
+        "en": "The rear-view mirror inside the car, usually at the top of the windscreen.",
+        "ar": "مرآة الرؤية الخلفية داخل السيارة، عادة أعلى الزجاج الأمامي.",
+        "ur": "گاڑی کے اندر والا ریئر-ویو آئینہ، عام طور پر ونڈسکرین کے اوپر۔",
+        "ro": "Oglinda retrovizoare din interior, de obicei sus pe parbriz."
+      }
+    }
+  ],
+  "AL-15": [
+    {
+      "term": "U-turn",
+      "translations": {
+        "en": "Turning the vehicle all the way round to go back the way you came.",
+        "ar": "لفّ المركبة بالكامل للعودة في الاتجاه المعاكس.",
+        "ur": "گاڑی کو مکمل گھما کر واپس اسی راستے پر جانا۔",
+        "ro": "Întoarcerea completă a vehiculului pentru a merge înapoi pe unde ai venit."
+      }
+    },
+    {
+      "term": "shoulder check",
+      "translations": {
+        "en": "Looking over your shoulder to see areas the mirrors may miss.",
+        "ar": "النظر فوق كتفك لرؤية ما قد تفوته المرايا.",
+        "ur": "کندھے کے اوپر دیکھنا تاکہ آئینوں سے چھپی جگہیں نظر آئیں۔",
+        "ro": "Privitul peste umăr ca să vezi zonele pe care oglinzile le pot rata."
+      }
+    }
+  ],
+  "AL-16": [],
+  "AL-18": [
+    {
+      "term": "moving off",
+      "translations": {
+        "en": "Starting to drive away after you have been stationary.",
+        "ar": "الانطلاق بالسيارة بعد التوقف.",
+        "ur": "رکی ہوئی حالت سے گاڑی چال کرنا۔",
+        "ro": "Pornirea de pe loc după ce ai fost staționat."
+      }
+    }
+  ],
+  "AL-19": [
+    {
+      "term": "parking brake",
+      "translations": {
+        "en": "The brake (often a handbrake) that holds the vehicle still when parked.",
+        "ar": "الفرامل (غالباً فرامل اليد) التي تُبقي المركبة ثابتة عند التوقف.",
+        "ur": "بریک (اکثر ہینڈ بریک) جو پارک ہونے پر گاڑی کو ساکن رکھتی ہے۔",
+        "ro": "Frâna (adesea de mână) care ține vehiculul pe loc când este parcat."
+      }
+    },
+    {
+      "term": "arm signal",
+      "translations": {
+        "en": "A hand signal given by the driver to show other road users what you intend to do.",
+        "ar": "إشارة باليد من السائق لإعلام الآخرين بنيّته.",
+        "ur": "ڈرائیور کا ہاتھ سے اشارہ تاکہ دوسروں کو ارادہ بتائے۔",
+        "ro": "Semnal cu mâna dat de șofer pentru a arăta intenția celorlalți participanți."
+      }
+    }
+  ],
+  "AL-20": [],
+  "AL-21": [],
+  "AL-22": [
+    {
+      "term": "windscreen pillars",
+      "translations": {
+        "en": "The upright frames at the edges of the windscreen that can block part of your view.",
+        "ar": "الأعمدة الجانبية للزجاج الأمامي التي قد تحجب جزءاً من الرؤية.",
+        "ur": "ونڈسکرین کے کناروں کے عمودی فریم جو کچھ نظارہ روک سکتے ہیں۔",
+        "ro": "Stâlpii verticali de la marginile parbrizului care pot bloca o parte din vizibilitate."
+      }
+    },
+    {
+      "term": "dual carriageways",
+      "translations": {
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      }
+    },
+    {
+      "term": "one-way streets",
+      "translations": {
+        "en": "A street where traffic is allowed to travel in only one direction.",
+        "ar": "شارع يُسمح فيه لحركة المرور بالسير في اتجاه واحد فقط.",
+        "ur": "ایسی گلی جہاں ٹریفک صرف ایک سمت میں چل سکتی ہے۔",
+        "ro": "Stradă pe care circulația este permisă într-un singur sens."
+      }
+    }
+  ],
+  "AL-23": [
+    {
+      "term": "hazard",
+      "translations": {
+        "en": "Anything on or near the road that could cause danger or force you to change speed or direction.",
+        "ar": "أي شيء على الطريق أو بقربه قد يسبب خطراً أو يضطرك لتغيير السرعة أو الاتجاه.",
+        "ur": "سڑک پر یا قریب کوئی چیز جو خطرہ بنے یا رفتار/رخ بدلواے۔",
+        "ro": "Orice pe drum sau lângă el care poate cauza pericol sau te obligă să schimbi viteza ori direcția."
+      }
+    }
+  ],
+  "AL-24": [
+    {
+      "term": "transverse yellow road markings",
+      "translations": {
+        "en": "Yellow lines painted across the road (from side to side), not along it.",
+        "ar": "خطوط صفراء مرسومة عبر الطريق من جانب إلى جانب، لا بطوله.",
+        "ur": "پیلی لائنیں جو سڑک کے آر پار بنی ہوں، لمبائی میں نہیں۔",
+        "ro": "Linii galbene vopsite transversal pe drum (dintr-o parte în alta), nu pe lungime."
+      }
+    }
+  ],
+  "AL-25": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "AL-26": [
+    {
+      "term": "emerging",
+      "translations": {
+        "en": "Coming out from a junction or side road onto another road.",
+        "ar": "الخروج من تقاطع أو طريق جانبي إلى طريق آخر.",
+        "ur": "جنکشن یا سائیڈ روڈ سے نکال کر دوسری سڑک پر آنا۔",
+        "ro": "Ieșirea dintr-o intersecție sau un drum lateral pe un alt drum."
+      }
+    }
+  ],
+  "HZ-01": [
+    {
+      "term": "staggered junction",
+      "translations": {
+        "en": "A junction where joining roads are offset, not directly opposite each other.",
+        "ar": "تقاطع تكون فيه الطرق المتصلة مزاحمة وليست متقابلة مباشرة.",
+        "ur": "ایسا جنکشن جہاں ملنے والی سڑکیں سیدھی سامنے نہیں بلکہ ہٹی ہوئی ہوں۔",
+        "ro": "Intersecție în care drumurile care se unesc sunt decalate, nu direct opuse."
+      }
+    }
+  ],
+  "HZ-02": [],
+  "HZ-03": [],
+  "HZ-04": [
+    {
+      "term": "licensing authority",
+      "translations": {
+        "en": "The official body that issues and manages driving licences (in Great Britain, the DVLA).",
+        "ar": "الجهة الرسمية التي تُصدر وتدير رخص القيادة (في بريطانيا العظمى: DVLA).",
+        "ur": "سرکاری ادارہ جو ڈرائیونگ لائسنس جاری اور منظم کرتا ہے (برطانیہ میں DVLA)۔",
+        "ro": "Autoritatea care eliberează și gestionează permisele de conducere (în Marea Britanie, DVLA)."
+      }
+    }
+  ],
+  "HZ-05": [
+    {
+      "term": "demister",
+      "translations": {
+        "en": "A control that clears mist from the windows so you can see clearly.",
+        "ar": "أداة تزيل الضباب عن النوافذ لترى بوضوح.",
+        "ur": "کنٹرول جو کھڑکیوں سے کہر صاف کر کے نظر واضح رکھتا ہے۔",
+        "ro": "Comandă care îndepărtează aburirea geamurilor ca să vezi clar."
+      }
+    }
+  ],
+  "HZ-07": [
+    {
+      "term": "overhead lane signals",
+      "translations": {
+        "en": "Lights above each lane that show whether that lane is open or closed to traffic.",
+        "ar": "أضواء فوق كل مسار تبيّن إن كان المسار مفتوحاً أو مغلقاً.",
+        "ur": "ہر لین کے اوپر لائٹس جو بتاتی ہیں لین کھلی ہے یا بند۔",
+        "ro": "Lumini deasupra fiecărei benzi care arată dacă banda e deschisă sau închisă."
+      }
+    }
+  ],
+  "HZ-08": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "HZ-09": [],
+  "HZ-10": [],
+  "HZ-11": [],
+  "HZ-12": [
+    {
+      "term": "amber flashing beacon",
+      "translations": {
+        "en": "An orange warning light that flashes on a vehicle to make it more noticeable.",
+        "ar": "ضوء تحذير برتقالي وامض على مركبة لجعلها أكثر وضوحاً.",
+        "ur": "گاڑی پر نارنجی چمکتی وارننگ لائٹ تاکہ زیادہ نظر آئے۔",
+        "ro": "Lumină de avertizare portocalie intermitentă pe un vehicul, ca să fie mai vizibil."
+      }
+    },
+    {
+      "term": "dual carriageway",
+      "translations": {
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      }
+    }
+  ],
+  "HZ-14": [
+    {
+      "term": "two-way roads",
+      "translations": {
+        "en": "Roads where traffic travels in both directions.",
+        "ar": "طرق تسير فيها المركبات في كلا الاتجاهين.",
+        "ur": "سڑکیں جہاں دونوں سمتوں میں ٹریفک چلتی ہے۔",
+        "ro": "Drumuri pe care circulația se desfășoară în ambele sensuri."
+      }
+    }
+  ],
+  "HZ-15": [
+    {
+      "term": "stop line",
+      "translations": {
+        "en": "The solid white line at a junction that marks where you must stop when required.",
+        "ar": "الخط الأبيض المتصل عند التقاطع الذي يحدد أين يجب التوقف عند اللزوم.",
+        "ur": "جنکشن پر ٹھوس سفید لکیر جو بتاتی ہے کہاں رکنا ضروری ہو۔",
+        "ro": "Linia albă continuă de la intersecție care marchează unde trebuie să oprești când e necesar."
+      }
+    }
+  ],
+  "HZ-16": [],
+  "HZ-17": [],
+  "HZ-18": [],
+  "HZ-19": [
+    {
+      "term": "verge",
+      "translations": {
+        "en": "The soft or grassy edge beside the road, not meant for normal driving.",
+        "ar": "الحافة العشبية أو اللينة بجانب الطريق، وليست للقيادة العادية.",
+        "ur": "سڑک کے کنارے نرم/گھاس والی پٹی، عام ڈرائیونگ کے لیے نہیں۔",
+        "ro": "Marginea moale sau înierbată de lângă drum, nefolosită pentru circulația normală."
+      }
+    }
+  ],
+  "HZ-20": [],
+  "HZ-21": [],
+  "HZ-22": [
+    {
+      "term": "level crossings",
+      "translations": {
+        "en": "A place where a road crosses a railway line, often with barriers and warning lights.",
+        "ar": "مكان يتقاطع فيه الطريق مع خط السكة الحديدية، وغالباً توجد حواجز وأضواء تحذير.",
+        "ur": "وہ جگہ جہاں سڑک ریلوے لائن کو کاٹتی ہے؛ اکثر رکاوٹیں اور وارننگ لائٹس ہوتی ہیں۔",
+        "ro": "Locul unde un drum traversează o cale ferată, adesea cu bariere și lumini de avertizare."
+      }
+    }
+  ],
+  "HZ-23": [
+    {
+      "term": "driveway",
+      "translations": {
+        "en": "A private path from a house or property that joins the public road.",
+        "ar": "ممر خاص من منزل أو عقار يتصل بالطريق العام.",
+        "ur": "گھر یا پراپرٹی سے عوامی سڑک تک نجی راستہ۔",
+        "ro": "Cale privată de la o casă sau proprietate care se leagă de drumul public."
+      }
+    },
+    {
+      "term": "give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    }
+  ],
+  "HZ-24": [
+    {
+      "term": "door mirrors",
+      "translations": {
+        "en": "The side mirrors mounted on the doors, used to see traffic beside and behind you.",
+        "ar": "مرايا جانبية على الأبواب لرؤية المرور بجانبك وخلفك.",
+        "ur": "دروازوں پر لگے سائیڈ آئینے جو پہلو اور پیچھے کی ٹریفک دکھاتے ہیں۔",
+        "ro": "Oglinzile laterale de pe uși, pentru traficul de lângă și din spate."
+      }
+    },
+    {
+      "term": "blind spots",
+      "translations": {
+        "en": "Areas around the vehicle that you cannot see in your mirrors alone.",
+        "ar": "مناطق حول المركبة لا تراها بالمرايا وحدها.",
+        "ur": "گاڑی کے گرد وہ حصے جو صرف آئینوں سے نظر نہیں آتے۔",
+        "ro": "Zone în jurul vehiculului pe care nu le vezi doar cu oglinzile."
+      }
+    }
+  ],
+  "HZ-25": [
+    {
+      "term": "amber flashing beacon",
+      "translations": {
+        "en": "An orange warning light that flashes on a vehicle to make it more noticeable.",
+        "ar": "ضوء تحذير برتقالي وامض على مركبة لجعلها أكثر وضوحاً.",
+        "ur": "گاڑی پر نارنجی چمکتی وارننگ لائٹ تاکہ زیادہ نظر آئے۔",
+        "ro": "Lumină de avertizare portocalie intermitentă pe un vehicul, ca să fie mai vizibil."
+      }
+    }
+  ],
+  "HZ-26": [
+    {
+      "term": "licensing authority (DVLA)",
+      "translations": {
+        "en": "The official body that issues and manages driving licences (Driver and Vehicle Licensing Agency).",
+        "ar": "الجهة الرسمية التي تُصدر وتدير رخص القيادة (وكالة ترخيص السائقين والمركبات).",
+        "ur": "سرکاری ادارہ جو ڈرائیونگ لائسنس جاری اور منظم کرتا ہے (DVLA)۔",
+        "ro": "Autoritatea care eliberează și gestionează permisele de conducere (DVLA)."
+      }
+    }
+  ],
+  "HZ-27": [],
+  "HZ-29": [],
+  "HZ-30": [],
+  "HZ-31": [],
+  "HZ-32": [],
+  "HZ-33": [],
+  "HZ-34": [
+    {
+      "term": "number plate",
+      "translations": {
+        "en": "The plate on a vehicle that shows its registration number.",
+        "ar": "اللوحة على المركبة التي تعرض رقم التسجيل.",
+        "ur": "گاڑی کی پلیٹ جس پر رجسٹریشن نمبر ہوتا ہے۔",
+        "ro": "Plăcuța de pe vehicul care arată numărul de înmatriculare."
+      }
+    }
+  ],
+  "HZ-35": [],
+  "HZ-36": [],
+  "HZ-37": [],
+  "HZ-38": [],
+  "HZ-39": [
+    {
+      "term": "lorry",
+      "translations": {
+        "en": "A large goods vehicle used for carrying cargo (also called a truck).",
+        "ar": "شاحنة كبيرة لنقل البضائع.",
+        "ur": "مال لے جانے والی بڑی گاڑی (ٹرک)۔",
+        "ro": "Vehicul mare de marfă (camion)."
+      }
+    }
+  ]
+}

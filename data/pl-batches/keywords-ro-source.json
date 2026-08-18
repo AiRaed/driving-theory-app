@@ -1,0 +1,1117 @@
+[
+  {
+    "term": "turning vehicle",
+    "ro": "vehicul care virează",
+    "explainRo": "Un vehicul care își schimbă direcția"
+  },
+  {
+    "term": "junction",
+    "ro": "intersecție",
+    "explainRo": "Locul unde se întâlnesc două sau mai multe drumuri"
+  },
+  {
+    "term": "path crossing",
+    "ro": "încrucișare a traiectoriei",
+    "explainRo": "Când un vehicul sau un pieton îți traversează drumul"
+  },
+  {
+    "term": "blind spot",
+    "ro": "unghi mort",
+    "explainRo": "Zona pe care nu o poți vedea în oglinzi"
+  },
+  {
+    "term": "stopping distance",
+    "ro": "distanță de oprire",
+    "explainRo": "Distanța de care are nevoie un vehicul pentru a se opri"
+  },
+  {
+    "term": "slippery surface",
+    "ro": "suprafață alunecoasă",
+    "explainRo": "Un drum pe care anvelopele au aderență redusă"
+  },
+  {
+    "term": "reaction time",
+    "ro": "timp de reacție",
+    "explainRo": "Timpul dintre observarea unui pericol și reacție"
+  },
+  {
+    "term": "hazard",
+    "ro": "pericol",
+    "explainRo": "Ceva care poate provoca un accident"
+  },
+  {
+    "term": "awareness",
+    "ro": "conștientizare",
+    "explainRo": "Cunoașterea situației din jurul tău"
+  },
+  {
+    "term": "fatigue",
+    "ro": "oboseală",
+    "explainRo": "Oboseală sau lipsă de somn"
+  },
+  {
+    "term": "concentration",
+    "ro": "concentrare",
+    "explainRo": "Atenție deplină asupra unei sarcini"
+  },
+  {
+    "term": "speed limit",
+    "ro": "limită de viteză",
+    "explainRo": "Viteza maximă legală"
+  },
+  {
+    "term": "mirrors",
+    "ro": "oglinzi",
+    "explainRo": "Oglinzile vehiculului care arată în spate și lateral"
+  },
+  {
+    "term": "aware",
+    "ro": "atent",
+    "explainRo": "Conștient de situația din jur"
+  },
+  {
+    "term": "pedestrian",
+    "ro": "pieton",
+    "explainRo": "Persoană care merge pe jos"
+  },
+  {
+    "term": "pedestrians",
+    "ro": "pietoni",
+    "explainRo": "Persoane care merg pe jos și pot traversa drumul"
+  },
+  {
+    "term": "signal",
+    "ro": "semnal",
+    "explainRo": "Semnalul vehiculului care arată o schimbare de direcție"
+  },
+  {
+    "term": "give way",
+    "ro": "acordă prioritate",
+    "explainRo": "Lasă alte vehicule să treacă primele"
+  },
+  {
+    "term": "bend",
+    "ro": "curbă",
+    "explainRo": "O cotitură a drumului"
+  },
+  {
+    "term": "bends",
+    "ro": "curbe",
+    "explainRo": "Mai multe cotituri ale drumului"
+  },
+  {
+    "term": "slippery",
+    "ro": "alunecos",
+    "explainRo": "Unde aderența vehiculului este redusă"
+  },
+  {
+    "term": "parked cars",
+    "ro": "mașini parcate",
+    "explainRo": "Vehicule staționate pe marginea drumului"
+  },
+  {
+    "term": "wet road",
+    "ro": "drum ud",
+    "explainRo": "Drum udat de ploaie sau apă"
+  },
+  {
+    "term": "brake lights",
+    "ro": "stopuri",
+    "explainRo": "Luminile din spate care se aprind la frânare"
+  },
+  {
+    "term": "anticipation",
+    "ro": "anticipare",
+    "explainRo": "Prevăzând pericolele care urmează"
+  },
+  {
+    "term": "elderly pedestrians",
+    "ro": "pietoni în vârstă",
+    "explainRo": "Pietoni de vârstă înaintată"
+  },
+  {
+    "term": "crossing",
+    "ro": "traversare",
+    "explainRo": "Trecerea drumului"
+  },
+  {
+    "term": "farm traffic",
+    "ro": "trafic agricol",
+    "explainRo": "Vehicule agricole"
+  },
+  {
+    "term": "slow vehicles",
+    "ro": "vehicule lente",
+    "explainRo": "Vehicule care circulă mai încet decât traficul obișnuit"
+  },
+  {
+    "term": "night driving",
+    "ro": "conducere pe timp de noapte",
+    "explainRo": "Conducerea noaptea necesită atenție sporită din cauza oboselii și vizibilității reduse"
+  },
+  {
+    "term": "visibility",
+    "ro": "vizibilitate",
+    "explainRo": "Capacitatea de a vedea pietonii și alte vehicule, mai ales noaptea sau pe vreme rea"
+  },
+  {
+    "term": "bus stop",
+    "ro": "stație de autobuz",
+    "explainRo": "Locul unde se oprește autobuzul"
+  },
+  {
+    "term": "hidden hazard",
+    "ro": "pericol ascuns",
+    "explainRo": "Un pericol care nu este imediat vizibil"
+  },
+  {
+    "term": "country road",
+    "ro": "drum de țară",
+    "explainRo": "Drum rural"
+  },
+  {
+    "term": "mud",
+    "ro": "noroi",
+    "explainRo": "Noroi sau mâl"
+  },
+  {
+    "term": "delivery van",
+    "ro": "dubiță de livrare",
+    "explainRo": "Duba folosită pentru livrări"
+  },
+  {
+    "term": "hidden pedestrians",
+    "ro": "pietoni ascunși",
+    "explainRo": "Pietoni pe care nu îi vezi"
+  },
+  {
+    "term": "residential street",
+    "ro": "stradă rezidențială",
+    "explainRo": "Stradă dintr-o zonă de locuințe"
+  },
+  {
+    "term": "bunching traffic",
+    "ro": "trafic aglomerat",
+    "explainRo": "Vehicule care se strâng împreună"
+  },
+  {
+    "term": "dual carriageway",
+    "ro": "șosea cu dublu sens separat",
+    "explainRo": "Drum cu benzi separate pe sensuri"
+  },
+  {
+    "term": "sudden stop",
+    "ro": "oprire bruscă",
+    "explainRo": "Oprire fără avertizare"
+  },
+  {
+    "term": "pram",
+    "ro": "cărucior",
+    "explainRo": "Cărucior pentru copii"
+  },
+  {
+    "term": "slow movement",
+    "ro": "mișcare lentă",
+    "explainRo": "Deplasare înceată"
+  },
+  {
+    "term": "cyclist",
+    "ro": "ciclist",
+    "explainRo": "Persoană care merge pe bicicletă"
+  },
+  {
+    "term": "swerve",
+    "ro": "viraj brusc",
+    "explainRo": "Schimbare bruscă de direcție"
+  },
+  {
+    "term": "busy area",
+    "ro": "zonă aglomerată",
+    "explainRo": "Zonă cu mulți oameni"
+  },
+  {
+    "term": "unexpected movement",
+    "ro": "mișcare neașteptată",
+    "explainRo": "O mișcare care nu a fost anticipată"
+  },
+  {
+    "term": "no brake lights",
+    "ro": "fără stopuri",
+    "explainRo": "Stopurile nu funcționează"
+  },
+  {
+    "term": "aquaplaning",
+    "ro": "acvaplanare",
+    "explainRo": "Pierderea aderenței pe apă"
+  },
+  {
+    "term": "high speed",
+    "ro": "viteză mare",
+    "explainRo": "Deplasare rapidă"
+  },
+  {
+    "term": "heavy rain",
+    "ro": "ploaie torențială",
+    "explainRo": "Ploaie intensă"
+  },
+  {
+    "term": "children",
+    "ro": "copii",
+    "explainRo": "Copii mici care se pot mișca imprevizibil"
+  },
+  {
+    "term": "children crossing",
+    "ro": "copii care traversează",
+    "explainRo": "Copii care trec strada"
+  },
+  {
+    "term": "children playing",
+    "ro": "copii care se joacă",
+    "explainRo": "Copii aflați la joacă"
+  },
+  {
+    "term": "roundabout",
+    "ro": "sens giratoriu",
+    "explainRo": "Intersecție circulară"
+  },
+  {
+    "term": "overtaking",
+    "ro": "depășire",
+    "explainRo": "Trecerea pe lângă un alt vehicul"
+  },
+  {
+    "term": "two-second rule",
+    "ro": "regula celor două secunde",
+    "explainRo": "Păstrează cel puțin două secunde față de vehiculul din față"
+  },
+  {
+    "term": "time gap",
+    "ro": "interval de timp",
+    "explainRo": "Intervalul de timp dintre două vehicule"
+  },
+  {
+    "term": "tailgating",
+    "ro": "urmărire prea aproape",
+    "explainRo": "Circulație prea aproape de vehiculul din față"
+  },
+  {
+    "term": "ice",
+    "ro": "gheață",
+    "explainRo": "Gheață pe carosabil"
+  },
+  {
+    "term": "rain",
+    "ro": "ploaie",
+    "explainRo": "Ploaie sau apă de ploaie"
+  },
+  {
+    "term": "wind",
+    "ro": "vânt",
+    "explainRo": "Vânt sau presiune a vântului"
+  },
+  {
+    "term": "strong wind",
+    "ro": "vânt puternic",
+    "explainRo": "Vânt puternic"
+  },
+  {
+    "term": "strong winds",
+    "ro": "vânturi puternice",
+    "explainRo": "Vânturi puternice"
+  },
+  {
+    "term": "crosswinds",
+    "ro": "vânt lateral",
+    "explainRo": "Vânt care bate dintr-o parte"
+  },
+  {
+    "term": "side winds",
+    "ro": "vânturi laterale",
+    "explainRo": "Vânt care bate dintr-o parte"
+  },
+  {
+    "term": "windy conditions",
+    "ro": "condiții cu vânt",
+    "explainRo": "Condiții cu vânt puternic"
+  },
+  {
+    "term": "ABS",
+    "ro": "sistem ABS",
+    "explainRo": "Permite controlul direcției în timpul frânării puternice"
+  },
+  {
+    "term": "alertness",
+    "ro": "vigilență",
+    "explainRo": "Vigilența este esențială pentru o conducere sigură, mai ales pe drumuri lungi"
+  },
+  {
+    "term": "attention",
+    "ro": "atenție",
+    "explainRo": "Atenția deplină pe drum este esențială pentru o conducere sigură"
+  },
+  {
+    "term": "brakes",
+    "ro": "frâne",
+    "explainRo": "Sistemul care oprește vehiculul"
+  },
+  {
+    "term": "bus",
+    "ro": "autobuz",
+    "explainRo": "Vehicul de transport public care oprește în stații"
+  },
+  {
+    "term": "bus lane",
+    "ro": "bandă pentru autobuze",
+    "explainRo": "Bandă rezervată autobuzelor în anumite intervale"
+  },
+  {
+    "term": "cyclists",
+    "ro": "cicliști",
+    "explainRo": "Persoane care merg pe bicicletă"
+  },
+  {
+    "term": "dipped headlights",
+    "ro": "faza scurtă",
+    "explainRo": "Faruri cu lumină redusă care nu orbește alți șoferi"
+  },
+  {
+    "term": "distance",
+    "ro": "distanță",
+    "explainRo": "Spațiul dintre două obiecte"
+  },
+  {
+    "term": "dry road",
+    "ro": "drum uscat",
+    "explainRo": "Drum fără apă sau umezeală"
+  },
+  {
+    "term": "elderly",
+    "ro": "persoane în vârstă",
+    "explainRo": "Persoane de vârstă înaintată"
+  },
+  {
+    "term": "emergency",
+    "ro": "urgență",
+    "explainRo": "Situație care necesită ajutor imediat"
+  },
+  {
+    "term": "emergency stop",
+    "ro": "oprire de urgență",
+    "explainRo": "Oprire imediată"
+  },
+  {
+    "term": "emergency vehicle",
+    "ro": "vehicul de urgență",
+    "explainRo": "Vehicul al serviciilor de urgență"
+  },
+  {
+    "term": "emergency vehicles",
+    "ro": "vehicule de urgență",
+    "explainRo": "Vehicule ale serviciilor de urgență"
+  },
+  {
+    "term": "farm animals",
+    "ro": "animale de fermă",
+    "explainRo": "Animale agricole care pot fi pe drum sau în apropiere"
+  },
+  {
+    "term": "four-second rule",
+    "ro": "regula celor patru secunde",
+    "explainRo": "Pe drum ud, păstrează cel puțin patru secunde față de vehiculul din față"
+  },
+  {
+    "term": "give way line",
+    "ro": "linia de cedare",
+    "explainRo": "Linie pe drum care marchează cedarea priorității"
+  },
+  {
+    "term": "give way sign",
+    "ro": "indicatorul de cedare",
+    "explainRo": "Indicator care cere să acorzi prioritate"
+  },
+  {
+    "term": "hazard awareness",
+    "ro": "conștientizarea pericolelor",
+    "explainRo": "Capacitatea de a recunoaște și evita pericolele pe drum"
+  },
+  {
+    "term": "hazard lights",
+    "ro": "lumini de avarie",
+    "explainRo": "Luminile de avertizare folosite în caz de pericol"
+  },
+  {
+    "term": "hazards",
+    "ro": "pericole",
+    "explainRo": "Lucruri care pot provoca un accident"
+  },
+  {
+    "term": "headlights",
+    "ro": "faruri",
+    "explainRo": "Luminile din față ale vehiculului"
+  },
+  {
+    "term": "horse riders",
+    "ro": "călăreți",
+    "explainRo": "Persoane pe cal"
+  },
+  {
+    "term": "junctions",
+    "ro": "intersecții",
+    "explainRo": "Locuri unde se întâlnesc două sau mai multe drumuri"
+  },
+  {
+    "term": "mandatory",
+    "ro": "obligatoriu",
+    "explainRo": "Cerut prin lege"
+  },
+  {
+    "term": "mandatory direction",
+    "ro": "direcție obligatorie",
+    "explainRo": "Direcție impusă de lege"
+  },
+  {
+    "term": "mirror checks",
+    "ro": "verificarea oglinzilor",
+    "explainRo": "Verificarea regulată a oglinzilor"
+  },
+  {
+    "term": "mobile phone",
+    "ro": "telefon mobil",
+    "explainRo": "Folosirea telefonului la volan este periculoasă"
+  },
+  {
+    "term": "motorcyclists",
+    "ro": "motocicliști",
+    "explainRo": "Persoane care conduc motociclete"
+  },
+  {
+    "term": "motorway",
+    "ro": "autostradă",
+    "explainRo": "Drum cu viteză mare"
+  },
+  {
+    "term": "motorway driving",
+    "ro": "conducere pe autostradă",
+    "explainRo": "Conducerea pe autostradă"
+  },
+  {
+    "term": "no overtaking",
+    "ro": "depășire interzisă",
+    "explainRo": "Nu este permisă depășirea"
+  },
+  {
+    "term": "no stopping",
+    "ro": "oprire interzisă",
+    "explainRo": "Oprirea sau parcarea sunt interzise"
+  },
+  {
+    "term": "no waiting",
+    "ro": "staționare interzisă",
+    "explainRo": "Staționarea sau parcarea sunt interzise"
+  },
+  {
+    "term": "observation",
+    "ro": "observare",
+    "explainRo": "Observarea drumului și a împrejurimilor"
+  },
+  {
+    "term": "obstruction",
+    "ro": "obstacol",
+    "explainRo": "Un obstacol pe drum"
+  },
+  {
+    "term": "overtake",
+    "ro": "depășește",
+    "explainRo": "Trece pe lângă un alt vehicul"
+  },
+  {
+    "term": "parked car",
+    "ro": "mașină parcată",
+    "explainRo": "Vehicul staționat pe marginea drumului"
+  },
+  {
+    "term": "parked vehicle",
+    "ro": "vehicul parcat",
+    "explainRo": "Vehicul staționat pe marginea drumului"
+  },
+  {
+    "term": "parked vehicles",
+    "ro": "vehicule parcate",
+    "explainRo": "Vehicule staționate pe marginea drumului"
+  },
+  {
+    "term": "pelican crossing",
+    "ro": "trecere pelican",
+    "explainRo": "Trecere de pietoni semaforizată"
+  },
+  {
+    "term": "poor visibility",
+    "ro": "vizibilitate slabă",
+    "explainRo": "Capacitate redusă de a vedea"
+  },
+  {
+    "term": "reduced visibility",
+    "ro": "vizibilitate redusă",
+    "explainRo": "Capacitate redusă de a vedea"
+  },
+  {
+    "term": "restricted view",
+    "ro": "vizibilitate limitată",
+    "explainRo": "Câmp vizual restrâns"
+  },
+  {
+    "term": "road narrows",
+    "ro": "drum îngustat",
+    "explainRo": "Drumul se îngustează"
+  },
+  {
+    "term": "road users",
+    "ro": "utilizatori ai drumului",
+    "explainRo": "Persoane care folosesc drumul"
+  },
+  {
+    "term": "roadworks",
+    "ro": "lucrări rutiere",
+    "explainRo": "Reparații sau construcții pe drum"
+  },
+  {
+    "term": "safe distance",
+    "ro": "distanță sigură",
+    "explainRo": "O distanță care previne accidentele"
+  },
+  {
+    "term": "safety",
+    "ro": "siguranță",
+    "explainRo": "A rămâne în siguranță"
+  },
+  {
+    "term": "safety margins",
+    "ro": "margini de siguranță",
+    "explainRo": "Distanțe sigure care previn accidentele"
+  },
+  {
+    "term": "signalling",
+    "ro": "semnalizare",
+    "explainRo": "Folosirea semnalelor vehiculului"
+  },
+  {
+    "term": "signals",
+    "ro": "semnale",
+    "explainRo": "Semnalele vehiculului"
+  },
+  {
+    "term": "single yellow line",
+    "ro": "linie galbenă simplă",
+    "explainRo": "Linie galbenă pe bordură care limitează staționarea în anumite intervale"
+  },
+  {
+    "term": "slow down",
+    "ro": "încetinește",
+    "explainRo": "Reduce viteza"
+  },
+  {
+    "term": "slow speed",
+    "ro": "viteză redusă",
+    "explainRo": "Viteză mică"
+  },
+  {
+    "term": "slow traffic",
+    "ro": "trafic lent",
+    "explainRo": "Trafic cu viteză redusă"
+  },
+  {
+    "term": "slow vehicle",
+    "ro": "vehicul lent",
+    "explainRo": "Vehicul cu viteză redusă"
+  },
+  {
+    "term": "slow-moving vehicle",
+    "ro": "vehicul care se deplasează lent",
+    "explainRo": "Vehicul care circulă încet"
+  },
+  {
+    "term": "slippery roads",
+    "ro": "drumuri alunecoase",
+    "explainRo": "Drumuri cu aderență redusă"
+  },
+  {
+    "term": "speed limits",
+    "ro": "limite de viteză",
+    "explainRo": "Viteze maxime legale"
+  },
+  {
+    "term": "stop",
+    "ro": "oprește",
+    "explainRo": "Oprește vehiculul"
+  },
+  {
+    "term": "stop line",
+    "ro": "linie de oprire",
+    "explainRo": "Linia pe drum unde trebuie să te oprești"
+  },
+  {
+    "term": "stopped traffic",
+    "ro": "trafic oprit",
+    "explainRo": "Trafic care s-a oprit"
+  },
+  {
+    "term": "sudden braking",
+    "ro": "frânare bruscă",
+    "explainRo": "Frânare fără avertizare"
+  },
+  {
+    "term": "sudden stops",
+    "ro": "opririi bruște",
+    "explainRo": "Opriri fără avertizare"
+  },
+  {
+    "term": "thick fog",
+    "ro": "ceață densă",
+    "explainRo": "Ceață intensă"
+  },
+  {
+    "term": "tiredness",
+    "ro": "oboseală",
+    "explainRo": "Oboseală sau lipsă de somn"
+  },
+  {
+    "term": "traffic",
+    "ro": "trafic",
+    "explainRo": "Circulația vehiculelor pe drum"
+  },
+  {
+    "term": "traffic flow",
+    "ro": "flux de trafic",
+    "explainRo": "Curgerea vehiculelor pe drum"
+  },
+  {
+    "term": "turning left",
+    "ro": "viraj la stânga",
+    "explainRo": "Virare spre stânga"
+  },
+  {
+    "term": "turning right",
+    "ro": "viraj la dreapta",
+    "explainRo": "Virare spre dreapta"
+  },
+  {
+    "term": "waiting restrictions",
+    "ro": "restricții de staționare",
+    "explainRo": "Restricții de staționare sau parcare în anumite intervale"
+  },
+  {
+    "term": "wet conditions",
+    "ro": "condiții ude",
+    "explainRo": "Condiții cu ploaie sau apă"
+  },
+  {
+    "term": "wet roads",
+    "ro": "drumuri ude",
+    "explainRo": "Drumuri udate de ploaie sau apă"
+  },
+  {
+    "term": "wet weather",
+    "ro": "vreme umedă",
+    "explainRo": "Vreme cu ploaie"
+  },
+  {
+    "term": "hint-HZ-01",
+    "ro": "Sfat",
+    "explainRo": "Reducerea vitezei când drumul se îngustează îți oferă mai mult timp pentru o reacție sigură."
+  },
+  {
+    "term": "hint-HZ-02",
+    "ro": "Sfat",
+    "explainRo": "Acordă cicliștilor timp și spațiu pentru a preveni accidentele în intersecții."
+  },
+  {
+    "term": "hint-HZ-03",
+    "ro": "Sfat",
+    "explainRo": "Folosirea oglinzilor te ajută să vezi ce nu poți observa direct."
+  },
+  {
+    "term": "hint-HZ-04",
+    "ro": "Sfat",
+    "explainRo": "Informarea autorității de licențiere menține siguranța tuturor pe drum."
+  },
+  {
+    "term": "hint-HZ-05",
+    "ro": "Sfat",
+    "explainRo": "Citirea unei hărți îți ia ochii de pe drum și crește riscul de accident."
+  },
+  {
+    "term": "hint-HZ-06",
+    "ro": "Sfat",
+    "explainRo": "Oprirea la luminile roșii de avertizare previne accidentele grave cu trenurile."
+  },
+  {
+    "term": "hint-HZ-07",
+    "ro": "Sfat",
+    "explainRo": "Crucea roșie înseamnă că banda este închisă și trebuie să te oprești."
+  },
+  {
+    "term": "hint-HZ-08",
+    "ro": "Sfat",
+    "explainRo": "Fă o pauză când te simți obosit pentru a preveni accidentele cauzate de somnolență."
+  },
+  {
+    "term": "hint-HZ-09",
+    "ro": "Sfat",
+    "explainRo": "Menține intersecțiile libere ca vehiculele să poată intra și ieși în siguranță."
+  },
+  {
+    "term": "hint-HZ-10",
+    "ro": "Sfat",
+    "explainRo": "Acordă cicliștilor timp și spațiu pentru a preveni accidentele la semafoare."
+  },
+  {
+    "term": "hint-HZ-11",
+    "ro": "Sfat",
+    "explainRo": "Autobuzele oprite pot pleca brusc după ce pasagerii urcă sau coboară."
+  },
+  {
+    "term": "hint-HZ-12",
+    "ro": "Sfat",
+    "explainRo": "Tractoarele lente folosesc balize portocalii pentru a-i avertiza pe alți șoferi."
+  },
+  {
+    "term": "hint-HZ-13",
+    "ro": "Sfat",
+    "explainRo": "Continuă și caută o altă rută — este mai sigur decât să mergi cu spatele."
+  },
+  {
+    "term": "hint-HZ-14",
+    "ro": "Sfat",
+    "explainRo": "O bandă mediană comună crește riscul de coliziune frontală."
+  },
+  {
+    "term": "hint-HZ-15",
+    "ro": "Sfat",
+    "explainRo": "Oprește-te în spatele liniei, apoi înaintează încet pentru o vizibilitate sigură în intersecție."
+  },
+  {
+    "term": "hint-HZ-16",
+    "ro": "Sfat",
+    "explainRo": "Mergi încet și fii pregătit să oprești ca să ai timp să reacționezi la pietoni."
+  },
+  {
+    "term": "hint-HZ-17",
+    "ro": "Sfat",
+    "explainRo": "Vehiculele parcate blochează vizibilitatea și cresc riscul de accident în intersecții."
+  },
+  {
+    "term": "hint-HZ-18",
+    "ro": "Sfat",
+    "explainRo": "Depășirea după intersecție previne coliziunile cu vehiculele care ies din ea."
+  },
+  {
+    "term": "hint-HZ-19",
+    "ro": "Sfat",
+    "explainRo": "Redu viteza și păstrează o distanță sigură ca să ai timp să reacționezi la traficul lent."
+  },
+  {
+    "term": "hint-HZ-20",
+    "ro": "Sfat",
+    "explainRo": "Semnalele unui polițist au prioritate față de semafoare."
+  },
+  {
+    "term": "hint-HZ-21",
+    "ro": "Sfat",
+    "explainRo": "Furia reduce atenția și crește riscul de accident."
+  },
+  {
+    "term": "hint-HZ-22",
+    "ro": "Sfat",
+    "explainRo": "Încetinește din timp ca să ai timp să reacționezi la traficul ascuns."
+  },
+  {
+    "term": "hint-HZ-23",
+    "ro": "Sfat",
+    "explainRo": "Fii pregătit să oprești ca să oferi spațiu sigur unui vehicul care iese cu spatele."
+  },
+  {
+    "term": "hint-HZ-24",
+    "ro": "Sfat",
+    "explainRo": "Oglinzile convexe oferă o vedere mai largă, dar fac obiectele să pară mai departe."
+  },
+  {
+    "term": "hint-HZ-25",
+    "ro": "Sfat",
+    "explainRo": "Balizele portocalii te avertizează despre vehicule lente sau de lucru."
+  },
+  {
+    "term": "hint-HZ-26",
+    "ro": "Sfat",
+    "explainRo": "Informarea autorității de licențiere menține siguranța tuturor pe drum."
+  },
+  {
+    "term": "hint-HZ-27",
+    "ro": "Sfat",
+    "explainRo": "Mergi încet și fii pregătit să oprești pentru a proteja pietonii lenți."
+  },
+  {
+    "term": "hint-HZ-28",
+    "ro": "Sfat",
+    "explainRo": "Retrage-te pentru a recrea o distanță sigură și a avea timp să reacționezi la schimbări."
+  },
+  {
+    "term": "hint-HZ-29",
+    "ro": "Sfat",
+    "explainRo": "Când traficul se mută pe o altă bandă, de obicei există un pericol sau un obstacol în față."
+  },
+  {
+    "term": "hint-HZ-30",
+    "ro": "Sfat",
+    "explainRo": "Avansează treptat până ai vizibilitate clară ca să poți decide în siguranță."
+  },
+  {
+    "term": "hint-HZ-31",
+    "ro": "Sfat",
+    "explainRo": "Calmarea înainte de a conduce menține atenția și reduce greșelile."
+  },
+  {
+    "term": "hint-HZ-32",
+    "ro": "Sfat",
+    "explainRo": "Verifică etichetele medicamentelor ca să eviți conducerea sub substanțe care afectează atenția."
+  },
+  {
+    "term": "hint-HZ-33",
+    "ro": "Sfat",
+    "explainRo": "Amână călătoria până te simți bine pentru a evita accidentele din cauza oboselii sau bolii."
+  },
+  {
+    "term": "hint-HZ-34",
+    "ro": "Sfat",
+    "explainRo": "Poartă întotdeauna ochelarii pentru a menține vizibilitatea clară în orice condiții."
+  },
+  {
+    "term": "hint-HZ-35",
+    "ro": "Sfat",
+    "explainRo": "Alcoolul afectează judecata și controlul și crește semnificativ riscul de accident."
+  },
+  {
+    "term": "hint-HZ-36",
+    "ro": "Sfat",
+    "explainRo": "Autobuzele oprite pot ascunde pietoni care traversează în față."
+  },
+  {
+    "term": "hint-HZ-37",
+    "ro": "Sfat",
+    "explainRo": "Virajele la stânga ale vehiculelor agricole pot lăsa noroi sau resturi pe drum."
+  },
+  {
+    "term": "hint-HZ-38",
+    "ro": "Sfat",
+    "explainRo": "Drogurile reduc atenția și vigilența, punând în pericol siguranța rutieră."
+  },
+  {
+    "term": "hint-HZ-39",
+    "ro": "Sfat",
+    "explainRo": "Stropii de la camioanele mari reduc vizibilitatea și cresc riscul de accident."
+  },
+  {
+    "term": "hint-HZ-40",
+    "ro": "Sfat",
+    "explainRo": "Lentilele colorate reduc cantitatea de lumină și îngreunează vederea pe timp de noapte."
+  },
+  {
+    "term": "hint-HZ-41",
+    "ro": "Sfat",
+    "explainRo": "Când semafoarele nu funcționează, tratează intersecția ca pe una fără semnalizare, cu precauție sporită."
+  },
+  {
+    "term": "hint-HZ-42",
+    "ro": "Sfat",
+    "explainRo": "Șoferii în vârstă pot avea nevoie de mai mult timp să reacționeze — oferă-le spațiu."
+  },
+  {
+    "term": "hint-HZ-43",
+    "ro": "Sfat",
+    "explainRo": "Un semnal continuu poate însemna că șoferul a uitat să-l anuleze sau că există o problemă."
+  },
+  {
+    "term": "hint-HZ-44",
+    "ro": "Sfat",
+    "explainRo": "Indicatoarele pentru curbe strânse te avertizează asupra cotiturilor care necesită reducerea vitezei."
+  },
+  {
+    "term": "hint-HZ-45",
+    "ro": "Sfat",
+    "explainRo": "Podurile înguste necesită pregătire pentru a ceda prioritate vehiculelor mari."
+  },
+  {
+    "term": "hint-HZ-46",
+    "ro": "Sfat",
+    "explainRo": "Oprește-te și odihnește-te când te ia somnul pentru a evita accidentele la volan."
+  },
+  {
+    "term": "hint-HZ-47",
+    "ro": "Sfat",
+    "explainRo": "Luminile de avarie se folosesc doar când vehiculul este defect și blochează traficul."
+  },
+  {
+    "term": "hint-HZ-48",
+    "ro": "Sfat",
+    "explainRo": "Camioanele mari pot avea nevoie să folosească mijlocul drumului pe drumuri înguste."
+  },
+  {
+    "term": "hint-HZ-49",
+    "ro": "Sfat",
+    "explainRo": "Pauzele regulate mențin atenția pe drumuri lungi și reduc oboseala."
+  },
+  {
+    "term": "hint-HZ-50",
+    "ro": "Sfat",
+    "explainRo": "Evită conducerea când medicamentul provoacă somnolență pentru a preveni accidentele grave."
+  },
+  {
+    "term": "hint-HZ-51",
+    "ro": "Sfat",
+    "explainRo": "Marcajele reflectorizante de pe vehiculele grele te ajută să le vezi pe întuneric."
+  },
+  {
+    "term": "hint-HZ-52",
+    "ro": "Sfat",
+    "explainRo": "Viteza redusă în zonele de calm trafic protejează pietonii și cicliștii."
+  },
+  {
+    "term": "hint-HZ-53",
+    "ro": "Sfat",
+    "explainRo": "Dacă iei un medicament care afectează conducerea, lasă pe altcineva să conducă."
+  },
+  {
+    "term": "hint-HZ-54",
+    "ro": "Sfat",
+    "explainRo": "Autobuzele mari au nevoie de mai mult spațiu pe podurile înguste."
+  },
+  {
+    "term": "hint-HZ-55",
+    "ro": "Sfat",
+    "explainRo": "Depășirea lângă intersecții este periculoasă din cauza traficului din mai multe direcții."
+  },
+  {
+    "term": "hint-HZ-56",
+    "ro": "Sfat",
+    "explainRo": "Vehiculele parcate pe curbă pot ascunde pietoni care ies brusc."
+  },
+  {
+    "term": "hint-HZ-57",
+    "ro": "Sfat",
+    "explainRo": "Vizibilitatea limitată în intersecții crește riscul de accident cu trafic ascuns."
+  },
+  {
+    "term": "hint-HZ-58",
+    "ro": "Sfat",
+    "explainRo": "Alcoolul crește periculos încrederea și reduce judecata corectă."
+  },
+  {
+    "term": "hint-HZ-59",
+    "ro": "Sfat",
+    "explainRo": "Ușile mașinilor parcate se pot deschide brusc și pot provoca accidente grave."
+  },
+  {
+    "term": "hint-HZ-60",
+    "ro": "Sfat",
+    "explainRo": "Oprește conducerea când ești bolnav pentru a-i ține pe toți în siguranță."
+  },
+  {
+    "term": "hint-HZ-61",
+    "ro": "Sfat",
+    "explainRo": "Dacă plănuiești să conduci mai târziu, evită complet alcoolul la evenimente."
+  },
+  {
+    "term": "hint-HZ-62",
+    "ro": "Sfat",
+    "explainRo": "Copiii din străzile rezidențiale pot ieși brusc dintre mașinile parcate."
+  },
+  {
+    "term": "hint-HZ-63",
+    "ro": "Sfat",
+    "explainRo": "Pe autostradă, oprește-te în siguranță cât mai curând dacă te ia somnul."
+  },
+  {
+    "term": "hint-HZ-64",
+    "ro": "Sfat",
+    "explainRo": "Verifică eticheta medicamentului înainte de a conduce pentru a evita substanțele periculoase."
+  },
+  {
+    "term": "hint-HZ-65",
+    "ro": "Sfat",
+    "explainRo": "Lucrările rutiere necesită viteză redusă și atenție la muncitori și vehicule."
+  },
+  {
+    "term": "hint-HZ-66",
+    "ro": "Sfat",
+    "explainRo": "Luminile de avarie avertizează traficul despre o defectiune care blochează drumul."
+  },
+  {
+    "term": "hint-HZ-67",
+    "ro": "Sfat",
+    "explainRo": "Condamnarea pentru conducere sub alcool sau droguri crește semnificativ costul asigurării."
+  },
+  {
+    "term": "hint-HZ-68",
+    "ro": "Sfat",
+    "explainRo": "Cicliștii de lângă intersecții pot vira brusc pe carosabil."
+  },
+  {
+    "term": "hint-HZ-69",
+    "ro": "Sfat",
+    "explainRo": "Pauzele regulate îmbunătățesc atenția pe drumuri lungi și reduc riscul de accident."
+  },
+  {
+    "term": "hint-HZ-70",
+    "ro": "Sfat",
+    "explainRo": "Graba pe drumuri lungi crește oboseala și greșelile, punând siguranța în pericol."
+  },
+  {
+    "term": "hint-HZ-71",
+    "ro": "Sfat",
+    "explainRo": "Kick-down-ul la vehiculele automate se folosește pentru accelerare rapidă."
+  },
+  {
+    "term": "hint-HZ-72",
+    "ro": "Sfat",
+    "explainRo": "Pe autostrăzile cu mai multe benzi, depășirea se face pe banda din dreapta."
+  },
+  {
+    "term": "hint-HZ-73",
+    "ro": "Sfat",
+    "explainRo": "Apa acumulată pe drum crește riscul de acvaplanare și pierderea controlului."
+  },
+  {
+    "term": "hint-HZ-74",
+    "ro": "Sfat",
+    "explainRo": "Pietonii concentrați pe telefon pot păși pe carosabil fără să privească."
+  },
+  {
+    "term": "hint-HZ-75",
+    "ro": "Sfat",
+    "explainRo": "Când vezi călăreți, încetinește și treci pe lângă ei lăsând spațiu larg."
+  },
+  {
+    "term": "hint-HZ-76",
+    "ro": "Sfat",
+    "explainRo": "Când vezi un vehicul care virează brusc, mărește distanța ca să ai timp să reacționezi."
+  },
+  {
+    "term": "hint-HZ-77",
+    "ro": "Sfat",
+    "explainRo": "Vehiculele mari au nevoie de mai mult spațiu la viraj și pot ieși mai întâi în afară."
+  },
+  {
+    "term": "hint-HZ-78",
+    "ro": "Sfat",
+    "explainRo": "Vehiculele mari pot folosi mijlocul drumului pentru a vira."
+  },
+  {
+    "term": "hint-HZ-79",
+    "ro": "Sfat",
+    "explainRo": "Vehiculele mari pot ieși spre dreapta înainte de a vira la stânga pentru a câștiga spațiu."
+  },
+  {
+    "term": "hint-HZ-80",
+    "ro": "Sfat",
+    "explainRo": "Încetinește înainte de curbele strânse pe drum ud pentru a evita derapajul."
+  }
+]

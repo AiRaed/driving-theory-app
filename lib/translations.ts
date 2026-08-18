@@ -1,25 +1,55 @@
-// Translation loading utility — English (off) + Arabic + Urdu + Romanian
-export type TranslationLang = 'off' | 'ar' | 'ur' | 'ro';
+// Translation loading utility — English (off) + Arabic + Urdu + Romanian + Polish + Portuguese + Bengali
+export type { TranslationLang } from '@/lib/i18n/languages';
+export {
+  TRANSLATION_LANG_KEY,
+  getTranslationLang,
+  setTranslationLang,
+  isLtrTranslationLang,
+} from '@/lib/i18n/languages';
 
-/** Locale JSON shape used by Urdu and Romanian (and future locale files). */
+/** Locale JSON shape used by Urdu, Romanian, Polish, Portuguese, Bengali (and future locale files). */
 export interface TranslationData {
   [topic: string]: {
     [questionId: string]: {
       promptUr?: string;
       promptRo?: string;
-      options?: Array<{ ur?: string; ro?: string }>;
+      promptPl?: string;
+      promptPt?: string;
+      promptBn?: string;
+      options?: Array<{ ur?: string; ro?: string; pl?: string; pt?: string; bn?: string }>;
     };
   };
 }
 
+type LocaleFileLang = 'ur' | 'ro' | 'pl' | 'pt' | 'bn';
+
 let urTranslations: TranslationData | null = null;
 let roTranslations: TranslationData | null = null;
+let plTranslations: TranslationData | null = null;
+let ptTranslations: TranslationData | null = null;
+let bnTranslations: TranslationData | null = null;
+
+function getLocaleCache(lang: LocaleFileLang): TranslationData | null {
+  if (lang === 'ur') return urTranslations;
+  if (lang === 'ro') return roTranslations;
+  if (lang === 'pl') return plTranslations;
+  if (lang === 'pt') return ptTranslations;
+  return bnTranslations;
+}
+
+function setLocaleCache(lang: LocaleFileLang, data: TranslationData): void {
+  if (lang === 'ur') urTranslations = data;
+  else if (lang === 'ro') roTranslations = data;
+  else if (lang === 'pl') plTranslations = data;
+  else if (lang === 'pt') ptTranslations = data;
+  else bnTranslations = data;
+}
 
 async function loadLocaleJson(
-  lang: 'ur' | 'ro',
+  lang: LocaleFileLang,
   forceReload: boolean
 ): Promise<TranslationData | null> {
-  const cache = lang === 'ur' ? urTranslations : roTranslations;
+  const cache = getLocaleCache(lang);
   if (cache !== null && !forceReload) {
     return cache;
   }
@@ -34,8 +64,7 @@ async function loadLocaleJson(
       return null;
     }
     const data = (await response.json()) as TranslationData;
-    if (lang === 'ur') urTranslations = data;
-    else roTranslations = data;
+    setLocaleCache(lang, data);
     return data;
   } catch (error) {
     console.error(`Failed to load ${lang} translations:`, error);
@@ -57,39 +86,78 @@ export async function loadRomanianTranslations(
   return loadLocaleJson('ro', forceReload);
 }
 
+/** Load Polish translations from JSON file */
+export async function loadPolishTranslations(
+  forceReload: boolean = false
+): Promise<TranslationData | null> {
+  return loadLocaleJson('pl', forceReload);
+}
+
+/** Load Portuguese (Portugal) translations from JSON file */
+export async function loadPortugueseTranslations(
+  forceReload: boolean = false
+): Promise<TranslationData | null> {
+  return loadLocaleJson('pt', forceReload);
+}
+
+/** Load Bengali translations from JSON file (UI-ready; question bank may still be incomplete). */
+export async function loadBengaliTranslations(
+  forceReload: boolean = false
+): Promise<TranslationData | null> {
+  return loadLocaleJson('bn', forceReload);
+}
+
 /** @deprecated Prefer loadRomanianTranslations — alias kept for clarity */
 export const loadRoTranslations = loadRomanianTranslations;
 
+/** @deprecated Prefer loadPolishTranslations — alias kept for clarity */
+export const loadPlTranslations = loadPolishTranslations;
+
+/** @deprecated Prefer loadPortugueseTranslations — alias kept for clarity */
+export const loadPtTranslations = loadPortugueseTranslations;
+
 function getLocalePrompt(
   questionData: TranslationData[string][string] | undefined,
-  lang: 'ur' | 'ro'
+  lang: LocaleFileLang
 ): string | undefined {
   if (!questionData) return undefined;
-  return lang === 'ur' ? questionData.promptUr : questionData.promptRo;
+  if (lang === 'ur') return questionData.promptUr;
+  if (lang === 'ro') return questionData.promptRo;
+  if (lang === 'pl') return questionData.promptPl;
+  if (lang === 'pt') return questionData.promptPt;
+  return questionData.promptBn;
 }
 
 function getLocaleOption(
   questionData: TranslationData[string][string] | undefined,
   index: number,
-  lang: 'ur' | 'ro'
+  lang: LocaleFileLang
 ): string | undefined {
   const opt = questionData?.options?.[index];
   if (!opt) return undefined;
-  return lang === 'ur' ? opt.ur : opt.ro;
+  if (lang === 'ur') return opt.ur;
+  if (lang === 'ro') return opt.ro;
+  if (lang === 'pl') return opt.pl;
+  if (lang === 'pt') return opt.pt;
+  return opt.bn;
 }
 
-// Get translation for a question (locale-file langs: ur, ro)
+export function isLocaleFileLang(lang: string): lang is LocaleFileLang {
+  return lang === 'ur' || lang === 'ro' || lang === 'pl' || lang === 'pt' || lang === 'bn';
+}
+
+// Get translation for a question (locale-file langs: ur, ro, pl, pt, bn)
 export function getQuestionTranslation(
   questionId: string,
   topic: string,
-  lang: TranslationLang,
+  lang: import('@/lib/i18n/languages').TranslationLang,
   localeData: TranslationData | null
 ): { prompt?: string; options?: string[] } | null {
   if (lang === 'off' || lang === 'ar') {
     return null;
   }
 
-  if ((lang === 'ur' || lang === 'ro') && localeData) {
+  if (isLocaleFileLang(lang) && localeData) {
     const topicData = localeData[topic];
     if (!topicData) {
       console.warn(`[Translations] Topic "${topic}" not found for ${lang}`);
@@ -113,14 +181,14 @@ export function getQuestionTranslation(
   return null;
 }
 
-/** Option translation for Urdu or Romanian by matching English option order */
+/** Option translation for locale-file languages by matching English option order */
 export function getLocaleOptionTranslation(
   optionEn: string,
   originalOptions: Array<{ en: string }>,
   localeData: TranslationData | null,
   questionId: string,
   topic: string,
-  lang: 'ur' | 'ro'
+  lang: LocaleFileLang
 ): string | null {
   if (!localeData) return null;
   const topicData = localeData[topic];
@@ -167,30 +235,65 @@ export function getRomanianOptionTranslation(
   );
 }
 
-export const TRANSLATION_LANG_KEY = 'translationLang';
-
-export function getTranslationLang(): TranslationLang {
-  if (typeof window === 'undefined') return 'off';
-  const stored = localStorage.getItem(TRANSLATION_LANG_KEY);
-  if (stored === 'ar' || stored === 'ur' || stored === 'ro') {
-    return stored;
-  }
-  return 'off';
+export function getPolishOptionTranslation(
+  optionEn: string,
+  originalOptions: Array<{ en: string }>,
+  plTranslationsData: TranslationData | null,
+  questionId: string,
+  topic: string
+): string | null {
+  return getLocaleOptionTranslation(
+    optionEn,
+    originalOptions,
+    plTranslationsData,
+    questionId,
+    topic,
+    'pl'
+  );
 }
 
-export function setTranslationLang(lang: TranslationLang): void {
-  if (typeof window === 'undefined') return;
-  localStorage.setItem(TRANSLATION_LANG_KEY, lang);
+export function getPortugueseOptionTranslation(
+  optionEn: string,
+  originalOptions: Array<{ en: string }>,
+  ptTranslationsData: TranslationData | null,
+  questionId: string,
+  topic: string
+): string | null {
+  return getLocaleOptionTranslation(
+    optionEn,
+    originalOptions,
+    ptTranslationsData,
+    questionId,
+    topic,
+    'pt'
+  );
+}
+
+export function getBengaliOptionTranslation(
+  optionEn: string,
+  originalOptions: Array<{ en: string }>,
+  bnTranslationsData: TranslationData | null,
+  questionId: string,
+  topic: string
+): string | null {
+  return getLocaleOptionTranslation(
+    optionEn,
+    originalOptions,
+    bnTranslationsData,
+    questionId,
+    topic,
+    'bn'
+  );
 }
 
 export function getQuestionPromptTranslation(
   question: { promptEn: string; promptAr?: string; id: string; topic: string },
-  lang: TranslationLang,
+  lang: import('@/lib/i18n/languages').TranslationLang,
   localeData: TranslationData | null
 ): string {
   if (lang === 'off') return '';
   if (lang === 'ar') return question.promptAr || '';
-  if ((lang === 'ur' || lang === 'ro') && localeData) {
+  if (isLocaleFileLang(lang) && localeData) {
     const translation = getQuestionTranslation(question.id, question.topic, lang, localeData);
     return translation?.prompt || '';
   }
@@ -199,7 +302,7 @@ export function getQuestionPromptTranslation(
 
 export function getOptionTranslation(
   option: { en: string; ar: string },
-  lang: TranslationLang,
+  lang: import('@/lib/i18n/languages').TranslationLang,
   localeData: TranslationData | null,
   originalOptions: Array<{ en: string }>,
   questionId: string,
@@ -207,14 +310,9 @@ export function getOptionTranslation(
 ): string {
   if (lang === 'off') return '';
   if (lang === 'ar') return option.ar || '';
-  if (lang === 'ur') {
+  if (isLocaleFileLang(lang)) {
     return (
-      getUrduOptionTranslation(option.en, originalOptions, localeData, questionId, topic) || ''
-    );
-  }
-  if (lang === 'ro') {
-    return (
-      getRomanianOptionTranslation(option.en, originalOptions, localeData, questionId, topic) ||
+      getLocaleOptionTranslation(option.en, originalOptions, localeData, questionId, topic, lang) ||
       ''
     );
   }

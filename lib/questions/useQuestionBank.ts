@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react';
 import { questions as staticQuestions, type Question } from '@/data/questions';
 import {
+  loadPolishTranslations,
+  loadPortugueseTranslations,
   loadRomanianTranslations,
   loadUrduTranslations,
   type TranslationData,
@@ -12,6 +14,8 @@ export function useQuestionBank() {
   const [questions, setQuestions] = useState<Question[]>(staticQuestions);
   const [urTranslations, setUrTranslations] = useState<TranslationData | null>(null);
   const [roTranslations, setRoTranslations] = useState<TranslationData | null>(null);
+  const [plTranslations, setPlTranslations] = useState<TranslationData | null>(null);
+  const [ptTranslations, setPtTranslations] = useState<TranslationData | null>(null);
   const [source, setSource] = useState<'static' | 'database'>('static');
   const [ready, setReady] = useState(false);
 
@@ -29,11 +33,29 @@ export function useQuestionBank() {
             if (data.source === 'database') {
               if (data.urduByTopic) setUrTranslations(data.urduByTopic);
               if (data.romanianByTopic) setRoTranslations(data.romanianByTopic);
-              // Prefer static locale files to fill gaps when DB has no RO yet
+              if (data.polishByTopic) setPlTranslations(data.polishByTopic);
+              if (data.portugueseByTopic) setPtTranslations(data.portugueseByTopic);
+              // Prefer static locale files to fill gaps when DB has no RO/PL/PT yet
               if (!data.romanianByTopic || Object.keys(data.romanianByTopic).length === 0) {
                 try {
                   const ro = await loadRomanianTranslations();
                   if (!cancelled && ro) setRoTranslations(ro);
+                } catch {
+                  /* ignore */
+                }
+              }
+              if (!data.polishByTopic || Object.keys(data.polishByTopic).length === 0) {
+                try {
+                  const pl = await loadPolishTranslations();
+                  if (!cancelled && pl) setPlTranslations(pl);
+                } catch {
+                  /* ignore */
+                }
+              }
+              if (!data.portugueseByTopic || Object.keys(data.portugueseByTopic).length === 0) {
+                try {
+                  const pt = await loadPortugueseTranslations();
+                  if (!cancelled && pt) setPtTranslations(pt);
                 } catch {
                   /* ignore */
                 }
@@ -56,18 +78,24 @@ export function useQuestionBank() {
       }
 
       try {
-        const [ur, ro] = await Promise.all([
+        const [ur, ro, pl, pt] = await Promise.all([
           loadUrduTranslations(),
           loadRomanianTranslations(),
+          loadPolishTranslations(),
+          loadPortugueseTranslations(),
         ]);
         if (!cancelled) {
           setUrTranslations(ur);
           setRoTranslations(ro);
+          setPlTranslations(pl);
+          setPtTranslations(pt);
         }
       } catch {
         if (!cancelled) {
           setUrTranslations({});
           setRoTranslations({});
+          setPlTranslations({});
+          setPtTranslations({});
         }
       } finally {
         if (!cancelled) setReady(true);
@@ -79,5 +107,13 @@ export function useQuestionBank() {
     };
   }, []);
 
-  return { questions, urTranslations, roTranslations, source, ready };
+  return {
+    questions,
+    urTranslations,
+    roTranslations,
+    plTranslations,
+    ptTranslations,
+    source,
+    ready,
+  };
 }

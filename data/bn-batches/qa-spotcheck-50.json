@@ -1,0 +1,394 @@
+[
+  {
+    "id": "AL-01",
+    "topic": "alertness",
+    "prompt": "দিনের আলো কমতে শুরু করলে হেডলাইট জ্বালানো উচিত কেন?",
+    "hasHint": false,
+    "ok": true
+  },
+  {
+    "id": "AL-07",
+    "topic": "alertness",
+    "prompt": "গতি কমানো বা থামার আগে কী করা উচিত?",
+    "hasHint": false,
+    "ok": true
+  },
+  {
+    "id": "AL-13",
+    "topic": "alertness",
+    "prompt": "গাড়ি চালানোর সময় সবচেয়ে বেশি কী আপনাকে বিভ্রান্ত করতে পারে?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "AL-19",
+    "topic": "alertness",
+    "prompt": "ভেজা রাস্তায় জরুরি অবস্থায় থামতে হলে কী করা উচিত?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "HZ-01",
+    "topic": "hazard-awareness",
+    "prompt": "সামনের রাস্তা সরু হয়ে এলে গতি কমানো উচিত কেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "HZ-21",
+    "topic": "hazard-awareness",
+    "prompt": "এইমাত্র তীব্র তর্ক হয়েছে এবং রাগ লাগছে। গাড়ি চালানোর আগে কী করা উচিত?",
+    "hasHint": false,
+    "ok": true
+  },
+  {
+    "id": "HZ-41",
+    "topic": "hazard-awareness",
+    "prompt": "ক্রসরোডে ট্রাফিক লাইট নষ্ট। কী করা উচিত?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "HZ-61",
+    "topic": "hazard-awareness",
+    "prompt": "পরে গাড়ি চালানোর পরিকল্পনা থাকলে অ্যালকোহলসহ সামাজিক অনুষ্ঠানে সবচেয়ে নিরাপদ পছন্দ কী?",
+    "hasHint": false,
+    "ok": true
+  },
+  {
+    "id": "RS-01",
+    "topic": "road-signs",
+    "prompt": "কালো গাড়ির পাশে লাল গাড়ি দেখানো সাইন মানে:",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "RS-2012",
+    "topic": "road-signs",
+    "prompt": "সন্ধ্যার দিকে বনাঞ্চলে হরিণ দেখানো ত্রিভুজাকার সতর্কতা সাইন দেখলে কোন বিপদের জন্য সতর্ক থা",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "RS-2044",
+    "topic": "road-signs",
+    "prompt": "হাম্পব্যাক ব্রিজ দেখানো সতর্কতা সাইনে কোন বিপদ আশা করবেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "RS-6023",
+    "topic": "road-signs",
+    "prompt": "রাস্তা মেরামতে অস্থায়ী গতিসীমা সাইন আপনাকে কী করতে বলে?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "SM-01",
+    "topic": "safety-margins",
+    "prompt": "যানবাহন স্কিড শুরু হওয়ার সবচেয়ে সাধারণ কারণ কী?",
+    "hasHint": false,
+    "ok": true
+  },
+  {
+    "id": "SM-09",
+    "topic": "safety-margins",
+    "prompt": "বরফে ঢাকা রাস্তার অবস্থা প্রায়ই কী দিয়ে বোঝা যায়?",
+    "hasHint": false,
+    "ok": true
+  },
+  {
+    "id": "SM-17",
+    "topic": "safety-margins",
+    "prompt": "পার্শ্ব বাতাস কোথায় সবচেয়ে বেশি আপনার যানবাহনকে প্রভাবিত করতে পারে?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "SM-25",
+    "topic": "safety-margins",
+    "prompt": "খুব গরম আবহাওয়ায় রাস্তার উপরিভাগ নরম হলে সবচেয়ে বেশি কী প্রভাবিত হয়?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "RR-01",
+    "topic": "rules-of-the-road",
+    "prompt": "লাল ও সাদা রাস্তার পাশের মার্কার পোস্ট সাধারণত চালকদের কী সম্পর্কে সতর্ক করে?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "RR-17",
+    "topic": "rules-of-the-road",
+    "prompt": "উভয়ে ডানে মোড় নিলে আসন্ন গাড়ির পেছন দিয়ে মোড় নেওয়া নিরাপদ কেন?",
+    "hasHint": false,
+    "ok": true
+  },
+  {
+    "id": "RR-33",
+    "topic": "rules-of-the-road",
+    "prompt": "নির্দিষ্ট দিন ও সময়ে পার্কিং নিষেধাজ্ঞা দেখানো আছে। সেই সময়ে কী করবেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "RR-49",
+    "topic": "rules-of-the-road",
+    "prompt": "পার্ক করা গাড়িসহ আবাসিক রাস্তায় ধীরে চালানো উচিত কেন?",
+    "hasHint": false,
+    "ok": true
+  },
+  {
+    "id": "VU-01",
+    "topic": "vulnerable-road-users",
+    "prompt": "যেখানে মানুষ রাস্তা পার হতে পারে, এমন পথচারী ক্রসিংয়ের কাছে এলে আপনার কী করা উচিত?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "VU-18",
+    "topic": "vulnerable-road-users",
+    "prompt": "খারাপ রাস্তার পৃষ্ঠে মোটরসাইকেল চালককে অনুসরণ করার সময় আপনার কী করা উচিত?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "VU-35",
+    "topic": "vulnerable-road-users",
+    "prompt": "সামনে পার্ক করা গাড়ির ফাঁক দিয়ে একটি বল বেরিয়ে এলে আপনার কী করা উচিত?",
+    "hasHint": false,
+    "ok": true
+  },
+  {
+    "id": "VU-52",
+    "topic": "vulnerable-road-users",
+    "prompt": "ডানে মোড় নেওয়ার আগে মোটরসাইকেল চালক কেন ডান কাঁধের দিকে তাকাতে পারেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "VH-01",
+    "topic": "vehicle-handling",
+    "prompt": "কখন বাঁ দিক দিয়ে অন্য যান পাস করা গ্রহণযোগ্য?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "VH-12",
+    "topic": "vehicle-handling",
+    "prompt": "একের পর এক রোড হাম্প দিয়ে চালাচ্ছেন। সবচেয়ে নিরাপদ উপায় কী?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "VH-23",
+    "topic": "vehicle-handling",
+    "prompt": "দীর্ঘ দূরত্ব নিউট্রালে চালানো কেন খারাপ অভ্যাস?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "VH-34",
+    "topic": "vehicle-handling",
+    "prompt": "গভীর পানি বা বন্যার পানি দিয়ে চালানোর পর শীঘ্রই কী করবেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "IN-01",
+    "topic": "incidents",
+    "prompt": "টানেল দিয়ে চালানোর সময় গাড়িতে আগুন লাগলে সবচেয়ে নিরাপদ কাজ কী?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "IN-15",
+    "topic": "incidents",
+    "prompt": "বিপজ্জনক পণ্য বহনকারী যান জরুরি সেবা কীভাবে চিনতে পারে?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "IN-29",
+    "topic": "incidents",
+    "prompt": "সংঘর্ষে জড়িত হলে প্রথমে কী করতে হবে?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "IN-43",
+    "topic": "incidents",
+    "prompt": "ঘটনাস্থলে শ্বাস নিচ্ছে না এমন ছোট শিশুকে কীভাবে সাহায্য করতে পারেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "DC-01",
+    "topic": "documents",
+    "prompt": "বৈধ MOT সার্টিফিকেট ছাড়া কখন গাড়ি চালানো বৈধ?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "DC-07",
+    "topic": "documents",
+    "prompt": "প্রথম ড্রাইভিং টেস্ট পাস করার পর ২ বছরের মধ্যে ৬ পেনাল্টি পয়েন্ট পেলে কী হয়?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "DC-13",
+    "topic": "documents",
+    "prompt": "ইনশ্যুরেন্স ছাড়া গাড়ি চালানোর সর্বোচ্চ শাস্তি কী?",
+    "hasHint": false,
+    "ok": true
+  },
+  {
+    "id": "DC-19",
+    "topic": "documents",
+    "prompt": "third-party ইনশ্যুরেন্স কী কভার করে?",
+    "hasHint": false,
+    "ok": true
+  },
+  {
+    "id": "MW-01",
+    "topic": "motorway-driving",
+    "prompt": "hard shoulder চলার লেন হিসেবে কাজ না করলে মোটরওয়েতে কখন তা ব্যবহার করবেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "MW-15",
+    "topic": "motorway-driving",
+    "prompt": "হার্ড শোল্ডারে গাড়ি মেরামতের পর ট্রাফিকে কীভাবে আবার যোগ দেবেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "MW-29",
+    "topic": "motorway-driving",
+    "prompt": "মোটরওয়েতে যোগ দেওয়ার পরপর সাধারণত কী করবেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "MW-43",
+    "topic": "motorway-driving",
+    "prompt": "মোটরওয়েতে লেনগুলোর মধ্যে প্রতিফলক স্টাডের রং কী?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "OV-01",
+    "topic": "other-vehicles",
+    "prompt": "আপনি পাশের রাস্তা থেকে ডানে মোড় নেওয়ার জন্য অপেক্ষা করছেন। ডান দিক থেকে একটি বড় লরি আসছ",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "OV-06",
+    "topic": "other-vehicles",
+    "prompt": "সামনের বড় যান ক্রসরোডে বাঁয়ের সিগন্যাল দিচ্ছে। আপনার কী করা উচিত?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "OV-11",
+    "topic": "other-vehicles",
+    "prompt": "single carriageway-এ বড় যানের পেছনে নিরাপদ দূরত্ব কেন রাখবেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "OV-16",
+    "topic": "other-vehicles",
+    "prompt": "ট্রাম চলাচলের জায়গায় চালকদের অতিরিক্ত সতর্ক থাকা কেন জরুরি?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "VL-01",
+    "topic": "vehicle-loading",
+    "prompt": "ট্রেলার টো করার আগে আপনার যানের tow bar-এর সর্বোচ্চ অনুমোদিত nose weight কোথায় পাবেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "VL-06",
+    "topic": "vehicle-loading",
+    "prompt": "ট্রেলারের ব্রেকিং সিস্টেমে কোন নিরাপত্তা ডিভাইস লাগানো থাকতে হবে?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "VL-11",
+    "topic": "vehicle-loading",
+    "prompt": "খুব ভারী লোড বহন করলে আপনার গাড়ির কোন দিক সবচেয়ে বেশি প্রভাবিত হয়?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "VL-16",
+    "topic": "vehicle-loading",
+    "prompt": "কখন টায়ার প্রেশার স্বাভাবিকের চেয়ে বাড়াতে হয়?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "AT-01",
+    "topic": "attitude",
+    "prompt": "পেডেস্ট্রিয়ান ক্রসিং-এর কাছে এসে দেখলেন মানুষ অপেক্ষা করছে। আপনি কী করবেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "AT-10",
+    "topic": "attitude",
+    "prompt": "ভেজা রাস্তায় ন্যূনতম কত ফলোয়িং দূরত্ব রাখা উচিত?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "AT-19",
+    "topic": "attitude",
+    "prompt": "চিহ্নবিহীন ক্রসরোডে কীভাবে এগোবেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "AT-28",
+    "topic": "attitude",
+    "prompt": "কোন জরুরি যানে সবুজ ঝলমলে বীকন ব্যবহার করা হয়?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "SV-01",
+    "topic": "safety-vehicle",
+    "prompt": "কোন পরিস্থিতিতে গাড়ি পার্ক করলে বাধা সৃষ্টি হয়?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "SV-21",
+    "topic": "safety-vehicle",
+    "prompt": "আপনার গাড়িতে blind-spot monitoring থাকলে সঠিকভাবে কাজ করতে নিয়মিত কী পরীক্ষা করবেন?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "SV-41",
+    "topic": "safety-vehicle",
+    "prompt": "কম চাপের টায়ার গাড়িতে কী প্রভাব ফেলে?",
+    "hasHint": true,
+    "ok": true
+  },
+  {
+    "id": "SV-61",
+    "topic": "safety-vehicle",
+    "prompt": "Road hump, chicane ও রাস্তা সংকীর্ণকরণের মূল উদ্দেশ্য কী?",
+    "hasHint": false,
+    "ok": true
+  }
+]

@@ -7,6 +7,9 @@ import { createClient } from '@/lib/supabase/client';
 import { User } from '@supabase/supabase-js';
 import { cn } from '@/lib/utils';
 import { useIsAdmin } from '@/lib/admin/useIsAdmin';
+import { useLanguage } from '@/lib/i18n/LanguageProvider';
+import { BilingualNavLabel } from '@/components/BilingualLabel';
+import { enLabel } from '@/lib/i18n/ui-strings';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -16,6 +19,7 @@ export default function Navigation() {
   const [authReady, setAuthReady] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
   const { isAdmin, ready: adminReady } = useIsAdmin(authReady ? user : undefined);
+  const { lang } = useLanguage();
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -59,42 +63,59 @@ export default function Navigation() {
 
   const showAdmin = authReady && adminReady && !!user && isAdmin;
   const adminActive = pathname === '/admin' || pathname.startsWith('/admin/');
+  const onboarding = pathname.startsWith('/choose-language');
 
   return (
     <nav className="flex gap-0.5 md:gap-1 text-xs md:text-sm items-center flex-nowrap overflow-x-auto hide-scrollbar">
-      <Link
-        href="/practice"
-        prefetch={true}
-        data-active={pathname === '/practice'}
-        className={navLinkClass(pathname === '/practice')}
-      >
-        Practice
-      </Link>
-      <Link
-        href="/mock-test"
-        prefetch={true}
-        data-active={pathname === '/mock-test'}
-        className={navLinkClass(pathname === '/mock-test')}
-      >
-        Mock Test
-      </Link>
-      {showAdmin ? (
-        <Link
-          href="/admin"
-          prefetch={true}
-          data-active={adminActive}
-          className={navLinkClass(adminActive)}
-        >
-          Admin
-        </Link>
-      ) : null}
+      {!onboarding && (
+        <>
+          <Link
+            href="/practice"
+            prefetch={true}
+            data-active={pathname === '/practice'}
+            className={navLinkClass(pathname === '/practice')}
+          >
+            <BilingualNavLabel
+              keyName="navPractice"
+              lang={lang}
+              active={pathname === '/practice'}
+            />
+          </Link>
+          <Link
+            href="/mock-test"
+            prefetch={true}
+            data-active={pathname === '/mock-test'}
+            className={navLinkClass(pathname === '/mock-test')}
+          >
+            <BilingualNavLabel
+              keyName="navMockTest"
+              lang={lang}
+              active={pathname === '/mock-test'}
+            />
+          </Link>
+          {showAdmin ? (
+            <Link
+              href="/admin"
+              prefetch={true}
+              data-active={adminActive}
+              className={navLinkClass(adminActive)}
+            >
+              {enLabel('navAdmin')}
+            </Link>
+          ) : null}
+        </>
+      )}
       {user ? (
         <button
           onClick={handleLogout}
           disabled={loggingOut}
           className="px-3 py-1.5 md:px-3.5 md:py-2 rounded-[var(--radius-sm)] text-xs md:text-sm font-semibold tracking-tight transition-colors duration-150 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-secondary)] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap flex-shrink-0"
         >
-          {loggingOut ? 'Logging out...' : 'Log out'}
+          {loggingOut ? (
+            <BilingualNavLabel keyName="loggingOut" lang={lang} />
+          ) : (
+            <BilingualNavLabel keyName="logOut" lang={lang} />
+          )}
         </button>
       ) : (
         <Link
@@ -104,7 +125,7 @@ export default function Navigation() {
             pathname !== '/auth' && 'text-[var(--lingo-red)]'
           )}
         >
-          Log in
+          <BilingualNavLabel keyName="logIn" lang={lang} active={pathname === '/auth'} />
         </Link>
       )}
     </nav>

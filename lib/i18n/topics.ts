@@ -1,0 +1,111 @@
+import type { TranslationLang } from '@/lib/i18n/languages';
+import { isRtlLang } from '@/lib/i18n/languages';
+
+/** Topic chip labels — one map per learner language. Add a language here when adding it to SUPPORTED_LANGUAGES. */
+const TOPIC_LABELS: Record<Exclude<TranslationLang, 'off'>, Record<string, string>> = {
+  ar: {
+    alertness: 'الانتباه والتركيز',
+    'hazard-awareness': 'التنبّه للمخاطر',
+    'road-signs': 'إشارات الطريق',
+    'safety-margins': 'مسافات الأمان',
+    'rules-of-the-road': 'قوانين الطريق',
+    'vulnerable-road-users': 'مستخدمي الطريق',
+    'vehicle-handling': 'التحكم بالمركبة',
+    incidents: 'الحوادث والطوارئ',
+    documents: 'الوثائق والرخص',
+    'motorway-driving': 'الطرق السريعة',
+    'other-vehicles': 'المركبات الأخرى',
+    'vehicle-loading': 'تحميل المركبة',
+    attitude: 'سلوك السائق',
+    'safety-vehicle': 'سلامة المركبة',
+  },
+  ur: {
+    alertness: 'چوکسی',
+    'hazard-awareness': 'خطرات سے آگاہی',
+    'road-signs': 'سڑک کے اشارے',
+    'safety-margins': 'محفوظ فاصلے',
+    'rules-of-the-road': 'سڑک کے قواعد',
+    'vulnerable-road-users': 'کمزور سڑک استعمال کرنے والے',
+    'vehicle-handling': 'گاڑی پر کنٹرول',
+    incidents: 'حادثات',
+    documents: 'دستاویزات',
+    'motorway-driving': 'موٹر وے پر ڈرائیونگ',
+    'other-vehicles': 'دیگر گاڑیاں',
+    'vehicle-loading': 'گاڑی کی لوڈنگ',
+    attitude: 'رویہ',
+    'safety-vehicle': 'گاڑی کی حفاظت',
+  },
+  ro: {
+    alertness: 'Atenție și vigilență',
+    'hazard-awareness': 'Conștientizarea pericolelor',
+    'road-signs': 'Indicatoare rutiere',
+    'safety-margins': 'Margini de siguranță',
+    'rules-of-the-road': 'Regulile circulației',
+    'vulnerable-road-users': 'Utilizatori vulnerabili ai drumului',
+    'vehicle-handling': 'Manevrarea vehiculului',
+    incidents: 'Incidente și urgențe',
+    documents: 'Documente',
+    'motorway-driving': 'Conducerea pe autostradă',
+    'other-vehicles': 'Alte vehicule',
+    'vehicle-loading': 'Încărcarea vehiculului',
+    attitude: 'Atitudinea șoferului',
+    'safety-vehicle': 'Siguranța vehiculului',
+  },
+  pl: {
+    alertness: 'Uwaga i czujność',
+    'hazard-awareness': 'Świadomość zagrożeń',
+    'road-signs': 'Znaki drogowe',
+    'safety-margins': 'Marginesy bezpieczeństwa',
+    'rules-of-the-road': 'Przepisy ruchu drogowego',
+    'vulnerable-road-users': 'Narażeni użytkownicy drogi',
+    'vehicle-handling': 'Prowadzenie pojazdu',
+    incidents: 'Incydenty i sytuacje awaryjne',
+    documents: 'Dokumenty',
+    'motorway-driving': 'Jazda autostradą',
+    'other-vehicles': 'Inne pojazdy',
+    'vehicle-loading': 'Załadunek pojazdu',
+    attitude: 'Postawa kierowcy',
+    'safety-vehicle': 'Bezpieczeństwo pojazdu',
+  },
+  pt: {
+    alertness: 'Atenção e vigilância',
+    'hazard-awareness': 'Consciência dos perigos',
+    'road-signs': 'Sinais de trânsito',
+    'safety-margins': 'Margens de segurança',
+    'rules-of-the-road': 'Regras de trânsito',
+    'vulnerable-road-users': 'Utilizadores vulneráveis da estrada',
+    'vehicle-handling': 'Manobragem do veículo',
+    incidents: 'Incidentes e emergências',
+    documents: 'Documentos',
+    'motorway-driving': 'Condução em autoestrada',
+    'other-vehicles': 'Outros veículos',
+    'vehicle-loading': 'Carga do veículo',
+    attitude: 'Atitude do condutor',
+    'safety-vehicle': 'Segurança do veículo',
+  },
+  bn: {
+    alertness: 'সতর্কতা',
+    'hazard-awareness': 'বিপদ সম্পর্কে সচেতনতা',
+    'road-signs': 'রাস্তার সাইন',
+    'safety-margins': 'নিরাপত্তা দূরত্ব',
+    'rules-of-the-road': 'রাস্তার নিয়ম',
+    'vulnerable-road-users': 'ঝুঁকিপূর্ণ রাস্তা ব্যবহারকারী',
+    'vehicle-handling': 'যানবাহন নিয়ন্ত্রণ',
+    incidents: 'দুর্ঘটনা ও জরুরি অবস্থা',
+    documents: 'নথিপত্র',
+    'motorway-driving': 'মোটরওয়েতে ড্রাইভিং',
+    'other-vehicles': 'অন্যান্য যানবাহন',
+    'vehicle-loading': 'যানবাহন লোডিং',
+    attitude: 'চালকের আচরণ',
+    'safety-vehicle': 'যানবাহনের নিরাপত্তা',
+  },
+};
+
+export function getTopicTranslation(topic: string, lang: TranslationLang): string | null {
+  if (lang === 'off') return null;
+  return TOPIC_LABELS[lang]?.[topic] || null;
+}
+
+export function topicTranslationDir(lang: TranslationLang): 'ltr' | 'rtl' {
+  return isRtlLang(lang) ? 'rtl' : 'ltr';
+}

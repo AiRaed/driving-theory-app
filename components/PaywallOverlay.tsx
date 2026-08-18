@@ -12,6 +12,10 @@ import {
   restoreAppleFullAccess,
 } from '@/lib/billing/appleIap';
 import { APPLE_FULL_ACCESS_FALLBACK_PRICE } from '@/lib/billing/appleProduct';
+import { useLanguage } from '@/lib/i18n/LanguageProvider';
+import BilingualLabel from '@/components/BilingualLabel';
+import { enLabel } from '@/lib/i18n/ui-strings';
+import type { UiKey } from '@/lib/i18n/ui-strings';
 
 interface PaywallOverlayProps {
   onPay?: () => void;
@@ -36,6 +40,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
   const [applePrice, setApplePrice] = useState(APPLE_FULL_ACCESS_FALLBACK_PRICE);
   const router = useRouter();
   const { refresh } = useAccess();
+  const { lang } = useLanguage();
 
   const isAndroid = platform === 'android';
   const isIOS = platform === 'ios';
@@ -124,7 +129,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
       // No need to redirect - state update will handle it
     } catch (error) {
       console.error('Google Play purchase error:', error);
-      alert(error instanceof Error ? error.message : 'Failed to complete purchase. Please try again.');
+      alert(error instanceof Error ? error.message : enLabel('paywallPurchaseFailed'));
     } finally {
       setLoading(false);
     }
@@ -147,7 +152,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
       alert(result.error);
     } catch (error) {
       console.error('Apple IAP purchase error:', error);
-      alert(error instanceof Error ? error.message : 'Failed to complete purchase. Please try again.');
+      alert(error instanceof Error ? error.message : enLabel('paywallPurchaseFailed'));
     } finally {
       setLoading(false);
     }
@@ -168,7 +173,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
       alert(result.error);
     } catch (error) {
       console.error('Apple IAP restore error:', error);
-      alert(error instanceof Error ? error.message : 'Failed to restore purchases. Please try again.');
+      alert(error instanceof Error ? error.message : enLabel('restoreFailed'));
     } finally {
       setRestoring(false);
     }
@@ -208,7 +213,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
     } catch (error) {
       console.error('Payment error:', error);
       // Only show alert for actual errors, not for alreadyPaid case
-      alert(error instanceof Error ? error.message : 'Failed to start payment. Please try again.');
+      alert(error instanceof Error ? error.message : enLabel('paywallPaymentFailed'));
       setLoading(false);
     }
   };
@@ -223,27 +228,30 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
 
   const isLoading = loading || externalLoading || restoring;
 
-  const primaryButtonLabel = isLoading
+  const primaryButtonKey: UiKey = isLoading
     ? restoring
-      ? 'Restoring...'
-      : 'Processing...'
+      ? 'restoring'
+      : 'processing'
     : isIOS
-      ? `Unlock Full Access — ${applePrice}`
+      ? 'paywallUnlockApple'
       : isAndroid
-        ? 'Buy on Google Play – £9.99'
-        : 'Continue to Payment — £4.99';
+        ? 'paywallBuyGoogle'
+        : 'paywallContinueStripe';
+
+  const primaryButtonVars =
+    primaryButtonKey === 'paywallUnlockApple' ? { price: applePrice } : undefined;
 
   const oneTimePaymentDetail = isIOS
-    ? `${applePrice} — No recurring charges`
+    ? enLabel('paywallNoRecurring', { price: applePrice })
     : isAndroid
-      ? '£9.99 - No recurring charges'
-      : '£4.99 — No recurring charges';
+      ? enLabel('paywallNoRecurring', { price: '£9.99' })
+      : enLabel('paywallNoRecurring', { price: '£4.99' });
 
   const securePaymentCopy = isIOS
-    ? 'Payment securely processed by Apple'
+    ? enLabel('paywallSecureApple')
     : isAndroid
-      ? 'Secure payment powered by Google Play'
-      : 'Secure payment powered by Stripe';
+      ? enLabel('paywallSecureGoogle')
+      : enLabel('paywallSecureStripe');
 
   return (
     <>
@@ -279,7 +287,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
             <div className="text-center mb-6">
               <div className="text-4xl mb-3">🔒</div>
               <h2 className="text-2xl font-bold text-[var(--text-primary)] mb-2">
-                Unlock Full Access
+                {enLabel('paywallTitle')}
               </h2>
             </div>
 
@@ -288,28 +296,28 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
               <div className="flex items-start gap-3">
                 <span className="text-[var(--correct)] text-xl">✓</span>
                 <div>
-                  <div className="font-semibold text-[var(--text-primary)]">Unlimited Practice Questions</div>
-                  <div className="text-sm text-[var(--text-secondary)]">Access all questions across all topics</div>
+                  <div className="font-semibold text-[var(--text-primary)]">{enLabel('paywallUnlimitedTitle')}</div>
+                  <div className="text-sm text-[var(--text-secondary)]">{enLabel('paywallUnlimitedBody')}</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-[var(--correct)] text-xl">✓</span>
                 <div>
-                  <div className="font-semibold text-[var(--text-primary)]">All Topics Included</div>
-                  <div className="text-sm text-[var(--text-secondary)]">Practice across all topics</div>
+                  <div className="font-semibold text-[var(--text-primary)]">{enLabel('paywallTopicsTitle')}</div>
+                  <div className="text-sm text-[var(--text-secondary)]">{enLabel('paywallTopicsBody')}</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-[var(--correct)] text-xl">✓</span>
                 <div>
-                  <div className="font-semibold text-[var(--text-primary)]">Mock Test Access</div>
-                  <div className="text-sm text-[var(--text-secondary)]">Take unlimited mock tests</div>
+                  <div className="font-semibold text-[var(--text-primary)]">{enLabel('paywallMockTitle')}</div>
+                  <div className="text-sm text-[var(--text-secondary)]">{enLabel('paywallMockBody')}</div>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <span className="text-[var(--correct)] text-xl">✓</span>
                 <div>
-                  <div className="font-semibold text-[var(--text-primary)]">One-Time Payment</div>
+                  <div className="font-semibold text-[var(--text-primary)]">{enLabel('paywallOneTime')}</div>
                   <div className="text-sm text-[var(--text-secondary)]">
                     {oneTimePaymentDetail}
                   </div>
@@ -322,12 +330,17 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
               onClick={handlePayment}
               disabled={isLoading}
               className={cn(
-                "lt-btn-primary w-full py-3.5 text-base",
+                "lt-btn-primary w-full py-3.5 text-base flex flex-col items-center",
                 "disabled:opacity-50 disabled:cursor-not-allowed",
                 "active:scale-[0.98]"
               )}
             >
-              {primaryButtonLabel}
+              <BilingualLabel
+                keyName={primaryButtonKey}
+                lang={lang}
+                vars={primaryButtonVars}
+                translationClassName="text-white/85"
+              />
             </button>
 
             {isIOS && (
@@ -336,13 +349,13 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
                 onClick={handleAppleRestore}
                 disabled={isLoading}
                 className={cn(
-                  "w-full mt-3 py-2.5 text-sm font-medium",
+                  "w-full mt-3 py-2.5 text-sm font-medium flex flex-col items-center",
                   "text-[var(--text-primary)] underline underline-offset-2",
                   "disabled:opacity-50 disabled:cursor-not-allowed",
                   "active:opacity-80"
                 )}
               >
-                Restore Purchases
+                <BilingualLabel keyName="restorePurchases" lang={lang} />
               </button>
             )}
 

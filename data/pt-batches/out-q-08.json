@@ -1,0 +1,860 @@
+{
+  "attitude": {
+    "AT-33": {
+      "promptPt": "Numa rua de sentido único com duas vias, onde se deve posicionar para virar à direita?",
+      "options": [
+        {
+          "pt": "Via da esquerda"
+        },
+        {
+          "pt": "Via da direita"
+        },
+        {
+          "pt": "Qualquer via"
+        },
+        {
+          "pt": "Centro da estrada"
+        }
+      ]
+    },
+    "AT-34": {
+      "promptPt": "Um carro corta-lhe a frente muito de perto. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar"
+        },
+        {
+          "pt": "Buzinar"
+        },
+        {
+          "pt": "Aumentar a distância para um intervalo seguro"
+        },
+        {
+          "pt": "Piscar as luzes"
+        }
+      ]
+    },
+    "AT-35": {
+      "promptPt": "Uma ambulância com luzes azuis intermitentes vem atrás de si. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar"
+        },
+        {
+          "pt": "Manter a velocidade"
+        },
+        {
+          "pt": "Encostar em segurança e deixá-la passar"
+        },
+        {
+          "pt": "Travar a fundo"
+        }
+      ]
+    },
+    "AT-36": {
+      "promptPt": "Que passagem permite que ciclistas atravessem juntamente com peões?",
+      "options": [
+        {
+          "pt": "Puffin"
+        },
+        {
+          "pt": "Pelican"
+        },
+        {
+          "pt": "Zebra"
+        },
+        {
+          "pt": "Toucan"
+        }
+      ]
+    },
+    "AT-37": {
+      "promptPt": "Que perigo resulta de seguir um veículo demasiado de perto?",
+      "options": [
+        {
+          "pt": "Sobreaquecimento do motor"
+        },
+        {
+          "pt": "Maior consumo de combustível"
+        },
+        {
+          "pt": "Visão reduzida para a frente"
+        },
+        {
+          "pt": "Danos nos pneus"
+        }
+      ]
+    },
+    "AT-38": {
+      "promptPt": "À noite, numa fila, como pode evitar encandear os condutores atrás de si?",
+      "options": [
+        {
+          "pt": "Manter o pé no travão"
+        },
+        {
+          "pt": "Usar o travão de estacionamento e soltar o pedal do travão"
+        },
+        {
+          "pt": "Equilibrar a embraiagem"
+        },
+        {
+          "pt": "Usar ambos os travões"
+        }
+      ]
+    }
+  },
+  "safety-vehicle": {
+    "SV-01": {
+      "promptPt": "Em que situação estacionar o veículo causaria uma obstrução?",
+      "options": [
+        {
+          "pt": "Junto a um parquímetro"
+        },
+        {
+          "pt": "À frente de uma entrada de propriedade"
+        },
+        {
+          "pt": "Na sua própria entrada"
+        },
+        {
+          "pt": "Numa zona de estacionamento marcada"
+        }
+      ]
+    },
+    "SV-02": {
+      "promptPt": "O que deve fazer ao deixar o veículo estacionado e sem vigilância?",
+      "options": [
+        {
+          "pt": "Deixar o indicador ligado"
+        },
+        {
+          "pt": "Estacionar perto de um cruzamento"
+        },
+        {
+          "pt": "Trancar o veículo e retirar a chave"
+        },
+        {
+          "pt": "Deixar um vidro aberto"
+        }
+      ]
+    },
+    "SV-03": {
+      "promptPt": "Se o veículo continuar a oscilar depois de pressionar a carroçaria para baixo, o que indica?",
+      "options": [
+        {
+          "pt": "Pneus gastos"
+        },
+        {
+          "pt": "Pneus com pressão insuficiente"
+        },
+        {
+          "pt": "Solo mole"
+        },
+        {
+          "pt": "Amortecedores gastos"
+        }
+      ]
+    },
+    "SV-04": {
+      "promptPt": "Como é provável que a sua viagem mude se circular fora das horas de ponta?",
+      "options": [
+        {
+          "pt": "Mais consumo de combustível"
+        },
+        {
+          "pt": "Viagem mais longa"
+        },
+        {
+          "pt": "Maior perigo"
+        },
+        {
+          "pt": "Menos atrasos"
+        }
+      ]
+    },
+    "SV-05": {
+      "promptPt": "Que benefício pode proporcionar uma condução suave?",
+      "options": [
+        {
+          "pt": "Tempos de viagem mais longos"
+        },
+        {
+          "pt": "Maior consumo de combustível"
+        },
+        {
+          "pt": "Redução do consumo de combustível em cerca de 15%"
+        },
+        {
+          "pt": "Aumento das emissões"
+        }
+      ]
+    },
+    "SV-06": {
+      "promptPt": "Onde se encontra o catalisador num veículo?",
+      "options": [
+        {
+          "pt": "Depósito de combustível"
+        },
+        {
+          "pt": "Filtro de ar"
+        },
+        {
+          "pt": "Sistema de refrigeração"
+        },
+        {
+          "pt": "Sistema de escape"
+        }
+      ]
+    },
+    "SV-07": {
+      "promptPt": "Deixar qual nível de fluido demasiado baixo pode causar um acidente?",
+      "options": [
+        {
+          "pt": "Anticongelante"
+        },
+        {
+          "pt": "Líquido dos travões"
+        },
+        {
+          "pt": "Água da bateria"
+        },
+        {
+          "pt": "Combustível"
+        }
+      ]
+    },
+    "SV-08": {
+      "promptPt": "Como pode reduzir o risco de arrombamento do veículo à noite?",
+      "options": [
+        {
+          "pt": "Estacionar numa zona escura"
+        },
+        {
+          "pt": "Deixar a direção destrancada"
+        },
+        {
+          "pt": "Estacionar numa zona bem iluminada"
+        },
+        {
+          "pt": "Estacionar numa estrada sossegada"
+        }
+      ]
+    },
+    "SV-09": {
+      "promptPt": "Quando deve usar as luzes de estacionamento ao estacionar à noite?",
+      "options": [
+        {
+          "pt": "Perto de uma paragem de autocarro"
+        },
+        {
+          "pt": "De frente para o trânsito em sentido contrário"
+        },
+        {
+          "pt": "Quando o limite de velocidade é superior a 30 mph"
+        },
+        {
+          "pt": "Em propriedade privada"
+        }
+      ]
+    },
+    "SV-10": {
+      "promptPt": "Quanto mais combustível se consome tipicamente a 70 mph em comparação com 50 mph?",
+      "options": [
+        {
+          "pt": "Cerca de 5%"
+        },
+        {
+          "pt": "Cerca de 15%"
+        },
+        {
+          "pt": "Cerca de 75%"
+        },
+        {
+          "pt": "Cerca de 100%"
+        }
+      ]
+    },
+    "SV-11": {
+      "promptPt": "Quem é responsável por garantir que as crianças usam cinto de segurança no seu carro?",
+      "options": [
+        {
+          "pt": "Os pais"
+        },
+        {
+          "pt": "O passageiro da frente"
+        },
+        {
+          "pt": "As crianças"
+        },
+        {
+          "pt": "O condutor"
+        }
+      ]
+    },
+    "SV-12": {
+      "promptPt": "Quando pode deixar o motor do veículo a trabalhar enquanto está estacionado?",
+      "options": [
+        {
+          "pt": "Menos de 5 minutos"
+        },
+        {
+          "pt": "Problemas de bateria"
+        },
+        {
+          "pt": "Numa zona de 20 mph"
+        },
+        {
+          "pt": "Nunca quando estiver sem vigilância"
+        }
+      ]
+    },
+    "SV-13": {
+      "promptPt": "O que a condução eficiente em combustível ajuda a alcançar?",
+      "options": [
+        {
+          "pt": "Mais emissões"
+        },
+        {
+          "pt": "Proteção ambiental e segurança"
+        },
+        {
+          "pt": "Danos no motor"
+        },
+        {
+          "pt": "Contas de combustível mais altas"
+        }
+      ]
+    },
+    "SV-14": {
+      "promptPt": "Qual é a forma mais segura de deixar objetos de valor no carro?",
+      "options": [
+        {
+          "pt": "Num saco visível"
+        },
+        {
+          "pt": "Perto de uma escola"
+        },
+        {
+          "pt": "Trancados e fora de vista"
+        },
+        {
+          "pt": "Perto de uma paragem de autocarro"
+        }
+      ]
+    },
+    "SV-15": {
+      "promptPt": "O que pode ser danificado ao rodar o volante com o veículo parado?",
+      "options": [
+        {
+          "pt": "Motor"
+        },
+        {
+          "pt": "Caixa de velocidades"
+        },
+        {
+          "pt": "Travões"
+        },
+        {
+          "pt": "Pneus"
+        }
+      ]
+    },
+    "SV-16": {
+      "promptPt": "Que documento deve retirar do veículo ao deixá-lo sem vigilância?",
+      "options": [
+        {
+          "pt": "Manual do proprietário"
+        },
+        {
+          "pt": "Registo de manutenção"
+        },
+        {
+          "pt": "Dados do concessionário"
+        },
+        {
+          "pt": "Documento de registo do veículo"
+        }
+      ]
+    },
+    "SV-17": {
+      "promptPt": "Qual é a principal função de um catalisador?",
+      "options": [
+        {
+          "pt": "Reduzir o consumo de combustível"
+        },
+        {
+          "pt": "Reduzir o risco de incêndio"
+        },
+        {
+          "pt": "Reduzir os gases de escape nocivos"
+        },
+        {
+          "pt": "Reduzir o desgaste do motor"
+        }
+      ]
+    },
+    "SV-18": {
+      "promptPt": "Como pode ajudar a impedir que o rádio do carro seja roubado?",
+      "options": [
+        {
+          "pt": "Estacionar no escuro"
+        },
+        {
+          "pt": "Deixá-lo ligado"
+        },
+        {
+          "pt": "Estacionar perto de um cruzamento"
+        },
+        {
+          "pt": "Usar um rádio com código de segurança"
+        }
+      ]
+    },
+    "SV-19": {
+      "promptPt": "Como é que a condução eficiente em combustível ajuda a proteger o ambiente?",
+      "options": [
+        {
+          "pt": "Mais carros"
+        },
+        {
+          "pt": "Contas de combustível mais altas"
+        },
+        {
+          "pt": "Aplicação da lei"
+        },
+        {
+          "pt": "Menores emissões de escape"
+        }
+      ]
+    },
+    "SV-20": {
+      "promptPt": "Como deve conduzir numa estrada com vários lombares?",
+      "options": [
+        {
+          "pt": "Acelerar entre os lombares"
+        },
+        {
+          "pt": "Manter a velocidade máxima"
+        },
+        {
+          "pt": "Conduzir lentamente só em horários escolares"
+        },
+        {
+          "pt": "Manter uma velocidade reduzida ao longo de todo o troço"
+        }
+      ]
+    }
+  },
+  "road-signs": {
+    "RS-07": {
+      "promptPt": "Um sinal circular com bordo vermelho e o número «30» significa:",
+      "options": [
+        {
+          "pt": "O limite máximo de velocidade é 30 mph"
+        },
+        {
+          "pt": "A velocidade mínima é 30 mph"
+        },
+        {
+          "pt": "A velocidade recomendada é 30 mph"
+        },
+        {
+          "pt": "A velocidade média é 30 mph"
+        }
+      ]
+    },
+    "RS-08": {
+      "promptPt": "Um sinal circular azul com uma seta branca a apontar para a esquerda significa:",
+      "options": [
+        {
+          "pt": "Virar apenas à esquerda à frente"
+        },
+        {
+          "pt": "Proibido virar à esquerda"
+        },
+        {
+          "pt": "Ceder a passagem à esquerda"
+        },
+        {
+          "pt": "Rua de sentido único para a direita"
+        }
+      ]
+    },
+    "RS-08A": {
+      "promptPt": "Um sinal circular azul com uma seta branca a apontar para a direita significa:",
+      "options": [
+        {
+          "pt": "Virar apenas à direita à frente"
+        },
+        {
+          "pt": "Proibido virar à direita"
+        },
+        {
+          "pt": "Ceder a passagem à direita"
+        },
+        {
+          "pt": "Rua de sentido único para a esquerda"
+        }
+      ]
+    },
+    "RS-09": {
+      "promptPt": "Conduz numa zona residencial e vê um sinal triangular de perigo com duas crianças. Para o que se deve preparar?",
+      "options": [
+        {
+          "pt": "Crianças podem aparecer ou atravessar de repente, sobretudo perto de escolas"
+        },
+        {
+          "pt": "Um parque infantil está fechado à frente"
+        },
+        {
+          "pt": "Crianças não são permitidas nesta zona"
+        },
+        {
+          "pt": "Apenas autocarros escolares podem usar esta estrada"
+        }
+      ]
+    },
+    "RS-10": {
+      "promptPt": "O que significa um sinal circular azul com bordo vermelho e um X vermelho?",
+      "options": [
+        {
+          "pt": "Proibido parar em qualquer altura"
+        },
+        {
+          "pt": "Proibido estacionar"
+        },
+        {
+          "pt": "Fim das restrições"
+        },
+        {
+          "pt": "Apenas paragem de autocarro"
+        }
+      ]
+    },
+    "RS-11": {
+      "promptPt": "Vê um sinal triangular de perigo com uma curva à esquerda. De que o alerta?",
+      "options": [
+        {
+          "pt": "Curva à esquerda à frente"
+        },
+        {
+          "pt": "Cruzamento à esquerda"
+        },
+        {
+          "pt": "Estrada estreita à esquerda"
+        },
+        {
+          "pt": "Proibido virar à esquerda"
+        }
+      ]
+    },
+    "RS-12": {
+      "promptPt": "Um sinal triangular com um comboio sem barreira alerta para:",
+      "options": [
+        {
+          "pt": "Passagem de nível sem barreira"
+        },
+        {
+          "pt": "Passagem de nível com barreira"
+        },
+        {
+          "pt": "Apenas linha de elétricos"
+        },
+        {
+          "pt": "Fim da zona ferroviária"
+        }
+      ]
+    },
+    "RS-13": {
+      "promptPt": "Um sinal com um carro e uma mota num círculo vermelho significa:",
+      "options": [
+        {
+          "pt": "Proibidos veículos a motor"
+        },
+        {
+          "pt": "Apenas carros"
+        },
+        {
+          "pt": "Apenas motas"
+        },
+        {
+          "pt": "Fim da restrição de velocidade"
+        }
+      ]
+    },
+    "RS-14": {
+      "promptPt": "Conduz numa estrada principal e vê um sinal triangular de perigo com o símbolo de uma rotunda. Para o que se deve preparar?",
+      "options": [
+        {
+          "pt": "Uma rotunda à frente onde terá de ceder a passagem ao trânsito que já circula nela"
+        },
+        {
+          "pt": "Apenas uma minirrotunda"
+        },
+        {
+          "pt": "Proibidas inversões de marcha"
+        },
+        {
+          "pt": "Sistema de sentido único à frente"
+        }
+      ]
+    },
+    "RS-15": {
+      "promptPt": "Um sinal circular azul com um símbolo branco de bicicleta significa:",
+      "options": [
+        {
+          "pt": "Via apenas para ciclistas"
+        },
+        {
+          "pt": "Proibido ciclar"
+        },
+        {
+          "pt": "Via partilhada com carros"
+        },
+        {
+          "pt": "Apenas estacionamento de bicicletas"
+        }
+      ]
+    },
+    "RS-16": {
+      "promptPt": "Um sinal retangular com uma linha diagonal vermelha sobre um símbolo preto de câmara significa:",
+      "options": [
+        {
+          "pt": "Fim da zona de radares"
+        },
+        {
+          "pt": "Início dos radares"
+        },
+        {
+          "pt": "Proibida a fotografia"
+        },
+        {
+          "pt": "Semáforos à frente"
+        }
+      ]
+    },
+    "RS-17": {
+      "promptPt": "Conduz numa estrada de montanha e vê um sinal triangular de perigo com queda de pedras. De que perigo deve estar ciente?",
+      "options": [
+        {
+          "pt": "Pedras podem cair ou ter caído na estrada à frente"
+        },
+        {
+          "pt": "Há obras na estrada à frente"
+        },
+        {
+          "pt": "Apenas gravilha solta no pavimento"
+        },
+        {
+          "pt": "O pavimento está escorregadio"
+        }
+      ]
+    },
+    "RS-18": {
+      "promptPt": "Um sinal retangular com um «H» branco sobre fundo azul significa normalmente:",
+      "options": [
+        {
+          "pt": "Hospital nas proximidades"
+        },
+        {
+          "pt": "Zona de hotéis"
+        },
+        {
+          "pt": "Aterragem de helicóptero"
+        },
+        {
+          "pt": "Autoestrada"
+        }
+      ]
+    },
+    "RS-20": {
+      "promptPt": "Um sinal retangular azul com o símbolo de um carro numa via suspensa indica normalmente:",
+      "options": [
+        {
+          "pt": "Via disponível para o trânsito"
+        },
+        {
+          "pt": "Via encerrada"
+        },
+        {
+          "pt": "Apenas via de autocarros"
+        },
+        {
+          "pt": "Berma"
+        }
+      ]
+    },
+    "RS-21": {
+      "promptPt": "Numa autoestrada, um «X» vermelho num sinal suspenso acima da sua via significa:",
+      "options": [
+        {
+          "pt": "Não deve usar esta via"
+        },
+        {
+          "pt": "Tem prioridade nesta via"
+        },
+        {
+          "pt": "Deve conduzir mais depressa"
+        },
+        {
+          "pt": "Apenas autocarros podem usar esta via"
+        }
+      ]
+    },
+    "RS-26": {
+      "promptPt": "O que significa um sinal circular vermelho com o símbolo de inversão de marcha riscado?",
+      "options": [
+        {
+          "pt": "Proibida a inversão de marcha"
+        },
+        {
+          "pt": "Proibido virar à direita"
+        },
+        {
+          "pt": "Fim do limite de velocidade"
+        },
+        {
+          "pt": "Trânsito em ambos os sentidos à frente"
+        }
+      ]
+    }
+  },
+  "vehicle-handling": {
+    "VH-09": {
+      "promptPt": "Por vezes vê linhas amarelas transversais curtas na faixa de rodagem à abordagem de um perigo. Para que servem principalmente?",
+      "options": [
+        {
+          "pt": "Para indicar um intervalo seguro entre veículos"
+        },
+        {
+          "pt": "Para manter uma zona livre"
+        },
+        {
+          "pt": "Para o tornar mais consciente da sua velocidade"
+        },
+        {
+          "pt": "Para o alertar para mudar de direção"
+        }
+      ]
+    },
+    "VH-10": {
+      "promptPt": "Antes de conduzir com nevoeiro, o que deve verificar primeiro?",
+      "options": [
+        {
+          "pt": "O nível de anticongelante do radiador"
+        },
+        {
+          "pt": "Se tem um triângulo de sinalização no carro"
+        },
+        {
+          "pt": "Se os vidros estão limpos e todas as luzes funcionam"
+        },
+        {
+          "pt": "Se o telemóvel está carregado"
+        }
+      ]
+    },
+    "VH-11": {
+      "promptPt": "Se tiver de estacionar na estrada com nevoeiro, que luzes deve deixar ligadas?",
+      "options": [
+        {
+          "pt": "Luzes de estacionamento/presença"
+        },
+        {
+          "pt": "Médios e luzes de nevoeiro"
+        },
+        {
+          "pt": "Apenas médios"
+        },
+        {
+          "pt": "Máximos"
+        }
+      ]
+    },
+    "VH-12": {
+      "promptPt": "Conduz por uma série de lombares. Qual é a abordagem mais segura?",
+      "options": [
+        {
+          "pt": "Travar a fundo em cada lombar"
+        },
+        {
+          "pt": "Acelerar entre cada lombar"
+        },
+        {
+          "pt": "Manter uma velocidade reduzida e constante em todo o troço"
+        },
+        {
+          "pt": "Usar o cruise control"
+        }
+      ]
+    },
+    "VH-13": {
+      "promptPt": "Numa autoestrada com vento, a que deve estar atento ao ultrapassar um veículo alto?",
+      "options": [
+        {
+          "pt": "Aumentar a velocidade"
+        },
+        {
+          "pt": "Uma rajada súbita ao passar"
+        },
+        {
+          "pt": "Circular a par e muito perto"
+        },
+        {
+          "pt": "Esperar condições normais"
+        }
+      ]
+    },
+    "VH-14": {
+      "promptPt": "Ao descer, o que o ajuda a controlar a velocidade sem sobreaquecer os travões?",
+      "options": [
+        {
+          "pt": "Descer em ponto morto"
+        },
+        {
+          "pt": "Usar uma mudança mais baixa (travagem pelo motor)"
+        },
+        {
+          "pt": "Manter a embraiagem premida"
+        },
+        {
+          "pt": "Travar a fundo continuamente"
+        }
+      ]
+    },
+    "VH-15": {
+      "promptPt": "Tem de viajar com nevoeiro. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Seguir de perto as luzes traseiras"
+        },
+        {
+          "pt": "Evitar os médios"
+        },
+        {
+          "pt": "Reservar mais tempo para a viagem"
+        },
+        {
+          "pt": "Manter apenas um intervalo de 2 segundos"
+        }
+      ]
+    },
+    "VH-16": {
+      "promptPt": "Quando pode parar dentro de uma caixa amarela (box junction)?",
+      "options": [
+        {
+          "pt": "Quando está em fila a seguir em frente"
+        },
+        {
+          "pt": "Ao aproximar-se de uma passagem"
+        },
+        {
+          "pt": "Ao aproximar-se de uma zebra"
+        },
+        {
+          "pt": "Ao aguardar para virar à direita e o trânsito em sentido contrário bloqueia a saída"
+        }
+      ]
+    }
+  }
+}

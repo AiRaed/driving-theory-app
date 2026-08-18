@@ -1,0 +1,964 @@
+{
+  "RS-2013": [
+    {
+      "term": "sounding of horns",
+      "translations": {
+        "en": "Using the vehicle horn to make a warning sound.",
+        "ar": "استخدام بوق المركبة لإصدار صوت تحذير.",
+        "ur": "گاڑی کا ہارن بجا کر وارننگ کی آواز نکالنا۔",
+        "ro": "Folosirea claxonului vehiculului pentru a emite un semnal sonor de avertizare."
+      }
+    }
+  ],
+  "RS-2015": [
+    {
+      "term": "road narrowing",
+      "translations": {
+        "en": "The carriageway becomes narrower, so there is less space for vehicles.",
+        "ar": "يصبح عرض الطريق أقل، فيتوفر حيز أقل للمركبات.",
+        "ur": "سڑک تنگ ہو جاتی ہے، اس لیے گاڑیوں کے لیے جگہ کم رہتی ہے۔",
+        "ro": "Carosabilul se îngustează, deci rămâne mai puțin spațiu pentru vehicule."
+      }
+    },
+    {
+      "term": "Overtake",
+      "translations": {
+        "en": "To pass a slower vehicle by moving ahead of it.",
+        "ar": "تجاوز مركبة أبطأ بالمرور أمامها.",
+        "ur": "آہستہ گاڑی سے آگے نکل کر اسے پیچھے چھوڑنا۔",
+        "ro": "A depăși un vehicul mai lent trecând înaintea lui."
+      }
+    }
+  ],
+  "RS-2016": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    },
+    {
+      "term": "Dual carriageway",
+      "translations": {
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      }
+    }
+  ],
+  "RS-2017": [
+    {
+      "term": "give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    },
+    {
+      "term": "Overtaking",
+      "translations": {
+        "en": "Passing another vehicle by moving ahead of it.",
+        "ar": "تجاوز مركبة أخرى بالمرور أمامها.",
+        "ur": "کسی گاڑی سے آگے نکل کر اسے پیچھے چھوڑنا۔",
+        "ro": "Depășirea altui vehicul trecând înaintea lui."
+      }
+    }
+  ],
+  "RS-2018": [],
+  "RS-2020": [
+    {
+      "term": "Speed humps",
+      "translations": {
+        "en": "Raised sections across the road designed to slow traffic down.",
+        "ar": "أجزاء مرتفعة عبر الطريق مصممة لإبطاء حركة المرور.",
+        "ur": "سڑک پر ابھری ہوئی حصے جو ٹریفک کی رفتار کم کرنے کے لیے بنائے جاتے ہیں۔",
+        "ro": "Porțiuni ridicate pe carosabil menite să încetinească traficul."
+      }
+    }
+  ],
+  "RS-2022": [
+    {
+      "term": "motorcycle restriction",
+      "translations": {
+        "en": "A rule that limits or bans motorcycles on that stretch of road.",
+        "ar": "قاعدة تقيّد أو تمنع الدراجات النارية على ذلك الجزء من الطريق.",
+        "ur": "ایسا قاعدہ جو اس سڑک پر موٹر سائیکلوں کو محدود یا منع کرتا ہے۔",
+        "ro": "Regulă care limitează sau interzice motocicletele pe acel tronson de drum."
+      }
+    }
+  ],
+  "RS-2023": [
+    {
+      "term": "lorry",
+      "translations": {
+        "en": "A large goods vehicle used to carry freight (UK term for a truck).",
+        "ar": "مركبة بضائع كبيرة لنقل الحمولة (مصطلح بريطاني لـ truck).",
+        "ur": "مال بردار بڑی گاڑی (برطانوی اصطلاح؛ ٹرک)۔",
+        "ro": "Vehicul mare de marfă (termen britanic pentru camion)."
+      }
+    },
+    {
+      "term": "goods vehicles",
+      "translations": {
+        "en": "Vehicles built mainly to carry cargo rather than passengers.",
+        "ar": "مركبات مخصصة أساساً لنقل البضائع لا الركاب.",
+        "ur": "ایسی گاڑیاں جو بنیادی طور پر مسافروں کے بجائے سامان لے جاتی ہیں۔",
+        "ro": "Vehicule destinate în principal transportului de marfă, nu de pasageri."
+      }
+    }
+  ],
+  "RS-2024": [
+    {
+      "term": "U-turns",
+      "translations": {
+        "en": "Turning the vehicle around in a U-shape to go back the way you came.",
+        "ar": "إدارة المركبة على شكل حرف U للرجوع في الاتجاه الذي أتيت منه.",
+        "ur": "گاڑی کو یو شکل میں موڑ کر واپس اُسی راستے پر جانا۔",
+        "ro": "Întoarcerea vehiculului în formă de U pentru a merge înapoi pe unde ați venit."
+      }
+    },
+    {
+      "term": "Two-way traffic",
+      "translations": {
+        "en": "Traffic flowing in both directions on the same road.",
+        "ar": "حركة مرور تسير في الاتجاهين على الطريق نفسه.",
+        "ur": "ایک ہی سڑک پر دونوں سمتوں میں چلنے والی ٹریفک۔",
+        "ro": "Circulație pe ambele sensuri pe același drum."
+      }
+    }
+  ],
+  "RS-2025": [
+    {
+      "term": "hatched area",
+      "translations": {
+        "en": "A painted zone with diagonal stripes that separates traffic streams.",
+        "ar": "منطقة مرسومة بخطوط مائلة تفصل مسارات المرور.",
+        "ur": "ترچھی پٹیوں والا پینٹ کیا ہوا علاقہ جو ٹریفک کی دھاروں کو الگ کرتا ہے۔",
+        "ro": "Zonă marcată cu dungi diagonale care desparte fluxurile de trafic."
+      }
+    },
+    {
+      "term": "broken white lines",
+      "translations": {
+        "en": "Dashed white road markings, often showing a boundary you may cross when safe.",
+        "ar": "علامات طريق بيضاء متقطعة، وغالباً تعني حداً يمكن عبوره عند الأمان.",
+        "ur": "سفید ٹوٹی ہوئی سڑک کی لائنیں؛ اکثر ایسی حد جو محفوظ ہونے پر عبور کی جا سکتی ہے۔",
+        "ro": "Marcaje albe întrerupte pe carosabil; deseori o limită pe care o puteți trece dacă e sigur."
+      }
+    }
+  ],
+  "RS-2026": [
+    {
+      "term": "U-turn",
+      "translations": {
+        "en": "Turning the vehicle around in a U-shape to go back the way you came.",
+        "ar": "إدارة المركبة على شكل حرف U للرجوع في الاتجاه الذي أتيت منه.",
+        "ur": "گاڑی کو یو شکل میں موڑ کر واپس اُسی راستے پر جانا۔",
+        "ro": "Întoarcerea vehiculului în formă de U pentru a merge înapoi pe unde ați venit."
+      }
+    },
+    {
+      "term": "One-way road",
+      "translations": {
+        "en": "A road where traffic is allowed to travel in only one direction.",
+        "ar": "طريق يُسمح فيه لحركة المرور بالسير في اتجاه واحد فقط.",
+        "ur": "ایسی سڑک جہاں ٹریفک صرف ایک سمت میں چل سکتی ہے۔",
+        "ro": "Drum pe care circulația este permisă într-un singur sens."
+      }
+    }
+  ],
+  "RS-2027": [
+    {
+      "term": "pedestrian crossing",
+      "translations": {
+        "en": "A marked place on the road where people on foot can cross safely.",
+        "ar": "مكان محدد على الطريق يعبر منه المشاة بأمان.",
+        "ur": "سڑک پر نشان زدہ جگہ جہاں پیدل چلنے والے محفوظ طریقے سے عبور کرتے ہیں۔",
+        "ro": "Loc marcat pe carosabil unde pietonii pot traversa în siguranță."
+      }
+    }
+  ],
+  "RS-2028": [
+    {
+      "term": "Speed camera",
+      "translations": {
+        "en": "A camera that records vehicles breaking the speed limit.",
+        "ar": "كاميرا تسجّل المركبات التي تتجاوز حد السرعة.",
+        "ur": "کیمرہ جو رفتار کی حد توڑنے والی گاڑیاں ریکارڈ کرتا ہے۔",
+        "ro": "Cameră care înregistrează vehiculele care depășesc limita de viteză."
+      }
+    },
+    {
+      "term": "Average speed check zone",
+      "translations": {
+        "en": "A stretch where cameras measure your average speed between two points.",
+        "ar": "مقطع تُقاس فيه سرعتك المتوسطة بين نقطتين بكاميرات.",
+        "ur": "ایسا علاقہ جہاں دو مقامات کے درمیان آپ کی اوسط رفتار کیمرے ناپتے ہیں۔",
+        "ro": "Tronson unde camerele măsoară viteza medie între două puncte."
+      }
+    }
+  ],
+  "RS-2029": [
+    {
+      "term": "Cycle route",
+      "translations": {
+        "en": "A path or road marked for bicycle travel.",
+        "ar": "مسار أو طريق مخصص لركوب الدراجات.",
+        "ur": "سائیکل چلانے کے لیے نشان زدہ راستہ یا سڑک۔",
+        "ro": "Traseu sau drum marcat pentru circulația bicicletelor."
+      }
+    },
+    {
+      "term": "cycle lane",
+      "translations": {
+        "en": "A part of the road reserved for cyclists, often marked with a bicycle symbol.",
+        "ar": "جزء من الطريق مخصص لراكبي الدراجات، وغالباً عليه رمز دراجة.",
+        "ur": "سڑک کا وہ حصہ جو سائیکل سواروں کے لیے مخصوص ہو، اکثر سائیکل کے نشان سے۔",
+        "ro": "Parte a drumului rezervată cicliștilor, deseori marcată cu simbolul bicicletei."
+      }
+    }
+  ],
+  "RS-2030": [],
+  "RS-2031": [
+    {
+      "term": "emerge",
+      "translations": {
+        "en": "Come out onto the main road from a side road or junction.",
+        "ar": "الخروج إلى الطريق الرئيسي من طريق جانبي أو تقاطع.",
+        "ur": "سائیڈ روڈ یا جنکشن سے مرکزی سڑک پر نکلنا۔",
+        "ro": "A ieși pe drumul principal dintr-o stradă laterală sau o intersecție."
+      }
+    },
+    {
+      "term": "junction",
+      "translations": {
+        "en": "A place where two or more roads meet.",
+        "ar": "مكان تلتقي فيه طريقان أو أكثر.",
+        "ur": "وہ جگہ جہاں دو یا زیادہ سڑکیں ملتی ہیں۔",
+        "ro": "Locul unde se întâlnesc două sau mai multe drumuri."
+      }
+    }
+  ],
+  "RS-2032": [
+    {
+      "term": "Two-way traffic",
+      "translations": {
+        "en": "Traffic flowing in both directions on the same road.",
+        "ar": "حركة مرور تسير في الاتجاهين على الطريق نفسه.",
+        "ur": "ایک ہی سڑک پر دونوں سمتوں میں چلنے والی ٹریفک۔",
+        "ro": "Circulație pe ambele sensuri pe același drum."
+      }
+    },
+    {
+      "term": "one-way road",
+      "translations": {
+        "en": "A road where traffic is allowed to travel in only one direction.",
+        "ar": "طريق يُسمح فيه لحركة المرور بالسير في اتجاه واحد فقط.",
+        "ur": "ایسی سڑک جہاں ٹریفک صرف ایک سمت میں چل سکتی ہے۔",
+        "ro": "Drum pe care circulația este permisă într-un singur sens."
+      }
+    }
+  ],
+  "RS-2033": [
+    {
+      "term": "roadworks",
+      "translations": {
+        "en": "Temporary construction or repairs taking place on the road.",
+        "ar": "أعمال بناء أو إصلاح مؤقتة تجري على الطريق.",
+        "ur": "سڑک پر عارضی تعمیر یا مرمت کا کام۔",
+        "ro": "Lucrări temporare de construcție sau reparații pe drum."
+      }
+    },
+    {
+      "term": "single carriageways",
+      "translations": {
+        "en": "A road without a central reservation separating opposite directions of traffic.",
+        "ar": "طريق بلا حاجز وسط يفصل اتجاهي السير المتعاكسين.",
+        "ur": "ایسی سڑک جس میں مخالف سمتوں کی ٹریفک الگ کرنے والی درمیانی ریزرویشن نہ ہو۔",
+        "ro": "Drum fără rezervație centrală care să separe sensurile opuse de circulație."
+      }
+    },
+    {
+      "term": "dual carriageways",
+      "translations": {
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      }
+    }
+  ],
+  "RS-2034": [
+    {
+      "term": "Shared route",
+      "translations": {
+        "en": "A path that pedestrians and cyclists may both use.",
+        "ar": "مسار يمكن للمشاة وراكبي الدراجات استخدامه معاً.",
+        "ur": "ایسا راستہ جو پیدل چلنے والے اور سائیکل سوار دونوں استعمال کر سکتے ہیں۔",
+        "ro": "Traseu pe care îl pot folosi atât pietonii, cât și cicliștii."
+      }
+    },
+    {
+      "term": "cycle lane",
+      "translations": {
+        "en": "A part of the road reserved for cyclists, often marked with a bicycle symbol.",
+        "ar": "جزء من الطريق مخصص لراكبي الدراجات، وغالباً عليه رمز دراجة.",
+        "ur": "سڑک کا وہ حصہ جو سائیکل سواروں کے لیے مخصوص ہو، اکثر سائیکل کے نشان سے۔",
+        "ro": "Parte a drumului rezervată cicliștilor, deseori marcată cu simbolul bicicletei."
+      }
+    }
+  ],
+  "RS-2035": [
+    {
+      "term": "priority",
+      "translations": {
+        "en": "The right to go first when roads meet or when rules give you precedence.",
+        "ar": "حق المرور أولاً عندما تلتقي الطرق أو عندما تمنحك القواعد الأسبقية.",
+        "ur": "جب سڑکیں ملیں یا قواعد فوقیت دیں تو پہلے جانے کا حق۔",
+        "ro": "Dreptul de a trece primul când drumurile se întâlnesc sau regulile vă acordă prioritate."
+      }
+    }
+  ],
+  "RS-2036": [
+    {
+      "term": "stationary traffic",
+      "translations": {
+        "en": "Vehicles that have stopped and are not moving, often in a queue.",
+        "ar": "مركبات متوقفة وغير متحركة، غالباً في طابور.",
+        "ur": "گاڑیاں جو رک گئی ہوں اور حرکت میں نہ ہوں، اکثر قطار میں۔",
+        "ro": "Vehicule oprite, care nu se mișcă, adesea într-o coloană."
+      }
+    },
+    {
+      "term": "Roadworks",
+      "translations": {
+        "en": "Temporary construction or repairs taking place on the road.",
+        "ar": "أعمال بناء أو إصلاح مؤقتة تجري على الطريق.",
+        "ur": "سڑک پر عارضی تعمیر یا مرمت کا کام۔",
+        "ro": "Lucrări temporare de construcție sau reparații pe drum."
+      }
+    }
+  ],
+  "RS-2037": [
+    {
+      "term": "tonnes",
+      "translations": {
+        "en": "A metric unit of weight used on UK restriction signs for heavy vehicles.",
+        "ar": "وحدة وزن مترية تُستخدم على لافتات القيود للمركبات الثقيلة في المملكة المتحدة.",
+        "ur": "وزنی میٹرک اکائی جو برطانیہ میں بھاری گاڑیوں کی پابندی کے نشانوں پر آتی ہے۔",
+        "ro": "Unitate metrică de greutate folosită pe indicatoarele de restricție pentru vehicule grele."
+      }
+    }
+  ],
+  "RS-2038": [
+    {
+      "term": "Hazardous materials",
+      "translations": {
+        "en": "Dangerous substances such as chemicals or fuel that need special care in transport.",
+        "ar": "مواد خطرة مثل المواد الكيميائية أو الوقود تحتاج عناية خاصة أثناء النقل.",
+        "ur": "خطرناک مادے جیسے کیمیکلز یا ایندھن جن کی نقل و حمل میں خاص احتیاط چاہیے۔",
+        "ro": "Substanțe periculoase, cum ar fi chimicale sau combustibil, care necesită transport special."
+      }
+    },
+    {
+      "term": "motorway services",
+      "translations": {
+        "en": "Rest areas on a motorway with fuel, food, and toilets.",
+        "ar": "مناطق استراحة على الطريق السريع فيها وقود وطعام ومراحيض.",
+        "ur": "موٹروے پر آرام گاہیں جہاں ایندھن، کھانا اور بیت الخلاء ہوں۔",
+        "ro": "Zone de odihnă pe autostradă cu combustibil, mâncare și toalete."
+      }
+    }
+  ],
+  "RS-2039": [
+    {
+      "term": "oncoming traffic",
+      "translations": {
+        "en": "Vehicles coming towards you from the opposite direction.",
+        "ar": "مركبات قادمة نحوك من الاتجاه المعاكس.",
+        "ur": "مخالف سمت سے آپ کی طرف آنے والی گاڑیاں۔",
+        "ro": "Vehicule care vin spre dumneavoastră din sens opus."
+      }
+    },
+    {
+      "term": "narrowing",
+      "translations": {
+        "en": "The road becoming less wide ahead.",
+        "ar": "ضيق عرض الطريق أمامك.",
+        "ur": "آگے سڑک کا تنگ ہو جانا۔",
+        "ro": "Îngustarea drumului în față."
+      }
+    }
+  ],
+  "RS-2040": [
+    {
+      "term": "Tourist attractions",
+      "translations": {
+        "en": "Places of interest for visitors, such as landmarks or museums.",
+        "ar": "أماكن تهم الزوار مثل المعالم أو المتاحف.",
+        "ur": "سیاحوں کے لیے دلچسپی کی جگہیں، جیسے تاریخی مقامات یا عجائب گھر۔",
+        "ro": "Locuri de interes pentru vizitatori, cum ar fi obiective sau muzee."
+      }
+    },
+    {
+      "term": "Local diversion route",
+      "translations": {
+        "en": "A temporary alternative path around a closed or blocked road.",
+        "ar": "مسار بديل مؤقت حول طريق مغلق أو مسدود.",
+        "ur": "بند یا رکاوٹ والی سڑک کے گرد عارضی متبادل راستہ۔",
+        "ro": "Traseu alternativ temporar în jurul unui drum închis sau blocat."
+      }
+    }
+  ],
+  "RS-2041": [
+    {
+      "term": "steep downhill",
+      "translations": {
+        "en": "A sharp slope going downwards where speed can increase quickly.",
+        "ar": "منحدر حاد نحو الأسفل حيث قد تزداد السرعة بسرعة.",
+        "ur": "تیز ڈھلوان نیچے کی طرف جہاں رفتار تیزی سے بڑھ سکتی ہے۔",
+        "ro": "Pantă abruptă în jos unde viteza poate crește rapid."
+      }
+    },
+    {
+      "term": "uphill climb",
+      "translations": {
+        "en": "A section of road going up a slope.",
+        "ar": "جزء من الطريق يصعد على منحدر.",
+        "ur": "سڑک کا وہ حصہ جو ڈھلوان پر اوپر جاتا ہے۔",
+        "ro": "Porțiune de drum care urcă pe o pantă."
+      }
+    }
+  ],
+  "RS-2042": [
+    {
+      "term": "metres",
+      "translations": {
+        "en": "A metric unit of length used on UK height and width restriction signs.",
+        "ar": "وحدة طول مترية تُستخدم على لافتات قيد الارتفاع والعرض في المملكة المتحدة.",
+        "ur": "لمبائی کی میٹرک اکائی جو برطانیہ میں اونچائی/چوڑائی کی پابندی کے نشانوں پر آتی ہے۔",
+        "ro": "Unitate metrică de lungime folosită pe indicatoarele de restricție de înălțime și lățime."
+      }
+    }
+  ],
+  "RS-2043": [],
+  "RS-2044": [
+    {
+      "term": "humpback bridge",
+      "translations": {
+        "en": "A bridge with a sharp rise in the middle that can hide traffic beyond it.",
+        "ar": "جسر يرتفع بحدة في الوسط وقد يحجب رؤية المرور خلفه.",
+        "ur": "ایسا پل جس کے بیچ میں تیز ابھار ہو اور آگے کی ٹریفک چھپ سکتی ہے۔",
+        "ro": "Pod cu o ridicare abruptă la mijloc care poate ascunde traficul dincolo de el."
+      }
+    }
+  ],
+  "RS-2045": [],
+  "RS-2047": [
+    {
+      "term": "lorries",
+      "translations": {
+        "en": "Large goods vehicles used to carry freight (UK term for trucks).",
+        "ar": "مركبات بضائع كبيرة لنقل الحمولة (مصطلح بريطاني لـ trucks).",
+        "ur": "مال بردار بڑی گاڑیاں (برطانوی اصطلاح؛ ٹرک)۔",
+        "ro": "Vehicule mari de marfă (termen britanic pentru camioane)."
+      }
+    },
+    {
+      "term": "metres",
+      "translations": {
+        "en": "A metric unit of length used on UK height and width restriction signs.",
+        "ar": "وحدة طول مترية تُستخدم على لافتات قيد الارتفاع والعرض في المملكة المتحدة.",
+        "ur": "لمبائی کی میٹرک اکائی جو برطانیہ میں اونچائی/چوڑائی کی پابندی کے نشانوں پر آتی ہے۔",
+        "ro": "Unitate metrică de lungime folosită pe indicatoarele de restricție de înălțime și lățime."
+      }
+    }
+  ],
+  "RS-2048": [
+    {
+      "term": "Bus lane",
+      "translations": {
+        "en": "A lane reserved mainly for buses at certain times, marked on the road.",
+        "ar": "مسار مخصص أساساً للحافلات في أوقات معينة ومُعلَّم على الطريق.",
+        "ur": "لین جو خاص اوقات میں بنیادی طور پر بسوں کے لیے مخصوص ہوتی ہے، سڑک پر نشان زد۔",
+        "ro": "Bandă rezervată în principal autobuzelor la anumite ore, marcată pe carosabil."
+      }
+    }
+  ],
+  "RS-2049": [
+    {
+      "term": "low-flying aircraft",
+      "translations": {
+        "en": "Planes flying near the ground, often near an airport approach.",
+        "ar": "طائرات تحلق قريباً من الأرض، غالباً قرب مسار الاقتراب من المطار.",
+        "ur": "زمین کے قریب اڑنے والے طیارے، اکثر ایئرپورٹ اپروچ کے پاس۔",
+        "ro": "Avioane care zboară aproape de sol, deseori lângă apropierea unui aeroport."
+      }
+    },
+    {
+      "term": "Restricted airspace",
+      "translations": {
+        "en": "Air above an area where flying is limited or controlled for safety.",
+        "ar": "فضاء جوي فوق منطقة يكون الطيران فيها محدوداً أو خاضعاً للرقابة للسلامة.",
+        "ur": "ہوائی علاقہ جہاں پرواز محدود یا کنٹرول ہوتی ہے تاکہ حفاظت رہے۔",
+        "ro": "Spațiu aerian deasupra unei zone unde zborul este limitat sau controlat pentru siguranță."
+      }
+    }
+  ],
+  "RS-2050": [
+    {
+      "term": "carriageway",
+      "translations": {
+        "en": "The part of the road used by vehicles, not the pavement or verge.",
+        "ar": "جزء الطريق الذي تستخدمه المركبات، وليس الرصيف أو جانب الطريق.",
+        "ur": "سڑک کا وہ حصہ جو گاڑیوں کے لیے ہو، فٹ پاتھ یا کنارہ نہیں۔",
+        "ro": "Partea drumului folosită de vehicule, nu trotuarul sau acostamentul."
+      }
+    },
+    {
+      "term": "Cycle lane",
+      "translations": {
+        "en": "A part of the road reserved for cyclists, often marked with a bicycle symbol.",
+        "ar": "جزء من الطريق مخصص لراكبي الدراجات، وغالباً عليه رمز دراجة.",
+        "ur": "سڑک کا وہ حصہ جو سائیکل سواروں کے لیے مخصوص ہو، اکثر سائیکل کے نشان سے۔",
+        "ro": "Parte a drumului rezervată cicliștilor, deseori marcată cu simbolul bicicletei."
+      }
+    }
+  ],
+  "RS-6001": [
+    {
+      "term": "Mandatory instruction",
+      "translations": {
+        "en": "An order you must follow, not just advice.",
+        "ar": "أمر يجب اتباعه، وليس مجرد نصيحة.",
+        "ur": "ایسا حکم جس کی پیروی ضروری ہو، صرف مشورہ نہیں۔",
+        "ro": "O dispoziție pe care trebuie să o urmați, nu doar un sfat."
+      }
+    },
+    {
+      "term": "hazard",
+      "translations": {
+        "en": "Something on or near the road that could be dangerous.",
+        "ar": "شيء على الطريق أو بقربه قد يكون خطراً.",
+        "ur": "سڑک پر یا قریب کوئی چیز جو خطرناک ہو سکتی ہے۔",
+        "ro": "Ceva pe drum sau lângă el care ar putea fi periculos."
+      }
+    }
+  ],
+  "RS-6002": [
+    {
+      "term": "prohibition",
+      "translations": {
+        "en": "A rule that forbids a particular action or type of vehicle.",
+        "ar": "قاعدة تمنع فعلاً معيناً أو نوعاً من المركبات.",
+        "ur": "ایسا قاعدہ جو کوئی خاص عمل یا گاڑی کی قسم منع کرے۔",
+        "ro": "Regulă care interzice o acțiune sau un tip de vehicul."
+      }
+    },
+    {
+      "term": "mandatory instruction",
+      "translations": {
+        "en": "An order you must follow, not just advice.",
+        "ar": "أمر يجب اتباعه، وليس مجرد نصيحة.",
+        "ur": "ایسا حکم جس کی پیروی ضروری ہو، صرف مشورہ نہیں۔",
+        "ro": "O dispoziție pe care trebuie să o urmați, nu doar un sfat."
+      }
+    }
+  ],
+  "RS-6003": [
+    {
+      "term": "restriction",
+      "translations": {
+        "en": "A limit on what you may do, such as speed, access, or vehicle type.",
+        "ar": "حدّ لما يُسمح لك بفعله، مثل السرعة أو الدخول أو نوع المركبة.",
+        "ur": "آپ کیا کر سکتے ہیں اس کی حد، جیسے رفتار، رسائی یا گاڑی کی قسم۔",
+        "ro": "Limitare a ceea ce puteți face, cum ar fi viteza, accesul sau tipul de vehicul."
+      }
+    },
+    {
+      "term": "prohibition",
+      "translations": {
+        "en": "A rule that forbids a particular action or type of vehicle.",
+        "ar": "قاعدة تمنع فعلاً معيناً أو نوعاً من المركبات.",
+        "ur": "ایسا قاعدہ جو کوئی خاص عمل یا گاڑی کی قسم منع کرے۔",
+        "ro": "Regulă care interzice o acțiune sau un tip de vehicul."
+      }
+    }
+  ],
+  "RS-6004": [
+    {
+      "term": "Mandatory rules",
+      "translations": {
+        "en": "Rules you are legally required to obey.",
+        "ar": "قواعد يُلزمك القانون باتباعها.",
+        "ur": "قواعد جن کی قانونی طور پر پیروی ضروری ہو۔",
+        "ro": "Reguli pe care sunteți obligați legal să le respectați."
+      }
+    }
+  ],
+  "RS-6005": [
+    {
+      "term": "Give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    }
+  ],
+  "RS-6006": [
+    {
+      "term": "zigzag lines",
+      "translations": {
+        "en": "White zig-zag road markings painted on the carriageway near a crossing.",
+        "ar": "خطوط طريق بيضاء متعرجة مرسومة على سطح الطريق قرب معبر.",
+        "ur": "کراسنگ کے قریب سڑک پر سفید زیگ زیگ لائنیں۔",
+        "ro": "Marcaje albe în zigzag pe carosabil, lângă o trecere."
+      }
+    },
+    {
+      "term": "pedestrian crossing",
+      "translations": {
+        "en": "A marked place on the road where people on foot can cross safely.",
+        "ar": "مكان محدد على الطريق يعبر منه المشاة بأمان.",
+        "ur": "سڑک پر نشان زدہ جگہ جہاں پیدل چلنے والے محفوظ طریقے سے عبور کرتے ہیں۔",
+        "ro": "Loc marcat pe carosabil unde pietonii pot traversa în siguranță."
+      }
+    }
+  ],
+  "RS-6007": [
+    {
+      "term": "Give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    },
+    {
+      "term": "major road",
+      "translations": {
+        "en": "The more important road at a junction, which usually has priority.",
+        "ar": "الطريق الأهم عند التقاطع، وغالباً تكون له الأولوية.",
+        "ur": "جنکشن پر زیادہ اہم سڑک، جسے عام طور پر فوقیت حاصل ہوتی ہے۔",
+        "ro": "Drumul mai important la o intersecție, care are de obicei prioritate."
+      }
+    }
+  ],
+  "RS-6008": [
+    {
+      "term": "kerb",
+      "translations": {
+        "en": "The raised edge between the road and the pavement (UK spelling).",
+        "ar": "الحافة المرتفعة بين الطريق والرصيف (التهجئة البريطانية).",
+        "ur": "سڑک اور فٹ پاتھ کے درمیان اٹھی ہوئی کنارہ (برطانوی ہجے)۔",
+        "ro": "Marginea ridicată dintre carosabil și trotuar (ortografie britanică: kerb)."
+      }
+    },
+    {
+      "term": "No waiting",
+      "translations": {
+        "en": "A parking control phrase meaning waiting (staying stopped) is limited or banned.",
+        "ar": "عبارة لتنظيم الوقوف تعني أن الانتظار (التوقف المطوّل) محدود أو ممنوع.",
+        "ur": "پارکنگ کنٹرول کی اصطلاح؛ انتظار (رکے رہنا) محدود یا ممنوع ہو سکتا ہے۔",
+        "ro": "Expresie de control al staționării: așteptarea (oprirea prelungită) este limitată sau interzisă."
+      }
+    }
+  ],
+  "RS-6009": [
+    {
+      "term": "kerb",
+      "translations": {
+        "en": "The raised edge between the road and the pavement (UK spelling).",
+        "ar": "الحافة المرتفعة بين الطريق والرصيف (التهجئة البريطانية).",
+        "ur": "سڑک اور فٹ پاتھ کے درمیان اٹھی ہوئی کنارہ (برطانوی ہجے)۔",
+        "ro": "Marginea ridicată dintre carosabil și trotuar (ortografie britanică: kerb)."
+      }
+    }
+  ],
+  "RS-6009A": [
+    {
+      "term": "give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    }
+  ],
+  "RS-6010": [
+    {
+      "term": "Temporary road works",
+      "translations": {
+        "en": "Short-term construction or repairs that change normal road conditions.",
+        "ar": "أعمال بناء أو إصلاح قصيرة الأجل تغيّر ظروف الطريق المعتادة.",
+        "ur": "عارضی تعمیر/مرمت جو عام سڑک کے حالات بدل دیتی ہے۔",
+        "ro": "Lucrări pe termen scurt care modifică condițiile normale de drum."
+      }
+    },
+    {
+      "term": "Tourist attractions",
+      "translations": {
+        "en": "Places of interest for visitors, such as landmarks or museums.",
+        "ar": "أماكن تهم الزوار مثل المعالم أو المتاحف.",
+        "ur": "سیاحوں کے لیے دلچسپی کی جگہیں، جیسے تاریخی مقامات یا عجائب گھر۔",
+        "ro": "Locuri de interes pentru vizitatori, cum ar fi obiective sau muzee."
+      }
+    }
+  ],
+  "RS-6011": [
+    {
+      "term": "Average speed zone",
+      "translations": {
+        "en": "An area where cameras check your average speed over a stretch of road.",
+        "ar": "منطقة تتحقق فيها الكاميرات من سرعتك المتوسطة على مقطع من الطريق.",
+        "ur": "ایسا علاقہ جہاں کیمرے سڑک کے ایک حصے پر آپ کی اوسط رفتار چیک کرتے ہیں۔",
+        "ro": "Zonă unde camerele verifică viteza medie pe un tronson de drum."
+      }
+    }
+  ],
+  "RS-6012": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    },
+    {
+      "term": "Temporary diversions",
+      "translations": {
+        "en": "Short-term alternative routes when the normal road is closed or blocked.",
+        "ar": "مسارات بديلة مؤقتة عندما يُغلق الطريق المعتاد أو يُسد.",
+        "ur": "عارضی متبادل راستے جب عام سڑک بند یا رکاوٹ ہو۔",
+        "ro": "Rute alternative pe termen scurt când drumul normal este închis sau blocat."
+      }
+    }
+  ],
+  "RS-6013": [
+    {
+      "term": "One-way road",
+      "translations": {
+        "en": "A road where traffic is allowed to travel in only one direction.",
+        "ar": "طريق يُسمح فيه لحركة المرور بالسير في اتجاه واحد فقط.",
+        "ur": "ایسی سڑک جہاں ٹریفک صرف ایک سمت میں چل سکتی ہے۔",
+        "ro": "Drum pe care circulația este permisă într-un singur sens."
+      }
+    }
+  ],
+  "RS-6014": [
+    {
+      "term": "carriageway",
+      "translations": {
+        "en": "The part of the road used by vehicles, not the pavement or verge.",
+        "ar": "جزء الطريق الذي تستخدمه المركبات، وليس الرصيف أو جانب الطريق.",
+        "ur": "سڑک کا وہ حصہ جو گاڑیوں کے لیے ہو، فٹ پاتھ یا کنارہ نہیں۔",
+        "ro": "Partea drumului folosită de vehicule, nu trotuarul sau acostamentul."
+      }
+    },
+    {
+      "term": "Bus lane",
+      "translations": {
+        "en": "A lane reserved mainly for buses at certain times, marked on the road.",
+        "ar": "مسار مخصص أساساً للحافلات في أوقات معينة ومُعلَّم على الطريق.",
+        "ur": "لین جو خاص اوقات میں بنیادی طور پر بسوں کے لیے مخصوص ہوتی ہے، سڑک پر نشان زد۔",
+        "ro": "Bandă rezervată în principal autobuzelor la anumite ore, marcată pe carosabil."
+      }
+    }
+  ],
+  "RS-6015": [
+    {
+      "term": "road markings",
+      "translations": {
+        "en": "Lines and symbols painted on the road surface to guide or control traffic.",
+        "ar": "خطوط ورموز مرسومة على سطح الطريق لتوجيه المرور أو التحكم فيه.",
+        "ur": "سڑک کی سطح پر پینٹ کی گئی لائنیں اور علامات جو ٹریفک رہنمائی یا کنٹرول کرتی ہیں۔",
+        "ro": "Linii și simboluri pictate pe carosabil pentru a ghida sau controla traficul."
+      }
+    },
+    {
+      "term": "contradict",
+      "translations": {
+        "en": "Say or show the opposite of something else.",
+        "ar": "يقول أو يُظهر عكس شيء آخر.",
+        "ur": "کسی اور چیز کے الٹ کہنا یا دکھانا۔",
+        "ro": "A spune sau a arăta contrariul altui lucru."
+      }
+    }
+  ],
+  "RS-6016": [
+    {
+      "term": "Give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    }
+  ],
+  "RS-6017": [
+    {
+      "term": "mini-roundabout",
+      "translations": {
+        "en": "A small roundabout, often shown as a painted circle in the middle of the junction.",
+        "ar": "دوار صغير غالباً يظهر كدائرة مرسومة في وسط التقاطع.",
+        "ur": "چھوٹا چورہا، اکثر جنکشن کے بیچ پینٹ شدہ دائرے کی صورت میں۔",
+        "ro": "Sens giratoriu mic, deseori marcat ca un cerc pictat în mijlocul intersecției."
+      }
+    },
+    {
+      "term": "give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    }
+  ],
+  "RS-6018": [
+    {
+      "term": "bollard",
+      "translations": {
+        "en": "A short post on the road used to mark an island, edge, or obstruction.",
+        "ar": "عمود قصير على الطريق يُعلّم جزيرة أو حافة أو عائقاً.",
+        "ur": "سڑک پر چھوٹا کھمبا جو جزیرہ، کنارہ یا رکاوٹ ظاہر کرتا ہے۔",
+        "ro": "Stâlp scurt pe drum care marchează o insulă, o margine sau un obstacol."
+      }
+    },
+    {
+      "term": "obstruction",
+      "translations": {
+        "en": "Something blocking or narrowing the path for vehicles.",
+        "ar": "شيء يسد أو يضيّق مسار المركبات.",
+        "ur": "ایسی چیز جو گاڑیوں کا راستہ روکے یا تنگ کرے۔",
+        "ro": "Ceva care blochează sau îngustează calea vehiculelor."
+      }
+    }
+  ],
+  "RS-6019": [
+    {
+      "term": "Traffic calming",
+      "translations": {
+        "en": "Road features designed to slow vehicles down, such as humps or narrowings.",
+        "ar": "عناصر طريق مصممة لإبطاء المركبات مثل المطبات أو التضييق.",
+        "ur": "گاڑیوں کی رفتار کم کرنے والے سڑک کے انتظامات، جیسے ہمپ یا تنگی۔",
+        "ro": "Măsuri pe drum menite să încetinească vehiculele, cum ar fi denivelări sau îngustări."
+      }
+    }
+  ],
+  "RS-6020": [
+    {
+      "term": "Primary route",
+      "translations": {
+        "en": "A main A-road network in the UK, usually signed with green direction signs.",
+        "ar": "شبكة طرق رئيسية من فئة A في المملكة المتحدة، وغالباً بلافتات توجيه خضراء.",
+        "ur": "برطانیہ میں اہم A سڑکوں کا نیٹ ورک؛ عام طور پر سبز سمتی نشانوں سے۔",
+        "ro": "Rețea principală de drumuri A în Regatul Unit, de obicei semnalizată cu indicatoare verzi."
+      }
+    },
+    {
+      "term": "Temporary diversion",
+      "translations": {
+        "en": "A short-term alternative route when the normal road cannot be used.",
+        "ar": "مسار بديل مؤقت عندما يتعذر استخدام الطريق المعتاد.",
+        "ur": "عارضی متبادل راستہ جب عام سڑک استعمال نہ ہو سکے۔",
+        "ro": "Rută alternativă pe termen scurt când drumul normal nu poate fi folosit."
+      }
+    }
+  ],
+  "RS-6021": [
+    {
+      "term": "Advisory speed",
+      "translations": {
+        "en": "A recommended speed for safety that is not a legal maximum limit.",
+        "ar": "سرعة مُوصى بها للسلامة وليست حداً قانونياً أقصى.",
+        "ur": "حفاظت کے لیے تجویز کردہ رفتار جو قانونی زیادہ سے زیادہ حد نہیں۔",
+        "ro": "Viteză recomandată pentru siguranță, care nu este o limită legală maximă."
+      }
+    },
+    {
+      "term": "Average speed zone",
+      "translations": {
+        "en": "An area where cameras check your average speed over a stretch of road.",
+        "ar": "منطقة تتحقق فيها الكاميرات من سرعتك المتوسطة على مقطع من الطريق.",
+        "ur": "ایسا علاقہ جہاں کیمرے سڑک کے ایک حصے پر آپ کی اوسط رفتار چیک کرتے ہیں۔",
+        "ro": "Zonă unde camerele verifică viteza medie pe un tronson de drum."
+      }
+    }
+  ],
+  "RS-6022": [
+    {
+      "term": "zigzag lines",
+      "translations": {
+        "en": "White zig-zag road markings painted on the carriageway near a crossing.",
+        "ar": "خطوط طريق بيضاء متعرجة مرسومة على سطح الطريق قرب معبر.",
+        "ur": "کراسنگ کے قریب سڑک پر سفید زیگ زیگ لائنیں۔",
+        "ro": "Marcaje albe în zigzag pe carosabil, lângă o trecere."
+      }
+    },
+    {
+      "term": "school crossing",
+      "translations": {
+        "en": "A place where children cross the road near a school, often with a crossing patrol.",
+        "ar": "مكان يعبر فيه الأطفال الطريق قرب مدرسة، وغالباً مع مراقبي عبور.",
+        "ur": "اسکول کے قریب بچوں کے سڑک عبور کی جگہ، اکثر کراسنگ گشت کے ساتھ۔",
+        "ro": "Loc unde copiii traversează drumul lângă o școală, deseori cu patrulă de trecere."
+      }
+    }
+  ],
+  "RS-6023": [
+    {
+      "term": "roadworks",
+      "translations": {
+        "en": "Temporary construction or repairs taking place on the road.",
+        "ar": "أعمال بناء أو إصلاح مؤقتة تجري على الطريق.",
+        "ur": "سڑک پر عارضی تعمیر یا مرمت کا کام۔",
+        "ro": "Lucrări temporare de construcție sau reparații pe drum."
+      }
+    }
+  ],
+  "RS-6024": [
+    {
+      "term": "straddle",
+      "translations": {
+        "en": "Drive with wheels on both sides of a line, partly crossing it.",
+        "ar": "القيادة والعجلات على جانبي الخط، أي عبوره جزئياً.",
+        "ur": "گاڑی چلاتے ہوئے پہیے لائن کے دونوں جانب رکھنا، یعنی جزوی عبور۔",
+        "ro": "A circula cu roțile pe ambele părți ale unei linii, traversând-o parțial."
+      }
+    },
+    {
+      "term": "overtake",
+      "translations": {
+        "en": "To pass a slower vehicle by moving ahead of it.",
+        "ar": "تجاوز مركبة أبطأ بالمرور أمامها.",
+        "ur": "آہستہ گاڑی سے آگے نکل کر اسے پیچھے چھوڑنا۔",
+        "ro": "A depăși un vehicul mai lent trecând înaintea lui."
+      }
+    }
+  ],
+  "RS-6025": [
+    {
+      "term": "Slippery road surface",
+      "translations": {
+        "en": "A road that is wet, icy, or otherwise hard for tyres to grip.",
+        "ar": "طريق زلق بسبب البلل أو الجليد أو ضعف تماسك الإطارات.",
+        "ur": "گیلی، برفیلی یا ایسی سڑک جس پر ٹائروں کی گرفت کمزور ہو۔",
+        "ro": "Drum alunecos din cauza umezelii, gheții sau aderenței slabe a anvelopelor."
+      }
+    }
+  ]
+}

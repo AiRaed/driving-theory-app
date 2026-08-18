@@ -13,10 +13,13 @@
     "export:questions": "ts-node tools/export-questions.ts",
     "dedupe:questions": "node tools/dedupe.js questions.export.json",
     "dedupe:all": "npm run export:questions && npm run dedupe:questions",
-    "generate:pwa-icons": "node tools/generate-pwa-icons.js"
+    "generate:pwa-icons": "node tools/generate-pwa-icons.js",
+    "generate:vocab-hints": "node tools/generate-vocab-hints.js",
+    "generate:vocab-hints:sample": "node tools/generate-vocab-hints.js --sample=20",
+    "generate:vocab-hints:dry": "node tools/generate-vocab-hints.js --sample=20 --dry-run"
   },
   "dependencies": {
-    "@capacitor-community/text-to-speech": "^6.1.0",
+    "@capacitor-community/text-to-speech": "^8.0.2",
     "@capacitor/app": "^8.0.1",
     "@capacitor/cli": "^8.0.1",
     "@capacitor/core": "^8.0.1",

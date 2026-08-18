@@ -1,0 +1,730 @@
+{
+  "RR-26": [
+    {
+      "term": "level crossing",
+      "translations": {
+        "en": "A place where a road crosses a railway line, often with barriers and warning lights.",
+        "ar": "مكان يتقاطع فيه الطريق مع خط السكة الحديدية، وغالباً توجد حواجز وأضواء تحذير.",
+        "ur": "وہ جگہ جہاں سڑک ریلوے لائن کو کاٹتی ہے؛ اکثر رکاوٹیں اور وارننگ لائٹس ہوتی ہیں۔",
+        "ro": "Locul unde un drum traversează o cale ferată, adesea cu bariere și lumini de avertizare."
+      }
+    },
+    {
+      "term": "signal operator",
+      "translations": {
+        "en": "The person who controls railway signals and barriers at a level crossing.",
+        "ar": "الشخص الذي يتحكم بإشارات وحواجز السكة الحديدية عند معبر السكة.",
+        "ur": "وہ شخص جو لیول کراسنگ پر ریلوے سگنل اور رکاوٹیں کنٹرول کرتا ہے۔",
+        "ro": "Persoana care controlează semnalele și barierele feroviare la o trecere de nivel."
+      }
+    }
+  ],
+  "RR-27": [
+    {
+      "term": "queue",
+      "translations": {
+        "en": "A line of vehicles waiting or moving slowly.",
+        "ar": "صف من المركبات في انتظار أو تسير ببطء.",
+        "ur": "گاڑیوں کی قطار جو انتظار کر رہی ہو یا آہستہ چل رہی ہو۔",
+        "ro": "Șir de vehicule care așteaptă sau se deplasează încet."
+      }
+    }
+  ],
+  "RR-28": [
+    {
+      "term": "one-way street",
+      "translations": {
+        "en": "A street where traffic is allowed to travel in only one direction.",
+        "ar": "شارع يُسمح فيه لحركة المرور بالسير في اتجاه واحد فقط.",
+        "ur": "ایسی گلی جہاں ٹریفک صرف ایک سمت میں چل سکتی ہے۔",
+        "ro": "Stradă pe care circulația este permisă într-un singur sens."
+      }
+    },
+    {
+      "term": "sidelights",
+      "translations": {
+        "en": "Low-power front and rear position lights; not bright enough alone for driving at speed.",
+        "ar": "أضواء موضع منخفضة القوة أماماً وخلفاً؛ ليست كافية وحدها للقيادة بسرعة.",
+        "ur": "کم طاقت والی آگے پیچھے پوزیشن لائٹس؛ تیز رفتار ڈرائیونگ کے لیے اکیلے کافی نہیں۔",
+        "ro": "Lumini de poziție slabe față/spate; insuficiente singure pentru mers la viteză."
+      }
+    }
+  ],
+  "RR-29": [],
+  "RR-30": [
+    {
+      "term": "cycle lane",
+      "translations": {
+        "en": "A part of the road marked for cyclists, shown by a bicycle symbol and lane lines.",
+        "ar": "جزء من الطريق مخصص لراكبي الدراجات، يُشار إليه برمز دراجة وخطوط المسار.",
+        "ur": "سڑک کا سائیکل سواروں کے لیے نشان زد حصہ، سائیکل علامت اور لائنوں سے۔",
+        "ro": "Porțiune de drum marcată pentru bicicliști, cu simbol de bicicletă și linii de bandă."
+      }
+    },
+    {
+      "term": "solid white line",
+      "translations": {
+        "en": "An unbroken white road marking that often means you must not cross or enter.",
+        "ar": "خط أبيض متصل على الطريق غالباً يعني عدم تجاوزه أو الدخول إليه.",
+        "ur": "بلا انقطاع سفید لائن جو اکثر مطلب ہے کہ اس پر نہ جائیں/نه کاٹیں۔",
+        "ro": "Marcaj alb neîntrerupt pe carosabil care deseori interzice traversarea sau intrarea."
+      }
+    }
+  ],
+  "RR-31": [
+    {
+      "term": "dual carriageway",
+      "translations": {
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      }
+    },
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing a slower vehicle by moving alongside and ahead of it.",
+        "ar": "تجاوز مركبة أبطأ بالسير بجانبها ثم أمامها.",
+        "ur": "سست گاڑی کے ساتھ سے نکل کر اس سے آگے بڑھنا۔",
+        "ro": "Depășirea unui vehicul mai lent trecând pe lângă el și înaintea lui."
+      }
+    }
+  ],
+  "RR-32": [
+    {
+      "term": "one-way street",
+      "translations": {
+        "en": "A street where traffic is allowed to travel in only one direction.",
+        "ar": "شارع يُسمح فيه لحركة المرور بالسير في اتجاه واحد فقط.",
+        "ur": "ایسی گلی جہاں ٹریفک صرف ایک سمت میں چل سکتی ہے۔",
+        "ro": "Stradă pe care circulația este permisă într-un singur sens."
+      }
+    },
+    {
+      "term": "overtake",
+      "translations": {
+        "en": "To pass another vehicle by moving past it and going ahead.",
+        "ar": "تجاوز مركبة أخرى بالمرور بجانبها والانتقال أمامها.",
+        "ur": "دوسری گاڑی کے پاس سے گزر کر اس سے آگے نکل جانا۔",
+        "ro": "A trece pe lângă un alt vehicul și a ajunge în fața lui."
+      }
+    }
+  ],
+  "RR-33": [
+    {
+      "term": "parking restrictions",
+      "translations": {
+        "en": "Rules that limit where and when you may park, shown by signs or road markings.",
+        "ar": "قواعد تحدد أين ومتى يُسمح بالوقوف، وتظهر بلافتات أو علامات على الطريق.",
+        "ur": "قواعد جو بتاتی ہیں کہاں/کب پارک کر سکتے ہیں؛ نشان یا مارکنگز سے۔",
+        "ro": "Reguli care limitează unde și când puteți parca, afișate prin indicatoare sau marcaje."
+      }
+    },
+    {
+      "term": "yellow lines",
+      "translations": {
+        "en": "Yellow road markings at the kerb that restrict waiting or parking.",
+        "ar": "خطوط صفراء بجانب الرصيف تقيّد الانتظار أو الوقوف.",
+        "ur": "کنبے پر زرد لکیریں جو انتظار/پارکنگ محدود کرتی ہیں۔",
+        "ro": "Marcaje galbene la bordură care restricționează staționarea sau parcarea."
+      }
+    }
+  ],
+  "RR-34": [
+    {
+      "term": "roundabout",
+      "translations": {
+        "en": "A circular junction where traffic usually travels clockwise and you give way to traffic already on it.",
+        "ar": "تقاطع دائري تسير فيه المركبات عادةً مع عقارب الساعة، وتعطي الأولوية لمن داخل الدوار.",
+        "ur": "گول جنکشن جہاں ٹریفک عام طور پر گھڑی وار چلتی ہے اور آپ اندر موجود ٹریفک کو راستہ دیں۔",
+        "ro": "Intersecție circulară unde circulația merge de obicei în sens orar și cedați traficului deja pe el."
+      }
+    }
+  ],
+  "RR-35": [],
+  "RR-36": [
+    {
+      "term": "red routes",
+      "translations": {
+        "en": "UK roads marked with red lines where stopping and parking are tightly restricted.",
+        "ar": "طرق بريطانية بخطوط حمراء يُقيَّد فيها التوقف والركن بشدة.",
+        "ur": "برطانوی سڑکیں سرخ لکیروں سے جہاں رکنے/پارکنگ سخت محدود ہے۔",
+        "ro": "Drumuri din Regatul Unit cu linii roșii unde oprirea și parcarea sunt strict limitate."
+      }
+    }
+  ],
+  "RR-37": [
+    {
+      "term": "obstruction",
+      "translations": {
+        "en": "Something blocking the road so traffic cannot pass freely.",
+        "ar": "شيء يسد الطريق فلا تستطيع حركة المرور المرور بحرية.",
+        "ur": "کچھ جو سڑک روکے تاکہ ٹریفک آزادانہ نہ گزر سکے۔",
+        "ro": "Ceva care blochează drumul, împiedicând trecerea liberă a traficului."
+      }
+    },
+    {
+      "term": "give way",
+      "translations": {
+        "en": "Let other traffic go first when they have priority, instead of continuing ahead of them.",
+        "ar": "السماح لحركة المرور الأخرى بالمرور أولاً عندما تكون لها الأولوية.",
+        "ur": "جب دوسری ٹریفک کو فوقیت ہو تو انہیں پہلے جانے دینا۔",
+        "ro": "A lăsa alt trafic să treacă primul atunci când are prioritate."
+      }
+    },
+    {
+      "term": "oncoming traffic",
+      "translations": {
+        "en": "Vehicles travelling toward you from the opposite direction.",
+        "ar": "مركبات قادمة نحوك من الاتجاه المعاكس.",
+        "ur": "مخالف سمت سے آپ کی طرف آنے والی گاڑیاں۔",
+        "ro": "Vehicule care vin spre dumneavoastră din sens opus."
+      }
+    }
+  ],
+  "RR-38": [
+    {
+      "term": "urban clearway",
+      "translations": {
+        "en": "An urban road where stopping is restricted during posted times, except briefly for passengers.",
+        "ar": "طريق حضري يُقيَّد فيه التوقف في الأوقات المحددة إلا لنقل الركاب باختصار.",
+        "ur": "شہری سڑک جہاں درج اوقات میں رکنا محدود ہوتا ہے، سوائے مسافروں کے۔",
+        "ro": "Drum urban unde oprirea e restricționată la orele afișate, cu excepția scurtă pentru pasageri."
+      }
+    }
+  ],
+  "RR-39": [],
+  "RR-40": [
+    {
+      "term": "high street",
+      "translations": {
+        "en": "The main shopping street in a town or city centre.",
+        "ar": "الشارع التجاري الرئيسي في وسط البلدة أو المدينة.",
+        "ur": "شہر/قصبے کا مرکزی خریداری والا راستہ۔",
+        "ro": "Strada comercială principală din centrul unui oraș."
+      }
+    },
+    {
+      "term": "U-turn",
+      "translations": {
+        "en": "Turning the vehicle all the way round to go back the way you came.",
+        "ar": "لفّ المركبة بالكامل للعودة في الاتجاه المعاكس.",
+        "ur": "گاڑی کو مکمل گھما کر واپس اسی راستے پر جانا۔",
+        "ro": "Întoarcerea completă a vehiculului pentru a merge înapoi pe unde ai venit."
+      }
+    }
+  ],
+  "RR-41": [
+    {
+      "term": "box junction",
+      "translations": {
+        "en": "A road junction painted with yellow criss-cross lines on the road surface.",
+        "ar": "تقاطع طريق مرسوم على سطحه بخطوط صفراء متقاطعة.",
+        "ur": "سڑک کی سطح پر پیلی کراس لائنوں والا جنکشن۔",
+        "ro": "Intersecție marcată pe carosabil cu linii galbene în cruce."
+      }
+    },
+    {
+      "term": "oncoming traffic",
+      "translations": {
+        "en": "Vehicles travelling toward you from the opposite direction.",
+        "ar": "مركبات قادمة نحوك من الاتجاه المعاكس.",
+        "ur": "مخالف سمت سے آپ کی طرف آنے والی گاڑیاں۔",
+        "ro": "Vehicule care vin spre dumneavoastră din sens opus."
+      }
+    }
+  ],
+  "RR-42": [],
+  "RR-43": [
+    {
+      "term": "level crossing",
+      "translations": {
+        "en": "A place where a road crosses a railway line, often with barriers and warning lights.",
+        "ar": "مكان يتقاطع فيه الطريق مع خط السكة الحديدية، وغالباً توجد حواجز وأضواء تحذير.",
+        "ur": "وہ جگہ جہاں سڑک ریلوے لائن کو کاٹتی ہے؛ اکثر رکاوٹیں اور وارننگ لائٹس ہوتی ہیں۔",
+        "ro": "Locul unde un drum traversează o cale ferată, adesea cu bariere și lumini de avertizare."
+      }
+    },
+    {
+      "term": "signal operator",
+      "translations": {
+        "en": "The person who controls railway signals and barriers at a level crossing.",
+        "ar": "الشخص الذي يتحكم بإشارات وحواجز السكة الحديدية عند معبر السكة.",
+        "ur": "وہ شخص جو لیول کراسنگ پر ریلوے سگنل اور رکاوٹیں کنٹرول کرتا ہے۔",
+        "ro": "Persoana care controlează semnalele și barierele feroviare la o trecere de nivel."
+      }
+    }
+  ],
+  "RR-44": [],
+  "RR-45": [
+    {
+      "term": "Blue Badge",
+      "translations": {
+        "en": "A UK disability parking badge that gives certain parking concessions.",
+        "ar": "شارة بريطانية للإعاقة تمنح بعض تسهيلات الوقوف.",
+        "ur": "برطانیہ کا معذوری پارکنگ بیج جو کچھ پارکنگ رعایتیں دیتا ہے۔",
+        "ro": "Insignă britanică de parcare pentru persoane cu dizabilități, cu anumite facilități."
+      }
+    }
+  ],
+  "RR-46": [
+    {
+      "term": "dual carriageway",
+      "translations": {
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      }
+    },
+    {
+      "term": "central reservation",
+      "translations": {
+        "en": "The strip or barrier that separates the two directions of traffic on a dual carriageway.",
+        "ar": "الشريط أو الحاجز الذي يفصل اتجاهي السير على الطريق المزدوج.",
+        "ur": "دوہری کیریج وے پر دونوں سمتوں کی ٹریفک کو الگ کرنے والی پٹی یا رکاوٹ۔",
+        "ro": "Fâșia sau bariera care desparte cele două sensuri de circulație pe un drum cu dublă bandă."
+      }
+    }
+  ],
+  "RR-47": [],
+  "RR-48": [
+    {
+      "term": "roundabout",
+      "translations": {
+        "en": "A circular junction where traffic usually travels clockwise and you give way to traffic already on it.",
+        "ar": "تقاطع دائري تسير فيه المركبات عادةً مع عقارب الساعة، وتعطي الأولوية لمن داخل الدوار.",
+        "ur": "گول جنکشن جہاں ٹریفک عام طور پر گھڑی وار چلتی ہے اور آپ اندر موجود ٹریفک کو راستہ دیں۔",
+        "ro": "Intersecție circulară unde circulația merge de obicei în sens orar și cedați traficului deja pe el."
+      }
+    },
+    {
+      "term": "long vehicle",
+      "translations": {
+        "en": "A very lengthy type of road vehicle, such as a lorry, coach, or articulated truck.",
+        "ar": "نوع طويل جداً من مركبات الطريق مثل شاحنة أو حافلة أو مقطورة مفصلية.",
+        "ur": "سڑک کی بہت لمبی گاڑی، جیسے لاری، کوچ یا آرٹیکیولیٹڈ ٹرک۔",
+        "ro": "Un tip foarte lung de vehicul rutier, cum ar fi un camion, autocar sau articulat."
+      }
+    },
+    {
+      "term": "estate car",
+      "translations": {
+        "en": "A car with an extended rear area for carrying more luggage.",
+        "ar": "سيارة بمؤخرة ممتدة لحمل أمتعة أكثر.",
+        "ur": "پیچھے زیادہ سامان کی جگہ والی کار (اسٹیٹ)۔",
+        "ro": "Mașină cu zona din spate alungită pentru mai multe bagaje."
+      }
+    }
+  ],
+  "RR-49": [],
+  "RR-50": [
+    {
+      "term": "school crossing patrol",
+      "translations": {
+        "en": "A trained person (often called a lollipop person) who helps children cross safely near schools.",
+        "ar": "شخص مدرَّب (يُدعى أحياناً حامل إشارة التوقف) يساعد الأطفال على العبور بأمان قرب المدارس.",
+        "ur": "تربیت یافتہ شخص (اکثر لالی پاپ پرسن) جو اسکول کے قریب بچوں کو محفوظ پار کرواتا ہے۔",
+        "ro": "Persoană instruită (adesea „lollipop person”) care ajută copiii să treacă în siguranță lângă școli."
+      }
+    }
+  ],
+  "RR-51": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    },
+    {
+      "term": "traffic officer",
+      "translations": {
+        "en": "An official authorised to manage traffic on motorways and some major roads.",
+        "ar": "مسؤول مخول بإدارة المرور على الطرق السريعة وبعض الطرق الرئيسية.",
+        "ur": "افسر جو موٹروے اور کچھ بڑی سڑکوں پر ٹریفک سنبھال سکتا ہے۔",
+        "ro": "Oficial autorizat să gestioneze traficul pe autostrăzi și unele drumuri majore."
+      }
+    }
+  ],
+  "RR-52": [
+    {
+      "term": "roundabout",
+      "translations": {
+        "en": "A circular junction where traffic usually travels clockwise and you give way to traffic already on it.",
+        "ar": "تقاطع دائري تسير فيه المركبات عادةً مع عقارب الساعة، وتعطي الأولوية لمن داخل الدوار.",
+        "ur": "گول جنکشن جہاں ٹریفک عام طور پر گھڑی وار چلتی ہے اور آپ اندر موجود ٹریفک کو راستہ دیں۔",
+        "ro": "Intersecție circulară unde circulația merge de obicei în sens orar și cedați traficului deja pe el."
+      }
+    }
+  ],
+  "RR-53": [
+    {
+      "term": "give-way lines",
+      "translations": {
+        "en": "Road markings at a junction where you must let other traffic go first.",
+        "ar": "علامات على الطريق عند تقاطع يجب عندها إعطاء الأولوية للغير.",
+        "ur": "جنکشن پر لکیریں جہاں دوسری ٹریفک کو پہلے جانے دیں۔",
+        "ro": "Marcaje la intersecție unde trebuie să cedați trecerea altui trafic."
+      }
+    },
+    {
+      "term": "collision",
+      "translations": {
+        "en": "A crash when vehicles or objects hit each other.",
+        "ar": "اصطدام عندما ترتطم مركبات أو أجسام ببعضها.",
+        "ur": "ٹکر جب گاڑیاں یا اشیاء آپس میں ٹکراتی ہیں۔",
+        "ro": "Accident în care vehicule sau obiecte se lovesc între ele."
+      }
+    }
+  ],
+  "RR-54": [
+    {
+      "term": "roundabout",
+      "translations": {
+        "en": "A circular junction where traffic usually travels clockwise and you give way to traffic already on it.",
+        "ar": "تقاطع دائري تسير فيه المركبات عادةً مع عقارب الساعة، وتعطي الأولوية لمن داخل الدوار.",
+        "ur": "گول جنکشن جہاں ٹریفک عام طور پر گھڑی وار چلتی ہے اور آپ اندر موجود ٹریفک کو راستہ دیں۔",
+        "ro": "Intersecție circulară unde circulația merge de obicei în sens orar și cedați traficului deja pe el."
+      }
+    },
+    {
+      "term": "long vehicle",
+      "translations": {
+        "en": "A very lengthy type of road vehicle, such as a lorry, coach, or articulated truck.",
+        "ar": "نوع طويل جداً من مركبات الطريق مثل شاحنة أو حافلة أو مقطورة مفصلية.",
+        "ur": "سڑک کی بہت لمبی گاڑی، جیسے لاری، کوچ یا آرٹیکیولیٹڈ ٹرک۔",
+        "ro": "Un tip foarte lung de vehicul rutier, cum ar fi un camion, autocar sau articulat."
+      }
+    }
+  ],
+  "RR-55": [
+    {
+      "term": "box junction",
+      "translations": {
+        "en": "A road junction painted with yellow criss-cross lines on the road surface.",
+        "ar": "تقاطع طريق مرسوم على سطحه بخطوط صفراء متقاطعة.",
+        "ur": "سڑک کی سطح پر پیلی کراس لائنوں والا جنکشن۔",
+        "ro": "Intersecție marcată pe carosabil cu linii galbene în cruce."
+      }
+    }
+  ],
+  "RR-56": [
+    {
+      "term": "parking lights",
+      "translations": {
+        "en": "Dim sidelights left on when parked so others can see your vehicle at night.",
+        "ar": "أضواء جانبية خافتة تُترك عند الوقوف ليراك الآخرون ليلاً.",
+        "ur": "پارک کرتے وقت مدھم سائیڈ لائٹس تاکہ رات کو دوسروں کو گاڑی نظر آئے۔",
+        "ro": "Lumini de poziție slabe lăsate aprinse la staționare ca alții să vadă vehiculul noaptea."
+      }
+    },
+    {
+      "term": "dipped headlights",
+      "translations": {
+        "en": "Headlights aimed lower so they light the road without dazzling oncoming drivers.",
+        "ar": "أضواء أمامية موجّهة للأسفل لإنارة الطريق دون إبهار السائقين القادمين.",
+        "ur": "ہیڈلائٹس جو نیچے کی طرف ہوں تاکہ سڑک روشن ہو اور سامنے والے ڈرائیورز چوندھیا نہ جائیں۔",
+        "ro": "Faruri îndreptate mai jos ca să lumineze drumul fără a orbi șoferii din sens opus."
+      }
+    }
+  ],
+  "RR-57": [
+    {
+      "term": "reversing",
+      "translations": {
+        "en": "Driving the vehicle backwards.",
+        "ar": "قيادة المركبة إلى الخلف.",
+        "ur": "گاڑی کو پیچھے کی طرف چلانا۔",
+        "ro": "Deplasarea vehiculului cu spatele."
+      }
+    }
+  ],
+  "RR-58": [
+    {
+      "term": "red route",
+      "translations": {
+        "en": "A road marked with red lines where stopping and parking are tightly controlled.",
+        "ar": "طريق بخطوط حمراء يُقيَّد فيه التوقف والوقوف بشدة.",
+        "ur": "سرخ لکیر والی سڑک جہاں رکنا/پارک سخت کنٹرول ہوتا ہے۔",
+        "ro": "Drum cu linii roșii unde oprirea și parcarea sunt strict controlate."
+      }
+    }
+  ],
+  "RR-59": [
+    {
+      "term": "level crossing",
+      "translations": {
+        "en": "A place where a road crosses a railway line, often with barriers and warning lights.",
+        "ar": "مكان يتقاطع فيه الطريق مع خط السكة الحديدية، وغالباً توجد حواجز وأضواء تحذير.",
+        "ur": "وہ جگہ جہاں سڑک ریلوے لائن کو کاٹتی ہے؛ اکثر رکاوٹیں اور وارننگ لائٹس ہوتی ہیں۔",
+        "ro": "Locul unde un drum traversează o cale ferată, adesea cu bariere și lumini de avertizare."
+      }
+    }
+  ],
+  "RR-60": [
+    {
+      "term": "clearway",
+      "translations": {
+        "en": "A road marked so that stopping on the main carriageway is tightly restricted.",
+        "ar": "طريق مُعلَّم بحيث يُقيَّد التوقف على المسار الرئيسي بشدة.",
+        "ur": "ایسی سڑک جہاں مین کیریج وے پر رکنا سخت محدود ہوتا ہے۔",
+        "ro": "Drum semnalizat unde oprirea pe partea carosabilă principală este strict restricționată."
+      }
+    }
+  ],
+  "RR-61": [
+    {
+      "term": "single carriageway",
+      "translations": {
+        "en": "A road without a central reservation separating opposite directions of traffic.",
+        "ar": "طريق بلا حاجز وسط يفصل اتجاهي السير المتعاكسين.",
+        "ur": "ایسی سڑک جس میں مخالف سمتوں کی ٹریفک الگ کرنے والی درمیانی ریزرویشن نہ ہو۔",
+        "ro": "Drum fără rezervație centrală care să separe sensurile opuse de circulație."
+      }
+    }
+  ],
+  "RR-62": [
+    {
+      "term": "roadworks",
+      "translations": {
+        "en": "Road repairs or construction that may change layout, lanes, or speed limits.",
+        "ar": "أعمال إصلاح أو إنشاء على الطريق قد تغيّر المسارات أو حدود السرعة.",
+        "ur": "سڑک کی مرمت یا تعمیر جو ترتیب، لین یا رفتار کی حد بدل سکتی ہے۔",
+        "ro": "Lucrări de reparații sau construcție pe drum care pot schimba benzi sau limite de viteză."
+      }
+    },
+    {
+      "term": "temporary speed limit",
+      "translations": {
+        "en": "A speed limit that applies only for a limited time, often near roadworks.",
+        "ar": "حد سرعة مؤقتة تسري لفترة محدودة، غالباً قرب أعمال الطريق.",
+        "ur": "عارضی رفتار کی حد جو محدود وقت کے لیے لگتی ہے، اکثر روڈ ورکس پر۔",
+        "ro": "Limită de viteză valabilă doar o perioadă limitată, deseori lângă lucrări."
+      }
+    }
+  ],
+  "RR-63": [
+    {
+      "term": "controlled parking zone",
+      "translations": {
+        "en": "An area where parking is controlled by signs and marked bays at set times.",
+        "ar": "منطقة يُتحكم فيها بالوقوف عبر لافتات وأماكن مخصصة في أوقات محددة.",
+        "ur": "علاقہ جہاں پارکنگ سائنز اور نشان زد بےز سے کنٹرول ہوتی ہے۔",
+        "ro": "Zonă unde parcarea e controlată prin indicatoare și locuri marcate la ore stabilite."
+      }
+    }
+  ],
+  "RR-64": [
+    {
+      "term": "Double white lines",
+      "translations": {
+        "en": "Two white lines along the centre of the road that restrict crossing and parking.",
+        "ar": "خطان أبيضان في وسط الطريق يقيّدان التجاوز والوقوف.",
+        "ur": "سڑک کے وسط میں دو سفید لکیریں جو کراسنگ/پارکنگ محدود کرتی ہیں۔",
+        "ro": "Două linii albe pe mijlocul drumului care restricționează depășirea și parcarea."
+      }
+    }
+  ],
+  "RR-65": [
+    {
+      "term": "disabled bays",
+      "translations": {
+        "en": "Parking spaces reserved for vehicles displaying a valid Blue Badge.",
+        "ar": "مواقف مخصصة لمركبات تحمل شارة زرقاء سارية.",
+        "ur": "پارکنگ جگہیں جو درست بلیو بیج والی گاڑیوں کے لیے مخصوص ہیں۔",
+        "ro": "Locuri de parcare rezervate vehiculelor cu Blue Badge valabil."
+      }
+    }
+  ],
+  "RR-66": [],
+  "RR-67": [
+    {
+      "term": "dual carriageway",
+      "translations": {
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      }
+    },
+    {
+      "term": "caravan",
+      "translations": {
+        "en": "A trailer designed for living or camping, towed behind a vehicle.",
+        "ar": "مقطورة للسكن أو التخييم تُسحب خلف مركبة.",
+        "ur": "رہائش/کیمپنگ والا ٹریلر جو گاڑی کے پیچھے کھینچا جاتا ہے۔",
+        "ro": "Remorcă de locuit sau camping tractată în spatele unui vehicul."
+      }
+    }
+  ],
+  "SV-21": [
+    {
+      "term": "blind-spot monitoring",
+      "translations": {
+        "en": "A system that warns you about vehicles in areas you cannot see in the mirrors.",
+        "ar": "نظام ينبهك لمركبات في مناطق لا تراها في المرايا.",
+        "ur": "نظام جو آئینوں میں نہ دکھنے والے علاقوں میں گاڑیوں سے خبردار کرتا ہے۔",
+        "ro": "Sistem care vă avertizează despre vehicule în zone pe care nu le vedeți în oglinzi."
+      }
+    }
+  ],
+  "SV-22": [],
+  "SV-23": [],
+  "SV-24": [],
+  "SV-25": [
+    {
+      "term": "medically exempt",
+      "translations": {
+        "en": "Excused from a legal requirement for approved medical reasons.",
+        "ar": "معفى من متطلب قانوني لأسباب طبية معتمدة.",
+        "ur": "طبی وجوہات پر قانونی شرط سے مستثنیٰ۔",
+        "ro": "Scutit de o obligație legală din motive medicale aprobate."
+      }
+    }
+  ],
+  "SV-26": [
+    {
+      "term": "roof rack",
+      "translations": {
+        "en": "A frame fitted on a vehicle’s roof for carrying extra loads.",
+        "ar": "إطار يُثبَّت على سقف المركبة لحمل أحمال إضافية.",
+        "ur": "گاڑی کی چھت پر لگا فریم جو اضافی سامان لے جانے کے لیے ہوتا ہے۔",
+        "ro": "Cadru montat pe plafonul vehiculului pentru încărcături suplimentare."
+      }
+    },
+    {
+      "term": "fuel consumption",
+      "translations": {
+        "en": "How much fuel the vehicle uses; higher use means more cost and emissions.",
+        "ar": "كمية الوقود التي تستهلكها المركبة؛ الاستهلاك الأعلى يعني تكلفة وانبعاثات أكثر.",
+        "ur": "گاڑی کتنا ایندھن استعمال کرتی ہے؛ زیادہ استعمال سے لاگت اور اخراج بڑھتا ہے۔",
+        "ro": "Cât combustibil consumă vehiculul; consumul mai mare înseamnă costuri și emisii mai mari."
+      }
+    }
+  ],
+  "SV-27": [
+    {
+      "term": "driver-assistance system",
+      "translations": {
+        "en": "Technology that helps the driver with safety, control, or alerts.",
+        "ar": "تقنية تساعد السائق في السلامة أو التحكم أو التنبيهات.",
+        "ur": "ٹیکنالوجی جو ڈرائیور کو حفاظت، کنٹرول یا الرٹس میں مدد دیتی ہے۔",
+        "ro": "Tehnologie care ajută șoferul la siguranță, control sau avertizări."
+      }
+    },
+    {
+      "term": "cruise control",
+      "translations": {
+        "en": "A system that holds a set speed without keeping your foot on the accelerator.",
+        "ar": "نظام يحافظ على سرعة محددة دون إبقاء قدمك على دواسة الوقود.",
+        "ur": "سسٹم جو ایک سیٹ رفتار برقرار رکھتا ہے بغیر ایکسلریٹر پر پاؤں رکھے۔",
+        "ro": "Sistem care menține o viteză setată fără a ține piciorul pe accelerație."
+      }
+    }
+  ],
+  "SV-28": [],
+  "SV-29": [
+    {
+      "term": "child restraint",
+      "translations": {
+        "en": "A child seat or similar device that holds a child safely in the vehicle.",
+        "ar": "مقعد أطفال أو جهاز مشابه يثبت الطفل بأمان في المركبة.",
+        "ur": "بچوں کی سیٹ یا اسی طرح کا آلہ جو بچے کو محفوظ رکھے۔",
+        "ro": "Scaun pentru copii sau dispozitiv similar care fixează copilul în siguranță."
+      }
+    }
+  ],
+  "SV-30": [],
+  "SV-31": [
+    {
+      "term": "authorised recycling site",
+      "translations": {
+        "en": "An approved place that can safely take hazardous items like car batteries.",
+        "ar": "مكان معتمد لاستلام مواد خطرة مثل بطاريات السيارات بأمان.",
+        "ur": "منظور شدہ جگہ جہاں کار بیٹری جیسی خطرناک چیزیں محفوظ جمع ہوں۔",
+        "ro": "Loc autorizat unde se pot preda în siguranță deșeuri periculoase precum bateriile."
+      }
+    }
+  ],
+  "SV-32": [
+    {
+      "term": "national speed limit",
+      "translations": {
+        "en": "The default UK speed limit when no numbered limit signs are shown (varies by road type and vehicle).",
+        "ar": "الحد الافتراضي للسرعة في المملكة المتحدة عندما لا تظهر إشارات رقمية (يختلف حسب نوع الطريق والمركبة).",
+        "ur": "برطانیہ کی ڈیفالٹ رفتار کی حد جب کوئی عددی حد کا نشان نہ ہو (سڑک اور گاڑی کے مطابق بدل سکتی ہے)۔",
+        "ro": "Limita implicită de viteză din Regatul Unit când nu apar indicatoare cu cifră (variază după tipul drumului și vehicul)."
+      }
+    }
+  ],
+  "SV-33": [
+    {
+      "term": "steering vibration",
+      "translations": {
+        "en": "Shaking felt through the steering wheel while driving.",
+        "ar": "اهتزاز يُحس عبر عجلة القيادة أثناء القيادة.",
+        "ur": "ڈرائیونگ کے دوران سٹیئرنگ وہیل میں کمپن۔",
+        "ro": "Vibrație simțită în volan în timpul conducerii."
+      }
+    }
+  ],
+  "SV-34": [
+    {
+      "term": "fuel consumption",
+      "translations": {
+        "en": "How much fuel the vehicle uses; higher use means more cost and emissions.",
+        "ar": "كمية الوقود التي تستهلكها المركبة؛ الاستهلاك الأعلى يعني تكلفة وانبعاثات أكثر.",
+        "ur": "گاڑی کتنا ایندھن استعمال کرتی ہے؛ زیادہ استعمال سے لاگت اور اخراج بڑھتا ہے۔",
+        "ro": "Cât combustibil consumă vehiculul; consumul mai mare înseamnă costuri și emisii mai mari."
+      }
+    }
+  ],
+  "SV-35": [
+    {
+      "term": "leaded fuel",
+      "translations": {
+        "en": "Older petrol that contained lead; not used for normal road cars today.",
+        "ar": "بنزين قديم يحتوي على الرصاص؛ لا يُستخدم للسيارات العادية اليوم.",
+        "ur": "پرانا لیڈ والا پیٹرول؛ آج عام سڑک گاڑیوں کے لیے نہیں۔",
+        "ro": "Benzină veche cu plumb; nu se mai folosește la mașinile obișnuite."
+      }
+    }
+  ],
+  "SV-36": [
+    {
+      "term": "tyre pressures",
+      "translations": {
+        "en": "How much air is in each tyre; incorrect pressure affects handling, braking, and tyre wear.",
+        "ar": "كمية الهواء في كل إطار؛ الضغط غير الصحيح يؤثر على التحكم والفرملة وتآكل الإطار.",
+        "ur": "ہر ٹائر میں ہوا کتنی ہے؛ غلط دباؤ ہینڈلنگ، بریکنگ اور ٹائر کی عمر پر اثر ڈالتا ہے۔",
+        "ro": "Cantitatea de aer din fiecare anvelopă; presiunea greșită afectează manevrabilitatea, frânarea și uzura."
+      }
+    }
+  ],
+  "SV-37": [
+    {
+      "term": "ABS",
+      "translations": {
+        "en": "Anti-lock braking system that helps you steer while braking hard in an emergency.",
+        "ar": "نظام فرامل مانع للانغلاق يساعد على التوجيه أثناء الفرملة القوية في الطوارئ.",
+        "ur": "اینٹی لاک بریک سسٹم جو ایمرجنسی میں زور سے بریک لگاتے ہوئے سٹیئر کرنے میں مدد دیتا ہے۔",
+        "ro": "Sistem antiblocare care ajută să virați în timp ce frânați puternic în urgență."
+      }
+    }
+  ],
+  "SV-38": [
+    {
+      "term": "sidewall cuts",
+      "translations": {
+        "en": "Cuts or damage in the side wall of a tyre that can make it illegal or unsafe.",
+        "ar": "قطع أو تلف في جدار الإطار الجانبي قد يجعله غير قانوني أو غير آمن.",
+        "ur": "ٹائر کی سائیڈ وال میں کٹ یا نقصان جو غیر قانونی/غیر محفوظ بنا سکتا ہے۔",
+        "ro": "Tăieturi sau deteriorări în peretele lateral al anvelopei care o pot face ilegală sau nesigură."
+      }
+    }
+  ]
+}

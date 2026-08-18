@@ -1,0 +1,578 @@
+[
+  {
+    "id": "HZ-20",
+    "topic": "hazard-awareness",
+    "promptEn": "A police officer gives a hand signal to oncoming traffic. What does it mean?",
+    "options": [
+      {
+        "en": "Proceed"
+      },
+      {
+        "en": "Stop"
+      },
+      {
+        "en": "Turn left"
+      },
+      {
+        "en": "Turn right"
+      }
+    ],
+    "existing": {
+      "promptPl": "Policjant daje sygnał ręką nadjeżdżającemu ruchowi. Co to oznacza?",
+      "options": [
+        {
+          "pl": "Jedź"
+        },
+        {
+          "pl": "Stop"
+        },
+        {
+          "pl": "Skręć w lewo"
+        },
+        {
+          "pl": "Skręć w prawo"
+        }
+      ]
+    }
+  },
+  {
+    "id": "RS-04",
+    "topic": "road-signs",
+    "promptEn": "A red upside-down triangle means:",
+    "options": [
+      {
+        "en": "Give way"
+      },
+      {
+        "en": "Stop"
+      },
+      {
+        "en": "No stopping"
+      },
+      {
+        "en": "Maximum speed"
+      }
+    ],
+    "existing": {
+      "promptPl": "Czerwony odwrócony trójkąt oznacza:",
+      "options": [
+        {
+          "pl": "Ustąp pierwszeństwa"
+        },
+        {
+          "pl": "Stop"
+        },
+        {
+          "pl": "Zakaz zatrzymywania"
+        },
+        {
+          "pl": "Prędkość maksymalną"
+        }
+      ]
+    }
+  },
+  {
+    "id": "RR-03",
+    "topic": "rules-of-the-road",
+    "promptEn": "What is the national speed limit on a single carriageway for cars and motorcycles (unless signs show otherwise)?",
+    "options": [
+      {
+        "en": "30 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      },
+      {
+        "en": "70 mph"
+      }
+    ],
+    "existing": {
+      "promptPl": "Jaki jest krajowy limit prędkości na drodze jednojezdniowej dla samochodów i motocykli (o ile znaki nie stanowią inaczej)?",
+      "options": [
+        {
+          "pl": "30 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        },
+        {
+          "pl": "70 mph"
+        }
+      ]
+    }
+  },
+  {
+    "id": "VL-18",
+    "topic": "vehicle-loading",
+    "promptEn": "What's the legal minimum tread depth for trailer tyres?",
+    "options": [
+      {
+        "en": "1 mm"
+      },
+      {
+        "en": "1.6 mm"
+      },
+      {
+        "en": "2 mm"
+      },
+      {
+        "en": "2.2 mm"
+      }
+    ],
+    "existing": {
+      "promptPl": "Jaka jest prawnie wymagana minimalna głębokość bieżnika opon przyczepy?",
+      "options": [
+        {
+          "pl": "1 mm"
+        },
+        {
+          "pl": "1,6 mm"
+        },
+        {
+          "pl": "2 mm"
+        },
+        {
+          "pl": "2,2 mm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "AT-36",
+    "topic": "attitude",
+    "promptEn": "Which crossing allows cyclists to ride across with pedestrians?",
+    "options": [
+      {
+        "en": "Puffin"
+      },
+      {
+        "en": "Pelican"
+      },
+      {
+        "en": "Zebra"
+      },
+      {
+        "en": "Toucan"
+      }
+    ],
+    "existing": {
+      "promptPl": "Które przejście pozwala rowerzystom przejeżdżać razem z pieszymi?",
+      "options": [
+        {
+          "pl": "Puffin"
+        },
+        {
+          "pl": "Pelican"
+        },
+        {
+          "pl": "Zebra"
+        },
+        {
+          "pl": "Toucan"
+        }
+      ]
+    }
+  },
+  {
+    "id": "MW-13",
+    "topic": "motorway-driving",
+    "promptEn": "What is the maximum speed for a car towing a trailer on a motorway?",
+    "options": [
+      {
+        "en": "40 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      },
+      {
+        "en": "70 mph"
+      }
+    ],
+    "existing": {
+      "promptPl": "Jaka jest maksymalna prędkość dla samochodu holującego przyczepę na autostradzie?",
+      "options": [
+        {
+          "pl": "40 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        },
+        {
+          "pl": "70 mph"
+        }
+      ]
+    }
+  },
+  {
+    "id": "MW-35",
+    "topic": "motorway-driving",
+    "promptEn": "What is the national speed limit for cars and motorcycles on a motorway (unless signs show otherwise)?",
+    "options": [
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      },
+      {
+        "en": "70 mph"
+      },
+      {
+        "en": "80 mph"
+      }
+    ],
+    "existing": {
+      "promptPl": "Jaki jest krajowy limit prędkości dla samochodów i motocykli na autostradzie (o ile znaki nie wskazują inaczej)?",
+      "options": [
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        },
+        {
+          "pl": "70 mph"
+        },
+        {
+          "pl": "80 mph"
+        }
+      ]
+    }
+  },
+  {
+    "id": "MW-38",
+    "topic": "motorway-driving",
+    "promptEn": "What is the motorway speed limit for cars and motorcycles unless signs say otherwise?",
+    "options": [
+      {
+        "en": "30 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      },
+      {
+        "en": "70 mph"
+      }
+    ],
+    "existing": {
+      "promptPl": "Jaki jest limit prędkości na autostradzie dla samochodów i motocykli, o ile znaki nie stanowią inaczej?",
+      "options": [
+        {
+          "pl": "30 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        },
+        {
+          "pl": "70 mph"
+        }
+      ]
+    }
+  },
+  {
+    "id": "RR-29",
+    "topic": "rules-of-the-road",
+    "promptEn": "In the UK, what speed limit usually applies where there are street lights but no speed signs?",
+    "options": [
+      {
+        "en": "30 mph"
+      },
+      {
+        "en": "40 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      }
+    ],
+    "existing": {
+      "promptPl": "W Wielkiej Brytanii, jaki limit prędkości zwykle obowiązuje tam, gdzie są latarnie uliczne, ale nie ma znaków prędkości?",
+      "options": [
+        {
+          "pl": "30 mph"
+        },
+        {
+          "pl": "40 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        }
+      ]
+    }
+  },
+  {
+    "id": "RR-39",
+    "topic": "rules-of-the-road",
+    "promptEn": "What is the national speed limit for cars on a dual carriageway?",
+    "options": [
+      {
+        "en": "30 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      },
+      {
+        "en": "70 mph"
+      }
+    ],
+    "existing": {
+      "promptPl": "Jaki jest krajowy limit prędkości dla samochodów na drodze dwujezdniowej?",
+      "options": [
+        {
+          "pl": "30 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        },
+        {
+          "pl": "70 mph"
+        }
+      ]
+    }
+  },
+  {
+    "id": "RR-54",
+    "topic": "rules-of-the-road",
+    "promptEn": "Which vehicle may need extra room at a roundabout due to its size?",
+    "options": [
+      {
+        "en": "Sports car"
+      },
+      {
+        "en": "Estate car"
+      },
+      {
+        "en": "Van"
+      },
+      {
+        "en": "Long vehicle"
+      }
+    ],
+    "existing": {
+      "promptPl": "Który pojazd może potrzebować więcej miejsca na rondzie ze względu na swoje rozmiary?",
+      "options": [
+        {
+          "pl": "Samochód sportowy"
+        },
+        {
+          "pl": "Kombi"
+        },
+        {
+          "pl": "Van"
+        },
+        {
+          "pl": "Długi pojazd"
+        }
+      ]
+    }
+  },
+  {
+    "id": "RR-61",
+    "topic": "rules-of-the-road",
+    "promptEn": "A sign shows a single carriageway speed limit. What is the maximum speed for a car towing a trailer?",
+    "options": [
+      {
+        "en": "30 mph"
+      },
+      {
+        "en": "40 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      }
+    ],
+    "existing": {
+      "promptPl": "Znak pokazuje limit prędkości na drodze jednojezdniowej. Jaka jest maksymalna prędkość dla samochodu ciągnącego przyczepę?",
+      "options": [
+        {
+          "pl": "30 mph"
+        },
+        {
+          "pl": "40 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        }
+      ]
+    }
+  },
+  {
+    "id": "RR-67",
+    "topic": "rules-of-the-road",
+    "promptEn": "What's the speed limit for a car towing a caravan on a dual carriageway?",
+    "options": [
+      {
+        "en": "40 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      },
+      {
+        "en": "70 mph"
+      }
+    ],
+    "existing": {
+      "promptPl": "Jaki jest limit prędkości dla samochodu ciągnącego przyczepę kempingową na drodze dwujezdniowej?",
+      "options": [
+        {
+          "pl": "40 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        },
+        {
+          "pl": "70 mph"
+        }
+      ]
+    }
+  },
+  {
+    "id": "SV-68",
+    "topic": "safety-vehicle",
+    "promptEn": "What is the legal minimum tread depth for trailer or caravan tyres?",
+    "options": [
+      {
+        "en": "1 mm"
+      },
+      {
+        "en": "1.6 mm"
+      },
+      {
+        "en": "2 mm"
+      },
+      {
+        "en": "2.6 mm"
+      }
+    ],
+    "existing": {
+      "promptPl": "Jaka jest prawnie wymagana minimalna głębokość bieżnika opon przyczepy lub przyczepy kempingowej?",
+      "options": [
+        {
+          "pl": "1 mm"
+        },
+        {
+          "pl": "1,6 mm"
+        },
+        {
+          "pl": "2 mm"
+        },
+        {
+          "pl": "2,6 mm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "SV-77",
+    "topic": "safety-vehicle",
+    "promptEn": "What is the legal minimum tread depth for car tyres?",
+    "options": [
+      {
+        "en": "1 mm"
+      },
+      {
+        "en": "1.6 mm"
+      },
+      {
+        "en": "2.5 mm"
+      },
+      {
+        "en": "4 mm"
+      }
+    ],
+    "existing": {
+      "promptPl": "Jaka jest prawnie wymagana minimalna głębokość bieżnika opon samochodowych?",
+      "options": [
+        {
+          "pl": "1 mm"
+        },
+        {
+          "pl": "1,6 mm"
+        },
+        {
+          "pl": "2,5 mm"
+        },
+        {
+          "pl": "4 mm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "RS-6016",
+    "topic": "road-signs",
+    "promptEn": "What does an upside-down triangular sign at a junction mean?",
+    "options": [
+      {
+        "en": "Stop"
+      },
+      {
+        "en": "Give way"
+      },
+      {
+        "en": "No entry"
+      },
+      {
+        "en": "Warning of danger"
+      }
+    ],
+    "existing": {
+      "promptPl": "Co oznacza odwrócony trójkątny znak na skrzyżowaniu?",
+      "options": [
+        {
+          "pl": "Stop"
+        },
+        {
+          "pl": "Ustąp pierwszeństwa"
+        },
+        {
+          "pl": "Zakaz wjazdu"
+        },
+        {
+          "pl": "Ostrzeżenie o niebezpieczeństwie"
+        }
+      ]
+    }
+  }
+]

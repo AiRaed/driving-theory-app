@@ -1,0 +1,1152 @@
+[
+  {
+    "id": "AT-33",
+    "topic": "attitude",
+    "promptEn": "In a one-way street with two lanes, where should you position to turn right?",
+    "options": [
+      {
+        "en": "Left lane",
+        "correct": false
+      },
+      {
+        "en": "Right lane",
+        "correct": true
+      },
+      {
+        "en": "Either lane",
+        "correct": false
+      },
+      {
+        "en": "Centre of road",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-34",
+    "topic": "attitude",
+    "promptEn": "A car cuts in very close ahead of you. What should you do?",
+    "options": [
+      {
+        "en": "Accelerate",
+        "correct": false
+      },
+      {
+        "en": "Sound horn",
+        "correct": false
+      },
+      {
+        "en": "Drop back to a safe distance",
+        "correct": true
+      },
+      {
+        "en": "Flash lights",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-35",
+    "topic": "attitude",
+    "promptEn": "An ambulance with blue flashing lights is behind you. What should you do?",
+    "options": [
+      {
+        "en": "Speed up",
+        "correct": false
+      },
+      {
+        "en": "Maintain speed",
+        "correct": false
+      },
+      {
+        "en": "Pull over safely and let it pass",
+        "correct": true
+      },
+      {
+        "en": "Brake sharply",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-36",
+    "topic": "attitude",
+    "promptEn": "Which crossing allows cyclists to ride across with pedestrians?",
+    "options": [
+      {
+        "en": "Puffin",
+        "correct": false
+      },
+      {
+        "en": "Pelican",
+        "correct": false
+      },
+      {
+        "en": "Zebra",
+        "correct": false
+      },
+      {
+        "en": "Toucan",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "AT-37",
+    "topic": "attitude",
+    "promptEn": "What danger results from following a vehicle too closely?",
+    "options": [
+      {
+        "en": "Engine overheating",
+        "correct": false
+      },
+      {
+        "en": "Higher fuel use",
+        "correct": false
+      },
+      {
+        "en": "Reduced forward view",
+        "correct": true
+      },
+      {
+        "en": "Tyre damage",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "AT-38",
+    "topic": "attitude",
+    "promptEn": "At night in a queue, how can you avoid dazzling drivers behind you?",
+    "options": [
+      {
+        "en": "Keep foot on brake",
+        "correct": false
+      },
+      {
+        "en": "Use parking brake and release footbrake",
+        "correct": true
+      },
+      {
+        "en": "Balance clutch",
+        "correct": false
+      },
+      {
+        "en": "Use both brakes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-01",
+    "topic": "safety-vehicle",
+    "promptEn": "In which situation would parking your vehicle cause an obstruction?",
+    "options": [
+      {
+        "en": "Next to a parking meter",
+        "correct": false
+      },
+      {
+        "en": "In front of a property entrance",
+        "correct": true
+      },
+      {
+        "en": "On your own driveway",
+        "correct": false
+      },
+      {
+        "en": "In a marked parking bay",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-02",
+    "topic": "safety-vehicle",
+    "promptEn": "What should you do when leaving your vehicle parked and unattended?",
+    "options": [
+      {
+        "en": "Leave the indicator on",
+        "correct": false
+      },
+      {
+        "en": "Park near a junction",
+        "correct": false
+      },
+      {
+        "en": "Lock the vehicle and remove the key",
+        "correct": true
+      },
+      {
+        "en": "Leave a window open",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-03",
+    "topic": "safety-vehicle",
+    "promptEn": "If your vehicle continues to bounce after pressing down on the bodywork, what does this indicate?",
+    "options": [
+      {
+        "en": "Worn tyres",
+        "correct": false
+      },
+      {
+        "en": "Under-inflated tyres",
+        "correct": false
+      },
+      {
+        "en": "Soft ground",
+        "correct": false
+      },
+      {
+        "en": "Worn shock absorbers",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-04",
+    "topic": "safety-vehicle",
+    "promptEn": "How is your journey likely to change if you travel outside peak traffic hours?",
+    "options": [
+      {
+        "en": "More fuel used",
+        "correct": false
+      },
+      {
+        "en": "Longer journey",
+        "correct": false
+      },
+      {
+        "en": "Greater danger",
+        "correct": false
+      },
+      {
+        "en": "Fewer delays",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-05",
+    "topic": "safety-vehicle",
+    "promptEn": "What benefit can smooth driving provide?",
+    "options": [
+      {
+        "en": "Longer journey times",
+        "correct": false
+      },
+      {
+        "en": "Increased fuel use",
+        "correct": false
+      },
+      {
+        "en": "Reduced fuel consumption by about 15%",
+        "correct": true
+      },
+      {
+        "en": "Increased emissions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-06",
+    "topic": "safety-vehicle",
+    "promptEn": "Where is a catalytic converter located on a vehicle?",
+    "options": [
+      {
+        "en": "Fuel tank",
+        "correct": false
+      },
+      {
+        "en": "Air filter",
+        "correct": false
+      },
+      {
+        "en": "Cooling system",
+        "correct": false
+      },
+      {
+        "en": "Exhaust system",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-07",
+    "topic": "safety-vehicle",
+    "promptEn": "Allowing which fluid level to fall too low could cause a crash?",
+    "options": [
+      {
+        "en": "Antifreeze",
+        "correct": false
+      },
+      {
+        "en": "Brake fluid",
+        "correct": true
+      },
+      {
+        "en": "Battery water",
+        "correct": false
+      },
+      {
+        "en": "Fuel",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-08",
+    "topic": "safety-vehicle",
+    "promptEn": "How can you reduce the risk of your vehicle being broken into at night?",
+    "options": [
+      {
+        "en": "Park in a dark area",
+        "correct": false
+      },
+      {
+        "en": "Leave steering unlocked",
+        "correct": false
+      },
+      {
+        "en": "Park in a well-lit area",
+        "correct": true
+      },
+      {
+        "en": "Park on a quiet road",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-09",
+    "topic": "safety-vehicle",
+    "promptEn": "When must you use parking lights when parked at night?",
+    "options": [
+      {
+        "en": "Near a bus stop",
+        "correct": false
+      },
+      {
+        "en": "Facing oncoming traffic",
+        "correct": false
+      },
+      {
+        "en": "When the speed limit exceeds 30 mph",
+        "correct": true
+      },
+      {
+        "en": "On private land",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-10",
+    "topic": "safety-vehicle",
+    "promptEn": "How much more fuel is typically used at 70 mph compared to 50 mph?",
+    "options": [
+      {
+        "en": "About 5%",
+        "correct": false
+      },
+      {
+        "en": "About 15%",
+        "correct": true
+      },
+      {
+        "en": "About 75%",
+        "correct": false
+      },
+      {
+        "en": "About 100%",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-11",
+    "topic": "safety-vehicle",
+    "promptEn": "Who is responsible for ensuring children wear seat belts in your car?",
+    "options": [
+      {
+        "en": "Parents",
+        "correct": false
+      },
+      {
+        "en": "Front passenger",
+        "correct": false
+      },
+      {
+        "en": "The children",
+        "correct": false
+      },
+      {
+        "en": "The driver",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-12",
+    "topic": "safety-vehicle",
+    "promptEn": "When may you leave your vehicle's engine running while parked?",
+    "options": [
+      {
+        "en": "Under 5 minutes",
+        "correct": false
+      },
+      {
+        "en": "Battery issues",
+        "correct": false
+      },
+      {
+        "en": "In a 20 mph zone",
+        "correct": false
+      },
+      {
+        "en": "Never when unattended",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-13",
+    "topic": "safety-vehicle",
+    "promptEn": "What does fuel-efficient driving help achieve?",
+    "options": [
+      {
+        "en": "More emissions",
+        "correct": false
+      },
+      {
+        "en": "Environmental protection and safety",
+        "correct": true
+      },
+      {
+        "en": "Engine damage",
+        "correct": false
+      },
+      {
+        "en": "Higher fuel bills",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-14",
+    "topic": "safety-vehicle",
+    "promptEn": "What's the safest way to leave valuables in your car?",
+    "options": [
+      {
+        "en": "In a visible bag",
+        "correct": false
+      },
+      {
+        "en": "Near a school",
+        "correct": false
+      },
+      {
+        "en": "Locked and out of sight",
+        "correct": true
+      },
+      {
+        "en": "Near a bus stop",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-15",
+    "topic": "safety-vehicle",
+    "promptEn": "What can be damaged by turning the steering wheel while stationary?",
+    "options": [
+      {
+        "en": "Engine",
+        "correct": false
+      },
+      {
+        "en": "Gearbox",
+        "correct": false
+      },
+      {
+        "en": "Brakes",
+        "correct": false
+      },
+      {
+        "en": "Tyres",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-16",
+    "topic": "safety-vehicle",
+    "promptEn": "What document should you remove from your vehicle when leaving it unattended?",
+    "options": [
+      {
+        "en": "Owner's manual",
+        "correct": false
+      },
+      {
+        "en": "Service record",
+        "correct": false
+      },
+      {
+        "en": "Dealer details",
+        "correct": false
+      },
+      {
+        "en": "Vehicle registration document",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-17",
+    "topic": "safety-vehicle",
+    "promptEn": "What is the main purpose of a catalytic converter?",
+    "options": [
+      {
+        "en": "Reduce fuel use",
+        "correct": false
+      },
+      {
+        "en": "Reduce fire risk",
+        "correct": false
+      },
+      {
+        "en": "Reduce harmful exhaust gases",
+        "correct": true
+      },
+      {
+        "en": "Reduce engine wear",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "SV-18",
+    "topic": "safety-vehicle",
+    "promptEn": "How can you help prevent your car radio from being stolen?",
+    "options": [
+      {
+        "en": "Park in darkness",
+        "correct": false
+      },
+      {
+        "en": "Leave it on",
+        "correct": false
+      },
+      {
+        "en": "Park near junction",
+        "correct": false
+      },
+      {
+        "en": "Use a security-coded radio",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-19",
+    "topic": "safety-vehicle",
+    "promptEn": "How does fuel-efficient driving help protect the environment?",
+    "options": [
+      {
+        "en": "More cars",
+        "correct": false
+      },
+      {
+        "en": "Higher fuel bills",
+        "correct": false
+      },
+      {
+        "en": "Legal enforcement",
+        "correct": false
+      },
+      {
+        "en": "Lower exhaust emissions",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "SV-20",
+    "topic": "safety-vehicle",
+    "promptEn": "How should you drive on a road with multiple speed humps?",
+    "options": [
+      {
+        "en": "Accelerate between humps",
+        "correct": false
+      },
+      {
+        "en": "Keep maximum speed",
+        "correct": false
+      },
+      {
+        "en": "Drive slowly only at school times",
+        "correct": false
+      },
+      {
+        "en": "Maintain a reduced speed throughout",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "RS-07",
+    "topic": "road-signs",
+    "promptEn": "A circular sign with a red border and a number '30' means:",
+    "options": [
+      {
+        "en": "Maximum speed limit is 30 mph",
+        "correct": true
+      },
+      {
+        "en": "Minimum speed is 30 mph",
+        "correct": false
+      },
+      {
+        "en": "Recommended speed is 30 mph",
+        "correct": false
+      },
+      {
+        "en": "Average speed is 30 mph",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-08",
+    "topic": "road-signs",
+    "promptEn": "A blue circular sign with a white arrow pointing left means:",
+    "options": [
+      {
+        "en": "Turn left ahead only",
+        "correct": true
+      },
+      {
+        "en": "No left turn",
+        "correct": false
+      },
+      {
+        "en": "Give way to the left",
+        "correct": false
+      },
+      {
+        "en": "One-way street to the right",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-08A",
+    "topic": "road-signs",
+    "promptEn": "A blue circular sign with a white arrow pointing right means:",
+    "options": [
+      {
+        "en": "Turn right ahead only",
+        "correct": true
+      },
+      {
+        "en": "No right turn",
+        "correct": false
+      },
+      {
+        "en": "Give way to the right",
+        "correct": false
+      },
+      {
+        "en": "One-way street to the left",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-09",
+    "topic": "road-signs",
+    "promptEn": "You're driving through a residential area and see a triangular warning sign showing two children. What should you be prepared for?",
+    "options": [
+      {
+        "en": "Children may suddenly appear or cross the road, especially near schools",
+        "correct": true
+      },
+      {
+        "en": "A playground is closed ahead",
+        "correct": false
+      },
+      {
+        "en": "Children are not allowed in this area",
+        "correct": false
+      },
+      {
+        "en": "Only school buses can use this road",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-10",
+    "topic": "road-signs",
+    "promptEn": "What does a blue circular sign with a red border and a red cross (X) mean?",
+    "options": [
+      {
+        "en": "No stopping at any time",
+        "correct": true
+      },
+      {
+        "en": "No parking",
+        "correct": false
+      },
+      {
+        "en": "End of restrictions",
+        "correct": false
+      },
+      {
+        "en": "Bus stop only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-11",
+    "topic": "road-signs",
+    "promptEn": "You see a triangular warning sign showing a bend to the left. What does it warn you about?",
+    "options": [
+      {
+        "en": "Bend to the left ahead",
+        "correct": true
+      },
+      {
+        "en": "Junction on the left",
+        "correct": false
+      },
+      {
+        "en": "Road narrows on the left",
+        "correct": false
+      },
+      {
+        "en": "No left turn",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-12",
+    "topic": "road-signs",
+    "promptEn": "A triangular sign showing a train without a barrier warns of:",
+    "options": [
+      {
+        "en": "Level crossing without a barrier",
+        "correct": true
+      },
+      {
+        "en": "Level crossing with a barrier",
+        "correct": false
+      },
+      {
+        "en": "Tramway only",
+        "correct": false
+      },
+      {
+        "en": "End of railway zone",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-13",
+    "topic": "road-signs",
+    "promptEn": "A sign with a car and motorcycle in a red circle means:",
+    "options": [
+      {
+        "en": "No motor vehicles",
+        "correct": true
+      },
+      {
+        "en": "Cars only",
+        "correct": false
+      },
+      {
+        "en": "Motorcycles only",
+        "correct": false
+      },
+      {
+        "en": "End of speed restriction",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-14",
+    "topic": "road-signs",
+    "promptEn": "You're driving along a main road and see a triangular warning sign showing a roundabout symbol. What should you prepare for?",
+    "options": [
+      {
+        "en": "A roundabout ahead where you'll need to give way to traffic already on it",
+        "correct": true
+      },
+      {
+        "en": "A mini-roundabout only",
+        "correct": false
+      },
+      {
+        "en": "No U-turns are allowed",
+        "correct": false
+      },
+      {
+        "en": "One-way traffic system ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-15",
+    "topic": "road-signs",
+    "promptEn": "A blue circular sign with a white bicycle symbol means:",
+    "options": [
+      {
+        "en": "Cycle route only",
+        "correct": true
+      },
+      {
+        "en": "No cycling",
+        "correct": false
+      },
+      {
+        "en": "Shared route with cars",
+        "correct": false
+      },
+      {
+        "en": "Cycle parking only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-16",
+    "topic": "road-signs",
+    "promptEn": "A rectangular sign with a red diagonal line across a black camera symbol means:",
+    "options": [
+      {
+        "en": "End of speed camera zone",
+        "correct": true
+      },
+      {
+        "en": "Speed cameras begin",
+        "correct": false
+      },
+      {
+        "en": "No photography allowed",
+        "correct": false
+      },
+      {
+        "en": "Traffic lights ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-17",
+    "topic": "road-signs",
+    "promptEn": "You're driving on a mountain road and see a triangular warning sign showing falling rocks. What hazard should you be aware of?",
+    "options": [
+      {
+        "en": "Rocks may fall or have fallen onto the road ahead",
+        "correct": true
+      },
+      {
+        "en": "Roadworks are taking place ahead",
+        "correct": false
+      },
+      {
+        "en": "Loose gravel on the road surface only",
+        "correct": false
+      },
+      {
+        "en": "The road surface is slippery",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-18",
+    "topic": "road-signs",
+    "promptEn": "A rectangular sign with a white 'H' on a blue background usually means:",
+    "options": [
+      {
+        "en": "Hospital nearby",
+        "correct": true
+      },
+      {
+        "en": "Hotel zone",
+        "correct": false
+      },
+      {
+        "en": "Helicopter landing",
+        "correct": false
+      },
+      {
+        "en": "Highway",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-20",
+    "topic": "road-signs",
+    "promptEn": "A blue rectangular sign with a car symbol in a lane overhead usually indicates:",
+    "options": [
+      {
+        "en": "Lane available for traffic",
+        "correct": true
+      },
+      {
+        "en": "Lane closed",
+        "correct": false
+      },
+      {
+        "en": "Bus lane only",
+        "correct": false
+      },
+      {
+        "en": "Hard shoulder",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-21",
+    "topic": "road-signs",
+    "promptEn": "On a motorway, a red 'X' shown on an overhead sign above your lane means:",
+    "options": [
+      {
+        "en": "You must not use this lane",
+        "correct": true
+      },
+      {
+        "en": "You have priority in this lane",
+        "correct": false
+      },
+      {
+        "en": "You should drive faster",
+        "correct": false
+      },
+      {
+        "en": "Buses only may use this lane",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-26",
+    "topic": "road-signs",
+    "promptEn": "What does a red circular sign with a U-turn symbol crossed out mean?",
+    "options": [
+      {
+        "en": "No U-turn",
+        "correct": true
+      },
+      {
+        "en": "No right turn",
+        "correct": false
+      },
+      {
+        "en": "End of speed limit",
+        "correct": false
+      },
+      {
+        "en": "Two-way traffic ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-09",
+    "topic": "vehicle-handling",
+    "promptEn": "Sometimes you'll see short yellow transverse lines across the carriageway on the approach to a hazard. What are they mainly for?",
+    "options": [
+      {
+        "en": "To show a safe gap between vehicles",
+        "correct": false
+      },
+      {
+        "en": "To keep an area clear",
+        "correct": false
+      },
+      {
+        "en": "To make you more aware of your speed",
+        "correct": true
+      },
+      {
+        "en": "To warn you to change direction",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-10",
+    "topic": "vehicle-handling",
+    "promptEn": "Before driving in fog, what should you check first?",
+    "options": [
+      {
+        "en": "Radiator antifreeze level",
+        "correct": false
+      },
+      {
+        "en": "A warning triangle is in the car",
+        "correct": false
+      },
+      {
+        "en": "Windows are clean and all lights work",
+        "correct": true
+      },
+      {
+        "en": "A mobile phone is charged",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-11",
+    "topic": "vehicle-handling",
+    "promptEn": "If you must park on the road in fog, which lights should you leave on?",
+    "options": [
+      {
+        "en": "Parking/sidelights",
+        "correct": true
+      },
+      {
+        "en": "Dipped headlights and fog lights",
+        "correct": false
+      },
+      {
+        "en": "Dipped headlights only",
+        "correct": false
+      },
+      {
+        "en": "Main beam headlights",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-12",
+    "topic": "vehicle-handling",
+    "promptEn": "You're driving through a series of road humps. What's the safest approach?",
+    "options": [
+      {
+        "en": "Brake hard at each hump",
+        "correct": false
+      },
+      {
+        "en": "Speed up between each hump",
+        "correct": false
+      },
+      {
+        "en": "Keep a reduced, steady speed through the whole stretch",
+        "correct": true
+      },
+      {
+        "en": "Use cruise control",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-13",
+    "topic": "vehicle-handling",
+    "promptEn": "On a windy motorway, what should you watch for when overtaking a high-sided vehicle?",
+    "options": [
+      {
+        "en": "Increase speed",
+        "correct": false
+      },
+      {
+        "en": "A sudden gust as you pass",
+        "correct": true
+      },
+      {
+        "en": "Drive alongside closely",
+        "correct": false
+      },
+      {
+        "en": "Expect normal conditions",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-14",
+    "topic": "vehicle-handling",
+    "promptEn": "When driving downhill, what helps you keep control of speed without overheating brakes?",
+    "options": [
+      {
+        "en": "Coast in neutral",
+        "correct": false
+      },
+      {
+        "en": "Use a lower gear (engine braking)",
+        "correct": true
+      },
+      {
+        "en": "Ride the clutch",
+        "correct": false
+      },
+      {
+        "en": "Keep braking hard continuously",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-15",
+    "topic": "vehicle-handling",
+    "promptEn": "You must travel in foggy conditions. What should you do?",
+    "options": [
+      {
+        "en": "Follow tail lights closely",
+        "correct": false
+      },
+      {
+        "en": "Avoid dipped headlights",
+        "correct": false
+      },
+      {
+        "en": "Allow extra time for the journey",
+        "correct": true
+      },
+      {
+        "en": "Keep only a 2-second gap",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-16",
+    "topic": "vehicle-handling",
+    "promptEn": "When may you stop inside a yellow box junction?",
+    "options": [
+      {
+        "en": "When you're queuing straight ahead",
+        "correct": false
+      },
+      {
+        "en": "When approaching a crossing",
+        "correct": false
+      },
+      {
+        "en": "When approaching a zebra crossing",
+        "correct": false
+      },
+      {
+        "en": "When waiting to turn right and oncoming traffic blocks your exit",
+        "correct": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,322 @@
+[
+  {
+    "term": "steering lock",
+    "en": "A security lock that stops the steering wheel turning when the key is removed."
+  },
+  {
+    "term": "red routes",
+    "en": "UK roads marked with red lines where stopping and parking are tightly restricted."
+  },
+  {
+    "term": "Manufacturer's handbook",
+    "en": "The official owner’s manual from the car maker explaining controls and systems."
+  },
+  {
+    "term": "Highway Code",
+    "en": "The official UK rules and advice for road users."
+  },
+  {
+    "term": "zigzag lines",
+    "en": "Zigzag road markings near crossings; parking and waiting there is restricted."
+  },
+  {
+    "term": "Tyres under-inflated",
+    "en": "Tyres with too little air; can raise fuel use and affect braking."
+  },
+  {
+    "term": "head restraint",
+    "en": "The padded support behind your head on the seat, often called a headrest."
+  },
+  {
+    "term": "driver drowsiness system",
+    "en": "A driver-assistance feature that detects tired driving and alerts you."
+  },
+  {
+    "term": "Anti-lock brakes",
+    "en": "ABS: brakes that help stop the wheels locking under hard braking."
+  },
+  {
+    "term": "Collapsible steering wheel",
+    "en": "A steering column designed to fold in a crash to reduce injury."
+  },
+  {
+    "term": "Local authority recycling site",
+    "en": "A council tip or recycling centre that accepts items like used engine oil."
+  },
+  {
+    "term": "Etching registration",
+    "en": "Permanently marking the vehicle’s number plate onto glass or parts."
+  },
+  {
+    "term": "MOTs",
+    "en": "UK annual roadworthiness tests (MOT) checking safety and emissions."
+  },
+  {
+    "term": "child seat",
+    "en": "A special seat that holds a child safely with the correct restraints."
+  },
+  {
+    "term": "urban pollution",
+    "en": "Air and noise pollution in towns and cities, often from traffic."
+  },
+  {
+    "term": "Over-rev",
+    "en": "Run the engine at very high revs, which wastes fuel and can cause wear."
+  },
+  {
+    "term": "tyre wear",
+    "en": "How the tyre rubber wears down; uneven wear can signal a fault."
+  },
+  {
+    "term": "Anticipate traffic ahead",
+    "en": "Look far ahead and prepare early for what other vehicles will do."
+  },
+  {
+    "term": "adaptive cruise control",
+    "en": "Cruise control that also adjusts speed to keep a gap from the vehicle ahead."
+  },
+  {
+    "term": "rear-facing baby seat",
+    "en": "A child seat that faces backwards, safer for infants in a crash."
+  },
+  {
+    "term": "airbag",
+    "en": "A safety cushion that inflates quickly in a crash to protect occupants."
+  },
+  {
+    "term": "CPR",
+    "en": "Cardiopulmonary resuscitation: chest compressions (and breaths) to help someone not breathing."
+  },
+  {
+    "term": "unconscious",
+    "en": "Not awake and not responding; may need emergency help."
+  },
+  {
+    "term": "AED",
+    "en": "Automated external defibrillator: a device that can shock the heart back to rhythm."
+  },
+  {
+    "term": "First-aiders",
+    "en": "People trained to give basic emergency care before professionals arrive."
+  },
+  {
+    "term": "Paramedics",
+    "en": "Emergency medical staff who treat patients at the scene and in ambulances."
+  },
+  {
+    "term": "dangerous goods",
+    "en": "Hazardous materials (chemicals, fuels, etc.) needing special transport rules."
+  },
+  {
+    "term": "hazard markings",
+    "en": "Warning symbols or plates that show a load’s danger type."
+  },
+  {
+    "term": "Variable message signs",
+    "en": "Electronic signs that change to show live warnings or instructions."
+  },
+  {
+    "term": "octagonal",
+    "en": "Eight-sided shape; in the UK the STOP sign is octagonal."
+  },
+  {
+    "term": "Double bend ahead",
+    "en": "A warning that two bends follow closely, one after the other."
+  },
+  {
+    "term": "Slippery road ahead",
+    "en": "A warning that the road surface may be slippery."
+  },
+  {
+    "term": "Road narrows",
+    "en": "A warning that the carriageway becomes narrower ahead."
+  },
+  {
+    "term": "dusk",
+    "en": "The period of fading light after sunset when visibility drops."
+  },
+  {
+    "term": "side winds",
+    "en": "Strong wind blowing across the road from the side, which can push a vehicle off its line."
+  },
+  {
+    "term": "hi-vis",
+    "en": "High-visibility clothing (bright/reflective) that makes a person easier to see, especially in poor light."
+  },
+  {
+    "term": "tyre pressure",
+    "en": "How much air is in each tyre; incorrect pressure affects handling, braking, and tyre wear."
+  },
+  {
+    "term": "safe gap",
+    "en": "The clear space you keep ahead of your vehicle so you can stop safely if traffic slows or stops."
+  },
+  {
+    "term": "four-wheel drive",
+    "en": "A system that sends power to all four wheels to improve grip, especially on slippery or uneven surfaces."
+  },
+  {
+    "term": "move off",
+    "en": "To start moving from a stopped position, such as pulling away from the kerb or after waiting."
+  },
+  {
+    "term": "road surface",
+    "en": "The top layer of the road that tyres touch (e.g. tarmac, snow, ice, or loose gravel)."
+  },
+  {
+    "term": "hazard warning sign",
+    "en": "A triangular road sign that warns of a danger or difficult situation ahead on the road."
+  },
+  {
+    "term": "ESC",
+    "en": "Electronic Stability Control: a system that helps keep the car stable if wheels start to lose grip."
+  },
+  {
+    "term": "Tyre grip",
+    "en": "How well the tyres hold onto the road surface without sliding."
+  },
+  {
+    "term": "Suspension",
+    "en": "The springs and related parts that connect the wheels to the car body and absorb bumps."
+  },
+  {
+    "term": "Exhaust system",
+    "en": "The pipes and parts that carry waste gases from the engine out of the vehicle."
+  },
+  {
+    "term": "motorcyclist",
+    "en": "A person riding a motorcycle; they can be less stable and harder to see than cars."
+  },
+  {
+    "term": "flood water",
+    "en": "Water covering part of the road after heavy rain or flooding, which can wet the brakes."
+  },
+  {
+    "term": "full beam",
+    "en": "Headlights on their brightest, longest setting; can dazzle others, so not for use in fog or when meeting traffic."
+  },
+  {
+    "term": "Boot",
+    "en": "The storage compartment at the back of a car (called the trunk in some countries)."
+  },
+  {
+    "term": "Aerial",
+    "en": "The radio antenna on a vehicle, often a thin rod on the roof or rear."
+  },
+  {
+    "term": "Bumper",
+    "en": "The protective bar at the front or rear of a vehicle designed to absorb minor impacts."
+  },
+  {
+    "term": "Low gear",
+    "en": "A lower gear ratio that gives more engine control at slower speeds, often used on hills."
+  },
+  {
+    "term": "High gear",
+    "en": "A higher gear used for faster cruising, with less engine braking effect than a low gear."
+  },
+  {
+    "term": "tractor",
+    "en": "A slow agricultural vehicle often seen on country roads; overtaking needs clear space and time."
+  },
+  {
+    "term": "full-beam headlights",
+    "en": "Headlights on their brightest, longest setting; must be dipped so you do not dazzle other drivers."
+  },
+  {
+    "term": "dip your headlights",
+    "en": "Switch from full beam to dipped (lower) beam so oncoming or overtaking drivers are not dazzled."
+  },
+  {
+    "term": "Road sweeper",
+    "en": "A slow vehicle that cleans the road surface; give it space when passing."
+  },
+  {
+    "term": "motorcyclists",
+    "en": "People riding motorcycles; they can be hidden in blind spots and move up beside you quickly."
+  },
+  {
+    "term": "30 mph zone",
+    "en": "A road area where the speed limit is 30 miles per hour, common in built-up areas in the UK."
+  },
+  {
+    "term": "edge forward",
+    "en": "Move the car forward very slowly, a little at a time, to improve your view before joining the road."
+  },
+  {
+    "term": "junctions",
+    "en": "Places where roads meet or cross; smaller road users can be harder to spot there."
+  },
+  {
+    "term": "zig-zag road markings",
+    "en": "Yellow zig-zag lines near crossings or schools where you must not park or stop and block the view."
+  },
+  {
+    "term": "zebra crossings",
+    "en": "A pedestrian crossing with black-and-white stripes where drivers must give way to people waiting to cross."
+  },
+  {
+    "term": "school crossing patrol",
+    "en": "A trained person (often called a lollipop person) who helps children cross safely near schools."
+  },
+  {
+    "term": "swerve",
+    "en": "A sudden change of direction to avoid something, such as a pothole or slippery patch."
+  },
+  {
+    "term": "filtering",
+    "en": "When motorcyclists or cyclists move carefully between lanes or past slow queues of traffic."
+  },
+  {
+    "term": "Flash your headlights",
+    "en": "Briefly switching headlights on and off to attract attention; not a reliable way to give instructions."
+  },
+  {
+    "term": "mopeds",
+    "en": "Low-powered two-wheel motor vehicles, lighter and slower than most motorcycles."
+  },
+  {
+    "term": "flashing amber lights",
+    "en": "Orange warning lights that flash to alert drivers, often near schools when children may be about."
+  },
+  {
+    "term": "school warning sign",
+    "en": "A triangular sign showing children, warning that a school is nearby and extra care is needed."
+  },
+  {
+    "term": "pedestrian-only zones",
+    "en": "Areas where motor vehicles are normally not allowed and only people on foot may use the space."
+  },
+  {
+    "term": "school crossing",
+    "en": "A place near a school where children cross the road, often with special signs or a crossing patrol."
+  },
+  {
+    "term": "left lane",
+    "en": "In the UK, the lane nearest the left-hand side of the road (kerb side) for normal driving."
+  },
+  {
+    "term": "anti-dazzle",
+    "en": "A rear-view mirror setting that reduces glare from headlights behind you at night."
+  },
+  {
+    "term": "vulnerable",
+    "en": "More at risk of injury in a collision because of little physical protection (e.g. bikes, motorcycles, pedestrians)."
+  },
+  {
+    "term": "signal operator",
+    "en": "The person who controls railway signals and barriers at a level crossing."
+  },
+  {
+    "term": "sidelights",
+    "en": "Small, low-power lights used to make a parked or moving vehicle more visible."
+  },
+  {
+    "term": "solid white line",
+    "en": "An unbroken white road marking that often means you must not cross or enter."
+  },
+  {
+    "term": "yellow lines",
+    "en": "Yellow road markings at the kerb that restrict waiting or parking."
+  }
+]

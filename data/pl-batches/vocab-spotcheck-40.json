@@ -1,0 +1,407 @@
+[
+  {
+    "id": "AL-02",
+    "termEn": "hands-free phone",
+    "termPl": "telefon hands-free",
+    "pl": "Telefon używany bez trzymania w ręku, np. przez głośnik lub Bluetooth.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "AL-12",
+    "termEn": "hand-held mobile phone",
+    "termPl": "telefon w ręku",
+    "pl": "Telefon komórkowy trzymany w ręku podczas używania.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "AL-12",
+    "termEn": "automatic transmission",
+    "termPl": "skrzynia automatyczna",
+    "pl": "Skrzynia biegów, która zmienia biegi za Ciebie, bez pedału sprzęgła.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "AL-19",
+    "termEn": "parking brake",
+    "termPl": "hamulec postojowy",
+    "pl": "Hamulec (często ręczny), który utrzymuje pojazd w miejscu podczas parkowania.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "AL-19",
+    "termEn": "arm signal",
+    "termPl": "sygnał ręką",
+    "pl": "Sygnał ręką kierowcy informujący innych użytkowników drogi o zamiarze manewru.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "HZ-01",
+    "termEn": "staggered junction",
+    "termPl": "skrzyżowanie przesunięte",
+    "pl": "Skrzyżowanie, na którym drogi boczne łączą się z lewej i prawej w lekko przesuniętych punktach, nie naprzeciw siebie.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "HZ-34",
+    "termEn": "number plate",
+    "termPl": "tablica rejestracyjna",
+    "pl": "Tablica rejestracyjna pojazdu z numerem rejestracyjnym.",
+    "hasDiac": false,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "HZ-63",
+    "termEn": "drowsy",
+    "termPl": "senny",
+    "pl": "Senny lub półprzytomny — wolniejsze reakcje i gorsza uwaga.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "HZ-63",
+    "termEn": "hard shoulder",
+    "termPl": "pas awaryjny",
+    "pl": "Pas awaryjny przy krawędzi motorway; zwykle tylko do zatrzymania w nagłym wypadku.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "HZ-63",
+    "termEn": "motorway",
+    "termPl": "autostrada",
+    "pl": "Szybka droga z kontrolowanym wjazdem; w UK oznaczana niebieskimi znakami.",
+    "hasDiac": false,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "RS-01",
+    "termEn": "overtaking",
+    "termPl": "wyprzedzanie",
+    "pl": "Wyprzedzanie wolniejszego pojazdu przez przejazd obok i wyjście przed niego.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "RS-01",
+    "termEn": "Two-way traffic",
+    "termPl": "ruch dwukierunkowy",
+    "pl": "Ruch w obu kierunkach na tej samej drodze.",
+    "hasDiac": false,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "RS-2027",
+    "termEn": "pedestrian crossing",
+    "termPl": "przejście dla pieszych",
+    "pl": "Oznaczone miejsce na jezdni, gdzie piesi mogą bezpiecznie przechodzić.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "RS-6014",
+    "termEn": "carriageway",
+    "termPl": "jezdnia",
+    "pl": "Część drogi przeznaczona dla pojazdów — nie chodnik ani pobocze (verge).",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "RS-6014",
+    "termEn": "Bus lane",
+    "termPl": "pas dla autobusów",
+    "pl": "Pas zarezerwowany głównie dla autobusów (czasem też taksówek lub rowerów) w określonych godzinach.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "SM-02",
+    "termEn": "Dipped headlights",
+    "termPl": "światła mijania",
+    "pl": "Światła mijania skierowane niżej, by oświetlać drogę bez oślepiania nadjeżdżających.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "SM-02",
+    "termEn": "Rear fog lights",
+    "termPl": "tylne światła przeciwmgielne",
+    "pl": "Jasne czerwone światła z tyłu; tylko w gęstej mgle, by inni Cię widzieli.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "SM-02",
+    "termEn": "heavy spray",
+    "termPl": "silna woda z kół",
+    "pl": "Silne bryzgi wody rzucane przez opony na mokrej drodze, pogarszające widoczność.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "SM-13",
+    "termEn": "Hill starts",
+    "termPl": "ruszanie pod górę",
+    "pl": "Ruszanie z miejsca pod górę bez staczania się do tyłu.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "SM-24",
+    "termEn": "ESC",
+    "termPl": "ESC",
+    "pl": "Elektroniczna kontrola stabilności: system pomagający utrzymać stabilność, gdy koła tracą przyczepność.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "RR-01",
+    "termEn": "marker posts",
+    "termPl": "słupki kilometrowe",
+    "pl": "Małe słupki przy drodze z oznaczeniem odległości i kierunkiem do najbliższego telefonu awaryjnego.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "RR-01",
+    "termEn": "dual carriageway",
+    "termPl": "droga dwujezdniowa",
+    "pl": "Główna droga z ruchem w przeciwnych kierunkach, rozdzielonym pasem lub barierką środkową (central reservation).",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "RR-01",
+    "termEn": "motorway",
+    "termPl": "autostrada",
+    "pl": "Szybka droga z kontrolowanym wjazdem; w UK oznaczana niebieskimi znakami.",
+    "hasDiac": false,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "RR-22",
+    "termEn": "U-turn",
+    "termPl": "zawracanie",
+    "pl": "Zawrócenie pojazdu o 180°, by jechać z powrotem tą samą drogą.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "RR-46",
+    "termEn": "dual carriageway",
+    "termPl": "droga dwujezdniowa",
+    "pl": "Główna droga z ruchem w przeciwnych kierunkach, rozdzielonym pasem lub barierką środkową (central reservation).",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "RR-46",
+    "termEn": "central reservation",
+    "termPl": "pas dzielący",
+    "pl": "Pas lub bariera oddzielająca dwa kierunki ruchu na dual carriageway.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "VU-01",
+    "termEn": "pedestrian crossing",
+    "termPl": "przejście dla pieszych",
+    "pl": "Oznaczone miejsce na jezdni, gdzie piesi mogą bezpiecznie przechodzić.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "VU-23",
+    "termEn": "mopeds",
+    "termPl": "motorowery",
+    "pl": "Lekkie dwukołowe pojazdy silnikowe o małej mocy, wolniejsze niż większość motocykli.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "VU-44",
+    "termEn": "Brake sharply",
+    "termPl": "gwałtownie zahamować",
+    "pl": "Mocno wcisnąć hamulec, by gwałtownie zwolnić lub zatrzymać pojazd.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "VH-01",
+    "termEn": "slip road",
+    "termPl": "pas włączania/zjazdu",
+    "pl": "Krótka droga dojazdowa do wjazdu lub zjazdu z motorway.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "VH-01",
+    "termEn": "one-way street",
+    "termPl": "ulica jednokierunkowa",
+    "pl": "Ulica, po której ruch jest dozwolony tylko w jednym kierunku.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "VH-01",
+    "termEn": "queues",
+    "termPl": "korki",
+    "pl": "Kolejki wolno jadącego lub stojącego ruchu.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "VH-15",
+    "termEn": "dipped headlights",
+    "termPl": "światła mijania",
+    "pl": "Światła mijania skierowane niżej, by oświetlać drogę bez oślepiania nadjeżdżających.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "VH-15",
+    "termEn": "tail lights",
+    "termPl": "światła tylne",
+    "pl": "Czerwone światła z tyłu pojazdu pokazujące jego pozycję kierowcom z tyłu.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "VH-29",
+    "termEn": "motorway",
+    "termPl": "autostrada",
+    "pl": "Szybka droga z kontrolowanym wjazdem; w UK oznaczana niebieskimi znakami.",
+    "hasDiac": false,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "VH-29",
+    "termEn": "Sidelights",
+    "termPl": "światła pozycyjne",
+    "pl": "Słabe światła pozycyjne z przodu i z tyłu; same nie wystarczają do jazdy z prędkością.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "VH-29",
+    "termEn": "rear fog lights",
+    "termPl": "tylne światła przeciwmgielne",
+    "pl": "Jasne czerwone światła z tyłu pojazdu; używane tylko w gęstej mgle, by inni Cię widzieli.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "IN-01",
+    "termEn": "tunnel",
+    "termPl": "tunel",
+    "pl": "Przejazd drogowy pod ziemią lub przez wzgórze.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "IN-21",
+    "termEn": "casualties",
+    "termPl": "poszkodowani",
+    "pl": "Osoby ranne w wypadku lub sytuacji awaryjnej.",
+    "hasDiac": false,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "IN-21",
+    "termEn": "incident",
+    "termPl": "incydent",
+    "pl": "Wypadek, awaria lub inne nieoczekiwane zdarzenie na drodze.",
+    "hasDiac": false,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "IN-38",
+    "termEn": "hazard warning lights",
+    "termPl": "światła awaryjne",
+    "pl": "Oba kierunkowskazy migające naraz — ostrzeżenie o zagrożeniu lub nagłym zwolnieniu.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "IN-38",
+    "termEn": "motorway",
+    "termPl": "autostrada",
+    "pl": "Szybka droga z kontrolowanym wjazdem; w UK oznaczana niebieskimi znakami.",
+    "hasDiac": false,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "IN-38",
+    "termEn": "hard shoulder",
+    "termPl": "pas awaryjny",
+    "pl": "Pas awaryjny przy krawędzi motorway; zwykle tylko do zatrzymania w nagłym wypadku.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "DC-01",
+    "termEn": "MOT certificate",
+    "termPl": "certyfikat MOT",
+    "pl": "Dokument UK potwierdzający, że pojazd przeszedł coroczny test sprawności (MOT).",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  },
+  {
+    "id": "DC-09",
+    "termEn": "learner driver",
+    "termPl": "kursant",
+    "pl": "Kursant uczący się jazdy, często z tablicami L na pojeździe.",
+    "hasDiac": true,
+    "labelOk": true,
+    "notEn": true
+  }
+]

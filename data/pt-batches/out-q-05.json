@@ -1,0 +1,860 @@
+{
+  "vulnerable-road-users": {
+    "VU-50": {
+      "promptPt": "Ao virar à esquerda para uma estrada lateral, que perigo deve vigiar com mais atenção?",
+      "options": [
+        {
+          "pt": "Veículos estacionados"
+        },
+        {
+          "pt": "Congestionamento"
+        },
+        {
+          "pt": "Peões a atravessar"
+        },
+        {
+          "pt": "Ruas de sentido único"
+        }
+      ]
+    },
+    "VU-51": {
+      "promptPt": "Porque usam frequentemente os motociclistas roupa clara ou refletora?",
+      "options": [
+        {
+          "pt": "É exigido por lei"
+        },
+        {
+          "pt": "Mantém-nos mais frescos"
+        },
+        {
+          "pt": "É moda"
+        },
+        {
+          "pt": "Para serem mais visíveis aos outros"
+        }
+      ]
+    },
+    "VU-52": {
+      "promptPt": "Porque pode um motociclista olhar por cima do ombro direito antes de virar à direita?",
+      "options": [
+        {
+          "pt": "Para ouvir o trânsito"
+        },
+        {
+          "pt": "Porque os motociclos não têm espelhos"
+        },
+        {
+          "pt": "Para ajudar o equilíbrio"
+        },
+        {
+          "pt": "Para verificar os ângulos mortos"
+        }
+      ]
+    },
+    "VU-53": {
+      "promptPt": "O que indica normalmente um farol âmbar a piscar num veículo em movimento?",
+      "options": [
+        {
+          "pt": "Veículo de emergência"
+        },
+        {
+          "pt": "Veículo avariado"
+        },
+        {
+          "pt": "Veículo lento ou de trabalho"
+        },
+        {
+          "pt": "Patrulha escolar"
+        }
+      ]
+    },
+    "VU-54": {
+      "promptPt": "O que significa normalmente um sinal com um símbolo de bicicleta em fundo azul?",
+      "options": [
+        {
+          "pt": "Ciclismo proibido"
+        },
+        {
+          "pt": "Percurso ciclável"
+        },
+        {
+          "pt": "Estacionamento de bicicletas"
+        },
+        {
+          "pt": "Fim do percurso ciclável"
+        }
+      ]
+    },
+    "VU-55": {
+      "promptPt": "Um peão caminha com um cão de colete amarelo ou bordeaux. O que indica isto?",
+      "options": [
+        {
+          "pt": "A pessoa é idosa"
+        },
+        {
+          "pt": "A pessoa é treinadora"
+        },
+        {
+          "pt": "A pessoa é surda"
+        },
+        {
+          "pt": "A pessoa tem uma deficiência auditiva"
+        }
+      ]
+    },
+    "VU-56": {
+      "promptPt": "Como deve ultrapassar cavaleiros em segurança?",
+      "options": [
+        {
+          "pt": "Passar depressa"
+        },
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Conduzir devagar e dar espaço"
+        },
+        {
+          "pt": "Passar de perto"
+        }
+      ]
+    },
+    "VU-57": {
+      "promptPt": "Um condutor aprendiz encrava o motor num cruzamento. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Piscar os máximos"
+        },
+        {
+          "pt": "Acelerar o motor"
+        },
+        {
+          "pt": "Ser paciente"
+        },
+        {
+          "pt": "Ultrapassar de imediato"
+        }
+      ]
+    },
+    "VU-58": {
+      "promptPt": "Onde veria normalmente um sinal amarelo refletor de aviso de escola?",
+      "options": [
+        {
+          "pt": "Em carros"
+        },
+        {
+          "pt": "Em portões de parques infantis"
+        },
+        {
+          "pt": "Em autocarros escolares"
+        },
+        {
+          "pt": "Na berma perto de escolas"
+        }
+      ]
+    },
+    "VU-59": {
+      "promptPt": "Antes de virar à direita para uma estrada lateral, o que deve verificar por último?",
+      "options": [
+        {
+          "pt": "A velocidade"
+        },
+        {
+          "pt": "A mudança"
+        },
+        {
+          "pt": "Os espelhos para trânsito a ultrapassar"
+        },
+        {
+          "pt": "O travão de mão"
+        }
+      ]
+    },
+    "VU-60": {
+      "promptPt": "Como podem os novos condutores reduzir o risco de colisão depois de passarem o exame?",
+      "options": [
+        {
+          "pt": "Conduzir perto dos outros"
+        },
+        {
+          "pt": "Evitar apenas velocidades elevadas"
+        },
+        {
+          "pt": "Fazer formação adicional"
+        },
+        {
+          "pt": "Ficar sempre na via da esquerda"
+        }
+      ]
+    },
+    "VU-61": {
+      "promptPt": "Um peão leva uma bengala branca com uma faixa vermelha. O que significa isto?",
+      "options": [
+        {
+          "pt": "Mobilidade limitada"
+        },
+        {
+          "pt": "Surdo"
+        },
+        {
+          "pt": "Cego"
+        },
+        {
+          "pt": "Surdo e cego"
+        }
+      ]
+    },
+    "VU-62": {
+      "promptPt": "Peões começaram a atravessar onde quer virar à esquerda. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Contorná-los"
+        },
+        {
+          "pt": "Ceder a passagem"
+        },
+        {
+          "pt": "Piscar as luzes"
+        }
+      ]
+    },
+    "VU-63": {
+      "promptPt": "Porque deve deixar espaço extra aos motociclistas em dias de vento?",
+      "options": [
+        {
+          "pt": "Podem acelerar"
+        },
+        {
+          "pt": "Podem ser desviados lateralmente pelo vento"
+        },
+        {
+          "pt": "Podem parar de repente"
+        },
+        {
+          "pt": "Circulam mais depressa"
+        }
+      ]
+    },
+    "VU-64": {
+      "promptPt": "Veículos de mobilidade motorizados em vias de dois sentidos com separador devem exibir que farol?",
+      "options": [
+        {
+          "pt": "Vermelho"
+        },
+        {
+          "pt": "Verde"
+        },
+        {
+          "pt": "Azul"
+        },
+        {
+          "pt": "Âmbar"
+        }
+      ]
+    },
+    "VU-65": {
+      "promptPt": "Um cavaleiro está na via da esquerda numa rotunda. Para onde pode ir?",
+      "options": [
+        {
+          "pt": "Apenas à esquerda"
+        },
+        {
+          "pt": "Apenas à direita"
+        },
+        {
+          "pt": "Apenas em frente"
+        },
+        {
+          "pt": "Em qualquer direção"
+        }
+      ]
+    },
+    "VU-66": {
+      "promptPt": "Pessoas idosas estão a atravessar à frente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Fazer-lhes sinal"
+        },
+        {
+          "pt": "Acelerar o motor"
+        },
+        {
+          "pt": "Ser paciente"
+        },
+        {
+          "pt": "Tocar a buzina"
+        }
+      ]
+    },
+    "VU-67": {
+      "promptPt": "O que significam as linhas amarelas em ziguezague junto a uma escola?",
+      "options": [
+        {
+          "pt": "Estacionamento permitido"
+        },
+        {
+          "pt": "Espera permitida"
+        },
+        {
+          "pt": "Proibido parar ou estacionar"
+        },
+        {
+          "pt": "Apenas para deixar passageiros"
+        }
+      ]
+    },
+    "VU-68": {
+      "promptPt": "Há ovelhas soltas na estrada. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Avançar devagar"
+        },
+        {
+          "pt": "Passar depressa"
+        },
+        {
+          "pt": "Agrupá-las"
+        }
+      ]
+    },
+    "VU-69": {
+      "promptPt": "Antes de virar à direita a partir de uma fila, porque deve verificar o espelho direito?",
+      "options": [
+        {
+          "pt": "Peões"
+        },
+        {
+          "pt": "Veículos a ultrapassar"
+        },
+        {
+          "pt": "Trânsito da estrada lateral"
+        },
+        {
+          "pt": "Carros estacionados"
+        }
+      ]
+    },
+    "VU-70": {
+      "promptPt": "Vai virar à esquerda e um peão espera para atravessar a estrada lateral. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Piscar as luzes"
+        },
+        {
+          "pt": "Continuar"
+        },
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Ceder a passagem"
+        }
+      ]
+    },
+    "VU-71": {
+      "promptPt": "Porque usam os motociclistas os médios durante o dia?",
+      "options": [
+        {
+          "pt": "Proteção da bateria"
+        },
+        {
+          "pt": "Para serem bem vistos"
+        },
+        {
+          "pt": "Melhor visão"
+        },
+        {
+          "pt": "Convite a ultrapassar"
+        }
+      ]
+    }
+  },
+  "vehicle-handling": {
+    "VH-01": {
+      "promptPt": "Quando é aceitável ultrapassar outro veículo pela esquerda?",
+      "options": [
+        {
+          "pt": "Quando o veículo à frente sinaliza viragem à esquerda"
+        },
+        {
+          "pt": "Quando se aproxima de uma via de saída"
+        },
+        {
+          "pt": "Quando está numa rua de sentido único"
+        },
+        {
+          "pt": "Quando o trânsito na via da direita se move lentamente em filas"
+        }
+      ]
+    },
+    "VH-02": {
+      "promptPt": "No nevoeiro, porque deve deixar uma distância maior ao veículo da frente?",
+      "options": [
+        {
+          "pt": "Caso vire de repente"
+        },
+        {
+          "pt": "Caso os faróis de nevoeiro o ofusquem"
+        },
+        {
+          "pt": "Caso pare de repente"
+        },
+        {
+          "pt": "Caso as luzes de travão o ofusquem"
+        }
+      ]
+    },
+    "VH-03": {
+      "promptPt": "Numa curva molhada, porque pode um motociclista evitar passar sobre tampas de esgoto?",
+      "options": [
+        {
+          "pt": "Para evitar furar o pneu"
+        },
+        {
+          "pt": "Porque as tampas metálicas podem ser escorregadias"
+        },
+        {
+          "pt": "Para as usar como marcadores de curva"
+        },
+        {
+          "pt": "Para evitar salpicar peões"
+        }
+      ]
+    },
+    "VH-04": {
+      "promptPt": "O que é mais provável acontecer ao subir uma ladeira íngreme?",
+      "options": [
+        {
+          "pt": "As mudanças altas puxam melhor"
+        },
+        {
+          "pt": "A direção parece mais pesada"
+        },
+        {
+          "pt": "Ultrapassar torna-se mais fácil"
+        },
+        {
+          "pt": "O motor trabalha mais"
+        }
+      ]
+    },
+    "VH-05": {
+      "promptPt": "Porque é inseguro «deslizar» (circular com a embraiagem carregada ou em ponto morto)?",
+      "options": [
+        {
+          "pt": "Gasta mais combustível"
+        },
+        {
+          "pt": "Sobreaquece o motor"
+        },
+        {
+          "pt": "Reduz o controlo da direção e da travagem"
+        },
+        {
+          "pt": "Melhora o desgaste dos pneus"
+        }
+      ]
+    },
+    "VH-06": {
+      "promptPt": "Encontra um veículo em sentido contrário numa estrada de via única. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Fazer marcha-atrás até à estrada principal"
+        },
+        {
+          "pt": "Fazer uma paragem de emergência"
+        },
+        {
+          "pt": "Usar um local de passagem e estar preparado para esperar"
+        },
+        {
+          "pt": "Ligar as luzes de perigo"
+        }
+      ]
+    },
+    "VH-07": {
+      "promptPt": "Está numa estrada com lombas e o condutor da frente vai mais devagar. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Tocar a buzina"
+        },
+        {
+          "pt": "Ultrapassar assim que puder"
+        },
+        {
+          "pt": "Piscar os máximos"
+        },
+        {
+          "pt": "Abrandar e ficar atrás"
+        }
+      ]
+    },
+    "VH-08": {
+      "promptPt": "Porque é arriscado manter a embraiagem carregada ou circular em ponto morto durante muito tempo?",
+      "options": [
+        {
+          "pt": "O combustível vai derramar"
+        },
+        {
+          "pt": "O motor será danificado"
+        },
+        {
+          "pt": "Tem menos controlo da direção e da travagem"
+        },
+        {
+          "pt": "Os pneus gastam-se mais depressa"
+        }
+      ]
+    }
+  },
+  "incidents": {
+    "IN-01": {
+      "promptPt": "Qual é a ação mais segura se o seu carro se incendiar ao atravessar um túnel?",
+      "options": [
+        {
+          "pt": "Deixar o motor a trabalhar e sair de imediato"
+        },
+        {
+          "pt": "Parar e ir a um telefone de emergência"
+        },
+        {
+          "pt": "Estacionar ao lado e esperar"
+        },
+        {
+          "pt": "Se for seguro, sair do túnel a conduzir antes de parar"
+        }
+      ]
+    },
+    "IN-02": {
+      "promptPt": "Quando deve ser retirado o capacete de um motociclista ferido?",
+      "options": [
+        {
+          "pt": "De imediato, em todos os casos"
+        },
+        {
+          "pt": "Apenas se ele o pedir"
+        },
+        {
+          "pt": "Apenas se for essencial para os primeiros socorros"
+        },
+        {
+          "pt": "A menos que esteja consciente"
+        }
+      ]
+    },
+    "IN-03": {
+      "promptPt": "Que luzes deve usar ao atravessar um túnel?",
+      "options": [
+        {
+          "pt": "Luzes de presença"
+        },
+        {
+          "pt": "Faróis de nevoeiro"
+        },
+        {
+          "pt": "Médios"
+        },
+        {
+          "pt": "Luzes de perigo"
+        }
+      ]
+    },
+    "IN-04": {
+      "promptPt": "Qual é a profundidade correta das compressões torácicas na RCP de um adulto?",
+      "options": [
+        {
+          "pt": "1–2 cm"
+        },
+        {
+          "pt": "5–6 cm"
+        },
+        {
+          "pt": "10–15 cm"
+        },
+        {
+          "pt": "15–20 cm"
+        }
+      ]
+    },
+    "IN-05": {
+      "promptPt": "Se o seu carro encravar numa passagem de nível e os alarmes começarem a soar, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Continuar a tentar ligar o motor"
+        },
+        {
+          "pt": "Empurrar o carro sozinho"
+        },
+        {
+          "pt": "Sair de imediato e afastar-se das linhas"
+        },
+        {
+          "pt": "Fazer sinal ao comboio"
+        }
+      ]
+    },
+    "IN-06": {
+      "promptPt": "Qual é a primeira ação se um ferido não respirar?",
+      "options": [
+        {
+          "pt": "Abaná-lo"
+        },
+        {
+          "pt": "Virar-lhe o corpo de lado"
+        },
+        {
+          "pt": "Abrir as vias respiratórias"
+        },
+        {
+          "pt": "Erguer-lhe os braços"
+        }
+      ]
+    },
+    "IN-07": {
+      "promptPt": "A que distância atrás do seu carro deve colocar um triângulo de pré-sinalização numa estrada de dois sentidos?",
+      "options": [
+        {
+          "pt": "5 metros"
+        },
+        {
+          "pt": "25 metros"
+        },
+        {
+          "pt": "45 metros"
+        },
+        {
+          "pt": "100 metros"
+        }
+      ]
+    },
+    "IN-08": {
+      "promptPt": "Como pode melhor ajudar alguém em choque após uma colisão?",
+      "options": [
+        {
+          "pt": "Dar-lhe de beber"
+        },
+        {
+          "pt": "Tranquilizá-lo com calma"
+        },
+        {
+          "pt": "Perguntar quem causou o acidente"
+        },
+        {
+          "pt": "Dar-lhe comida"
+        }
+      ]
+    }
+  },
+  "documents": {
+    "DC-01": {
+      "promptPt": "Quando é legal conduzir um veículo sem certificado MOT válido?",
+      "options": [
+        {
+          "pt": "Durante 7 dias após o fim da validade"
+        },
+        {
+          "pt": "Com autorização do proprietário"
+        },
+        {
+          "pt": "Quando se dirige a um teste MOT previamente marcado"
+        },
+        {
+          "pt": "Quando se dirige a comprar um seguro"
+        }
+      ]
+    },
+    "DC-02": {
+      "promptPt": "Quando precisa normalmente um carro novo do primeiro teste MOT?",
+      "options": [
+        {
+          "pt": "Após 1 ano"
+        },
+        {
+          "pt": "Após 3 anos"
+        },
+        {
+          "pt": "Após 5 anos"
+        },
+        {
+          "pt": "Após 7 anos"
+        }
+      ]
+    },
+    "DC-03": {
+      "promptPt": "Um agente de polícia pede os seus documentos de condução, mas não os tem consigo. Quanto tempo tem para os apresentar?",
+      "options": [
+        {
+          "pt": "5 dias"
+        },
+        {
+          "pt": "7 dias"
+        },
+        {
+          "pt": "14 dias"
+        },
+        {
+          "pt": "21 dias"
+        }
+      ]
+    },
+    "DC-04": {
+      "promptPt": "O que é uma Statutory Off-Road Notification (SORN)?",
+      "options": [
+        {
+          "pt": "Um aviso de que o veículo não tem seguro"
+        },
+        {
+          "pt": "Um aviso de que o veículo não tem MOT"
+        },
+        {
+          "pt": "Uma declaração de que o veículo não está a ser usado em vias públicas"
+        },
+        {
+          "pt": "Um registo policial da propriedade do veículo"
+        }
+      ]
+    },
+    "DC-05": {
+      "promptPt": "Quem é legalmente responsável por manter atualizados os dados de registo do veículo?",
+      "options": [
+        {
+          "pt": "A companhia de seguros"
+        },
+        {
+          "pt": "O fabricante do veículo"
+        },
+        {
+          "pt": "O detentor registado"
+        },
+        {
+          "pt": "A autoridade de licenciamento"
+        }
+      ]
+    },
+    "DC-06": {
+      "promptPt": "Quanto tempo é normalmente válido um certificado MOT?",
+      "options": [
+        {
+          "pt": "3 anos"
+        },
+        {
+          "pt": "10 000 milhas"
+        },
+        {
+          "pt": "1 ano"
+        },
+        {
+          "pt": "30 000 milhas"
+        }
+      ]
+    },
+    "DC-07": {
+      "promptPt": "Passa o primeiro exame de condução e recebe 6 pontos de penalização no prazo de 2 anos. O que acontece?",
+      "options": [
+        {
+          "pt": "Repetir apenas o exame teórico"
+        },
+        {
+          "pt": "Repetir os exames teórico e prático"
+        },
+        {
+          "pt": "Repetir apenas o exame prático"
+        },
+        {
+          "pt": "Pedir novamente a carta de imediato"
+        }
+      ]
+    },
+    "DC-08": {
+      "promptPt": "Quando deve apresentar o certificado de seguro?",
+      "options": [
+        {
+          "pt": "Ao declarar SORN"
+        },
+        {
+          "pt": "Ao comprar ou vender um veículo"
+        },
+        {
+          "pt": "Quando um agente de polícia o solicitar"
+        },
+        {
+          "pt": "Durante um teste MOT"
+        }
+      ]
+    },
+    "DC-09": {
+      "promptPt": "Que requisito adicional deve cumprir para supervisionar um condutor aprendiz?",
+      "options": [
+        {
+          "pt": "Ter comandos duplos"
+        },
+        {
+          "pt": "Ter pelo menos 21 anos"
+        },
+        {
+          "pt": "Ser instrutor aprovado"
+        },
+        {
+          "pt": "Ter uma carta avançada"
+        }
+      ]
+    },
+    "DC-10": {
+      "promptPt": "O que deve ter para conduzir legalmente um veículo a motor na estrada?",
+      "options": [
+        {
+          "pt": "Cobertura de avaria"
+        },
+        {
+          "pt": "Prova de identidade"
+        },
+        {
+          "pt": "Um manual do veículo"
+        },
+        {
+          "pt": "Uma carta de condução válida"
+        }
+      ]
+    },
+    "DC-11": {
+      "promptPt": "O que deve estar em vigor antes de renovar o imposto do veículo?",
+      "options": [
+        {
+          "pt": "Manual do veículo"
+        },
+        {
+          "pt": "Número do chassis"
+        },
+        {
+          "pt": "Seguro válido"
+        },
+        {
+          "pt": "Carta de condução"
+        }
+      ]
+    },
+    "DC-12": {
+      "promptPt": "O que cobre o seguro de responsabilidade civil (third-party)?",
+      "options": [
+        {
+          "pt": "Danos no seu próprio veículo"
+        },
+        {
+          "pt": "Danos noutros veículos e bens"
+        },
+        {
+          "pt": "Lesões em si próprio"
+        },
+        {
+          "pt": "Todos os danos e lesões"
+        }
+      ]
+    }
+  }
+}

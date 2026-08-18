@@ -5,22 +5,37 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
+import VocabHintsControl from '@/components/VocabHintsControl';
 import DisclaimerModal from '@/components/DisclaimerModal';
+import LanguageSelector from '@/components/LanguageSelector';
+import BilingualLabel from '@/components/BilingualLabel';
+import { enLabel } from '@/lib/i18n/ui-strings';
 import PaywallOverlay from '@/components/PaywallOverlay';
 import { useAccess } from '@/lib/providers/AccessProvider';
 import { useQuestionBank } from '@/lib/questions/useQuestionBank';
 import { 
-  TranslationLang, 
-  getTranslationLang, 
-  setTranslationLang, 
   loadUrduTranslations,
   loadRomanianTranslations,
+  loadPolishTranslations,
+  loadPortugueseTranslations,
+  loadBengaliTranslations,
   getQuestionTranslation,
   getUrduOptionTranslation,
   getRomanianOptionTranslation,
+  getPolishOptionTranslation,
+  getPortugueseOptionTranslation,
+  getBengaliOptionTranslation,
   type TranslationData 
 } from '@/lib/translations';
-import { getKeywordUrduTranslation, getKeywordRomanianTranslation } from '@/lib/keyword-translations';
+import { useLanguage } from '@/lib/i18n/LanguageProvider';
+import { getTopicTranslation, topicTranslationDir } from '@/lib/i18n/topics';
+import { isRtlLang, type TranslationLang } from '@/lib/i18n/languages';
+import {
+  getKeywordUrduTranslation,
+  getKeywordRomanianTranslation,
+  getKeywordPolishTranslation,
+  getKeywordPortugueseTranslation,
+} from '@/lib/keyword-translations';
 import {
   analyticsLanguage,
   getOrCreateClientSessionId,
@@ -29,61 +44,6 @@ import {
   trackSessionStart,
 } from '@/lib/analytics/client';
 
-// Arabic translations for topics
-const topicArabicMap: Record<string, string> = {
-  'alertness': 'الانتباه والتركيز',
-  'hazard-awareness': 'التنبّه للمخاطر',
-  'road-signs': 'إشارات الطريق',
-  'safety-margins': 'مسافات الأمان',
-  'rules-of-the-road': 'قوانين الطريق',
-  'vulnerable-road-users': 'مستخدمي الطريق',
-  'vehicle-handling': 'التحكم بالمركبة',
-  'incidents': 'الحوادث والطوارئ',
-  'documents': 'الوثائق والرخص',
-  'motorway-driving': 'الطرق السريعة',
-  'other-vehicles': 'المركبات الأخرى',
-  'vehicle-loading': 'تحميل المركبة',
-  'attitude': 'سلوك السائق',
-  'safety-vehicle': 'سلامة المركبة',
-};
-
-// Urdu translations for topics
-const topicUrduMap: Record<string, string> = {
-  'alertness': 'چوکسی',
-  'hazard-awareness': 'خطرات سے آگاہی',
-  'road-signs': 'سڑک کے اشارے',
-  'safety-margins': 'محفوظ فاصلے',
-  'rules-of-the-road': 'سڑک کے قواعد',
-  'vulnerable-road-users': 'کمزور سڑک استعمال کرنے والے',
-  'vehicle-handling': 'گاڑی پر کنٹرول',
-  'incidents': 'حادثات',
-  'documents': 'دستاویزات',
-  'motorway-driving': 'موٹر وے پر ڈرائیونگ',
-  'other-vehicles': 'دیگر گاڑیاں',
-  'vehicle-loading': 'گاڑی کی لوڈنگ',
-  'attitude': 'رویہ',
-  'safety-vehicle': 'گاڑی کی حفاظت',
-};
-
-// Romanian translations for topics
-const topicRomanianMap: Record<string, string> = {
-  'alertness': 'Atenție și vigilență',
-  'hazard-awareness': 'Conștientizarea pericolelor',
-  'road-signs': 'Indicatoare rutiere',
-  'safety-margins': 'Margini de siguranță',
-  'rules-of-the-road': 'Regulile circulației',
-  'vulnerable-road-users': 'Utilizatori vulnerabili ai drumului',
-  'vehicle-handling': 'Manevrarea vehiculului',
-  'incidents': 'Incidente și urgențe',
-  'documents': 'Documente',
-  'motorway-driving': 'Conducerea pe autostradă',
-  'other-vehicles': 'Alte vehicule',
-  'vehicle-loading': 'Încărcarea vehiculului',
-  'attitude': 'Atitudinea șoferului',
-  'safety-vehicle': 'Siguranța vehiculului',
-};
-
-// Fisher-Yates shuffle algorithm
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];
   for (let i = shuffled.length - 1; i > 0; i--) {
@@ -96,13 +56,19 @@ function shuffleArray<T>(array: T[]): T[] {
 export default function PracticePage() {
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
   const { loading, paid, freeUsed, refresh, silentRefresh } = useAccess();
-  const { questions, urTranslations: bankUrdu, roTranslations: bankRo, source: bankSource } = useQuestionBank();
+  const {
+    questions,
+    urTranslations: bankUrdu,
+    roTranslations: bankRo,
+    plTranslations: bankPl,
+    ptTranslations: bankPt,
+    source: bankSource,
+  } = useQuestionBank();
+  const { lang: translationLang, setLang, ready: languageReady } = useLanguage();
   const [selectedTopic, setSelectedTopic] = useState<string>('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
   const [selectedKeywordIndex, setSelectedKeywordIndex] = useState<number | null>(null);
-  const [translationLang, setTranslationLangState] = useState<TranslationLang>('off');
-  const [isMounted, setIsMounted] = useState(false);
   const [answeredQuestionIds, setAnsweredQuestionIds] = useState<Set<string>>(new Set());
   // Track which questions have already been counted to avoid double-counting
   const countedQuestionIds = useRef<Set<string>>(new Set());
@@ -110,13 +76,11 @@ export default function PracticePage() {
   const freeLimitTrackedRef = useRef(false);
   const practiceStartedTopicsRef = useRef<Set<string>>(new Set());
 
-  // Load translation language from localStorage after mount to avoid hydration mismatch
-  useEffect(() => {
-    setIsMounted(true);
-    setTranslationLangState(getTranslationLang());
-  }, []);
   const [urTranslations, setUrTranslations] = useState<TranslationData | null>(null);
   const [roTranslations, setRoTranslations] = useState<TranslationData | null>(null);
+  const [plTranslations, setPlTranslations] = useState<TranslationData | null>(null);
+  const [ptTranslations, setPtTranslations] = useState<TranslationData | null>(null);
+  const [bnTranslations, setBnTranslations] = useState<TranslationData | null>(null);
   const [imageError, setImageError] = useState<boolean>(false);
   const [showTopicsGrid, setShowTopicsGrid] = useState<boolean>(true);
   const [showHints, setShowHints] = useState<boolean>(false); // Collapsed by default on mobile
@@ -151,6 +115,44 @@ export default function PracticePage() {
     }
   }, [translationLang, bankSource, bankRo]);
 
+  // Prefer DB Polish when bank is from database; otherwise load locale file
+  useEffect(() => {
+    if (bankSource === 'database' && bankPl && Object.keys(bankPl).length > 0) {
+      setPlTranslations(bankPl);
+      return;
+    }
+    if (translationLang === 'pl') {
+      loadPolishTranslations(true).then((data) => {
+        if (data) setPlTranslations(data);
+      });
+    } else if (bankSource !== 'database') {
+      setPlTranslations(null);
+    }
+  }, [translationLang, bankSource, bankPl]);
+
+  // Prefer DB Portuguese when bank is from database; otherwise load locale file
+  useEffect(() => {
+    if (bankSource === 'database' && bankPt && Object.keys(bankPt).length > 0) {
+      setPtTranslations(bankPt);
+      return;
+    }
+    if (translationLang === 'pt') {
+      loadPortugueseTranslations(true).then((data) => {
+        if (data) setPtTranslations(data);
+      });
+    } else if (bankSource !== 'database') {
+      setPtTranslations(null);
+    }
+  }, [translationLang, bankSource, bankPt]);
+
+  useEffect(() => {
+    if (translationLang === 'bn') {
+      loadBengaliTranslations(true).then((data) => {
+        if (data) setBnTranslations(data);
+      });
+    }
+  }, [translationLang]);
+
   // Load Urdu translations automatically for topics that have Urdu translations
   useEffect(() => {
     if (bankSource === 'database') return;
@@ -171,16 +173,29 @@ export default function PracticePage() {
     }
   }, [selectedTopic, translationLang, bankSource]);
 
-  // Update translation language
-  const handleTranslationLangChange = (lang: TranslationLang) => {
-    setTranslationLangState(lang);
-    setTranslationLang(lang);
-    void trackEvent('language_changed', {
-      language: analyticsLanguage(lang),
-      previous: analyticsLanguage(translationLang),
-      mode: 'practice',
-    });
-    if (lang === 'ur') {
+  // Load Polish translations automatically for topics
+  useEffect(() => {
+    if (bankSource === 'database') return;
+    if (translationLang === 'pl' && selectedTopic) {
+      loadPolishTranslations(true).then((data) => {
+        if (data) setPlTranslations(data);
+      });
+    }
+  }, [selectedTopic, translationLang, bankSource]);
+
+  // Load Portuguese translations automatically for topics
+  useEffect(() => {
+    if (bankSource === 'database') return;
+    if (translationLang === 'pt' && selectedTopic) {
+      loadPortugueseTranslations(true).then((data) => {
+        if (data) setPtTranslations(data);
+      });
+    }
+  }, [selectedTopic, translationLang, bankSource]);
+
+  const handleTranslationLangChange = (next: TranslationLang) => {
+    setLang(next);
+    if (next === 'ur') {
       if (bankSource === 'database' && bankUrdu && Object.keys(bankUrdu).length > 0) {
         setUrTranslations(bankUrdu);
       } else {
@@ -188,7 +203,7 @@ export default function PracticePage() {
           if (data) setUrTranslations(data);
         });
       }
-    } else if (lang === 'ro') {
+    } else if (next === 'ro') {
       if (bankSource === 'database' && bankRo && Object.keys(bankRo).length > 0) {
         setRoTranslations(bankRo);
       } else {
@@ -196,6 +211,26 @@ export default function PracticePage() {
           if (data) setRoTranslations(data);
         });
       }
+    } else if (next === 'pl') {
+      if (bankSource === 'database' && bankPl && Object.keys(bankPl).length > 0) {
+        setPlTranslations(bankPl);
+      } else {
+        loadPolishTranslations(true).then((data) => {
+          if (data) setPlTranslations(data);
+        });
+      }
+    } else if (next === 'pt') {
+      if (bankSource === 'database' && bankPt && Object.keys(bankPt).length > 0) {
+        setPtTranslations(bankPt);
+      } else {
+        loadPortugueseTranslations(true).then((data) => {
+          if (data) setPtTranslations(data);
+        });
+      }
+    } else if (next === 'bn') {
+      loadBengaliTranslations(true).then((data) => {
+        if (data) setBnTranslations(data);
+      });
     }
   };
 
@@ -234,7 +269,21 @@ export default function PracticePage() {
         }
       });
     }
-  }, [currentQuestion?.id, translationLang, urTranslations, roTranslations]);
+    if (translationLang === 'pl' && currentQuestion && !plTranslations) {
+      loadPolishTranslations(true).then((data) => {
+        if (data) {
+          setPlTranslations(data);
+        }
+      });
+    }
+    if (translationLang === 'bn' && currentQuestion && !bnTranslations) {
+      loadBengaliTranslations(true).then((data) => {
+        if (data) {
+          setBnTranslations(data);
+        }
+      });
+    }
+  }, [currentQuestion?.id, translationLang, urTranslations, roTranslations, plTranslations, ptTranslations, bnTranslations]);
 
   // Get shuffled options for current question (memoized by question.id)
   // Shuffle runs ONCE per question and remains stable during re-renders
@@ -482,7 +531,7 @@ export default function PracticePage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         <div className="max-w-5xl mx-auto px-4 py-6">
-          <div className="text-center text-slate-600 font-medium">Loading...</div>
+          <div className="text-center text-slate-600 font-medium">{enLabel('loading')}</div>
         </div>
       </div>
     );
@@ -506,116 +555,28 @@ export default function PracticePage() {
           <div className="flex items-center gap-3 flex-wrap flex-1 min-w-0">
             <Link
               href="/dashboard"
-              className="lt-btn-ghost hidden sm:inline-flex px-4 py-2 text-sm"
+              className="lt-btn-ghost hidden sm:inline-flex px-4 py-2 text-sm flex-col items-center"
             >
-              ← Back to dashboard
+              <BilingualLabel keyName="backToDashboard" lang={translationLang} />
             </Link>
             <span className="hidden md:inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-[var(--lingo-red-soft)] text-[var(--lingo-red)] border border-[var(--lingo-red-muted)]">
-              Practice
+              {enLabel('practice')}
             </span>
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-start sm:gap-3 flex-1 min-w-0">
               <span className="text-xs md:text-sm font-medium text-[var(--text-secondary)] whitespace-nowrap">
-                <span className="md:hidden">{totalQuestions}Q · {totalTopics}T</span>
-                <span className="hidden md:inline">{totalQuestions} questions · {totalTopics} topics</span>
+                <span className="md:hidden">{enLabel('questionsTopicsShort', { n: totalQuestions, t: totalTopics })}</span>
+                <span className="hidden md:inline">{enLabel('questionsTopicsCount', { n: totalQuestions, t: totalTopics })}</span>
               </span>
-              {/* Translation Switcher - Mobile */}
-              {isMounted && (
-                <div className="flex items-center gap-1.5 sm:hidden w-full min-w-0">
-                  <span className="text-[10px] font-medium text-[var(--text-secondary)] whitespace-nowrap flex-shrink-0">
-                    Tr:
-                  </span>
-                  <div
-                    className="lt-segmented flex-1 min-w-0 flex-wrap justify-start"
-                    role="group"
-                    aria-label="Translation language selector"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => handleTranslationLangChange('off')}
-                      aria-pressed={translationLang === 'off'}
-                      data-active={translationLang === 'off'}
-                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.25rem]"
-                    >
-                      Off
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleTranslationLangChange('ar')}
-                      aria-pressed={translationLang === 'ar'}
-                      data-active={translationLang === 'ar'}
-                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.25rem]"
-                    >
-                      العربية
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleTranslationLangChange('ur')}
-                      aria-pressed={translationLang === 'ur'}
-                      data-active={translationLang === 'ur'}
-                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.25rem]"
-                    >
-                      اردو
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => handleTranslationLangChange('ro')}
-                      aria-pressed={translationLang === 'ro'}
-                      data-active={translationLang === 'ro'}
-                      className="lt-segmented-btn px-1.5 py-1 text-[11px] flex-1 min-w-[3.5rem]"
-                    >
-                      Română
-                    </button>
-                  </div>
-                </div>
+              {languageReady && (
+                <LanguageSelector
+                  value={translationLang}
+                  onChange={handleTranslationLangChange}
+                  className="flex-1 min-w-0"
+                />
               )}
             </div>
           </div>
-          {/* Translation Switcher - Desktop */}
-          {isMounted && (
-            <div className="hidden sm:flex items-center gap-3 flex-wrap">
-              <span className="text-xs font-medium text-[var(--text-secondary)]">Translation:</span>
-              <div className="lt-segmented" role="group" aria-label="Translation language selector">
-                <button
-                  type="button"
-                  onClick={() => handleTranslationLangChange('off')}
-                  aria-pressed={translationLang === 'off'}
-                  data-active={translationLang === 'off'}
-                  className="lt-segmented-btn px-3 py-1.5 text-xs"
-                >
-                  Off
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleTranslationLangChange('ar')}
-                  aria-pressed={translationLang === 'ar'}
-                  data-active={translationLang === 'ar'}
-                  className="lt-segmented-btn px-3 py-1.5 text-xs"
-                >
-                  العربية
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleTranslationLangChange('ur')}
-                  aria-pressed={translationLang === 'ur'}
-                  data-active={translationLang === 'ur'}
-                  className="lt-segmented-btn px-3 py-1.5 text-xs"
-                >
-                  اردو
-                </button>
-                <button
-                  type="button"
-                  onClick={() => handleTranslationLangChange('ro')}
-                  aria-pressed={translationLang === 'ro'}
-                  data-active={translationLang === 'ro'}
-                  className="lt-segmented-btn px-3 py-1.5 text-xs"
-                >
-                  Română
-                </button>
-              </div>
-            </div>
-          )}
         </div>
-
         {/* Mobile: Selected Topic Bar (shown when grid is hidden) */}
         {selectedTopic && !showTopicsGrid && (
           <div className="md:hidden mb-4">
@@ -627,28 +588,25 @@ export default function PracticePage() {
                   {toTitleCaseLabel(selectedTopic)}
                 </div>
                 {/* Translation - second line, directly under English, full width */}
-                {translationLang === 'ar' && topicArabicMap[selectedTopic] && (
-                  <div className="text-sm text-[var(--text-secondary)] font-normal leading-tight w-full block text-right" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
-                    {topicArabicMap[selectedTopic]}
-                  </div>
-                )}
-                {translationLang === 'ur' && topicUrduMap[selectedTopic] && (
-                  <div className="text-sm text-[var(--text-secondary)] font-normal leading-tight w-full block text-right" dir="rtl">
-                    {topicUrduMap[selectedTopic]}
-                  </div>
-                )}
-                {translationLang === 'ro' && topicRomanianMap[selectedTopic] && (
-                  <div className="text-sm text-[var(--text-secondary)] font-normal leading-tight w-full block" dir="ltr">
-                    {topicRomanianMap[selectedTopic]}
+                {getTopicTranslation(selectedTopic, translationLang) && (
+                  <div
+                    className={cn(
+                      'text-sm text-[var(--text-secondary)] font-normal leading-tight w-full block',
+                      isRtlLang(translationLang) && 'text-right'
+                    )}
+                    dir={topicTranslationDir(translationLang)}
+                    style={isRtlLang(translationLang) ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
+                  >
+                    {getTopicTranslation(selectedTopic, translationLang)}
                   </div>
                 )}
               </div>
               {/* Change button: stays on the right, doesn't wrap */}
               <button
                 onClick={handleChangeTopic}
-                className="lt-btn-primary flex-shrink-0 px-4 py-1.5 text-xs whitespace-nowrap self-start"
+                className="lt-btn-primary flex-shrink-0 px-4 py-1.5 text-xs whitespace-nowrap self-start flex flex-col items-center"
               >
-                Change topic
+                <BilingualLabel keyName="changeTopic" lang={translationLang} align="center" />
               </button>
             </div>
           </div>
@@ -666,7 +624,7 @@ export default function PracticePage() {
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:grid-rows-3">
             {topics.map((topic) => {
               const englishLabel = toTitleCaseLabel(topic);
-              const arabicSubtitle = topicArabicMap[topic] || '';
+              const topicLabel = getTopicTranslation(topic, translationLang);
               const isActive = topic === selectedTopic;
               return (
                 <button
@@ -686,51 +644,23 @@ export default function PracticePage() {
                       <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white flex-shrink-0 mt-0.5"></div>
                     )}
                     <div className="flex-1 min-w-0 flex flex-col">
-                      {/* English title: always on top */}
                       <div className={cn(
                         "font-semibold text-xs md:text-xs leading-tight",
                         "line-clamp-2 sm:line-clamp-1 md:line-clamp-1",
                         "overflow-hidden",
                         isActive ? "text-white" : "text-[var(--text-primary)]"
                       )}>{englishLabel}</div>
-                      {/* Translation subtitle: always below English, smaller and muted */}
-                      {translationLang === 'ar' && arabicSubtitle && (
+                      {topicLabel && (
                         <div 
                           className={cn(
                             "text-[10px] md:text-[11px] font-normal mt-1 leading-tight",
                             "line-clamp-1 overflow-hidden text-ellipsis",
                             isActive ? "text-white/85" : "text-[var(--text-secondary)]"
                           )} 
-                          dir="rtl" 
-                          style={{ 
-                            fontFeatureSettings: '"liga" 1, "kern" 1'
-                          }}
+                          dir={topicTranslationDir(translationLang)}
+                          style={isRtlLang(translationLang) ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
                         >
-                          {arabicSubtitle}
-                        </div>
-                      )}
-                      {translationLang === 'ur' && topicUrduMap[topic] && (
-                        <div 
-                          className={cn(
-                            "text-[10px] md:text-[11px] font-normal mt-1 leading-tight",
-                            "line-clamp-1 overflow-hidden text-ellipsis",
-                            isActive ? "text-white/85" : "text-[var(--text-secondary)]"
-                          )} 
-                          dir="rtl"
-                        >
-                          {topicUrduMap[topic]}
-                        </div>
-                      )}
-                      {translationLang === 'ro' && topicRomanianMap[topic] && (
-                        <div 
-                          className={cn(
-                            "text-[10px] md:text-[11px] font-normal mt-1 leading-tight",
-                            "line-clamp-1 overflow-hidden text-ellipsis",
-                            isActive ? "text-white/85" : "text-[var(--text-secondary)]"
-                          )} 
-                          dir="ltr"
-                        >
-                          {topicRomanianMap[topic]}
+                          {topicLabel}
                         </div>
                       )}
                     </div>
@@ -743,24 +673,16 @@ export default function PracticePage() {
 
         {/* Disclaimer Message - Desktop only */}
         <div className="hidden sm:block text-center mt-4 mb-2 max-w-5xl mx-auto">
-          <p className="text-[10px] text-[var(--muted-text)]/70 leading-tight max-w-4xl mx-auto">
+          <p
+            className="text-[10px] text-[var(--muted-text)]/70 leading-tight max-w-4xl mx-auto"
+          >
             <span className="mr-1">ℹ️</span>
-            Disclaimer: This app provides practice questions designed to help learners prepare for the UK driving theory test. The questions are not official DVSA exam questions but are based on the same learning objectives and topics.
+            {enLabel('disclaimerBody')}
           </p>
-          {translationLang === 'ar' && (
-            <p className="text-xs text-[var(--muted-text)]/70 leading-relaxed mt-1.5" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
-              تنويه: هذا التطبيق يقدّم أسئلة تدريبية للمساعدة في الاستعداد لاختبار القيادة النظري في المملكة المتحدة. الأسئلة ليست أسئلة الامتحان الرسمية، لكنها مبنية على نفس الأهداف التعليمية.
-            </p>
-          )}
-          {translationLang === 'ro' && (
-            <p className="text-xs text-[var(--muted-text)]/70 leading-relaxed mt-1.5" dir="ltr">
-              Declinarea responsabilității: Această aplicație oferă întrebări de exersare menite să ajute cursanții să se pregătească pentru testul teoretic de conducere din Regatul Unit. Întrebările nu sunt întrebări oficiale de examen DVSA, dar se bazează pe aceleași obiective și teme de învățare.
-            </p>
-          )}
         </div>
 
         {/* Mobile Disclaimer Modal */}
-        <DisclaimerModal showArabic={translationLang === 'ar'} showRomanian={translationLang === 'ro'} />
+        <DisclaimerModal lang={translationLang} />
 
             {/* Question Display */}
         {currentQuestion ? (
@@ -769,10 +691,10 @@ export default function PracticePage() {
             <div className="mb-4 pt-1">
               <div className="flex items-center justify-between mb-1.5">
                 <div className="text-xs text-[var(--text-secondary)] font-medium">
-                  Question {currentQuestionIndex + 1} of {topicQuestions.length}
+                  {enLabel('questionOf', { current: currentQuestionIndex + 1, total: topicQuestions.length })}
                 </div>
                 <div className="text-xs text-[var(--text-secondary)]">
-                  {Math.round(((currentQuestionIndex + 1) / topicQuestions.length) * 100)}% complete
+                  {enLabel('percentComplete', { percent: Math.round(((currentQuestionIndex + 1) / topicQuestions.length) * 100) })}
                 </div>
               </div>
               <div className="h-1.5 w-full bg-[var(--surface-secondary)] rounded-full overflow-hidden">
@@ -782,7 +704,7 @@ export default function PracticePage() {
                 />
               </div>
               {currentQuestionIndex + 1 === topicQuestions.length && (
-                <p className="text-xs text-[var(--teal)] mt-2 font-medium">Almost there! Keep going.</p>
+                <p className="text-xs text-[var(--teal)] mt-2 font-medium">{enLabel('almostThere')}</p>
               )}
             </div>
 
@@ -826,7 +748,7 @@ export default function PracticePage() {
                       ? "h-[160px] md:h-40" 
                       : "h-40"
                   )}>
-                    <span className="text-xs text-[var(--muted-text)]/70">Image not available</span>
+                    <span className="text-xs text-[var(--muted-text)]/70">{enLabel('imageNotAvailable')}</span>
                   </div>
                 </div>
               )
@@ -882,6 +804,57 @@ export default function PracticePage() {
               }
               return null;
             })()}
+            {translationLang === 'pl' && currentQuestion && (() => {
+              if (!plTranslations) {
+                console.warn(`[Practice] Polish translations not loaded for question ${currentQuestion.id}`);
+                return null;
+              }
+              const translation = getQuestionTranslation(currentQuestion.id, currentQuestion.topic, 'pl', plTranslations);
+              if (translation?.prompt) {
+                return (
+                  <h3 className="text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold mb-3 leading-[1.8] tracking-wide" dir="ltr">
+                    {translation.prompt}
+                  </h3>
+                );
+              } else {
+                console.warn(`[Practice] No Polish translation found for question ${currentQuestion.id} in topic ${currentQuestion.topic}`);
+              }
+              return null;
+            })()}
+            {translationLang === 'pt' && currentQuestion && (() => {
+              if (!ptTranslations) {
+                console.warn(`[Practice] Portuguese translations not loaded for question ${currentQuestion.id}`);
+                return null;
+              }
+              const translation = getQuestionTranslation(currentQuestion.id, currentQuestion.topic, 'pt', ptTranslations);
+              if (translation?.prompt) {
+                return (
+                  <h3 className="text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold mb-3 leading-[1.8] tracking-wide" dir="ltr">
+                    {translation.prompt}
+                  </h3>
+                );
+              } else {
+                console.warn(`[Practice] No Portuguese translation found for question ${currentQuestion.id} in topic ${currentQuestion.topic}`);
+              }
+              return null;
+            })()}
+            {translationLang === 'bn' && currentQuestion && (() => {
+              if (!bnTranslations) return null;
+              const translation = getQuestionTranslation(currentQuestion.id, currentQuestion.topic, 'bn', bnTranslations);
+              if (translation?.prompt) {
+                return (
+                  <h3 className="text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold mb-3 leading-[1.8] tracking-wide" dir="ltr">
+                    {translation.prompt}
+                  </h3>
+                );
+              }
+              return null;
+            })()}
+
+            <VocabHintsControl
+              questionId={currentQuestion.id}
+              translationLang={translationLang}
+            />
 
             {/* Divider */}
             <div className="border-t border-[var(--border)] mb-4 mt-2"></div>
@@ -980,6 +953,66 @@ export default function PracticePage() {
                           }
                           return null;
                         })()}
+                        {translationLang === 'pl' && plTranslations && (() => {
+                          const plOption = getPolishOptionTranslation(
+                            option.en,
+                            currentQuestion.options,
+                            plTranslations,
+                            currentQuestion.id,
+                            currentQuestion.topic
+                          );
+                          if (plOption) {
+                            return (
+                              <div className={cn(
+                                "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
+                                isSelected && !showAsCorrect && !showAsWrong ? "text-[var(--lingo-red-dark)]/90" : 
+                                showAsCorrect ? "text-[var(--correct)]/90" :
+                                showAsWrong ? "text-[var(--wrong)]/90" : "text-[var(--text-secondary)]"
+                              )} dir="ltr">{plOption}</div>
+                            );
+                          }
+                          return null;
+                        })()}
+                        {translationLang === 'pt' && ptTranslations && (() => {
+                          const ptOption = getPortugueseOptionTranslation(
+                            option.en,
+                            currentQuestion.options,
+                            ptTranslations,
+                            currentQuestion.id,
+                            currentQuestion.topic
+                          );
+                          if (ptOption) {
+                            return (
+                              <div className={cn(
+                                "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
+                                isSelected && !showAsCorrect && !showAsWrong ? "text-[var(--lingo-red-dark)]/90" : 
+                                showAsCorrect ? "text-[var(--correct)]/90" :
+                                showAsWrong ? "text-[var(--wrong)]/90" : "text-[var(--text-secondary)]"
+                              )} dir="ltr">{ptOption}</div>
+                            );
+                          }
+                          return null;
+                        })()}
+                        {translationLang === 'bn' && bnTranslations && (() => {
+                          const bnOption = getBengaliOptionTranslation(
+                            option.en,
+                            currentQuestion.options,
+                            bnTranslations,
+                            currentQuestion.id,
+                            currentQuestion.topic
+                          );
+                          if (bnOption) {
+                            return (
+                              <div className={cn(
+                                "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
+                                isSelected && !showAsCorrect && !showAsWrong ? "text-[var(--lingo-red-dark)]/90" : 
+                                showAsCorrect ? "text-[var(--correct)]/90" :
+                                showAsWrong ? "text-[var(--wrong)]/90" : "text-[var(--text-secondary)]"
+                              )} dir="ltr">{bnOption}</div>
+                            );
+                          }
+                          return null;
+                        })()}
                       </div>
                     </div>
                   </button>
@@ -987,7 +1020,6 @@ export default function PracticePage() {
               })}
             </div>
 
-            {/* Learning Hints Section - Shown after answering */}
             {(() => {
               // Filter hints by active language requirements
               const validHints = currentQuestion.keywords?.filter((keyword) => {
@@ -1014,8 +1046,25 @@ export default function PracticePage() {
                 const romanianTranslation = getKeywordRomanianTranslation(keyword.term);
                 const hasRomanian = !!romanianTranslation?.explainRo;
 
+                // Check Polish: must have translation in keyword-translations.ts
+                const polishTranslation = getKeywordPolishTranslation(keyword.term);
+                const hasPolish = !!polishTranslation?.explainPl;
+
+                // Check Portuguese: must have translation in keyword-translations.ts
+                const portugueseTranslation = getKeywordPortugueseTranslation(keyword.term);
+                const hasPortuguese = !!portugueseTranslation?.explainPt;
+
                 if (translationLang === 'ro') {
                   return hasEnglish && hasRomanian;
+                }
+                if (translationLang === 'pl') {
+                  return hasEnglish && hasPolish;
+                }
+                if (translationLang === 'pt') {
+                  return hasEnglish && hasPortuguese;
+                }
+                if (translationLang === 'bn') {
+                  return hasEnglish;
                 }
                 if (translationLang === 'off') {
                   return hasEnglish;
@@ -1037,7 +1086,13 @@ export default function PracticePage() {
                     className="lt-btn-ghost flex items-center gap-2 mb-3 px-3 py-2 text-sm w-full sm:w-auto"
                   >
                     <span className="text-lg">💡</span>
-                    <span>{showHints ? "Hide Learning Hints" : "Show Learning Hints"}</span>
+                    <span className="flex-1 min-w-0">
+                      {showHints ? (
+                        <BilingualLabel keyName="hideLearningHints" lang={translationLang} align="start" />
+                      ) : (
+                        <BilingualLabel keyName="showLearningHints" lang={translationLang} align="start" />
+                      )}
+                    </span>
                     <span className={cn(
                       "ml-auto sm:ml-2 transition-transform duration-200",
                       showHints ? "rotate-180" : ""
@@ -1049,33 +1104,20 @@ export default function PracticePage() {
                     <div className="animate-in fade-in slide-in-from-bottom-4 duration-300">
                       <div className="mb-3">
                         <h3 className="text-base font-semibold text-[var(--navy)]">
-                          Learning Hints
+                          {enLabel('learningHints')}
                         </h3>
                       </div>
-                      {translationLang === 'off' && (
-                        <p className="text-[13px] sm:text-[14px] font-medium mb-4 text-[var(--muted-text)]/80 leading-relaxed">
-                          Learning hints: Understanding these concepts helps you answer correctly
-                        </p>
-                      )}
-                      {translationLang === 'ar' && (
-                        <p className="text-[13px] sm:text-[14px] font-medium mb-4 text-[var(--muted-text)]/80 leading-[1.8] tracking-wide" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
-                          نصائح تعليمية: فهم هذه الكلمات يساعدك في الإجابة الصحيحة
-                        </p>
-                      )}
-                      {translationLang === 'ur' && (
-                        <p className="text-[13px] sm:text-[14px] font-medium mb-4 text-[var(--muted-text)]/80 leading-[1.8] tracking-wide" dir="rtl">
-                          تعلیمی اشارات: ان الفاظ کو سمجھنا آپ کو صحیح جواب دینے میں مدد کرتا ہے
-                        </p>
-                      )}
-                      {translationLang === 'ro' && (
-                        <p className="text-[13px] sm:text-[14px] font-medium mb-4 text-[var(--muted-text)]/80 leading-relaxed" dir="ltr">
-                          Sfaturi de învățare: Înțelegerea acestor concepte te ajută să răspunzi corect
-                        </p>
-                      )}
+                      <p
+                        className="text-[13px] sm:text-[14px] font-medium mb-4 text-[var(--muted-text)]/80 leading-relaxed"
+                      >
+                        {enLabel('learningHintsIntro')}
+                      </p>
                       <div className="space-y-3">
                         {validHints.map((keyword, index) => {
                           const urduTranslation = getKeywordUrduTranslation(keyword.term);
                           const romanianTranslation = getKeywordRomanianTranslation(keyword.term);
+                          const polishTranslation = getKeywordPolishTranslation(keyword.term);
+                          const portugueseTranslation = getKeywordPortugueseTranslation(keyword.term);
                           // Get English text - prefer explainEn, fallback to explainAr if it's English
                           const englishText = keyword.explainEn || 
                             (keyword.explainAr && /^[A-Z]/.test(keyword.explainAr.trim()) && 
@@ -1098,6 +1140,12 @@ export default function PracticePage() {
                                 {translationLang === 'ro' && romanianTranslation && (
                                   <span className="text-[var(--muted-text)]/70 text-sm" dir="ltr" style={{ lineHeight: '1.8' }}>{romanianTranslation.ro}</span>
                                 )}
+                                {translationLang === 'pl' && polishTranslation && (
+                                  <span className="text-[var(--muted-text)]/70 text-sm" dir="ltr" style={{ lineHeight: '1.8' }}>{polishTranslation.pl}</span>
+                                )}
+                                {translationLang === 'pt' && portugueseTranslation && (
+                                  <span className="text-[var(--muted-text)]/70 text-sm" dir="ltr" style={{ lineHeight: '1.8' }}>{portugueseTranslation.pt}</span>
+                                )}
                               </div>
                               {translationLang === 'off' && englishText && (
                                 <p className="text-sm text-[var(--navy)] leading-relaxed">
@@ -1117,6 +1165,16 @@ export default function PracticePage() {
                               {translationLang === 'ro' && romanianTranslation && (
                                 <p className="text-sm text-[var(--navy)] leading-relaxed" dir="ltr">
                                   {romanianTranslation.explainRo}
+                                </p>
+                              )}
+                              {translationLang === 'pl' && polishTranslation && (
+                                <p className="text-sm text-[var(--navy)] leading-relaxed" dir="ltr">
+                                  {polishTranslation.explainPl}
+                                </p>
+                              )}
+                              {translationLang === 'pt' && portugueseTranslation && (
+                                <p className="text-sm text-[var(--navy)] leading-relaxed" dir="ltr">
+                                  {portugueseTranslation.explainPt}
                                 </p>
                               )}
                             </div>
@@ -1140,30 +1198,30 @@ export default function PracticePage() {
                     currentQuestionIndex === 0 && "opacity-50 cursor-not-allowed"
                   )}
                 >
-                  ← Previous
+                  <BilingualLabel keyName="previous" lang={translationLang} />
                 </button>
                 <button
                   onClick={handleRestart}
-                  className="lt-btn-ghost px-5 py-2.5 text-sm"
+                  className="lt-btn-ghost px-5 py-2.5 text-sm flex flex-col items-center"
                 >
-                  Restart
+                  <BilingualLabel keyName="restart" lang={translationLang} />
                 </button>
               </div>
               <button
                 onClick={handleNext}
                 disabled={currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall}
                 className={cn(
-                  "lt-btn-primary px-5 py-2.5 text-sm",
+                  "lt-btn-primary px-5 py-2.5 text-sm flex flex-col items-center",
                   (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall) && "opacity-50 cursor-not-allowed"
                 )}
               >
-                Next →
+                <BilingualLabel keyName="next" lang={translationLang} />
               </button>
             </div>
           </div>
         ) : (
           <div className="lt-card p-8 sm:p-10 mt-4 text-center text-[var(--text-secondary)]">
-            <p className="text-lg font-medium text-[var(--text-primary)]">Please select a topic to start practicing.</p>
+            <p className="text-lg font-medium text-[var(--text-primary)]">{enLabel('selectTopic')}</p>
           </div>
         )}
       </div>

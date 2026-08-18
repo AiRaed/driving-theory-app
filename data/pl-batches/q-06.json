@@ -1,0 +1,952 @@
+[
+  {
+    "id": "DC-13",
+    "topic": "documents",
+    "promptEn": "What is the maximum penalty for driving without insurance?",
+    "options": [
+      {
+        "en": "£500"
+      },
+      {
+        "en": "£1,000"
+      },
+      {
+        "en": "£5,000"
+      },
+      {
+        "en": "Unlimited fine"
+      }
+    ]
+  },
+  {
+    "id": "DC-14",
+    "topic": "documents",
+    "promptEn": "When must a vehicle have valid insurance cover?",
+    "options": [
+      {
+        "en": "Before declaring it off the road"
+      },
+      {
+        "en": "Before selling it"
+      },
+      {
+        "en": "Before scrapping it"
+      },
+      {
+        "en": "Before taxing the vehicle"
+      }
+    ]
+  },
+  {
+    "id": "DC-15",
+    "topic": "documents",
+    "promptEn": "How long does a Statutory Off-Road Notification (SORN) remain valid?",
+    "options": [
+      {
+        "en": "Until the vehicle is insured"
+      },
+      {
+        "en": "Until the vehicle is repaired"
+      },
+      {
+        "en": "Until the vehicle is taxed, sold, or scrapped"
+      },
+      {
+        "en": "Until the vehicle is used again"
+      }
+    ]
+  },
+  {
+    "id": "DC-16",
+    "topic": "documents",
+    "promptEn": "Who is responsible for paying vehicle tax?",
+    "options": [
+      {
+        "en": "The driver"
+      },
+      {
+        "en": "The car dealer"
+      },
+      {
+        "en": "The registered keeper"
+      },
+      {
+        "en": "The licensing authority"
+      }
+    ]
+  },
+  {
+    "id": "DC-17",
+    "topic": "documents",
+    "promptEn": "What is the minimum legal insurance required to drive on public roads?",
+    "options": [
+      {
+        "en": "Comprehensive"
+      },
+      {
+        "en": "Third party, fire and theft"
+      },
+      {
+        "en": "Third party only"
+      },
+      {
+        "en": "Personal injury cover"
+      }
+    ]
+  },
+  {
+    "id": "DC-18",
+    "topic": "documents",
+    "promptEn": "When could the cost of your insurance be reduced?",
+    "options": [
+      {
+        "en": "If you're under 25"
+      },
+      {
+        "en": "If you don't wear glasses"
+      },
+      {
+        "en": "If you pass your test first time"
+      },
+      {
+        "en": "If you complete an approved driving course"
+      }
+    ]
+  },
+  {
+    "id": "DC-19",
+    "topic": "documents",
+    "promptEn": "What does third-party insurance cover?",
+    "options": [
+      {
+        "en": "Damage to your own vehicle"
+      },
+      {
+        "en": "Fire damage to your vehicle"
+      },
+      {
+        "en": "Flood damage to your vehicle"
+      },
+      {
+        "en": "Damage to other vehicles and property"
+      }
+    ]
+  },
+  {
+    "id": "DC-20",
+    "topic": "documents",
+    "promptEn": "What could be affected if you drive a vehicle without a valid MOT?",
+    "options": [
+      {
+        "en": "The service history"
+      },
+      {
+        "en": "The insurance cover"
+      },
+      {
+        "en": "The registration document"
+      },
+      {
+        "en": "The owner details"
+      }
+    ]
+  },
+  {
+    "id": "DC-21",
+    "topic": "documents",
+    "promptEn": "What legal requirement applies to a newly qualified driver?",
+    "options": [
+      {
+        "en": "Display green plates"
+      },
+      {
+        "en": "Retake a photo immediately"
+      },
+      {
+        "en": "Be accompanied on motorways"
+      },
+      {
+        "en": "Have valid motor insurance"
+      }
+    ]
+  },
+  {
+    "id": "DC-22",
+    "topic": "documents",
+    "promptEn": "In which situation must you notify the licensing authority?",
+    "options": [
+      {
+        "en": "When working abroad"
+      },
+      {
+        "en": "When lending your vehicle"
+      },
+      {
+        "en": "When your health affects your driving"
+      },
+      {
+        "en": "When booking an MOT"
+      }
+    ]
+  },
+  {
+    "id": "DC-23",
+    "topic": "documents",
+    "promptEn": "When must you contact the licensing authority?",
+    "options": [
+      {
+        "en": "After a parking ticket"
+      },
+      {
+        "en": "When you change vehicle ownership"
+      },
+      {
+        "en": "When using your vehicle for work"
+      },
+      {
+        "en": "When insurance is due"
+      }
+    ]
+  },
+  {
+    "id": "DC-24",
+    "topic": "documents",
+    "promptEn": "What information is shown on a vehicle registration document?",
+    "options": [
+      {
+        "en": "Insurance details"
+      },
+      {
+        "en": "MOT expiry date"
+      },
+      {
+        "en": "Service history"
+      },
+      {
+        "en": "Registered keeper details"
+      }
+    ]
+  },
+  {
+    "id": "DC-25",
+    "topic": "documents",
+    "promptEn": "What must you check before driving someone else's vehicle?",
+    "options": [
+      {
+        "en": "The owner has insurance"
+      },
+      {
+        "en": "Your own vehicle is insured"
+      },
+      {
+        "en": "The vehicle is insured for your use"
+      },
+      {
+        "en": "Insurance papers are inside the car"
+      }
+    ]
+  },
+  {
+    "id": "DC-26",
+    "topic": "documents",
+    "promptEn": "What does an insurance excess of £500 mean?",
+    "options": [
+      {
+        "en": "The insurer pays the first £500"
+      },
+      {
+        "en": "You receive £500 if you don't claim"
+      },
+      {
+        "en": "The vehicle is insured up to £500"
+      },
+      {
+        "en": "You must pay the first £500 of any claim"
+      }
+    ]
+  },
+  {
+    "id": "DC-27",
+    "topic": "documents",
+    "promptEn": "When should you update your vehicle registration certificate?",
+    "options": [
+      {
+        "en": "After passing your driving test"
+      },
+      {
+        "en": "When you move house"
+      },
+      {
+        "en": "When the vehicle needs an MOT"
+      },
+      {
+        "en": "After a collision"
+      }
+    ]
+  },
+  {
+    "id": "MW-01",
+    "topic": "motorway-driving",
+    "promptEn": "When should you use the hard shoulder on a motorway if it is not operating as a running lane?",
+    "options": [
+      {
+        "en": "When leaving the motorway"
+      },
+      {
+        "en": "When stopping to rest"
+      },
+      {
+        "en": "When joining the motorway"
+      },
+      {
+        "en": "When stopping in an emergency"
+      }
+    ]
+  },
+  {
+    "id": "MW-02",
+    "topic": "motorway-driving",
+    "promptEn": "When are you allowed to stop on a motorway?",
+    "options": [
+      {
+        "en": "To use a mobile phone"
+      },
+      {
+        "en": "To get fresh air"
+      },
+      {
+        "en": "When directed by traffic signals or authorities"
+      },
+      {
+        "en": "To pick up passengers"
+      }
+    ]
+  },
+  {
+    "id": "MW-03",
+    "topic": "motorway-driving",
+    "promptEn": "What should you do while driving on a motorway?",
+    "options": [
+      {
+        "en": "Drive faster than on other roads"
+      },
+      {
+        "en": "Keep a shorter following distance"
+      },
+      {
+        "en": "Look much further ahead than usual"
+      },
+      {
+        "en": "Relax your concentration"
+      }
+    ]
+  },
+  {
+    "id": "MW-04",
+    "topic": "motorway-driving",
+    "promptEn": "When should you use the right-hand lane on a three-lane motorway?",
+    "options": [
+      {
+        "en": "To save fuel"
+      },
+      {
+        "en": "When travelling above the speed limit"
+      },
+      {
+        "en": "When overtaking slower traffic"
+      },
+      {
+        "en": "When preparing to exit"
+      }
+    ]
+  },
+  {
+    "id": "MW-05",
+    "topic": "motorway-driving",
+    "promptEn": "When should you use an emergency area on a motorway?",
+    "options": [
+      {
+        "en": "To check directions"
+      },
+      {
+        "en": "To make a phone call"
+      },
+      {
+        "en": "During a breakdown or emergency"
+      },
+      {
+        "en": "To avoid traffic delays"
+      }
+    ]
+  },
+  {
+    "id": "MW-06",
+    "topic": "motorway-driving",
+    "promptEn": "What colour are the reflective studs between a motorway and a slip road?",
+    "options": [
+      {
+        "en": "White"
+      },
+      {
+        "en": "Red"
+      },
+      {
+        "en": "Green"
+      },
+      {
+        "en": "Amber"
+      }
+    ]
+  },
+  {
+    "id": "MW-07",
+    "topic": "motorway-driving",
+    "promptEn": "If your vehicle breaks down on the hard shoulder and you call for help, what should you check?",
+    "options": [
+      {
+        "en": "Stand behind your vehicle"
+      },
+      {
+        "en": "Call a friend"
+      },
+      {
+        "en": "Stay in your vehicle"
+      },
+      {
+        "en": "Identify your location using marker posts"
+      }
+    ]
+  },
+  {
+    "id": "MW-08",
+    "topic": "motorway-driving",
+    "promptEn": "What should you do when approaching motorway roadworks?",
+    "options": [
+      {
+        "en": "Increase speed"
+      },
+      {
+        "en": "Follow the speed limit shown"
+      },
+      {
+        "en": "Use the hard shoulder"
+      },
+      {
+        "en": "Drive very close to the vehicle ahead"
+      }
+    ]
+  },
+  {
+    "id": "MW-09",
+    "topic": "motorway-driving",
+    "promptEn": "What does a mandatory speed limit shown above the hard shoulder mean?",
+    "options": [
+      {
+        "en": "You may park there"
+      },
+      {
+        "en": "You may use it to rest"
+      },
+      {
+        "en": "The hard shoulder is open for traffic"
+      },
+      {
+        "en": "Mobile phone use is allowed"
+      }
+    ]
+  },
+  {
+    "id": "MW-10",
+    "topic": "motorway-driving",
+    "promptEn": "What does it mean if a vehicle briefly uses hazard warning lights on a motorway?",
+    "options": [
+      {
+        "en": "A speed camera is ahead"
+      },
+      {
+        "en": "The driver wants you to overtake"
+      },
+      {
+        "en": "Traffic ahead is slowing suddenly"
+      },
+      {
+        "en": "The vehicle is changing lanes"
+      }
+    ]
+  },
+  {
+    "id": "OV-01",
+    "topic": "other-vehicles",
+    "promptEn": "You're waiting to turn right from a side road. A large lorry is approaching from the right. Why should you wait before turning?",
+    "options": [
+      {
+        "en": "The lorry might suddenly speed up"
+      },
+      {
+        "en": "The lorry's load may be unstable"
+      },
+      {
+        "en": "Another vehicle overtaking the lorry may be hidden from view"
+      },
+      {
+        "en": "The lorry may be slowing down"
+      }
+    ]
+  },
+  {
+    "id": "OV-02",
+    "topic": "other-vehicles",
+    "promptEn": "You see a large vehicle creating a narrow gap ahead. What should you be prepared to do?",
+    "options": [
+      {
+        "en": "Sound your horn and continue"
+      },
+      {
+        "en": "Squeeze through the gap"
+      },
+      {
+        "en": "Slow down and give way"
+      },
+      {
+        "en": "Report the driver"
+      }
+    ]
+  },
+  {
+    "id": "OV-03",
+    "topic": "other-vehicles",
+    "promptEn": "You overtake a cyclist on a very windy day. What should you do?",
+    "options": [
+      {
+        "en": "Overtake very slowly"
+      },
+      {
+        "en": "Keep close as you pass"
+      },
+      {
+        "en": "Sound your horn"
+      },
+      {
+        "en": "Allow extra room"
+      }
+    ]
+  },
+  {
+    "id": "OV-04",
+    "topic": "other-vehicles",
+    "promptEn": "You're towing a caravan. Which mirror setup gives you the safest rear view?",
+    "options": [
+      {
+        "en": "Interior wide-angle mirror"
+      },
+      {
+        "en": "Ordinary door mirrors"
+      },
+      {
+        "en": "Ordinary interior mirror"
+      },
+      {
+        "en": "Extended-arm side mirrors"
+      }
+    ]
+  },
+  {
+    "id": "OV-05",
+    "topic": "other-vehicles",
+    "promptEn": "You're driving behind a bus that stops at a bus stop. What should you do?",
+    "options": [
+      {
+        "en": "Accelerate past the bus"
+      },
+      {
+        "en": "Sound your horn"
+      },
+      {
+        "en": "Pull in closely behind"
+      },
+      {
+        "en": "Watch carefully for pedestrians"
+      }
+    ]
+  },
+  {
+    "id": "OV-06",
+    "topic": "other-vehicles",
+    "promptEn": "A large vehicle ahead signals left at a crossroads. What should you do?",
+    "options": [
+      {
+        "en": "Overtake if the road looks clear"
+      },
+      {
+        "en": "Wait until the vehicle completes the turn"
+      },
+      {
+        "en": "Overtake quickly"
+      },
+      {
+        "en": "Assume the signal is wrong"
+      }
+    ]
+  },
+  {
+    "id": "OV-07",
+    "topic": "other-vehicles",
+    "promptEn": "You're driving in heavy traffic on a wet road with a lot of spray. Which lights should you use?",
+    "options": [
+      {
+        "en": "Main beam headlights"
+      },
+      {
+        "en": "Sidelights only"
+      },
+      {
+        "en": "Rear fog lights"
+      },
+      {
+        "en": "Dipped headlights"
+      }
+    ]
+  },
+  {
+    "id": "OV-08",
+    "topic": "other-vehicles",
+    "promptEn": "It's very windy and a motorcyclist is overtaking a high-sided vehicle ahead. What should you do?",
+    "options": [
+      {
+        "en": "Overtake immediately"
+      },
+      {
+        "en": "Stay level with the motorcyclist"
+      },
+      {
+        "en": "Keep well back"
+      },
+      {
+        "en": "Keep close behind"
+      }
+    ]
+  },
+  {
+    "id": "OV-09",
+    "topic": "other-vehicles",
+    "promptEn": "You're about to overtake a slow-moving motorcyclist. When should you take extra care?",
+    "options": [
+      {
+        "en": "When road markings warn of hazards ahead"
+      },
+      {
+        "en": "When traffic is light"
+      },
+      {
+        "en": "When the motorcyclist signals left"
+      },
+      {
+        "en": "When visibility is good"
+      }
+    ]
+  },
+  {
+    "id": "OV-10",
+    "topic": "other-vehicles",
+    "promptEn": "A long vehicle signals left but moves right before turning. What should you do?",
+    "options": [
+      {
+        "en": "Get closer and pass"
+      },
+      {
+        "en": "Overtake as it slows"
+      },
+      {
+        "en": "Stay well back and give it room"
+      },
+      {
+        "en": "Assume it's turning right"
+      }
+    ]
+  },
+  {
+    "id": "OV-11",
+    "topic": "other-vehicles",
+    "promptEn": "Why should you keep a safe distance behind a large vehicle on a single carriageway?",
+    "options": [
+      {
+        "en": "To accelerate quickly"
+      },
+      {
+        "en": "To get a clear view of the road ahead"
+      },
+      {
+        "en": "To help others overtake you"
+      },
+      {
+        "en": "To prevent it rolling back"
+      }
+    ]
+  },
+  {
+    "id": "OV-12",
+    "topic": "other-vehicles",
+    "promptEn": "A long vehicle ahead signals left at a mini-roundabout but positions to the right. What should you do?",
+    "options": [
+      {
+        "en": "Sound your horn"
+      },
+      {
+        "en": "Overtake on the left"
+      },
+      {
+        "en": "Follow closely"
+      },
+      {
+        "en": "Keep well back"
+      }
+    ]
+  },
+  {
+    "id": "OV-13",
+    "topic": "other-vehicles",
+    "promptEn": "Why is overtaking a large vehicle more difficult than overtaking a car?",
+    "options": [
+      {
+        "en": "Large vehicles accelerate slowly"
+      },
+      {
+        "en": "They have speed limiters"
+      },
+      {
+        "en": "It takes longer to pass them safely"
+      },
+      {
+        "en": "They use air brakes"
+      }
+    ]
+  },
+  {
+    "id": "OV-14",
+    "topic": "other-vehicles",
+    "promptEn": "As you approach a slow-moving lorry ahead, what should you do?",
+    "options": [
+      {
+        "en": "Flash your headlights"
+      },
+      {
+        "en": "Move to the right-hand side"
+      },
+      {
+        "en": "Make the lorry wait"
+      },
+      {
+        "en": "Slow down and be prepared to wait"
+      }
+    ]
+  },
+  {
+    "id": "OV-15",
+    "topic": "other-vehicles",
+    "promptEn": "A long vehicle ahead signals right but keeps close to the left kerb. What should you do?",
+    "options": [
+      {
+        "en": "Warn the driver"
+      },
+      {
+        "en": "Overtake on the right"
+      },
+      {
+        "en": "Report to police"
+      },
+      {
+        "en": "Wait behind the vehicle"
+      }
+    ]
+  },
+  {
+    "id": "OV-16",
+    "topic": "other-vehicles",
+    "promptEn": "Why must drivers take extra care where trams operate?",
+    "options": [
+      {
+        "en": "Trams have no horns"
+      },
+      {
+        "en": "Trams cannot stop"
+      },
+      {
+        "en": "Trams have no lights"
+      },
+      {
+        "en": "Trams cannot steer to avoid obstacles"
+      }
+    ]
+  },
+  {
+    "id": "OV-17",
+    "topic": "other-vehicles",
+    "promptEn": "You leave a safe gap behind a large vehicle. Another car moves into it. What should you do?",
+    "options": [
+      {
+        "en": "Sound your horn"
+      },
+      {
+        "en": "Flash headlights"
+      },
+      {
+        "en": "Start overtaking"
+      },
+      {
+        "en": "Drop back to restore the gap"
+      }
+    ]
+  },
+  {
+    "id": "OV-18",
+    "topic": "other-vehicles",
+    "promptEn": "You see a bus stopped at a bus stop ahead. What should you do?",
+    "options": [
+      {
+        "en": "Flash your lights"
+      },
+      {
+        "en": "Pass quickly"
+      },
+      {
+        "en": "Sound your horn"
+      },
+      {
+        "en": "Watch for pedestrians crossing"
+      }
+    ]
+  },
+  {
+    "id": "OV-19",
+    "topic": "other-vehicles",
+    "promptEn": "You want to overtake a long, slow-moving vehicle on a busy road. What should you do?",
+    "options": [
+      {
+        "en": "Follow closely to see ahead"
+      },
+      {
+        "en": "Flash headlights"
+      },
+      {
+        "en": "Wait to be waved past"
+      },
+      {
+        "en": "Keep well back to get a clear view"
+      }
+    ]
+  },
+  {
+    "id": "OV-20",
+    "topic": "other-vehicles",
+    "promptEn": "A bus ahead signals to pull away from a bus stop. What should you do?",
+    "options": [
+      {
+        "en": "Get past before it moves"
+      },
+      {
+        "en": "Flash your headlights"
+      },
+      {
+        "en": "Signal and wave the bus on"
+      },
+      {
+        "en": "Allow it to pull out if safe"
+      }
+    ]
+  },
+  {
+    "id": "OV-21",
+    "topic": "other-vehicles",
+    "promptEn": "You're following a lorry on a wet road. Spray reduces your visibility. What should you do?",
+    "options": [
+      {
+        "en": "Speed up and overtake"
+      },
+      {
+        "en": "Keep close behind"
+      },
+      {
+        "en": "Use full beam headlights"
+      },
+      {
+        "en": "Drop back until visibility improves"
+      }
+    ]
+  },
+  {
+    "id": "OV-22",
+    "topic": "other-vehicles",
+    "promptEn": "Which vehicles are least affected by strong side winds?",
+    "options": [
+      {
+        "en": "Cyclists"
+      },
+      {
+        "en": "Motorcyclists"
+      },
+      {
+        "en": "High-sided vehicles"
+      },
+      {
+        "en": "Cars"
+      }
+    ]
+  },
+  {
+    "id": "VL-01",
+    "topic": "vehicle-loading",
+    "promptEn": "Before towing a trailer, where can you find the maximum permitted nose weight for your vehicle's tow bar?",
+    "options": [
+      {
+        "en": "In the vehicle handbook"
+      },
+      {
+        "en": "In the Highway Code"
+      },
+      {
+        "en": "On the registration document"
+      },
+      {
+        "en": "On your driving licence"
+      }
+    ]
+  },
+  {
+    "id": "VL-02",
+    "topic": "vehicle-loading",
+    "promptEn": "How does carrying a heavy load on a roof rack affect your car?",
+    "options": [
+      {
+        "en": "Improves handling"
+      },
+      {
+        "en": "Shortens stopping distance"
+      },
+      {
+        "en": "Makes steering lighter"
+      },
+      {
+        "en": "Reduces stability"
+      }
+    ]
+  },
+  {
+    "id": "VL-03",
+    "topic": "vehicle-loading",
+    "promptEn": "What restraint must be used for a child under 3 years old in a car?",
+    "options": [
+      {
+        "en": "Child seat"
+      },
+      {
+        "en": "Adult holding the child"
+      },
+      {
+        "en": "Adult seat belt"
+      },
+      {
+        "en": "Lap belt"
+      }
+    ]
+  }
+]

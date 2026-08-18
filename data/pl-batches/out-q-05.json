@@ -1,0 +1,860 @@
+{
+  "vulnerable-road-users": {
+    "VU-50": {
+      "promptPl": "Skręcając w lewo w drogę boczną, na jakie zagrożenie powinieneś najbardziej uważać?",
+      "options": [
+        {
+          "pl": "Zaparkowane pojazdy"
+        },
+        {
+          "pl": "Korki"
+        },
+        {
+          "pl": "Przechodzących pieszych"
+        },
+        {
+          "pl": "Ulice jednokierunkowe"
+        }
+      ]
+    },
+    "VU-51": {
+      "promptPl": "Dlaczego motocykliści często noszą jasną lub odblaskową odzież?",
+      "options": [
+        {
+          "pl": "Wymaga tego prawo"
+        },
+        {
+          "pl": "Dzięki temu jest im chłodniej"
+        },
+        {
+          "pl": "To moda"
+        },
+        {
+          "pl": "Aby być lepiej widocznymi dla innych"
+        }
+      ]
+    },
+    "VU-52": {
+      "promptPl": "Dlaczego motocyklista może spojrzeć przez prawe ramię przed skrętem w prawo?",
+      "options": [
+        {
+          "pl": "Żeby nasłuchiwać ruchu"
+        },
+        {
+          "pl": "Bo motocykle nie mają lusterek"
+        },
+        {
+          "pl": "Dla równowagi"
+        },
+        {
+          "pl": "Żeby sprawdzić martwe pole"
+        }
+      ]
+    },
+    "VU-53": {
+      "promptPl": "Co zwykle oznacza migający żółty sygnał na poruszającym się pojeździe?",
+      "options": [
+        {
+          "pl": "Pojazd uprzywilejowany"
+        },
+        {
+          "pl": "Pojazd z awarią"
+        },
+        {
+          "pl": "Pojazd wolno poruszający się lub pracujący"
+        },
+        {
+          "pl": "Patrol szkolny"
+        }
+      ]
+    },
+    "VU-54": {
+      "promptPl": "Co zwykle oznacza znak z symbolem roweru na niebieskim tle?",
+      "options": [
+        {
+          "pl": "Zakaz jazdy rowerem"
+        },
+        {
+          "pl": "Trasa rowerowa"
+        },
+        {
+          "pl": "Parking dla rowerów"
+        },
+        {
+          "pl": "Koniec trasy rowerowej"
+        }
+      ]
+    },
+    "VU-55": {
+      "promptPl": "Pieszy idzie z psem w żółtej lub bordowej kamizelce. Co to oznacza?",
+      "options": [
+        {
+          "pl": "Osoba jest w podeszłym wieku"
+        },
+        {
+          "pl": "Osoba jest trenerem"
+        },
+        {
+          "pl": "Osoba jest głucha"
+        },
+        {
+          "pl": "Osoba ma wadę słuchu"
+        }
+      ]
+    },
+    "VU-56": {
+      "promptPl": "Jak bezpiecznie minąć jeźdźców konnych?",
+      "options": [
+        {
+          "pl": "Szybko minąć"
+        },
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Jechać wolno i zostawić miejsce"
+        },
+        {
+          "pl": "Minąć blisko"
+        }
+      ]
+    },
+    "VU-57": {
+      "promptPl": "Kursant gasi silnik na skrzyżowaniu. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Mignąć światłami"
+        },
+        {
+          "pl": "Dodać gazu"
+        },
+        {
+          "pl": "Być cierpliwym"
+        },
+        {
+          "pl": "Natychmiast wyprzedzić"
+        }
+      ]
+    },
+    "VU-58": {
+      "promptPl": "Gdzie zwykle zobaczysz odblaskowy żółty znak ostrzegający o szkole?",
+      "options": [
+        {
+          "pl": "Na samochodach"
+        },
+        {
+          "pl": "Na bramach placu zabaw"
+        },
+        {
+          "pl": "Na autobusach szkolnych"
+        },
+        {
+          "pl": "Przy drodze w pobliżu szkół"
+        }
+      ]
+    },
+    "VU-59": {
+      "promptPl": "Przed skrętem w prawo w drogę boczną — co powinieneś sprawdzić na końcu?",
+      "options": [
+        {
+          "pl": "Prędkość"
+        },
+        {
+          "pl": "Bieg"
+        },
+        {
+          "pl": "Lusterka pod kątem wyprzedzającego ruchu"
+        },
+        {
+          "pl": "Hamulec ręczny"
+        }
+      ]
+    },
+    "VU-60": {
+      "promptPl": "Jak nowi kierowcy mogą zmniejszyć ryzyko kolizji po zdaniu egzaminu?",
+      "options": [
+        {
+          "pl": "Jechać blisko innych"
+        },
+        {
+          "pl": "Unikać tylko wysokich prędkości"
+        },
+        {
+          "pl": "Wziąć dodatkowe szkolenie"
+        },
+        {
+          "pl": "Zawsze jechać lewym pasem"
+        }
+      ]
+    },
+    "VU-61": {
+      "promptPl": "Pieszy niesie białą laskę z czerwonym paskiem. Co to oznacza?",
+      "options": [
+        {
+          "pl": "Ograniczoną sprawność ruchową"
+        },
+        {
+          "pl": "Głuchotę"
+        },
+        {
+          "pl": "Ślepotę"
+        },
+        {
+          "pl": "Głuchotę i ślepotę"
+        }
+      ]
+    },
+    "VU-62": {
+      "promptPl": "Piesi zaczęli przechodzić w miejscu, w którym chcesz skręcić w lewo. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Objechać"
+        },
+        {
+          "pl": "Ustąpić"
+        },
+        {
+          "pl": "Mignąć światłami"
+        }
+      ]
+    },
+    "VU-63": {
+      "promptPl": "Dlaczego w wietrzne dni warto zostawić motocyklistom więcej miejsca?",
+      "options": [
+        {
+          "pl": "Mogą przyspieszyć"
+        },
+        {
+          "pl": "Mogą zostać zdmuchnięci w bok"
+        },
+        {
+          "pl": "Mogą nagle się zatrzymać"
+        },
+        {
+          "pl": "Jeżdżą szybciej"
+        }
+      ]
+    },
+    "VU-64": {
+      "promptPl": "Elektryczne wózki inwalidzkie na drogach dwujezdniowych muszą mieć jaki sygnał ostrzegawczy?",
+      "options": [
+        {
+          "pl": "Czerwony"
+        },
+        {
+          "pl": "Zielony"
+        },
+        {
+          "pl": "Niebieski"
+        },
+        {
+          "pl": "Żółty (bursztynowy)"
+        }
+      ]
+    },
+    "VU-65": {
+      "promptPl": "Jeździec konny jest na lewym pasie na rondzie. Dokąd może jechać?",
+      "options": [
+        {
+          "pl": "Tylko w lewo"
+        },
+        {
+          "pl": "Tylko w prawo"
+        },
+        {
+          "pl": "Tylko prosto"
+        },
+        {
+          "pl": "W dowolnym kierunku"
+        }
+      ]
+    },
+    "VU-66": {
+      "promptPl": "Starsze osoby przechodzą przed Tobą. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Machnąć im"
+        },
+        {
+          "pl": "Dodać gazu"
+        },
+        {
+          "pl": "Być cierpliwym"
+        },
+        {
+          "pl": "Zatrąbić"
+        }
+      ]
+    },
+    "VU-67": {
+      "promptPl": "Co oznaczają żółte linie zygzakowate przed szkołą?",
+      "options": [
+        {
+          "pl": "Parkowanie dozwolone"
+        },
+        {
+          "pl": "Oczekiwanie dozwolone"
+        },
+        {
+          "pl": "Zakaz zatrzymywania się i parkowania"
+        },
+        {
+          "pl": "Tylko wysiadanie"
+        }
+      ]
+    },
+    "VU-68": {
+      "promptPl": "Na drodze są zbłąkane owce. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Jechać wolno"
+        },
+        {
+          "pl": "Szybko minąć"
+        },
+        {
+          "pl": "Zaganiać je"
+        }
+      ]
+    },
+    "VU-69": {
+      "promptPl": "Przed skrętem w prawo z kolejki — dlaczego sprawdzić prawe lusterko?",
+      "options": [
+        {
+          "pl": "Ze względu na pieszych"
+        },
+        {
+          "pl": "Ze względu na wyprzedzające pojazdy"
+        },
+        {
+          "pl": "Ze względu na ruch z drogi bocznej"
+        },
+        {
+          "pl": "Ze względu na zaparkowane auta"
+        }
+      ]
+    },
+    "VU-70": {
+      "promptPl": "Skręcasz w lewo, a pieszy czeka, żeby przejść przez drogę boczną. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Mignąć światłami"
+        },
+        {
+          "pl": "Jechać dalej"
+        },
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Ustąpić"
+        }
+      ]
+    },
+    "VU-71": {
+      "promptPl": "Dlaczego motocykliści używają świateł mijania w dzień?",
+      "options": [
+        {
+          "pl": "Dla ochrony akumulatora"
+        },
+        {
+          "pl": "Aby być wyraźnie widocznymi"
+        },
+        {
+          "pl": "Dla lepszej widoczności drogi"
+        },
+        {
+          "pl": "Jako zaproszenie do wyprzedzania"
+        }
+      ]
+    }
+  },
+  "vehicle-handling": {
+    "VH-01": {
+      "promptPl": "Kiedy wolno minąć inny pojazd z lewej strony?",
+      "options": [
+        {
+          "pl": "Gdy pojazd przed Tobą sygnalizuje skręt w lewo"
+        },
+        {
+          "pl": "Gdy zbliżasz się do zjazdu, którym chcesz zjechać"
+        },
+        {
+          "pl": "Gdy jesteś na ulicy jednokierunkowej"
+        },
+        {
+          "pl": "Gdy ruch w prawym pasie porusza się wolno w kolejkach"
+        }
+      ]
+    },
+    "VH-02": {
+      "promptPl": "We mgle — dlaczego warto zostawić większy odstęp od pojazdu przed Tobą?",
+      "options": [
+        {
+          "pl": "Na wypadek nagłego skrętu"
+        },
+        {
+          "pl": "Na wypadek oślepienia światłami przeciwmgielnymi"
+        },
+        {
+          "pl": "Na wypadek nagłego zatrzymania"
+        },
+        {
+          "pl": "Na wypadek oślepienia światłami stopu"
+        }
+      ]
+    },
+    "VH-03": {
+      "promptPl": "Na mokrym zakręcie — dlaczego motocyklista może unikać pokryw studzienek?",
+      "options": [
+        {
+          "pl": "Żeby nie przebić opony"
+        },
+        {
+          "pl": "Bo metalowe pokrywy bywają śliskie"
+        },
+        {
+          "pl": "Żeby użyć ich jako punktów do skrętu"
+        },
+        {
+          "pl": "Żeby nie ochlapać pieszych"
+        }
+      ]
+    },
+    "VH-04": {
+      "promptPl": "Co najprawdopodobniej dzieje się podczas jazdy pod strome wzniesienie?",
+      "options": [
+        {
+          "pl": "Wyższe biegi ciągną lepiej"
+        },
+        {
+          "pl": "Kierownica wydaje się cięższa"
+        },
+        {
+          "pl": "Wyprzedzanie staje się łatwiejsze"
+        },
+        {
+          "pl": "Silnik pracuje ciężej"
+        }
+      ]
+    },
+    "VH-05": {
+      "promptPl": "Dlaczego „coasting” (toczenie ze sprzęgłem wciśniętym lub na luzie) jest niebezpieczne?",
+      "options": [
+        {
+          "pl": "Zużywa więcej paliwa"
+        },
+        {
+          "pl": "Przegrzewa silnik"
+        },
+        {
+          "pl": "Zmniejsza kontrolę nad kierowaniem i hamowaniem"
+        },
+        {
+          "pl": "Poprawia zużycie opon"
+        }
+      ]
+    },
+    "VH-06": {
+      "promptPl": "Spotykasz pojazd nadjeżdżający z naprzeciwka na drodze jednotorowej. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Cofnąć na drogę główną"
+        },
+        {
+          "pl": "Wykonać hamowanie awaryjne"
+        },
+        {
+          "pl": "Użyć mijanki i być gotowym do oczekiwania"
+        },
+        {
+          "pl": "Włączyć światła awaryjne"
+        }
+      ]
+    },
+    "VH-07": {
+      "promptPl": "Jesteś na drodze z progami zwalniającymi, a kierowca przed Tobą jedzie wolniej. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Wyprzedzić, jak tylko możesz"
+        },
+        {
+          "pl": "Mignąć światłami"
+        },
+        {
+          "pl": "Zwolnić i jechać za nim"
+        }
+      ]
+    },
+    "VH-08": {
+      "promptPl": "Dlaczego ryzykowne jest długotrwałe trzymanie sprzęgła lub jazdy na luzie w ruchu?",
+      "options": [
+        {
+          "pl": "Wypłynie paliwo"
+        },
+        {
+          "pl": "Silnik ulegnie uszkodzeniu"
+        },
+        {
+          "pl": "Masz mniejszą kontrolę nad kierowaniem i hamowaniem"
+        },
+        {
+          "pl": "Opony szybciej się zużywają"
+        }
+      ]
+    }
+  },
+  "incidents": {
+    "IN-01": {
+      "promptPl": "Jaka jest najbezpieczniejsza czynność, jeśli Twój samochód zapali się podczas jazdy tunelem?",
+      "options": [
+        {
+          "pl": "Zostawić silnik włączony i natychmiast wyjść"
+        },
+        {
+          "pl": "Zatrzymać się i iść do telefonu awaryjnego"
+        },
+        {
+          "pl": "Zaparkować z boku i czekać"
+        },
+        {
+          "pl": "Jeśli to bezpieczne, wyjechać z tunelu przed zatrzymaniem"
+        }
+      ]
+    },
+    "IN-02": {
+      "promptPl": "Kiedy należy zdjąć kask rannego motocyklisty?",
+      "options": [
+        {
+          "pl": "Natychmiast w każdym przypadku"
+        },
+        {
+          "pl": "Tylko jeśli o to poprosi"
+        },
+        {
+          "pl": "Tylko jeśli jest to niezbędne do pierwszej pomocy"
+        },
+        {
+          "pl": "Chyba że jest przytomny"
+        }
+      ]
+    },
+    "IN-03": {
+      "promptPl": "Jakich świateł powinieneś używać podczas jazdy tunelem?",
+      "options": [
+        {
+          "pl": "Świateł pozycyjnych"
+        },
+        {
+          "pl": "Świateł przeciwmgielnych"
+        },
+        {
+          "pl": "Świateł mijania"
+        },
+        {
+          "pl": "Świateł awaryjnych"
+        }
+      ]
+    },
+    "IN-04": {
+      "promptPl": "Jaka jest prawidłowa głębokość ucisków klatki piersiowej przy RKO u dorosłego?",
+      "options": [
+        {
+          "pl": "Od 1 do 2 cm"
+        },
+        {
+          "pl": "Od 5 do 6 cm"
+        },
+        {
+          "pl": "Od 10 do 15 cm"
+        },
+        {
+          "pl": "Od 15 do 20 cm"
+        }
+      ]
+    },
+    "IN-05": {
+      "promptPl": "Jeśli Twój samochód zgaśnie na przejeździe kolejowym i włączy się alarm, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Dalej próbować uruchomić silnik"
+        },
+        {
+          "pl": "Samodzielnie pchać auto"
+        },
+        {
+          "pl": "Natychmiast wyjść i odejść z dala od torów"
+        },
+        {
+          "pl": "Sygnalizować pociągowi"
+        }
+      ]
+    },
+    "IN-06": {
+      "promptPl": "Jaka jest pierwsza czynność, jeśli poszkodowany nie oddycha?",
+      "options": [
+        {
+          "pl": "Potrząsnąć nim"
+        },
+        {
+          "pl": "Przewrócić go na bok"
+        },
+        {
+          "pl": "Udrożnić drogi oddechowe"
+        },
+        {
+          "pl": "Unieść mu ręce"
+        }
+      ]
+    },
+    "IN-07": {
+      "promptPl": "Jak daleko za samochodem ustawić trójkąt ostrzegawczy na drodze dwukierunkowej?",
+      "options": [
+        {
+          "pl": "5 metrów"
+        },
+        {
+          "pl": "25 metrów"
+        },
+        {
+          "pl": "45 metrów"
+        },
+        {
+          "pl": "100 metrów"
+        }
+      ]
+    },
+    "IN-08": {
+      "promptPl": "Jak najlepiej pomóc osobie w szoku po kolizji?",
+      "options": [
+        {
+          "pl": "Dać jej coś do picia"
+        },
+        {
+          "pl": "Spokojnie ją uspokoić"
+        },
+        {
+          "pl": "Pytać, kto spowodował wypadek"
+        },
+        {
+          "pl": "Dać jej coś do jedzenia"
+        }
+      ]
+    }
+  },
+  "documents": {
+    "DC-01": {
+      "promptPl": "Kiedy wolno legalnie jeździć pojazdem bez ważnego certyfikatu MOT?",
+      "options": [
+        {
+          "pl": "Przez 7 dni po wygaśnięciu"
+        },
+        {
+          "pl": "Za zgodą właściciela"
+        },
+        {
+          "pl": "Gdy jedziesz na wcześniej umówiony przegląd MOT"
+        },
+        {
+          "pl": "Gdy jedziesz kupić ubezpieczenie"
+        }
+      ]
+    },
+    "DC-02": {
+      "promptPl": "Kiedy nowy samochód zwykle potrzebuje pierwszego przeglądu MOT?",
+      "options": [
+        {
+          "pl": "Po 1 roku"
+        },
+        {
+          "pl": "Po 3 latach"
+        },
+        {
+          "pl": "Po 5 latach"
+        },
+        {
+          "pl": "Po 7 latach"
+        }
+      ]
+    },
+    "DC-03": {
+      "promptPl": "Policjant prosi o dokumenty jazdy, ale nie masz ich przy sobie. Ile masz czasu na ich okazanie?",
+      "options": [
+        {
+          "pl": "5 dni"
+        },
+        {
+          "pl": "7 dni"
+        },
+        {
+          "pl": "14 dni"
+        },
+        {
+          "pl": "21 dni"
+        }
+      ]
+    },
+    "DC-04": {
+      "promptPl": "Czym jest Statutory Off-Road Notification (SORN)?",
+      "options": [
+        {
+          "pl": "Zawiadomienie, że pojazd nie ma ubezpieczenia"
+        },
+        {
+          "pl": "Zawiadomienie, że pojazd nie ma MOT"
+        },
+        {
+          "pl": "Oświadczenie, że pojazd nie jest używany na drogach publicznych"
+        },
+        {
+          "pl": "Policyjny rejestr własności pojazdu"
+        }
+      ]
+    },
+    "DC-05": {
+      "promptPl": "Kto jest prawnie odpowiedzialny za aktualność danych rejestracyjnych pojazdu?",
+      "options": [
+        {
+          "pl": "Firma ubezpieczeniowa"
+        },
+        {
+          "pl": "Producent pojazdu"
+        },
+        {
+          "pl": "Zarejestrowany posiadacz (registered keeper)"
+        },
+        {
+          "pl": "Organ wydający uprawnienia"
+        }
+      ]
+    },
+    "DC-06": {
+      "promptPl": "Jak długo zwykle ważny jest certyfikat MOT?",
+      "options": [
+        {
+          "pl": "3 lata"
+        },
+        {
+          "pl": "10 000 mil"
+        },
+        {
+          "pl": "1 rok"
+        },
+        {
+          "pl": "30 000 mil"
+        }
+      ]
+    },
+    "DC-07": {
+      "promptPl": "Zdajesz pierwszy egzamin na prawo jazdy i w ciągu 2 lat dostajesz 6 punktów karnych. Co się dzieje?",
+      "options": [
+        {
+          "pl": "Ponownie zdajesz tylko egzamin teoretyczny"
+        },
+        {
+          "pl": "Ponownie zdajesz egzamin teoretyczny i praktyczny"
+        },
+        {
+          "pl": "Ponownie zdajesz tylko egzamin praktyczny"
+        },
+        {
+          "pl": "Natychmiast składasz wniosek o prawo jazdy"
+        }
+      ]
+    },
+    "DC-08": {
+      "promptPl": "Kiedy musisz okazać polisę ubezpieczeniową?",
+      "options": [
+        {
+          "pl": "Przy zgłoszeniu SORN"
+        },
+        {
+          "pl": "Przy kupnie lub sprzedaży pojazdu"
+        },
+        {
+          "pl": "Na żądanie policjanta"
+        },
+        {
+          "pl": "Podczas przeglądu MOT"
+        }
+      ]
+    },
+    "DC-09": {
+      "promptPl": "Jaki dodatkowy wymóg musisz spełnić, aby nadzorować kursanta?",
+      "options": [
+        {
+          "pl": "Mieć podwójne sterowanie"
+        },
+        {
+          "pl": "Mieć co najmniej 21 lat"
+        },
+        {
+          "pl": "Być zatwierdzonym instruktorem"
+        },
+        {
+          "pl": "Posiadać zaawansowane prawo jazdy"
+        }
+      ]
+    },
+    "DC-10": {
+      "promptPl": "Co musisz mieć, aby legalnie prowadzić pojazd silnikowy po drodze?",
+      "options": [
+        {
+          "pl": "Assistance drogowe"
+        },
+        {
+          "pl": "Dowód tożsamości"
+        },
+        {
+          "pl": "Instrukcję obsługi pojazdu"
+        },
+        {
+          "pl": "Ważne prawo jazdy"
+        }
+      ]
+    },
+    "DC-11": {
+      "promptPl": "Co musi być spełnione przed odnowieniem podatku od pojazdu?",
+      "options": [
+        {
+          "pl": "Instrukcja obsługi pojazdu"
+        },
+        {
+          "pl": "Numer podwozia"
+        },
+        {
+          "pl": "Ważne ubezpieczenie"
+        },
+        {
+          "pl": "Prawo jazdy"
+        }
+      ]
+    },
+    "DC-12": {
+      "promptPl": "Co obejmuje ubezpieczenie third-party?",
+      "options": [
+        {
+          "pl": "Szkody w Twoim własnym pojeździe"
+        },
+        {
+          "pl": "Szkody w innych pojazdach i mieniu"
+        },
+        {
+          "pl": "Obrażenia u Ciebie"
+        },
+        {
+          "pl": "Wszystkie szkody i obrażenia"
+        }
+      ]
+    }
+  }
+}

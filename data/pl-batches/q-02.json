@@ -1,0 +1,952 @@
+[
+  {
+    "id": "HZ-25",
+    "topic": "hazard-awareness",
+    "promptEn": "You see a vehicle ahead displaying an amber flashing beacon. What should you expect?",
+    "options": [
+      {
+        "en": "It will be travelling faster than normal traffic"
+      },
+      {
+        "en": "It may be slow-moving or doing work"
+      },
+      {
+        "en": "It has priority like an emergency vehicle"
+      },
+      {
+        "en": "You must overtake it immediately"
+      }
+    ]
+  },
+  {
+    "id": "HZ-26",
+    "topic": "hazard-awareness",
+    "promptEn": "If a medical condition or poor health could affect your driving, what should you do?",
+    "options": [
+      {
+        "en": "Keep driving and see if it improves"
+      },
+      {
+        "en": "Tell the licensing authority (DVLA) if required"
+      },
+      {
+        "en": "Only tell your insurance company"
+      },
+      {
+        "en": "Only avoid motorways"
+      }
+    ]
+  },
+  {
+    "id": "HZ-27",
+    "topic": "hazard-awareness",
+    "promptEn": "A pedestrian is already in the road ahead, crossing slowly. What is the safest action?",
+    "options": [
+      {
+        "en": "Wave them to hurry up"
+      },
+      {
+        "en": "Drive behind them quickly"
+      },
+      {
+        "en": "Slow down and be prepared to stop"
+      },
+      {
+        "en": "Sound the horn to make them move"
+      }
+    ]
+  },
+  {
+    "id": "HZ-28",
+    "topic": "hazard-awareness",
+    "promptEn": "A motorcyclist has just overtaken you and moves back into your lane with little space. What should you do?",
+    "options": [
+      {
+        "en": "Flash your headlights to show annoyance"
+      },
+      {
+        "en": "Sound the horn continuously"
+      },
+      {
+        "en": "Drop back to rebuild a safe gap"
+      },
+      {
+        "en": "Accelerate to get very close to them"
+      }
+    ]
+  },
+  {
+    "id": "HZ-29",
+    "topic": "hazard-awareness",
+    "promptEn": "You're driving in slow-moving queues and notice traffic ahead spreading into the left lane. What is this most likely indicating?",
+    "options": [
+      {
+        "en": "A hazard or obstruction ahead in the right lane"
+      },
+      {
+        "en": "The speed limit has increased"
+      },
+      {
+        "en": "The left lane is for overtaking"
+      },
+      {
+        "en": "Everyone must exit at the next junction"
+      }
+    ]
+  },
+  {
+    "id": "HZ-30",
+    "topic": "hazard-awareness",
+    "promptEn": "You want to turn left from a side road, but your view along the main road is restricted. What should you do?",
+    "options": [
+      {
+        "en": "Approach slowly and edge forward until you can see clearly"
+      },
+      {
+        "en": "Build up speed so you can join quickly"
+      },
+      {
+        "en": "Stay well back and go only when you think it's clear"
+      },
+      {
+        "en": "Use the horn to warn traffic before pulling out"
+      }
+    ]
+  },
+  {
+    "id": "HZ-31",
+    "topic": "hazard-awareness",
+    "promptEn": "A driver's behaviour has upset you. What is the safest thing to do before driving?",
+    "options": [
+      {
+        "en": "Open a window"
+      },
+      {
+        "en": "Turn on the radio"
+      },
+      {
+        "en": "Drink alcohol"
+      },
+      {
+        "en": "Take time to calm down"
+      }
+    ]
+  },
+  {
+    "id": "HZ-32",
+    "topic": "hazard-awareness",
+    "promptEn": "Why should you check medicine labels before driving?",
+    "options": [
+      {
+        "en": "Medicines may affect safe driving"
+      },
+      {
+        "en": "To see expiry date only"
+      },
+      {
+        "en": "To avoid police checks"
+      },
+      {
+        "en": "To improve concentration"
+      }
+    ]
+  },
+  {
+    "id": "HZ-33",
+    "topic": "hazard-awareness",
+    "promptEn": "You feel very tired with a strong headache before driving. What should you do?",
+    "options": [
+      {
+        "en": "Drive slowly"
+      },
+      {
+        "en": "Take painkillers and drive"
+      },
+      {
+        "en": "Delay driving until you feel better"
+      },
+      {
+        "en": "Open a window"
+      }
+    ]
+  },
+  {
+    "id": "HZ-34",
+    "topic": "hazard-awareness",
+    "promptEn": "When must you wear glasses if you need them to read a number plate?",
+    "options": [
+      {
+        "en": "Only at night"
+      },
+      {
+        "en": "In bad weather only"
+      },
+      {
+        "en": "Whenever you are driving"
+      },
+      {
+        "en": "Only on motorways"
+      }
+    ]
+  },
+  {
+    "id": "HZ-35",
+    "topic": "hazard-awareness",
+    "promptEn": "How does alcohol affect driving ability?",
+    "options": [
+      {
+        "en": "Improves reactions"
+      },
+      {
+        "en": "Reduces judgement and control"
+      },
+      {
+        "en": "Improves awareness"
+      },
+      {
+        "en": "Makes driving safer"
+      }
+    ]
+  },
+  {
+    "id": "HZ-36",
+    "topic": "hazard-awareness",
+    "promptEn": "Why should you be careful passing a bus at a bus stop?",
+    "options": [
+      {
+        "en": "Road may be slippery"
+      },
+      {
+        "en": "Pedestrians may cross in front"
+      },
+      {
+        "en": "Bus will reverse"
+      },
+      {
+        "en": "Traffic speeds up"
+      }
+    ]
+  },
+  {
+    "id": "HZ-37",
+    "topic": "hazard-awareness",
+    "promptEn": "Approaching a left-hand bend, what hazard should you expect?",
+    "options": [
+      {
+        "en": "Overtaking vehicles"
+      },
+      {
+        "en": "Mud or debris on the road"
+      },
+      {
+        "en": "Wider road"
+      },
+      {
+        "en": "Faster traffic"
+      }
+    ]
+  },
+  {
+    "id": "HZ-38",
+    "topic": "hazard-awareness",
+    "promptEn": "What can seriously reduce your concentration while driving?",
+    "options": [
+      {
+        "en": "Drugs"
+      },
+      {
+        "en": "Clear weather"
+      },
+      {
+        "en": "New tyres"
+      },
+      {
+        "en": "Mirrors"
+      }
+    ]
+  },
+  {
+    "id": "HZ-39",
+    "topic": "hazard-awareness",
+    "promptEn": "Driving behind a lorry in rain, what should you be aware of?",
+    "options": [
+      {
+        "en": "Better visibility"
+      },
+      {
+        "en": "Spray reducing vision"
+      },
+      {
+        "en": "Faster stopping"
+      },
+      {
+        "en": "Clear mirrors"
+      }
+    ]
+  },
+  {
+    "id": "HZ-40",
+    "topic": "hazard-awareness",
+    "promptEn": "Which glasses can make night driving more difficult?",
+    "options": [
+      {
+        "en": "Clear lenses"
+      },
+      {
+        "en": "Tinted lenses"
+      },
+      {
+        "en": "Reading glasses"
+      },
+      {
+        "en": "Protective glasses"
+      }
+    ]
+  },
+  {
+    "id": "HZ-41",
+    "topic": "hazard-awareness",
+    "promptEn": "Traffic lights fail at a crossroads. What should you do?",
+    "options": [
+      {
+        "en": "Drive through quickly"
+      },
+      {
+        "en": "Be ready to stop for all traffic"
+      },
+      {
+        "en": "Follow the largest vehicle"
+      },
+      {
+        "en": "Sound the horn"
+      }
+    ]
+  },
+  {
+    "id": "HZ-42",
+    "topic": "hazard-awareness",
+    "promptEn": "Why should you allow extra time for older drivers?",
+    "options": [
+      {
+        "en": "They take more risks"
+      },
+      {
+        "en": "Their reactions may be slower"
+      },
+      {
+        "en": "They drive faster"
+      },
+      {
+        "en": "They ignore signs"
+      }
+    ]
+  },
+  {
+    "id": "HZ-43",
+    "topic": "hazard-awareness",
+    "promptEn": "A car ahead is signalling right continuously. What should you do?",
+    "options": [
+      {
+        "en": "Overtake immediately"
+      },
+      {
+        "en": "Stay behind and be cautious"
+      },
+      {
+        "en": "Sound the horn"
+      },
+      {
+        "en": "Flash headlights"
+      }
+    ]
+  },
+  {
+    "id": "HZ-44",
+    "topic": "hazard-awareness",
+    "promptEn": "What does a sharp bend warning sign mean?",
+    "options": [
+      {
+        "en": "Road narrows"
+      },
+      {
+        "en": "Sudden bend ahead"
+      },
+      {
+        "en": "Slippery road"
+      },
+      {
+        "en": "Junction ahead"
+      }
+    ]
+  },
+  {
+    "id": "HZ-45",
+    "topic": "hazard-awareness",
+    "promptEn": "Approaching a narrow bridge, what should you do?",
+    "options": [
+      {
+        "en": "Speed up"
+      },
+      {
+        "en": "Be prepared to give way"
+      },
+      {
+        "en": "Drive in the centre"
+      },
+      {
+        "en": "Use horn"
+      }
+    ]
+  },
+  {
+    "id": "HZ-46",
+    "topic": "hazard-awareness",
+    "promptEn": "What should you do if you feel drowsy while driving?",
+    "options": [
+      {
+        "en": "Turn heater up"
+      },
+      {
+        "en": "Continue slowly"
+      },
+      {
+        "en": "Stop and rest"
+      },
+      {
+        "en": "Drink water only"
+      }
+    ]
+  },
+  {
+    "id": "HZ-47",
+    "topic": "hazard-awareness",
+    "promptEn": "When should hazard warning lights be used?",
+    "options": [
+      {
+        "en": "When parking briefly"
+      },
+      {
+        "en": "When vehicle breaks down and obstructs traffic"
+      },
+      {
+        "en": "When indicators fail only"
+      },
+      {
+        "en": "In fog"
+      }
+    ]
+  },
+  {
+    "id": "HZ-48",
+    "topic": "hazard-awareness",
+    "promptEn": "Which vehicle may appear in the middle of a narrow road?",
+    "options": [
+      {
+        "en": "Bicycle"
+      },
+      {
+        "en": "Lorry"
+      },
+      {
+        "en": "Motorcycle"
+      },
+      {
+        "en": "Car"
+      }
+    ]
+  },
+  {
+    "id": "HZ-49",
+    "topic": "hazard-awareness",
+    "promptEn": "How can you reduce tiredness on long journeys?",
+    "options": [
+      {
+        "en": "Loud music"
+      },
+      {
+        "en": "Large meals"
+      },
+      {
+        "en": "Regular breaks"
+      },
+      {
+        "en": "Driving faster"
+      }
+    ]
+  },
+  {
+    "id": "HZ-50",
+    "topic": "hazard-awareness",
+    "promptEn": "What should you do if medicine causes drowsiness?",
+    "options": [
+      {
+        "en": "Drive carefully"
+      },
+      {
+        "en": "Avoid driving"
+      },
+      {
+        "en": "Drink coffee"
+      },
+      {
+        "en": "Drive short distances"
+      }
+    ]
+  },
+  {
+    "id": "HZ-51",
+    "topic": "hazard-awareness",
+    "promptEn": "Where are reflective safety markers most commonly found?",
+    "options": [
+      {
+        "en": "On motorway information signs"
+      },
+      {
+        "en": "On railway bridges"
+      },
+      {
+        "en": "On large goods vehicles"
+      },
+      {
+        "en": "On diversion signs"
+      }
+    ]
+  },
+  {
+    "id": "HZ-52",
+    "topic": "hazard-awareness",
+    "promptEn": "How should you normally drive in areas with traffic-calming measures?",
+    "options": [
+      {
+        "en": "At a reduced speed"
+      },
+      {
+        "en": "At the maximum speed"
+      },
+      {
+        "en": "In the centre of the road"
+      },
+      {
+        "en": "With headlights always on"
+      }
+    ]
+  },
+  {
+    "id": "HZ-53",
+    "topic": "hazard-awareness",
+    "promptEn": "If a doctor prescribes medicine that may affect your driving, what should you do?",
+    "options": [
+      {
+        "en": "Only drive short distances"
+      },
+      {
+        "en": "Avoid motorways only"
+      },
+      {
+        "en": "Let someone else drive"
+      },
+      {
+        "en": "Drive slowly and carefully"
+      }
+    ]
+  },
+  {
+    "id": "HZ-54",
+    "topic": "hazard-awareness",
+    "promptEn": "When approaching a narrow bridge, which vehicle should you be especially prepared to give way to?",
+    "options": [
+      {
+        "en": "Cars"
+      },
+      {
+        "en": "Buses"
+      },
+      {
+        "en": "Motorcycles"
+      },
+      {
+        "en": "Bicycles"
+      }
+    ]
+  },
+  {
+    "id": "HZ-55",
+    "topic": "hazard-awareness",
+    "promptEn": "Where is overtaking most unsafe?",
+    "options": [
+      {
+        "en": "On a straight road"
+      },
+      {
+        "en": "On a one-way street"
+      },
+      {
+        "en": "Near a junction"
+      },
+      {
+        "en": "On a wide road"
+      }
+    ]
+  },
+  {
+    "id": "HZ-56",
+    "topic": "hazard-awareness",
+    "promptEn": "What is a common hazard when driving near parked vehicles on a bend?",
+    "options": [
+      {
+        "en": "Vehicles turning around"
+      },
+      {
+        "en": "Hidden parked cars"
+      },
+      {
+        "en": "Pedestrians stepping out suddenly"
+      },
+      {
+        "en": "Road surface damage"
+      }
+    ]
+  },
+  {
+    "id": "HZ-57",
+    "topic": "hazard-awareness",
+    "promptEn": "Why must you take extra care when emerging from a junction with limited visibility?",
+    "options": [
+      {
+        "en": "The road surface is uneven"
+      },
+      {
+        "en": "Kerbs are high"
+      },
+      {
+        "en": "Your view is restricted"
+      },
+      {
+        "en": "Traffic lights may fail"
+      }
+    ]
+  },
+  {
+    "id": "HZ-58",
+    "topic": "hazard-awareness",
+    "promptEn": "How does alcohol usually affect driving behaviour?",
+    "options": [
+      {
+        "en": "Improves judgement"
+      },
+      {
+        "en": "Increases confidence dangerously"
+      },
+      {
+        "en": "Speeds up reactions"
+      },
+      {
+        "en": "Improves concentration"
+      }
+    ]
+  },
+  {
+    "id": "HZ-59",
+    "topic": "hazard-awareness",
+    "promptEn": "When passing parked cars, what hazard should you be especially aware of?",
+    "options": [
+      {
+        "en": "Uneven road surface"
+      },
+      {
+        "en": "Traffic behind you"
+      },
+      {
+        "en": "Doors opening suddenly"
+      },
+      {
+        "en": "Empty parking spaces"
+      }
+    ]
+  },
+  {
+    "id": "HZ-60",
+    "topic": "hazard-awareness",
+    "promptEn": "If illness affects your ability to drive safely, what must you do?",
+    "options": [
+      {
+        "en": "Reduce your medication"
+      },
+      {
+        "en": "Drive only short distances"
+      },
+      {
+        "en": "Stop driving until fit again"
+      },
+      {
+        "en": "Drive with someone else"
+      }
+    ]
+  },
+  {
+    "id": "HZ-61",
+    "topic": "hazard-awareness",
+    "promptEn": "If you plan to drive later, what is the safest choice at a social event with alcohol?",
+    "options": [
+      {
+        "en": "Drink less alcohol"
+      },
+      {
+        "en": "Eat food before drinking"
+      },
+      {
+        "en": "Avoid alcohol completely"
+      },
+      {
+        "en": "Drink slowly"
+      }
+    ]
+  },
+  {
+    "id": "HZ-62",
+    "topic": "hazard-awareness",
+    "promptEn": "What hazard is common in residential streets with parked vehicles?",
+    "options": [
+      {
+        "en": "Sun glare"
+      },
+      {
+        "en": "Missing road markings"
+      },
+      {
+        "en": "Children running out unexpectedly"
+      },
+      {
+        "en": "Heavy goods vehicles"
+      }
+    ]
+  },
+  {
+    "id": "HZ-63",
+    "topic": "hazard-awareness",
+    "promptEn": "What should you do if you feel drowsy while driving on a motorway?",
+    "options": [
+      {
+        "en": "Stop on the hard shoulder"
+      },
+      {
+        "en": "Open a window and stop safely as soon as possible"
+      },
+      {
+        "en": "Increase speed"
+      },
+      {
+        "en": "Let others overtake"
+      }
+    ]
+  },
+  {
+    "id": "HZ-64",
+    "topic": "hazard-awareness",
+    "promptEn": "Before driving after taking medicine from a friend, what should you do?",
+    "options": [
+      {
+        "en": "Ask the friend about effects"
+      },
+      {
+        "en": "Drink coffee"
+      },
+      {
+        "en": "Check the medicine label"
+      },
+      {
+        "en": "Test drive briefly"
+      }
+    ]
+  },
+  {
+    "id": "HZ-65",
+    "topic": "hazard-awareness",
+    "promptEn": "Why might you need to slow down on a dual carriageway?",
+    "options": [
+      {
+        "en": "Broken centre line"
+      },
+      {
+        "en": "Solid white lines at the sides"
+      },
+      {
+        "en": "Roadworks ahead"
+      },
+      {
+        "en": "No footpaths"
+      }
+    ]
+  },
+  {
+    "id": "HZ-66",
+    "topic": "hazard-awareness",
+    "promptEn": "When are hazard warning lights normally used?",
+    "options": [
+      {
+        "en": "To warn traffic of a breakdown causing obstruction"
+      },
+      {
+        "en": "When indicators fail"
+      },
+      {
+        "en": "When double parked"
+      },
+      {
+        "en": "To warn of speed cameras"
+      }
+    ]
+  },
+  {
+    "id": "HZ-67",
+    "topic": "hazard-awareness",
+    "promptEn": "After a conviction for drink- or drug-driving, what usually becomes more expensive?",
+    "options": [
+      {
+        "en": "Road tax"
+      },
+      {
+        "en": "Insurance"
+      },
+      {
+        "en": "MOT test"
+      },
+      {
+        "en": "Driving licence"
+      }
+    ]
+  },
+  {
+    "id": "HZ-68",
+    "topic": "hazard-awareness",
+    "promptEn": "What is the main hazard when following a cyclist near a junction?",
+    "options": [
+      {
+        "en": "The cyclist stopping"
+      },
+      {
+        "en": "The cyclist swerving into the road"
+      },
+      {
+        "en": "The cyclist dismounting"
+      },
+      {
+        "en": "The cyclist pushing the bike"
+      }
+    ]
+  },
+  {
+    "id": "HZ-69",
+    "topic": "hazard-awareness",
+    "promptEn": "Is it important to plan rest stops on a long journey?",
+    "options": [
+      {
+        "en": "Yes, to stop every 30 minutes"
+      },
+      {
+        "en": "Yes, regular breaks improve concentration"
+      },
+      {
+        "en": "No, arriving quickly reduces fatigue"
+      },
+      {
+        "en": "No, fuel stops are enough"
+      }
+    ]
+  },
+  {
+    "id": "HZ-70",
+    "topic": "hazard-awareness",
+    "promptEn": "Why should you avoid rushing during a long drive?",
+    "options": [
+      {
+        "en": "It saves fuel"
+      },
+      {
+        "en": "It reduces alertness"
+      },
+      {
+        "en": "It increases fatigue and errors"
+      },
+      {
+        "en": "It improves focus"
+      }
+    ]
+  },
+  {
+    "id": "HZ-71",
+    "topic": "hazard-awareness",
+    "promptEn": "In an automatic car, when would you use kick-down?",
+    "options": [
+      {
+        "en": "To engage cruise control"
+      },
+      {
+        "en": "To accelerate quickly"
+      },
+      {
+        "en": "To brake smoothly"
+      },
+      {
+        "en": "To save fuel"
+      }
+    ]
+  },
+  {
+    "id": "HZ-72",
+    "topic": "hazard-awareness",
+    "promptEn": "On a three-lane motorway, how should you overtake a slow lorry in the middle lane?",
+    "options": [
+      {
+        "en": "Overtake on either side"
+      },
+      {
+        "en": "Wait until leaving the motorway"
+      },
+      {
+        "en": "Use the right-hand lane normally"
+      },
+      {
+        "en": "Overtake on the left"
+      }
+    ]
+  },
+  {
+    "id": "HZ-73",
+    "topic": "hazard-awareness",
+    "promptEn": "You are driving in heavy rain and notice water pooling on the road surface. What should you be most aware of?",
+    "options": [
+      {
+        "en": "Improved visibility ahead"
+      },
+      {
+        "en": "Risk of aquaplaning and loss of control"
+      },
+      {
+        "en": "Faster traffic flow"
+      },
+      {
+        "en": "Better tyre grip"
+      }
+    ]
+  },
+  {
+    "id": "HZ-74",
+    "topic": "hazard-awareness",
+    "promptEn": "A pedestrian is standing at the edge of the pavement looking at their phone. What hazard should you anticipate?",
+    "options": [
+      {
+        "en": "They will wait for traffic to clear"
+      },
+      {
+        "en": "They may step into the road without looking"
+      },
+      {
+        "en": "They are waiting for a bus"
+      },
+      {
+        "en": "They will signal before crossing"
+      }
+    ]
+  }
+]

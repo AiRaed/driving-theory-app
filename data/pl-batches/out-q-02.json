@@ -1,0 +1,454 @@
+{
+  "hazard-awareness": {
+    "HZ-25": {
+      "promptPl": "Widzisz przed sobą pojazd z bursztynowym migającym sygnalizatorem. Czego się spodziewać?",
+      "options": [
+        { "pl": "Będzie jechał szybciej niż normalny ruch" },
+        { "pl": "Może poruszać się wolno lub wykonywać pracę" },
+        { "pl": "Ma pierwszeństwo jak pojazd uprzywilejowany" },
+        { "pl": "Musisz go natychmiast wyprzedzić" }
+      ]
+    },
+    "HZ-26": {
+      "promptPl": "Jeśli stan zdrowia lub choroba mogą wpływać na Twoją jazdę, co powinieneś zrobić?",
+      "options": [
+        { "pl": "Dalej jeździć i zobaczyć, czy się poprawi" },
+        { "pl": "Poinformować organ wydający prawo jazdy (DVLA), jeśli jest to wymagane" },
+        { "pl": "Powiedzieć tylko firmie ubezpieczeniowej" },
+        { "pl": "Unikać tylko autostrad" }
+      ]
+    },
+    "HZ-27": {
+      "promptPl": "Pieszy jest już na jezdni przed Tobą i powoli przechodzi. Jakie jest najbezpieczniejsze działanie?",
+      "options": [
+        { "pl": "Machnąć ręką, żeby się pospieszył" },
+        { "pl": "Szybko przejechać za nim" },
+        { "pl": "Zwolnić i być gotowym do zatrzymania" },
+        { "pl": "Użyć klaksonu, żeby się przesunął" }
+      ]
+    },
+    "HZ-28": {
+      "promptPl": "Motocyklista właśnie Cię wyprzedził i wraca na Twój pas z małym odstępem. Co powinieneś zrobić?",
+      "options": [
+        { "pl": "Mrugnąć światłami, żeby okazać irytację" },
+        { "pl": "Używać klaksonu bez przerwy" },
+        { "pl": "Cofnąć się, aby odbudować bezpieczny odstęp" },
+        { "pl": "Przyspieszyć, żeby się bardzo do niego zbliżyć" }
+      ]
+    },
+    "HZ-29": {
+      "promptPl": "Jedziesz w wolno poruszających się kolejkach i zauważasz, że ruch przed Tobą rozchodzi się na lewy pas. Co to najprawdopodobniej oznacza?",
+      "options": [
+        { "pl": "Zagrożenie lub przeszkodę przed Tobą na prawym pasie" },
+        { "pl": "Zwiększony limit prędkości" },
+        { "pl": "Lewy pas służy do wyprzedzania" },
+        { "pl": "Wszyscy muszą zjechać na następnym skrzyżowaniu" }
+      ]
+    },
+    "HZ-30": {
+      "promptPl": "Chcesz skręcić w lewo z drogi bocznej, ale widok wzdłuż drogi głównej jest ograniczony. Co powinieneś zrobić?",
+      "options": [
+        { "pl": "Zbliżać się powoli i wysuwać do przodu, aż dobrze zobaczysz" },
+        { "pl": "Nabierać prędkości, żeby szybko dołączyć do ruchu" },
+        { "pl": "Trzymać się daleko i ruszyć tylko, gdy wydaje Ci się, że jest wolno" },
+        { "pl": "Użyć klaksonu, żeby ostrzec ruch przed wyjazdem" }
+      ]
+    },
+    "HZ-31": {
+      "promptPl": "Zachowanie innego kierowcy Cię zdenerwowało. Co jest najbezpieczniejsze przed jazdą?",
+      "options": [
+        { "pl": "Otworzyć okno" },
+        { "pl": "Włączyć radio" },
+        { "pl": "Wypić alkohol" },
+        { "pl": "Poświęcić czas na uspokojenie się" }
+      ]
+    },
+    "HZ-32": {
+      "promptPl": "Dlaczego przed jazdą należy sprawdzać etykiety leków?",
+      "options": [
+        { "pl": "Leki mogą wpływać na bezpieczną jazdę" },
+        { "pl": "Tylko po to, by sprawdzić datę ważności" },
+        { "pl": "Aby uniknąć kontroli policyjnych" },
+        { "pl": "Aby poprawić koncentrację" }
+      ]
+    },
+    "HZ-33": {
+      "promptPl": "Przed jazdą czujesz silne zmęczenie i silny ból głowy. Co powinieneś zrobić?",
+      "options": [
+        { "pl": "Jeździć wolno" },
+        { "pl": "Zażyć środki przeciwbólowe i jechać" },
+        { "pl": "Odłożyć jazdę, aż poczujesz się lepiej" },
+        { "pl": "Otworzyć okno" }
+      ]
+    },
+    "HZ-34": {
+      "promptPl": "Kiedy musisz nosić okulary, jeśli potrzebujesz ich do odczytania tablicy rejestracyjnej?",
+      "options": [
+        { "pl": "Tylko w nocy" },
+        { "pl": "Tylko przy złej pogodzie" },
+        { "pl": "Zawsze gdy prowadzisz" },
+        { "pl": "Tylko na autostradach" }
+      ]
+    },
+    "HZ-35": {
+      "promptPl": "Jak alkohol wpływa na zdolność prowadzenia?",
+      "options": [
+        { "pl": "Poprawia reakcje" },
+        { "pl": "Pogarsza ocenę sytuacji i kontrolę" },
+        { "pl": "Poprawia świadomość" },
+        { "pl": "Czyni jazdę bezpieczniejszą" }
+      ]
+    },
+    "HZ-36": {
+      "promptPl": "Dlaczego należy zachować ostrożność, mijając autobus na przystanku?",
+      "options": [
+        { "pl": "Jezdnia może być śliska" },
+        { "pl": "Piesi mogą przejść przed autobusem" },
+        { "pl": "Autobus będzie cofał" },
+        { "pl": "Ruch przyspiesza" }
+      ]
+    },
+    "HZ-37": {
+      "promptPl": "Zbliżając się do lewego zakrętu, jakiego zagrożenia się spodziewać?",
+      "options": [
+        { "pl": "Wyprzedzających pojazdów" },
+        { "pl": "Błota lub zanieczyszczeń na jezdni" },
+        { "pl": "Szerszej drogi" },
+        { "pl": "Szybszego ruchu" }
+      ]
+    },
+    "HZ-38": {
+      "promptPl": "Co może poważnie obniżyć koncentrację podczas jazdy?",
+      "options": [
+        { "pl": "Narkotyki" },
+        { "pl": "Bezchmurna pogoda" },
+        { "pl": "Nowe opony" },
+        { "pl": "Lusterka" }
+      ]
+    },
+    "HZ-39": {
+      "promptPl": "Jadąc za ciężarówką w deszczu, czego powinieneś być świadomy?",
+      "options": [
+        { "pl": "Lepszej widoczności" },
+        { "pl": "Bryzgów wody ograniczających widoczność" },
+        { "pl": "Szybszego zatrzymania" },
+        { "pl": "Czystych lusterek" }
+      ]
+    },
+    "HZ-40": {
+      "promptPl": "Które okulary mogą utrudniać jazdę nocą?",
+      "options": [
+        { "pl": "Szkła bezbarwne" },
+        { "pl": "Szkła przyciemniane" },
+        { "pl": "Okulary do czytania" },
+        { "pl": "Okulary ochronne" }
+      ]
+    },
+    "HZ-41": {
+      "promptPl": "Sygnalizacja świetlna na skrzyżowaniu nie działa. Co powinieneś zrobić?",
+      "options": [
+        { "pl": "Szybko przejechać" },
+        { "pl": "Być gotowym do zatrzymania się dla całego ruchu" },
+        { "pl": "Podążać za największym pojazdem" },
+        { "pl": "Użyć klaksonu" }
+      ]
+    },
+    "HZ-42": {
+      "promptPl": "Dlaczego należy dać więcej czasu starszym kierowcom?",
+      "options": [
+        { "pl": "Podejmują więcej ryzyka" },
+        { "pl": "Ich reakcje mogą być wolniejsze" },
+        { "pl": "Jeżdżą szybciej" },
+        { "pl": "Ignorują znaki" }
+      ]
+    },
+    "HZ-43": {
+      "promptPl": "Samochód przed Tobą nieprzerwanie sygnalizuje skręt w prawo. Co powinieneś zrobić?",
+      "options": [
+        { "pl": "Natychmiast wyprzedzić" },
+        { "pl": "Zostać z tyłu i zachować ostrożność" },
+        { "pl": "Użyć klaksonu" },
+        { "pl": "Mrugnąć światłami" }
+      ]
+    },
+    "HZ-44": {
+      "promptPl": "Co oznacza znak ostrzegający o ostrym zakręcie?",
+      "options": [
+        { "pl": "Zwężenie drogi" },
+        { "pl": "Nagły zakręt przed Tobą" },
+        { "pl": "Śliska jezdnia" },
+        { "pl": "Skrzyżowanie przed Tobą" }
+      ]
+    },
+    "HZ-45": {
+      "promptPl": "Zbliżając się do wąskiego mostu, co powinieneś zrobić?",
+      "options": [
+        { "pl": "Przyspieszyć" },
+        { "pl": "Być gotowym do ustąpienia pierwszeństwa" },
+        { "pl": "Jeździć środkiem" },
+        { "pl": "Użyć klaksonu" }
+      ]
+    },
+    "HZ-46": {
+      "promptPl": "Co powinieneś zrobić, jeśli podczas jazdy czujesz senność?",
+      "options": [
+        { "pl": "Podkręcić ogrzewanie" },
+        { "pl": "Kontynuować jazdę wolno" },
+        { "pl": "Zatrzymać się i odpocząć" },
+        { "pl": "Tylko napić się wody" }
+      ]
+    },
+    "HZ-47": {
+      "promptPl": "Kiedy należy używać świateł awaryjnych?",
+      "options": [
+        { "pl": "Przy krótkim postoju" },
+        { "pl": "Gdy pojazd się psuje i utrudnia ruch" },
+        { "pl": "Tylko gdy zawodzą kierunkowskazy" },
+        { "pl": "We mgle" }
+      ]
+    },
+    "HZ-48": {
+      "promptPl": "Który pojazd może pojawić się na środku wąskiej drogi?",
+      "options": [
+        { "pl": "Rower" },
+        { "pl": "Ciężarówka" },
+        { "pl": "Motocykl" },
+        { "pl": "Samochód" }
+      ]
+    },
+    "HZ-49": {
+      "promptPl": "Jak zmniejszyć zmęczenie podczas długich podróży?",
+      "options": [
+        { "pl": "Głośna muzyka" },
+        { "pl": "Obfite posiłki" },
+        { "pl": "Regularne przerwy" },
+        { "pl": "Szybsza jazda" }
+      ]
+    },
+    "HZ-50": {
+      "promptPl": "Co powinieneś zrobić, jeśli lek powoduje senność?",
+      "options": [
+        { "pl": "Jeździć ostrożnie" },
+        { "pl": "Unikać prowadzenia" },
+        { "pl": "Pić kawę" },
+        { "pl": "Jeździć na krótkich dystansach" }
+      ]
+    },
+    "HZ-51": {
+      "promptPl": "Gdzie najczęściej znajdują się odblaskowe oznaczenia bezpieczeństwa?",
+      "options": [
+        { "pl": "Na znakach informacyjnych autostrady" },
+        { "pl": "Na mostach kolejowych" },
+        { "pl": "Na dużych pojazdach towarowych" },
+        { "pl": "Na znakach objazdów" }
+      ]
+    },
+    "HZ-52": {
+      "promptPl": "Jak zwykle należy jeździć w obszarach ze środkami uspokojenia ruchu?",
+      "options": [
+        { "pl": "Z obniżoną prędkością" },
+        { "pl": "Z maksymalną dozwoloną prędkością" },
+        { "pl": "Środkiem jezdni" },
+        { "pl": "Zawsze z włączonymi reflektorami" }
+      ]
+    },
+    "HZ-53": {
+      "promptPl": "Jeśli lekarz przepisze lek, który może wpływać na jazdę, co powinieneś zrobić?",
+      "options": [
+        { "pl": "Jeździć tylko na krótkich dystansach" },
+        { "pl": "Unikać tylko autostrad" },
+        { "pl": "Pozwolić komuś innemu prowadzić" },
+        { "pl": "Jeździć wolno i ostrożnie" }
+      ]
+    },
+    "HZ-54": {
+      "promptPl": "Zbliżając się do wąskiego mostu, któremu pojazdowi powinieneś być szczególnie gotowy ustąpić pierwszeństwa?",
+      "options": [
+        { "pl": "Samochodom" },
+        { "pl": "Autobusom" },
+        { "pl": "Motocyklom" },
+        { "pl": "Rowerom" }
+      ]
+    },
+    "HZ-55": {
+      "promptPl": "Gdzie wyprzedzanie jest najbardziej niebezpieczne?",
+      "options": [
+        { "pl": "Na prostej drodze" },
+        { "pl": "Na ulicy jednokierunkowej" },
+        { "pl": "W pobliżu skrzyżowania" },
+        { "pl": "Na szerokiej drodze" }
+      ]
+    },
+    "HZ-56": {
+      "promptPl": "Jakie jest częste zagrożenie przy jeździe w pobliżu zaparkowanych pojazdów na zakręcie?",
+      "options": [
+        { "pl": "Pojazdy zawracające" },
+        { "pl": "Ukryte zaparkowane samochody" },
+        { "pl": "Piesi nagle wchodzący na jezdnię" },
+        { "pl": "Uszkodzenia nawierzchni" }
+      ]
+    },
+    "HZ-57": {
+      "promptPl": "Dlaczego trzeba zachować szczególną ostrożność, wyjeżdżając ze skrzyżowania o ograniczonej widoczności?",
+      "options": [
+        { "pl": "Nawierzchnia jest nierówna" },
+        { "pl": "Krawężniki są wysokie" },
+        { "pl": "Widoczność jest ograniczona" },
+        { "pl": "Sygnalizacja świetlna może nie działać" }
+      ]
+    },
+    "HZ-58": {
+      "promptPl": "Jak alkohol zwykle wpływa na zachowanie za kierownicą?",
+      "options": [
+        { "pl": "Poprawia ocenę sytuacji" },
+        { "pl": "Niebezpiecznie zwiększa pewność siebie" },
+        { "pl": "Przyspiesza reakcje" },
+        { "pl": "Poprawia koncentrację" }
+      ]
+    },
+    "HZ-59": {
+      "promptPl": "Mijając zaparkowane samochody, na jakie zagrożenie powinieneś szczególnie uważać?",
+      "options": [
+        { "pl": "Nierówną nawierzchnię" },
+        { "pl": "Ruch za Tobą" },
+        { "pl": "Nagle otwierane drzwi" },
+        { "pl": "Puste miejsca parkingowe" }
+      ]
+    },
+    "HZ-60": {
+      "promptPl": "Jeśli choroba wpływa na bezpieczne prowadzenie, co musisz zrobić?",
+      "options": [
+        { "pl": "Zmniejszyć dawkę leków" },
+        { "pl": "Jeździć tylko na krótkich dystansach" },
+        { "pl": "Przestać jeździć, aż znów będziesz sprawny" },
+        { "pl": "Jeździć z kimś innym" }
+      ]
+    },
+    "HZ-61": {
+      "promptPl": "Jeśli planujesz później prowadzić, jaki jest najbezpieczniejszy wybór na imprezie z alkoholem?",
+      "options": [
+        { "pl": "Pić mniej alkoholu" },
+        { "pl": "Zjeść coś przed piciem" },
+        { "pl": "Całkowicie unikać alkoholu" },
+        { "pl": "Pić powoli" }
+      ]
+    },
+    "HZ-62": {
+      "promptPl": "Jakie zagrożenie jest częste na ulicach mieszkalnych z zaparkowanymi pojazdami?",
+      "options": [
+        { "pl": "Oślepienie słońcem" },
+        { "pl": "Brakujące oznakowanie poziome" },
+        { "pl": "Dzieci niespodziewanie wbiegające na jezdnię" },
+        { "pl": "Ciężkie pojazdy towarowe" }
+      ]
+    },
+    "HZ-63": {
+      "promptPl": "Co powinieneś zrobić, jeśli podczas jazdy autostradą czujesz senność?",
+      "options": [
+        { "pl": "Zatrzymać się na pasie awaryjnym" },
+        { "pl": "Otworzyć okno i jak najszybciej bezpiecznie się zatrzymać" },
+        { "pl": "Zwiększyć prędkość" },
+        { "pl": "Pozwolić innym wyprzedzać" }
+      ]
+    },
+    "HZ-64": {
+      "promptPl": "Przed jazdą po zażyciu leku od znajomego, co powinieneś zrobić?",
+      "options": [
+        { "pl": "Zapytać znajomego o skutki" },
+        { "pl": "Wypić kawę" },
+        { "pl": "Sprawdzić etykietę leku" },
+        { "pl": "Krótko przetestować jazdę" }
+      ]
+    },
+    "HZ-65": {
+      "promptPl": "Dlaczego możesz potrzebować zwolnić na drodze dwujezdniowej?",
+      "options": [
+        { "pl": "Przerwana linia środkowa" },
+        { "pl": "Ciągłe białe linie po bokach" },
+        { "pl": "Roboty drogowe przed Tobą" },
+        { "pl": "Brak chodników" }
+      ]
+    },
+    "HZ-66": {
+      "promptPl": "Kiedy zwykle używa się świateł awaryjnych?",
+      "options": [
+        { "pl": "Aby ostrzec o awarii powodującej utrudnienie ruchu" },
+        { "pl": "Gdy zawodzą kierunkowskazy" },
+        { "pl": "Przy podwójnym parkowaniu" },
+        { "pl": "Aby ostrzec o fotoradarach" }
+      ]
+    },
+    "HZ-67": {
+      "promptPl": "Po skazaniu za jazdę po alkoholu lub narkotykach, co zwykle staje się droższe?",
+      "options": [
+        { "pl": "Podatek drogowy" },
+        { "pl": "Ubezpieczenie" },
+        { "pl": "Badanie MOT" },
+        { "pl": "Prawo jazdy" }
+      ]
+    },
+    "HZ-68": {
+      "promptPl": "Jakie jest główne zagrożenie, gdy jedziesz za rowerzystą w pobliżu skrzyżowania?",
+      "options": [
+        { "pl": "Rowerzysta się zatrzymuje" },
+        { "pl": "Rowerzysta zjeżdża na środek jezdni" },
+        { "pl": "Rowerzysta zsiada z roweru" },
+        { "pl": "Rowerzysta prowadzi rower" }
+      ]
+    },
+    "HZ-69": {
+      "promptPl": "Czy ważne jest planowanie przerw na odpoczynek podczas długiej podróży?",
+      "options": [
+        { "pl": "Tak, zatrzymywać się co 30 minut" },
+        { "pl": "Tak, regularne przerwy poprawiają koncentrację" },
+        { "pl": "Nie, szybkie dotarcie zmniejsza zmęczenie" },
+        { "pl": "Nie, postoje na paliwo wystarczą" }
+      ]
+    },
+    "HZ-70": {
+      "promptPl": "Dlaczego podczas długiej jazdy nie należy się spieszyć?",
+      "options": [
+        { "pl": "Oszczędza paliwo" },
+        { "pl": "Zmniejsza czujność" },
+        { "pl": "Zwiększa zmęczenie i liczbę błędów" },
+        { "pl": "Poprawia skupienie" }
+      ]
+    },
+    "HZ-71": {
+      "promptPl": "W samochodzie z automatyczną skrzynią biegów, kiedy używasz kick-down?",
+      "options": [
+        { "pl": "Aby włączyć tempomat" },
+        { "pl": "Aby szybko przyspieszyć" },
+        { "pl": "Aby płynnie hamować" },
+        { "pl": "Aby oszczędzać paliwo" }
+      ]
+    },
+    "HZ-72": {
+      "promptPl": "Na trzyipasmowej autostradzie, jak wyprzedzić wolną ciężarówkę na środkowym pasie?",
+      "options": [
+        { "pl": "Wyprzedzać z dowolnej strony" },
+        { "pl": "Czekać do zjazdu z autostrady" },
+        { "pl": "Zwykle użyć prawego pasa" },
+        { "pl": "Wyprzedzać po lewej" }
+      ]
+    },
+    "HZ-73": {
+      "promptPl": "Jedziesz w ulewnym deszczu i zauważasz kałuże na jezdni. Czego powinieneś być najbardziej świadomy?",
+      "options": [
+        { "pl": "Lepszej widoczności przed Tobą" },
+        { "pl": "Ryzyka aquaplaningu i utraty kontroli" },
+        { "pl": "Szybszego przepływu ruchu" },
+        { "pl": "Lepszego przylegania opon" }
+      ]
+    },
+    "HZ-74": {
+      "promptPl": "Pieszy stoi na krawędzi chodnika i patrzy w telefon. Jakiego zagrożenia się spodziewać?",
+      "options": [
+        { "pl": "Poczeka, aż ruch się rozwieje" },
+        { "pl": "Może wejść na jezdnię bez spojrzenia" },
+        { "pl": "Czeka na autobus" },
+        { "pl": "Da sygnał przed przejściem" }
+      ]
+    }
+  }
+}

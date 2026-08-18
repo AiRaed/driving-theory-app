@@ -1,0 +1,854 @@
+{
+  "hazard-awareness": {
+    "HZ-25": {
+      "promptPt": "Vê um veículo à frente com um farol âmbar intermitente. O que deve esperar?",
+      "options": [
+        {
+          "pt": "Que circule mais depressa do que o trânsito normal"
+        },
+        {
+          "pt": "Que possa ser lento ou estar a trabalhar"
+        },
+        {
+          "pt": "Que tenha prioridade como um veículo de emergência"
+        },
+        {
+          "pt": "Que o tenha de ultrapassar de imediato"
+        }
+      ]
+    },
+    "HZ-26": {
+      "promptPt": "Se uma condição médica ou má saúde puder afetar a sua condução, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Continuar a conduzir e ver se melhora"
+        },
+        {
+          "pt": "Informar a autoridade de licenciamento (DVLA) se for necessário"
+        },
+        {
+          "pt": "Informar apenas a seguradora"
+        },
+        {
+          "pt": "Evitar apenas as autoestradas"
+        }
+      ]
+    },
+    "HZ-27": {
+      "promptPt": "Um peão já está na estrada à frente, a atravessar lentamente. Qual é a ação mais segura?",
+      "options": [
+        {
+          "pt": "Acenar para que se apresse"
+        },
+        {
+          "pt": "Passar atrás dele depressa"
+        },
+        {
+          "pt": "Abrandar e estar preparado para parar"
+        },
+        {
+          "pt": "Buzinar para o fazer mexer"
+        }
+      ]
+    },
+    "HZ-28": {
+      "promptPt": "Um motociclista acabou de o ultrapassar e regressa à sua via com pouco espaço. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Piscar os faróis para mostrar irritação"
+        },
+        {
+          "pt": "Buzinar continuamente"
+        },
+        {
+          "pt": "Afastar-se para voltar a criar uma distância segura"
+        },
+        {
+          "pt": "Acelerar para ficar muito perto dele"
+        }
+      ]
+    },
+    "HZ-29": {
+      "promptPt": "Está a conduzir em filas lentas e nota o trânsito à frente a espalhar-se para a via da esquerda. O que é mais provável que isto indique?",
+      "options": [
+        {
+          "pt": "Um perigo ou obstáculo à frente na via da direita"
+        },
+        {
+          "pt": "O limite de velocidade aumentou"
+        },
+        {
+          "pt": "A via da esquerda é para ultrapassar"
+        },
+        {
+          "pt": "Todos devem sair no próximo cruzamento"
+        }
+      ]
+    },
+    "HZ-30": {
+      "promptPt": "Quer virar à esquerda de uma estrada lateral, mas a visão ao longo da estrada principal está restringida. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Aproximar-se lentamente e avançar até conseguir ver bem"
+        },
+        {
+          "pt": "Ganhar velocidade para entrar rapidamente"
+        },
+        {
+          "pt": "Ficar bem atrás e ir só quando achar que está livre"
+        },
+        {
+          "pt": "Usar a buzina para avisar o trânsito antes de sair"
+        }
+      ]
+    },
+    "HZ-31": {
+      "promptPt": "O comportamento de um condutor deixou-o aborrecido. Qual é a coisa mais segura a fazer antes de conduzir?",
+      "options": [
+        {
+          "pt": "Abrir um vidro"
+        },
+        {
+          "pt": "Ligar o rádio"
+        },
+        {
+          "pt": "Beber álcool"
+        },
+        {
+          "pt": "Ter tempo para se acalmar"
+        }
+      ]
+    },
+    "HZ-32": {
+      "promptPt": "Porque deve verificar os rótulos dos medicamentos antes de conduzir?",
+      "options": [
+        {
+          "pt": "Os medicamentos podem afetar a condução segura"
+        },
+        {
+          "pt": "Só para ver a data de validade"
+        },
+        {
+          "pt": "Para evitar controlos da polícia"
+        },
+        {
+          "pt": "Para melhorar a concentração"
+        }
+      ]
+    },
+    "HZ-33": {
+      "promptPt": "Sente-se muito cansado e com uma forte dor de cabeça antes de conduzir. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Conduzir lentamente"
+        },
+        {
+          "pt": "Tomar analgésicos e conduzir"
+        },
+        {
+          "pt": "Adiar a condução até se sentir melhor"
+        },
+        {
+          "pt": "Abrir um vidro"
+        }
+      ]
+    },
+    "HZ-34": {
+      "promptPt": "Quando deve usar óculos se precisar deles para ler uma matrícula?",
+      "options": [
+        {
+          "pt": "Só à noite"
+        },
+        {
+          "pt": "Só com mau tempo"
+        },
+        {
+          "pt": "Sempre que conduzir"
+        },
+        {
+          "pt": "Só nas autoestradas"
+        }
+      ]
+    },
+    "HZ-35": {
+      "promptPt": "Como é que o álcool afeta a capacidade de conduzir?",
+      "options": [
+        {
+          "pt": "Melhora as reações"
+        },
+        {
+          "pt": "Reduz o juízo e o controlo"
+        },
+        {
+          "pt": "Melhora a atenção"
+        },
+        {
+          "pt": "Torna a condução mais segura"
+        }
+      ]
+    },
+    "HZ-36": {
+      "promptPt": "Porque deve ter cuidado ao passar um autocarro numa paragem?",
+      "options": [
+        {
+          "pt": "A estrada pode estar escorregadia"
+        },
+        {
+          "pt": "Peões podem atravessar à frente"
+        },
+        {
+          "pt": "O autocarro vai fazer marcha-atrás"
+        },
+        {
+          "pt": "O trânsito acelera"
+        }
+      ]
+    },
+    "HZ-37": {
+      "promptPt": "Ao aproximar-se de uma curva à esquerda, que perigo deve esperar?",
+      "options": [
+        {
+          "pt": "Veículos a ultrapassar"
+        },
+        {
+          "pt": "Lama ou detritos na estrada"
+        },
+        {
+          "pt": "Estrada mais larga"
+        },
+        {
+          "pt": "Trânsito mais rápido"
+        }
+      ]
+    },
+    "HZ-38": {
+      "promptPt": "O que pode reduzir gravemente a sua concentração ao conduzir?",
+      "options": [
+        {
+          "pt": "Drogas"
+        },
+        {
+          "pt": "Tempo limpo"
+        },
+        {
+          "pt": "Pneus novos"
+        },
+        {
+          "pt": "Espelhos"
+        }
+      ]
+    },
+    "HZ-39": {
+      "promptPt": "Ao conduzir atrás de um camião sob chuva, do que deve estar consciente?",
+      "options": [
+        {
+          "pt": "Melhor visibilidade"
+        },
+        {
+          "pt": "Spray que reduz a visão"
+        },
+        {
+          "pt": "Paragem mais rápida"
+        },
+        {
+          "pt": "Espelhos limpos"
+        }
+      ]
+    },
+    "HZ-40": {
+      "promptPt": "Que óculos podem tornar a condução noturna mais difícil?",
+      "options": [
+        {
+          "pt": "Lentes transparentes"
+        },
+        {
+          "pt": "Lentes fumadas"
+        },
+        {
+          "pt": "Óculos de leitura"
+        },
+        {
+          "pt": "Óculos de proteção"
+        }
+      ]
+    },
+    "HZ-41": {
+      "promptPt": "Os semáforos falham num cruzamento. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Atravessar depressa"
+        },
+        {
+          "pt": "Estar preparado para parar para todo o trânsito"
+        },
+        {
+          "pt": "Seguir o veículo maior"
+        },
+        {
+          "pt": "Buzinar"
+        }
+      ]
+    },
+    "HZ-42": {
+      "promptPt": "Porque deve dar mais tempo a condutores mais velhos?",
+      "options": [
+        {
+          "pt": "Assumem mais riscos"
+        },
+        {
+          "pt": "As suas reações podem ser mais lentas"
+        },
+        {
+          "pt": "Conduzem mais depressa"
+        },
+        {
+          "pt": "Ignoram os sinais"
+        }
+      ]
+    },
+    "HZ-43": {
+      "promptPt": "Um carro à frente está a sinalizar continuamente à direita. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Ultrapassar de imediato"
+        },
+        {
+          "pt": "Ficar atrás e ter cuidado"
+        },
+        {
+          "pt": "Buzinar"
+        },
+        {
+          "pt": "Piscar os faróis"
+        }
+      ]
+    },
+    "HZ-44": {
+      "promptPt": "O que significa um sinal de aviso de curva acentuada?",
+      "options": [
+        {
+          "pt": "A estrada estreita"
+        },
+        {
+          "pt": "Curva súbita à frente"
+        },
+        {
+          "pt": "Estrada escorregadia"
+        },
+        {
+          "pt": "Cruzamento à frente"
+        }
+      ]
+    },
+    "HZ-45": {
+      "promptPt": "Ao aproximar-se de uma ponte estreita, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar"
+        },
+        {
+          "pt": "Estar preparado para ceder a passagem"
+        },
+        {
+          "pt": "Conduzir ao centro"
+        },
+        {
+          "pt": "Usar a buzina"
+        }
+      ]
+    },
+    "HZ-46": {
+      "promptPt": "O que deve fazer se se sentir sonolento ao conduzir?",
+      "options": [
+        {
+          "pt": "Aumentar o aquecimento"
+        },
+        {
+          "pt": "Continuar lentamente"
+        },
+        {
+          "pt": "Parar e descansar"
+        },
+        {
+          "pt": "Beber apenas água"
+        }
+      ]
+    },
+    "HZ-47": {
+      "promptPt": "Quando devem ser usadas as luzes de emergência (hazard warning lights)?",
+      "options": [
+        {
+          "pt": "Ao estacionar brevemente"
+        },
+        {
+          "pt": "Quando o veículo avaria e obstrui o trânsito"
+        },
+        {
+          "pt": "Só quando os indicadores falham"
+        },
+        {
+          "pt": "No nevoeiro"
+        }
+      ]
+    },
+    "HZ-48": {
+      "promptPt": "Que veículo pode aparecer no meio de uma estrada estreita?",
+      "options": [
+        {
+          "pt": "Bicicleta"
+        },
+        {
+          "pt": "Camião"
+        },
+        {
+          "pt": "Motociclo"
+        },
+        {
+          "pt": "Carro"
+        }
+      ]
+    },
+    "HZ-49": {
+      "promptPt": "Como pode reduzir o cansaço em viagens longas?",
+      "options": [
+        {
+          "pt": "Música alta"
+        },
+        {
+          "pt": "Refeições grandes"
+        },
+        {
+          "pt": "Pausas regulares"
+        },
+        {
+          "pt": "Conduzir mais depressa"
+        }
+      ]
+    },
+    "HZ-50": {
+      "promptPt": "O que deve fazer se um medicamento causar sonolência?",
+      "options": [
+        {
+          "pt": "Conduzir com cuidado"
+        },
+        {
+          "pt": "Evitar conduzir"
+        },
+        {
+          "pt": "Beber café"
+        },
+        {
+          "pt": "Conduzir distâncias curtas"
+        }
+      ]
+    },
+    "HZ-51": {
+      "promptPt": "Onde se encontram mais comummente marcadores refletivos de segurança?",
+      "options": [
+        {
+          "pt": "Em sinais de informação da autoestrada"
+        },
+        {
+          "pt": "Em pontes ferroviárias"
+        },
+        {
+          "pt": "Em veículos de mercadorias grandes"
+        },
+        {
+          "pt": "Em sinais de desvio"
+        }
+      ]
+    },
+    "HZ-52": {
+      "promptPt": "Como deve conduzir normalmente em zonas com medidas de acalmia de tráfego?",
+      "options": [
+        {
+          "pt": "A uma velocidade reduzida"
+        },
+        {
+          "pt": "À velocidade máxima"
+        },
+        {
+          "pt": "No centro da estrada"
+        },
+        {
+          "pt": "Com os faróis sempre ligados"
+        }
+      ]
+    },
+    "HZ-53": {
+      "promptPt": "Se um médico receitar um medicamento que possa afetar a sua condução, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Conduzir apenas distâncias curtas"
+        },
+        {
+          "pt": "Evitar apenas as autoestradas"
+        },
+        {
+          "pt": "Deixar outra pessoa conduzir"
+        },
+        {
+          "pt": "Conduzir lentamente e com cuidado"
+        }
+      ]
+    },
+    "HZ-54": {
+      "promptPt": "Ao aproximar-se de uma ponte estreita, a que veículo deve estar especialmente preparado para ceder a passagem?",
+      "options": [
+        {
+          "pt": "Carros"
+        },
+        {
+          "pt": "Autocarros"
+        },
+        {
+          "pt": "Motociclos"
+        },
+        {
+          "pt": "Bicicletas"
+        }
+      ]
+    },
+    "HZ-55": {
+      "promptPt": "Onde é a ultrapassagem mais insegura?",
+      "options": [
+        {
+          "pt": "Numa estrada reta"
+        },
+        {
+          "pt": "Numa rua de sentido único"
+        },
+        {
+          "pt": "Perto de um cruzamento"
+        },
+        {
+          "pt": "Numa estrada larga"
+        }
+      ]
+    },
+    "HZ-56": {
+      "promptPt": "Qual é um perigo comum ao conduzir perto de veículos estacionados numa curva?",
+      "options": [
+        {
+          "pt": "Veículos a dar a volta"
+        },
+        {
+          "pt": "Carros estacionados escondidos"
+        },
+        {
+          "pt": "Peões a saírem de súbito"
+        },
+        {
+          "pt": "Danos no piso da estrada"
+        }
+      ]
+    },
+    "HZ-57": {
+      "promptPt": "Porque deve ter cuidado extra ao sair de um cruzamento com visibilidade limitada?",
+      "options": [
+        {
+          "pt": "O piso da estrada é irregular"
+        },
+        {
+          "pt": "Os lancis são altos"
+        },
+        {
+          "pt": "A sua visão está restringida"
+        },
+        {
+          "pt": "Os semáforos podem falhar"
+        }
+      ]
+    },
+    "HZ-58": {
+      "promptPt": "Como é que o álcool afeta normalmente o comportamento ao conduzir?",
+      "options": [
+        {
+          "pt": "Melhora o juízo"
+        },
+        {
+          "pt": "Aumenta a confiança de forma perigosa"
+        },
+        {
+          "pt": "Acelera as reações"
+        },
+        {
+          "pt": "Melhora a concentração"
+        }
+      ]
+    },
+    "HZ-59": {
+      "promptPt": "Ao passar carros estacionados, de que perigo deve estar especialmente consciente?",
+      "options": [
+        {
+          "pt": "Piso irregular"
+        },
+        {
+          "pt": "Trânsito atrás de si"
+        },
+        {
+          "pt": "Portas a abrirem-se de súbito"
+        },
+        {
+          "pt": "Lugares de estacionamento vazios"
+        }
+      ]
+    },
+    "HZ-60": {
+      "promptPt": "Se uma doença afetar a sua capacidade de conduzir em segurança, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Reduzir a medicação"
+        },
+        {
+          "pt": "Conduzir apenas distâncias curtas"
+        },
+        {
+          "pt": "Deixar de conduzir até estar apto novamente"
+        },
+        {
+          "pt": "Conduzir com outra pessoa"
+        }
+      ]
+    },
+    "HZ-61": {
+      "promptPt": "Se planear conduzir mais tarde, qual é a escolha mais segura num evento social com álcool?",
+      "options": [
+        {
+          "pt": "Beber menos álcool"
+        },
+        {
+          "pt": "Comer antes de beber"
+        },
+        {
+          "pt": "Evitar o álcool por completo"
+        },
+        {
+          "pt": "Beber lentamente"
+        }
+      ]
+    },
+    "HZ-62": {
+      "promptPt": "Qual é um perigo comum em ruas residenciais com veículos estacionados?",
+      "options": [
+        {
+          "pt": "Reflexo do sol"
+        },
+        {
+          "pt": "Marcações na estrada em falta"
+        },
+        {
+          "pt": "Crianças a saírem a correr inesperadamente"
+        },
+        {
+          "pt": "Veículos de mercadorias pesados"
+        }
+      ]
+    },
+    "HZ-63": {
+      "promptPt": "O que deve fazer se se sentir sonolento ao conduzir numa autoestrada?",
+      "options": [
+        {
+          "pt": "Parar na berma (hard shoulder)"
+        },
+        {
+          "pt": "Abrir um vidro e parar em segurança o mais cedo possível"
+        },
+        {
+          "pt": "Aumentar a velocidade"
+        },
+        {
+          "pt": "Deixar os outros ultrapassarem"
+        }
+      ]
+    },
+    "HZ-64": {
+      "promptPt": "Antes de conduzir depois de tomar um medicamento de um amigo, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Perguntar ao amigo sobre os efeitos"
+        },
+        {
+          "pt": "Beber café"
+        },
+        {
+          "pt": "Verificar o rótulo do medicamento"
+        },
+        {
+          "pt": "Fazer um breve teste de condução"
+        }
+      ]
+    },
+    "HZ-65": {
+      "promptPt": "Porque poderá precisar de abrandar numa estrada de duas faixas (dual carriageway)?",
+      "options": [
+        {
+          "pt": "Linha central interrompida"
+        },
+        {
+          "pt": "Linhas brancas contínuas nas laterais"
+        },
+        {
+          "pt": "Obras na estrada à frente"
+        },
+        {
+          "pt": "Sem passeios"
+        }
+      ]
+    },
+    "HZ-66": {
+      "promptPt": "Quando são normalmente usadas as luzes de emergência?",
+      "options": [
+        {
+          "pt": "Para avisar o trânsito de uma avaria que causa obstrução"
+        },
+        {
+          "pt": "Quando os indicadores falham"
+        },
+        {
+          "pt": "Ao estacionar em segunda fila"
+        },
+        {
+          "pt": "Para avisar de radares de velocidade"
+        }
+      ]
+    },
+    "HZ-67": {
+      "promptPt": "Após uma condenação por condução sob o efeito de álcool ou drogas, o que costuma ficar mais caro?",
+      "options": [
+        {
+          "pt": "Imposto de circulação (road tax)"
+        },
+        {
+          "pt": "Seguro"
+        },
+        {
+          "pt": "Teste MOT"
+        },
+        {
+          "pt": "Carta de condução"
+        }
+      ]
+    },
+    "HZ-68": {
+      "promptPt": "Qual é o principal perigo ao seguir um ciclista perto de um cruzamento?",
+      "options": [
+        {
+          "pt": "O ciclista a parar"
+        },
+        {
+          "pt": "O ciclista a desviar-se para a estrada"
+        },
+        {
+          "pt": "O ciclista a desmontar"
+        },
+        {
+          "pt": "O ciclista a empurrar a bicicleta"
+        }
+      ]
+    },
+    "HZ-69": {
+      "promptPt": "É importante planear paragens de descanso numa viagem longa?",
+      "options": [
+        {
+          "pt": "Sim, para parar a cada 30 minutos"
+        },
+        {
+          "pt": "Sim, pausas regulares melhoram a concentração"
+        },
+        {
+          "pt": "Não, chegar depressa reduz a fadiga"
+        },
+        {
+          "pt": "Não, as paragens de combustível bastam"
+        }
+      ]
+    },
+    "HZ-70": {
+      "promptPt": "Porque deve evitar ter pressa durante uma viagem longa?",
+      "options": [
+        {
+          "pt": "Poupa combustível"
+        },
+        {
+          "pt": "Reduz o estado de alerta"
+        },
+        {
+          "pt": "Aumenta a fadiga e os erros"
+        },
+        {
+          "pt": "Melhora o foco"
+        }
+      ]
+    },
+    "HZ-71": {
+      "promptPt": "Num carro automático, quando usaria o kick-down?",
+      "options": [
+        {
+          "pt": "Para ativar o cruise control"
+        },
+        {
+          "pt": "Para acelerar rapidamente"
+        },
+        {
+          "pt": "Para travar suavemente"
+        },
+        {
+          "pt": "Para poupar combustível"
+        }
+      ]
+    },
+    "HZ-72": {
+      "promptPt": "Numa autoestrada de três vias, como deve ultrapassar um camião lento na via do meio?",
+      "options": [
+        {
+          "pt": "Ultrapassar de qualquer dos lados"
+        },
+        {
+          "pt": "Esperar até sair da autoestrada"
+        },
+        {
+          "pt": "Usar normalmente a via da direita"
+        },
+        {
+          "pt": "Ultrapassar pela esquerda"
+        }
+      ]
+    },
+    "HZ-73": {
+      "promptPt": "Está a conduzir sob chuva forte e nota água acumulada no piso. Do que deve estar mais consciente?",
+      "options": [
+        {
+          "pt": "Melhor visibilidade à frente"
+        },
+        {
+          "pt": "Risco de aquaplaning e perda de controlo"
+        },
+        {
+          "pt": "Fluxo de trânsito mais rápido"
+        },
+        {
+          "pt": "Melhor aderência dos pneus"
+        }
+      ]
+    },
+    "HZ-74": {
+      "promptPt": "Um peão está à beira do passeio a olhar para o telemóvel. Que perigo deve antecipar?",
+      "options": [
+        {
+          "pt": "Que espere o trânsito passar"
+        },
+        {
+          "pt": "Que possa entrar na estrada sem olhar"
+        },
+        {
+          "pt": "Que esteja à espera de um autocarro"
+        },
+        {
+          "pt": "Que sinalize antes de atravessar"
+        }
+      ]
+    }
+  }
+}

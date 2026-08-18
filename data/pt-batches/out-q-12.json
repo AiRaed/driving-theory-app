@@ -1,0 +1,854 @@
+{
+  "safety-vehicle": {
+    "SV-33": {
+      "promptPt": "Que sintoma sugere que as rodas estão desequilibradas?",
+      "options": [
+        {
+          "pt": "Falha dos travões"
+        },
+        {
+          "pt": "Desinsuflação do pneu"
+        },
+        {
+          "pt": "Vibração da direção"
+        },
+        {
+          "pt": "Desvio para um dos lados"
+        }
+      ]
+    },
+    "SV-34": {
+      "promptPt": "Que ação ajuda a reduzir o consumo de combustível?",
+      "options": [
+        {
+          "pt": "Aceleração rápida"
+        },
+        {
+          "pt": "Travagem forte"
+        },
+        {
+          "pt": "Manter mudanças baixas"
+        },
+        {
+          "pt": "Conduzir de forma mais suave e constante"
+        }
+      ]
+    },
+    "SV-35": {
+      "promptPt": "Como podem os condutores ajudar a proteger o ambiente?",
+      "options": [
+        {
+          "pt": "Aceleração brusca"
+        },
+        {
+          "pt": "Aceleração suave"
+        },
+        {
+          "pt": "Usar combustível com chumbo"
+        },
+        {
+          "pt": "Conduzir mais depressa"
+        }
+      ]
+    },
+    "SV-36": {
+      "promptPt": "Qual é a melhor altura para verificar a pressão dos pneus?",
+      "options": [
+        {
+          "pt": "Após uma viagem longa"
+        },
+        {
+          "pt": "A alta velocidade"
+        },
+        {
+          "pt": "Quando os pneus estão quentes"
+        },
+        {
+          "pt": "Quando os pneus estão frios"
+        }
+      ]
+    },
+    "SV-37": {
+      "promptPt": "O que deve fazer se a luz de aviso do ABS permanecer acesa durante a condução?",
+      "options": [
+        {
+          "pt": "Verificar o nível do fluido"
+        },
+        {
+          "pt": "Verificar o travão de estacionamento"
+        },
+        {
+          "pt": "Continuar a conduzir"
+        },
+        {
+          "pt": "Fazer verificar os travões de imediato"
+        }
+      ]
+    },
+    "SV-38": {
+      "promptPt": "O que torna os pneus ilegais para utilização na estrada?",
+      "options": [
+        {
+          "pt": "Padrões de piso diferentes"
+        },
+        {
+          "pt": "Marcas diferentes"
+        },
+        {
+          "pt": "Cortes grandes e profundos no flanco"
+        },
+        {
+          "pt": "Compra em segunda mão"
+        }
+      ]
+    },
+    "SV-39": {
+      "promptPt": "Porque deve planear a viagem para evitar as horas de ponta?",
+      "options": [
+        {
+          "pt": "Viagem mais longa"
+        },
+        {
+          "pt": "Mais stress"
+        },
+        {
+          "pt": "Viagem mais fácil e suave"
+        },
+        {
+          "pt": "Mais congestionamento"
+        }
+      ]
+    },
+    "SV-40": {
+      "promptPt": "O que pode esperar se acelerar com frequência com força e travar bruscamente?",
+      "options": [
+        {
+          "pt": "Menos poluição"
+        },
+        {
+          "pt": "Maior segurança rodoviária"
+        },
+        {
+          "pt": "Menor consumo de combustível"
+        },
+        {
+          "pt": "Maior consumo de combustível"
+        }
+      ]
+    },
+    "SV-41": {
+      "promptPt": "Como afetam os pneus com pressão insuficiente o veículo?",
+      "options": [
+        {
+          "pt": "A frequência de piscar dos indicadores aumenta"
+        },
+        {
+          "pt": "Os faróis apontam mais alto"
+        },
+        {
+          "pt": "As mudanças de velocidade ficam rígidas"
+        },
+        {
+          "pt": "A distância de paragem aumenta"
+        }
+      ]
+    },
+    "SV-42": {
+      "promptPt": "Ao conduzir numa estrada de duas faixas (dual carriageway), que sistema de assistência ao condutor ajuda a manter o automóvel dentro das marcações da via?",
+      "options": [
+        {
+          "pt": "Assistência ao ângulo morto"
+        },
+        {
+          "pt": "Assistência em engarrafamentos"
+        },
+        {
+          "pt": "Assistência inteligente de velocidade"
+        },
+        {
+          "pt": "Assistência de manutenção na faixa"
+        }
+      ]
+    },
+    "SV-43": {
+      "promptPt": "Como pode reduzir o impacto ambiental do seu veículo?",
+      "options": [
+        {
+          "pt": "Evitar a manutenção"
+        },
+        {
+          "pt": "Conduzir mais depressa do que o normal"
+        },
+        {
+          "pt": "Fazer apenas viagens curtas"
+        },
+        {
+          "pt": "Manter as rotações do motor baixas"
+        }
+      ]
+    },
+    "SV-44": {
+      "promptPt": "Numa autoestrada sossegada, que função de assistência ao condutor tem mais probabilidade de ajudar a evitar sair da via?",
+      "options": [
+        {
+          "pt": "Assistência em engarrafamentos"
+        },
+        {
+          "pt": "Visão noturna"
+        },
+        {
+          "pt": "Assistência inteligente de velocidade"
+        },
+        {
+          "pt": "Aviso de saída de faixa"
+        }
+      ]
+    },
+    "SV-45": {
+      "promptPt": "Quando NÃO pode usar a buzina do veículo numa zona urbana?",
+      "options": [
+        {
+          "pt": "Entre as 22h00 e as 6h00"
+        },
+        {
+          "pt": "A qualquer hora"
+        },
+        {
+          "pt": "Entre as 23h30 e as 7h00"
+        },
+        {
+          "pt": "Apenas em estradas principais"
+        }
+      ]
+    },
+    "SV-46": {
+      "promptPt": "O que deve fazer se o automóvel se desviar para um dos lados ao travar?",
+      "options": [
+        {
+          "pt": "Bombear o pedal do travão"
+        },
+        {
+          "pt": "Aumentar a pressão dos pneus"
+        },
+        {
+          "pt": "Usar o travão de estacionamento"
+        },
+        {
+          "pt": "Fazer verificar os travões prontamente"
+        }
+      ]
+    },
+    "SV-47": {
+      "promptPt": "Que comportamento de condução tem mais probabilidade de aumentar o consumo de combustível?",
+      "options": [
+        {
+          "pt": "Manter mudanças altas"
+        },
+        {
+          "pt": "Mau controlo da direção"
+        },
+        {
+          "pt": "Travagem e aceleração bruscas"
+        },
+        {
+          "pt": "Curvas suaves"
+        }
+      ]
+    },
+    "SV-48": {
+      "promptPt": "O que deve fazer ao deixar o automóvel desacompanhado por pouco tempo?",
+      "options": [
+        {
+          "pt": "Deixar o motor ligado"
+        },
+        {
+          "pt": "Deixar a chave dentro"
+        },
+        {
+          "pt": "Trancar o automóvel e retirar a chave"
+        },
+        {
+          "pt": "Estacionar perto de um fiscal"
+        }
+      ]
+    },
+    "SV-49": {
+      "promptPt": "Como pode evitar o desperdício desnecessário de combustível?",
+      "options": [
+        {
+          "pt": "Acelerar o motor em mudanças baixas"
+        },
+        {
+          "pt": "Conduzir mais depressa"
+        },
+        {
+          "pt": "Manter o suporte de tejadilho vazio montado"
+        },
+        {
+          "pt": "Fazer a manutenção do veículo regularmente"
+        }
+      ]
+    },
+    "SV-50": {
+      "promptPt": "O que é provável que aconteça se for adicionado demasiado óleo do motor?",
+      "options": [
+        {
+          "pt": "A correia de distribuição escorrega"
+        },
+        {
+          "pt": "A admissão de ar obstrui-se"
+        },
+        {
+          "pt": "Os retentores de óleo podem ter fugas"
+        },
+        {
+          "pt": "A embraiagem bloqueia"
+        }
+      ]
+    },
+    "SV-51": {
+      "promptPt": "Qual é a vantagem de seguir o plano de manutenção do fabricante?",
+      "options": [
+        {
+          "pt": "Custos de seguro mais baixos"
+        },
+        {
+          "pt": "Tempo de viagem reduzido"
+        },
+        {
+          "pt": "Melhora a fiabilidade do veículo"
+        },
+        {
+          "pt": "Imposto de circulação mais baixo"
+        }
+      ]
+    },
+    "SV-52": {
+      "promptPt": "Como pode planear um itinerário antes de uma viagem longa?",
+      "options": [
+        {
+          "pt": "Perguntar a uma oficina"
+        },
+        {
+          "pt": "Consultar o manual"
+        },
+        {
+          "pt": "Consultar uma agência de viagens"
+        },
+        {
+          "pt": "Usar um planeador de rotas online"
+        }
+      ]
+    },
+    "SV-53": {
+      "promptPt": "O que torna um veículo mais amigo do ambiente em comparação com outros?",
+      "options": [
+        {
+          "pt": "Propulsão a gasóleo"
+        },
+        {
+          "pt": "Motor a gasolina"
+        },
+        {
+          "pt": "Propulsão elétrica"
+        },
+        {
+          "pt": "Propulsão por gravidade"
+        }
+      ]
+    },
+    "SV-54": {
+      "promptPt": "Porque deve planear um itinerário alternativo antes de iniciar uma viagem?",
+      "options": [
+        {
+          "pt": "Os mapas têm escalas diferentes"
+        },
+        {
+          "pt": "O itinerário original pode estar bloqueado"
+        },
+        {
+          "pt": "Aplicam-se taxas de congestionamento"
+        },
+        {
+          "pt": "Os tratores causam atrasos"
+        }
+      ]
+    },
+    "SV-55": {
+      "promptPt": "Que ação ajuda a reduzir os níveis gerais de trânsito?",
+      "options": [
+        {
+          "pt": "Conduzir para todo o lado"
+        },
+        {
+          "pt": "Usar vias de autocarros"
+        },
+        {
+          "pt": "Viagens curtas a pé ou de bicicleta"
+        },
+        {
+          "pt": "Motores maiores"
+        }
+      ]
+    },
+    "SV-56": {
+      "promptPt": "Qual é o principal objetivo dos sistemas avançados de assistência ao condutor (ADAS)?",
+      "options": [
+        {
+          "pt": "Reduzir a poluição"
+        },
+        {
+          "pt": "Encurtar as viagens"
+        },
+        {
+          "pt": "Tornar a condução mais fácil"
+        },
+        {
+          "pt": "Melhorar a segurança rodoviária"
+        }
+      ]
+    },
+    "SV-57": {
+      "promptPt": "Quando deve verificar o nível do óleo do motor?",
+      "options": [
+        {
+          "pt": "Com o motor quente"
+        },
+        {
+          "pt": "Sempre que conduzir"
+        },
+        {
+          "pt": "Antes de uma viagem longa"
+        },
+        {
+          "pt": "Apenas de manhã cedo"
+        }
+      ]
+    },
+    "SV-58": {
+      "promptPt": "Que componente do veículo deve, por lei, ser mantido em bom estado?",
+      "options": [
+        {
+          "pt": "Caixa de velocidades"
+        },
+        {
+          "pt": "Fechaduras das portas"
+        },
+        {
+          "pt": "Transmissão"
+        },
+        {
+          "pt": "Cintos de segurança"
+        }
+      ]
+    },
+    "SV-59": {
+      "promptPt": "Se parar na berma da estrada durante muito tempo, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Usar os faróis"
+        },
+        {
+          "pt": "Desligar o motor"
+        },
+        {
+          "pt": "Desligar o rádio"
+        },
+        {
+          "pt": "Aplicar o bloqueio da direção"
+        }
+      ]
+    },
+    "SV-60": {
+      "promptPt": "Porque foram introduzidas as «red routes» nas grandes cidades?",
+      "options": [
+        {
+          "pt": "Aumentar os limites de velocidade"
+        },
+        {
+          "pt": "Proporcionar estacionamento"
+        },
+        {
+          "pt": "Melhorar o fluxo de trânsito"
+        },
+        {
+          "pt": "Facilitar a carga e descarga"
+        }
+      ]
+    },
+    "SV-61": {
+      "promptPt": "Qual é o principal objetivo das lombas, chicanes e estreitamentos da estrada?",
+      "options": [
+        {
+          "pt": "Separar as vias de trânsito"
+        },
+        {
+          "pt": "Aumentar a velocidade dos veículos"
+        },
+        {
+          "pt": "Permitir passagens de peões"
+        },
+        {
+          "pt": "Reduzir a velocidade do trânsito"
+        }
+      ]
+    },
+    "SV-62": {
+      "promptPt": "Quando é que um veículo consome mais combustível?",
+      "options": [
+        {
+          "pt": "Ao travar"
+        },
+        {
+          "pt": "Em roda livre"
+        },
+        {
+          "pt": "Ao acelerar"
+        },
+        {
+          "pt": "Ao virar"
+        }
+      ]
+    },
+    "SV-63": {
+      "promptPt": "Está a conduzir um automóvel desconhecido com sistemas de assistência ao condutor. Onde deve verificar como usá-los corretamente?",
+      "options": [
+        {
+          "pt": "Perguntar a uma oficina"
+        },
+        {
+          "pt": "Manual do fabricante"
+        },
+        {
+          "pt": "Código da Estrada (Highway Code)"
+        },
+        {
+          "pt": "Associação de automobilistas"
+        }
+      ]
+    },
+    "SV-64": {
+      "promptPt": "Duas crianças com menos de 14 anos são passageiras. Quem é responsável pelo uso do cinto de segurança?",
+      "options": [
+        {
+          "pt": "Um passageiro adulto"
+        },
+        {
+          "pt": "As crianças"
+        },
+        {
+          "pt": "Você, o condutor"
+        },
+        {
+          "pt": "O progenitor delas"
+        }
+      ]
+    },
+    "SV-65": {
+      "promptPt": "Que ação ajuda a reduzir os danos ambientais causados pelos veículos?",
+      "options": [
+        {
+          "pt": "Evitar o controlo de cruzeiro"
+        },
+        {
+          "pt": "Usar o ar condicionado constantemente"
+        },
+        {
+          "pt": "Usar as mudanças para abrandar"
+        },
+        {
+          "pt": "Evitar muitas viagens curtas"
+        }
+      ]
+    },
+    "SV-66": {
+      "promptPt": "Pode alguma vez estacionar nas linhas em ziguezague de uma passagem Zebra?",
+      "options": [
+        {
+          "pt": "Sim, se permanecer no automóvel"
+        },
+        {
+          "pt": "Sim, para deixar passageiros"
+        },
+        {
+          "pt": "Sim, se os peões puderem passar"
+        },
+        {
+          "pt": "Não, nunca"
+        }
+      ]
+    },
+    "SV-67": {
+      "promptPt": "Quando é que um veículo consome mais combustível?",
+      "options": [
+        {
+          "pt": "Pneus com pressão insuficiente"
+        },
+        {
+          "pt": "Pneus de marcas diferentes"
+        },
+        {
+          "pt": "Pneus com pressão excessiva"
+        },
+        {
+          "pt": "Pneus novos"
+        }
+      ]
+    },
+    "SV-68": {
+      "promptPt": "Qual é a profundidade mínima legal do piso dos pneus de reboque ou caravana?",
+      "options": [
+        {
+          "pt": "1 mm"
+        },
+        {
+          "pt": "1.6 mm"
+        },
+        {
+          "pt": "2 mm"
+        },
+        {
+          "pt": "2.6 mm"
+        }
+      ]
+    },
+    "SV-69": {
+      "promptPt": "Porque é importante um encosto de cabeça corretamente ajustado?",
+      "options": [
+        {
+          "pt": "Conforto"
+        },
+        {
+          "pt": "Relaxamento"
+        },
+        {
+          "pt": "Proteção contra lesões no pescoço"
+        },
+        {
+          "pt": "Posição de condução"
+        }
+      ]
+    },
+    "SV-70": {
+      "promptPt": "Quando o alerta um sistema de sonolência do condutor?",
+      "options": [
+        {
+          "pt": "Após 4 horas de condução"
+        },
+        {
+          "pt": "Em horários definidos"
+        },
+        {
+          "pt": "Quando são detetados padrões de fadiga"
+        },
+        {
+          "pt": "Perto de sinais de descanso"
+        }
+      ]
+    },
+    "SV-71": {
+      "promptPt": "Após uma colisão, o que reduz o risco de lesão no pescoço?",
+      "options": [
+        {
+          "pt": "Travões antibloqueio"
+        },
+        {
+          "pt": "Volante colapsável"
+        },
+        {
+          "pt": "Banco com suspensão a ar"
+        },
+        {
+          "pt": "Encosto de cabeça corretamente ajustado"
+        }
+      ]
+    },
+    "SV-72": {
+      "promptPt": "Como deve ser eliminado o óleo do motor usado?",
+      "options": [
+        {
+          "pt": "Deitar pelo esgoto"
+        },
+        {
+          "pt": "Lixo doméstico"
+        },
+        {
+          "pt": "Local de reciclagem da autoridade local"
+        },
+        {
+          "pt": "No solo"
+        }
+      ]
+    },
+    "SV-73": {
+      "promptPt": "Que técnica de condução ajuda a poupar combustível?",
+      "options": [
+        {
+          "pt": "Mudanças baixas frequentes"
+        },
+        {
+          "pt": "Aceleração brusca"
+        },
+        {
+          "pt": "Usar todas as mudanças"
+        },
+        {
+          "pt": "Saltar mudanças de forma adequada"
+        }
+      ]
+    },
+    "SV-74": {
+      "promptPt": "O que pode ajudar a dissuadir o roubo de veículos?",
+      "options": [
+        {
+          "pt": "Faróis ligados"
+        },
+        {
+          "pt": "Vidros refletivos"
+        },
+        {
+          "pt": "Luz interior ligada"
+        },
+        {
+          "pt": "Gravar a matrícula nos vidros"
+        }
+      ]
+    },
+    "SV-75": {
+      "promptPt": "Porque são testadas as emissões do escape durante os MOT?",
+      "options": [
+        {
+          "pt": "Recuperar o custo do equipamento"
+        },
+        {
+          "pt": "Proteger o ambiente"
+        },
+        {
+          "pt": "Comparar fornecedores de combustível"
+        },
+        {
+          "pt": "Equalizar os gases do motor"
+        }
+      ]
+    },
+    "SV-76": {
+      "promptPt": "Transporta uma criança de 5 anos sem uma cadeira infantil adequada. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Usar o cinto de adulto"
+        },
+        {
+          "pt": "Partilhar o cinto"
+        },
+        {
+          "pt": "Sentá-la entre crianças"
+        },
+        {
+          "pt": "Não transportar a criança até haver uma cadeira adequada"
+        }
+      ]
+    },
+    "SV-77": {
+      "promptPt": "Qual é a profundidade mínima legal do piso dos pneus de automóvel?",
+      "options": [
+        {
+          "pt": "1 mm"
+        },
+        {
+          "pt": "1.6 mm"
+        },
+        {
+          "pt": "2.5 mm"
+        },
+        {
+          "pt": "4 mm"
+        }
+      ]
+    },
+    "SV-78": {
+      "promptPt": "Como podem as pessoas ajudar a reduzir a poluição urbana?",
+      "options": [
+        {
+          "pt": "Conduzir mais depressa"
+        },
+        {
+          "pt": "Acelerar demasiado o motor"
+        },
+        {
+          "pt": "Andar a pé ou de bicicleta"
+        },
+        {
+          "pt": "Fazer viagens curtas de carro"
+        }
+      ]
+    },
+    "SV-79": {
+      "promptPt": "O que pode causar desgaste excessivo ou irregular dos pneus?",
+      "options": [
+        {
+          "pt": "Avaria na caixa de velocidades"
+        },
+        {
+          "pt": "Avaria no sistema de travagem"
+        },
+        {
+          "pt": "Avaria elétrica"
+        },
+        {
+          "pt": "Avaria no escape"
+        }
+      ]
+    },
+    "SV-80": {
+      "promptPt": "Como pode reduzir os danos ambientais causados pelo seu veículo?",
+      "options": [
+        {
+          "pt": "Usar itinerários movimentados"
+        },
+        {
+          "pt": "Travar com força"
+        },
+        {
+          "pt": "Usar ruas laterais"
+        },
+        {
+          "pt": "Antecipar o trânsito à frente"
+        }
+      ]
+    },
+    "SV-81": {
+      "promptPt": "Ativa o controlo de cruzeiro adaptativo. O que deve continuar a fazer?",
+      "options": [
+        {
+          "pt": "Retirar o cinto de segurança"
+        },
+        {
+          "pt": "Usar o telemóvel"
+        },
+        {
+          "pt": "Comer e beber"
+        },
+        {
+          "pt": "Continuar a observar os sinais de trânsito"
+        }
+      ]
+    },
+    "SV-82": {
+      "promptPt": "Quer instalar uma cadeira de bebé virada para trás no banco do passageiro da frente com airbag ativo. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Virar o banco de lado"
+        },
+        {
+          "pt": "Pedir a um passageiro que segure o bebé"
+        },
+        {
+          "pt": "Usar o cinto de adulto"
+        },
+        {
+          "pt": "Desativar o airbag"
+        }
+      ]
+    }
+  }
+}

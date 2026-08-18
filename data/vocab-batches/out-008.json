@@ -1,0 +1,789 @@
+{
+  "MW-18": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    }
+  ],
+  "MW-19": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    },
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing a slower vehicle by moving alongside and ahead of it.",
+        "ar": "تجاوز مركبة أبطأ بالسير بجانبها ثم أمامها.",
+        "ur": "سست گاڑی کے ساتھ سے نکل کر اس سے آگے بڑھنا۔",
+        "ro": "Depășirea unui vehicul mai lent trecând pe lângă el și înaintea lui."
+      }
+    }
+  ],
+  "MW-20": [
+    {
+      "term": "provisional licence",
+      "translations": {
+        "en": "A learner driving licence that allows practice driving under set restrictions before a full licence.",
+        "ar": "رخصة قيادة للمتعلمين تسمح بالتدرّب وفق قيود محددة قبل الحصول على الرخصة الكاملة.",
+        "ur": "لرنر ڈرائیونگ لائسنس جو مکمل لائسنس سے پہلے مخصوص پابندیوں کے ساتھ مشق کی اجازت دیتا ہے۔",
+        "ro": "Permis de învățare care permite exersarea condusului sub anumite restricții înainte de permisul complet."
+      }
+    }
+  ],
+  "MW-21": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "live lane",
+      "translations": {
+        "en": "A lane that is open for normal moving traffic (not closed or for emergency use only).",
+        "ar": "مسار مفتوح لحركة المرور العادية (وليس مغلقاً أو للطوارئ فقط).",
+        "ur": "عام چلتی ٹریفک کے لیے کھلی لین (بند یا صرف ایمرجنسی کے لیے نہیں)۔",
+        "ro": "Bandă deschisă circulației normale (nu închisă și nu doar pentru urgențe)."
+      }
+    }
+  ],
+  "MW-22": [
+    {
+      "term": "emergency area",
+      "translations": {
+        "en": "A marked bay beside a motorway for stopping in an emergency when there is no hard shoulder.",
+        "ar": "مساحة محددة بجانب الطريق السريع للتوقف في الطوارئ عند عدم وجود كتف صلب.",
+        "ur": "موٹروے کے کنارے نشان زد جگہ جہاں ہارڈ شولڈر نہ ہو تو ایمرجنسی میں رکیں۔",
+        "ro": "Refugiu marcat lângă autostradă pentru oprire de urgență când nu există bandă de urgență."
+      }
+    },
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "MW-23": [
+    {
+      "term": "hazard warning lights",
+      "translations": {
+        "en": "Both indicators flashing together to warn other drivers of a hazard or sudden slowing.",
+        "ar": "إشارتا الانعطاف تومضان معاً لتحذير السائقين الآخرين من خطر أو تباطؤ مفاجئ.",
+        "ur": "دونوں انڈیکیٹرز ایک ساتھ چمکتے ہیں تاکہ خطرے یا اچانک سست ہونے کی خبر دیں۔",
+        "ro": "Ambele semnalizatoare care clipeșc împreună pentru a avertiza alți șoferi de un pericol sau o încetinire bruscă."
+      }
+    }
+  ],
+  "MW-24": [
+    {
+      "term": "towing a trailer",
+      "translations": {
+        "en": "Pulling a trailer attached behind your vehicle.",
+        "ar": "جرّ مقطورة مربوطة خلف مركبتك.",
+        "ur": "گاڑی کے پیچھے جڑی ٹریلر کھینچنا۔",
+        "ro": "Tractarea unei remorci atașate în spatele vehiculului."
+      }
+    },
+    {
+      "term": "sidecar",
+      "translations": {
+        "en": "A one-wheeled passenger compartment fixed to the side of a motorcycle.",
+        "ar": "مقصورة ركاب بعجلة واحدة مثبتة بجانب الدراجة النارية.",
+        "ur": "موٹر سائیکل کے پہلو سے لگی ایک پہیے والی مسافر کیبن۔",
+        "ro": "Cabină cu o roată pentru pasager, fixată pe laterala unei motociclete."
+      }
+    }
+  ],
+  "MW-25": [
+    {
+      "term": "towing a trailer",
+      "translations": {
+        "en": "Pulling a trailer attached behind your vehicle.",
+        "ar": "جرّ مقطورة مربوطة خلف مركبتك.",
+        "ur": "گاڑی کے پیچھے جڑی ٹریلر کھینچنا۔",
+        "ro": "Tractarea unei remorci atașate în spatele vehiculului."
+      }
+    },
+    {
+      "term": "lane closures",
+      "translations": {
+        "en": "When one or more lanes are temporarily closed, often due to roadworks or an incident.",
+        "ar": "عندما يُغلق مسار أو أكثر مؤقتاً، غالباً بسبب أعمال الطريق أو حادث.",
+        "ur": "جب ایک یا زیادہ لین عارضی طور پر بند ہوں، اکثر مرمت یا واقعے کی وجہ سے۔",
+        "ro": "Când una sau mai multe benzi sunt închise temporar, deseori din cauza lucrărilor sau unui incident."
+      }
+    }
+  ],
+  "MW-26": [
+    {
+      "term": "puncture",
+      "translations": {
+        "en": "A flat tyre caused by a hole that lets the air out.",
+        "ar": "إطار مفرّغ بسبب ثقب يخرج منه الهواء.",
+        "ur": "ٹائر میں سوراخ سے ہوا نکل جانے سے پنچر۔",
+        "ro": "Anvelopă dezumflată din cauza unei găuri prin care iese aerul."
+      }
+    },
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    }
+  ],
+  "MW-27": [
+    {
+      "term": "breakdown",
+      "translations": {
+        "en": "When a vehicle stops working and can no longer be driven normally.",
+        "ar": "عندما تتعطل المركبة ولا يمكن قيادتها بشكل طبيعي.",
+        "ur": "جب گاڑی خراب ہو جائے اور عام طور پر نہ چل سکے۔",
+        "ro": "Când un vehicul se defectează și nu mai poate fi condus în mod normal."
+      }
+    }
+  ],
+  "MW-28": [
+    {
+      "term": "countdown markers",
+      "translations": {
+        "en": "Posts with decreasing bars (3, 2, 1) showing how close you are to a motorway exit.",
+        "ar": "أعمدة بخطوط متناقصة (3 ثم 2 ثم 1) تبين قربك من مخرج الطريق السريع.",
+        "ur": "گھٹتی باروں والے کھمبے (3، 2، 1) جو موٹروے ایگزٹ کی قربت دکھاتے ہیں۔",
+        "ro": "Stâlpi cu bare descrescătoare (3, 2, 1) care arată cât de aproape sunteți de o ieșire de pe autostradă."
+      }
+    }
+  ],
+  "MW-29": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    }
+  ],
+  "MW-30": [
+    {
+      "term": "slip road",
+      "translations": {
+        "en": "The short linking road used to join or leave a motorway.",
+        "ar": "الطريق القصير الرابط المستخدم للدخول إلى الطريق السريع أو الخروج منه.",
+        "ur": "موٹروے میں داخل ہونے یا باہر نکلنے والی مختصر جوڑنے والی سڑک۔",
+        "ro": "Drumul scurt de legătură folosit pentru a intra pe autostradă sau a ieși de pe ea."
+      }
+    }
+  ],
+  "MW-31": [
+    {
+      "term": "bunching",
+      "translations": {
+        "en": "When vehicles pack closely together, often causing sudden braking waves.",
+        "ar": "عندما تتقارب المركبات بشدة، وغالباً ما يسبب موجات فرملة مفاجئة.",
+        "ur": "جب گاڑیاں ایک دوسرے کے قریب جم جائیں، اکثر اچانک بریک لہر پیدا ہوتی ہے۔",
+        "ro": "Când vehiculele se înghesuie aproape unele de altele, provocând adesea valuri de frânare bruscă."
+      }
+    },
+    {
+      "term": "variable speed limits",
+      "translations": {
+        "en": "Temporary speed limits shown on overhead signs that change with traffic conditions.",
+        "ar": "حدود سرعة مؤقتة تظهر على لافتات علوية وتتغير حسب حالة المرور.",
+        "ur": "اوور ہیڈ نشانوں پر عارضی رفتار کی حدیں جو ٹریفک کے مطابق بدلتی ہیں۔",
+        "ro": "Limite temporare de viteză afișate pe panouri overhead, care se schimbă după condițiile de trafic."
+      }
+    },
+    {
+      "term": "Contraflow systems",
+      "translations": {
+        "en": "A temporary traffic system where vehicles travel in the opposite direction to normal, often during roadworks.",
+        "ar": "نظام مروري مؤقت تسير فيه المركبات عكس الاتجاه المعتاد، غالباً أثناء أعمال الطريق.",
+        "ur": "عارضی ٹریفک نظام جس میں گاڑیاں عام سمت کے الٹ چلتی ہیں، اکثر سڑک کی مرمت کے دوران۔",
+        "ro": "Sistem temporar de circulație în care vehiculele circulă pe sensul opus celui obișnuit, deseori în timpul lucrărilor."
+      }
+    }
+  ],
+  "MW-32": [
+    {
+      "term": "variable speed limits",
+      "translations": {
+        "en": "Temporary speed limits shown on overhead signs that change with traffic conditions.",
+        "ar": "حدود سرعة مؤقتة تظهر على لافتات علوية وتتغير حسب حالة المرور.",
+        "ur": "اوور ہیڈ نشانوں پر عارضی رفتار کی حدیں جو ٹریفک کے مطابق بدلتی ہیں۔",
+        "ro": "Limite temporare de viteză afișate pe panouri overhead, care se schimbă după condițiile de trafic."
+      }
+    }
+  ],
+  "MW-33": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    }
+  ],
+  "MW-34": [
+    {
+      "term": "emergency telephone",
+      "translations": {
+        "en": "A free roadside phone on motorways that connects you to operators who can send help.",
+        "ar": "هاتف مجاني على جانب الطريق السريع يوصلك بمشغّلين يمكنهم إرسال المساعدة.",
+        "ur": "موٹروے کنارے مفت فون جو آپ کو آپریٹرز سے جوڑتا ہے جو مدد بھیج سکتے ہیں۔",
+        "ro": "Telefon gratuit de pe marginea autostrăzii care vă conectează la operatori care pot trimite ajutor."
+      }
+    },
+    {
+      "term": "carriageway",
+      "translations": {
+        "en": "The part of the road used by vehicles, not the pavement or verge.",
+        "ar": "جزء الطريق الذي تستخدمه المركبات، وليس الرصيف أو الحافة.",
+        "ur": "سڑک کا وہ حصہ جو گاڑیوں کے لیے ہے، فٹ پاتھ یا کنارہ نہیں۔",
+        "ro": "Partea drumului folosită de vehicule, nu trotuarul sau acostamentul."
+      }
+    },
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    }
+  ],
+  "MW-35": [],
+  "MW-36": [
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing a slower vehicle by moving alongside and ahead of it.",
+        "ar": "تجاوز مركبة أبطأ بالسير بجانبها ثم أمامها.",
+        "ur": "سست گاڑی کے ساتھ سے نکل کر اس سے آگے بڑھنا۔",
+        "ro": "Depășirea unui vehicul mai lent trecând pe lângă el și înaintea lui."
+      }
+    },
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    }
+  ],
+  "MW-37": [
+    {
+      "term": "emergency telephone",
+      "translations": {
+        "en": "A free roadside phone on motorways that connects you to operators who can send help.",
+        "ar": "هاتف مجاني على جانب الطريق السريع يوصلك بمشغّلين يمكنهم إرسال المساعدة.",
+        "ur": "موٹروے کنارے مفت فون جو آپ کو آپریٹرز سے جوڑتا ہے جو مدد بھیج سکتے ہیں۔",
+        "ro": "Telefon gratuit de pe marginea autostrăzii care vă conectează la operatori care pot trimite ajutor."
+      }
+    },
+    {
+      "term": "marker posts",
+      "translations": {
+        "en": "Small roadside posts that show distance markers and the direction to the nearest emergency phone.",
+        "ar": "أعمدة صغيرة على جانب الطريق تبين المسافات واتجاه أقرب هاتف طوارئ.",
+        "ur": "کنارے چھوٹے کھمبے جو فاصلہ اور قریبی ایمرجنسی فون کی سمت دکھاتے ہیں۔",
+        "ro": "Stâlpișori de pe marginea drumului care arată distanța și direcția spre cel mai apropiat telefon de urgență."
+      }
+    }
+  ],
+  "MW-38": [],
+  "MW-39": [],
+  "MW-40": [
+    {
+      "term": "slip road",
+      "translations": {
+        "en": "The short linking road used to join or leave a motorway.",
+        "ar": "الطريق القصير الرابط المستخدم للدخول إلى الطريق السريع أو الخروج منه.",
+        "ur": "موٹروے میں داخل ہونے یا باہر نکلنے والی مختصر جوڑنے والی سڑک۔",
+        "ro": "Drumul scurt de legătură folosit pentru a intra pe autostradă sau a ieși de pe ea."
+      }
+    }
+  ],
+  "MW-41": [
+    {
+      "term": "powered mobility scooters",
+      "translations": {
+        "en": "Small electric vehicles for people with limited mobility, usually for pavements and short trips.",
+        "ar": "مركبات كهربائية صغيرة لذوي القدرة المحدودة على الحركة، عادة للأرصفة والرحلات القصيرة.",
+        "ur": "محدود نقل و حرکت والوں کے لیے چھوٹی الیکٹرک گاڑیاں، عام طور پر فٹ پاتھ اور مختصر سفر کے لیے۔",
+        "ro": "Vehicule electrice mici pentru persoane cu mobilitate redusă, de obicei pe trotuare și pe distanțe scurte."
+      }
+    },
+    {
+      "term": "automatic transmission",
+      "translations": {
+        "en": "A gearbox that changes gears for you, without a clutch pedal.",
+        "ar": "علبة تروس تغيّر السرعات تلقائياً دون دواسة قابض.",
+        "ur": "گیئر باکس جو کلچ پیڈل کے بغیر خود گیئر بدلتا ہے۔",
+        "ro": "Cutie de viteze care schimbă treptele automat, fără pedală de ambreiaj."
+      }
+    }
+  ],
+  "MW-42": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "central reservation",
+      "translations": {
+        "en": "The strip or barrier that separates the two directions of traffic on a dual carriageway.",
+        "ar": "الشريط أو الحاجز الذي يفصل اتجاهي السير على الطريق المزدوج.",
+        "ur": "دوہری کیریج وے پر دونوں سمتوں کی ٹریفک کو الگ کرنے والی پٹی یا رکاوٹ۔",
+        "ro": "Fâșia sau bariera care desparte cele două sensuri de circulație pe un drum cu dublă bandă."
+      }
+    }
+  ],
+  "MW-43": [
+    {
+      "term": "reflective studs",
+      "translations": {
+        "en": "Cat’s-eye markers set in the road that reflect light to show lane edges at night.",
+        "ar": "علامات عاكسة مثبتة في الطريق تعكس الضوء لإظهار حدود المسارات ليلاً.",
+        "ur": "سڑک میں لگی عکاس سٹڈز (کیٹس آئیز) جو رات کو لین کنارے دکھاتی ہیں۔",
+        "ro": "Marcaje reflectorizante în carosabil (ochi de pisică) care arată marginile benzilor noaptea."
+      }
+    }
+  ],
+  "MW-44": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "service area",
+      "translations": {
+        "en": "A motorway services site with parking, fuel, and facilities where you can stop safely to rest.",
+        "ar": "محطة خدمات على الطريق السريع فيها موقف ووقود ومرافق يمكنك التوقف فيها بأمان للراحة.",
+        "ur": "موٹروے سروسز جہاں پارکنگ، ایندھن اور سہولیات ہوں تاکہ آرام کے لیے محفوظ رک سکیں۔",
+        "ro": "Zonă de servicii pe autostradă cu parcare, combustibil și facilități unde puteți opri în siguranță pentru odihnă."
+      }
+    },
+    {
+      "term": "central reservation",
+      "translations": {
+        "en": "The strip or barrier that separates the two directions of traffic on a dual carriageway.",
+        "ar": "الشريط أو الحاجز الذي يفصل اتجاهي السير على الطريق المزدوج.",
+        "ur": "دوہری کیریج وے پر دونوں سمتوں کی ٹریفک کو الگ کرنے والی پٹی یا رکاوٹ۔",
+        "ro": "Fâșia sau bariera care desparte cele două sensuri de circulație pe un drum cu dublă bandă."
+      }
+    }
+  ],
+  "MW-45": [
+    {
+      "term": "emergency roadside telephone",
+      "translations": {
+        "en": "A free phone fixed beside the motorway that links you to help and shows your location.",
+        "ar": "هاتف مجاني ثابت بجانب الطريق السريع يربطك بالمساعدة ويُظهر موقعك.",
+        "ur": "موٹروے کنارے لگایا مفت فون جو مدد سے جوڑتا ہے اور مقام بتاتا ہے۔",
+        "ro": "Telefon gratuit fixat lângă autostradă care vă leagă de ajutor și indică locația."
+      }
+    }
+  ],
+  "MW-46": [
+    {
+      "term": "studs",
+      "translations": {
+        "en": "Raised reflective road markers that help show where lanes and edges are, especially at night.",
+        "ar": "علامات طريق عاكسة مرتفعة تساعد على إظهار المسارات والحواف، خاصة ليلاً.",
+        "ur": "ابھرے عکاس روڈ مارکر جو لین اور کنارے دکھاتے ہیں، خاص طور پر رات کو۔",
+        "ro": "Marcaje reflectorizante ridicate care arată benzile și marginile, mai ales noaptea."
+      }
+    },
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    }
+  ],
+  "MW-47": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    }
+  ],
+  "MW-48": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "hazard warning lights",
+      "translations": {
+        "en": "Both indicators flashing together to warn other drivers of a hazard or sudden slowing.",
+        "ar": "إشارتا الانعطاف تومضان معاً لتحذير السائقين الآخرين من خطر أو تباطؤ مفاجئ.",
+        "ur": "دونوں انڈیکیٹرز ایک ساتھ چمکتے ہیں تاکہ خطرے یا اچانک سست ہونے کی خبر دیں۔",
+        "ro": "Ambele semnalizatoare care clipeșc împreună pentru a avertiza alți șoferi de un pericol sau o încetinire bruscă."
+      }
+    }
+  ],
+  "MW-49": [
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing a slower vehicle by moving alongside and ahead of it.",
+        "ar": "تجاوز مركبة أبطأ بالسير بجانبها ثم أمامها.",
+        "ur": "سست گاڑی کے ساتھ سے نکل کر اس سے آگے بڑھنا۔",
+        "ro": "Depășirea unui vehicul mai lent trecând pe lângă el și înaintea lui."
+      }
+    }
+  ],
+  "MW-50": [
+    {
+      "term": "contraflow system",
+      "translations": {
+        "en": "A temporary traffic system where vehicles travel in the opposite direction to normal, often during roadworks.",
+        "ar": "نظام مروري مؤقت تسير فيه المركبات عكس الاتجاه المعتاد، غالباً أثناء أعمال الطريق.",
+        "ur": "عارضی ٹریفک نظام جس میں گاڑیاں عام سمت کے الٹ چلتی ہیں، اکثر سڑک کی مرمت کے دوران۔",
+        "ro": "Sistem temporar de circulație în care vehiculele circulă pe sensul opus celui obișnuit, deseori în timpul lucrărilor."
+      }
+    }
+  ],
+  "MW-51": [
+    {
+      "term": "contraflow system",
+      "translations": {
+        "en": "A temporary traffic system where vehicles travel in the opposite direction to normal, often during roadworks.",
+        "ar": "نظام مروري مؤقت تسير فيه المركبات عكس الاتجاه المعتاد، غالباً أثناء أعمال الطريق.",
+        "ur": "عارضی ٹریفک نظام جس میں گاڑیاں عام سمت کے الٹ چلتی ہیں، اکثر سڑک کی مرمت کے دوران۔",
+        "ro": "Sistem temporar de circulație în care vehiculele circulă pe sensul opus celui obișnuit, deseori în timpul lucrărilor."
+      }
+    }
+  ],
+  "MW-52": [],
+  "MW-53": [
+    {
+      "term": "traffic officers",
+      "translations": {
+        "en": "Specialist road staff who manage incidents and traffic on motorways and major A-roads.",
+        "ar": "موظفون متخصصون يديرون الحوادث وحركة المرور على الطرق السريعة والطرق الرئيسية.",
+        "ur": "ماہر روڈ عملہ جو موٹروے اور بڑی اے روڈز پر واقعات اور ٹریفک سنبھالتا ہے۔",
+        "ro": "Personal specializat care gestionează incidentele și traficul pe autostrăzi și drumuri majore."
+      }
+    }
+  ],
+  "MW-54": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    },
+    {
+      "term": "studs",
+      "translations": {
+        "en": "Raised reflective road markers that help show where lanes and edges are, especially at night.",
+        "ar": "علامات طريق عاكسة مرتفعة تساعد على إظهار المسارات والحواف، خاصة ليلاً.",
+        "ur": "ابھرے عکاس روڈ مارکر جو لین اور کنارے دکھاتے ہیں، خاص طور پر رات کو۔",
+        "ro": "Marcaje reflectorizante ridicate care arată benzile și marginile, mai ales noaptea."
+      }
+    }
+  ],
+  "MW-55": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    }
+  ],
+  "MW-56": [
+    {
+      "term": "crawler or climbing lane",
+      "translations": {
+        "en": "An extra uphill lane for slow vehicles so faster traffic is not held up.",
+        "ar": "مسار إضافي صعوداً للمركبات البطيئة حتى لا تعيق المرور الأسرع.",
+        "ur": "سست گاڑیوں کے لیے چڑھائی والی اضافی لین تاکہ تیز ٹریفک نہ رکے۔",
+        "ro": "Bandă suplimentară la urcare pentru vehicule lente, ca traficul mai rapid să nu fie încetinit."
+      }
+    }
+  ],
+  "MW-57": [
+    {
+      "term": "hard shoulder",
+      "translations": {
+        "en": "The emergency lane at the side of a motorway, normally for stopping only in an emergency.",
+        "ar": "المسار الموجود على جانب الطريق السريع والمخصص عادةً للتوقف في حالات الطوارئ فقط.",
+        "ur": "موٹروے کے کنارے والی ایمرجنسی لین، جو عام طور پر صرف ہنگامی صورت میں رکے گی۔",
+        "ro": "Banda de urgență de pe marginea autostrăzii, folosită în mod normal doar pentru oprirea în caz de urgență."
+      }
+    }
+  ],
+  "RR-06": [
+    {
+      "term": "cycle lane",
+      "translations": {
+        "en": "A part of the road marked for cyclists, shown by a bicycle symbol and lane lines.",
+        "ar": "جزء من الطريق مخصص لراكبي الدراجات، يُشار إليه برمز دراجة وخطوط المسار.",
+        "ur": "سڑک کا سائیکل سواروں کے لیے نشان زد حصہ، سائیکل علامت اور لائنوں سے۔",
+        "ro": "Porțiune de drum marcată pentru bicicliști, cu simbol de bicicletă și linii de bandă."
+      }
+    }
+  ],
+  "RR-07": [
+    {
+      "term": "national speed limit",
+      "translations": {
+        "en": "The default UK speed limit when no numbered limit signs are shown (varies by road type and vehicle).",
+        "ar": "الحد الافتراضي للسرعة في المملكة المتحدة عندما لا تظهر إشارات رقمية (يختلف حسب نوع الطريق والمركبة).",
+        "ur": "برطانیہ کی ڈیفالٹ رفتار کی حد جب کوئی عددی حد کا نشان نہ ہو (سڑک اور گاڑی کے مطابق بدل سکتی ہے)۔",
+        "ro": "Limita implicită de viteză din Regatul Unit când nu apar indicatoare cu cifră (variază după tipul drumului și vehicul)."
+      }
+    }
+  ],
+  "RR-08": [
+    {
+      "term": "dual carriageway",
+      "translations": {
+        "en": "A major road with traffic travelling in opposite directions, separated by a central reservation.",
+        "ar": "طريق رئيسي يفصل حركة المرور في الاتجاهين المتعاكسين بحاجز أو مساحة وسطية.",
+        "ur": "ایک بڑی سڑک جس میں مخالف سمتوں میں ٹریفک ایک درمیانی حد/ریزرویشن سے الگ ہوتی ہے۔",
+        "ro": "Drum principal cu circulație pe sensuri opuse, separate de o zonă mediană (rezervație centrală)."
+      }
+    },
+    {
+      "term": "overtaking",
+      "translations": {
+        "en": "Passing a slower vehicle by moving alongside and ahead of it.",
+        "ar": "تجاوز مركبة أبطأ بالسير بجانبها ثم أمامها.",
+        "ur": "سست گاڑی کے ساتھ سے نکل کر اس سے آگے بڑھنا۔",
+        "ro": "Depășirea unui vehicul mai lent trecând pe lângă el și înaintea lui."
+      }
+    }
+  ],
+  "RR-09": [],
+  "RR-10": [
+    {
+      "term": "level crossing",
+      "translations": {
+        "en": "A place where a road crosses a railway line, often with barriers and warning lights.",
+        "ar": "مكان يتقاطع فيه الطريق مع خط السكة الحديدية، وغالباً توجد حواجز وأضواء تحذير.",
+        "ur": "وہ جگہ جہاں سڑک ریلوے لائن کو کاٹتی ہے؛ اکثر رکاوٹیں اور وارننگ لائٹس ہوتی ہیں۔",
+        "ro": "Locul unde un drum traversează o cale ferată, adesea cu bariere și lumini de avertizare."
+      }
+    },
+    {
+      "term": "hill crest",
+      "translations": {
+        "en": "The top of a hill where your view of the road ahead is often limited.",
+        "ar": "قمة التل حيث غالباً يكون النظر إلى الطريق أمامك محدوداً.",
+        "ur": "پہاڑی کی چوٹی جہاں آگے سڑک کا نظارہ اکثر محدود ہوتا ہے۔",
+        "ro": "Vârful unui deal unde vizibilitatea asupra drumului din față este adesea limitată."
+      }
+    }
+  ],
+  "RR-11": [
+    {
+      "term": "built-up areas",
+      "translations": {
+        "en": "Towns or villages with buildings close to the road; a 30 mph limit often applies with street lights.",
+        "ar": "مناطق مبنية (مدن أو قرى) قرب الطريق؛ غالباً يُطبَّق حد 30 ميلاً/ساعة مع إنارة الشوارع.",
+        "ur": "سڑک کے قریب عمارتوں والے شہر/گاؤں؛ اکثر سٹریٹ لائٹس کے ساتھ 30 mph حد۔",
+        "ro": "Zone construite (orașe/sate) lângă drum; deseori se aplică limita de 30 mph cu iluminat stradal."
+      }
+    }
+  ],
+  "RR-12": [
+    {
+      "term": "passing places",
+      "translations": {
+        "en": "Widened spots on a narrow road where vehicles can pull in to let others pass.",
+        "ar": "مواضع موسّعة على طريق ضيق يمكن للمركبات الدخول إليها لإفساح المرور.",
+        "ur": "تنگ سڑک پر چوڑی جگہیں جہاں گاڑیاں رک کر دوسروں کو گزرنے دیتی ہیں۔",
+        "ro": "Lățiri pe un drum îngust unde vehiculele pot intra ca să lase altele să treacă."
+      }
+    },
+    {
+      "term": "verge",
+      "translations": {
+        "en": "The soft or grassy edge beside the road, not meant for normal driving.",
+        "ar": "الحافة العشبية أو اللينة بجانب الطريق، وليست للقيادة العادية.",
+        "ur": "سڑک کے کنارے نرم/گھاس والی پٹی، عام ڈرائیونگ کے لیے نہیں۔",
+        "ro": "Marginea moale sau înierbată de lângă drum, nefolosită pentru circulația normală."
+      }
+    }
+  ],
+  "RR-13": [
+    {
+      "term": "national speed limit",
+      "translations": {
+        "en": "The default UK speed limit when no numbered limit signs are shown (varies by road type and vehicle).",
+        "ar": "الحد الافتراضي للسرعة في المملكة المتحدة عندما لا تظهر إشارات رقمية (يختلف حسب نوع الطريق والمركبة).",
+        "ur": "برطانیہ کی ڈیفالٹ رفتار کی حد جب کوئی عددی حد کا نشان نہ ہو (سڑک اور گاڑی کے مطابق بدل سکتی ہے)۔",
+        "ro": "Limita implicită de viteză din Regatul Unit când nu apar indicatoare cu cifră (variază după tipul drumului și vehicul)."
+      }
+    }
+  ],
+  "RR-14": [],
+  "RR-15": [
+    {
+      "term": "box junction",
+      "translations": {
+        "en": "A road junction painted with yellow criss-cross lines on the road surface.",
+        "ar": "تقاطع طريق مرسوم على سطحه بخطوط صفراء متقاطعة.",
+        "ur": "سڑک کی سطح پر پیلی کراس لائنوں والا جنکشن۔",
+        "ro": "Intersecție marcată pe carosabil cu linii galbene în cruce."
+      }
+    }
+  ],
+  "RR-16": [
+    {
+      "term": "unmarked crossroads",
+      "translations": {
+        "en": "A junction where roads meet with no give-way or stop signs or road markings.",
+        "ar": "تقاطع تلتقي فيه الطرق بلا إشارات أولوية أو توقف أو علامات على الطريق.",
+        "ur": "جنکشن جہاں سڑکیں ملیں مگر کوئی گیو وے/اسٹاپ نشان یا مارکنگ نہ ہو۔",
+        "ro": "Intersecție unde drumurile se întâlnesc fără semne de prioritate/stop sau marcaje."
+      }
+    }
+  ],
+  "RR-17": [],
+  "RR-18": [
+    {
+      "term": "pelican crossing",
+      "translations": {
+        "en": "A pedestrian crossing controlled by traffic lights, including a flashing amber phase.",
+        "ar": "معبر مشاة تتحكم به إشارات ضوئية، ويتضمن مرحلة كهرمانية وامضة.",
+        "ur": "ٹریفک لائٹس والا پیدل کراسنگ، جس میں چمکتی ہوئی امبر مرحلہ بھی ہوتا ہے۔",
+        "ro": "Trecere de pietoni controlată de semafoare, inclusiv o fază cu amber intermitent."
+      }
+    }
+  ],
+  "RR-19": [
+    {
+      "term": "zebra crossing",
+      "translations": {
+        "en": "A pedestrian crossing marked with black-and-white stripes on the road.",
+        "ar": "معبر مشاة بخطوط سوداء وبيضاء مرسومة على الطريق.",
+        "ur": "سڑک پر سیاہ و سفید پٹیوں والا پیدل کراسنگ۔",
+        "ro": "Trecere de pietoni marcată pe carosabil cu dungi alb-negru."
+      }
+    }
+  ],
+  "RR-20": [
+    {
+      "term": "bus lane",
+      "translations": {
+        "en": "A lane reserved mainly for buses (and sometimes taxis or cycles) at certain times.",
+        "ar": "مسار مخصص أساساً للحافلات (وأحياناً سيارات الأجرة أو الدراجات) في أوقات معينة.",
+        "ur": "لین جو بنیادی طور پر بسوں کے لیے مخصوص ہو (کبھی ٹیکسی/سائیکل بھی)، مخصوص اوقات میں۔",
+        "ro": "Bandă rezervată în principal autobuzelor (uneori taxiuri sau biciclete) în anumite intervale."
+      }
+    }
+  ],
+  "RR-21": [
+    {
+      "term": "indicators",
+      "translations": {
+        "en": "Flashing lights on a vehicle used to show you intend to turn or change lane.",
+        "ar": "أضواء وامضة على المركبة تُظهر نيتك بالانعطاف أو تغيير المسار.",
+        "ur": "گاڑی کی چمکنے والی لائٹس جو موڑ یا لین تبدیل کرنے کا ارادہ ظاہر کرتی ہیں۔",
+        "ro": "Lumini intermitente pe vehicul care arată intenția de a vira sau schimba banda."
+      }
+    }
+  ],
+  "RR-22": [
+    {
+      "term": "U-turn",
+      "translations": {
+        "en": "Turning the vehicle all the way round to go back the way you came.",
+        "ar": "لفّ المركبة بالكامل للعودة في الاتجاه المعاكس.",
+        "ur": "گاڑی کو مکمل گھما کر واپس اسی راستے پر جانا۔",
+        "ro": "Întoarcerea completă a vehiculului pentru a merge înapoi pe unde ai venit."
+      }
+    }
+  ],
+  "RR-23": [],
+  "RR-24": [
+    {
+      "term": "dipped headlights",
+      "translations": {
+        "en": "Headlights aimed lower so they light the road without dazzling oncoming drivers.",
+        "ar": "أضواء أمامية موجّهة للأسفل لإنارة الطريق دون إبهار السائقين القادمين.",
+        "ur": "ہیڈلائٹس جو نیچے کی طرف ہوں تاکہ سڑک روشن ہو اور سامنے والے ڈرائیورز چوندھیا نہ جائیں۔",
+        "ro": "Faruri îndreptate mai jos ca să lumineze drumul fără a orbi șoferii din sens opus."
+      }
+    },
+    {
+      "term": "built-up area",
+      "translations": {
+        "en": "A town or village area with buildings beside the road; street lighting often marks a 30 mph zone.",
+        "ar": "منطقة مبنية بجانب الطريق؛ غالباً تدل إنارة الشوارع على منطقة 30 ميلاً/ساعة.",
+        "ur": "سڑک کنارے عمارتوں والا علاقہ؛ سٹریٹ لائٹنگ اکثر 30 mph زون ظاہر کرتی ہے۔",
+        "ro": "Zonă construită lângă drum; iluminatul stradal marchează deseori o zonă de 30 mph."
+      }
+    }
+  ],
+  "RR-25": [
+    {
+      "term": "manoeuvre",
+      "translations": {
+        "en": "A controlled driving movement such as reversing, turning, or parking.",
+        "ar": "حركة قيادة متحكم بها مثل الرجوع أو الالتفاف أو الركن.",
+        "ur": "کنٹرولڈ ڈرائیونگ حرکت جیسے ریورس، موڑ یا پارکنگ۔",
+        "ro": "Mișcare controlată de conducere, cum ar fi mersul cu spatele, virajul sau parcarea."
+      }
+    }
+  ]
+}

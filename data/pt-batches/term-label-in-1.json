@@ -1,0 +1,570 @@
+[
+  {
+    "term": "30 mph zone",
+    "en": "A road area where the speed limit is 30 miles per hour, common in built-up areas in the UK."
+  },
+  {
+    "term": "ABS",
+    "en": "Anti-lock braking system that helps you steer while braking hard in an emergency."
+  },
+  {
+    "term": "ABS brakes",
+    "en": "Anti-lock braking system that helps you steer while braking hard in an emergency."
+  },
+  {
+    "term": "accelerator",
+    "en": "The pedal that increases engine power and vehicle speed (also called the gas pedal)."
+  },
+  {
+    "term": "adaptive cruise control",
+    "en": "Cruise control that also adjusts speed to keep a gap from the vehicle ahead."
+  },
+  {
+    "term": "Advisory speed",
+    "en": "A recommended speed for safety that is not a legal maximum limit."
+  },
+  {
+    "term": "AED",
+    "en": "Automated external defibrillator: a device that can shock the heart back to rhythm."
+  },
+  {
+    "term": "Aerial",
+    "en": "The radio antenna on a vehicle, often a thin rod on the roof or rear."
+  },
+  {
+    "term": "aggressive driving",
+    "en": "Driving in a hostile or impatient way, such as tailgating or harsh speeding."
+  },
+  {
+    "term": "air brakes",
+    "en": "A braking system on many large vehicles that uses compressed air instead of only hydraulic fluid."
+  },
+  {
+    "term": "airbag",
+    "en": "A safety cushion that inflates quickly in a crash to protect occupants."
+  },
+  {
+    "term": "airway",
+    "en": "The passage that lets air reach the lungs for breathing."
+  },
+  {
+    "term": "alertness",
+    "en": "Being fully awake and ready to notice hazards and react quickly."
+  },
+  {
+    "term": "alternative route",
+    "en": "A different path to the same destination if the usual road is blocked."
+  },
+  {
+    "term": "amber beacon",
+    "en": "A flashing amber warning light, often used on slow or working vehicles."
+  },
+  {
+    "term": "amber flashing beacon",
+    "en": "An orange warning light that flashes on a vehicle to make it more noticeable."
+  },
+  {
+    "term": "anti-dazzle",
+    "en": "A rear-view mirror setting that reduces glare from headlights behind you at night."
+  },
+  {
+    "term": "Anti-lock brakes",
+    "en": "ABS: brakes that help stop the wheels locking under hard braking."
+  },
+  {
+    "term": "Anticipate traffic ahead",
+    "en": "Look far ahead and prepare early for what other vehicles will do."
+  },
+  {
+    "term": "Antifreeze",
+    "en": "A liquid mixed with water in the cooling system to stop it freezing in cold weather."
+  },
+  {
+    "term": "approved driving course",
+    "en": "A recognised training course (often for safer driving) that insurers may treat as a discount factor."
+  },
+  {
+    "term": "approved instructor",
+    "en": "A driving teacher officially approved to give paid lessons (ADI in the UK)."
+  },
+  {
+    "term": "aquaplaning",
+    "en": "When tyres ride up on water and lose grip with the road surface."
+  },
+  {
+    "term": "arm signal",
+    "en": "A hand signal given by the driver to show other road users what you intend to do."
+  },
+  {
+    "term": "authorised recycling site",
+    "en": "An approved place that can safely take hazardous items like car batteries."
+  },
+  {
+    "term": "automatic transmission",
+    "en": "A gearbox that changes gears for you, without a clutch pedal."
+  },
+  {
+    "term": "Average speed check zone",
+    "en": "A stretch where cameras measure your average speed between two points."
+  },
+  {
+    "term": "Average speed zone",
+    "en": "An area where cameras check your average speed over a stretch of road."
+  },
+  {
+    "term": "axles",
+    "en": "The shafts that the wheels of a vehicle or trailer turn on."
+  },
+  {
+    "term": "barrier",
+    "en": "A gate or arm that can block the road when a train is coming."
+  },
+  {
+    "term": "blind spots",
+    "en": "Areas around the vehicle that you cannot see in your mirrors alone."
+  },
+  {
+    "term": "blind-spot assist",
+    "en": "A system that warns if a vehicle is in an area you cannot see in your mirrors."
+  },
+  {
+    "term": "blind-spot monitoring",
+    "en": "A system that warns you about vehicles in areas you cannot see in the mirrors."
+  },
+  {
+    "term": "blisters",
+    "en": "Fluid-filled swellings on the skin that can form after burns; do not burst them."
+  },
+  {
+    "term": "Blue Badge",
+    "en": "A UK disability parking badge that gives certain parking concessions."
+  },
+  {
+    "term": "blue flashing beacon",
+    "en": "A flashing blue warning light used by certain emergency or specialist vehicles."
+  },
+  {
+    "term": "blue flashing lights",
+    "en": "Emergency warning lights used by police, fire, ambulance, and similar services."
+  },
+  {
+    "term": "bodywork",
+    "en": "The outer shell and panels of the vehicle (bonnet, wings, doors, etc.)."
+  },
+  {
+    "term": "bollard",
+    "en": "A short post on the road used to mark an island, edge, or obstruction."
+  },
+  {
+    "term": "Boot",
+    "en": "The storage compartment at the back of a car (called the trunk in some countries)."
+  },
+  {
+    "term": "box junction",
+    "en": "A road junction painted with yellow criss-cross lines on the road surface."
+  },
+  {
+    "term": "Brake fluid",
+    "en": "Hydraulic fluid that transfers pressure from the brake pedal to the brakes."
+  },
+  {
+    "term": "brake lights",
+    "en": "Red lights at the rear that come on when you press the brake pedal."
+  },
+  {
+    "term": "Brake sharply",
+    "en": "Press the brake hard so the vehicle slows or stops suddenly."
+  },
+  {
+    "term": "breakdown",
+    "en": "When a vehicle stops working and can no longer be driven normally."
+  },
+  {
+    "term": "Breakdown cover",
+    "en": "A service that helps if your vehicle stops working on the road."
+  },
+  {
+    "term": "Breakdown recovery",
+    "en": "A vehicle that helps remove or repair broken-down vehicles on the road."
+  },
+  {
+    "term": "breaks down",
+    "en": "Stops working so the vehicle cannot continue normally."
+  },
+  {
+    "term": "broken white lines",
+    "en": "Dashed white road markings, often showing a boundary you may cross when safe."
+  },
+  {
+    "term": "built-up area",
+    "en": "A town or village area with buildings beside the road; street lighting often marks a 30 mph zone."
+  },
+  {
+    "term": "built-up areas",
+    "en": "Towns or villages with buildings close to the road; a 30 mph limit often applies with street lights."
+  },
+  {
+    "term": "Bumper",
+    "en": "The protective bar at the front or rear of a vehicle designed to absorb minor impacts."
+  },
+  {
+    "term": "bunching",
+    "en": "When vehicles pack closely together, often causing sudden braking waves."
+  },
+  {
+    "term": "bus lane",
+    "en": "A lane reserved for buses (and sometimes taxis/cycles) during the times shown on signs."
+  },
+  {
+    "term": "Bus lane",
+    "en": "A lane reserved mainly for buses (and sometimes taxis or cycles) at certain times."
+  },
+  {
+    "term": "bus lanes",
+    "en": "Lanes reserved mainly for buses (and sometimes taxis or cycles)."
+  },
+  {
+    "term": "caravan",
+    "en": "A trailer designed for living or camping, towed behind a vehicle."
+  },
+  {
+    "term": "carriageway",
+    "en": "The part of the road used by vehicles, not the pavement or verge."
+  },
+  {
+    "term": "casualties",
+    "en": "People injured in an accident or emergency."
+  },
+  {
+    "term": "casualty",
+    "en": "An injured person in an accident."
+  },
+  {
+    "term": "central reservation",
+    "en": "The strip or barrier that separates the two directions of traffic on a dual carriageway."
+  },
+  {
+    "term": "Chassis number",
+    "en": "The unique identification number stamped on the vehicle's frame."
+  },
+  {
+    "term": "chest compressions",
+    "en": "Repeated firm pushes on the centre of the chest during CPR to pump blood."
+  },
+  {
+    "term": "child restraint",
+    "en": "A child seat or similar device that holds a child safely in the vehicle."
+  },
+  {
+    "term": "child seat",
+    "en": "A special seat that holds a child safely with the correct restraints."
+  },
+  {
+    "term": "clearway",
+    "en": "A road marked so that stopping on the main carriageway is tightly restricted."
+  },
+  {
+    "term": "clutch",
+    "en": "The pedal that disconnects the engine from the wheels so you can change gear."
+  },
+  {
+    "term": "Clutch",
+    "en": "The pedal/system that disconnects the engine from the wheels when changing gear."
+  },
+  {
+    "term": "Coast",
+    "en": "To roll without engine drive (e.g. in neutral), which reduces control."
+  },
+  {
+    "term": "Coast in neutral",
+    "en": "Rolling without a gear engaged, so the engine does not help slow the vehicle."
+  },
+  {
+    "term": "coasting",
+    "en": "Rolling along with the clutch pressed or in neutral, so the engine is not driving the wheels."
+  },
+  {
+    "term": "coasting downhill",
+    "en": "Rolling down a slope without using the engine to help control speed."
+  },
+  {
+    "term": "Collapsible steering wheel",
+    "en": "A steering column designed to fold in a crash to reduce injury."
+  },
+  {
+    "term": "collision",
+    "en": "A crash when vehicles or objects hit each other."
+  },
+  {
+    "term": "Comprehensive",
+    "en": "A wide motor insurance level that can cover your own vehicle as well as damage to others."
+  },
+  {
+    "term": "congestion",
+    "en": "Heavy, slow-moving traffic when roads are overcrowded."
+  },
+  {
+    "term": "Congestion charges",
+    "en": "Fees charged to drive into certain busy city zones to reduce traffic."
+  },
+  {
+    "term": "contradict",
+    "en": "Say or show the opposite of something else."
+  },
+  {
+    "term": "contraflow",
+    "en": "A temporary traffic system where vehicles travel in the opposite direction to normal, often during roadworks."
+  },
+  {
+    "term": "contraflow system",
+    "en": "A temporary traffic system where vehicles travel in the opposite direction to normal, often during roadworks."
+  },
+  {
+    "term": "Contraflow systems",
+    "en": "A temporary traffic system where vehicles travel in the opposite direction to normal, often during roadworks."
+  },
+  {
+    "term": "controlled parking zone",
+    "en": "An area where parking is controlled by signs and marked bays at set times."
+  },
+  {
+    "term": "coolant",
+    "en": "The liquid in the engine cooling system that helps stop the engine overheating."
+  },
+  {
+    "term": "Corner steadies",
+    "en": "Support legs at the corners of a caravan used to keep it stable when parked, not while towing."
+  },
+  {
+    "term": "countdown markers",
+    "en": "Posts with decreasing bars (3, 2, 1) showing how close you are to a motorway exit."
+  },
+  {
+    "term": "country lane",
+    "en": "A narrow rural road, often with limited space and visibility."
+  },
+  {
+    "term": "CPR",
+    "en": "Cardiopulmonary resuscitation: chest compressions (and breaths) to help someone not breathing."
+  },
+  {
+    "term": "crawler or climbing lane",
+    "en": "An extra uphill lane for slow vehicles so faster traffic is not held up."
+  },
+  {
+    "term": "crossroads",
+    "en": "A junction where two roads cross, usually forming a plus-sign shape."
+  },
+  {
+    "term": "Crossroads",
+    "en": "A junction where two roads cross each other."
+  },
+  {
+    "term": "cruise control",
+    "en": "A system that holds a set speed without keeping your foot on the accelerator."
+  },
+  {
+    "term": "cuts in",
+    "en": "Moves suddenly into your lane or gap with little space in front of you."
+  },
+  {
+    "term": "cycle lane",
+    "en": "A part of the road marked for cyclists, shown by a bicycle symbol and lane lines."
+  },
+  {
+    "term": "Cycle lane",
+    "en": "A part of the road reserved for cyclists, often marked with a bicycle symbol."
+  },
+  {
+    "term": "Cycle route",
+    "en": "A path or lane intended for bicycles."
+  },
+  {
+    "term": "cyclist",
+    "en": "A person riding a bicycle on the road."
+  },
+  {
+    "term": "dangerous goods",
+    "en": "Hazardous materials (chemicals, fuels, etc.) needing special transport rules."
+  },
+  {
+    "term": "dashboard warning light",
+    "en": "A light on the instrument panel that alerts you to a vehicle fault or important status."
+  },
+  {
+    "term": "dazzle",
+    "en": "Temporarily blind someone with bright light."
+  },
+  {
+    "term": "dazzled",
+    "en": "Temporarily blinded or unable to see clearly because of bright lights."
+  },
+  {
+    "term": "Dazzles",
+    "en": "Temporarily blinds other drivers with bright light so they cannot see clearly."
+  },
+  {
+    "term": "dazzling",
+    "en": "Blinding other drivers with bright lights, such as brake lights in a queue at night."
+  },
+  {
+    "term": "Dazzling",
+    "en": "Blinding other drivers with bright lights so they cannot see properly."
+  },
+  {
+    "term": "debris",
+    "en": "Scattered pieces of wreckage, objects, or rubbish left after a crash."
+  },
+  {
+    "term": "Defensive",
+    "en": "A careful driving style that anticipates hazards and leaves a safety margin."
+  },
+  {
+    "term": "defibrillator (AED)",
+    "en": "A portable device that can deliver an electric shock to try to restart a heart in cardiac arrest."
+  },
+  {
+    "term": "demister",
+    "en": "A control that clears mist from the windows so you can see clearly."
+  },
+  {
+    "term": "demisters",
+    "en": "Controls that clear mist from the windows so you can see clearly."
+  },
+  {
+    "term": "diamond-shaped lane signs",
+    "en": "White diamond road markings that show a lane reserved for particular vehicles."
+  },
+  {
+    "term": "diesel fuel cap",
+    "en": "The cover that seals the diesel filler opening; if loose, fuel can spill onto the road."
+  },
+  {
+    "term": "dip your headlights",
+    "en": "Switch from full beam to dipped (lower) beam so oncoming or overtaking drivers are not dazzled."
+  },
+  {
+    "term": "dipped headlights",
+    "en": "Headlights aimed lower so they light the road without dazzling oncoming drivers."
+  },
+  {
+    "term": "Dipped headlights",
+    "en": "Headlights aimed lower so they light the road without dazzling oncoming drivers."
+  },
+  {
+    "term": "dips",
+    "en": "Low points in the road that can hide traffic until you are close."
+  },
+  {
+    "term": "disabled bays",
+    "en": "Parking spaces reserved for vehicles displaying a valid Blue Badge."
+  },
+  {
+    "term": "dismounting",
+    "en": "Getting off a bicycle (or motorcycle) to walk beside it."
+  },
+  {
+    "term": "diversion signs",
+    "en": "Temporary signs that send traffic along a different route around a closure or roadworks."
+  },
+  {
+    "term": "door mirrors",
+    "en": "The side mirrors mounted on the doors, used to see traffic beside and behind you."
+  },
+  {
+    "term": "Double bend ahead",
+    "en": "A warning that two bends follow closely, one after the other."
+  },
+  {
+    "term": "double parked",
+    "en": "Parked beside another parked vehicle, blocking a lane or space."
+  },
+  {
+    "term": "Double white lines",
+    "en": "Two white lines along the centre of the road that restrict crossing and parking."
+  },
+  {
+    "term": "double yellow lines",
+    "en": "Two yellow lines at the kerb meaning no waiting at any time (unless signs say otherwise)."
+  },
+  {
+    "term": "drain covers",
+    "en": "Metal lids over drains in the road surface; they can be slippery when wet."
+  },
+  {
+    "term": "drifting out of lane",
+    "en": "Gradually moving sideways so the vehicle leaves its traffic lane."
+  },
+  {
+    "term": "drink- or drug-driving",
+    "en": "Driving after drinking alcohol or taking drugs that impair your ability to drive."
+  },
+  {
+    "term": "driver drowsiness system",
+    "en": "A driver-assistance feature that detects tired driving and alerts you."
+  },
+  {
+    "term": "driver-assistance system",
+    "en": "Technology that helps the driver with safety, control, or alerts."
+  },
+  {
+    "term": "driveway",
+    "en": "A private path from a house or property that joins the public road."
+  },
+  {
+    "term": "driving documents",
+    "en": "Official papers such as your licence and insurance that prove you can drive legally."
+  },
+  {
+    "term": "Driving licence",
+    "en": "The official card that shows you are allowed to drive certain vehicles."
+  },
+  {
+    "term": "drowsiness",
+    "en": "Sleepiness that slows your thinking and reactions while driving."
+  },
+  {
+    "term": "drowsy",
+    "en": "Feeling sleepy or half-asleep, so your reactions and attention are reduced."
+  },
+  {
+    "term": "dual carriageway",
+    "en": "A major road with traffic travelling in opposite directions, separated by a central reservation."
+  },
+  {
+    "term": "Dual carriageway",
+    "en": "A major road with traffic travelling in opposite directions, separated by a central reservation."
+  },
+  {
+    "term": "dual carriageways",
+    "en": "A major road with traffic travelling in opposite directions, separated by a central reservation."
+  },
+  {
+    "term": "dual controls",
+    "en": "Extra pedals for the supervisor or instructor to help control the car."
+  },
+  {
+    "term": "dusk",
+    "en": "The period of fading light after sunset when visibility drops."
+  },
+  {
+    "term": "edge forward",
+    "en": "Move the car forward very slowly, a little at a time, to improve your view before joining the road."
+  },
+  {
+    "term": "Edge forward",
+    "en": "Move the vehicle slowly ahead a short distance."
+  },
+  {
+    "term": "embedded",
+    "en": "Stuck inside the wound (for example glass or metal); do not pull it out yourself."
+  },
+  {
+    "term": "emerge",
+    "en": "Come out onto the road from a side road, driveway, or similar entrance."
+  },
+  {
+    "term": "emergency area",
+    "en": "A marked bay beside a motorway for stopping in an emergency when there is no hard shoulder."
+  }
+]

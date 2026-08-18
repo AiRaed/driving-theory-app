@@ -1,0 +1,952 @@
+[
+  {
+    "id": "HZ-75",
+    "topic": "hazard-awareness",
+    "promptEn": "You are driving on a country road and see a horse rider ahead. What should you do?",
+    "options": [
+      {
+        "en": "Sound your horn to warn them"
+      },
+      {
+        "en": "Pass as quickly as possible"
+      },
+      {
+        "en": "Slow down and pass wide, giving plenty of space"
+      },
+      {
+        "en": "Flash your headlights repeatedly"
+      }
+    ]
+  },
+  {
+    "id": "HZ-76",
+    "topic": "hazard-awareness",
+    "promptEn": "You notice a vehicle ahead suddenly swerving and braking. What should you do immediately?",
+    "options": [
+      {
+        "en": "Overtake immediately to avoid the hazard"
+      },
+      {
+        "en": "Increase your following distance and be ready to brake"
+      },
+      {
+        "en": "Maintain your current speed"
+      },
+      {
+        "en": "Sound your horn to alert them"
+      }
+    ]
+  },
+  {
+    "id": "HZ-77",
+    "topic": "hazard-awareness",
+    "promptEn": "You are approaching a school during the afternoon. What should you be especially alert for?",
+    "options": [
+      {
+        "en": "School buses only"
+      },
+      {
+        "en": "Children crossing or running near the road"
+      },
+      {
+        "en": "Parking restrictions"
+      },
+      {
+        "en": "Speed cameras"
+      }
+    ]
+  },
+  {
+    "id": "HZ-78",
+    "topic": "hazard-awareness",
+    "promptEn": "While driving in fog, you see a vehicle's lights ahead but cannot judge its distance clearly. What should you do?",
+    "options": [
+      {
+        "en": "Speed up to pass quickly"
+      },
+      {
+        "en": "Slow down and increase your following distance"
+      },
+      {
+        "en": "Use full beam headlights"
+      },
+      {
+        "en": "Maintain normal speed"
+      }
+    ]
+  },
+  {
+    "id": "HZ-79",
+    "topic": "hazard-awareness",
+    "promptEn": "You are driving behind a large vehicle that is indicating left but positioned to the right. What should you anticipate?",
+    "options": [
+      {
+        "en": "The vehicle will turn left immediately"
+      },
+      {
+        "en": "The vehicle needs space to turn left and may swing right first"
+      },
+      {
+        "en": "The indicator is faulty"
+      },
+      {
+        "en": "The vehicle will continue straight"
+      }
+    ]
+  },
+  {
+    "id": "HZ-80",
+    "topic": "hazard-awareness",
+    "promptEn": "You are driving on a wet road and approaching a sharp bend. What should you do before entering the bend?",
+    "options": [
+      {
+        "en": "Accelerate to maintain speed through the bend"
+      },
+      {
+        "en": "Slow down before the bend and avoid sudden steering or braking"
+      },
+      {
+        "en": "Change to a lower gear only"
+      },
+      {
+        "en": "Use the handbrake to control speed"
+      }
+    ]
+  },
+  {
+    "id": "RS-01",
+    "topic": "road-signs",
+    "promptEn": "A sign showing a red car beside a black car means:",
+    "options": [
+      {
+        "en": "No overtaking"
+      },
+      {
+        "en": "Overtaking allowed"
+      },
+      {
+        "en": "End of restriction"
+      },
+      {
+        "en": "Two-way traffic"
+      }
+    ]
+  },
+  {
+    "id": "RS-02",
+    "topic": "road-signs",
+    "promptEn": "A sign with two arrows facing opposite directions means:",
+    "options": [
+      {
+        "en": "Two-way traffic"
+      },
+      {
+        "en": "Dual carriageway"
+      },
+      {
+        "en": "Give way"
+      },
+      {
+        "en": "End of motorway"
+      }
+    ]
+  },
+  {
+    "id": "RS-03",
+    "topic": "road-signs",
+    "promptEn": "You're driving on a country road after heavy rain and see a triangular warning sign showing a car with skid marks. What hazard should you prepare for?",
+    "options": [
+      {
+        "en": "The road surface may be slippery ahead"
+      },
+      {
+        "en": "Roadworks are ahead"
+      },
+      {
+        "en": "A tyre repair shop is nearby"
+      },
+      {
+        "en": "Speed bumps are ahead"
+      }
+    ]
+  },
+  {
+    "id": "RS-04",
+    "topic": "road-signs",
+    "promptEn": "A red upside-down triangle means:",
+    "options": [
+      {
+        "en": "Give way"
+      },
+      {
+        "en": "Stop"
+      },
+      {
+        "en": "No stopping"
+      },
+      {
+        "en": "Maximum speed"
+      }
+    ]
+  },
+  {
+    "id": "RS-05",
+    "topic": "road-signs",
+    "promptEn": "You're approaching a junction and see a triangular warning sign with a cross shape. What should you expect ahead?",
+    "options": [
+      {
+        "en": "A crossroads where traffic may cross your path"
+      },
+      {
+        "en": "A railway level crossing"
+      },
+      {
+        "en": "A one-way street ahead"
+      },
+      {
+        "en": "A hospital entrance"
+      }
+    ]
+  },
+  {
+    "id": "RS-06",
+    "topic": "road-signs",
+    "promptEn": "A sign with a windsock symbol warns of:",
+    "options": [
+      {
+        "en": "Side winds"
+      },
+      {
+        "en": "Snow"
+      },
+      {
+        "en": "Tunnel ahead"
+      },
+      {
+        "en": "Road narrows"
+      }
+    ]
+  },
+  {
+    "id": "SM-01",
+    "topic": "safety-margins",
+    "promptEn": "What is the most common reason a vehicle starts to skid?",
+    "options": [
+      {
+        "en": "Poor road surface conditions"
+      },
+      {
+        "en": "Driver actions"
+      },
+      {
+        "en": "Mechanical failure"
+      },
+      {
+        "en": "Strong wind"
+      }
+    ]
+  },
+  {
+    "id": "SM-02",
+    "topic": "safety-margins",
+    "promptEn": "Which lights should you use when driving on a wet motorway with heavy spray?",
+    "options": [
+      {
+        "en": "Hazard warning lights"
+      },
+      {
+        "en": "Dipped headlights"
+      },
+      {
+        "en": "Rear fog lights"
+      },
+      {
+        "en": "Sidelights"
+      }
+    ]
+  },
+  {
+    "id": "SM-03",
+    "topic": "safety-margins",
+    "promptEn": "What risk is increased when you drive downhill in neutral (coasting)?",
+    "options": [
+      {
+        "en": "Better steering control"
+      },
+      {
+        "en": "Improved fuel economy"
+      },
+      {
+        "en": "Reduced control of the vehicle"
+      },
+      {
+        "en": "Less braking effort"
+      }
+    ]
+  },
+  {
+    "id": "SM-04",
+    "topic": "safety-margins",
+    "promptEn": "Why should you position your vehicle towards the left before a right-hand bend?",
+    "options": [
+      {
+        "en": "To overtake safely"
+      },
+      {
+        "en": "To improve your view of the road ahead"
+      },
+      {
+        "en": "To avoid pedestrians"
+      },
+      {
+        "en": "To reduce fuel use"
+      }
+    ]
+  },
+  {
+    "id": "SM-05",
+    "topic": "safety-margins",
+    "promptEn": "When parking downhill, how should you turn your wheels?",
+    "options": [
+      {
+        "en": "Away from the kerb"
+      },
+      {
+        "en": "Straight ahead"
+      },
+      {
+        "en": "Towards the kerb"
+      },
+      {
+        "en": "It doesn't matter"
+      }
+    ]
+  },
+  {
+    "id": "SM-06",
+    "topic": "safety-margins",
+    "promptEn": "What should you do when approaching a speed hump in a residential area?",
+    "options": [
+      {
+        "en": "Accelerate to pass quickly"
+      },
+      {
+        "en": "Move to the centre of the road"
+      },
+      {
+        "en": "Check mirrors and slow down"
+      },
+      {
+        "en": "Stop completely"
+      }
+    ]
+  },
+  {
+    "id": "SM-07",
+    "topic": "safety-margins",
+    "promptEn": "If a vehicle is following you too closely on a motorway, what should you do?",
+    "options": [
+      {
+        "en": "Brake sharply"
+      },
+      {
+        "en": "Increase speed"
+      },
+      {
+        "en": "Increase the gap in front of you"
+      },
+      {
+        "en": "Use hazard lights"
+      }
+    ]
+  },
+  {
+    "id": "SM-08",
+    "topic": "safety-margins",
+    "promptEn": "How should you use ABS brakes in an emergency stop?",
+    "options": [
+      {
+        "en": "Pump the brake"
+      },
+      {
+        "en": "Brake firmly and steer"
+      },
+      {
+        "en": "Use the handbrake"
+      },
+      {
+        "en": "Brake lightly"
+      }
+    ]
+  },
+  {
+    "id": "SM-09",
+    "topic": "safety-margins",
+    "promptEn": "What often indicates icy road conditions?",
+    "options": [
+      {
+        "en": "Increased tyre noise"
+      },
+      {
+        "en": "Reduced engine noise"
+      },
+      {
+        "en": "Less tyre noise"
+      },
+      {
+        "en": "Strong steering feel"
+      }
+    ]
+  },
+  {
+    "id": "SM-10",
+    "topic": "safety-margins",
+    "promptEn": "How should you approach a sharp bend in freezing conditions?",
+    "options": [
+      {
+        "en": "Coast through the bend"
+      },
+      {
+        "en": "Brake hard"
+      },
+      {
+        "en": "Slow down gently"
+      },
+      {
+        "en": "Use the handbrake"
+      }
+    ]
+  },
+  {
+    "id": "SM-11",
+    "topic": "safety-margins",
+    "promptEn": "When using ABS, how should the footbrake be applied in an emergency?",
+    "options": [
+      {
+        "en": "Gently and slowly"
+      },
+      {
+        "en": "Rapidly and firmly"
+      },
+      {
+        "en": "Light pressure only"
+      },
+      {
+        "en": "Pumping repeatedly"
+      }
+    ]
+  },
+  {
+    "id": "SM-12",
+    "topic": "safety-margins",
+    "promptEn": "What does very light steering on a wet road indicate?",
+    "options": [
+      {
+        "en": "Engine failure"
+      },
+      {
+        "en": "Loss of tyre grip"
+      },
+      {
+        "en": "Overinflated tyres"
+      },
+      {
+        "en": "Steering fault"
+      }
+    ]
+  },
+  {
+    "id": "SM-13",
+    "topic": "safety-margins",
+    "promptEn": "Which situation requires extra care in strong winds?",
+    "options": [
+      {
+        "en": "Braking"
+      },
+      {
+        "en": "Hill starts"
+      },
+      {
+        "en": "Turning into narrow roads"
+      },
+      {
+        "en": "Passing cyclists"
+      }
+    ]
+  },
+  {
+    "id": "SM-14",
+    "topic": "safety-margins",
+    "promptEn": "How should you brake when driving in snow?",
+    "options": [
+      {
+        "en": "Quickly and firmly"
+      },
+      {
+        "en": "Gently with early braking"
+      },
+      {
+        "en": "Using handbrake"
+      },
+      {
+        "en": "Sharp steering"
+      }
+    ]
+  },
+  {
+    "id": "SM-15",
+    "topic": "safety-margins",
+    "promptEn": "How can wheelspin be reduced on icy roads?",
+    "options": [
+      {
+        "en": "Low gear"
+      },
+      {
+        "en": "Highest gear possible at low speed"
+      },
+      {
+        "en": "Handbrake use"
+      },
+      {
+        "en": "Rapid acceleration"
+      }
+    ]
+  },
+  {
+    "id": "SM-16",
+    "topic": "safety-margins",
+    "promptEn": "How can engine braking be used safely?",
+    "options": [
+      {
+        "en": "Shift to a lower gear"
+      },
+      {
+        "en": "Use neutral"
+      },
+      {
+        "en": "Select reverse"
+      },
+      {
+        "en": "Turn off engine"
+      }
+    ]
+  },
+  {
+    "id": "SM-17",
+    "topic": "safety-margins",
+    "promptEn": "Where are side winds most likely to affect your vehicle?",
+    "options": [
+      {
+        "en": "Busy roads"
+      },
+      {
+        "en": "Narrow lanes"
+      },
+      {
+        "en": "Open stretches of road"
+      },
+      {
+        "en": "City streets"
+      }
+    ]
+  },
+  {
+    "id": "SM-18",
+    "topic": "safety-margins",
+    "promptEn": "What should you do before driving in fog?",
+    "options": [
+      {
+        "en": "Reduce tyre pressure"
+      },
+      {
+        "en": "Drink caffeine"
+      },
+      {
+        "en": "Allow extra time"
+      },
+      {
+        "en": "Wear hi-vis"
+      }
+    ]
+  },
+  {
+    "id": "SM-19",
+    "topic": "safety-margins",
+    "promptEn": "What should you do if another vehicle pulls into your safe gap on a wet road?",
+    "options": [
+      {
+        "en": "Flash headlights"
+      },
+      {
+        "en": "Overtake immediately"
+      },
+      {
+        "en": "Drop back to increase distance"
+      },
+      {
+        "en": "Stay close"
+      }
+    ]
+  },
+  {
+    "id": "SM-20",
+    "topic": "safety-margins",
+    "promptEn": "What is the main advantage of four-wheel drive?",
+    "options": [
+      {
+        "en": "Shorter stopping distance"
+      },
+      {
+        "en": "Better grip in poor conditions"
+      },
+      {
+        "en": "Lower fuel use"
+      },
+      {
+        "en": "Faster acceleration"
+      }
+    ]
+  },
+  {
+    "id": "SM-21",
+    "topic": "safety-margins",
+    "promptEn": "What helps a car move off more safely on a snowy road surface?",
+    "options": [
+      {
+        "en": "Using a low gear"
+      },
+      {
+        "en": "Using a higher gear than usual"
+      },
+      {
+        "en": "Using high engine speed"
+      },
+      {
+        "en": "Using the parking brake"
+      }
+    ]
+  },
+  {
+    "id": "SM-22",
+    "topic": "safety-margins",
+    "promptEn": "After passing a hazard warning sign on a country road, what should you do once it's safe?",
+    "options": [
+      {
+        "en": "Check tyre pressures"
+      },
+      {
+        "en": "Switch on hazard lights"
+      },
+      {
+        "en": "Accelerate smoothly"
+      },
+      {
+        "en": "Test the brakes"
+      }
+    ]
+  },
+  {
+    "id": "SM-23",
+    "topic": "safety-margins",
+    "promptEn": "On a dry open road, what following distance should you normally keep?",
+    "options": [
+      {
+        "en": "A two-second gap"
+      },
+      {
+        "en": "One car length"
+      },
+      {
+        "en": "Two metres"
+      },
+      {
+        "en": "Two car lengths"
+      }
+    ]
+  },
+  {
+    "id": "SM-24",
+    "topic": "safety-margins",
+    "promptEn": "What does it usually mean if the ESC warning light flashes briefly while driving?",
+    "options": [
+      {
+        "en": "The system is faulty"
+      },
+      {
+        "en": "The system has been switched off"
+      },
+      {
+        "en": "The system is actively helping control the car"
+      },
+      {
+        "en": "A routine test is running"
+      }
+    ]
+  },
+  {
+    "id": "SM-25",
+    "topic": "safety-margins",
+    "promptEn": "What is most affected when road surfaces soften in very hot weather?",
+    "options": [
+      {
+        "en": "Suspension"
+      },
+      {
+        "en": "Fuel consumption"
+      },
+      {
+        "en": "Tyre grip"
+      },
+      {
+        "en": "Exhaust system"
+      }
+    ]
+  },
+  {
+    "id": "SM-26",
+    "topic": "safety-margins",
+    "promptEn": "How should you overtake a motorcyclist on a windy day?",
+    "options": [
+      {
+        "en": "Closely"
+      },
+      {
+        "en": "Very slowly"
+      },
+      {
+        "en": "With extra space"
+      },
+      {
+        "en": "As quickly as possible"
+      }
+    ]
+  },
+  {
+    "id": "SM-27",
+    "topic": "safety-margins",
+    "promptEn": "After driving through flood water, how can you check your brakes are working?",
+    "options": [
+      {
+        "en": "Drive fast for a short distance"
+      },
+      {
+        "en": "Avoid using brakes"
+      },
+      {
+        "en": "Apply brakes gently while driving slowly"
+      },
+      {
+        "en": "Stop for an hour"
+      }
+    ]
+  },
+  {
+    "id": "SM-28",
+    "topic": "safety-margins",
+    "promptEn": "On which type of road surface may ABS be less effective?",
+    "options": [
+      {
+        "en": "Dry"
+      },
+      {
+        "en": "Loose"
+      },
+      {
+        "en": "Firm"
+      },
+      {
+        "en": "Smooth"
+      }
+    ]
+  },
+  {
+    "id": "SM-29",
+    "topic": "safety-margins",
+    "promptEn": "When driving in fog, what else should you do besides using dipped headlights?",
+    "options": [
+      {
+        "en": "Stay close to the vehicle ahead"
+      },
+      {
+        "en": "Use full beam"
+      },
+      {
+        "en": "Keep a safe distance"
+      },
+      {
+        "en": "Match faster traffic speed"
+      }
+    ]
+  },
+  {
+    "id": "SM-30",
+    "topic": "safety-margins",
+    "promptEn": "Before driving in freezing weather, which parts of the car must be cleared of ice?",
+    "options": [
+      {
+        "en": "Bumper"
+      },
+      {
+        "en": "Windows"
+      },
+      {
+        "en": "Aerial"
+      },
+      {
+        "en": "Boot"
+      }
+    ]
+  },
+  {
+    "id": "SM-31",
+    "topic": "safety-margins",
+    "promptEn": "When driving through a contraflow system, what should you do?",
+    "options": [
+      {
+        "en": "Change lanes often"
+      },
+      {
+        "en": "Increase speed"
+      },
+      {
+        "en": "Choose your lane early"
+      },
+      {
+        "en": "Follow vehicles closely"
+      }
+    ]
+  },
+  {
+    "id": "SM-32",
+    "topic": "safety-margins",
+    "promptEn": "In which condition does stopping distance increase the most?",
+    "options": [
+      {
+        "en": "Fog"
+      },
+      {
+        "en": "Strong wind"
+      },
+      {
+        "en": "Rain"
+      },
+      {
+        "en": "Ice"
+      }
+    ]
+  },
+  {
+    "id": "SM-33",
+    "topic": "safety-margins",
+    "promptEn": "By how much can stopping distance increase on icy roads?",
+    "options": [
+      {
+        "en": "2 times"
+      },
+      {
+        "en": "3 times"
+      },
+      {
+        "en": "5 times"
+      },
+      {
+        "en": "10 times"
+      }
+    ]
+  },
+  {
+    "id": "SM-34",
+    "topic": "safety-margins",
+    "promptEn": "How should you control speed when driving downhill?",
+    "options": [
+      {
+        "en": "High gear with firm braking"
+      },
+      {
+        "en": "High gear without braking"
+      },
+      {
+        "en": "Low gear with gentle braking"
+      },
+      {
+        "en": "Low gear without braking"
+      }
+    ]
+  },
+  {
+    "id": "RR-01",
+    "topic": "rules-of-the-road",
+    "promptEn": "What do red and white roadside marker posts usually warn drivers about?",
+    "options": [
+      {
+        "en": "End of motorway"
+      },
+      {
+        "en": "Hidden railway crossing ahead"
+      },
+      {
+        "en": "Speed limit change"
+      },
+      {
+        "en": "End of dual carriageway"
+      }
+    ]
+  },
+  {
+    "id": "RR-02",
+    "topic": "rules-of-the-road",
+    "promptEn": "You want to overtake a slow-moving tractor but you're unsure it's safe. What should you do?",
+    "options": [
+      {
+        "en": "Follow another car overtaking"
+      },
+      {
+        "en": "Sound your horn"
+      },
+      {
+        "en": "Overtake quickly"
+      },
+      {
+        "en": "Stay behind until it's clearly safe"
+      }
+    ]
+  },
+  {
+    "id": "RR-03",
+    "topic": "rules-of-the-road",
+    "promptEn": "What is the national speed limit on a single carriageway for cars and motorcycles (unless signs show otherwise)?",
+    "options": [
+      {
+        "en": "30 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      },
+      {
+        "en": "70 mph"
+      }
+    ]
+  },
+  {
+    "id": "RR-04",
+    "topic": "rules-of-the-road",
+    "promptEn": "You're using full-beam headlights at night and another vehicle begins overtaking you. When should you dip your headlights?",
+    "options": [
+      {
+        "en": "After they pass"
+      },
+      {
+        "en": "When they finish overtaking"
+      },
+      {
+        "en": "Only if they dip theirs"
+      },
+      {
+        "en": "Before they start to pass you"
+      }
+    ]
+  }
+]

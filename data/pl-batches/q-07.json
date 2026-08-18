@@ -1,0 +1,952 @@
+[
+  {
+    "id": "VL-04",
+    "topic": "vehicle-loading",
+    "promptEn": "Before towing a trailer, you notice one of its lights is not working. What should you do?",
+    "options": [
+      {
+        "en": "Continue driving"
+      },
+      {
+        "en": "Disconnect the trailer"
+      },
+      {
+        "en": "Repair the fault before driving"
+      },
+      {
+        "en": "Repair it later"
+      }
+    ]
+  },
+  {
+    "id": "VL-05",
+    "topic": "vehicle-loading",
+    "promptEn": "If the trailer is wider than your car, what must you fit?",
+    "options": [
+      {
+        "en": "Exterior towing mirrors"
+      },
+      {
+        "en": "Parking sensors"
+      },
+      {
+        "en": "Reversing camera"
+      },
+      {
+        "en": "Projection markers"
+      }
+    ]
+  },
+  {
+    "id": "VL-06",
+    "topic": "vehicle-loading",
+    "promptEn": "What safety device must be fitted to a trailer's braking system?",
+    "options": [
+      {
+        "en": "Stabiliser"
+      },
+      {
+        "en": "Jockey wheel"
+      },
+      {
+        "en": "Corner steadies"
+      },
+      {
+        "en": "Breakaway cable"
+      }
+    ]
+  },
+  {
+    "id": "VL-07",
+    "topic": "vehicle-loading",
+    "promptEn": "What helps improve stability when towing a caravan?",
+    "options": [
+      {
+        "en": "Jockey wheel"
+      },
+      {
+        "en": "Power steering"
+      },
+      {
+        "en": "ABS brakes"
+      },
+      {
+        "en": "Tow-bar stabiliser"
+      }
+    ]
+  },
+  {
+    "id": "VL-08",
+    "topic": "vehicle-loading",
+    "promptEn": "Who is legally responsible for making sure a vehicle is not overloaded?",
+    "options": [
+      {
+        "en": "Vehicle owner"
+      },
+      {
+        "en": "Person loading items"
+      },
+      {
+        "en": "Licensing authority"
+      },
+      {
+        "en": "Driver of the vehicle"
+      }
+    ]
+  },
+  {
+    "id": "VL-09",
+    "topic": "vehicle-loading",
+    "promptEn": "What does a trailer's Maximum Authorised Mass (MAM) mean?",
+    "options": [
+      {
+        "en": "Load only"
+      },
+      {
+        "en": "Empty trailer weight"
+      },
+      {
+        "en": "Combined towing weight"
+      },
+      {
+        "en": "Trailer plus load weight"
+      }
+    ]
+  },
+  {
+    "id": "VL-10",
+    "topic": "vehicle-loading",
+    "promptEn": "When attaching an unbraked trailer, what must you ensure?",
+    "options": [
+      {
+        "en": "Fit a secondary coupling device"
+      },
+      {
+        "en": "Grease the tow ball"
+      },
+      {
+        "en": "Switch off sensors"
+      },
+      {
+        "en": "Adjust mirrors only"
+      }
+    ]
+  },
+  {
+    "id": "VL-11",
+    "topic": "vehicle-loading",
+    "promptEn": "What aspect of your vehicle is most affected by carrying a very heavy load?",
+    "options": [
+      {
+        "en": "Battery"
+      },
+      {
+        "en": "Ventilation"
+      },
+      {
+        "en": "Handling"
+      },
+      {
+        "en": "Gearbox"
+      }
+    ]
+  },
+  {
+    "id": "VL-12",
+    "topic": "vehicle-loading",
+    "promptEn": "Before towing a trailer for the first time, what's recommended?",
+    "options": [
+      {
+        "en": "Update licence"
+      },
+      {
+        "en": "Fit P plates"
+      },
+      {
+        "en": "Take professional training"
+      },
+      {
+        "en": "Take another test"
+      }
+    ]
+  },
+  {
+    "id": "VL-13",
+    "topic": "vehicle-loading",
+    "promptEn": "After passing your test, what's the maximum authorised mass of a trailer you can tow?",
+    "options": [
+      {
+        "en": "6,500 kg"
+      },
+      {
+        "en": "5,500 kg"
+      },
+      {
+        "en": "4,500 kg"
+      },
+      {
+        "en": "3,500 kg"
+      }
+    ]
+  },
+  {
+    "id": "VL-14",
+    "topic": "vehicle-loading",
+    "promptEn": "If your trailer starts to sway while driving, what should you do?",
+    "options": [
+      {
+        "en": "Brake sharply"
+      },
+      {
+        "en": "Increase speed"
+      },
+      {
+        "en": "Steer sharply"
+      },
+      {
+        "en": "Reduce speed gently"
+      }
+    ]
+  },
+  {
+    "id": "VL-15",
+    "topic": "vehicle-loading",
+    "promptEn": "When towing on a three-lane motorway, which restriction applies?",
+    "options": [
+      {
+        "en": "Max 50 mph"
+      },
+      {
+        "en": "No overtaking"
+      },
+      {
+        "en": "Stabiliser required"
+      },
+      {
+        "en": "No use of right-hand lane"
+      }
+    ]
+  },
+  {
+    "id": "VL-16",
+    "topic": "vehicle-loading",
+    "promptEn": "When should tyre pressures be increased above normal?",
+    "options": [
+      {
+        "en": "Slippery roads"
+      },
+      {
+        "en": "ABS fitted"
+      },
+      {
+        "en": "Worn tread"
+      },
+      {
+        "en": "Carrying a heavy load"
+      }
+    ]
+  },
+  {
+    "id": "VL-17",
+    "topic": "vehicle-loading",
+    "promptEn": "If a trailer starts swinging side to side, what's the safest action?",
+    "options": [
+      {
+        "en": "Accelerate"
+      },
+      {
+        "en": "Brake hard"
+      },
+      {
+        "en": "Let go of steering"
+      },
+      {
+        "en": "Ease off the accelerator"
+      }
+    ]
+  },
+  {
+    "id": "VL-18",
+    "topic": "vehicle-loading",
+    "promptEn": "What's the legal minimum tread depth for trailer tyres?",
+    "options": [
+      {
+        "en": "1 mm"
+      },
+      {
+        "en": "1.6 mm"
+      },
+      {
+        "en": "2 mm"
+      },
+      {
+        "en": "2.2 mm"
+      }
+    ]
+  },
+  {
+    "id": "VL-19",
+    "topic": "vehicle-loading",
+    "promptEn": "Are passengers allowed to travel in a towed caravan?",
+    "options": [
+      {
+        "en": "Yes, over 14"
+      },
+      {
+        "en": "No, never"
+      },
+      {
+        "en": "If seats are full"
+      },
+      {
+        "en": "With stabiliser"
+      }
+    ]
+  },
+  {
+    "id": "VL-20",
+    "topic": "vehicle-loading",
+    "promptEn": "How should heavy items be positioned when loading a trailer?",
+    "options": [
+      {
+        "en": "At the front"
+      },
+      {
+        "en": "At the back"
+      },
+      {
+        "en": "Over the axles"
+      },
+      {
+        "en": "In corners"
+      }
+    ]
+  },
+  {
+    "id": "VL-21",
+    "topic": "vehicle-loading",
+    "promptEn": "How should a load be carried on a roof rack?",
+    "options": [
+      {
+        "en": "Securely fastened with proper restraints"
+      },
+      {
+        "en": "Toward the rear"
+      },
+      {
+        "en": "Visible in mirrors"
+      },
+      {
+        "en": "Covered with plastic"
+      }
+    ]
+  },
+  {
+    "id": "AT-01",
+    "topic": "attitude",
+    "promptEn": "As you approach a pedestrian crossing and people are waiting, what should you do?",
+    "options": [
+      {
+        "en": "Only stop for elderly people"
+      },
+      {
+        "en": "Slow down and be ready to stop"
+      },
+      {
+        "en": "Flash headlights to invite them"
+      },
+      {
+        "en": "Wave them across"
+      }
+    ]
+  },
+  {
+    "id": "AT-02",
+    "topic": "attitude",
+    "promptEn": "Traffic is slow and the driver behind is following very closely. What should you do?",
+    "options": [
+      {
+        "en": "Ignore them"
+      },
+      {
+        "en": "Gradually increase the gap ahead"
+      },
+      {
+        "en": "Wave them past"
+      },
+      {
+        "en": "Move to the centre of the road"
+      }
+    ]
+  },
+  {
+    "id": "AT-03",
+    "topic": "attitude",
+    "promptEn": "Why is driving too close to the vehicle in front dangerous?",
+    "options": [
+      {
+        "en": "Engine may overheat"
+      },
+      {
+        "en": "Mirrors become ineffective"
+      },
+      {
+        "en": "Your stopping time is reduced"
+      },
+      {
+        "en": "Navigation becomes inaccurate"
+      }
+    ]
+  },
+  {
+    "id": "AT-04",
+    "topic": "attitude",
+    "promptEn": "When is a two-second following gap generally recommended?",
+    "options": [
+      {
+        "en": "In dry conditions"
+      },
+      {
+        "en": "In fog"
+      },
+      {
+        "en": "On icy roads"
+      },
+      {
+        "en": "In heavy rain"
+      }
+    ]
+  },
+  {
+    "id": "AT-05",
+    "topic": "attitude",
+    "promptEn": "A large vehicle signals left but swings right before turning. What should you do?",
+    "options": [
+      {
+        "en": "Sound your horn"
+      },
+      {
+        "en": "Drive past on the left"
+      },
+      {
+        "en": "Overtake quickly"
+      },
+      {
+        "en": "Slow down and allow it to turn"
+      }
+    ]
+  },
+  {
+    "id": "AT-06",
+    "topic": "attitude",
+    "promptEn": "Who must obey diamond-shaped lane signs?",
+    "options": [
+      {
+        "en": "Trams"
+      },
+      {
+        "en": "Buses"
+      },
+      {
+        "en": "Lorries"
+      },
+      {
+        "en": "Taxis"
+      }
+    ]
+  },
+  {
+    "id": "AT-07",
+    "topic": "attitude",
+    "promptEn": "When should you flash your headlights at another road user?",
+    "options": [
+      {
+        "en": "To claim right of way"
+      },
+      {
+        "en": "To warn of a turn"
+      },
+      {
+        "en": "To show you're there"
+      },
+      {
+        "en": "To force them to stop"
+      }
+    ]
+  },
+  {
+    "id": "AT-08",
+    "topic": "attitude",
+    "promptEn": "A bus lane sign shows no operating times. What does this mean?",
+    "options": [
+      {
+        "en": "Only peak hours"
+      },
+      {
+        "en": "Daytime only"
+      },
+      {
+        "en": "Not currently active"
+      },
+      {
+        "en": "Operates all the time"
+      }
+    ]
+  },
+  {
+    "id": "AT-09",
+    "topic": "attitude",
+    "promptEn": "At a pelican crossing with flashing amber, what must you do?",
+    "options": [
+      {
+        "en": "Stop immediately"
+      },
+      {
+        "en": "Proceed carefully"
+      },
+      {
+        "en": "Give way to pedestrians already crossing"
+      },
+      {
+        "en": "Wait for red light"
+      }
+    ]
+  },
+  {
+    "id": "AT-10",
+    "topic": "attitude",
+    "promptEn": "What minimum following distance should you allow on wet roads?",
+    "options": [
+      {
+        "en": "1 second"
+      },
+      {
+        "en": "2 seconds"
+      },
+      {
+        "en": "3 seconds"
+      },
+      {
+        "en": "4 seconds"
+      }
+    ]
+  },
+  {
+    "id": "AT-11",
+    "topic": "attitude",
+    "promptEn": "A vehicle pulls out suddenly at a junction. What should you do?",
+    "options": [
+      {
+        "en": "Accelerate"
+      },
+      {
+        "en": "Sound your horn"
+      },
+      {
+        "en": "Swerve sharply"
+      },
+      {
+        "en": "Slow down and prepare to stop"
+      }
+    ]
+  },
+  {
+    "id": "AT-12",
+    "topic": "attitude",
+    "promptEn": "A long lorry is overtaking you slowly. What should you do?",
+    "options": [
+      {
+        "en": "Speed up"
+      },
+      {
+        "en": "Change direction"
+      },
+      {
+        "en": "Hold your speed"
+      },
+      {
+        "en": "Brake suddenly"
+      }
+    ]
+  },
+  {
+    "id": "AT-13",
+    "topic": "attitude",
+    "promptEn": "Which driving style increases danger for everyone?",
+    "options": [
+      {
+        "en": "Considerate"
+      },
+      {
+        "en": "Defensive"
+      },
+      {
+        "en": "Competitive"
+      },
+      {
+        "en": "Responsible"
+      }
+    ]
+  },
+  {
+    "id": "AT-14",
+    "topic": "attitude",
+    "promptEn": "On a narrow single-track road, where should you wait if a vehicle is approaching?",
+    "options": [
+      {
+        "en": "In the passing place opposite"
+      },
+      {
+        "en": "On the verge"
+      },
+      {
+        "en": "In the passing place on your side"
+      },
+      {
+        "en": "In the centre of the road"
+      }
+    ]
+  },
+  {
+    "id": "AT-15",
+    "topic": "attitude",
+    "promptEn": "A person herding animals asks you to stop. What should you do?",
+    "options": [
+      {
+        "en": "Ignore them"
+      },
+      {
+        "en": "Stop and switch off the engine"
+      },
+      {
+        "en": "Drive slowly past"
+      },
+      {
+        "en": "Sound your horn"
+      }
+    ]
+  },
+  {
+    "id": "AT-16",
+    "topic": "attitude",
+    "promptEn": "Why should you never wave pedestrians across the road?",
+    "options": [
+      {
+        "en": "They may be distracted"
+      },
+      {
+        "en": "Other vehicles may not stop"
+      },
+      {
+        "en": "It delays traffic"
+      },
+      {
+        "en": "It's unnecessary"
+      }
+    ]
+  },
+  {
+    "id": "AT-17",
+    "topic": "attitude",
+    "promptEn": "You're driving at the speed limit and a vehicle behind wants to overtake. What should you do?",
+    "options": [
+      {
+        "en": "Accelerate"
+      },
+      {
+        "en": "Block them"
+      },
+      {
+        "en": "Hold steady and allow overtaking"
+      },
+      {
+        "en": "Sound your horn"
+      }
+    ]
+  },
+  {
+    "id": "AT-18",
+    "topic": "attitude",
+    "promptEn": "Which vehicle uses a blue flashing beacon?",
+    "options": [
+      {
+        "en": "Snow plough"
+      },
+      {
+        "en": "Breakdown recovery"
+      },
+      {
+        "en": "Bomb disposal"
+      },
+      {
+        "en": "Road maintenance"
+      }
+    ]
+  },
+  {
+    "id": "AT-19",
+    "topic": "attitude",
+    "promptEn": "How should you approach an unmarked crossroads?",
+    "options": [
+      {
+        "en": "Accelerate"
+      },
+      {
+        "en": "Keep right"
+      },
+      {
+        "en": "Slow down and check both ways"
+      },
+      {
+        "en": "Look left only"
+      }
+    ]
+  },
+  {
+    "id": "AT-20",
+    "topic": "attitude",
+    "promptEn": "At night on a clear road with oncoming traffic, which lights should you use?",
+    "options": [
+      {
+        "en": "Full beam"
+      },
+      {
+        "en": "Fog lights"
+      },
+      {
+        "en": "Sidelights"
+      },
+      {
+        "en": "Dipped headlights"
+      }
+    ]
+  },
+  {
+    "id": "AT-21",
+    "topic": "attitude",
+    "promptEn": "At a pedestrian crossing controlled by push-button signals, what light comes after green?",
+    "options": [
+      {
+        "en": "Steady red"
+      },
+      {
+        "en": "Flashing amber"
+      },
+      {
+        "en": "Steady amber"
+      },
+      {
+        "en": "Flashing green"
+      }
+    ]
+  },
+  {
+    "id": "AT-22",
+    "topic": "attitude",
+    "promptEn": "In good, dry conditions, when should you apply the two-second following rule?",
+    "options": [
+      {
+        "en": "When checking distance from the vehicle ahead"
+      },
+      {
+        "en": "Before restarting the engine"
+      },
+      {
+        "en": "Before signalling"
+      },
+      {
+        "en": "When lights turn green"
+      }
+    ]
+  },
+  {
+    "id": "AT-23",
+    "topic": "attitude",
+    "promptEn": "What problem can a loose diesel fuel cap cause while driving?",
+    "options": [
+      {
+        "en": "Hard starting"
+      },
+      {
+        "en": "Slippery road surface for others"
+      },
+      {
+        "en": "Better fuel economy"
+      },
+      {
+        "en": "Lower emissions"
+      }
+    ]
+  },
+  {
+    "id": "AT-24",
+    "topic": "attitude",
+    "promptEn": "Which dashboard light shows that main-beam headlights are on?",
+    "options": [
+      {
+        "en": "Green headlamp symbol with straight lines"
+      },
+      {
+        "en": "Amber fog light symbol"
+      },
+      {
+        "en": "Red battery symbol"
+      },
+      {
+        "en": "Blue sidelights symbol"
+      }
+    ]
+  },
+  {
+    "id": "AT-25",
+    "topic": "attitude",
+    "promptEn": "You're driving a slow vehicle on a narrow, winding road. What should you do?",
+    "options": [
+      {
+        "en": "Block overtaking"
+      },
+      {
+        "en": "Pull in when safe to let others pass"
+      },
+      {
+        "en": "Keep speeding up"
+      },
+      {
+        "en": "Signal continuously"
+      }
+    ]
+  },
+  {
+    "id": "AT-26",
+    "topic": "attitude",
+    "promptEn": "You're driving at the speed limit and a vehicle behind flashes headlights. What should you do?",
+    "options": [
+      {
+        "en": "Accelerate"
+      },
+      {
+        "en": "Brake sharply"
+      },
+      {
+        "en": "Block overtaking"
+      },
+      {
+        "en": "Allow the vehicle to pass safely"
+      }
+    ]
+  },
+  {
+    "id": "AT-27",
+    "topic": "attitude",
+    "promptEn": "How can you best prevent fuel from spilling onto the road?",
+    "options": [
+      {
+        "en": "Keep tank partially full"
+      },
+      {
+        "en": "Use locking cap"
+      },
+      {
+        "en": "Check gauge regularly"
+      },
+      {
+        "en": "Ensure the filler cap is secure"
+      }
+    ]
+  },
+  {
+    "id": "AT-28",
+    "topic": "attitude",
+    "promptEn": "Which emergency vehicle uses a green flashing beacon?",
+    "options": [
+      {
+        "en": "Fire engine"
+      },
+      {
+        "en": "Road gritter"
+      },
+      {
+        "en": "Ambulance"
+      },
+      {
+        "en": "Doctor's car"
+      }
+    ]
+  },
+  {
+    "id": "AT-29",
+    "topic": "attitude",
+    "promptEn": "How should you overtake a horse and rider safely?",
+    "options": [
+      {
+        "en": "Use the horn"
+      },
+      {
+        "en": "Pass quickly"
+      },
+      {
+        "en": "Flash headlights"
+      },
+      {
+        "en": "Pass slowly and carefully"
+      }
+    ]
+  },
+  {
+    "id": "AT-30",
+    "topic": "attitude",
+    "promptEn": "On roads where trams operate, which road users are most at risk from rails?",
+    "options": [
+      {
+        "en": "Cars"
+      },
+      {
+        "en": "Buses"
+      },
+      {
+        "en": "Lorries"
+      },
+      {
+        "en": "Bicycles"
+      }
+    ]
+  },
+  {
+    "id": "AT-31",
+    "topic": "attitude",
+    "promptEn": "Why should you position your vehicle correctly early before turning right?",
+    "options": [
+      {
+        "en": "To let others pass"
+      },
+      {
+        "en": "To signal your intentions clearly"
+      },
+      {
+        "en": "To increase speed"
+      },
+      {
+        "en": "To block traffic"
+      }
+    ]
+  },
+  {
+    "id": "AT-32",
+    "topic": "attitude",
+    "promptEn": "At night on an unlit road, what lights should you use when following another vehicle?",
+    "options": [
+      {
+        "en": "Flash headlights"
+      },
+      {
+        "en": "Full beam"
+      },
+      {
+        "en": "Switch off lights"
+      },
+      {
+        "en": "Dipped headlights"
+      }
+    ]
+  }
+]

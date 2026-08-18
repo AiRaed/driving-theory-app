@@ -1,0 +1,850 @@
+{
+  "vehicle-handling": {
+    "VH-17": {
+      "promptPl": "Dlaczego przy wyprzedzaniu w nocy powinieneś być szczególnie ostrożny?",
+      "options": [
+        {
+          "pl": "Światła nadjeżdżających ułatwiają jazdę"
+        },
+        {
+          "pl": "Nie widzisz tak daleko przed siebie jak za dnia"
+        },
+        {
+          "pl": "Wymagane jest użycie klaksonu"
+        },
+        {
+          "pl": "Wyprzedzanie w nocy jest zawsze zabronione"
+        }
+      ]
+    },
+    "VH-18": {
+      "promptPl": "Nocą oślepiają Cię światła nadjeżdżającego pojazdu. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Opuścić daszek przeciwsłoneczny"
+        },
+        {
+          "pl": "Zwolnić lub w razie potrzeby się zatrzymać"
+        },
+        {
+          "pl": "Mrugać światłami drogowymi"
+        },
+        {
+          "pl": "Zasłonić oczy ręką"
+        }
+      ]
+    },
+    "VH-19": {
+      "promptPl": "Po jeździe we mgle, co musisz zrobić, gdy widoczność się poprawi?",
+      "options": [
+        {
+          "pl": "Wyłączyć światła przeciwmgielne"
+        },
+        {
+          "pl": "Zostawić tylne światła przeciwmgielne włączone"
+        },
+        {
+          "pl": "Zostawić przednie światła przeciwmgielne włączone"
+        },
+        {
+          "pl": "Zostawić je włączone na wszelki wypadek"
+        }
+      ]
+    },
+    "VH-20": {
+      "promptPl": "Dlaczego pojazdy mają tylne światła przeciwmgielne?",
+      "options": [
+        {
+          "pl": "Aby poprawić widoczność przy dużej prędkości"
+        },
+        {
+          "pl": "Aby pokazać, że pojazd się zepsuł"
+        },
+        {
+          "pl": "Aby lepiej widzieć pojazd w gęstej mgle"
+        },
+        {
+          "pl": "Aby ostrzec kierowców z tyłu, by się cofnęli"
+        }
+      ]
+    },
+    "VH-21": {
+      "promptPl": "Dlaczego niebezpiecznie jest zostawiać tylne światła przeciwmgielne włączone, gdy mgła opadła?",
+      "options": [
+        {
+          "pl": "Mogą być mylone ze światłami hamowania"
+        },
+        {
+          "pl": "Uszkadzają instalację elektryczną"
+        },
+        {
+          "pl": "Obniżają osiągi silnika"
+        },
+        {
+          "pl": "Powodują zużycie opon"
+        }
+      ]
+    },
+    "VH-22": {
+      "promptPl": "Jaki jest główny cel środków uspokojenia ruchu?",
+      "options": [
+        {
+          "pl": "Zmniejszyć agresywną jazdę"
+        },
+        {
+          "pl": "Ułatwić parkowanie"
+        },
+        {
+          "pl": "Spowolnić pojazdy"
+        },
+        {
+          "pl": "Ułatwić wyprzedzanie"
+        }
+      ]
+    },
+    "VH-23": {
+      "promptPl": "Dlaczego jazda na luzie na długich odcinkach to zła praktyka?",
+      "options": [
+        {
+          "pl": "Zwiększa ryzyko poślizgu"
+        },
+        {
+          "pl": "Silnik może zgasnąć"
+        },
+        {
+          "pl": "Tracisz hamowanie silnikiem"
+        },
+        {
+          "pl": "Rośnie zużycie paliwa"
+        }
+      ]
+    },
+    "VH-24": {
+      "promptPl": "Przy wyprzedzaniu w nocy, czego koniecznie unikać?",
+      "options": [
+        {
+          "pl": "Używania świateł"
+        },
+        {
+          "pl": "Oślepiania innych użytkowników drogi"
+        },
+        {
+          "pl": "Zmiany biegu"
+        },
+        {
+          "pl": "Zwolnienia"
+        }
+      ]
+    },
+    "VH-25": {
+      "promptPl": "Na oblodzonej drodze, jak daleko powinieneś jechać za pojazdem z przodu?",
+      "options": [
+        {
+          "pl": "4 razy normalny odstęp"
+        },
+        {
+          "pl": "6 razy normalny odstęp"
+        },
+        {
+          "pl": "8 razy normalny odstęp"
+        },
+        {
+          "pl": "10 razy normalny odstęp"
+        }
+      ]
+    },
+    "VH-26": {
+      "promptPl": "Dlaczego powinieneś unikać jazdy na luzie z góry?",
+      "options": [
+        {
+          "pl": "Zużywa więcej paliwa"
+        },
+        {
+          "pl": "Silnik może się przegrzać"
+        },
+        {
+          "pl": "Pojazd zbyt łatwo nabiera prędkości"
+        },
+        {
+          "pl": "Opony zużywają się szybciej"
+        }
+      ]
+    },
+    "VH-27": {
+      "promptPl": "Jaki jest skutek używania tylnych świateł przeciwmgielnych przy dobrej widoczności?",
+      "options": [
+        {
+          "pl": "Poprawia bezpieczeństwo holowania"
+        },
+        {
+          "pl": "Ostrzega duże pojazdy"
+        },
+        {
+          "pl": "Oślepia kierowców z tyłu"
+        },
+        {
+          "pl": "Trzyma ruch z daleka"
+        }
+      ]
+    },
+    "VH-28": {
+      "promptPl": "Na śliskiej nawierzchni, jaka technika pomaga zapobiec buksowaniu kół?",
+      "options": [
+        {
+          "pl": "Niski bieg i mocne przyspieszenie"
+        },
+        {
+          "pl": "Wysoki bieg i delikatne przyspieszenie"
+        },
+        {
+          "pl": "Mocne hamowanie"
+        },
+        {
+          "pl": "Gwałtowne skręcanie"
+        }
+      ]
+    },
+    "VH-29": {
+      "promptPl": "Jakich świateł musisz używać nocą na dobrze oświetlonej autostradzie?",
+      "options": [
+        {
+          "pl": "Tylko świateł pozycyjnych"
+        },
+        {
+          "pl": "Światła mijania"
+        },
+        {
+          "pl": "Tylnych świateł przeciwmgielnych"
+        },
+        {
+          "pl": "Przednich świateł przeciwmgielnych"
+        }
+      ]
+    },
+    "VH-30": {
+      "promptPl": "Do czego służy urządzenie typu rumble (wibrujące pasy)?",
+      "options": [
+        {
+          "pl": "Dawać wskazówki kierunku"
+        },
+        {
+          "pl": "Zapobiegać ucieczce zwierząt"
+        },
+        {
+          "pl": "Ostrzec Cię o zagrożeniu"
+        },
+        {
+          "pl": "Sprawdzać ciśnienie w oponach"
+        }
+      ]
+    },
+    "VH-31": {
+      "promptPl": "Kiedy najbardziej wyczuwasz hamowanie silnikiem?",
+      "options": [
+        {
+          "pl": "Gdy polegasz tylko na hamulcu ręcznym"
+        },
+        {
+          "pl": "Gdy wrzucasz luz"
+        },
+        {
+          "pl": "Gdy redukujesz na niższy bieg"
+        },
+        {
+          "pl": "Gdy wrzucasz wyższy bieg"
+        }
+      ]
+    },
+    "VH-32": {
+      "promptPl": "Przy bardzo ulewnym deszczu, co dzieje się z całkowitą drogą zatrzymania?",
+      "options": [
+        {
+          "pl": "Prawdopodobnie jest dłuższa (często około dwukrotnie)"
+        },
+        {
+          "pl": "Prawdopodobnie jest krótsza"
+        },
+        {
+          "pl": "Staje się dziesięciokrotnie dłuższa"
+        },
+        {
+          "pl": "Pozostaje taka sama"
+        }
+      ]
+    },
+    "VH-33": {
+      "promptPl": "Dlaczego powinieneś zwolnić, jadąc we mgle?",
+      "options": [
+        {
+          "pl": "Bo hamulce działają mniej skutecznie"
+        },
+        {
+          "pl": "Bo światła zawsze Cię oślepiają"
+        },
+        {
+          "pl": "Bo silnik nagrzewa się wolniej"
+        },
+        {
+          "pl": "Bo nie zauważasz zagrożeń wystarczająco wcześnie"
+        }
+      ]
+    },
+    "VH-34": {
+      "promptPl": "Po przejechaniu przez głęboką wodę lub powódź, co powinieneś wkrótce zrobić?",
+      "options": [
+        {
+          "pl": "Delikatnie sprawdzić hamulce, czy działają"
+        },
+        {
+          "pl": "Mocno przyspieszyć, by osuszyć opony"
+        },
+        {
+          "pl": "Unikać hamowania przez kilka mil"
+        },
+        {
+          "pl": "Zatrzymać się na godzinę, by hamulce wyschły"
+        }
+      ]
+    },
+    "VH-35": {
+      "promptPl": "Nocą na autostradzie, jeśli przed Tobą są pojazdy, których świateł zwykle powinieneś użyć?",
+      "options": [
+        {
+          "pl": "Przednich świateł przeciwmgielnych"
+        },
+        {
+          "pl": "Światła drogowe"
+        },
+        {
+          "pl": "Tylko świateł pozycyjnych"
+        },
+        {
+          "pl": "Światła mijania"
+        }
+      ]
+    },
+    "VH-36": {
+      "promptPl": "Jakiego koloru są odblaskowe znaczniki oznaczające lewą krawędź autostrady?",
+      "options": [
+        {
+          "pl": "Zielone"
+        },
+        {
+          "pl": "Bursztynowe"
+        },
+        {
+          "pl": "Czerwone"
+        },
+        {
+          "pl": "Białe"
+        }
+      ]
+    },
+    "VH-37": {
+      "promptPl": "Który czynnik najbardziej wpływa na drogę zatrzymania?",
+      "options": [
+        {
+          "pl": "Wystawione ograniczenie prędkości"
+        },
+        {
+          "pl": "Oświetlenie uliczne"
+        },
+        {
+          "pl": "Pora dnia"
+        },
+        {
+          "pl": "Stan opon i przyczepność"
+        }
+      ]
+    },
+    "VH-38": {
+      "promptPl": "Po intensywnych opadach śniegu, co powinieneś rozważyć przed rozpoczęciem podróży?",
+      "options": [
+        {
+          "pl": "Zamontowanie bursztynowej lampy ostrzegawczej"
+        },
+        {
+          "pl": "Jazdę bez pasa bezpieczeństwa"
+        },
+        {
+          "pl": "Noszenie okularów przeciwsłonecznych"
+        },
+        {
+          "pl": "Czy podróż jest konieczna"
+        }
+      ]
+    },
+    "VH-39": {
+      "promptPl": "Kiedy musisz używać świateł mijania w ciągu dnia?",
+      "options": [
+        {
+          "pl": "Cały czas"
+        },
+        {
+          "pl": "Tylko na wąskich ulicach"
+        },
+        {
+          "pl": "Gdy widoczność jest słaba"
+        },
+        {
+          "pl": "Podczas parkowania"
+        }
+      ]
+    },
+    "VH-40": {
+      "promptPl": "Widoczność w dzień jest słaba, ale nie poważnie ograniczona. Jakich świateł powinieneś użyć?",
+      "options": [
+        {
+          "pl": "Światła mijania i przeciwmgielne"
+        },
+        {
+          "pl": "Przednie światła przeciwmgielne"
+        },
+        {
+          "pl": "Światła mijania"
+        },
+        {
+          "pl": "Tylne światła przeciwmgielne"
+        }
+      ]
+    },
+    "VH-41": {
+      "promptPl": "Dlaczego kierowcy mogą zakładać łańcuchy śniegowe na koła?",
+      "options": [
+        {
+          "pl": "Aby chronić nawierzchnię"
+        },
+        {
+          "pl": "Aby zmniejszyć zużycie opon"
+        },
+        {
+          "pl": "Aby zmniejszyć poślizg w głębokim śniegu"
+        },
+        {
+          "pl": "Aby zapobiec blokowaniu hamulców"
+        }
+      ]
+    },
+    "VH-42": {
+      "promptPl": "Kiedy wolno używać przednich świateł przeciwmgielnych?",
+      "options": [
+        {
+          "pl": "Gdy widoczność jest poważnie ograniczona"
+        },
+        {
+          "pl": "Gdy są zamontowane powyżej zderzaka"
+        },
+        {
+          "pl": "Gdy są słabsze od świateł mijania"
+        },
+        {
+          "pl": "Przy ostrzeganiu klaksonem"
+        }
+      ]
+    },
+    "VH-43": {
+      "promptPl": "Używasz przednich świateł przeciwmgielnych, a mgła opada. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zostawić je włączone, jeśli inni mają światła"
+        },
+        {
+          "pl": "Wyłączyć je, jeśli widoczność jest dobra"
+        },
+        {
+          "pl": "Mrugać nimi, by ostrzec innych"
+        },
+        {
+          "pl": "Używać ich zamiast świateł mijania"
+        }
+      ]
+    },
+    "VH-44": {
+      "promptPl": "Dlaczego powinieneś wyłączyć tylne światła przeciwmgielne, gdy mgła opadła?",
+      "options": [
+        {
+          "pl": "Aby pomóc działaniu świateł mijania"
+        },
+        {
+          "pl": "Tylko aby nie rozładować akumulatora"
+        },
+        {
+          "pl": "Aby uniknąć utraty mocy silnika"
+        },
+        {
+          "pl": "Aby nie oślepiać kierowców z tyłu"
+        }
+      ]
+    },
+    "VH-45": {
+      "promptPl": "Jak możesz użyć silnika, by pomóc kontrolować prędkość?",
+      "options": [
+        {
+          "pl": "Redukując na niższy bieg"
+        },
+        {
+          "pl": "Wrzucając bieg wsteczny"
+        },
+        {
+          "pl": "Wrzucając wyższy bieg"
+        },
+        {
+          "pl": "Wrzucając luz"
+        }
+      ]
+    }
+  },
+  "motorway-driving": {
+    "MW-11": {
+      "promptPl": "Znaki nad jezdnią pokazują czerwony krzyżyk nad Twoim pasem. Co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Zjechać z autostrady na następnym zjeździe"
+        },
+        {
+          "pl": "Ostrożnie kontynuować"
+        },
+        {
+          "pl": "Użyć pasa awaryjnego"
+        },
+        {
+          "pl": "Natychmiast zjechać z tego pasa"
+        }
+      ]
+    },
+    "MW-12": {
+      "promptPl": "Jak powinieneś włączyć się na autostradę z pasa włączania?",
+      "options": [
+        {
+          "pl": "Zatrzymać się na końcu pasa włączania"
+        },
+        {
+          "pl": "Jeździć pasem awaryjnym"
+        },
+        {
+          "pl": "Przyspieszyć do prędkości ruchu i bezpiecznie się włączyć"
+        },
+        {
+          "pl": "Wjechać z bardzo małą prędkością"
+        }
+      ]
+    },
+    "MW-13": {
+      "promptPl": "Jaka jest maksymalna prędkość dla samochodu holującego przyczepę na autostradzie?",
+      "options": [
+        {
+          "pl": "40 mph"
+        },
+        {
+          "pl": "50 mph"
+        },
+        {
+          "pl": "60 mph"
+        },
+        {
+          "pl": "70 mph"
+        }
+      ]
+    },
+    "MW-14": {
+      "promptPl": "Po użyciu telefonu awaryjnego na autostradzie, gdzie powinieneś czekać?",
+      "options": [
+        {
+          "pl": "Obok swojego pojazdu"
+        },
+        {
+          "pl": "Na pasie awaryjnym"
+        },
+        {
+          "pl": "Przy telefonie"
+        },
+        {
+          "pl": "Z dala od ruchu"
+        }
+      ]
+    },
+    "MW-15": {
+      "promptPl": "Po naprawie pojazdu na pasie awaryjnym, jak powinieneś wrócić do ruchu?",
+      "options": [
+        {
+          "pl": "Powoli wyjechać i przyspieszać na jezdni"
+        },
+        {
+          "pl": "Czekać, aż inny kierowca mignie światłami"
+        },
+        {
+          "pl": "Przyspieszyć na pasie awaryjnym przed włączeniem się"
+        },
+        {
+          "pl": "Użyć świateł awaryjnych podczas wyjazdu"
+        }
+      ]
+    },
+    "MW-16": {
+      "promptPl": "Jak zwykle powinny być używane pasy na autostradzie?",
+      "options": [
+        {
+          "pl": "Trzymać się jednego pasa"
+        },
+        {
+          "pl": "Używać pasa z najmniejszym ruchem"
+        },
+        {
+          "pl": "Trzymać się lewej strony, chyba że wyprzedzasz"
+        },
+        {
+          "pl": "Często zmieniać pasy"
+        }
+      ]
+    },
+    "MW-17": {
+      "promptPl": "Gdzie na autostradzie znajdują się bursztynowe odblaskowe znaczniki?",
+      "options": [
+        {
+          "pl": "Między pasami"
+        },
+        {
+          "pl": "Między jezdnią a pasem dzielącym (central reservation)"
+        },
+        {
+          "pl": "Między pasem awaryjnym a jezdnią"
+        },
+        {
+          "pl": "Tylko na pasach włączania"
+        }
+      ]
+    },
+    "MW-18": {
+      "promptPl": "Co oznacza czerwony krzyżyk nad pasem awaryjnym?",
+      "options": [
+        {
+          "pl": "Możesz się tam zatrzymać"
+        },
+        {
+          "pl": "Możesz jechać tym pasem"
+        },
+        {
+          "pl": "Nie wolno używać tego pasa"
+        },
+        {
+          "pl": "To miejsce wypoczynku"
+        }
+      ]
+    },
+    "MW-19": {
+      "promptPl": "Które pojazdy powinny zwykle używać lewego pasa na autostradzie?",
+      "options": [
+        {
+          "pl": "Tylko wolne pojazdy"
+        },
+        {
+          "pl": "Tylko pojazdy uprzywilejowane"
+        },
+        {
+          "pl": "Tylko duże pojazdy"
+        },
+        {
+          "pl": "Każdy pojazd, który nie wyprzedza"
+        }
+      ]
+    },
+    "MW-20": {
+      "promptPl": "Jakie ograniczenie dotyczy kierowców z prawem jazdy tymczasowym (provisional)?",
+      "options": [
+        {
+          "pl": "Zakaz jazdy nocą"
+        },
+        {
+          "pl": "Zakaz jazdy powyżej 30 mph"
+        },
+        {
+          "pl": "Musi towarzyszyć im uprawniony kierowca"
+        },
+        {
+          "pl": "Ograniczenie do jednego pasażera"
+        }
+      ]
+    },
+    "MW-21": {
+      "promptPl": "Wyświetlone ograniczenie prędkości nad pasem awaryjnym zwykle oznacza, że jest on używany jako aktywny pas ruchu.",
+      "options": [
+        {
+          "pl": "Prawda"
+        },
+        {
+          "pl": "Fałsz"
+        }
+      ]
+    },
+    "MW-22": {
+      "promptPl": "Zatrzymałeś się w strefie awaryjnej. Co powinieneś zrobić przed powrotem na autostradę?",
+      "options": [
+        {
+          "pl": "W razie potrzeby użyć telefonu awaryjnego, potem wrócić, gdy to bezpieczne"
+        },
+        {
+          "pl": "Dać sygnał ręką podczas ruszania"
+        },
+        {
+          "pl": "Włączyć światła mijania przed ruszeniem"
+        },
+        {
+          "pl": "Zawsze ruszać ze światłami awaryjnymi"
+        }
+      ]
+    },
+    "MW-23": {
+      "promptPl": "Jesteś na autostradzie i musisz szybko zwolnić, bo ruch z przodu się zatrzymuje. Jak ostrzec kierowców z tyłu?",
+      "options": [
+        {
+          "pl": "Krótko włączyć światła awaryjne"
+        },
+        {
+          "pl": "Wielokrotnie mrugać światłami"
+        },
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Włączać i wyłączać światła mijania"
+        }
+      ]
+    },
+    "MW-24": {
+      "promptPl": "Który z tych pojazdów NIE może używać prawego pasa trzypasmowej autostrady?",
+      "options": [
+        {
+          "pl": "Małe busy dostawcze"
+        },
+        {
+          "pl": "Motocykle"
+        },
+        {
+          "pl": "Pojazdy holujące przyczepę"
+        },
+        {
+          "pl": "Motocykl z wózkiem bocznym"
+        }
+      ]
+    },
+    "MW-25": {
+      "promptPl": "Holujesz przyczepę na trzypasmowej autostradzie. Kiedy wolno używać prawego pasa?",
+      "options": [
+        {
+          "pl": "Gdy są zamknięte pasy"
+        },
+        {
+          "pl": "Gdy ruch jest wolny"
+        },
+        {
+          "pl": "Nigdy (przyczepy nie mogą używać prawego pasa)"
+        },
+        {
+          "pl": "Gdy duże pojazdy są na lewym i środkowym pasie"
+        }
+      ]
+    },
+    "MW-26": {
+      "promptPl": "Dostajesz przebicia na autostradzie i zatrzymujesz się na pasie awaryjnym. Co powinieneś zrobić dalej?",
+      "options": [
+        {
+          "pl": "Natychmiast zmienić koło"
+        },
+        {
+          "pl": "Użyć telefonu awaryjnego lub wezwać pomoc"
+        },
+        {
+          "pl": "Machnąć innym pojazdom o pomoc"
+        },
+        {
+          "pl": "Zmieniać koło tylko, gdy ktoś jest z Tobą"
+        }
+      ]
+    },
+    "MW-27": {
+      "promptPl": "Kiedy wolno zatrzymać się na autostradzie?",
+      "options": [
+        {
+          "pl": "Aby przeczytać mapę"
+        },
+        {
+          "pl": "Aby odpocząć, gdy jesteś zmęczony"
+        },
+        {
+          "pl": "Gdy dzwoni telefon"
+        },
+        {
+          "pl": "Tylko w nagłym wypadku lub awarii"
+        }
+      ]
+    },
+    "MW-28": {
+      "promptPl": "Widzisz znaki odliczania na autostradzie (3 paski, potem 2, potem 1). Co Ci mówią?",
+      "options": [
+        {
+          "pl": "Odległość do mostu"
+        },
+        {
+          "pl": "Odległość do następnego telefonu awaryjnego"
+        },
+        {
+          "pl": "Odległość do następnego zjazdu/skrzyżowania"
+        },
+        {
+          "pl": "Z przodu jest kontrola policji"
+        }
+      ]
+    },
+    "MW-29": {
+      "promptPl": "Bezpośrednio po włączeniu się na autostradę, co zwykle powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Od razu próbować wyprzedzać"
+        },
+        {
+          "pl": "Ponownie sprawdzić lusterka i pozycję w ruchu"
+        },
+        {
+          "pl": "Przejść na środkowy pas"
+        },
+        {
+          "pl": "Zahamować, by zrobić miejsce"
+        }
+      ]
+    },
+    "MW-30": {
+      "promptPl": "Dlaczego powinieneś wykorzystać całą długość pasa włączania, wjeżdżając na autostradę?",
+      "options": [
+        {
+          "pl": "Aby móc zawrócić w razie potrzeby"
+        },
+        {
+          "pl": "Aby włączyć się bezpośrednio na pasy wyprzedzania"
+        },
+        {
+          "pl": "Aby nabrać prędkości i bezpiecznie włączyć się w strumień ruchu"
+        },
+        {
+          "pl": "Bo możesz kontynuować jazdę pasem awaryjnym"
+        }
+      ]
+    },
+    "MW-31": {
+      "promptPl": "Co może pomóc zmniejszyć zbiegnięcie się pojazdów i nagłe hamowanie na autostradzie?",
+      "options": [
+        {
+          "pl": "Tylko krajowe ograniczenia prędkości"
+        },
+        {
+          "pl": "Zamknięcia pasów"
+        },
+        {
+          "pl": "Zmienne ograniczenia prędkości"
+        },
+        {
+          "pl": "Systemy ruchu przeciwnego (contraflow)"
+        }
+      ]
+    }
+  }
+}

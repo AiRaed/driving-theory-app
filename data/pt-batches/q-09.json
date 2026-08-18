@@ -1,0 +1,1144 @@
+[
+  {
+    "id": "VH-17",
+    "topic": "vehicle-handling",
+    "promptEn": "When overtaking at night, why should you be extra cautious?",
+    "options": [
+      {
+        "en": "Oncoming headlights make it easier",
+        "correct": false
+      },
+      {
+        "en": "You can't see as far ahead as in daylight",
+        "correct": true
+      },
+      {
+        "en": "Horn use is required",
+        "correct": false
+      },
+      {
+        "en": "Overtaking is always banned at night",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-18",
+    "topic": "vehicle-handling",
+    "promptEn": "At night you're dazzled by oncoming headlights. What should you do?",
+    "options": [
+      {
+        "en": "Pull down your sun visor",
+        "correct": false
+      },
+      {
+        "en": "Slow down or stop if necessary",
+        "correct": true
+      },
+      {
+        "en": "Flash main beam",
+        "correct": false
+      },
+      {
+        "en": "Shade eyes with your hand",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-19",
+    "topic": "vehicle-handling",
+    "promptEn": "After driving in fog, what must you do when visibility improves?",
+    "options": [
+      {
+        "en": "Switch off fog lights",
+        "correct": true
+      },
+      {
+        "en": "Keep rear fog lights on",
+        "correct": false
+      },
+      {
+        "en": "Keep front fog lights on",
+        "correct": false
+      },
+      {
+        "en": "Leave them on just in case",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-20",
+    "topic": "vehicle-handling",
+    "promptEn": "Why are rear fog lights fitted to vehicles?",
+    "options": [
+      {
+        "en": "To improve visibility at high speed",
+        "correct": false
+      },
+      {
+        "en": "To show the vehicle has broken down",
+        "correct": false
+      },
+      {
+        "en": "To make the vehicle more visible in thick fog",
+        "correct": true
+      },
+      {
+        "en": "To warn drivers behind to keep back",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-21",
+    "topic": "vehicle-handling",
+    "promptEn": "Why is it dangerous to leave rear fog lights on once fog has cleared?",
+    "options": [
+      {
+        "en": "They can be mistaken for brake lights",
+        "correct": true
+      },
+      {
+        "en": "They damage the electrical system",
+        "correct": false
+      },
+      {
+        "en": "They reduce engine performance",
+        "correct": false
+      },
+      {
+        "en": "They cause tyre wear",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-22",
+    "topic": "vehicle-handling",
+    "promptEn": "What is the main purpose of traffic-calming measures?",
+    "options": [
+      {
+        "en": "To reduce aggressive driving",
+        "correct": false
+      },
+      {
+        "en": "To make parking easier",
+        "correct": false
+      },
+      {
+        "en": "To slow vehicles down",
+        "correct": true
+      },
+      {
+        "en": "To improve overtaking",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-23",
+    "topic": "vehicle-handling",
+    "promptEn": "Why is travelling in neutral for long distances poor driving practice?",
+    "options": [
+      {
+        "en": "It increases skidding risk",
+        "correct": false
+      },
+      {
+        "en": "The engine may stall",
+        "correct": false
+      },
+      {
+        "en": "You lose engine braking",
+        "correct": true
+      },
+      {
+        "en": "Fuel use increases",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-24",
+    "topic": "vehicle-handling",
+    "promptEn": "When overtaking at night, what is essential to avoid?",
+    "options": [
+      {
+        "en": "Using headlights",
+        "correct": false
+      },
+      {
+        "en": "Dazzling other road users",
+        "correct": true
+      },
+      {
+        "en": "Changing gear",
+        "correct": false
+      },
+      {
+        "en": "Slowing down",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-25",
+    "topic": "vehicle-handling",
+    "promptEn": "On an icy road, how far should you stay behind the vehicle in front?",
+    "options": [
+      {
+        "en": "4 times normal distance",
+        "correct": false
+      },
+      {
+        "en": "6 times normal distance",
+        "correct": false
+      },
+      {
+        "en": "8 times normal distance",
+        "correct": false
+      },
+      {
+        "en": "10 times normal distance",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VH-26",
+    "topic": "vehicle-handling",
+    "promptEn": "Why should you avoid coasting downhill?",
+    "options": [
+      {
+        "en": "It uses more fuel",
+        "correct": false
+      },
+      {
+        "en": "The engine may overheat",
+        "correct": false
+      },
+      {
+        "en": "The vehicle can gain speed too easily",
+        "correct": true
+      },
+      {
+        "en": "Tyres wear faster",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-27",
+    "topic": "vehicle-handling",
+    "promptEn": "What is the effect of using rear fog lights in clear conditions?",
+    "options": [
+      {
+        "en": "Improves towing safety",
+        "correct": false
+      },
+      {
+        "en": "Warns large vehicles",
+        "correct": false
+      },
+      {
+        "en": "Dazzles drivers behind",
+        "correct": true
+      },
+      {
+        "en": "Keeps traffic back",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-28",
+    "topic": "vehicle-handling",
+    "promptEn": "When driving on a slippery surface, what technique helps prevent wheelspin?",
+    "options": [
+      {
+        "en": "Use a low gear and accelerate hard",
+        "correct": false
+      },
+      {
+        "en": "Use a high gear and gentle acceleration",
+        "correct": true
+      },
+      {
+        "en": "Brake firmly",
+        "correct": false
+      },
+      {
+        "en": "Turn steering sharply",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-29",
+    "topic": "vehicle-handling",
+    "promptEn": "Which lights must you use on a well-lit motorway at night?",
+    "options": [
+      {
+        "en": "Sidelights only",
+        "correct": false
+      },
+      {
+        "en": "Headlights",
+        "correct": true
+      },
+      {
+        "en": "Rear fog lights",
+        "correct": false
+      },
+      {
+        "en": "Front fog lights",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-30",
+    "topic": "vehicle-handling",
+    "promptEn": "What is a rumble device designed to do?",
+    "options": [
+      {
+        "en": "Give directions",
+        "correct": false
+      },
+      {
+        "en": "Prevent animals escaping",
+        "correct": false
+      },
+      {
+        "en": "Alert you to a hazard",
+        "correct": true
+      },
+      {
+        "en": "Check tyre pressure",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-31",
+    "topic": "vehicle-handling",
+    "promptEn": "When do you feel engine braking most clearly?",
+    "options": [
+      {
+        "en": "When you rely only on the parking brake",
+        "correct": false
+      },
+      {
+        "en": "When you select neutral",
+        "correct": false
+      },
+      {
+        "en": "When you change down to a lower gear",
+        "correct": true
+      },
+      {
+        "en": "When you change up to a higher gear",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-32",
+    "topic": "vehicle-handling",
+    "promptEn": "In very heavy rain, what happens to your overall stopping distance?",
+    "options": [
+      {
+        "en": "It is likely to be longer (often around double)",
+        "correct": true
+      },
+      {
+        "en": "It is likely to be shorter",
+        "correct": false
+      },
+      {
+        "en": "It becomes ten times longer",
+        "correct": false
+      },
+      {
+        "en": "It stays the same",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-33",
+    "topic": "vehicle-handling",
+    "promptEn": "Why should you slow down when driving in fog?",
+    "options": [
+      {
+        "en": "Because brakes work less effectively",
+        "correct": false
+      },
+      {
+        "en": "Because headlights always dazzle you",
+        "correct": false
+      },
+      {
+        "en": "Because the engine warms up slower",
+        "correct": false
+      },
+      {
+        "en": "Because you can't see hazards as early",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VH-34",
+    "topic": "vehicle-handling",
+    "promptEn": "After driving through deep water or floodwater, what should you do soon after?",
+    "options": [
+      {
+        "en": "Test your brakes gently to check they're working",
+        "correct": true
+      },
+      {
+        "en": "Accelerate hard to dry the tyres",
+        "correct": false
+      },
+      {
+        "en": "Avoid using brakes for several miles",
+        "correct": false
+      },
+      {
+        "en": "Stop for an hour to let brakes dry",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-35",
+    "topic": "vehicle-handling",
+    "promptEn": "On a motorway at night, if vehicles are ahead of you, which headlights should you normally use?",
+    "options": [
+      {
+        "en": "Front fog lights",
+        "correct": false
+      },
+      {
+        "en": "Main beam",
+        "correct": false
+      },
+      {
+        "en": "Sidelights only",
+        "correct": false
+      },
+      {
+        "en": "Dipped headlights",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VH-36",
+    "topic": "vehicle-handling",
+    "promptEn": "What colour reflective studs mark the left edge of a motorway?",
+    "options": [
+      {
+        "en": "Green",
+        "correct": false
+      },
+      {
+        "en": "Amber",
+        "correct": false
+      },
+      {
+        "en": "Red",
+        "correct": true
+      },
+      {
+        "en": "White",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-37",
+    "topic": "vehicle-handling",
+    "promptEn": "Which factor most affects your stopping distance?",
+    "options": [
+      {
+        "en": "The posted speed limit",
+        "correct": false
+      },
+      {
+        "en": "Street lighting",
+        "correct": false
+      },
+      {
+        "en": "Time of day",
+        "correct": false
+      },
+      {
+        "en": "Tyre condition and grip",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VH-38",
+    "topic": "vehicle-handling",
+    "promptEn": "After heavy snowfall, what should you consider before starting a journey?",
+    "options": [
+      {
+        "en": "Fitting an amber beacon",
+        "correct": false
+      },
+      {
+        "en": "Driving without a seatbelt",
+        "correct": false
+      },
+      {
+        "en": "Wearing sunglasses",
+        "correct": false
+      },
+      {
+        "en": "Whether the journey is essential",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VH-39",
+    "topic": "vehicle-handling",
+    "promptEn": "When must you use dipped headlights during the day?",
+    "options": [
+      {
+        "en": "All the time",
+        "correct": false
+      },
+      {
+        "en": "On narrow streets only",
+        "correct": false
+      },
+      {
+        "en": "When visibility is poor",
+        "correct": true
+      },
+      {
+        "en": "When parking",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-40",
+    "topic": "vehicle-handling",
+    "promptEn": "Daylight visibility is poor but not seriously reduced. Which lights should you use?",
+    "options": [
+      {
+        "en": "Headlights and fog lights",
+        "correct": false
+      },
+      {
+        "en": "Front fog lights",
+        "correct": false
+      },
+      {
+        "en": "Dipped headlights",
+        "correct": true
+      },
+      {
+        "en": "Rear fog lights",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-41",
+    "topic": "vehicle-handling",
+    "promptEn": "Why might drivers fit snow chains to their wheels?",
+    "options": [
+      {
+        "en": "To protect the road surface",
+        "correct": false
+      },
+      {
+        "en": "To reduce tyre wear",
+        "correct": false
+      },
+      {
+        "en": "To reduce skidding in deep snow",
+        "correct": true
+      },
+      {
+        "en": "To stop brakes locking",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-42",
+    "topic": "vehicle-handling",
+    "promptEn": "When are front fog lights allowed to be used?",
+    "options": [
+      {
+        "en": "When visibility is seriously reduced",
+        "correct": true
+      },
+      {
+        "en": "When fitted above the bumper",
+        "correct": false
+      },
+      {
+        "en": "When they are dimmer than headlights",
+        "correct": false
+      },
+      {
+        "en": "When using a horn warning",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-43",
+    "topic": "vehicle-handling",
+    "promptEn": "You're using front fog lights and the fog clears. What should you do?",
+    "options": [
+      {
+        "en": "Keep them on if others use lights",
+        "correct": false
+      },
+      {
+        "en": "Switch them off if visibility is good",
+        "correct": true
+      },
+      {
+        "en": "Flash them to warn others",
+        "correct": false
+      },
+      {
+        "en": "Use them instead of headlights",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "VH-44",
+    "topic": "vehicle-handling",
+    "promptEn": "Why should you switch off rear fog lights once fog has cleared?",
+    "options": [
+      {
+        "en": "To help headlights work",
+        "correct": false
+      },
+      {
+        "en": "To prevent battery drain only",
+        "correct": false
+      },
+      {
+        "en": "To avoid engine power loss",
+        "correct": false
+      },
+      {
+        "en": "To prevent dazzling drivers behind",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "VH-45",
+    "topic": "vehicle-handling",
+    "promptEn": "How can you use the engine to help control your speed?",
+    "options": [
+      {
+        "en": "By changing to a lower gear",
+        "correct": true
+      },
+      {
+        "en": "By selecting reverse gear",
+        "correct": false
+      },
+      {
+        "en": "By changing to a higher gear",
+        "correct": false
+      },
+      {
+        "en": "By selecting neutral",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-11",
+    "topic": "motorway-driving",
+    "promptEn": "Overhead signs show a red cross above your lane. What must you do?",
+    "options": [
+      {
+        "en": "Leave the motorway at the next exit",
+        "correct": false
+      },
+      {
+        "en": "Continue carefully",
+        "correct": false
+      },
+      {
+        "en": "Use the hard shoulder",
+        "correct": false
+      },
+      {
+        "en": "Move out of that lane immediately",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "MW-12",
+    "topic": "motorway-driving",
+    "promptEn": "How should you join a motorway from a slip road?",
+    "options": [
+      {
+        "en": "Stop at the end of the slip road",
+        "correct": false
+      },
+      {
+        "en": "Drive along the hard shoulder",
+        "correct": false
+      },
+      {
+        "en": "Accelerate to match traffic speed and merge safely",
+        "correct": true
+      },
+      {
+        "en": "Enter at a very slow speed",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-13",
+    "topic": "motorway-driving",
+    "promptEn": "What is the maximum speed for a car towing a trailer on a motorway?",
+    "options": [
+      {
+        "en": "40 mph",
+        "correct": false
+      },
+      {
+        "en": "50 mph",
+        "correct": false
+      },
+      {
+        "en": "60 mph",
+        "correct": true
+      },
+      {
+        "en": "70 mph",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-14",
+    "topic": "motorway-driving",
+    "promptEn": "After using an emergency phone on the motorway, where should you wait?",
+    "options": [
+      {
+        "en": "Beside your vehicle",
+        "correct": false
+      },
+      {
+        "en": "On the hard shoulder",
+        "correct": false
+      },
+      {
+        "en": "Next to the phone",
+        "correct": false
+      },
+      {
+        "en": "Well away from traffic",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "MW-15",
+    "topic": "motorway-driving",
+    "promptEn": "After repairing your vehicle on the hard shoulder, how should you rejoin traffic?",
+    "options": [
+      {
+        "en": "Pull out slowly and accelerate on the carriageway",
+        "correct": false
+      },
+      {
+        "en": "Wait for another driver to flash you",
+        "correct": false
+      },
+      {
+        "en": "Accelerate on the hard shoulder before merging",
+        "correct": true
+      },
+      {
+        "en": "Use hazard lights while pulling out",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-16",
+    "topic": "motorway-driving",
+    "promptEn": "How should motorway lanes normally be used?",
+    "options": [
+      {
+        "en": "Stay in one lane",
+        "correct": false
+      },
+      {
+        "en": "Use the clearest lane",
+        "correct": false
+      },
+      {
+        "en": "Keep left unless overtaking",
+        "correct": true
+      },
+      {
+        "en": "Change lanes frequently",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-17",
+    "topic": "motorway-driving",
+    "promptEn": "Where are amber reflective studs found on a motorway?",
+    "options": [
+      {
+        "en": "Between lanes",
+        "correct": false
+      },
+      {
+        "en": "Between carriageway and central reservation",
+        "correct": false
+      },
+      {
+        "en": "Between the hard shoulder and carriageway",
+        "correct": true
+      },
+      {
+        "en": "On slip roads only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-18",
+    "topic": "motorway-driving",
+    "promptEn": "What does a red cross above the hard shoulder mean?",
+    "options": [
+      {
+        "en": "You may stop there",
+        "correct": false
+      },
+      {
+        "en": "You may drive in that lane",
+        "correct": false
+      },
+      {
+        "en": "You must not use that lane",
+        "correct": true
+      },
+      {
+        "en": "It's a rest area",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-19",
+    "topic": "motorway-driving",
+    "promptEn": "Which vehicles should normally use the left-hand lane on a motorway?",
+    "options": [
+      {
+        "en": "Slow vehicles only",
+        "correct": false
+      },
+      {
+        "en": "Emergency vehicles only",
+        "correct": false
+      },
+      {
+        "en": "Large vehicles only",
+        "correct": false
+      },
+      {
+        "en": "Any vehicle not overtaking",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "MW-20",
+    "topic": "motorway-driving",
+    "promptEn": "What restriction applies to drivers with a provisional licence?",
+    "options": [
+      {
+        "en": "No night driving",
+        "correct": false
+      },
+      {
+        "en": "No driving above 30 mph",
+        "correct": false
+      },
+      {
+        "en": "Must be accompanied by a qualified driver",
+        "correct": true
+      },
+      {
+        "en": "Limited to one passenger",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-21",
+    "topic": "motorway-driving",
+    "promptEn": "A displayed speed limit above the hard shoulder usually means it's being used as a live lane.",
+    "options": [
+      {
+        "en": "True",
+        "correct": true
+      },
+      {
+        "en": "False",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-22",
+    "topic": "motorway-driving",
+    "promptEn": "You've stopped in an emergency area. What should you do before rejoining the motorway?",
+    "options": [
+      {
+        "en": "Use an emergency phone if you need help, then rejoin when safe",
+        "correct": true
+      },
+      {
+        "en": "Give an arm signal while moving off",
+        "correct": false
+      },
+      {
+        "en": "Switch headlights on before moving off",
+        "correct": false
+      },
+      {
+        "en": "Pull away with hazard lights on at all times",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-23",
+    "topic": "motorway-driving",
+    "promptEn": "You're on a motorway and need to slow down quickly because traffic ahead is stopping. How can you warn drivers behind?",
+    "options": [
+      {
+        "en": "Briefly use hazard warning lights",
+        "correct": true
+      },
+      {
+        "en": "Flash your headlights repeatedly",
+        "correct": false
+      },
+      {
+        "en": "Sound your horn",
+        "correct": false
+      },
+      {
+        "en": "Switch headlights on and off",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-24",
+    "topic": "motorway-driving",
+    "promptEn": "Which of these must NOT use the right-hand lane of a three-lane motorway?",
+    "options": [
+      {
+        "en": "Small delivery vans",
+        "correct": false
+      },
+      {
+        "en": "Motorcycles",
+        "correct": false
+      },
+      {
+        "en": "Vehicles towing a trailer",
+        "correct": true
+      },
+      {
+        "en": "Motorcycle with a sidecar",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-25",
+    "topic": "motorway-driving",
+    "promptEn": "You're towing a trailer on a three-lane motorway. When may you use the right-hand lane?",
+    "options": [
+      {
+        "en": "When there are lane closures",
+        "correct": false
+      },
+      {
+        "en": "When traffic is slow-moving",
+        "correct": false
+      },
+      {
+        "en": "Never (trailers must not use the right-hand lane)",
+        "correct": true
+      },
+      {
+        "en": "When large vehicles are in the left and centre lanes",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-26",
+    "topic": "motorway-driving",
+    "promptEn": "You get a puncture on the motorway and stop on the hard shoulder. What should you do next?",
+    "options": [
+      {
+        "en": "Change the wheel immediately",
+        "correct": false
+      },
+      {
+        "en": "Use an emergency phone or call for assistance",
+        "correct": true
+      },
+      {
+        "en": "Wave down other vehicles for help",
+        "correct": false
+      },
+      {
+        "en": "Only change the wheel if someone is with you",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-27",
+    "topic": "motorway-driving",
+    "promptEn": "When may you stop on a motorway?",
+    "options": [
+      {
+        "en": "To read a map",
+        "correct": false
+      },
+      {
+        "en": "To rest when tired",
+        "correct": false
+      },
+      {
+        "en": "If your phone rings",
+        "correct": false
+      },
+      {
+        "en": "Only in an emergency or breakdown",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "MW-28",
+    "topic": "motorway-driving",
+    "promptEn": "You see motorway countdown markers (3 bars, then 2, then 1). What do they tell you?",
+    "options": [
+      {
+        "en": "Distance to a bridge",
+        "correct": false
+      },
+      {
+        "en": "Distance to the next emergency telephone",
+        "correct": false
+      },
+      {
+        "en": "Distance to the next exit/junction",
+        "correct": true
+      },
+      {
+        "en": "A police checkpoint is ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-29",
+    "topic": "motorway-driving",
+    "promptEn": "Immediately after joining a motorway, what should you normally do?",
+    "options": [
+      {
+        "en": "Try to overtake straight away",
+        "correct": false
+      },
+      {
+        "en": "Re-check mirrors and traffic position",
+        "correct": true
+      },
+      {
+        "en": "Move into the centre lane",
+        "correct": false
+      },
+      {
+        "en": "Brake to create space",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-30",
+    "topic": "motorway-driving",
+    "promptEn": "Why should you use the full length of the slip road when joining a motorway?",
+    "options": [
+      {
+        "en": "So you can turn around if needed",
+        "correct": false
+      },
+      {
+        "en": "To join directly into overtaking lanes",
+        "correct": false
+      },
+      {
+        "en": "To build speed and merge safely into traffic flow",
+        "correct": true
+      },
+      {
+        "en": "Because you can continue on the hard shoulder",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "MW-31",
+    "topic": "motorway-driving",
+    "promptEn": "What can help reduce bunching and sudden braking on a motorway?",
+    "options": [
+      {
+        "en": "National speed limits only",
+        "correct": false
+      },
+      {
+        "en": "Lane closures",
+        "correct": false
+      },
+      {
+        "en": "Variable speed limits",
+        "correct": true
+      },
+      {
+        "en": "Contraflow systems",
+        "correct": false
+      }
+    ]
+  }
+]

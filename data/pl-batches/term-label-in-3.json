@@ -1,0 +1,712 @@
+[
+  {
+    "term": "maximum authorised mass",
+    "enExplain": "The heaviest legal weight of a vehicle or trailer including its load (also called MAM).",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "medically exempt",
+    "enExplain": "Excused from a legal requirement for approved medical reasons.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "metres",
+    "enExplain": "A metric unit of length used on UK height and width restriction signs.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "mileage marker",
+    "enExplain": "A roadside post or sign showing distance along a route, often in miles.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "mini-roundabout",
+    "enExplain": "A small roundabout, often marked by a white painted circle on the road.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "moped",
+    "enExplain": "A small, low-powered motorcycle that often travels more slowly than cars.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "mopeds",
+    "enExplain": "Low-powered two-wheel motor vehicles, lighter and slower than most motorcycles.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "MOT",
+    "enExplain": "The annual UK roadworthiness test required for most vehicles over a certain age.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "MOT certificate",
+    "enExplain": "A UK document showing a vehicle has passed its annual roadworthiness test.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "MOT expiry date",
+    "enExplain": "The date when the current MOT certificate runs out and a new test is needed.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "MOT test",
+    "enExplain": "The UK annual check that a vehicle is safe and roadworthy.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "motor insurance",
+    "enExplain": "Legal cover for using a motor vehicle on public roads, protecting against claims from others at minimum.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "motor vehicles",
+    "enExplain": "Powered road vehicles such as cars, vans, and motorcycles (not bicycles or pedestrians).",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "motorcycle restriction",
+    "enExplain": "A rule that limits or bans motorcycles on that stretch of road.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "motorcyclist",
+    "enExplain": "A person riding a motorcycle; they can be less stable and harder to see than cars.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "motorcyclists",
+    "enExplain": "People riding motorcycles; they can be hidden in blind spots and move up beside you quickly.",
+    "existingKeywordPl": "motocykliści"
+  },
+  {
+    "term": "motorway",
+    "enExplain": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+    "existingKeywordPl": "autostrada"
+  },
+  {
+    "term": "motorway services",
+    "enExplain": "Rest areas on a motorway with fuel, food, and toilets.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "motorways",
+    "enExplain": "High-speed roads with controlled access for most traffic, shown by blue signs in the UK.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "MOTs",
+    "enExplain": "UK annual roadworthiness tests (MOT) checking safety and emissions.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "move off",
+    "enExplain": "To start moving from a stopped position, such as pulling away from the kerb or after waiting.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "moving off",
+    "enExplain": "Starting to drive away after you have been stationary.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "narrow bridge",
+    "enExplain": "A bridge where the road is too narrow for two vehicles to pass easily side by side.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "narrowing",
+    "enExplain": "The road becoming less wide ahead.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "National Insurance number",
+    "enExplain": "A UK personal tax and benefits reference number, not a driving document.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "national speed limit",
+    "enExplain": "The default UK speed limit when no numbered limit signs are shown (varies by road type and vehicle).",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "neck injuries",
+    "enExplain": "Damage to the neck bones, muscles, or spinal cord that can be serious after a crash.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "neutral",
+    "enExplain": "A gear position where the engine is not connected to the wheels.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "No loading",
+    "enExplain": "A restriction meaning goods must not be loaded or unloaded there at the times shown.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "No parking",
+    "enExplain": "You must not leave the vehicle parked, but brief stopping to drop off may be allowed.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "No stopping",
+    "enExplain": "A ban on stopping your vehicle at all, even briefly (stricter than no parking).",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "No waiting",
+    "enExplain": "A UK restriction meaning you must not wait or park there at the times shown.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "nose weight",
+    "enExplain": "The downward weight a trailer’s hitch puts on the vehicle’s tow ball; it must stay within limits.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "number plate",
+    "enExplain": "The plate on a vehicle that shows its registration number.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "obscured",
+    "enExplain": "Partly hidden or hard to see, for example by dirt, trees, or another object.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "obstruction",
+    "enExplain": "Something blocking the road so traffic cannot pass freely.",
+    "existingKeywordPl": "przeszkoda"
+  },
+  {
+    "term": "obstructs",
+    "enExplain": "Blocks or gets in the way of other traffic so it cannot pass freely.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "octagonal",
+    "enExplain": "Eight-sided shape; in the UK the STOP sign is octagonal.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Oil seals",
+    "enExplain": "Rubber or metal rings that stop oil leaking from the engine.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Oncoming headlights",
+    "enExplain": "The headlights of vehicles coming toward you from the opposite direction.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "oncoming traffic",
+    "enExplain": "Vehicles travelling toward you from the opposite direction.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "one-way road",
+    "enExplain": "A road where traffic is allowed to travel in only one direction.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "One-way road",
+    "enExplain": "A road where traffic is allowed to travel in only one direction.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "one-way street",
+    "enExplain": "A street where traffic is allowed to travel in only one direction.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "one-way streets",
+    "enExplain": "A street where traffic is allowed to travel in only one direction.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Over-rev",
+    "enExplain": "Run the engine at very high revs, which wastes fuel and can cause wear.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "overhead lane signals",
+    "enExplain": "Lights above each lane that show whether that lane is open or closed to traffic.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "overloaded",
+    "enExplain": "Carrying more weight than the vehicle or trailer is legally allowed to carry.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "overtake",
+    "enExplain": "To pass a slower vehicle ahead by moving past it into another lane.",
+    "existingKeywordPl": "wyprzedź"
+  },
+  {
+    "term": "Overtake",
+    "enExplain": "To pass another vehicle by moving past it and going ahead.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "overtake a horse and rider",
+    "enExplain": "Pass a person riding a horse on the road; horses can be startled by noise and speed.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "overtaken",
+    "enExplain": "When another vehicle has passed you and moved ahead of you.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "overtaking",
+    "enExplain": "Passing a slower vehicle by moving alongside and ahead of it.",
+    "existingKeywordPl": "wyprzedzanie"
+  },
+  {
+    "term": "Overtaking",
+    "enExplain": "Passing a slower vehicle ahead by moving into another lane or the other side of the road.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "overtaking traffic",
+    "enExplain": "Vehicles that are passing you or about to pass you.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Overtaking vehicles",
+    "enExplain": "Vehicles that are passing you on the road.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "P plates",
+    "enExplain": "Optional plates some newly qualified drivers display to show they have just passed their test.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Paramedics",
+    "enExplain": "Emergency medical staff who treat patients at the scene and in ambulances.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "parking brake",
+    "enExplain": "The brake (often a handbrake) that holds the vehicle still when parked.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "parking lights",
+    "enExplain": "Dim sidelights left on when parked so others can see your vehicle at night.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "parking restrictions",
+    "enExplain": "Rules that limit where and when you may park, shown by signs or road markings.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Parking/sidelights",
+    "enExplain": "Low-intensity lights used to show a parked or stationary vehicle’s position.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "passing place",
+    "enExplain": "A widened section of a narrow road where vehicles can pass or wait.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "passing places",
+    "enExplain": "Widened spots on a narrow road where vehicles can pull in to let others pass.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "pavement",
+    "enExplain": "The raised path beside the road for people walking (sidewalk).",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "peak traffic hours",
+    "enExplain": "The busiest times of day when roads are most congested (rush hour).",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "peak traffic times",
+    "enExplain": "Busy periods when many people travel, often morning and evening rush hours.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "pedestrian crossing",
+    "enExplain": "A marked place on the road where people on foot can cross safely.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "pedestrian-only zones",
+    "enExplain": "Areas where motor vehicles are normally not allowed and only people on foot may use the space.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "pelican crossing",
+    "enExplain": "A pedestrian crossing controlled by traffic lights, including a flashing amber phase.",
+    "existingKeywordPl": "przejście pelican"
+  },
+  {
+    "term": "penalty points",
+    "enExplain": "Points added to your driving licence after certain traffic offences.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "powered mobility scooters",
+    "enExplain": "Small electric vehicles for people with limited mobility, usually for pavements and short trips.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Powered mobility vehicles",
+    "enExplain": "Small electric vehicles used by people with limited mobility.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "primary route",
+    "enExplain": "A major UK road between towns and cities, usually signed in green with white lettering.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Primary route",
+    "enExplain": "A main A-road network in the UK, usually signed with green direction signs.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "priority",
+    "enExplain": "The right to go first when roads meet or when rules give you precedence.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "prohibition",
+    "enExplain": "A rule that forbids a particular action or type of vehicle.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Projection markers",
+    "enExplain": "Flags or lights that mark an overhanging load so other road users can see it.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "provisional licence",
+    "enExplain": "A learner driving licence that allows practice driving under set restrictions before a full licence.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Pull alongside",
+    "enExplain": "Drive level with another vehicle, side by side.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "pull away",
+    "enExplain": "When a vehicle starts moving off from a stop, such as leaving a bus stop.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "pull over",
+    "enExplain": "Move to the side of the road and stop safely.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "pulls to one side",
+    "enExplain": "The vehicle steers or veers left or right by itself when you brake or drive.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "puncture",
+    "enExplain": "A flat tyre caused by a hole that lets the air out.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "push-button signals",
+    "enExplain": "Pedestrian traffic lights started by pressing a button at the crossing.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "queue",
+    "enExplain": "A line of vehicles waiting or moving slowly.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "queues",
+    "enExplain": "Lines of slow-moving or waiting traffic.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "railway crossing",
+    "enExplain": "A place where a road crosses railway tracks, often with lights, barriers, or alarms.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "rear fog lights",
+    "enExplain": "Bright red lights at the back of a vehicle used only in thick fog to help others see you.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Rear fog lights",
+    "enExplain": "Bright red lights at the back of a vehicle used only in thick fog to help others see you.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "rear-facing baby seat",
+    "enExplain": "A child seat that faces backwards, safer for infants in a crash.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "recovery position",
+    "enExplain": "A side-lying first-aid position that helps keep an unconscious breathing person’s airway clear.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "red route",
+    "enExplain": "A road marked with red lines where stopping and parking are tightly controlled.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "red routes",
+    "enExplain": "UK roads marked with red lines where stopping and parking are tightly restricted.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "reflective clothing",
+    "enExplain": "Clothes that shine when light hits them, helping others see the wearer.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "reflective safety markers",
+    "enExplain": "Bright reflective strips or panels that help others see a vehicle, especially in the dark.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "reflective studs",
+    "enExplain": "Cat’s-eye markers set in the road that reflect light to show lane edges at night.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "reflective yellow school warning sign",
+    "enExplain": "A bright yellow sign that warns drivers they are near a school.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "refuge area",
+    "enExplain": "A safe lay-by beside a motorway where you can stop if you have a problem.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "registered keeper",
+    "enExplain": "The person named on the vehicle registration as responsible for the vehicle records.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Registered keeper",
+    "enExplain": "The person named on the vehicle’s registration document as responsible for it (not always the owner).",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "registration document",
+    "enExplain": "The V5C paper that records the vehicle’s details and its registered keeper.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "residential area",
+    "enExplain": "A neighbourhood of homes where traffic and pedestrians are often close together.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "residential streets",
+    "enExplain": "Roads in housing areas where people live, often with parked cars and pedestrians.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "restraint",
+    "enExplain": "A safety device that holds a child securely in the vehicle, such as a child seat.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "restraints",
+    "enExplain": "Straps, ropes, or other fittings used to hold a load firmly in place.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Restricted airspace",
+    "enExplain": "Air above an area where flying is limited or controlled for safety.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "restriction",
+    "enExplain": "A limit on what you may do, such as speed, access, or vehicle type.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Rev engine",
+    "enExplain": "Make the engine run faster while the vehicle is not moving forward much.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "reversing",
+    "enExplain": "Driving the vehicle backwards.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Ride the clutch",
+    "enExplain": "Holding the clutch partly down while driving, which can wear it and reduce control.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "right of way",
+    "enExplain": "Who is allowed to go first when paths cross or meet.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "right-hand bend",
+    "enExplain": "A curve in the road that turns to the right as you travel along it.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "right-hand lane",
+    "enExplain": "On a UK multi-lane motorway, the lane furthest to the right, normally for overtaking.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "road camber",
+    "enExplain": "The slight slope built across the road surface, usually higher in the middle.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Road gritter",
+    "enExplain": "A vehicle that spreads salt or grit on roads to reduce ice in cold weather.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "road humps",
+    "enExplain": "Raised bumps in the road surface used to slow traffic.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "road markings",
+    "enExplain": "Lines, symbols, or writing painted on the road surface to guide or control traffic.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "road narrowing",
+    "enExplain": "The road becoming less wide, so careful positioning is needed.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "road narrows",
+    "enExplain": "The carriageway becomes narrower ahead, so there is less space for vehicles.",
+    "existingKeywordPl": "zwężenie drogi"
+  },
+  {
+    "term": "Road narrows",
+    "enExplain": "A warning that the carriageway becomes narrower ahead.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "road surface",
+    "enExplain": "The top layer of the road that tyres touch (e.g. tarmac, snow, ice, or loose gravel).",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Road sweeper",
+    "enExplain": "A slow vehicle that cleans the road surface; give it space when passing.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Road tax",
+    "enExplain": "Vehicle Excise Duty — the UK government charge for using a vehicle on public roads.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "road works",
+    "enExplain": "Construction or repairs on the road that may change lanes or reduce speed.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "Road works",
+    "enExplain": "Construction or repairs on the road that may change lanes or reduce speed.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "roadworks",
+    "enExplain": "Road repairs or building work that may close paths or change traffic.",
+    "existingKeywordPl": "roboty drogowe"
+  },
+  {
+    "term": "Roadworks",
+    "enExplain": "Road repairs or construction that may change layout, lanes, or speed limits.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "roof rack",
+    "enExplain": "A frame fitted on a vehicle’s roof for carrying extra loads.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "roundabout",
+    "enExplain": "A circular junction where traffic usually travels clockwise and you give way to traffic already on it.",
+    "existingKeywordPl": "rondo"
+  },
+  {
+    "term": "route numbers",
+    "enExplain": "Official road identifiers such as A1 or M25 shown on direction signs.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "route planner",
+    "enExplain": "A map or app that suggests roads and directions for a journey.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "safe gap",
+    "enExplain": "The clear space you keep ahead of your vehicle so you can stop safely if traffic slows or stops.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "sat nav",
+    "enExplain": "Satellite navigation: a GPS device or app that gives driving directions.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "school crossing",
+    "enExplain": "A place near a school where children cross the road, often with special signs or a crossing patrol.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "school crossing patrol",
+    "enExplain": "A trained person (often called a lollipop person) who helps children cross safely near schools.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "school warning sign",
+    "enExplain": "A triangular sign showing children, warning that a school is nearby and extra care is needed.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "scrapped",
+    "enExplain": "When a vehicle is officially destroyed or broken up and removed from the road fleet.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "secondary coupling device",
+    "enExplain": "A backup link (often a chain or cable) that keeps the trailer attached if the main coupling fails.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "security-coded radio",
+    "enExplain": "A car radio that needs a code after power loss, making it useless to thieves.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "service area",
+    "enExplain": "A motorway services site with parking, fuel, and facilities where you can stop safely to rest.",
+    "existingKeywordPl": null
+  },
+  {
+    "term": "service schedule",
+    "enExplain": "The maker’s planned times for checks, oil changes, and maintenance.",
+    "existingKeywordPl": null
+  }
+]

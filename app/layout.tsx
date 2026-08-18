@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, IBM_Plex_Sans_Arabic } from "next/font/google";
-import Link from "next/link";
 import HeaderClient from "@/components/HeaderClient";
+import FooterClient from "@/components/FooterClient";
+import LanguageGate from "@/components/LanguageGate";
 import Analytics from "@/components/Analytics";
 import { AccessProvider } from "@/lib/providers/AccessProvider";
+import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 import PWAMetaTags from "@/components/PWAMetaTags";
 import RegisterServiceWorker from "@/components/RegisterServiceWorker";
 import IOSInstallBanner from "@/components/IOSInstallBanner";
@@ -61,41 +63,17 @@ export default function RootLayout({
         <IOSInstallBanner />
         <Analytics />
         <AccessProvider>
-          <div className="min-h-screen flex flex-col bg-[var(--background)]">
-            <HeaderClient />
-            <main className="flex-1 relative z-10">
-              {children}
-            </main>
-            <footer className="mt-auto border-t border-[var(--border)] bg-[var(--surface)]">
-              <div className="max-w-5xl mx-auto px-4 py-6">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-4">
-                  <div>
-                    <p className="text-sm font-semibold text-[var(--text-primary)]">LingoTheory</p>
-                    <p className="text-xs text-[var(--text-secondary)] mt-0.5">© 2026 · Driving theory, in your language</p>
-                  </div>
-                  <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-                    <Link href="/terms" className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors">
-                      Terms & Conditions
-                    </Link>
-                    <Link href="/privacy" className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors">
-                      Privacy Policy
-                    </Link>
-                    <Link href="/support" className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors">
-                      Support
-                    </Link>
-                  </div>
-                </div>
-                <div className="border-t border-[var(--border)] pt-4 space-y-1">
-                  <p className="text-xs text-[var(--text-secondary)]">
-                    Support: <a href="mailto:support@lingotheory.org" className="font-medium hover:text-[var(--lingo-red)] transition-colors">support@lingotheory.org</a>
-                  </p>
-                  <p className="text-xs text-[var(--text-secondary)]">
-                    Created by Raed Mahfoud — Independent AI Product Creator
-                  </p>
-                </div>
+          <LanguageProvider>
+            <LanguageGate>
+              <div className="min-h-screen flex flex-col bg-[var(--background)]">
+                <HeaderClient />
+                <main className="flex-1 relative z-10">
+                  {children}
+                </main>
+                <FooterClient />
               </div>
-            </footer>
-          </div>
+            </LanguageGate>
+          </LanguageProvider>
         </AccessProvider>
       </body>
     </html>

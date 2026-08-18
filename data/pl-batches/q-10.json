@@ -1,0 +1,952 @@
+[
+  {
+    "id": "MW-32",
+    "topic": "motorway-driving",
+    "promptEn": "How do variable speed limits help motorway traffic?",
+    "options": [
+      {
+        "en": "By raising limits at all times"
+      },
+      {
+        "en": "By giving a minimum speed"
+      },
+      {
+        "en": "By adjusting legal speeds to keep traffic flowing smoothly"
+      },
+      {
+        "en": "By allowing faster overtaking"
+      }
+    ]
+  },
+  {
+    "id": "MW-33",
+    "topic": "motorway-driving",
+    "promptEn": "Which lane should you be in well before your motorway exit?",
+    "options": [
+      {
+        "en": "Right lane"
+      },
+      {
+        "en": "Middle lane"
+      },
+      {
+        "en": "Left-hand lane"
+      },
+      {
+        "en": "Hard shoulder"
+      }
+    ]
+  },
+  {
+    "id": "MW-34",
+    "topic": "motorway-driving",
+    "promptEn": "When using a motorway emergency telephone, how should you stand?",
+    "options": [
+      {
+        "en": "Close to the carriageway"
+      },
+      {
+        "en": "Facing the oncoming traffic"
+      },
+      {
+        "en": "With your back to the traffic"
+      },
+      {
+        "en": "On the hard shoulder, facing the phone and away from traffic"
+      }
+    ]
+  },
+  {
+    "id": "MW-35",
+    "topic": "motorway-driving",
+    "promptEn": "What is the national speed limit for cars and motorcycles on a motorway (unless signs show otherwise)?",
+    "options": [
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      },
+      {
+        "en": "70 mph"
+      },
+      {
+        "en": "80 mph"
+      }
+    ]
+  },
+  {
+    "id": "MW-36",
+    "topic": "motorway-driving",
+    "promptEn": "When is overtaking on the left permitted on a motorway?",
+    "options": [
+      {
+        "en": "Any time the hard shoulder is clear"
+      },
+      {
+        "en": "When traffic to your right is moving slower in queues"
+      },
+      {
+        "en": "When you signal left to warn others"
+      },
+      {
+        "en": "When the right lane is signalling right"
+      }
+    ]
+  },
+  {
+    "id": "MW-37",
+    "topic": "motorway-driving",
+    "promptEn": "If you need to reach the nearest motorway emergency telephone, which way should you walk?",
+    "options": [
+      {
+        "en": "With traffic flow"
+      },
+      {
+        "en": "Facing oncoming traffic"
+      },
+      {
+        "en": "In the direction shown by the marker posts"
+      },
+      {
+        "en": "Towards the nearest exit"
+      }
+    ]
+  },
+  {
+    "id": "MW-38",
+    "topic": "motorway-driving",
+    "promptEn": "What is the motorway speed limit for cars and motorcycles unless signs say otherwise?",
+    "options": [
+      {
+        "en": "30 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      },
+      {
+        "en": "70 mph"
+      }
+    ]
+  },
+  {
+    "id": "MW-39",
+    "topic": "motorway-driving",
+    "promptEn": "On a three-lane motorway, which lane should you normally use when the road ahead is clear?",
+    "options": [
+      {
+        "en": "Left"
+      },
+      {
+        "en": "Centre"
+      },
+      {
+        "en": "Right"
+      },
+      {
+        "en": "Either centre or right"
+      }
+    ]
+  },
+  {
+    "id": "MW-40",
+    "topic": "motorway-driving",
+    "promptEn": "You're in the left lane and traffic is joining from a slip road. What should you do?",
+    "options": [
+      {
+        "en": "Speed up so they must join behind you"
+      },
+      {
+        "en": "Adjust speed or change lane if safe"
+      },
+      {
+        "en": "Maintain speed no matter what"
+      },
+      {
+        "en": "Switch hazard lights on"
+      }
+    ]
+  },
+  {
+    "id": "MW-41",
+    "topic": "motorway-driving",
+    "promptEn": "Which type of vehicle is not allowed to use a motorway?",
+    "options": [
+      {
+        "en": "Powered mobility scooters"
+      },
+      {
+        "en": "Motorcycles over 50 cc"
+      },
+      {
+        "en": "Double-deck buses"
+      },
+      {
+        "en": "Cars with automatic transmission"
+      }
+    ]
+  },
+  {
+    "id": "MW-42",
+    "topic": "motorway-driving",
+    "promptEn": "If you miss your exit on a motorway, what should you do?",
+    "options": [
+      {
+        "en": "Reverse along the hard shoulder"
+      },
+      {
+        "en": "Continue to the next exit"
+      },
+      {
+        "en": "Reverse carefully in the left lane"
+      },
+      {
+        "en": "Make a U-turn through the central reservation"
+      }
+    ]
+  },
+  {
+    "id": "MW-43",
+    "topic": "motorway-driving",
+    "promptEn": "What colour are the reflective studs between lanes on a motorway?",
+    "options": [
+      {
+        "en": "Green"
+      },
+      {
+        "en": "Amber"
+      },
+      {
+        "en": "White"
+      },
+      {
+        "en": "Red"
+      }
+    ]
+  },
+  {
+    "id": "MW-44",
+    "topic": "motorway-driving",
+    "promptEn": "Where should you stop to rest if you feel tired on a motorway?",
+    "options": [
+      {
+        "en": "On the hard shoulder"
+      },
+      {
+        "en": "At the nearest service area"
+      },
+      {
+        "en": "On a slip road"
+      },
+      {
+        "en": "On the central reservation"
+      }
+    ]
+  },
+  {
+    "id": "MW-45",
+    "topic": "motorway-driving",
+    "promptEn": "Why is it better to use an emergency roadside telephone than a mobile phone on a motorway?",
+    "options": [
+      {
+        "en": "It connects you to a local garage"
+      },
+      {
+        "en": "Mobile phones distract other drivers"
+      },
+      {
+        "en": "It allows emergency services to locate you easily"
+      },
+      {
+        "en": "Mobile phones don't work on motorways"
+      }
+    ]
+  },
+  {
+    "id": "MW-46",
+    "topic": "motorway-driving",
+    "promptEn": "You see red studs on your left and white studs on your right. Which lane are you in?",
+    "options": [
+      {
+        "en": "Right-hand lane"
+      },
+      {
+        "en": "Middle lane"
+      },
+      {
+        "en": "Hard shoulder"
+      },
+      {
+        "en": "Left-hand lane"
+      }
+    ]
+  },
+  {
+    "id": "MW-47",
+    "topic": "motorway-driving",
+    "promptEn": "What must you do if a red cross is shown above every motorway lane?",
+    "options": [
+      {
+        "en": "Pull onto the hard shoulder"
+      },
+      {
+        "en": "Slow down and wait"
+      },
+      {
+        "en": "Leave at the next exit"
+      },
+      {
+        "en": "Stop and wait"
+      }
+    ]
+  },
+  {
+    "id": "MW-48",
+    "topic": "motorway-driving",
+    "promptEn": "Your vehicle breaks down and you cannot reach the hard shoulder. What should you do?",
+    "options": [
+      {
+        "en": "Switch on hazard warning lights"
+      },
+      {
+        "en": "Stand behind your vehicle"
+      },
+      {
+        "en": "Try to repair it quickly"
+      },
+      {
+        "en": "Stop traffic behind you"
+      }
+    ]
+  },
+  {
+    "id": "MW-49",
+    "topic": "motorway-driving",
+    "promptEn": "When should you normally use the left-hand lane on a motorway?",
+    "options": [
+      {
+        "en": "When overtaking"
+      },
+      {
+        "en": "When the road ahead is clear and you are not overtaking"
+      },
+      {
+        "en": "When making a phone call"
+      },
+      {
+        "en": "When driving slowly"
+      }
+    ]
+  },
+  {
+    "id": "MW-50",
+    "topic": "motorway-driving",
+    "promptEn": "What should you do when driving through a contraflow system?",
+    "options": [
+      {
+        "en": "Switch lanes to move faster"
+      },
+      {
+        "en": "Keep a safe distance from the vehicle ahead"
+      },
+      {
+        "en": "Drive close to reduce queues"
+      },
+      {
+        "en": "Use hazard warning lights"
+      }
+    ]
+  },
+  {
+    "id": "MW-51",
+    "topic": "motorway-driving",
+    "promptEn": "What would you normally expect at a contraflow system?",
+    "options": [
+      {
+        "en": "Temporary traffic lights"
+      },
+      {
+        "en": "Lower speed limits"
+      },
+      {
+        "en": "Wider lanes"
+      },
+      {
+        "en": "Road humps"
+      }
+    ]
+  },
+  {
+    "id": "MW-52",
+    "topic": "motorway-driving",
+    "promptEn": "Why is checking your vehicle important before a long motorway journey?",
+    "options": [
+      {
+        "en": "Motorways wear tyres faster"
+      },
+      {
+        "en": "Services can't help breakdowns"
+      },
+      {
+        "en": "Continuous high speeds increase breakdown risk"
+      },
+      {
+        "en": "Brakes are used more"
+      }
+    ]
+  },
+  {
+    "id": "MW-53",
+    "topic": "motorway-driving",
+    "promptEn": "What are traffic officers authorised to do on motorways?",
+    "options": [
+      {
+        "en": "Arrest drivers"
+      },
+      {
+        "en": "Repair vehicles"
+      },
+      {
+        "en": "Issue penalty notices"
+      },
+      {
+        "en": "Stop and direct traffic"
+      }
+    ]
+  },
+  {
+    "id": "MW-54",
+    "topic": "motorway-driving",
+    "promptEn": "What colour are the studs between the hard shoulder and left-hand lane?",
+    "options": [
+      {
+        "en": "Green"
+      },
+      {
+        "en": "Red"
+      },
+      {
+        "en": "White"
+      },
+      {
+        "en": "Amber"
+      }
+    ]
+  },
+  {
+    "id": "MW-55",
+    "topic": "motorway-driving",
+    "promptEn": "A red cross is shown above the hard shoulder with speed limits above other lanes. What does this mean?",
+    "options": [
+      {
+        "en": "Hard shoulder can be used as a lane"
+      },
+      {
+        "en": "Hard shoulder is emergency use only"
+      },
+      {
+        "en": "Hard shoulder has a 50 mph limit"
+      },
+      {
+        "en": "You can rest there"
+      }
+    ]
+  },
+  {
+    "id": "MW-56",
+    "topic": "motorway-driving",
+    "promptEn": "Where would you find a crawler or climbing lane on a motorway?",
+    "options": [
+      {
+        "en": "Near a service area"
+      },
+      {
+        "en": "Before a junction"
+      },
+      {
+        "en": "On a steep uphill section"
+      },
+      {
+        "en": "Along the hard shoulder"
+      }
+    ]
+  },
+  {
+    "id": "MW-57",
+    "topic": "motorway-driving",
+    "promptEn": "After a breakdown on the hard shoulder, how should you rejoin the motorway?",
+    "options": [
+      {
+        "en": "Move straight into traffic"
+      },
+      {
+        "en": "Wait for another driver to signal"
+      },
+      {
+        "en": "Build speed on the hard shoulder, then merge safely"
+      },
+      {
+        "en": "Keep hazard lights on while joining"
+      }
+    ]
+  },
+  {
+    "id": "RR-06",
+    "topic": "rules-of-the-road",
+    "promptEn": "A cycle lane is marked with a broken white line. What does this mean for drivers?",
+    "options": [
+      {
+        "en": "Drivers must not enter"
+      },
+      {
+        "en": "Drivers may enter if necessary and safe"
+      },
+      {
+        "en": "Cyclists travel both directions"
+      },
+      {
+        "en": "Motorcycles must use it"
+      }
+    ]
+  },
+  {
+    "id": "RR-07",
+    "topic": "rules-of-the-road",
+    "promptEn": "A sign indicates that a previously enforced speed limit has ended. What does this mean?",
+    "options": [
+      {
+        "en": "Minimum speed applies"
+      },
+      {
+        "en": "End of maximum speed"
+      },
+      {
+        "en": "End of minimum speed"
+      },
+      {
+        "en": "National speed limit now applies"
+      }
+    ]
+  },
+  {
+    "id": "RR-08",
+    "topic": "rules-of-the-road",
+    "promptEn": "When should you normally use the right-hand lane on a dual carriageway?",
+    "options": [
+      {
+        "en": "When turning right or overtaking"
+      },
+      {
+        "en": "When passing side roads"
+      },
+      {
+        "en": "At constant high speed"
+      },
+      {
+        "en": "At minimum speed"
+      }
+    ]
+  },
+  {
+    "id": "RR-09",
+    "topic": "rules-of-the-road",
+    "promptEn": "You're unsure whether it's safe to reverse your vehicle. What should you do?",
+    "options": [
+      {
+        "en": "Sound the horn"
+      },
+      {
+        "en": "Rev the engine"
+      },
+      {
+        "en": "Get out and check"
+      },
+      {
+        "en": "Reverse slowly"
+      }
+    ]
+  },
+  {
+    "id": "RR-10",
+    "topic": "rules-of-the-road",
+    "promptEn": "Where is the safest place to park your vehicle?",
+    "options": [
+      {
+        "en": "Near a bus stop"
+      },
+      {
+        "en": "On a hill crest"
+      },
+      {
+        "en": "Near a level crossing"
+      },
+      {
+        "en": "In a marked parking bay"
+      }
+    ]
+  },
+  {
+    "id": "RR-11",
+    "topic": "rules-of-the-road",
+    "promptEn": "In built-up areas without speed limit signs, how is a 30 mph limit usually indicated?",
+    "options": [
+      {
+        "en": "Hazard lines"
+      },
+      {
+        "en": "Street lighting present"
+      },
+      {
+        "en": "Pedestrian islands"
+      },
+      {
+        "en": "Yellow lines"
+      }
+    ]
+  },
+  {
+    "id": "RR-12",
+    "topic": "rules-of-the-road",
+    "promptEn": "You're on a narrow road with passing places. A vehicle approaches from ahead. What should you do?",
+    "options": [
+      {
+        "en": "Force the other to reverse"
+      },
+      {
+        "en": "Pull into the nearest passing place on your left"
+      },
+      {
+        "en": "Use the verge"
+      },
+      {
+        "en": "Continue driving"
+      }
+    ]
+  },
+  {
+    "id": "RR-13",
+    "topic": "rules-of-the-road",
+    "promptEn": "What does it mean when no local speed limit signs are shown on an open road?",
+    "options": [
+      {
+        "en": "No waiting allowed"
+      },
+      {
+        "en": "No entry"
+      },
+      {
+        "en": "National speed limit applies"
+      },
+      {
+        "en": "Temporary limit applies"
+      }
+    ]
+  },
+  {
+    "id": "RR-14",
+    "topic": "rules-of-the-road",
+    "promptEn": "Why can reversing from a side road into a main road be dangerous?",
+    "options": [
+      {
+        "en": "Sensors may fail"
+      },
+      {
+        "en": "Restricted view of traffic"
+      },
+      {
+        "en": "Lights won't show"
+      },
+      {
+        "en": "Mirrors need adjustment"
+      }
+    ]
+  },
+  {
+    "id": "RR-15",
+    "topic": "rules-of-the-road",
+    "promptEn": "When may you stop and wait inside a box junction?",
+    "options": [
+      {
+        "en": "Turning left in traffic"
+      },
+      {
+        "en": "Going straight"
+      },
+      {
+        "en": "When waiting to turn right and blocked by oncoming traffic"
+      },
+      {
+        "en": "On roundabouts"
+      }
+    ]
+  },
+  {
+    "id": "RR-16",
+    "topic": "rules-of-the-road",
+    "promptEn": "Who has priority at an unmarked crossroads?",
+    "options": [
+      {
+        "en": "Larger vehicle"
+      },
+      {
+        "en": "Faster vehicle"
+      },
+      {
+        "en": "Smaller vehicle"
+      },
+      {
+        "en": "No one has priority"
+      }
+    ]
+  },
+  {
+    "id": "RR-17",
+    "topic": "rules-of-the-road",
+    "promptEn": "Why is it safer to turn behind an oncoming vehicle when both are turning right?",
+    "options": [
+      {
+        "en": "Better fuel use"
+      },
+      {
+        "en": "Clearer view of traffic"
+      },
+      {
+        "en": "Faster turn"
+      },
+      {
+        "en": "Avoid stopping"
+      }
+    ]
+  },
+  {
+    "id": "RR-18",
+    "topic": "rules-of-the-road",
+    "promptEn": "At a pelican crossing, the red light changes to flashing amber. What does this mean?",
+    "options": [
+      {
+        "en": "Stop immediately"
+      },
+      {
+        "en": "Proceed without checking"
+      },
+      {
+        "en": "Give way to pedestrians still crossing"
+      },
+      {
+        "en": "Wait for green"
+      }
+    ]
+  },
+  {
+    "id": "RR-19",
+    "topic": "rules-of-the-road",
+    "promptEn": "You see a pedestrian waiting at a zebra crossing. What should you do?",
+    "options": [
+      {
+        "en": "Ignore them"
+      },
+      {
+        "en": "Speed past"
+      },
+      {
+        "en": "Be ready to slow or stop to let them cross"
+      },
+      {
+        "en": "Sound horn"
+      }
+    ]
+  },
+  {
+    "id": "RR-20",
+    "topic": "rules-of-the-road",
+    "promptEn": "When may you drive in a bus lane?",
+    "options": [
+      {
+        "en": "Anytime"
+      },
+      {
+        "en": "To overtake traffic"
+      },
+      {
+        "en": "Outside its hours of operation"
+      },
+      {
+        "en": "Never"
+      }
+    ]
+  },
+  {
+    "id": "RR-21",
+    "topic": "rules-of-the-road",
+    "promptEn": "Besides indicators, how can drivers communicate intentions to others?",
+    "options": [
+      {
+        "en": "Fog lights"
+      },
+      {
+        "en": "Brake lights"
+      },
+      {
+        "en": "Interior lights"
+      },
+      {
+        "en": "Vehicle position and movement"
+      }
+    ]
+  },
+  {
+    "id": "RR-22",
+    "topic": "rules-of-the-road",
+    "promptEn": "You're driving on a busy road and realise you're going the wrong way. What should you do?",
+    "options": [
+      {
+        "en": "Reverse on main road"
+      },
+      {
+        "en": "Make a U-turn"
+      },
+      {
+        "en": "Turn around safely in a side road"
+      },
+      {
+        "en": "Stop and block traffic"
+      }
+    ]
+  },
+  {
+    "id": "RR-23",
+    "topic": "rules-of-the-road",
+    "promptEn": "You realise too late that you're in the wrong lane at a busy junction. What should you do?",
+    "options": [
+      {
+        "en": "Force your way across"
+      },
+      {
+        "en": "Stop and block traffic"
+      },
+      {
+        "en": "Continue safely in the same lane"
+      },
+      {
+        "en": "Use hand signals"
+      }
+    ]
+  },
+  {
+    "id": "RR-24",
+    "topic": "rules-of-the-road",
+    "promptEn": "On a well-lit road at night in a built-up area, why should you use dipped headlights?",
+    "options": [
+      {
+        "en": "To see further"
+      },
+      {
+        "en": "To drive faster"
+      },
+      {
+        "en": "To switch to full beam quickly"
+      },
+      {
+        "en": "So others can see you clearly"
+      }
+    ]
+  },
+  {
+    "id": "RR-25",
+    "topic": "rules-of-the-road",
+    "promptEn": "When may you legally drive without wearing a seat belt?",
+    "options": [
+      {
+        "en": "While reversing as part of a manoeuvre"
+      },
+      {
+        "en": "While moving off uphill"
+      },
+      {
+        "en": "In slow traffic"
+      },
+      {
+        "en": "When testing brakes"
+      }
+    ]
+  },
+  {
+    "id": "RR-26",
+    "topic": "rules-of-the-road",
+    "promptEn": "You're waiting at a level crossing. A train passes but the red lights continue flashing. What should you do?",
+    "options": [
+      {
+        "en": "Drive forward carefully"
+      },
+      {
+        "en": "Get out and investigate"
+      },
+      {
+        "en": "Phone the signal operator"
+      },
+      {
+        "en": "Continue waiting"
+      }
+    ]
+  },
+  {
+    "id": "RR-27",
+    "topic": "rules-of-the-road",
+    "promptEn": "You're in the right-hand lane and see a sign that this lane is closed ahead. What should you do?",
+    "options": [
+      {
+        "en": "Stay until the queue"
+      },
+      {
+        "en": "Move left immediately"
+      },
+      {
+        "en": "Move left in good time"
+      },
+      {
+        "en": "Wait and decide later"
+      }
+    ]
+  },
+  {
+    "id": "RR-28",
+    "topic": "rules-of-the-road",
+    "promptEn": "At night, when may you park on the right-hand side of the road?",
+    "options": [
+      {
+        "en": "Under street lights"
+      },
+      {
+        "en": "More than 10 m from junction"
+      },
+      {
+        "en": "In a one-way street only"
+      },
+      {
+        "en": "With sidelights on"
+      }
+    ]
+  },
+  {
+    "id": "RR-29",
+    "topic": "rules-of-the-road",
+    "promptEn": "In the UK, what speed limit usually applies where there are street lights but no speed signs?",
+    "options": [
+      {
+        "en": "30 mph"
+      },
+      {
+        "en": "40 mph"
+      },
+      {
+        "en": "50 mph"
+      },
+      {
+        "en": "60 mph"
+      }
+    ]
+  }
+]

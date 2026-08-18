@@ -1,0 +1,856 @@
+{
+  "alertness": {
+    "AL-01": {
+      "promptPl": "Dlaczego należy włączyć reflektory, gdy zaczyna się ściemniać?",
+      "options": [
+        {
+          "pl": "Aby lepiej widzieć wskaźniki na desce rozdzielczej"
+        },
+        {
+          "pl": "Aby wtopić się w ruch"
+        },
+        {
+          "pl": "Aby inni użytkownicy drogi mogli Cię zobaczyć"
+        },
+        {
+          "pl": "Ponieważ zapalają się latarnie uliczne"
+        }
+      ]
+    },
+    "AL-02": {
+      "promptPl": "Co najprawdopodobniej się stanie, jeśli podczas jazdy korzystasz z telefonu hands-free?",
+      "options": [
+        {
+          "pl": "Poprawa bezpieczeństwa"
+        },
+        {
+          "pl": "Lepsza koncentracja"
+        },
+        {
+          "pl": "Pogorszenie widzenia"
+        },
+        {
+          "pl": "Rozproszenie uwagi"
+        }
+      ]
+    },
+    "AL-03": {
+      "promptPl": "Jak zapobiec temu, by GPS rozpraszał Cię podczas jazdy?",
+      "options": [
+        {
+          "pl": "Wyłączyć go w miastach"
+        },
+        {
+          "pl": "Wybrać uspokajający głos"
+        },
+        {
+          "pl": "Ustawić cel przed rozpoczęciem jazdy"
+        },
+        {
+          "pl": "Ustawiać go tylko wtedy, gdy się zgubisz"
+        }
+      ]
+    },
+    "AL-04": {
+      "promptPl": "Jeśli podczas cofania nie widzisz wyraźnie tego, co jest z tyłu, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Otworzyć okno"
+        },
+        {
+          "pl": "Otworzyć drzwi"
+        },
+        {
+          "pl": "Korzystać tylko z lusterek"
+        },
+        {
+          "pl": "Poprosić kogoś o naprowadzanie"
+        }
+      ]
+    },
+    "AL-05": {
+      "promptPl": "Co oznacza zakrzywiona strzałka namalowana na jezdni?",
+      "options": [
+        {
+          "pl": "Pojazdy ciężkie skręcają w lewo"
+        },
+        {
+          "pl": "Droga skręca w lewo przed Tobą"
+        },
+        {
+          "pl": "Wróć na lewy pas"
+        },
+        {
+          "pl": "Zmienia się przechył jezdni"
+        }
+      ]
+    },
+    "AL-06": {
+      "promptPl": "Gdzie należy unikać wyprzedzania innych pojazdów?",
+      "options": [
+        {
+          "pl": "Na ulicach jednokierunkowych"
+        },
+        {
+          "pl": "Na drogach dwujezdniowych"
+        },
+        {
+          "pl": "Zaraz za zakrętami lub zagłębieniami terenu"
+        },
+        {
+          "pl": "Na szerokich, otwartych drogach"
+        }
+      ]
+    },
+    "AL-07": {
+      "promptPl": "Co powinieneś zrobić przed zwolnieniem lub zatrzymaniem?",
+      "options": [
+        {
+          "pl": "Użyć klaksonu"
+        },
+        {
+          "pl": "Sprawdzić lusterka"
+        },
+        {
+          "pl": "Zmienić bieg"
+        },
+        {
+          "pl": "Mrugnąć światłami"
+        }
+      ]
+    },
+    "AL-08": {
+      "promptPl": "Jak bezpiecznie wyprzedzić rowerzystę na drodze?",
+      "options": [
+        {
+          "pl": "Użyć klaksonu"
+        },
+        {
+          "pl": "Przejechać blisko"
+        },
+        {
+          "pl": "Zostawić dużo miejsca"
+        },
+        {
+          "pl": "Przyspieszyć i przejechać"
+        }
+      ]
+    },
+    "AL-09": {
+      "promptPl": "Czym jest „martwy punkt”?",
+      "options": [
+        {
+          "pl": "Obszar widoczny w prawym lusterku"
+        },
+        {
+          "pl": "Obszar nieoświetlony przez reflektory"
+        },
+        {
+          "pl": "Obszar widoczny w lewym lusterku"
+        },
+        {
+          "pl": "Obszar niewidoczny dla kierowcy"
+        }
+      ]
+    },
+    "AL-10": {
+      "promptPl": "Sygnalizacja świetlna przed Tobą świeci na zielono już od dłuższego czasu. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przyspieszyć"
+        },
+        {
+          "pl": "Utrzymać prędkość"
+        },
+        {
+          "pl": "Być gotowym do zatrzymania"
+        },
+        {
+          "pl": "Gwałtownie zahamować"
+        }
+      ]
+    },
+    "AL-11": {
+      "promptPl": "Dlaczego należy zachować bezpieczną odległość za dużym pojazdem?",
+      "options": [
+        {
+          "pl": "Lepsze pokonywanie zakrętów"
+        },
+        {
+          "pl": "Łatwiejsze zatrzymanie"
+        },
+        {
+          "pl": "Aby kierowca Cię widział"
+        },
+        {
+          "pl": "Aby uniknąć wiatru"
+        }
+      ]
+    },
+    "AL-12": {
+      "promptPl": "Kiedy wolno legalnie korzystać z telefonu komórkowego trzymanego w ręku podczas prowadzenia?",
+      "options": [
+        {
+          "pl": "Odbierając połączenie"
+        },
+        {
+          "pl": "Jadąc wolno"
+        },
+        {
+          "pl": "Przy automatycznej skrzyni biegów"
+        },
+        {
+          "pl": "Gdy pojazd jest bezpiecznie zaparkowany"
+        }
+      ]
+    },
+    "AL-13": {
+      "promptPl": "Co najprawdopodobniej rozproszy Cię podczas jazdy?",
+      "options": [
+        {
+          "pl": "Wycieraczki"
+        },
+        {
+          "pl": "Odmrażacze"
+        },
+        {
+          "pl": "Lusterka"
+        },
+        {
+          "pl": "Korzystanie z telefonu komórkowego"
+        }
+      ]
+    },
+    "AL-14": {
+      "promptPl": "Dlaczego przedmioty wiszące na lusterku wewnętrznym mogą być niebezpieczne?",
+      "options": [
+        {
+          "pl": "Zasłaniają widoczność"
+        },
+        {
+          "pl": "Wpływają na radio"
+        },
+        {
+          "pl": "Plączą się z osłoną przeciwsłoneczną"
+        },
+        {
+          "pl": "Zaparzają przednią szybę"
+        }
+      ]
+    },
+    "AL-15": {
+      "promptPl": "Co powinieneś sprawdzić przed zawracaniem (U-turn)?",
+      "options": [
+        {
+          "pl": "Sygnał ręką"
+        },
+        {
+          "pl": "Wybrany bieg"
+        },
+        {
+          "pl": "Czy oznakowanie poziome na to pozwala"
+        },
+        {
+          "pl": "Spojrzeć przez ramię"
+        }
+      ]
+    },
+    "AL-16": {
+      "promptPl": "Podczas jazdy dzwoni telefon. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Odebrać natychmiast"
+        },
+        {
+          "pl": "Gwałtownie się zatrzymać"
+        },
+        {
+          "pl": "Najpierw bezpiecznie zjechać na bok"
+        },
+        {
+          "pl": "Odebrać w trakcie jazdy"
+        }
+      ]
+    },
+    "AL-17": {
+      "promptPl": "Przed skrętem w prawo na drogę dwujezdniową, co powinieneś sprawdzić?",
+      "options": [
+        {
+          "pl": "Hamulec postojowy"
+        },
+        {
+          "pl": "Pozycję po lewej stronie"
+        },
+        {
+          "pl": "Szerokość pasa dzielącego jezdnie"
+        },
+        {
+          "pl": "Wolne miejsce za Tobą"
+        }
+      ]
+    },
+    "AL-18": {
+      "promptPl": "Co powinieneś zrobić przed ruszeniem sprzed zaparkowanego samochodu?",
+      "options": [
+        {
+          "pl": "Sygnalizować dopiero po ruszeniu"
+        },
+        {
+          "pl": "Najpierw rozejrzeć się wokół"
+        },
+        {
+          "pl": "Korzystać tylko z lusterek"
+        },
+        {
+          "pl": "Rozejrzeć się dopiero po ruszeniu"
+        }
+      ]
+    },
+    "AL-19": {
+      "promptPl": "Na mokrej jezdni, jeśli musisz zatrzymać się w sytuacji awaryjnej, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Użyć hamulca postojowego"
+        },
+        {
+          "pl": "Trzymać obie ręce na kierownicy"
+        },
+        {
+          "pl": "Włączyć bieg wsteczny"
+        },
+        {
+          "pl": "Dać sygnał ręką"
+        }
+      ]
+    },
+    "AL-20": {
+      "promptPl": "Widoczność na skrzyżowaniu zasłaniają zaparkowane pojazdy. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Ruszyć szybko"
+        },
+        {
+          "pl": "Powoli i ostrożnie wysunąć się do przodu"
+        },
+        {
+          "pl": "Zapytać pieszych"
+        },
+        {
+          "pl": "Zawrócić"
+        }
+      ]
+    },
+    "AL-21": {
+      "promptPl": "Gdy zbliżasz się do mostu na wąskiej drodze, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przesunąć się w prawo"
+        },
+        {
+          "pl": "Zmienić bieg"
+        },
+        {
+          "pl": "Zwolnić"
+        },
+        {
+          "pl": "Utrzymać 30 mph"
+        }
+      ]
+    },
+    "AL-22": {
+      "promptPl": "Kiedy słupki przedniej szyby najbardziej ograniczają widoczność?",
+      "options": [
+        {
+          "pl": "Na autostradach"
+        },
+        {
+          "pl": "Na drogach dwujezdniowych"
+        },
+        {
+          "pl": "Na zakrętach i skrzyżowaniach"
+        },
+        {
+          "pl": "Na ulicach jednokierunkowych"
+        }
+      ]
+    },
+    "AL-23": {
+      "promptPl": "Dlaczego należy sprawdzić lusterka, gdy przed Tobą pojawia się zagrożenie?",
+      "options": [
+        {
+          "pl": "Aby przyspieszyć"
+        },
+        {
+          "pl": "Aby ocenić ruch za Tobą"
+        },
+        {
+          "pl": "Aby gwałtownie zahamować"
+        },
+        {
+          "pl": "Aby patrzeć tylko do przodu"
+        }
+      ]
+    },
+    "AL-24": {
+      "promptPl": "Dlaczego na jezdni maluje się poprzeczne żółte linie?",
+      "options": [
+        {
+          "pl": "Wybór pasa ruchu"
+        },
+        {
+          "pl": "Odległość między pojazdami"
+        },
+        {
+          "pl": "Świadomość prędkości"
+        },
+        {
+          "pl": "Odległość do ronda"
+        }
+      ]
+    },
+    "AL-25": {
+      "promptPl": "Podczas długiej podróży autostradą, co powinieneś zrobić, jeśli czujesz senność?",
+      "options": [
+        {
+          "pl": "Głośna muzyka"
+        },
+        {
+          "pl": "Zatrzymać się na pasie awaryjnym"
+        },
+        {
+          "pl": "Jeździć szybciej"
+        },
+        {
+          "pl": "Zjechać z autostrady i bezpiecznie odpocząć"
+        }
+      ]
+    },
+    "AL-26": {
+      "promptPl": "Wyjeżdżając ze skrzyżowania przy zasłoniętej widoczności, na kogo powinieneś szczególnie uważać?",
+      "options": [
+        {
+          "pl": "Ciężarówki"
+        },
+        {
+          "pl": "Autobusy"
+        },
+        {
+          "pl": "Motocyklistów"
+        },
+        {
+          "pl": "Autokary"
+        }
+      ]
+    }
+  },
+  "hazard-awareness": {
+    "HZ-01": {
+      "promptPl": "Dlaczego należy zmniejszyć prędkość, gdy droga przed Tobą się zwęża?",
+      "options": [
+        {
+          "pl": "Bo przed Tobą jest skrzyżowanie przesunięte"
+        },
+        {
+          "pl": "Bo jest mniej miejsca na błąd i bezpieczne mijanie pojazdów"
+        },
+        {
+          "pl": "Bo nagle zmienia się nawierzchnia"
+        },
+        {
+          "pl": "Bo zbliża się niski most"
+        }
+      ]
+    },
+    "HZ-02": {
+      "promptPl": "Gdy zbliżasz się do rowerzysty w pobliżu skrzyżowania, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Spróbować wyprzedzić, zanim rowerzysta dojedzie do skrzyżowania"
+        },
+        {
+          "pl": "Mrugnąć światłami, żeby go ostrzec"
+        },
+        {
+          "pl": "Zmniejszyć prędkość i pozwolić rowerzyście dokończyć manewr"
+        },
+        {
+          "pl": "Dodać gazu, żeby Cię zauważył"
+        }
+      ]
+    },
+    "HZ-03": {
+      "promptPl": "Czekasz na skrzyżowaniu, a zaparkowane pojazdy ograniczają widoczność. Co może pomóc ocenić nadjeżdżający ruch?",
+      "options": [
+        {
+          "pl": "Obserwowanie ruchu za Tobą"
+        },
+        {
+          "pl": "Korzystanie z odbić w pobliskich oknach"
+        },
+        {
+          "pl": "Nawiązanie kontaktu wzrokowego z pieszymi"
+        },
+        {
+          "pl": "Sprawdzanie tylko lusterka wewnętrznego"
+        }
+      ]
+    },
+    "HZ-04": {
+      "promptPl": "Jeśli wzrok pogorszył się i nie spełnia już prawnych wymogów do prowadzenia, co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Poinformować organ wydający prawo jazdy"
+        },
+        {
+          "pl": "Powiedzieć tylko optykowi"
+        },
+        {
+          "pl": "Skontaktować się z policją"
+        },
+        {
+          "pl": "Porozmawiać z lekarzem i nadal jeździć"
+        }
+      ]
+    },
+    "HZ-05": {
+      "promptPl": "Która z poniższych czynności poważnie rozproszyłaby Cię podczas jazdy?",
+      "options": [
+        {
+          "pl": "Czytanie mapy drogowej"
+        },
+        {
+          "pl": "Używanie odmrażacza"
+        },
+        {
+          "pl": "Włączanie spryskiwaczy przedniej szyby"
+        },
+        {
+          "pl": "Sprawdzanie lusterka bocznego"
+        }
+      ]
+    },
+    "HZ-06": {
+      "promptPl": "Gdy zbliżasz się do przejazdu kolejowego, zaczynają migać czerwone światła ostrzegawcze. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Szybko przejechać, zanim opuszczą się szlabany"
+        },
+        {
+          "pl": "Ostrożnie kontynuować przejazd"
+        },
+        {
+          "pl": "Zatrzymać się przed szlabanem"
+        },
+        {
+          "pl": "Włączyć światła awaryjne i jechać dalej"
+        }
+      ]
+    },
+    "HZ-07": {
+      "promptPl": "Jedziesz drogą wielopasmową. Co oznaczają nadziemne sygnały pasa z czerwonym krzyżem?",
+      "options": [
+        {
+          "pl": "Prawe pasy są otwarte"
+        },
+        {
+          "pl": "Lewe pasy są otwarte"
+        },
+        {
+          "pl": "Pojazdy na lewych pasach muszą się zatrzymać"
+        },
+        {
+          "pl": "Pojazdy na prawych pasach muszą się zatrzymać"
+        }
+      ]
+    },
+    "HZ-08": {
+      "promptPl": "Co powinieneś zrobić, jeśli podczas jazdy autostradą zaczynasz czuć zmęczenie?",
+      "options": [
+        {
+          "pl": "Zatrzymać się na pasie awaryjnym i zmienić kierowcę"
+        },
+        {
+          "pl": "Zjechać na następnym zjeździe i zrobić przerwę"
+        },
+        {
+          "pl": "Zwiększyć prędkość i podgłośnić radio"
+        },
+        {
+          "pl": "Zamknąć okna i podkręcić ogrzewanie"
+        }
+      ]
+    },
+    "HZ-09": {
+      "promptPl": "Dlaczego skrzyżowanie po lewej stronie musi pozostać wolne?",
+      "options": [
+        {
+          "pl": "Aby pojazdy mogły bezpiecznie wjeżdżać i wyjeżdżać"
+        },
+        {
+          "pl": "Aby autobusy mogły cofać"
+        },
+        {
+          "pl": "Aby umożliwić zawracanie"
+        },
+        {
+          "pl": "Aby umożliwić parkowanie"
+        }
+      ]
+    },
+    "HZ-10": {
+      "promptPl": "Stoisz za rowerzystą na światłach. Gdy światła się zmieniają, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Ruszyć szybko przed rowerzystą"
+        },
+        {
+          "pl": "Dać rowerzyście czas i przestrzeń"
+        },
+        {
+          "pl": "Natychmiast skręcić w prawo"
+        },
+        {
+          "pl": "Użyć klaksonu i jechać dalej"
+        }
+      ]
+    },
+    "HZ-11": {
+      "promptPl": "Jakie zagrożenie jest najbardziej prawdopodobne, gdy mijasz autobus zatrzymany przy krawędzi drogi?",
+      "options": [
+        {
+          "pl": "Czarny samochód zatrzymujący się nagle"
+        },
+        {
+          "pl": "Nadjeżdżający ruch zakładający skręt w prawo"
+        },
+        {
+          "pl": "Autobus niespodziewanie włączający się do ruchu"
+        },
+        {
+          "pl": "Oślepienie słońcem"
+        }
+      ]
+    },
+    "HZ-12": {
+      "promptPl": "Który pojazd często używa bursztynowego migającego sygnalizatora na drodze dwujezdniowej?",
+      "options": [
+        {
+          "pl": "Karetka"
+        },
+        {
+          "pl": "Wóz strażacki"
+        },
+        {
+          "pl": "Samochód lekarza"
+        },
+        {
+          "pl": "Traktor"
+        }
+      ]
+    },
+    "HZ-13": {
+      "promptPl": "Zdajesz sobie sprawę, że jedziesz w złą stronę ulicą jednokierunkową. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Cofnąć się"
+        },
+        {
+          "pl": "Zawrócić na bocznej drodze"
+        },
+        {
+          "pl": "Kontynuować jazdę i znaleźć inną trasę"
+        },
+        {
+          "pl": "Cofnąć na podjazd"
+        }
+      ]
+    },
+    "HZ-14": {
+      "promptPl": "Dlaczego drogi dwukierunkowe z trzema pasami są szczególnie niebezpieczne?",
+      "options": [
+        {
+          "pl": "Ruch z obu kierunków może wyprzedzać środkowym pasem"
+        },
+        {
+          "pl": "Pojazdy jeżdżą szybciej przy złej pogodzie"
+        },
+        {
+          "pl": "Wyprzedzanie odbywa się po lewej"
+        },
+        {
+          "pl": "Środkowy pas jest tylko do sytuacji awaryjnych"
+        }
+      ]
+    },
+    "HZ-15": {
+      "promptPl": "Na skrzyżowaniu z linią zatrzymania, co musisz zrobić?",
+      "options": [
+        {
+          "pl": "Zatrzymać się przed linią, potem powoli wysunąć się, aby dobrze widzieć"
+        },
+        {
+          "pl": "Zatrzymać się za linią"
+        },
+        {
+          "pl": "Zatrzymać się tylko, gdy jest ruch"
+        },
+        {
+          "pl": "Zatrzymać się tylko przy skręcie w prawo"
+        }
+      ]
+    },
+    "HZ-16": {
+      "promptPl": "Gdy zbliżasz się do przejścia dla pieszych, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Utrzymać prędkość"
+        },
+        {
+          "pl": "Użyć klaksonu"
+        },
+        {
+          "pl": "Szybko przejechać"
+        },
+        {
+          "pl": "Zwolnić i być gotowym do zatrzymania"
+        }
+      ]
+    },
+    "HZ-17": {
+      "promptPl": "Który użytkownik drogi najprawdopodobniej stworzy zagrożenie, zasłaniając widoczność przy skrzyżowaniu?",
+      "options": [
+        {
+          "pl": "Pieszy czekający"
+        },
+        {
+          "pl": "Poruszający się samochód"
+        },
+        {
+          "pl": "Skręcający pojazd"
+        },
+        {
+          "pl": "Zaparkowany samochód"
+        }
+      ]
+    },
+    "HZ-18": {
+      "promptPl": "Jedziesz za wolnym pojazdem, a przed Tobą jest skrzyżowanie po prawej. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Wyprzedzić przed skrzyżowaniem"
+        },
+        {
+          "pl": "Wyprzedzać dopiero po minięciu skrzyżowania"
+        },
+        {
+          "pl": "Gwałtownie przyspieszyć, aby wyprzedzić"
+        },
+        {
+          "pl": "Przygotować się do wyprzedzania po lewej"
+        }
+      ]
+    },
+    "HZ-19": {
+      "promptPl": "Ruch na lewym pasie zwalnia. Jaka jest najbezpieczniejsza reakcja?",
+      "options": [
+        {
+          "pl": "Zmniejszyć prędkość i zachować bezpieczną odległość"
+        },
+        {
+          "pl": "Przyspieszyć i wyprzedzić ruch"
+        },
+        {
+          "pl": "Zjechać na pobocze"
+        },
+        {
+          "pl": "Przejechać w prawo i kontynuować"
+        }
+      ]
+    },
+    "HZ-20": {
+      "promptPl": "Policjant daje sygnał ręką nadjeżdżającemu ruchowi. Co to oznacza?",
+      "options": [
+        {
+          "pl": "Jedź"
+        },
+        {
+          "pl": "Zatrzymaj się"
+        },
+        {
+          "pl": "Skręć w lewo"
+        },
+        {
+          "pl": "Skręć w prawo"
+        }
+      ]
+    },
+    "HZ-21": {
+      "promptPl": "Właśnie miałeś burzliwą kłótnię i czujesz złość. Co powinieneś zrobić, zanim wsiądziesz za kierownicę?",
+      "options": [
+        {
+          "pl": "Ruszyć, żeby się „wyciszyć”"
+        },
+        {
+          "pl": "Podgłośnić radio, żeby się rozproszyć"
+        },
+        {
+          "pl": "Wypić alkohol, żeby się zrelaksować"
+        },
+        {
+          "pl": "Poczekać, aż się uspokoisz, zanim ruszysz"
+        }
+      ]
+    },
+    "HZ-22": {
+      "promptPl": "Zbliżasz się do skrzyżowania na drodze wiejskiej, a widok w prawo częściowo zasłania żywopłot. Dlaczego powinieneś wcześnie zwolnić?",
+      "options": [
+        {
+          "pl": "Bo zwierzęta zawsze tu przechodzą"
+        },
+        {
+          "pl": "Bo może być ruch, którego nie zobaczysz wystarczająco wcześnie"
+        },
+        {
+          "pl": "Bo przejazdy kolejowe są częste na drogach wiejskich"
+        },
+        {
+          "pl": "Bo limit prędkości automatycznie zmienia się na skrzyżowaniach"
+        }
+      ]
+    },
+    "HZ-23": {
+      "promptPl": "Samochód przed Tobą zaczyna cofać z podjazdu na jezdnię. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przyspieszyć, żeby przejechać, zanim zablokuje drogę"
+        },
+        {
+          "pl": "Użyć klaksonu i jechać dalej"
+        },
+        {
+          "pl": "Być gotowym do zatrzymania i ustąpić pierwszeństwa"
+        },
+        {
+          "pl": "Przejechać na przeciwną stronę z tą samą prędkością"
+        }
+      ]
+    },
+    "HZ-24": {
+      "promptPl": "Dlaczego wiele lusterek bocznych jest lekko wypukłych?",
+      "options": [
+        {
+          "pl": "Powiększają pojazdy z tyłu"
+        },
+        {
+          "pl": "Dają szersze pole widzenia"
+        },
+        {
+          "pl": "Eliminują potrzebę sprawdzania martwych punktów"
+        },
+        {
+          "pl": "Zmniejszają olśnienie od reflektorów"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,322 @@
+[
+  {
+    "term": "windsock",
+    "en": "A cone-shaped cloth tube that shows wind direction and strength; used as a road-sign symbol."
+  },
+  {
+    "term": "Rear fog lights",
+    "en": "Bright red lights at the back of a vehicle used only in thick fog to help others see you."
+  },
+  {
+    "term": "heavy spray",
+    "en": "Water thrown up by tyres on a wet road, which can reduce visibility."
+  },
+  {
+    "term": "right-hand bend",
+    "en": "A curve in the road that turns to the right as you travel along it."
+  },
+  {
+    "term": "speed hump",
+    "en": "A raised ridge across the road that forces drivers to slow down."
+  },
+  {
+    "term": "ABS brakes",
+    "en": "Anti-lock braking system that helps you steer while braking hard in an emergency."
+  },
+  {
+    "term": "emergency stop",
+    "en": "Braking as quickly and safely as possible to avoid a collision."
+  },
+  {
+    "term": "Coast",
+    "en": "To roll without engine drive (e.g. in neutral), which reduces control."
+  },
+  {
+    "term": "ABS",
+    "en": "Anti-lock braking system that helps you steer while braking hard in an emergency."
+  },
+  {
+    "term": "footbrake",
+    "en": "The main brake pedal operated with your foot to slow or stop the vehicle."
+  },
+  {
+    "term": "tyre grip",
+    "en": "How well the tyres hold the road surface for steering and braking."
+  },
+  {
+    "term": "Hill starts",
+    "en": "Moving off from a standstill on an uphill slope without rolling back."
+  },
+  {
+    "term": "tread depth",
+    "en": "How deep the grooves in a tyre are; worn-down tread reduces grip, especially in wet weather."
+  },
+  {
+    "term": "towed caravan",
+    "en": "A caravan being pulled behind another vehicle on the road."
+  },
+  {
+    "term": "stabiliser",
+    "en": "A device that helps reduce swaying of a trailer or caravan while towing."
+  },
+  {
+    "term": "axles",
+    "en": "The shafts that the wheels of a vehicle or trailer turn on."
+  },
+  {
+    "term": "roof rack",
+    "en": "A frame fitted on a vehicle’s roof for carrying extra loads."
+  },
+  {
+    "term": "restraints",
+    "en": "Straps, ropes, or other fittings used to hold a load firmly in place."
+  },
+  {
+    "term": "pedestrian crossing",
+    "en": "A marked place on the road where people on foot can cross safely."
+  },
+  {
+    "term": "following very closely",
+    "en": "Driving with too little space behind another vehicle (tailgating), which is unsafe."
+  },
+  {
+    "term": "stopping time",
+    "en": "How long you have to react and brake before you would hit the vehicle ahead."
+  },
+  {
+    "term": "two-second following gap",
+    "en": "A rule of thumb: stay at least two seconds behind the vehicle ahead in good, dry conditions."
+  },
+  {
+    "term": "swings right",
+    "en": "Moves out to the right before turning left—common for long vehicles that need more space."
+  },
+  {
+    "term": "diamond-shaped lane signs",
+    "en": "White diamond road markings that show a lane reserved for particular vehicles."
+  },
+  {
+    "term": "flash your headlights",
+    "en": "Briefly switch headlights on and off only to let others know you are there—not to claim priority."
+  },
+  {
+    "term": "right of way",
+    "en": "Who is allowed to go first when paths cross or meet."
+  },
+  {
+    "term": "flashing amber",
+    "en": "An amber traffic light that blinks on and off at a pelican crossing."
+  },
+  {
+    "term": "Defensive",
+    "en": "A careful driving style that anticipates hazards and leaves a safety margin."
+  },
+  {
+    "term": "herding animals",
+    "en": "Moving livestock (such as sheep or cattle) along or across a road."
+  },
+  {
+    "term": "blue flashing beacon",
+    "en": "A flashing blue warning light used by certain emergency or specialist vehicles."
+  },
+  {
+    "term": "Snow plough",
+    "en": "A vehicle that clears snow from the road, often with a blade at the front."
+  },
+  {
+    "term": "Breakdown recovery",
+    "en": "A vehicle that helps remove or repair broken-down vehicles on the road."
+  },
+  {
+    "term": "Full beam",
+    "en": "Headlights aimed high for maximum range; can dazzle oncoming drivers."
+  },
+  {
+    "term": "push-button signals",
+    "en": "Pedestrian traffic lights started by pressing a button at the crossing."
+  },
+  {
+    "term": "two-second following rule",
+    "en": "In good, dry conditions, keep at least a two-second gap behind the vehicle ahead."
+  },
+  {
+    "term": "diesel fuel cap",
+    "en": "The cover that seals the diesel filler opening; if loose, fuel can spill onto the road."
+  },
+  {
+    "term": "main-beam headlights",
+    "en": "The high-intensity headlight setting (full beam) for dark roads with no oncoming traffic."
+  },
+  {
+    "term": "winding road",
+    "en": "A road with many bends, where overtaking is often difficult and slow traffic can build up."
+  },
+  {
+    "term": "flashes headlights",
+    "en": "Briefly switches headlights on and off—often to ask for room to pass, not to demand you speed up."
+  },
+  {
+    "term": "filler cap",
+    "en": "The cover that seals the fuel tank opening after refuelling."
+  },
+  {
+    "term": "green flashing beacon",
+    "en": "A flashing green warning light used by certain medical vehicles responding to emergencies."
+  },
+  {
+    "term": "Road gritter",
+    "en": "A vehicle that spreads salt or grit on roads to reduce ice in cold weather."
+  },
+  {
+    "term": "overtake a horse and rider",
+    "en": "Pass a person riding a horse on the road; horses can be startled by noise and speed."
+  },
+  {
+    "term": "trams",
+    "en": "Electric passenger vehicles that run on rails set into the road surface."
+  },
+  {
+    "term": "unlit road",
+    "en": "A road with no street lighting at night."
+  },
+  {
+    "term": "cuts in",
+    "en": "Moves suddenly into your lane or gap with little space in front of you."
+  },
+  {
+    "term": "blue flashing lights",
+    "en": "Emergency warning lights used by police, fire, ambulance, and similar services."
+  },
+  {
+    "term": "dazzling",
+    "en": "Blinding other drivers with bright lights, such as brake lights in a queue at night."
+  },
+  {
+    "term": "unattended",
+    "en": "Left alone with no one in or watching the vehicle."
+  },
+  {
+    "term": "bodywork",
+    "en": "The outer shell and panels of the vehicle (bonnet, wings, doors, etc.)."
+  },
+  {
+    "term": "peak traffic hours",
+    "en": "The busiest times of day when roads are most congested (rush hour)."
+  },
+  {
+    "term": "Antifreeze",
+    "en": "A liquid mixed with water in the cooling system to stop it freezing in cold weather."
+  },
+  {
+    "term": "Brake fluid",
+    "en": "Hydraulic fluid that transfers pressure from the brake pedal to the brakes."
+  },
+  {
+    "term": "parking lights",
+    "en": "Dim sidelights left on when parked so others can see your vehicle at night."
+  },
+  {
+    "term": "stationary",
+    "en": "Not moving; the vehicle is at a complete stop."
+  },
+  {
+    "term": "Vehicle registration document",
+    "en": "The official paper (V5C / log book) that records who the vehicle is registered to."
+  },
+  {
+    "term": "security-coded radio",
+    "en": "A car radio that needs a code after power loss, making it useless to thieves."
+  },
+  {
+    "term": "peak traffic times",
+    "en": "Busy periods when many people travel, often morning and evening rush hours."
+  },
+  {
+    "term": "congestion",
+    "en": "Heavy, slow-moving traffic when roads are overcrowded."
+  },
+  {
+    "term": "fuel consumption",
+    "en": "How much fuel the vehicle uses; higher use means more cost and emissions."
+  },
+  {
+    "term": "under-inflated tyres",
+    "en": "Tyres with too little air pressure, which can worsen handling and wear."
+  },
+  {
+    "term": "lane markings",
+    "en": "Painted lines on the road that show where each traffic lane is."
+  },
+  {
+    "term": "blind-spot assist",
+    "en": "A system that warns if a vehicle is in an area you cannot see in your mirrors."
+  },
+  {
+    "term": "engine revs",
+    "en": "How fast the engine is turning; often shown on the rev counter (tachometer)."
+  },
+  {
+    "term": "drifting out of lane",
+    "en": "Gradually moving sideways so the vehicle leaves its traffic lane."
+  },
+  {
+    "term": "pulls to one side",
+    "en": "The vehicle steers or veers left or right by itself when you brake or drive."
+  },
+  {
+    "term": "harsh braking",
+    "en": "Braking suddenly and hard instead of smoothly and early."
+  },
+  {
+    "term": "warden",
+    "en": "A parking or traffic warden who enforces parking rules."
+  },
+  {
+    "term": "Oil seals",
+    "en": "Rubber or metal rings that stop oil leaking from the engine."
+  },
+  {
+    "term": "Timing belt",
+    "en": "A belt that keeps engine valves and pistons moving in the correct timing."
+  },
+  {
+    "term": "Clutch",
+    "en": "The pedal/system that disconnects the engine from the wheels when changing gear."
+  },
+  {
+    "term": "service schedule",
+    "en": "The maker’s planned times for checks, oil changes, and maintenance."
+  },
+  {
+    "term": "route planner",
+    "en": "A map or app that suggests roads and directions for a journey."
+  },
+  {
+    "term": "handbook",
+    "en": "The vehicle’s owner manual with operating and safety information."
+  },
+  {
+    "term": "environmentally friendly",
+    "en": "Causing less harm to the environment, e.g. lower emissions."
+  },
+  {
+    "term": "alternative route",
+    "en": "A different path to the same destination if the usual road is blocked."
+  },
+  {
+    "term": "Congestion charges",
+    "en": "Fees charged to drive into certain busy city zones to reduce traffic."
+  },
+  {
+    "term": "bus lanes",
+    "en": "Lanes reserved mainly for buses (and sometimes taxis or cycles)."
+  },
+  {
+    "term": "Gearbox",
+    "en": "The part of the car that contains the gears for changing speed and power."
+  },
+  {
+    "term": "Transmission",
+    "en": "The system that transfers engine power to the wheels, including the gearbox."
+  }
+]

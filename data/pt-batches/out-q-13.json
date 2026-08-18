@@ -1,0 +1,856 @@
+{
+  "incidents": {
+    "IN-09": {
+      "promptPt": "Se um ferido deixou de respirar, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Dar-lhe água"
+        },
+        {
+          "pt": "Elevar-lhe as pernas"
+        },
+        {
+          "pt": "Iniciar CPR imediatamente"
+        },
+        {
+          "pt": "Manter a cabeça inclinada para a frente"
+        }
+      ]
+    },
+    "IN-10": {
+      "promptPt": "Quando deve chamar os serviços de emergência se alguém estiver inconsciente após um acidente?",
+      "options": [
+        {
+          "pt": "Depois de o acordar"
+        },
+        {
+          "pt": "Só se os outros falharem"
+        },
+        {
+          "pt": "O mais depressa possível"
+        },
+        {
+          "pt": "Depois de verificar as lesões"
+        }
+      ]
+    },
+    "IN-11": {
+      "promptPt": "Ao chegar ao local de um acidente, o que deve verificar primeiro?",
+      "options": [
+        {
+          "pt": "Iniciar CPR"
+        },
+        {
+          "pt": "Procurar um AED"
+        },
+        {
+          "pt": "Confirmar que é seguro aproximar-se"
+        },
+        {
+          "pt": "Mover o ferido"
+        }
+      ]
+    },
+    "IN-12": {
+      "promptPt": "Se o trânsito parar dentro de um túnel, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Estacionar muito perto do carro da frente"
+        },
+        {
+          "pt": "Ignorar os painéis de mensagens"
+        },
+        {
+          "pt": "Manter uma distância segura do veículo da frente"
+        },
+        {
+          "pt": "Dar a volta"
+        }
+      ]
+    },
+    "IN-13": {
+      "promptPt": "Quem pode usar um AED público?",
+      "options": [
+        {
+          "pt": "Apenas médicos"
+        },
+        {
+          "pt": "Apenas paramédicos"
+        },
+        {
+          "pt": "Apenas socorristas"
+        },
+        {
+          "pt": "Qualquer pessoa"
+        }
+      ]
+    },
+    "IN-14": {
+      "promptPt": "Como deve ajudar alguém com hemorragia grave numa ferida no braço?",
+      "options": [
+        {
+          "pt": "Dar-lhe uma bebida"
+        },
+        {
+          "pt": "Tocar de leve na ferida"
+        },
+        {
+          "pt": "Fazê-lo andar"
+        },
+        {
+          "pt": "Aplicar pressão firme"
+        }
+      ]
+    },
+    "IN-15": {
+      "promptPt": "Como podem os serviços de emergência identificar um veículo que transporta mercadorias perigosas?",
+      "options": [
+        {
+          "pt": "Matrículas especiais"
+        },
+        {
+          "pt": "Símbolos de aviso ou marcações de perigo"
+        },
+        {
+          "pt": "Luzes azuis intermitentes"
+        },
+        {
+          "pt": "Alarmes sonoros"
+        }
+      ]
+    },
+    "IN-16": {
+      "promptPt": "O que o avisa de congestionamento à frente num túnel longo?",
+      "options": [
+        {
+          "pt": "Linhas de perigo"
+        },
+        {
+          "pt": "Faróis a piscar"
+        },
+        {
+          "pt": "Painéis de mensagens variáveis"
+        },
+        {
+          "pt": "Marcas rodoviárias"
+        }
+      ]
+    }
+  },
+  "road-signs": {
+    "RS-2001": {
+      "promptPt": "Vê um sinal triangular invertido com bordo vermelho num cruzamento. O que significa?",
+      "options": [
+        {
+          "pt": "Deve parar e desligar o motor"
+        },
+        {
+          "pt": "Tem prioridade sobre o trânsito na via principal"
+        },
+        {
+          "pt": "Deve ceder a passagem ao trânsito na via principal"
+        },
+        {
+          "pt": "Nenhum veículo pode entrar no cruzamento"
+        }
+      ]
+    },
+    "RS-2002": {
+      "promptPt": "O que lhe indica um sinal octogonal vermelho com a palavra 'STOP'?",
+      "options": [
+        {
+          "pt": "Reduzir a velocidade e continuar se a estrada parecer livre"
+        },
+        {
+          "pt": "Parar só se houver peões a atravessar"
+        },
+        {
+          "pt": "Parar e ceder a passagem só a veículos vindos da esquerda"
+        },
+        {
+          "pt": "Parar completamente na linha de paragem antes de avançar"
+        }
+      ]
+    },
+    "RS-2003": {
+      "promptPt": "Aproxima-se de um sinal circular vermelho com uma barra horizontal branca. O que significa este sinal?",
+      "options": [
+        {
+          "pt": "Entrada proibida a veículos"
+        },
+        {
+          "pt": "Paragem proibida em qualquer altura"
+        },
+        {
+          "pt": "Fim das restrições"
+        },
+        {
+          "pt": "Trânsito nos dois sentidos à frente"
+        }
+      ]
+    },
+    "RS-2006": {
+      "promptPt": "Vê um sinal circular com bordo vermelho a mostrar '30'. O que significa?",
+      "options": [
+        {
+          "pt": "A velocidade mínima é 30 mph"
+        },
+        {
+          "pt": "A velocidade recomendada é 30 mph"
+        },
+        {
+          "pt": "A velocidade máxima é 30 mph"
+        },
+        {
+          "pt": "A velocidade média deve ser 30 mph"
+        }
+      ]
+    },
+    "RS-2009": {
+      "promptPt": "O que indica este sinal de aviso?",
+      "options": [
+        {
+          "pt": "Passagem de peões tipo Zebra à frente"
+        },
+        {
+          "pt": "Zona só para peões"
+        },
+        {
+          "pt": "Semáforos à frente"
+        },
+        {
+          "pt": "Apenas entrada de escola"
+        }
+      ]
+    },
+    "RS-2010": {
+      "promptPt": "O que indica este sinal de aviso?",
+      "options": [
+        {
+          "pt": "Curva dupla à frente, a primeira para a esquerda"
+        },
+        {
+          "pt": "Estrada estreita à esquerda"
+        },
+        {
+          "pt": "Apenas curva apertada à direita"
+        },
+        {
+          "pt": "Estrada escorregadia à frente"
+        }
+      ]
+    },
+    "RS-2011": {
+      "promptPt": "O que significa um sinal circular azul com bordo vermelho e uma única linha diagonal vermelha?",
+      "options": [
+        {
+          "pt": "Estacionamento proibido"
+        },
+        {
+          "pt": "Paragem proibida em qualquer altura"
+        },
+        {
+          "pt": "Estacionamento permitido"
+        },
+        {
+          "pt": "Fim das restrições de estacionamento"
+        }
+      ]
+    },
+    "RS-2012": {
+      "promptPt": "Conduz numa zona de floresta ao anoitecer e vê um sinal triangular de aviso com um veado. A que perigo deve estar atento?",
+      "options": [
+        {
+          "pt": "Animais selvagens podem aparecer de súbito e atravessar a estrada"
+        },
+        {
+          "pt": "Há uma entrada de parque de vida selvagem à frente"
+        },
+        {
+          "pt": "Só veículos agrícolas são permitidos nesta estrada"
+        },
+        {
+          "pt": "Há uma zona de caça à frente"
+        }
+      ]
+    },
+    "RS-2013": {
+      "promptPt": "O que significa um sinal circular vermelho com fundo branco e um símbolo de buzina riscados?",
+      "options": [
+        {
+          "pt": "Usar a buzina só em emergências"
+        },
+        {
+          "pt": "Proibido tocar a buzina"
+        },
+        {
+          "pt": "Zona de silêncio à frente"
+        },
+        {
+          "pt": "Buzina recomendada nesta zona"
+        }
+      ]
+    },
+    "RS-2015": {
+      "promptPt": "Aproxima-se de uma ponte e vê um sinal triangular de aviso a mostrar a estrada a estreitar dos dois lados. Para o que se deve preparar?",
+      "options": [
+        {
+          "pt": "Largura reduzida da estrada, exigindo menor velocidade e mais cuidado"
+        },
+        {
+          "pt": "Deve acelerar para passar depressa"
+        },
+        {
+          "pt": "Pode usar o centro da estrada"
+        },
+        {
+          "pt": "Ultrapassar veículos antes de chegar à secção estreita"
+        }
+      ]
+    },
+    "RS-2016": {
+      "promptPt": "Vê um sinal retangular azul com um símbolo branco de autoestrada. O que indica este sinal?",
+      "options": [
+        {
+          "pt": "Fim da autoestrada"
+        },
+        {
+          "pt": "Autoestrada à frente"
+        },
+        {
+          "pt": "Via de dupla faixa à frente"
+        },
+        {
+          "pt": "Área de serviço à frente"
+        }
+      ]
+    },
+    "RS-2017": {
+      "promptPt": "O que significa uma linha branca interrompida atravessando a estrada num cruzamento?",
+      "options": [
+        {
+          "pt": "Deve parar completamente"
+        },
+        {
+          "pt": "Deve ceder a passagem se necessário"
+        },
+        {
+          "pt": "Ultrapassagem não permitida"
+        },
+        {
+          "pt": "Estacionamento proibido"
+        }
+      ]
+    },
+    "RS-2018": {
+      "promptPt": "Um sinal circular azul mostra uma seta branca a apontar em frente. O que significa?",
+      "options": [
+        {
+          "pt": "Deve seguir apenas em frente"
+        },
+        {
+          "pt": "Entrada proibida em frente"
+        },
+        {
+          "pt": "O trânsito à frente deve virar à esquerda"
+        },
+        {
+          "pt": "A estrada termina à frente"
+        }
+      ]
+    },
+    "RS-2020": {
+      "promptPt": "Um sinal de aviso mostra uma elevação na estrada. O que deve esperar?",
+      "options": [
+        {
+          "pt": "Uma ladeira íngreme à frente"
+        },
+        {
+          "pt": "Lombas à frente"
+        },
+        {
+          "pt": "Pavimento irregular só com tempo húmido"
+        },
+        {
+          "pt": "Estrada fechada à frente"
+        }
+      ]
+    },
+    "RS-2022": {
+      "promptPt": "O que indica um sinal circular com bordo vermelho e um símbolo de motociclo?",
+      "options": [
+        {
+          "pt": "Só motociclos"
+        },
+        {
+          "pt": "Motociclos proibidos"
+        },
+        {
+          "pt": "Fim da restrição a motociclos"
+        },
+        {
+          "pt": "Itinerário recomendado para motociclos"
+        }
+      ]
+    },
+    "RS-2023": {
+      "promptPt": "Um sinal mostra um círculo vermelho com fundo branco e um símbolo de camião. O que significa?",
+      "options": [
+        {
+          "pt": "Os camiões devem usar este itinerário"
+        },
+        {
+          "pt": "Veículos de mercadorias proibidos"
+        },
+        {
+          "pt": "Fim da restrição a veículos de mercadorias"
+        },
+        {
+          "pt": "Só veículos pesados"
+        }
+      ]
+    },
+    "RS-2024": {
+      "promptPt": "Vê um sinal azul com uma seta branca a apontar para a esquerda e para a direita. O que significa?",
+      "options": [
+        {
+          "pt": "Deve virar à esquerda ou à direita"
+        },
+        {
+          "pt": "Proibido fazer inversão de marcha"
+        },
+        {
+          "pt": "Trânsito nos dois sentidos à frente"
+        },
+        {
+          "pt": "Estrada estreita dos dois lados"
+        }
+      ]
+    },
+    "RS-2025": {
+      "promptPt": "Vê uma zona hachurada com linhas brancas diagonais delimitada por linhas brancas interrompidas. O que significa e quando pode entrar nela?",
+      "options": [
+        {
+          "pt": "Nunca entrar — separa as faixas de trânsito"
+        },
+        {
+          "pt": "Entrar só se for necessário e seguro, e só se a linha interrompida estiver do seu lado"
+        },
+        {
+          "pt": "Só veículos de emergência"
+        },
+        {
+          "pt": "Ultrapassagem obrigatória"
+        }
+      ]
+    },
+    "RS-2026": {
+      "promptPt": "O que significa este sinal circular com bordo vermelho e uma seta de viragem à direita riscada?",
+      "options": [
+        {
+          "pt": "Proibido virar à direita"
+        },
+        {
+          "pt": "Virar só à direita"
+        },
+        {
+          "pt": "Proibida inversão de marcha"
+        },
+        {
+          "pt": "Estrada de sentido único para a direita"
+        }
+      ]
+    },
+    "RS-2027": {
+      "promptPt": "Conduz numa via principal e vê um sinal triangular de aviso a mostrar semáforos. Para o que se deve preparar?",
+      "options": [
+        {
+          "pt": "Semáforos à frente que podem mudar para vermelho"
+        },
+        {
+          "pt": "Uma passagem de peões sem semáforos"
+        },
+        {
+          "pt": "A estrada está fechada à frente"
+        },
+        {
+          "pt": "Um posto de controlo policial à frente"
+        }
+      ]
+    },
+    "RS-2028": {
+      "promptPt": "O que indica um sinal retangular com um símbolo branco de radar de velocidade sobre fundo azul?",
+      "options": [
+        {
+          "pt": "O limite de velocidade termina à frente"
+        },
+        {
+          "pt": "Zona de controlo de velocidade média"
+        },
+        {
+          "pt": "Informação sobre radar de velocidade"
+        },
+        {
+          "pt": "Apenas fiscalização policial de velocidade"
+        }
+      ]
+    },
+    "RS-2029": {
+      "promptPt": "Vê um sinal triangular de aviso a mostrar uma bicicleta. Sobre o que o avisa?",
+      "options": [
+        {
+          "pt": "Só itinerário ciclável"
+        },
+        {
+          "pt": "Ciclistas a atravessar ou a usar a estrada"
+        },
+        {
+          "pt": "Fim da ciclovia"
+        },
+        {
+          "pt": "Bicicletas proibidas"
+        }
+      ]
+    },
+    "RS-2030": {
+      "promptPt": "Um sinal circular azul mostra uma barra horizontal branca. Que indicação dá?",
+      "options": [
+        {
+          "pt": "Passar de qualquer dos lados para chegar ao mesmo destino"
+        },
+        {
+          "pt": "Entrada proibida a veículos"
+        },
+        {
+          "pt": "Estrada fechada à frente"
+        },
+        {
+          "pt": "Manter-se apenas à esquerda"
+        }
+      ]
+    },
+    "RS-2031": {
+      "promptPt": "Conduz numa via principal e vê um sinal triangular de aviso a mostrar uma estrada lateral a juntar-se pela esquerda. Que perigo deve antecipar?",
+      "options": [
+        {
+          "pt": "Veículos podem sair da estrada lateral e entrar na sua trajetória"
+        },
+        {
+          "pt": "O trânsito da esquerda tem sempre prioridade"
+        },
+        {
+          "pt": "Deve ultrapassar antes do cruzamento"
+        },
+        {
+          "pt": "A estrada torna-se de sentido único à frente"
+        }
+      ]
+    },
+    "RS-2032": {
+      "promptPt": "O que significa este sinal triangular de aviso a mostrar duas setas em sentidos opostos?",
+      "options": [
+        {
+          "pt": "Trânsito nos dois sentidos atravessa uma estrada de sentido único"
+        },
+        {
+          "pt": "Estrada estreita à frente"
+        },
+        {
+          "pt": "Fim da estrada de sentido único"
+        },
+        {
+          "pt": "O trânsito deve virar à direita"
+        }
+      ]
+    },
+    "RS-2033": {
+      "promptPt": "Um sinal circular com bordo vermelho mostra '20'. Onde se usa normalmente este limite?",
+      "options": [
+        {
+          "pt": "Nas autoestradas durante obras"
+        },
+        {
+          "pt": "Em zonas residenciais ou escolares"
+        },
+        {
+          "pt": "Em estradas rurais de uma só faixa"
+        },
+        {
+          "pt": "No fim de vias de dupla faixa"
+        }
+      ]
+    },
+    "RS-2034": {
+      "promptPt": "Um sinal circular azul mostra símbolos brancos de peão e bicicleta juntos. O que significa?",
+      "options": [
+        {
+          "pt": "Itinerário partilhado por peões e ciclistas"
+        },
+        {
+          "pt": "Só itinerário ciclável"
+        },
+        {
+          "pt": "Peões proibidos"
+        },
+        {
+          "pt": "Fim da ciclovia"
+        }
+      ]
+    },
+    "RS-2035": {
+      "promptPt": "O que indica uma seta branca pintada no pavimento a apontar para a esquerda?",
+      "options": [
+        {
+          "pt": "Deve virar à esquerda no cruzamento à frente"
+        },
+        {
+          "pt": "Viragem à esquerda proibida"
+        },
+        {
+          "pt": "Estrada estreita à esquerda"
+        },
+        {
+          "pt": "O trânsito da esquerda tem prioridade"
+        }
+      ]
+    },
+    "RS-2036": {
+      "promptPt": "Aproxima-se de uma zona movimentada e vê um sinal triangular de aviso a mostrar uma fila de veículos. Para o que se deve preparar?",
+      "options": [
+        {
+          "pt": "Trânsito lento ou parado à frente, exigindo reduzir a velocidade"
+        },
+        {
+          "pt": "Um sistema de sentido único à frente"
+        },
+        {
+          "pt": "O limite de velocidade aumenta à frente"
+        },
+        {
+          "pt": "As obras terminam à frente"
+        }
+      ]
+    },
+    "RS-2037": {
+      "promptPt": "O que indica um sinal circular com bordo vermelho e um peso indicado em toneladas?",
+      "options": [
+        {
+          "pt": "Peso mínimo exigido para usar a estrada"
+        },
+        {
+          "pt": "Peso máximo permitido do veículo"
+        },
+        {
+          "pt": "Apenas limite de peso recomendado"
+        },
+        {
+          "pt": "O limite de peso aplica-se só à noite"
+        }
+      ]
+    },
+    "RS-2038": {
+      "promptPt": "Vê um sinal retangular azul a mostrar um símbolo de bomba de combustível. O que indica?",
+      "options": [
+        {
+          "pt": "Posto de combustível disponível à frente"
+        },
+        {
+          "pt": "Itinerário só para veículos a combustível"
+        },
+        {
+          "pt": "Fim dos serviços da autoestrada"
+        },
+        {
+          "pt": "Materiais perigosos à frente"
+        }
+      ]
+    },
+    "RS-2039": {
+      "promptPt": "Conduz numa estrada de campo e vê um sinal triangular de aviso a mostrar a estrada a estreitar à direita. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Preparar-se para abrandar e posicionar o veículo para a largura reduzida"
+        },
+        {
+          "pt": "Deslocar-se imediatamente para o lado direito"
+        },
+        {
+          "pt": "Ultrapassar quaisquer veículos mais lentos antes do estreitamento"
+        },
+        {
+          "pt": "Parar e esperar que o trânsito em sentido contrário passe"
+        }
+      ]
+    },
+    "RS-2040": {
+      "promptPt": "O que indica normalmente um sinal retangular com texto branco sobre fundo castanho?",
+      "options": [
+        {
+          "pt": "Atrações turísticas ou locais de interesse"
+        },
+        {
+          "pt": "Apenas direções de autoestrada"
+        },
+        {
+          "pt": "Itinerário local de desvio"
+        },
+        {
+          "pt": "Informação de emergência"
+        }
+      ]
+    },
+    "RS-2041": {
+      "promptPt": "Conduz em zona rural acidentada e vê um sinal triangular de aviso a mostrar uma descida íngreme. Para o que se deve preparar?",
+      "options": [
+        {
+          "pt": "Uma secção em descida íngreme onde terá de controlar a velocidade com cuidado"
+        },
+        {
+          "pt": "Uma subida íngreme à frente"
+        },
+        {
+          "pt": "Apenas pavimento irregular"
+        },
+        {
+          "pt": "O fim da secção de ladeira"
+        }
+      ]
+    },
+    "RS-2042": {
+      "promptPt": "O que indica um sinal circular com bordo vermelho e uma altura indicada em metros?",
+      "options": [
+        {
+          "pt": "Altura mínima exigida do veículo"
+        },
+        {
+          "pt": "Apenas altura recomendada"
+        },
+        {
+          "pt": "Altura máxima permitida do veículo"
+        },
+        {
+          "pt": "A restrição de altura aplica-se só à noite"
+        }
+      ]
+    },
+    "RS-2043": {
+      "promptPt": "Vê um sinal retangular azul a mostrar um símbolo branco de telefone. O que indica?",
+      "options": [
+        {
+          "pt": "Uso de telemóvel permitido"
+        },
+        {
+          "pt": "Telefone público disponível nas proximidades"
+        },
+        {
+          "pt": "Só veículos de emergência"
+        },
+        {
+          "pt": "Esquadra de polícia à frente"
+        }
+      ]
+    },
+    "RS-2044": {
+      "promptPt": "Um sinal de aviso mostra uma ponte em lombada. Que perigo deve esperar?",
+      "options": [
+        {
+          "pt": "Visibilidade limitada sobre a ponte"
+        },
+        {
+          "pt": "Pavimento escorregadio na ponte"
+        },
+        {
+          "pt": "Ponte fechada ao trânsito"
+        },
+        {
+          "pt": "Apenas restrição de altura baixa"
+        }
+      ]
+    },
+    "RS-2045": {
+      "promptPt": "O que indica uma seta branca pintada no pavimento a apontar em frente?",
+      "options": [
+        {
+          "pt": "Deve seguir em frente"
+        },
+        {
+          "pt": "Entrada proibida em frente"
+        },
+        {
+          "pt": "A estrada termina à frente"
+        },
+        {
+          "pt": "O trânsito deve virar à esquerda ou à direita"
+        }
+      ]
+    },
+    "RS-2047": {
+      "promptPt": "O que indica um sinal circular com bordo vermelho e uma largura indicada em metros?",
+      "options": [
+        {
+          "pt": "Largura mínima da estrada à frente"
+        },
+        {
+          "pt": "Largura recomendada do veículo"
+        },
+        {
+          "pt": "Largura máxima permitida do veículo"
+        },
+        {
+          "pt": "A restrição de largura aplica-se só a camiões"
+        }
+      ]
+    },
+    "RS-2048": {
+      "promptPt": "Vê um sinal retangular azul a mostrar um símbolo branco de autocarro. O que indica este sinal?",
+      "options": [
+        {
+          "pt": "Faixa de autocarros à frente"
+        },
+        {
+          "pt": "Os autocarros devem parar à frente"
+        },
+        {
+          "pt": "Estrada só para autocarros"
+        },
+        {
+          "pt": "Fim da faixa de autocarros"
+        }
+      ]
+    },
+    "RS-2049": {
+      "promptPt": "Um sinal de aviso mostra um símbolo de aeronave a voar baixo. Sobre o que o avisa?",
+      "options": [
+        {
+          "pt": "Um terminal de aeroporto à frente"
+        },
+        {
+          "pt": "Ruído de aeronaves a voar baixo"
+        },
+        {
+          "pt": "Espaço aéreo restrito"
+        },
+        {
+          "pt": "Área de aterragem de emergência"
+        }
+      ]
+    },
+    "RS-2050": {
+      "promptPt": "Vê uma linha branca contínua ao longo do bordo esquerdo da faixa de rodagem. O que marca e como deve conduzir?",
+      "options": [
+        {
+          "pt": "Bordo da faixa de rodagem — manter-se à direita desta linha"
+        },
+        {
+          "pt": "Ciclovia — só ciclistas"
+        },
+        {
+          "pt": "Zona de proibição de ultrapassagem — não atravessar"
+        },
+        {
+          "pt": "Zona de estacionamento — pode estacionar aqui"
+        }
+      ]
+    }
+  }
+}

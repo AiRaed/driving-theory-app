@@ -1,0 +1,860 @@
+{
+  "hazard-awareness": {
+    "HZ-75": {
+      "promptPt": "Está a conduzir numa estrada rural e vê um cavaleiro à frente. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Buzinar para o avisar"
+        },
+        {
+          "pt": "Passar o mais depressa possível"
+        },
+        {
+          "pt": "Abrandar e passar largo, deixando bastante espaço"
+        },
+        {
+          "pt": "Piscar os faróis repetidamente"
+        }
+      ]
+    },
+    "HZ-76": {
+      "promptPt": "Nota um veículo à frente a desviar-se e a travar de súbito. O que deve fazer de imediato?",
+      "options": [
+        {
+          "pt": "Ultrapassar de imediato para evitar o perigo"
+        },
+        {
+          "pt": "Aumentar a distância de segurança e estar preparado para travar"
+        },
+        {
+          "pt": "Manter a velocidade atual"
+        },
+        {
+          "pt": "Buzinar para o alertar"
+        }
+      ]
+    },
+    "HZ-77": {
+      "promptPt": "Aproxima-se de uma escola durante a tarde. Do que deve estar especialmente alerta?",
+      "options": [
+        {
+          "pt": "Apenas autocarros escolares"
+        },
+        {
+          "pt": "Crianças a atravessar ou a correr perto da estrada"
+        },
+        {
+          "pt": "Restrições de estacionamento"
+        },
+        {
+          "pt": "Radares de velocidade"
+        }
+      ]
+    },
+    "HZ-78": {
+      "promptPt": "Ao conduzir no nevoeiro, vê as luzes de um veículo à frente mas não consegue avaliar bem a distância. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Acelerar para passar depressa"
+        },
+        {
+          "pt": "Abrandar e aumentar a distância de segurança"
+        },
+        {
+          "pt": "Usar os máximos"
+        },
+        {
+          "pt": "Manter a velocidade normal"
+        }
+      ]
+    },
+    "HZ-79": {
+      "promptPt": "Está a conduzir atrás de um veículo grande que sinaliza à esquerda mas está posicionado à direita. O que deve antecipar?",
+      "options": [
+        {
+          "pt": "Que o veículo vire à esquerda de imediato"
+        },
+        {
+          "pt": "Que o veículo precise de espaço para virar à esquerda e possa primeiro desviar-se à direita"
+        },
+        {
+          "pt": "Que o indicador esteja avariado"
+        },
+        {
+          "pt": "Que o veículo continue em frente"
+        }
+      ]
+    },
+    "HZ-80": {
+      "promptPt": "Está a conduzir numa estrada molhada e aproxima-se de uma curva acentuada. O que deve fazer antes de entrar na curva?",
+      "options": [
+        {
+          "pt": "Acelerar para manter a velocidade na curva"
+        },
+        {
+          "pt": "Abrandar antes da curva e evitar direção ou travagem bruscas"
+        },
+        {
+          "pt": "Mudar apenas para uma mudança mais baixa"
+        },
+        {
+          "pt": "Usar o travão de mão para controlar a velocidade"
+        }
+      ]
+    }
+  },
+  "road-signs": {
+    "RS-01": {
+      "promptPt": "Um sinal que mostra um carro vermelho ao lado de um carro preto significa:",
+      "options": [
+        {
+          "pt": "Proibida a ultrapassagem"
+        },
+        {
+          "pt": "Ultrapassagem permitida"
+        },
+        {
+          "pt": "Fim da restrição"
+        },
+        {
+          "pt": "Trânsito nos dois sentidos"
+        }
+      ]
+    },
+    "RS-02": {
+      "promptPt": "Um sinal com duas setas em sentidos opostos significa:",
+      "options": [
+        {
+          "pt": "Trânsito nos dois sentidos"
+        },
+        {
+          "pt": "Estrada de duas faixas"
+        },
+        {
+          "pt": "Ceda a passagem"
+        },
+        {
+          "pt": "Fim da autoestrada"
+        }
+      ]
+    },
+    "RS-03": {
+      "promptPt": "Está a conduzir numa estrada rural após chuva forte e vê um sinal triangular de aviso com um carro e marcas de derrapagem. Para que perigo se deve preparar?",
+      "options": [
+        {
+          "pt": "O piso da estrada pode estar escorregadio à frente"
+        },
+        {
+          "pt": "Há obras à frente"
+        },
+        {
+          "pt": "Há uma oficina de pneus perto"
+        },
+        {
+          "pt": "Há lombas à frente"
+        }
+      ]
+    },
+    "RS-04": {
+      "promptPt": "Um triângulo vermelho invertido significa:",
+      "options": [
+        {
+          "pt": "Ceda a passagem"
+        },
+        {
+          "pt": "Pare"
+        },
+        {
+          "pt": "Proibida a paragem"
+        },
+        {
+          "pt": "Velocidade máxima"
+        }
+      ]
+    },
+    "RS-05": {
+      "promptPt": "Aproxima-se de um cruzamento e vê um sinal triangular de aviso com forma de cruz. O que deve esperar à frente?",
+      "options": [
+        {
+          "pt": "Um cruzamento onde o trânsito pode atravessar o seu caminho"
+        },
+        {
+          "pt": "Uma passagem de nível"
+        },
+        {
+          "pt": "Uma rua de sentido único à frente"
+        },
+        {
+          "pt": "Uma entrada de hospital"
+        }
+      ]
+    },
+    "RS-06": {
+      "promptPt": "Um sinal com o símbolo de um windsock avisa de:",
+      "options": [
+        {
+          "pt": "Ventos laterais"
+        },
+        {
+          "pt": "Neve"
+        },
+        {
+          "pt": "Túnel à frente"
+        },
+        {
+          "pt": "Estrada a estreitar"
+        }
+      ]
+    }
+  },
+  "safety-margins": {
+    "SM-01": {
+      "promptPt": "Qual é a razão mais comum para um veículo começar a derrapar?",
+      "options": [
+        {
+          "pt": "Más condições do piso"
+        },
+        {
+          "pt": "Ações do condutor"
+        },
+        {
+          "pt": "Avaria mecânica"
+        },
+        {
+          "pt": "Vento forte"
+        }
+      ]
+    },
+    "SM-02": {
+      "promptPt": "Que luzes deve usar ao conduzir numa autoestrada molhada com muito spray?",
+      "options": [
+        {
+          "pt": "Luzes de emergência"
+        },
+        {
+          "pt": "Médios (dipped headlights)"
+        },
+        {
+          "pt": "Faróis de nevoeiro traseiros"
+        },
+        {
+          "pt": "Luzes de presença"
+        }
+      ]
+    },
+    "SM-03": {
+      "promptPt": "Que risco aumenta quando desce uma ladeira em ponto morto (coasting)?",
+      "options": [
+        {
+          "pt": "Melhor controlo da direção"
+        },
+        {
+          "pt": "Melhor economia de combustível"
+        },
+        {
+          "pt": "Controlo reduzido do veículo"
+        },
+        {
+          "pt": "Menos esforço de travagem"
+        }
+      ]
+    },
+    "SM-04": {
+      "promptPt": "Porque deve posicionar o veículo mais à esquerda antes de uma curva à direita?",
+      "options": [
+        {
+          "pt": "Para ultrapassar em segurança"
+        },
+        {
+          "pt": "Para melhorar a visão da estrada à frente"
+        },
+        {
+          "pt": "Para evitar peões"
+        },
+        {
+          "pt": "Para reduzir o consumo de combustível"
+        }
+      ]
+    },
+    "SM-05": {
+      "promptPt": "Ao estacionar a descer, como deve virar as rodas?",
+      "options": [
+        {
+          "pt": "Para longe do lancil"
+        },
+        {
+          "pt": "Em frente"
+        },
+        {
+          "pt": "Em direção ao lancil"
+        },
+        {
+          "pt": "Não importa"
+        }
+      ]
+    },
+    "SM-06": {
+      "promptPt": "O que deve fazer ao aproximar-se de uma lomba numa zona residencial?",
+      "options": [
+        {
+          "pt": "Acelerar para passar depressa"
+        },
+        {
+          "pt": "Deslocar-se para o centro da estrada"
+        },
+        {
+          "pt": "Verificar os espelhos e abrandar"
+        },
+        {
+          "pt": "Parar completamente"
+        }
+      ]
+    },
+    "SM-07": {
+      "promptPt": "Se um veículo o seguir demasiado de perto numa autoestrada, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Travar bruscamente"
+        },
+        {
+          "pt": "Aumentar a velocidade"
+        },
+        {
+          "pt": "Aumentar a distância à sua frente"
+        },
+        {
+          "pt": "Usar as luzes de emergência"
+        }
+      ]
+    },
+    "SM-08": {
+      "promptPt": "Como deve usar os travões ABS numa paragem de emergência?",
+      "options": [
+        {
+          "pt": "Bombear o travão"
+        },
+        {
+          "pt": "Travar com firmeza e guiar"
+        },
+        {
+          "pt": "Usar o travão de mão"
+        },
+        {
+          "pt": "Travar ligeiramente"
+        }
+      ]
+    },
+    "SM-09": {
+      "promptPt": "O que indica frequentemente condições de gelo na estrada?",
+      "options": [
+        {
+          "pt": "Mais ruído dos pneus"
+        },
+        {
+          "pt": "Menos ruído do motor"
+        },
+        {
+          "pt": "Menos ruído dos pneus"
+        },
+        {
+          "pt": "Sensação forte na direção"
+        }
+      ]
+    },
+    "SM-10": {
+      "promptPt": "Como deve aproximar-se de uma curva acentuada em condições de gelo?",
+      "options": [
+        {
+          "pt": "Descer em ponto morto pela curva"
+        },
+        {
+          "pt": "Travar a fundo"
+        },
+        {
+          "pt": "Abrandar suavemente"
+        },
+        {
+          "pt": "Usar o travão de mão"
+        }
+      ]
+    },
+    "SM-11": {
+      "promptPt": "Ao usar ABS, como deve aplicar o pedal do travão numa emergência?",
+      "options": [
+        {
+          "pt": "Suave e lentamente"
+        },
+        {
+          "pt": "Rápida e firmemente"
+        },
+        {
+          "pt": "Apenas com pressão ligeira"
+        },
+        {
+          "pt": "Bombear repetidamente"
+        }
+      ]
+    },
+    "SM-12": {
+      "promptPt": "O que indica uma direção muito leve numa estrada molhada?",
+      "options": [
+        {
+          "pt": "Avaria do motor"
+        },
+        {
+          "pt": "Perda de aderência dos pneus"
+        },
+        {
+          "pt": "Pneus demasiado cheios"
+        },
+        {
+          "pt": "Avaria na direção"
+        }
+      ]
+    },
+    "SM-13": {
+      "promptPt": "Que situação exige cuidado extra com vento forte?",
+      "options": [
+        {
+          "pt": "Travagem"
+        },
+        {
+          "pt": "Arranques em subida"
+        },
+        {
+          "pt": "Viragens para estradas estreitas"
+        },
+        {
+          "pt": "Ultrapassar ciclistas"
+        }
+      ]
+    },
+    "SM-14": {
+      "promptPt": "Como deve travar ao conduzir na neve?",
+      "options": [
+        {
+          "pt": "Rápida e firmemente"
+        },
+        {
+          "pt": "Suavemente, travando cedo"
+        },
+        {
+          "pt": "Usando o travão de mão"
+        },
+        {
+          "pt": "Com direção brusca"
+        }
+      ]
+    },
+    "SM-15": {
+      "promptPt": "Como se pode reduzir o patinar das rodas em estradas com gelo?",
+      "options": [
+        {
+          "pt": "Mudança baixa"
+        },
+        {
+          "pt": "A mudança mais alta possível a baixa velocidade"
+        },
+        {
+          "pt": "Usar o travão de mão"
+        },
+        {
+          "pt": "Aceleração rápida"
+        }
+      ]
+    },
+    "SM-16": {
+      "promptPt": "Como se pode usar a travagem pelo motor em segurança?",
+      "options": [
+        {
+          "pt": "Mudar para uma mudança mais baixa"
+        },
+        {
+          "pt": "Usar o ponto morto"
+        },
+        {
+          "pt": "Selecionar marcha-atrás"
+        },
+        {
+          "pt": "Desligar o motor"
+        }
+      ]
+    },
+    "SM-17": {
+      "promptPt": "Onde é mais provável que os ventos laterais afetem o seu veículo?",
+      "options": [
+        {
+          "pt": "Estradas movimentadas"
+        },
+        {
+          "pt": "Vias estreitas"
+        },
+        {
+          "pt": "Troços abertos de estrada"
+        },
+        {
+          "pt": "Ruas da cidade"
+        }
+      ]
+    },
+    "SM-18": {
+      "promptPt": "O que deve fazer antes de conduzir no nevoeiro?",
+      "options": [
+        {
+          "pt": "Reduzir a pressão dos pneus"
+        },
+        {
+          "pt": "Beber cafeína"
+        },
+        {
+          "pt": "Contar com tempo extra"
+        },
+        {
+          "pt": "Usar colete refletor"
+        }
+      ]
+    },
+    "SM-19": {
+      "promptPt": "O que deve fazer se outro veículo entrar na sua distância segura numa estrada molhada?",
+      "options": [
+        {
+          "pt": "Piscar os faróis"
+        },
+        {
+          "pt": "Ultrapassar de imediato"
+        },
+        {
+          "pt": "Afastar-se para aumentar a distância"
+        },
+        {
+          "pt": "Ficar perto"
+        }
+      ]
+    },
+    "SM-20": {
+      "promptPt": "Qual é a principal vantagem da tração às quatro rodas?",
+      "options": [
+        {
+          "pt": "Distância de paragem mais curta"
+        },
+        {
+          "pt": "Melhor aderência em más condições"
+        },
+        {
+          "pt": "Menor consumo de combustível"
+        },
+        {
+          "pt": "Aceleração mais rápida"
+        }
+      ]
+    },
+    "SM-21": {
+      "promptPt": "O que ajuda um carro a arrancar com mais segurança num piso com neve?",
+      "options": [
+        {
+          "pt": "Usar uma mudança baixa"
+        },
+        {
+          "pt": "Usar uma mudança mais alta do que o habitual"
+        },
+        {
+          "pt": "Usar regime elevado do motor"
+        },
+        {
+          "pt": "Usar o travão de estacionamento"
+        }
+      ]
+    },
+    "SM-22": {
+      "promptPt": "Depois de passar um sinal de aviso de perigo numa estrada rural, o que deve fazer quando for seguro?",
+      "options": [
+        {
+          "pt": "Verificar a pressão dos pneus"
+        },
+        {
+          "pt": "Ligar as luzes de emergência"
+        },
+        {
+          "pt": "Acelerar suavemente"
+        },
+        {
+          "pt": "Testar os travões"
+        }
+      ]
+    },
+    "SM-23": {
+      "promptPt": "Numa estrada seca e aberta, que distância de segurança deve normalmente manter?",
+      "options": [
+        {
+          "pt": "Um intervalo de dois segundos"
+        },
+        {
+          "pt": "O comprimento de um carro"
+        },
+        {
+          "pt": "Dois metros"
+        },
+        {
+          "pt": "O comprimento de dois carros"
+        }
+      ]
+    },
+    "SM-24": {
+      "promptPt": "O que significa normalmente se a luz de aviso do ESC piscar brevemente ao conduzir?",
+      "options": [
+        {
+          "pt": "O sistema está avariado"
+        },
+        {
+          "pt": "O sistema foi desligado"
+        },
+        {
+          "pt": "O sistema está a ajudar ativamente a controlar o carro"
+        },
+        {
+          "pt": "Está a decorrer um teste de rotina"
+        }
+      ]
+    },
+    "SM-25": {
+      "promptPt": "O que é mais afetado quando o piso amolece com calor extremo?",
+      "options": [
+        {
+          "pt": "Suspensão"
+        },
+        {
+          "pt": "Consumo de combustível"
+        },
+        {
+          "pt": "Aderência dos pneus"
+        },
+        {
+          "pt": "Sistema de escape"
+        }
+      ]
+    },
+    "SM-26": {
+      "promptPt": "Como deve ultrapassar um motociclista num dia ventoso?",
+      "options": [
+        {
+          "pt": "De perto"
+        },
+        {
+          "pt": "Muito lentamente"
+        },
+        {
+          "pt": "Com espaço extra"
+        },
+        {
+          "pt": "O mais depressa possível"
+        }
+      ]
+    },
+    "SM-27": {
+      "promptPt": "Depois de atravessar água de cheia, como pode verificar se os travões estão a funcionar?",
+      "options": [
+        {
+          "pt": "Conduzir depressa por um curto troço"
+        },
+        {
+          "pt": "Evitar usar os travões"
+        },
+        {
+          "pt": "Aplicar os travões suavemente enquanto conduz lentamente"
+        },
+        {
+          "pt": "Parar durante uma hora"
+        }
+      ]
+    },
+    "SM-28": {
+      "promptPt": "Em que tipo de piso o ABS pode ser menos eficaz?",
+      "options": [
+        {
+          "pt": "Seco"
+        },
+        {
+          "pt": "Solto"
+        },
+        {
+          "pt": "Firme"
+        },
+        {
+          "pt": "Liso"
+        }
+      ]
+    },
+    "SM-29": {
+      "promptPt": "Ao conduzir no nevoeiro, o que mais deve fazer além de usar os médios?",
+      "options": [
+        {
+          "pt": "Ficar perto do veículo à frente"
+        },
+        {
+          "pt": "Usar os máximos"
+        },
+        {
+          "pt": "Manter uma distância segura"
+        },
+        {
+          "pt": "Acompanhar a velocidade do trânsito mais rápido"
+        }
+      ]
+    },
+    "SM-30": {
+      "promptPt": "Antes de conduzir com tempo de gelo, que partes do carro devem estar livres de gelo?",
+      "options": [
+        {
+          "pt": "Para-choques"
+        },
+        {
+          "pt": "Vidros"
+        },
+        {
+          "pt": "Antena"
+        },
+        {
+          "pt": "Bagageira"
+        }
+      ]
+    },
+    "SM-31": {
+      "promptPt": "Ao conduzir num sistema de contrafluxo, o que deve fazer?",
+      "options": [
+        {
+          "pt": "Mudar de via frequentemente"
+        },
+        {
+          "pt": "Aumentar a velocidade"
+        },
+        {
+          "pt": "Escolher a via cedo"
+        },
+        {
+          "pt": "Seguir os veículos de perto"
+        }
+      ]
+    },
+    "SM-32": {
+      "promptPt": "Em que condição a distância de paragem aumenta mais?",
+      "options": [
+        {
+          "pt": "Nevoeiro"
+        },
+        {
+          "pt": "Vento forte"
+        },
+        {
+          "pt": "Chuva"
+        },
+        {
+          "pt": "Gelo"
+        }
+      ]
+    },
+    "SM-33": {
+      "promptPt": "Em quanto pode aumentar a distância de paragem em estradas com gelo?",
+      "options": [
+        {
+          "pt": "2 vezes"
+        },
+        {
+          "pt": "3 vezes"
+        },
+        {
+          "pt": "5 vezes"
+        },
+        {
+          "pt": "10 vezes"
+        }
+      ]
+    },
+    "SM-34": {
+      "promptPt": "Como deve controlar a velocidade ao descer uma ladeira?",
+      "options": [
+        {
+          "pt": "Mudança alta com travagem firme"
+        },
+        {
+          "pt": "Mudança alta sem travar"
+        },
+        {
+          "pt": "Mudança baixa com travagem suave"
+        },
+        {
+          "pt": "Mudança baixa sem travar"
+        }
+      ]
+    }
+  },
+  "rules-of-the-road": {
+    "RR-01": {
+      "promptPt": "Sobre o que costumam avisar os postes marcadores vermelhos e brancos à beira da estrada?",
+      "options": [
+        {
+          "pt": "Fim da autoestrada"
+        },
+        {
+          "pt": "Passagem de nível escondida à frente"
+        },
+        {
+          "pt": "Alteração do limite de velocidade"
+        },
+        {
+          "pt": "Fim da estrada de duas faixas (dual carriageway)"
+        }
+      ]
+    },
+    "RR-02": {
+      "promptPt": "Quer ultrapassar um trator lento mas não tem a certeza se é seguro. O que deve fazer?",
+      "options": [
+        {
+          "pt": "Seguir outro carro que ultrapassa"
+        },
+        {
+          "pt": "Buzinar"
+        },
+        {
+          "pt": "Ultrapassar depressa"
+        },
+        {
+          "pt": "Ficar atrás até ser claramente seguro"
+        }
+      ]
+    },
+    "RR-03": {
+      "promptPt": "Qual é o limite de velocidade nacional numa single carriageway para carros e motociclos (salvo indicação em contrário)?",
+      "options": [
+        {
+          "pt": "30 mph"
+        },
+        {
+          "pt": "50 mph"
+        },
+        {
+          "pt": "60 mph"
+        },
+        {
+          "pt": "70 mph"
+        }
+      ]
+    },
+    "RR-04": {
+      "promptPt": "Está a usar máximos à noite e outro veículo começa a ultrapassá-lo. Quando deve passar para médios?",
+      "options": [
+        {
+          "pt": "Depois de ele passar"
+        },
+        {
+          "pt": "Quando terminar a ultrapassagem"
+        },
+        {
+          "pt": "Só se ele passar para médios"
+        },
+        {
+          "pt": "Antes de começar a ultrapassá-lo"
+        }
+      ]
+    }
+  }
+}

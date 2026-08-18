@@ -9,6 +9,8 @@ import {
   rowToLearnerQuestion,
   rowToUrduBucket,
   rowToRomanianBucket,
+  rowToPolishBucket,
+  rowToPortugueseBucket,
   type QuestionRow,
 } from '@/lib/questions/types';
 
@@ -18,6 +20,8 @@ export interface LearnerBank {
   questions: Question[];
   urduByTopic: TranslationData;
   romanianByTopic: TranslationData;
+  polishByTopic: TranslationData;
+  portugueseByTopic: TranslationData;
   source: BankSource;
   count: number;
 }
@@ -37,6 +41,8 @@ function staticBank(): LearnerBank {
     questions: staticQuestions,
     urduByTopic: {},
     romanianByTopic: {},
+    polishByTopic: {},
+    portugueseByTopic: {},
     source: 'static',
     count: staticQuestions.length,
   };
@@ -76,6 +82,8 @@ export async function getPublishedQuestionBank(): Promise<LearnerBank> {
     const questions = rows.map(rowToLearnerQuestion);
     const urduByTopic: TranslationData = {};
     const romanianByTopic: TranslationData = {};
+    const polishByTopic: TranslationData = {};
+    const portugueseByTopic: TranslationData = {};
     for (const row of rows) {
       if (!urduByTopic[row.topic_id]) urduByTopic[row.topic_id] = {};
       urduByTopic[row.topic_id][row.id] = rowToUrduBucket(row);
@@ -84,12 +92,24 @@ export async function getPublishedQuestionBank(): Promise<LearnerBank> {
         if (!romanianByTopic[row.topic_id]) romanianByTopic[row.topic_id] = {};
         romanianByTopic[row.topic_id][row.id] = roBucket;
       }
+      const plBucket = rowToPolishBucket(row);
+      if (plBucket.promptPl) {
+        if (!polishByTopic[row.topic_id]) polishByTopic[row.topic_id] = {};
+        polishByTopic[row.topic_id][row.id] = plBucket;
+      }
+      const ptBucket = rowToPortugueseBucket(row);
+      if (ptBucket.promptPt) {
+        if (!portugueseByTopic[row.topic_id]) portugueseByTopic[row.topic_id] = {};
+        portugueseByTopic[row.topic_id][row.id] = ptBucket;
+      }
     }
 
     return {
       questions,
       urduByTopic,
       romanianByTopic,
+      polishByTopic,
+      portugueseByTopic,
       source: 'database',
       count: questions.length,
     };

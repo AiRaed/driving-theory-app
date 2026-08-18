@@ -1,0 +1,952 @@
+[
+  {
+    "id": "SV-33",
+    "topic": "safety-vehicle",
+    "promptEn": "What symptom suggests that your wheels are unbalanced?",
+    "options": [
+      {
+        "en": "Brake failure"
+      },
+      {
+        "en": "Tyre deflation"
+      },
+      {
+        "en": "Steering vibration"
+      },
+      {
+        "en": "Pulling to one side"
+      }
+    ]
+  },
+  {
+    "id": "SV-34",
+    "topic": "safety-vehicle",
+    "promptEn": "What action helps reduce fuel consumption?",
+    "options": [
+      {
+        "en": "Rapid acceleration"
+      },
+      {
+        "en": "Heavy braking"
+      },
+      {
+        "en": "Staying in low gears"
+      },
+      {
+        "en": "Driving more smoothly and steadily"
+      }
+    ]
+  },
+  {
+    "id": "SV-35",
+    "topic": "safety-vehicle",
+    "promptEn": "How can drivers help protect the environment?",
+    "options": [
+      {
+        "en": "Harsh acceleration"
+      },
+      {
+        "en": "Gentle acceleration"
+      },
+      {
+        "en": "Using leaded fuel"
+      },
+      {
+        "en": "Driving faster"
+      }
+    ]
+  },
+  {
+    "id": "SV-36",
+    "topic": "safety-vehicle",
+    "promptEn": "When is the best time to check tyre pressures?",
+    "options": [
+      {
+        "en": "After long drive"
+      },
+      {
+        "en": "At high speed"
+      },
+      {
+        "en": "When tyres are hot"
+      },
+      {
+        "en": "When tyres are cold"
+      }
+    ]
+  },
+  {
+    "id": "SV-37",
+    "topic": "safety-vehicle",
+    "promptEn": "What should you do if the ABS warning light stays on while driving?",
+    "options": [
+      {
+        "en": "Check fluid level"
+      },
+      {
+        "en": "Check parking brake"
+      },
+      {
+        "en": "Continue driving"
+      },
+      {
+        "en": "Have the brakes checked immediately"
+      }
+    ]
+  },
+  {
+    "id": "SV-38",
+    "topic": "safety-vehicle",
+    "promptEn": "What makes tyres illegal to use on the road?",
+    "options": [
+      {
+        "en": "Different tread patterns"
+      },
+      {
+        "en": "Different brands"
+      },
+      {
+        "en": "Large deep sidewall cuts"
+      },
+      {
+        "en": "Second-hand purchase"
+      }
+    ]
+  },
+  {
+    "id": "SV-39",
+    "topic": "safety-vehicle",
+    "promptEn": "Why should you plan your journey to avoid peak traffic times?",
+    "options": [
+      {
+        "en": "Longer journey"
+      },
+      {
+        "en": "More stress"
+      },
+      {
+        "en": "Easier, smoother trip"
+      },
+      {
+        "en": "More congestion"
+      }
+    ]
+  },
+  {
+    "id": "SV-40",
+    "topic": "safety-vehicle",
+    "promptEn": "What can you expect if you frequently accelerate hard and brake heavily?",
+    "options": [
+      {
+        "en": "Reduced pollution"
+      },
+      {
+        "en": "Increased road safety"
+      },
+      {
+        "en": "Reduced fuel use"
+      },
+      {
+        "en": "Increased fuel consumption"
+      }
+    ]
+  },
+  {
+    "id": "SV-41",
+    "topic": "safety-vehicle",
+    "promptEn": "How do under-inflated tyres affect your vehicle?",
+    "options": [
+      {
+        "en": "Indicator flash rate increases"
+      },
+      {
+        "en": "Headlights aim higher"
+      },
+      {
+        "en": "Gear changes become stiff"
+      },
+      {
+        "en": "Stopping distance increases"
+      }
+    ]
+  },
+  {
+    "id": "SV-42",
+    "topic": "safety-vehicle",
+    "promptEn": "While driving on a dual carriageway, which driver-assistance system helps keep the car within lane markings?",
+    "options": [
+      {
+        "en": "Blind-spot assist"
+      },
+      {
+        "en": "Traffic jam assist"
+      },
+      {
+        "en": "Intelligent speed assist"
+      },
+      {
+        "en": "Lane-keep assist"
+      }
+    ]
+  },
+  {
+    "id": "SV-43",
+    "topic": "safety-vehicle",
+    "promptEn": "How can you reduce the environmental impact of your vehicle?",
+    "options": [
+      {
+        "en": "Avoid servicing"
+      },
+      {
+        "en": "Drive faster than normal"
+      },
+      {
+        "en": "Only make short trips"
+      },
+      {
+        "en": "Keep engine revs low"
+      }
+    ]
+  },
+  {
+    "id": "SV-44",
+    "topic": "safety-vehicle",
+    "promptEn": "On a quiet motorway, which driver-assistance feature is most likely to help prevent drifting out of lane?",
+    "options": [
+      {
+        "en": "Traffic jam assist"
+      },
+      {
+        "en": "Night vision"
+      },
+      {
+        "en": "Intelligent speed assist"
+      },
+      {
+        "en": "Lane-departure warning"
+      }
+    ]
+  },
+  {
+    "id": "SV-45",
+    "topic": "safety-vehicle",
+    "promptEn": "When are you NOT allowed to sound your vehicle's horn in a built-up area?",
+    "options": [
+      {
+        "en": "Between 10 pm and 6 am"
+      },
+      {
+        "en": "At any time"
+      },
+      {
+        "en": "Between 11:30 pm and 7 am"
+      },
+      {
+        "en": "Only on main roads"
+      }
+    ]
+  },
+  {
+    "id": "SV-46",
+    "topic": "safety-vehicle",
+    "promptEn": "What should you do if your car pulls to one side when braking?",
+    "options": [
+      {
+        "en": "Pump the brake pedal"
+      },
+      {
+        "en": "Increase tyre pressure"
+      },
+      {
+        "en": "Use the parking brake"
+      },
+      {
+        "en": "Have the brakes checked promptly"
+      }
+    ]
+  },
+  {
+    "id": "SV-47",
+    "topic": "safety-vehicle",
+    "promptEn": "What driving behaviour is most likely to increase fuel consumption?",
+    "options": [
+      {
+        "en": "Staying in high gears"
+      },
+      {
+        "en": "Poor steering control"
+      },
+      {
+        "en": "Harsh braking and acceleration"
+      },
+      {
+        "en": "Smooth cornering"
+      }
+    ]
+  },
+  {
+    "id": "SV-48",
+    "topic": "safety-vehicle",
+    "promptEn": "What should you do when leaving your car unattended for a short time?",
+    "options": [
+      {
+        "en": "Leave engine running"
+      },
+      {
+        "en": "Leave key inside"
+      },
+      {
+        "en": "Lock the car and remove the key"
+      },
+      {
+        "en": "Park near a warden"
+      }
+    ]
+  },
+  {
+    "id": "SV-49",
+    "topic": "safety-vehicle",
+    "promptEn": "How can you avoid unnecessary fuel waste?",
+    "options": [
+      {
+        "en": "Rev engine in low gears"
+      },
+      {
+        "en": "Drive faster"
+      },
+      {
+        "en": "Keep empty roof rack fitted"
+      },
+      {
+        "en": "Service the vehicle regularly"
+      }
+    ]
+  },
+  {
+    "id": "SV-50",
+    "topic": "safety-vehicle",
+    "promptEn": "What's likely to happen if too much engine oil is added?",
+    "options": [
+      {
+        "en": "Timing belt slips"
+      },
+      {
+        "en": "Air intake blocks"
+      },
+      {
+        "en": "Oil seals may leak"
+      },
+      {
+        "en": "Clutch locks"
+      }
+    ]
+  },
+  {
+    "id": "SV-51",
+    "topic": "safety-vehicle",
+    "promptEn": "What's the benefit of following the manufacturer's service schedule?",
+    "options": [
+      {
+        "en": "Lower insurance costs"
+      },
+      {
+        "en": "Reduced journey time"
+      },
+      {
+        "en": "Vehicle reliability improves"
+      },
+      {
+        "en": "Lower vehicle tax"
+      }
+    ]
+  },
+  {
+    "id": "SV-52",
+    "topic": "safety-vehicle",
+    "promptEn": "How can you plan a route before a long journey?",
+    "options": [
+      {
+        "en": "Ask a garage"
+      },
+      {
+        "en": "Check handbook"
+      },
+      {
+        "en": "Consult travel agent"
+      },
+      {
+        "en": "Use an online route planner"
+      }
+    ]
+  },
+  {
+    "id": "SV-53",
+    "topic": "safety-vehicle",
+    "promptEn": "What makes a vehicle environmentally friendly compared to others?",
+    "options": [
+      {
+        "en": "Diesel power"
+      },
+      {
+        "en": "Petrol engine"
+      },
+      {
+        "en": "Electric power"
+      },
+      {
+        "en": "Gravity powered"
+      }
+    ]
+  },
+  {
+    "id": "SV-54",
+    "topic": "safety-vehicle",
+    "promptEn": "Why should you plan an alternative route before starting a journey?",
+    "options": [
+      {
+        "en": "Maps have different scales"
+      },
+      {
+        "en": "Original route may be blocked"
+      },
+      {
+        "en": "Congestion charges apply"
+      },
+      {
+        "en": "Tractors cause delays"
+      }
+    ]
+  },
+  {
+    "id": "SV-55",
+    "topic": "safety-vehicle",
+    "promptEn": "What action helps reduce overall traffic levels?",
+    "options": [
+      {
+        "en": "Driving everywhere"
+      },
+      {
+        "en": "Using bus lanes"
+      },
+      {
+        "en": "Short journeys by walking or cycling"
+      },
+      {
+        "en": "Bigger engines"
+      }
+    ]
+  },
+  {
+    "id": "SV-56",
+    "topic": "safety-vehicle",
+    "promptEn": "What is the main purpose of advanced driver-assistance systems (ADAS)?",
+    "options": [
+      {
+        "en": "Reduce pollution"
+      },
+      {
+        "en": "Shorten journeys"
+      },
+      {
+        "en": "Make driving easier"
+      },
+      {
+        "en": "Improve road safety"
+      }
+    ]
+  },
+  {
+    "id": "SV-57",
+    "topic": "safety-vehicle",
+    "promptEn": "When should you check your engine oil level?",
+    "options": [
+      {
+        "en": "When engine is hot"
+      },
+      {
+        "en": "Every time you drive"
+      },
+      {
+        "en": "Before a long journey"
+      },
+      {
+        "en": "Early morning only"
+      }
+    ]
+  },
+  {
+    "id": "SV-58",
+    "topic": "safety-vehicle",
+    "promptEn": "Which vehicle component must legally be kept in good condition?",
+    "options": [
+      {
+        "en": "Gearbox"
+      },
+      {
+        "en": "Door locks"
+      },
+      {
+        "en": "Transmission"
+      },
+      {
+        "en": "Seat belts"
+      }
+    ]
+  },
+  {
+    "id": "SV-59",
+    "topic": "safety-vehicle",
+    "promptEn": "If you stop at the roadside for a long time, what must you do?",
+    "options": [
+      {
+        "en": "Use headlights"
+      },
+      {
+        "en": "Switch off engine"
+      },
+      {
+        "en": "Switch off radio"
+      },
+      {
+        "en": "Apply steering lock"
+      }
+    ]
+  },
+  {
+    "id": "SV-60",
+    "topic": "safety-vehicle",
+    "promptEn": "Why have 'red routes' been introduced in major cities?",
+    "options": [
+      {
+        "en": "Raise speed limits"
+      },
+      {
+        "en": "Provide parking"
+      },
+      {
+        "en": "Improve traffic flow"
+      },
+      {
+        "en": "Allow easier loading"
+      }
+    ]
+  },
+  {
+    "id": "SV-61",
+    "topic": "safety-vehicle",
+    "promptEn": "What is the main purpose of road humps, chicanes, and road narrowings?",
+    "options": [
+      {
+        "en": "Separate traffic lanes"
+      },
+      {
+        "en": "Increase vehicle speed"
+      },
+      {
+        "en": "Allow pedestrian crossings"
+      },
+      {
+        "en": "Reduce traffic speed"
+      }
+    ]
+  },
+  {
+    "id": "SV-62",
+    "topic": "safety-vehicle",
+    "promptEn": "When does a vehicle use the most fuel?",
+    "options": [
+      {
+        "en": "While braking"
+      },
+      {
+        "en": "While coasting"
+      },
+      {
+        "en": "While accelerating"
+      },
+      {
+        "en": "While turning"
+      }
+    ]
+  },
+  {
+    "id": "SV-63",
+    "topic": "safety-vehicle",
+    "promptEn": "You're driving an unfamiliar car with driver-assistance systems. Where should you check how to use them properly?",
+    "options": [
+      {
+        "en": "Ask a garage"
+      },
+      {
+        "en": "Manufacturer's handbook"
+      },
+      {
+        "en": "Highway Code"
+      },
+      {
+        "en": "Motoring association"
+      }
+    ]
+  },
+  {
+    "id": "SV-64",
+    "topic": "safety-vehicle",
+    "promptEn": "Two children under 14 are passengers. Who is responsible for seat belt use?",
+    "options": [
+      {
+        "en": "Adult passenger"
+      },
+      {
+        "en": "The children"
+      },
+      {
+        "en": "You, the driver"
+      },
+      {
+        "en": "Their parent"
+      }
+    ]
+  },
+  {
+    "id": "SV-65",
+    "topic": "safety-vehicle",
+    "promptEn": "What action helps reduce environmental damage caused by vehicles?",
+    "options": [
+      {
+        "en": "Avoid cruise control"
+      },
+      {
+        "en": "Use air conditioning constantly"
+      },
+      {
+        "en": "Use gears to slow down"
+      },
+      {
+        "en": "Avoid many short journeys"
+      }
+    ]
+  },
+  {
+    "id": "SV-66",
+    "topic": "safety-vehicle",
+    "promptEn": "Can you ever park on the zigzag lines at a zebra crossing?",
+    "options": [
+      {
+        "en": "Yes, if you stay in the car"
+      },
+      {
+        "en": "Yes, to drop off passengers"
+      },
+      {
+        "en": "Yes, if pedestrians can pass"
+      },
+      {
+        "en": "No, never"
+      }
+    ]
+  },
+  {
+    "id": "SV-67",
+    "topic": "safety-vehicle",
+    "promptEn": "When will a vehicle consume more fuel?",
+    "options": [
+      {
+        "en": "Tyres under-inflated"
+      },
+      {
+        "en": "Tyres of different brands"
+      },
+      {
+        "en": "Tyres over-inflated"
+      },
+      {
+        "en": "New tyres"
+      }
+    ]
+  },
+  {
+    "id": "SV-68",
+    "topic": "safety-vehicle",
+    "promptEn": "What is the legal minimum tread depth for trailer or caravan tyres?",
+    "options": [
+      {
+        "en": "1 mm"
+      },
+      {
+        "en": "1.6 mm"
+      },
+      {
+        "en": "2 mm"
+      },
+      {
+        "en": "2.6 mm"
+      }
+    ]
+  },
+  {
+    "id": "SV-69",
+    "topic": "safety-vehicle",
+    "promptEn": "Why is a correctly adjusted head restraint important?",
+    "options": [
+      {
+        "en": "Comfort"
+      },
+      {
+        "en": "Relaxation"
+      },
+      {
+        "en": "Neck injury protection"
+      },
+      {
+        "en": "Driving position"
+      }
+    ]
+  },
+  {
+    "id": "SV-70",
+    "topic": "safety-vehicle",
+    "promptEn": "When will a driver drowsiness system alert you?",
+    "options": [
+      {
+        "en": "After 4 hours of driving"
+      },
+      {
+        "en": "At set times"
+      },
+      {
+        "en": "When fatigue patterns are detected"
+      },
+      {
+        "en": "Near rest signs"
+      }
+    ]
+  },
+  {
+    "id": "SV-71",
+    "topic": "safety-vehicle",
+    "promptEn": "After a collision, what reduces the risk of neck injury?",
+    "options": [
+      {
+        "en": "Anti-lock brakes"
+      },
+      {
+        "en": "Collapsible steering wheel"
+      },
+      {
+        "en": "Air-sprung seat"
+      },
+      {
+        "en": "Correctly adjusted head restraint"
+      }
+    ]
+  },
+  {
+    "id": "SV-72",
+    "topic": "safety-vehicle",
+    "promptEn": "How should used engine oil be disposed of?",
+    "options": [
+      {
+        "en": "Pour down drain"
+      },
+      {
+        "en": "Household bin"
+      },
+      {
+        "en": "Local authority recycling site"
+      },
+      {
+        "en": "Into soil"
+      }
+    ]
+  },
+  {
+    "id": "SV-73",
+    "topic": "safety-vehicle",
+    "promptEn": "Which driving technique helps save fuel?",
+    "options": [
+      {
+        "en": "Frequent low gears"
+      },
+      {
+        "en": "Sharp acceleration"
+      },
+      {
+        "en": "Using every gear"
+      },
+      {
+        "en": "Skipping gears appropriately"
+      }
+    ]
+  },
+  {
+    "id": "SV-74",
+    "topic": "safety-vehicle",
+    "promptEn": "What may help deter vehicle theft?",
+    "options": [
+      {
+        "en": "Headlights on"
+      },
+      {
+        "en": "Reflective windows"
+      },
+      {
+        "en": "Interior light on"
+      },
+      {
+        "en": "Etching registration on windows"
+      }
+    ]
+  },
+  {
+    "id": "SV-75",
+    "topic": "safety-vehicle",
+    "promptEn": "Why are exhaust emissions tested during MOTs?",
+    "options": [
+      {
+        "en": "Recover equipment cost"
+      },
+      {
+        "en": "Protect the environment"
+      },
+      {
+        "en": "Compare fuel suppliers"
+      },
+      {
+        "en": "Equalise engine fumes"
+      }
+    ]
+  },
+  {
+    "id": "SV-76",
+    "topic": "safety-vehicle",
+    "promptEn": "You're carrying a 5-year-old child without a suitable child seat. What should you do?",
+    "options": [
+      {
+        "en": "Use adult seat belt"
+      },
+      {
+        "en": "Share belt"
+      },
+      {
+        "en": "Seat between children"
+      },
+      {
+        "en": "Do not carry the child until a proper seat is available"
+      }
+    ]
+  },
+  {
+    "id": "SV-77",
+    "topic": "safety-vehicle",
+    "promptEn": "What is the legal minimum tread depth for car tyres?",
+    "options": [
+      {
+        "en": "1 mm"
+      },
+      {
+        "en": "1.6 mm"
+      },
+      {
+        "en": "2.5 mm"
+      },
+      {
+        "en": "4 mm"
+      }
+    ]
+  },
+  {
+    "id": "SV-78",
+    "topic": "safety-vehicle",
+    "promptEn": "How can people help reduce urban pollution?",
+    "options": [
+      {
+        "en": "Drive faster"
+      },
+      {
+        "en": "Over-rev engine"
+      },
+      {
+        "en": "Walk or cycle"
+      },
+      {
+        "en": "Drive short journeys"
+      }
+    ]
+  },
+  {
+    "id": "SV-79",
+    "topic": "safety-vehicle",
+    "promptEn": "What can cause excessive or uneven tyre wear?",
+    "options": [
+      {
+        "en": "Faulty gearbox"
+      },
+      {
+        "en": "Faulty braking system"
+      },
+      {
+        "en": "Electrical fault"
+      },
+      {
+        "en": "Exhaust fault"
+      }
+    ]
+  },
+  {
+    "id": "SV-80",
+    "topic": "safety-vehicle",
+    "promptEn": "How can you reduce environmental damage from your vehicle?",
+    "options": [
+      {
+        "en": "Use busy routes"
+      },
+      {
+        "en": "Brake heavily"
+      },
+      {
+        "en": "Use side streets"
+      },
+      {
+        "en": "Anticipate traffic ahead"
+      }
+    ]
+  },
+  {
+    "id": "SV-81",
+    "topic": "safety-vehicle",
+    "promptEn": "You activate adaptive cruise control. What must you still do?",
+    "options": [
+      {
+        "en": "Remove seat belt"
+      },
+      {
+        "en": "Use phone"
+      },
+      {
+        "en": "Eat and drink"
+      },
+      {
+        "en": "Continue watching road signs"
+      }
+    ]
+  },
+  {
+    "id": "SV-82",
+    "topic": "safety-vehicle",
+    "promptEn": "You want to fit a rear-facing baby seat in the front passenger seat with an active airbag. What must you do?",
+    "options": [
+      {
+        "en": "Turn seat sideways"
+      },
+      {
+        "en": "Ask passenger to hold baby"
+      },
+      {
+        "en": "Use adult belt"
+      },
+      {
+        "en": "Deactivate the airbag"
+      }
+    ]
+  }
+]

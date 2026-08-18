@@ -1,0 +1,860 @@
+{
+  "attitude": {
+    "AT-33": {
+      "promptPl": "Na ulicy jednokierunkowej z dwoma pasami, gdzie powinieneś się ustawić, by skręcić w prawo?",
+      "options": [
+        {
+          "pl": "Lewy pas"
+        },
+        {
+          "pl": "Prawy pas"
+        },
+        {
+          "pl": "Dowolny pas"
+        },
+        {
+          "pl": "Środek drogi"
+        }
+      ]
+    },
+    "AT-34": {
+      "promptPl": "Samochód wcina się bardzo blisko przed Tobą. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przyspieszyć"
+        },
+        {
+          "pl": "Zatrąbić"
+        },
+        {
+          "pl": "Zwiększyć odstęp do bezpiecznej odległości"
+        },
+        {
+          "pl": "Mrugać światłami"
+        }
+      ]
+    },
+    "AT-35": {
+      "promptPl": "Za Tobą jedzie karetka z niebieskimi migającymi światłami. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przyspieszyć"
+        },
+        {
+          "pl": "Utrzymać prędkość"
+        },
+        {
+          "pl": "Bezpiecznie zjechać i przepuścić ją"
+        },
+        {
+          "pl": "Gwałtownie zahamować"
+        }
+      ]
+    },
+    "AT-36": {
+      "promptPl": "Które przejście pozwala rowerzystom przejeżdżać razem z pieszymi?",
+      "options": [
+        {
+          "pl": "Puffin"
+        },
+        {
+          "pl": "Pelican"
+        },
+        {
+          "pl": "Zebra"
+        },
+        {
+          "pl": "Toucan"
+        }
+      ]
+    },
+    "AT-37": {
+      "promptPl": "Jakie niebezpieczeństwo wynika z jazdy zbyt blisko pojazdu z przodu?",
+      "options": [
+        {
+          "pl": "Przegrzanie silnika"
+        },
+        {
+          "pl": "Wyższe zużycie paliwa"
+        },
+        {
+          "pl": "Ograniczony widok do przodu"
+        },
+        {
+          "pl": "Uszkodzenie opon"
+        }
+      ]
+    },
+    "AT-38": {
+      "promptPl": "Nocą w korku, jak uniknąć oślepiania kierowców za Tobą?",
+      "options": [
+        {
+          "pl": "Trzymać nogę na hamulcu"
+        },
+        {
+          "pl": "Użyć hamulca ręcznego i puścić pedał hamulca"
+        },
+        {
+          "pl": "Trzymać sprzęgło w pół"
+        },
+        {
+          "pl": "Użyć obu hamulców"
+        }
+      ]
+    }
+  },
+  "safety-vehicle": {
+    "SV-01": {
+      "promptPl": "W której sytuacji zaparkowanie pojazdu spowodowałoby utrudnienie?",
+      "options": [
+        {
+          "pl": "Przy parkometrze"
+        },
+        {
+          "pl": "Przed wjazdem na posesję"
+        },
+        {
+          "pl": "Na własnym podjeździe"
+        },
+        {
+          "pl": "Na wyznaczonym miejscu parkingowym"
+        }
+      ]
+    },
+    "SV-02": {
+      "promptPl": "Co powinieneś zrobić, zostawiając pojazd zaparkowany i bez opieki?",
+      "options": [
+        {
+          "pl": "Zostawić włączony kierunkowskaz"
+        },
+        {
+          "pl": "Zaparkować blisko skrzyżowania"
+        },
+        {
+          "pl": "Zamknąć pojazd i zabrać klucz"
+        },
+        {
+          "pl": "Zostawić otwarte okno"
+        }
+      ]
+    },
+    "SV-03": {
+      "promptPl": "Jeśli pojazd nadal się buja po naciśnięciu na nadwozie, na co to wskazuje?",
+      "options": [
+        {
+          "pl": "Zużyte opony"
+        },
+        {
+          "pl": "Niedopompowane opony"
+        },
+        {
+          "pl": "Miękkie podłoże"
+        },
+        {
+          "pl": "Zużyte amortyzatory"
+        }
+      ]
+    },
+    "SV-04": {
+      "promptPl": "Jak prawdopodobnie zmieni się podróż, jeśli jedziesz poza godzinami szczytu?",
+      "options": [
+        {
+          "pl": "Większe zużycie paliwa"
+        },
+        {
+          "pl": "Dłuższa podróż"
+        },
+        {
+          "pl": "Większe niebezpieczeństwo"
+        },
+        {
+          "pl": "Mniej opóźnień"
+        }
+      ]
+    },
+    "SV-05": {
+      "promptPl": "Jaką korzyść może dać płynna jazda?",
+      "options": [
+        {
+          "pl": "Dłuższy czas podróży"
+        },
+        {
+          "pl": "Większe zużycie paliwa"
+        },
+        {
+          "pl": "Zmniejszenie zużycia paliwa o około 15%"
+        },
+        {
+          "pl": "Większe emisje"
+        }
+      ]
+    },
+    "SV-06": {
+      "promptPl": "Gdzie w pojeździe znajduje się katalizator?",
+      "options": [
+        {
+          "pl": "W baku paliwa"
+        },
+        {
+          "pl": "W filtrze powietrza"
+        },
+        {
+          "pl": "W układzie chłodzenia"
+        },
+        {
+          "pl": "W układzie wydechowym"
+        }
+      ]
+    },
+    "SV-07": {
+      "promptPl": "Dopuszczenie do zbyt niskiego poziomu którego płynu może spowodować wypadek?",
+      "options": [
+        {
+          "pl": "Płynu chłodniczego"
+        },
+        {
+          "pl": "Płynu hamulcowego"
+        },
+        {
+          "pl": "Wody w akumulatorze"
+        },
+        {
+          "pl": "Paliwa"
+        }
+      ]
+    },
+    "SV-08": {
+      "promptPl": "Jak zmniejszyć ryzyko włamania do pojazdu w nocy?",
+      "options": [
+        {
+          "pl": "Zaparkować w ciemnym miejscu"
+        },
+        {
+          "pl": "Zostawić odblokowaną kierownicę"
+        },
+        {
+          "pl": "Zaparkować w dobrze oświetlonym miejscu"
+        },
+        {
+          "pl": "Zaparkować na cichej ulicy"
+        }
+      ]
+    },
+    "SV-09": {
+      "promptPl": "Kiedy musisz używać świateł postojowych, parkując w nocy?",
+      "options": [
+        {
+          "pl": "Blisko przystanku autobusowego"
+        },
+        {
+          "pl": "Naprzeciwko nadjeżdżającego ruchu"
+        },
+        {
+          "pl": "Gdy ograniczenie prędkości przekracza 30 mph"
+        },
+        {
+          "pl": "Na terenie prywatnym"
+        }
+      ]
+    },
+    "SV-10": {
+      "promptPl": "O ile więcej paliwa zwykle zużywa się przy 70 mph w porównaniu z 50 mph?",
+      "options": [
+        {
+          "pl": "Około 5%"
+        },
+        {
+          "pl": "Około 15%"
+        },
+        {
+          "pl": "Około 75%"
+        },
+        {
+          "pl": "Około 100%"
+        }
+      ]
+    },
+    "SV-11": {
+      "promptPl": "Kto odpowiada za to, by dzieci miały zapięte pasy w Twoim samochodzie?",
+      "options": [
+        {
+          "pl": "Rodzice"
+        },
+        {
+          "pl": "Pasażer z przodu"
+        },
+        {
+          "pl": "Dzieci"
+        },
+        {
+          "pl": "Kierowca"
+        }
+      ]
+    },
+    "SV-12": {
+      "promptPl": "Kiedy możesz zostawić włączony silnik zaparkowanego pojazdu?",
+      "options": [
+        {
+          "pl": "Poniżej 5 minut"
+        },
+        {
+          "pl": "Przy problemach z akumulatorem"
+        },
+        {
+          "pl": "W strefie 20 mph"
+        },
+        {
+          "pl": "Nigdy, gdy pojazd jest bez opieki"
+        }
+      ]
+    },
+    "SV-13": {
+      "promptPl": "Co pomaga osiągnąć ekonomiczna jazda?",
+      "options": [
+        {
+          "pl": "Więcej emisji"
+        },
+        {
+          "pl": "Ochronę środowiska i bezpieczeństwo"
+        },
+        {
+          "pl": "Uszkodzenie silnika"
+        },
+        {
+          "pl": "Wyższe rachunki za paliwo"
+        }
+      ]
+    },
+    "SV-14": {
+      "promptPl": "Jaki jest najbezpieczniejszy sposób zostawienia wartościowych rzeczy w samochodzie?",
+      "options": [
+        {
+          "pl": "W widocznej torbie"
+        },
+        {
+          "pl": "Blisko szkoły"
+        },
+        {
+          "pl": "Zamknięte i poza zasięgiem wzroku"
+        },
+        {
+          "pl": "Blisko przystanku autobusowego"
+        }
+      ]
+    },
+    "SV-15": {
+      "promptPl": "Co może ulec uszkodzeniu przy kręceniu kierownicą na postoju?",
+      "options": [
+        {
+          "pl": "Silnik"
+        },
+        {
+          "pl": "Skrzynia biegów"
+        },
+        {
+          "pl": "Hamulce"
+        },
+        {
+          "pl": "Opony"
+        }
+      ]
+    },
+    "SV-16": {
+      "promptPl": "Jaki dokument powinieneś wyjąć z pojazdu, zostawiając go bez opieki?",
+      "options": [
+        {
+          "pl": "Instrukcję obsługi"
+        },
+        {
+          "pl": "Książkę serwisową"
+        },
+        {
+          "pl": "Dane dealera"
+        },
+        {
+          "pl": "Dokument rejestracyjny pojazdu"
+        }
+      ]
+    },
+    "SV-17": {
+      "promptPl": "Jaki jest główny cel katalizatora?",
+      "options": [
+        {
+          "pl": "Zmniejszyć zużycie paliwa"
+        },
+        {
+          "pl": "Zmniejszyć ryzyko pożaru"
+        },
+        {
+          "pl": "Zmniejszyć szkodliwe gazy spalinowe"
+        },
+        {
+          "pl": "Zmniejszyć zużycie silnika"
+        }
+      ]
+    },
+    "SV-18": {
+      "promptPl": "Jak pomóc zapobiec kradzieży radia samochodowego?",
+      "options": [
+        {
+          "pl": "Zaparkować w ciemności"
+        },
+        {
+          "pl": "Zostawić je włączone"
+        },
+        {
+          "pl": "Zaparkować blisko skrzyżowania"
+        },
+        {
+          "pl": "Używać radia z kodem zabezpieczającym"
+        }
+      ]
+    },
+    "SV-19": {
+      "promptPl": "Jak ekonomiczna jazda pomaga chronić środowisko?",
+      "options": [
+        {
+          "pl": "Więcej samochodów"
+        },
+        {
+          "pl": "Wyższe rachunki za paliwo"
+        },
+        {
+          "pl": "Egzekwowanie prawa"
+        },
+        {
+          "pl": "Niższe emisje spalin"
+        }
+      ]
+    },
+    "SV-20": {
+      "promptPl": "Jak powinieneś jechać na drodze z wieloma progami zwalniającymi?",
+      "options": [
+        {
+          "pl": "Przyspieszać między progami"
+        },
+        {
+          "pl": "Utrzymywać maksymalną prędkość"
+        },
+        {
+          "pl": "Jeździć wolno tylko w godzinach szkolnych"
+        },
+        {
+          "pl": "Utrzymywać zmniejszoną prędkość na całym odcinku"
+        }
+      ]
+    }
+  },
+  "road-signs": {
+    "RS-07": {
+      "promptPl": "Okrągły znak z czerwoną obwódką i liczbą „30” oznacza:",
+      "options": [
+        {
+          "pl": "Maksymalna dozwolona prędkość to 30 mph"
+        },
+        {
+          "pl": "Minimalna prędkość to 30 mph"
+        },
+        {
+          "pl": "Zalecana prędkość to 30 mph"
+        },
+        {
+          "pl": "Średnia prędkość to 30 mph"
+        }
+      ]
+    },
+    "RS-08": {
+      "promptPl": "Niebieski okrągły znak z białą strzałką w lewo oznacza:",
+      "options": [
+        {
+          "pl": "Skręt tylko w lewo"
+        },
+        {
+          "pl": "Zakaz skrętu w lewo"
+        },
+        {
+          "pl": "Ustąp pierwszeństwa z lewej"
+        },
+        {
+          "pl": "Ulica jednokierunkowa w prawo"
+        }
+      ]
+    },
+    "RS-08A": {
+      "promptPl": "Niebieski okrągły znak z białą strzałką w prawo oznacza:",
+      "options": [
+        {
+          "pl": "Skręt tylko w prawo"
+        },
+        {
+          "pl": "Zakaz skrętu w prawo"
+        },
+        {
+          "pl": "Ustąp pierwszeństwa z prawej"
+        },
+        {
+          "pl": "Ulica jednokierunkowa w lewo"
+        }
+      ]
+    },
+    "RS-09": {
+      "promptPl": "Jedziesz przez osiedle i widzisz trójkątny znak ostrzegawczy z dwójką dzieci. Na co powinieneś być przygotowany?",
+      "options": [
+        {
+          "pl": "Dzieci mogą nagle pojawić się lub przejść przez jezdnię, zwłaszcza w pobliżu szkół"
+        },
+        {
+          "pl": "Plac zabaw z przodu jest zamknięty"
+        },
+        {
+          "pl": "Dzieci nie mają wstępu w tę okolicę"
+        },
+        {
+          "pl": "Tę drogę mogą używać tylko autobusy szkolne"
+        }
+      ]
+    },
+    "RS-10": {
+      "promptPl": "Co oznacza niebieski okrągły znak z czerwoną obwódką i czerwonym krzyżykiem (X)?",
+      "options": [
+        {
+          "pl": "Zakaz zatrzymywania się w każdym czasie"
+        },
+        {
+          "pl": "Zakaz parkowania"
+        },
+        {
+          "pl": "Koniec ograniczeń"
+        },
+        {
+          "pl": "Tylko przystanek autobusowy"
+        }
+      ]
+    },
+    "RS-11": {
+      "promptPl": "Widzisz trójkątny znak ostrzegawczy pokazujący zakręt w lewo. Przed czym ostrzega?",
+      "options": [
+        {
+          "pl": "Zakręt w lewo z przodu"
+        },
+        {
+          "pl": "Skrzyżowanie po lewej"
+        },
+        {
+          "pl": "Zwężenie drogi po lewej"
+        },
+        {
+          "pl": "Zakaz skrętu w lewo"
+        }
+      ]
+    },
+    "RS-12": {
+      "promptPl": "Trójkątny znak pokazujący pociąg bez zapór ostrzega o:",
+      "options": [
+        {
+          "pl": "Przejeździe kolejowym bez zapór"
+        },
+        {
+          "pl": "Przejeździe kolejowym z zaporami"
+        },
+        {
+          "pl": "Tylko torach tramwajowych"
+        },
+        {
+          "pl": "Końcu strefy kolejowej"
+        }
+      ]
+    },
+    "RS-13": {
+      "promptPl": "Znak z samochodem i motocyklem w czerwonym okręgu oznacza:",
+      "options": [
+        {
+          "pl": "Zakaz wjazdu pojazdów silnikowych"
+        },
+        {
+          "pl": "Tylko samochody"
+        },
+        {
+          "pl": "Tylko motocykle"
+        },
+        {
+          "pl": "Koniec ograniczenia prędkości"
+        }
+      ]
+    },
+    "RS-14": {
+      "promptPl": "Jedziesz główną drogą i widzisz trójkątny znak ostrzegawczy z symbolem ronda. Na co powinieneś się przygotować?",
+      "options": [
+        {
+          "pl": "Rondo z przodu, na którym musisz ustąpić pojazdom już na nim będącym"
+        },
+        {
+          "pl": "Tylko małe rondo"
+        },
+        {
+          "pl": "Zakaz zawracania"
+        },
+        {
+          "pl": "System ruchu jednokierunkowego z przodu"
+        }
+      ]
+    },
+    "RS-15": {
+      "promptPl": "Niebieski okrągły znak z białym symbolem roweru oznacza:",
+      "options": [
+        {
+          "pl": "Tylko droga dla rowerów"
+        },
+        {
+          "pl": "Zakaz jazdy rowerem"
+        },
+        {
+          "pl": "Wspólna droga z samochodami"
+        },
+        {
+          "pl": "Tylko parking dla rowerów"
+        }
+      ]
+    },
+    "RS-16": {
+      "promptPl": "Prostokątny znak z czerwoną ukośną linią przez czarny symbol kamery oznacza:",
+      "options": [
+        {
+          "pl": "Koniec strefy fotoradarów"
+        },
+        {
+          "pl": "Początek fotoradarów"
+        },
+        {
+          "pl": "Zakaz fotografowania"
+        },
+        {
+          "pl": "Sygnalizacja świetlna z przodu"
+        }
+      ]
+    },
+    "RS-17": {
+      "promptPl": "Jedziesz górską drogą i widzisz trójkątny znak ostrzegawczy z spadającymi skałami. Jakie zagrożenie powinieneś mieć na uwadze?",
+      "options": [
+        {
+          "pl": "Skały mogą spadać lub już leżeć na jezdni z przodu"
+        },
+        {
+          "pl": "Trwają roboty drogowe z przodu"
+        },
+        {
+          "pl": "Tylko luźny żwir na nawierzchni"
+        },
+        {
+          "pl": "Nawierzchnia jest śliska"
+        }
+      ]
+    },
+    "RS-18": {
+      "promptPl": "Prostokątny znak z białym „H” na niebieskim tle zwykle oznacza:",
+      "options": [
+        {
+          "pl": "Szpital w pobliżu"
+        },
+        {
+          "pl": "Strefę hotelową"
+        },
+        {
+          "pl": "Lądowisko dla helikopterów"
+        },
+        {
+          "pl": "Autostradę"
+        }
+      ]
+    },
+    "RS-20": {
+      "promptPl": "Niebieski prostokątny znak z symbolem samochodu na pasie nad jezdnią zwykle wskazuje:",
+      "options": [
+        {
+          "pl": "Pas dostępny dla ruchu"
+        },
+        {
+          "pl": "Pas zamknięty"
+        },
+        {
+          "pl": "Tylko pas autobusowy"
+        },
+        {
+          "pl": "Pas awaryjny"
+        }
+      ]
+    },
+    "RS-21": {
+      "promptPl": "Na autostradzie czerwony „X” na znaku nad Twoim pasem oznacza:",
+      "options": [
+        {
+          "pl": "Nie wolno używać tego pasa"
+        },
+        {
+          "pl": "Masz pierwszeństwo na tym pasie"
+        },
+        {
+          "pl": "Powinieneś jechać szybciej"
+        },
+        {
+          "pl": "Tylko autobusy mogą używać tego pasa"
+        }
+      ]
+    },
+    "RS-26": {
+      "promptPl": "Co oznacza czerwony okrągły znak z przekreślonym symbolem zawracania?",
+      "options": [
+        {
+          "pl": "Zakaz zawracania"
+        },
+        {
+          "pl": "Zakaz skrętu w prawo"
+        },
+        {
+          "pl": "Koniec ograniczenia prędkości"
+        },
+        {
+          "pl": "Ruch dwukierunkowy z przodu"
+        }
+      ]
+    }
+  },
+  "vehicle-handling": {
+    "VH-09": {
+      "promptPl": "Czasem przed zagrożeniem widzisz krótkie żółte poprzeczne linie na jezdni. Do czego głównie służą?",
+      "options": [
+        {
+          "pl": "Aby pokazać bezpieczny odstęp między pojazdami"
+        },
+        {
+          "pl": "Aby utrzymać obszar wolny"
+        },
+        {
+          "pl": "Aby bardziej uświadomić Ci prędkość"
+        },
+        {
+          "pl": "Aby ostrzec o zmianie kierunku"
+        }
+      ]
+    },
+    "VH-10": {
+      "promptPl": "Przed jazdą we mgle, co powinieneś najpierw sprawdzić?",
+      "options": [
+        {
+          "pl": "Poziom płynu chłodniczego"
+        },
+        {
+          "pl": "Czy w aucie jest trójkąt ostrzegawczy"
+        },
+        {
+          "pl": "Czy szyby są czyste i wszystkie światła działają"
+        },
+        {
+          "pl": "Czy telefon jest naładowany"
+        }
+      ]
+    },
+    "VH-11": {
+      "promptPl": "Jeśli musisz zaparkować na drodze we mgle, które światła powinieneś zostawić włączone?",
+      "options": [
+        {
+          "pl": "Światła postojowe/pozycyjne"
+        },
+        {
+          "pl": "Światła mijania i przeciwmgielne"
+        },
+        {
+          "pl": "Tylko światła mijania"
+        },
+        {
+          "pl": "Światła drogowe"
+        }
+      ]
+    },
+    "VH-12": {
+      "promptPl": "Jedziesz przez serię progów zwalniających. Jakie jest najbezpieczniejsze podejście?",
+      "options": [
+        {
+          "pl": "Mocno hamować przy każdym progu"
+        },
+        {
+          "pl": "Przyspieszać między progami"
+        },
+        {
+          "pl": "Utrzymywać zmniejszoną, równą prędkość na całym odcinku"
+        },
+        {
+          "pl": "Użyć tempomatu"
+        }
+      ]
+    },
+    "VH-13": {
+      "promptPl": "Na wietrznej autostradzie, na co uważać przy wyprzedzaniu wysokiego pojazdu?",
+      "options": [
+        {
+          "pl": "Zwiększyć prędkość"
+        },
+        {
+          "pl": "Nagły podmuch wiatru przy mijaniu"
+        },
+        {
+          "pl": "Jeździć blisko obok"
+        },
+        {
+          "pl": "Spodziewać się normalnych warunków"
+        }
+      ]
+    },
+    "VH-14": {
+      "promptPl": "Jadąc z góry, co pomaga kontrolować prędkość bez przegrzewania hamulców?",
+      "options": [
+        {
+          "pl": "Jazda na luzie"
+        },
+        {
+          "pl": "Niższy bieg (hamowanie silnikiem)"
+        },
+        {
+          "pl": "Trzymanie sprzęgła"
+        },
+        {
+          "pl": "Ciągłe mocne hamowanie"
+        }
+      ]
+    },
+    "VH-15": {
+      "promptPl": "Musisz jechać we mgle. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Jeździć blisko świateł tyłu poprzedzającego"
+        },
+        {
+          "pl": "Unikać świateł mijania"
+        },
+        {
+          "pl": "Zaplanować więcej czasu na podróż"
+        },
+        {
+          "pl": "Zachować tylko odstęp 2 sekund"
+        }
+      ]
+    },
+    "VH-16": {
+      "promptPl": "Kiedy wolno zatrzymać się na żółtej kratce (box junction)?",
+      "options": [
+        {
+          "pl": "Gdy stoisz w kolejce prosto"
+        },
+        {
+          "pl": "Gdy zbliżasz się do przejścia"
+        },
+        {
+          "pl": "Gdy zbliżasz się do przejścia typu zebra"
+        },
+        {
+          "pl": "Gdy czekasz na skręt w prawo, a nadjeżdżający ruch blokuje wyjazd"
+        }
+      ]
+    }
+  }
+}

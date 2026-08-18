@@ -1,0 +1,856 @@
+{
+  "incidents": {
+    "IN-09": {
+      "promptPl": "Jeśli poszkodowany przestał oddychać, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Podać mu wodę"
+        },
+        {
+          "pl": "Unieść mu nogi"
+        },
+        {
+          "pl": "Natychmiast rozpocząć RKO"
+        },
+        {
+          "pl": "Trzymać głowę pochyloną do przodu"
+        }
+      ]
+    },
+    "IN-10": {
+      "promptPl": "Kiedy należy wezwać służby ratunkowe, jeśli ktoś jest nieprzytomny po wypadku?",
+      "options": [
+        {
+          "pl": "Po obudzeniu go"
+        },
+        {
+          "pl": "Tylko jeśli inni nie dadzą rady"
+        },
+        {
+          "pl": "Jak najszybciej"
+        },
+        {
+          "pl": "Po sprawdzeniu obrażeń"
+        }
+      ]
+    },
+    "IN-11": {
+      "promptPl": "Po przybyciu na miejsce wypadku, co powinieneś sprawdzić najpierw?",
+      "options": [
+        {
+          "pl": "Rozpocząć RKO"
+        },
+        {
+          "pl": "Znaleźć AED"
+        },
+        {
+          "pl": "Sprawdzić, czy można bezpiecznie podejść"
+        },
+        {
+          "pl": "Przenieść poszkodowanego"
+        }
+      ]
+    },
+    "IN-12": {
+      "promptPl": "Jeśli ruch zatrzyma się w tunelu, co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Zaparkować bardzo blisko auta z przodu"
+        },
+        {
+          "pl": "Zignorować tablice z komunikatami"
+        },
+        {
+          "pl": "Zachować bezpieczną odległość od pojazdu z przodu"
+        },
+        {
+          "pl": "Zawrócić"
+        }
+      ]
+    },
+    "IN-13": {
+      "promptPl": "Kto może używać publicznego AED?",
+      "options": [
+        {
+          "pl": "Tylko lekarze"
+        },
+        {
+          "pl": "Tylko ratownicy medyczni"
+        },
+        {
+          "pl": "Tylko osoby z przeszkoleniem z pierwszej pomocy"
+        },
+        {
+          "pl": "Każdy"
+        }
+      ]
+    },
+    "IN-14": {
+      "promptPl": "Jak pomóc osobie, która mocno krwawi z rany na ramieniu?",
+      "options": [
+        {
+          "pl": "Podać jej coś do picia"
+        },
+        {
+          "pl": "Lekko przykładać opatrunek do rany"
+        },
+        {
+          "pl": "Prowadzić ją w ruchu"
+        },
+        {
+          "pl": "Mocno uciskać ranę"
+        }
+      ]
+    },
+    "IN-15": {
+      "promptPl": "Jak służby ratunkowe rozpoznają pojazd przewożący niebezpieczne towary?",
+      "options": [
+        {
+          "pl": "Po specjalnych tablicach rejestracyjnych"
+        },
+        {
+          "pl": "Po symbolach ostrzegawczych lub oznaczeniach zagrożenia"
+        },
+        {
+          "pl": "Po migających niebieskich światłach"
+        },
+        {
+          "pl": "Po sygnałach dźwiękowych"
+        }
+      ]
+    },
+    "IN-16": {
+      "promptPl": "Co ostrzega Cię o korku przed Tobą w długim tunelu?",
+      "options": [
+        {
+          "pl": "Linie ostrzegawcze"
+        },
+        {
+          "pl": "Migające światła mijania"
+        },
+        {
+          "pl": "Zmienne tablice z komunikatami"
+        },
+        {
+          "pl": "Oznaczenia na jezdni"
+        }
+      ]
+    }
+  },
+  "road-signs": {
+    "RS-2001": {
+      "promptPl": "Widzisz odwrócony trójkątny znak z czerwoną obwódką na skrzyżowaniu. Co oznacza?",
+      "options": [
+        {
+          "pl": "Musisz się zatrzymać i wyłączyć silnik"
+        },
+        {
+          "pl": "Masz pierwszeństwo przed ruchem na drodze głównej"
+        },
+        {
+          "pl": "Musisz ustąpić pierwszeństwa pojazdom na drodze głównej"
+        },
+        {
+          "pl": "Żadne pojazdy nie mogą wjechać na skrzyżowanie"
+        }
+      ]
+    },
+    "RS-2002": {
+      "promptPl": "Co nakazuje ośmiokątny czerwony znak z napisem „STOP”?",
+      "options": [
+        {
+          "pl": "Zwolnić i jechać dalej, jeśli droga wygląda na wolną"
+        },
+        {
+          "pl": "Zatrzymać się tylko, gdy przechodzą piesi"
+        },
+        {
+          "pl": "Zatrzymać się i ustąpić pierwszeństwa tylko pojazdom z lewej"
+        },
+        {
+          "pl": "Całkowicie się zatrzymać przy linii zatrzymania, zanim pojedziesz dalej"
+        }
+      ]
+    },
+    "RS-2003": {
+      "promptPl": "Zbliżasz się do czerwonego okrągłego znaku z białym poziomym paskiem. Co oznacza ten znak?",
+      "options": [
+        {
+          "pl": "Zakaz wjazdu dla pojazdów"
+        },
+        {
+          "pl": "Zakaz zatrzymywania się o każdej porze"
+        },
+        {
+          "pl": "Koniec ograniczeń"
+        },
+        {
+          "pl": "Ruch dwukierunkowy przed Tobą"
+        }
+      ]
+    },
+    "RS-2006": {
+      "promptPl": "Widzisz okrągły znak z czerwoną obwódką i liczbą „30”. Co oznacza?",
+      "options": [
+        {
+          "pl": "Minimalna prędkość to 30 mph"
+        },
+        {
+          "pl": "Zalecana prędkość to 30 mph"
+        },
+        {
+          "pl": "Maksymalna prędkość to 30 mph"
+        },
+        {
+          "pl": "Średnia prędkość musi wynosić 30 mph"
+        }
+      ]
+    },
+    "RS-2009": {
+      "promptPl": "Co oznacza ten znak ostrzegawczy?",
+      "options": [
+        {
+          "pl": "Przejście dla pieszych typu zebra przed Tobą"
+        },
+        {
+          "pl": "Strefa tylko dla pieszych"
+        },
+        {
+          "pl": "Sygnalizacja świetlna przed Tobą"
+        },
+        {
+          "pl": "Tylko wjazd do szkoły"
+        }
+      ]
+    },
+    "RS-2010": {
+      "promptPl": "Co oznacza ten znak ostrzegawczy?",
+      "options": [
+        {
+          "pl": "Podwójny zakręt przed Tobą, pierwszy w lewo"
+        },
+        {
+          "pl": "Droga się zwęża po lewej stronie"
+        },
+        {
+          "pl": "Tylko ostry zakręt w prawo"
+        },
+        {
+          "pl": "Śliska jezdnia przed Tobą"
+        }
+      ]
+    },
+    "RS-2011": {
+      "promptPl": "Co oznacza niebieski okrągły znak z czerwoną obwódką i jedną czerwoną przekątną?",
+      "options": [
+        {
+          "pl": "Zakaz parkowania"
+        },
+        {
+          "pl": "Zakaz zatrzymywania się o każdej porze"
+        },
+        {
+          "pl": "Parkowanie dozwolone"
+        },
+        {
+          "pl": "Koniec ograniczeń parkowania"
+        }
+      ]
+    },
+    "RS-2012": {
+      "promptPl": "Jedziesz przez teren leśny o zmierzchu i widzisz trójkątny znak ostrzegawczy z jeleniem. Na jakie zagrożenie masz uważać?",
+      "options": [
+        {
+          "pl": "Dzikie zwierzęta mogą nagle pojawić się i przejść przez drogę"
+        },
+        {
+          "pl": "Przed Tobą jest wjazd do parku przyrody"
+        },
+        {
+          "pl": "Na tej drodze dozwolone są tylko pojazdy rolnicze"
+        },
+        {
+          "pl": "Przed Tobą jest teren łowiecki"
+        }
+      ]
+    },
+    "RS-2013": {
+      "promptPl": "Co oznacza czerwony okrągły znak z białym tłem i przekreślonym symbolem klaksonu?",
+      "options": [
+        {
+          "pl": "Używaj klaksonu tylko w nagłych wypadkach"
+        },
+        {
+          "pl": "Zakaz używania sygnału dźwiękowego"
+        },
+        {
+          "pl": "Strefa ciszy przed Tobą"
+        },
+        {
+          "pl": "W tym obszarze zaleca się używanie klaksonu"
+        }
+      ]
+    },
+    "RS-2015": {
+      "promptPl": "Zbliżasz się do mostu i widzisz trójkątny znak ostrzegawczy pokazujący zwężenie drogi po obu stronach. Na co masz się przygotować?",
+      "options": [
+        {
+          "pl": "Mniejszą szerokość drogi wymagającą wolniejszej jazdy i większej ostrożności"
+        },
+        {
+          "pl": "Przyspieszenie, by szybko przejechać"
+        },
+        {
+          "pl": "Możesz jechać środkiem drogi"
+        },
+        {
+          "pl": "Wyprzedzanie pojazdów przed zwężeniem"
+        }
+      ]
+    },
+    "RS-2016": {
+      "promptPl": "Widzisz niebieski prostokątny znak z białym symbolem autostrady. Co oznacza?",
+      "options": [
+        {
+          "pl": "Koniec autostrady"
+        },
+        {
+          "pl": "Autostrada przed Tobą"
+        },
+        {
+          "pl": "Droga dwujezdniowa przed Tobą"
+        },
+        {
+          "pl": "Stacja obsługi przed Tobą"
+        }
+      ]
+    },
+    "RS-2017": {
+      "promptPl": "Co oznacza przerywana biała linia w poprzek drogi na skrzyżowaniu?",
+      "options": [
+        {
+          "pl": "Musisz się całkowicie zatrzymać"
+        },
+        {
+          "pl": "Musisz ustąpić pierwszeństwa, jeśli to konieczne"
+        },
+        {
+          "pl": "Wyprzedzanie jest zabronione"
+        },
+        {
+          "pl": "Parkowanie jest zabronione"
+        }
+      ]
+    },
+    "RS-2018": {
+      "promptPl": "Niebieski okrągły znak pokazuje białą strzałkę skierowaną prosto. Co oznacza?",
+      "options": [
+        {
+          "pl": "Musisz jechać tylko prosto"
+        },
+        {
+          "pl": "Zakaz wjazdu prosto"
+        },
+        {
+          "pl": "Ruch przed Tobą musi skręcić w lewo"
+        },
+        {
+          "pl": "Koniec drogi przed Tobą"
+        }
+      ]
+    },
+    "RS-2020": {
+      "promptPl": "Znak ostrzegawczy pokazuje garb na drodze. Czego się spodziewać?",
+      "options": [
+        {
+          "pl": "Stromego wzniesienia przed Tobą"
+        },
+        {
+          "pl": "Progów zwalniających przed Tobą"
+        },
+        {
+          "pl": "Nierównej nawierzchni tylko podczas deszczu"
+        },
+        {
+          "pl": "Zamkniętej drogi przed Tobą"
+        }
+      ]
+    },
+    "RS-2022": {
+      "promptPl": "Co oznacza okrągły znak z czerwoną obwódką i symbolem motocykla?",
+      "options": [
+        {
+          "pl": "Tylko motocykle"
+        },
+        {
+          "pl": "Zakaz wjazdu motocykli"
+        },
+        {
+          "pl": "Koniec ograniczenia dla motocykli"
+        },
+        {
+          "pl": "Zalecana trasa dla motocykli"
+        }
+      ]
+    },
+    "RS-2023": {
+      "promptPl": "Znak pokazuje czerwone koło z białym tłem i symbolem ciężarówki. Co oznacza?",
+      "options": [
+        {
+          "pl": "Ciężarówki muszą korzystać z tej trasy"
+        },
+        {
+          "pl": "Zakaz wjazdu pojazdów towarowych"
+        },
+        {
+          "pl": "Koniec ograniczenia dla pojazdów towarowych"
+        },
+        {
+          "pl": "Tylko pojazdy ciężkie"
+        }
+      ]
+    },
+    "RS-2024": {
+      "promptPl": "Widzisz niebieski znak z białą strzałką wskazującą w lewo i w prawo. Co to oznacza?",
+      "options": [
+        {
+          "pl": "Musisz skręcić w lewo albo w prawo"
+        },
+        {
+          "pl": "Zakaz zawracania"
+        },
+        {
+          "pl": "Ruch dwukierunkowy przed Tobą"
+        },
+        {
+          "pl": "Droga się zwęża po obu stronach"
+        }
+      ]
+    },
+    "RS-2025": {
+      "promptPl": "Widzisz obszar kreskowany z ukośnymi białymi liniami obramowany przerywanymi białymi liniami. Co to oznacza i kiedy możesz na niego wjechać?",
+      "options": [
+        {
+          "pl": "Nigdy nie wjeżdżaj – oddziela pasy ruchu"
+        },
+        {
+          "pl": "Wjedź tylko gdy to konieczne i bezpieczne, i tylko gdy przerywana linia jest po Twojej stronie"
+        },
+        {
+          "pl": "Tylko dla pojazdów uprzywilejowanych"
+        },
+        {
+          "pl": "Wyprzedzanie obowiązkowe"
+        }
+      ]
+    },
+    "RS-2026": {
+      "promptPl": "Co oznacza ten okrągły znak z czerwoną obwódką i przekreśloną strzałką skrętu w prawo?",
+      "options": [
+        {
+          "pl": "Zakaz skrętu w prawo"
+        },
+        {
+          "pl": "Tylko skręt w prawo"
+        },
+        {
+          "pl": "Zakaz zawracania"
+        },
+        {
+          "pl": "Droga jednokierunkowa w prawo"
+        }
+      ]
+    },
+    "RS-2027": {
+      "promptPl": "Jedziesz drogą główną i widzisz trójkątny znak ostrzegawczy z sygnalizacją świetlną. Na co masz się przygotować?",
+      "options": [
+        {
+          "pl": "Sygnalizację świetlną przed Tobą, która może zmienić się na czerwone"
+        },
+        {
+          "pl": "Przejście dla pieszych bez świateł"
+        },
+        {
+          "pl": "Zamkniętą drogę przed Tobą"
+        },
+        {
+          "pl": "Kontrolę policyjną przed Tobą"
+        }
+      ]
+    },
+    "RS-2028": {
+      "promptPl": "Co oznacza prostokątny znak z białym symbolem fotoradaru na niebieskim tle?",
+      "options": [
+        {
+          "pl": "Koniec ograniczenia prędkości przed Tobą"
+        },
+        {
+          "pl": "Strefa kontroli średniej prędkości"
+        },
+        {
+          "pl": "Informację o fotoradarze"
+        },
+        {
+          "pl": "Tylko policyjną kontrolę prędkości"
+        }
+      ]
+    },
+    "RS-2029": {
+      "promptPl": "Widzisz trójkątny znak ostrzegawczy z rowerem. Przed czym ostrzega?",
+      "options": [
+        {
+          "pl": "Tylko trasa rowerowa"
+        },
+        {
+          "pl": "Rowerzyści przejeżdżający lub korzystający z drogi"
+        },
+        {
+          "pl": "Koniec pasa dla rowerów"
+        },
+        {
+          "pl": "Zakaz jazdy rowerami"
+        }
+      ]
+    },
+    "RS-2030": {
+      "promptPl": "Niebieski okrągły znak pokazuje biały poziomy pasek. Jaki to nakaz?",
+      "options": [
+        {
+          "pl": "Omijaj z dowolnej strony, by dojechać do tego samego miejsca"
+        },
+        {
+          "pl": "Zakaz wjazdu dla pojazdów"
+        },
+        {
+          "pl": "Zamknięta droga przed Tobą"
+        },
+        {
+          "pl": "Trzymaj się tylko lewej strony"
+        }
+      ]
+    },
+    "RS-2031": {
+      "promptPl": "Jedziesz drogą główną i widzisz trójkątny znak ostrzegawczy pokazujący drogę boczną włączającą się z lewej. Jakiego zagrożenia się spodziewać?",
+      "options": [
+        {
+          "pl": "Pojazdy mogą wyjechać z drogi bocznej i włączyć się na Twój tor jazdy"
+        },
+        {
+          "pl": "Ruch z lewej zawsze ma pierwszeństwo"
+        },
+        {
+          "pl": "Musisz wyprzedzić przed skrzyżowaniem"
+        },
+        {
+          "pl": "Droga staje się jednokierunkowa przed Tobą"
+        }
+      ]
+    },
+    "RS-2032": {
+      "promptPl": "Co oznacza ten trójkątny znak ostrzegawczy z dwiema strzałkami w przeciwnych kierunkach?",
+      "options": [
+        {
+          "pl": "Ruch dwukierunkowy przecina drogę jednokierunkową"
+        },
+        {
+          "pl": "Droga się zwęża przed Tobą"
+        },
+        {
+          "pl": "Koniec drogi jednokierunkowej"
+        },
+        {
+          "pl": "Ruch musi skręcić w prawo"
+        }
+      ]
+    },
+    "RS-2033": {
+      "promptPl": "Okrągły znak z czerwoną obwódką pokazuje „20”. Gdzie to ograniczenie jest często stosowane?",
+      "options": [
+        {
+          "pl": "Na autostradach podczas robót drogowych"
+        },
+        {
+          "pl": "W obszarach mieszkalnych lub przy szkołach"
+        },
+        {
+          "pl": "Na wiejskich drogach jednojezdniowych"
+        },
+        {
+          "pl": "Na końcu dróg dwujezdniowych"
+        }
+      ]
+    },
+    "RS-2034": {
+      "promptPl": "Niebieski okrągły znak pokazuje białe symbole pieszego i rowerzysty razem. Co oznacza?",
+      "options": [
+        {
+          "pl": "Wspólna droga dla pieszych i rowerzystów"
+        },
+        {
+          "pl": "Tylko trasa rowerowa"
+        },
+        {
+          "pl": "Zakaz ruchu pieszych"
+        },
+        {
+          "pl": "Koniec pasa dla rowerów"
+        }
+      ]
+    },
+    "RS-2035": {
+      "promptPl": "Co oznacza biała strzałka namalowana na jezdni skierowana w lewo?",
+      "options": [
+        {
+          "pl": "Musisz skręcić w lewo na najbliższym skrzyżowaniu"
+        },
+        {
+          "pl": "Zakaz skrętu w lewo"
+        },
+        {
+          "pl": "Droga się zwęża po lewej"
+        },
+        {
+          "pl": "Ruch z lewej ma pierwszeństwo"
+        }
+      ]
+    },
+    "RS-2036": {
+      "promptPl": "Zbliżasz się do ruchliwego obszaru i widzisz trójkątny znak ostrzegawczy pokazujący kolejkę pojazdów. Na co masz się przygotować?",
+      "options": [
+        {
+          "pl": "Wolno jadący lub stojący ruch przed Tobą, wymagający zmniejszenia prędkości"
+        },
+        {
+          "pl": "System ruchu jednokierunkowego przed Tobą"
+        },
+        {
+          "pl": "Zwiększenie ograniczenia prędkości przed Tobą"
+        },
+        {
+          "pl": "Koniec robót drogowych przed Tobą"
+        }
+      ]
+    },
+    "RS-2037": {
+      "promptPl": "Co oznacza okrągły znak z czerwoną obwódką i masą podaną w tonach?",
+      "options": [
+        {
+          "pl": "Minimalna masa wymagana do korzystania z drogi"
+        },
+        {
+          "pl": "Maksymalna dopuszczalna masa pojazdu"
+        },
+        {
+          "pl": "Tylko zalecane ograniczenie masy"
+        },
+        {
+          "pl": "Ograniczenie masy obowiązuje tylko w nocy"
+        }
+      ]
+    },
+    "RS-2038": {
+      "promptPl": "Widzisz niebieski prostokątny znak z symbolem dystrybutora paliwa. Co oznacza?",
+      "options": [
+        {
+          "pl": "Stacja paliw dostępna przed Tobą"
+        },
+        {
+          "pl": "Trasa tylko dla pojazdów z paliwem"
+        },
+        {
+          "pl": "Koniec stacji obsługi na autostradzie"
+        },
+        {
+          "pl": "Materiały niebezpieczne przed Tobą"
+        }
+      ]
+    },
+    "RS-2039": {
+      "promptPl": "Jedziesz drogą wiejską i widzisz trójkątny znak ostrzegawczy pokazujący zwężenie drogi po prawej. Co powinieneś zrobić?",
+      "options": [
+        {
+          "pl": "Przygotować się do zwolnienia i ustawić pojazd pod mniejszą szerokość"
+        },
+        {
+          "pl": "Natychmiast przejechać na prawą stronę"
+        },
+        {
+          "pl": "Wyprzedzić wolniejsze pojazdy przed zwężeniem"
+        },
+        {
+          "pl": "Zatrzymać się i poczekać, aż przejedzie ruch nadjeżdżający z przeciwka"
+        }
+      ]
+    },
+    "RS-2040": {
+      "promptPl": "Co zwykle oznacza prostokątny znak z białym tekstem na brązowym tle?",
+      "options": [
+        {
+          "pl": "Atrakcje turystyczne lub ciekawe miejsca"
+        },
+        {
+          "pl": "Tylko kierunki na autostradzie"
+        },
+        {
+          "pl": "Lokalną trasę objazdową"
+        },
+        {
+          "pl": "Informacje awaryjne"
+        }
+      ]
+    },
+    "RS-2041": {
+      "promptPl": "Jedziesz po pagórkowatym terenie i widzisz trójkątny znak ostrzegawczy pokazujący stromy zjazd. Na co masz się przygotować?",
+      "options": [
+        {
+          "pl": "Stromy odcinek w dół, na którym musisz ostrożnie kontrolować prędkość"
+        },
+        {
+          "pl": "Strome wzniesienie przed Tobą"
+        },
+        {
+          "pl": "Tylko nierówną nawierzchnię"
+        },
+        {
+          "pl": "Koniec odcinka górskiego"
+        }
+      ]
+    },
+    "RS-2042": {
+      "promptPl": "Co oznacza okrągły znak z czerwoną obwódką i wysokością podaną w metrach?",
+      "options": [
+        {
+          "pl": "Minimalna wymagana wysokość pojazdu"
+        },
+        {
+          "pl": "Tylko zalecana wysokość"
+        },
+        {
+          "pl": "Maksymalna dopuszczalna wysokość pojazdu"
+        },
+        {
+          "pl": "Ograniczenie wysokości obowiązuje tylko w nocy"
+        }
+      ]
+    },
+    "RS-2043": {
+      "promptPl": "Widzisz niebieski prostokątny znak z białym symbolem telefonu. Co oznacza?",
+      "options": [
+        {
+          "pl": "Dozwolone używanie telefonu komórkowego"
+        },
+        {
+          "pl": "Telefon publiczny dostępny w pobliżu"
+        },
+        {
+          "pl": "Tylko pojazdy uprzywilejowane"
+        },
+        {
+          "pl": "Posterunek policji przed Tobą"
+        }
+      ]
+    },
+    "RS-2044": {
+      "promptPl": "Znak ostrzegawczy pokazuje most z garbem. Jakiego zagrożenia się spodziewać?",
+      "options": [
+        {
+          "pl": "Ograniczoną widoczność nad mostem"
+        },
+        {
+          "pl": "Śliską nawierzchnię na moście"
+        },
+        {
+          "pl": "Most zamknięty dla ruchu"
+        },
+        {
+          "pl": "Tylko niskie ograniczenie wysokości"
+        }
+      ]
+    },
+    "RS-2045": {
+      "promptPl": "Co oznacza biała strzałka namalowana na jezdni skierowana prosto?",
+      "options": [
+        {
+          "pl": "Musisz jechać prosto"
+        },
+        {
+          "pl": "Zakaz wjazdu prosto"
+        },
+        {
+          "pl": "Koniec drogi przed Tobą"
+        },
+        {
+          "pl": "Ruch musi skręcić w lewo lub w prawo"
+        }
+      ]
+    },
+    "RS-2047": {
+      "promptPl": "Co oznacza okrągły znak z czerwoną obwódką i szerokością podaną w metrach?",
+      "options": [
+        {
+          "pl": "Minimalna szerokość drogi przed Tobą"
+        },
+        {
+          "pl": "Zalecana szerokość pojazdu"
+        },
+        {
+          "pl": "Maksymalna dopuszczalna szerokość pojazdu"
+        },
+        {
+          "pl": "Ograniczenie szerokości dotyczy tylko ciężarówek"
+        }
+      ]
+    },
+    "RS-2048": {
+      "promptPl": "Widzisz niebieski prostokątny znak z białym symbolem autobusu. Co oznacza?",
+      "options": [
+        {
+          "pl": "Pas dla autobusów przed Tobą"
+        },
+        {
+          "pl": "Autobusy muszą się zatrzymać przed Tobą"
+        },
+        {
+          "pl": "Droga tylko dla autobusów"
+        },
+        {
+          "pl": "Koniec pasa dla autobusów"
+        }
+      ]
+    },
+    "RS-2049": {
+      "promptPl": "Znak ostrzegawczy pokazuje symbol nisko lecącego samolotu. Przed czym ostrzega?",
+      "options": [
+        {
+          "pl": "Terminal lotniczy przed Tobą"
+        },
+        {
+          "pl": "Hałas od nisko lecących samolotów"
+        },
+        {
+          "pl": "Ograniczona przestrzeń powietrzna"
+        },
+        {
+          "pl": "Miejsce awaryjnego lądowania"
+        }
+      ]
+    },
+    "RS-2050": {
+      "promptPl": "Widzisz ciągłą białą linię wzdłuż lewej krawędzi jezdni. Co oznacza i jak jechać?",
+      "options": [
+        {
+          "pl": "Krawędź jezdni – trzymaj się po prawej stronie tej linii"
+        },
+        {
+          "pl": "Pas dla rowerów – tylko rowerzyści"
+        },
+        {
+          "pl": "Strefa zakazu wyprzedzania – nie przekraczaj"
+        },
+        {
+          "pl": "Miejsce do parkowania – możesz tu parkować"
+        }
+      ]
+    }
+  }
+}

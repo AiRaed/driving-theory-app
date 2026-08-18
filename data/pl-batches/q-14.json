@@ -1,0 +1,952 @@
+[
+  {
+    "id": "RS-6001",
+    "topic": "road-signs",
+    "promptEn": "What does a triangular road sign with a red border always indicate?",
+    "options": [
+      {
+        "en": "Information"
+      },
+      {
+        "en": "Mandatory instruction"
+      },
+      {
+        "en": "Warning of a hazard ahead"
+      },
+      {
+        "en": "Direction to a destination"
+      }
+    ]
+  },
+  {
+    "id": "RS-6002",
+    "topic": "road-signs",
+    "promptEn": "What does a blue circular sign usually tell you?",
+    "options": [
+      {
+        "en": "A warning"
+      },
+      {
+        "en": "A prohibition"
+      },
+      {
+        "en": "A mandatory instruction"
+      },
+      {
+        "en": "Temporary information"
+      }
+    ]
+  },
+  {
+    "id": "RS-6003",
+    "topic": "road-signs",
+    "promptEn": "What does a red circular sign usually indicate?",
+    "options": [
+      {
+        "en": "Information only"
+      },
+      {
+        "en": "A warning"
+      },
+      {
+        "en": "A restriction or prohibition"
+      },
+      {
+        "en": "A recommended route"
+      }
+    ]
+  },
+  {
+    "id": "RS-6004",
+    "topic": "road-signs",
+    "promptEn": "What do white rectangular signs usually provide?",
+    "options": [
+      {
+        "en": "Mandatory rules"
+      },
+      {
+        "en": "Warnings only"
+      },
+      {
+        "en": "Information and directions"
+      },
+      {
+        "en": "Temporary hazards"
+      }
+    ]
+  },
+  {
+    "id": "RS-6005",
+    "topic": "road-signs",
+    "promptEn": "What does a STOP sign require you to do?",
+    "options": [
+      {
+        "en": "Slow down and look"
+      },
+      {
+        "en": "Stop only if traffic is coming"
+      },
+      {
+        "en": "Stop completely before the line"
+      },
+      {
+        "en": "Give way without stopping"
+      }
+    ]
+  },
+  {
+    "id": "RS-6006",
+    "topic": "road-signs",
+    "promptEn": "You see white zigzag lines painted on the road near a pedestrian crossing. What must you do?",
+    "options": [
+      {
+        "en": "Stop and wait for pedestrians"
+      },
+      {
+        "en": "Do not stop or park in this area"
+      },
+      {
+        "en": "Reduce speed to 20 mph"
+      },
+      {
+        "en": "Overtake only if safe"
+      }
+    ]
+  },
+  {
+    "id": "RS-6007",
+    "topic": "road-signs",
+    "promptEn": "You approach a junction and see a broken white line across your lane. What must you do?",
+    "options": [
+      {
+        "en": "Stop completely before the line"
+      },
+      {
+        "en": "Give way to traffic on the major road"
+      },
+      {
+        "en": "Continue at the same speed"
+      },
+      {
+        "en": "Sound your horn before proceeding"
+      }
+    ]
+  },
+  {
+    "id": "RS-6008",
+    "topic": "road-signs",
+    "promptEn": "You see a single yellow line painted along the kerb. What does this mean and what should you do?",
+    "options": [
+      {
+        "en": "No waiting at any time - do not stop here"
+      },
+      {
+        "en": "Waiting restricted at certain times - check nearby signs for times"
+      },
+      {
+        "en": "Loading only - you may load or unload"
+      },
+      {
+        "en": "Residents only - parking for residents"
+      }
+    ]
+  },
+  {
+    "id": "RS-6009",
+    "topic": "road-signs",
+    "promptEn": "You see double yellow lines painted along the kerb. What must you do?",
+    "options": [
+      {
+        "en": "Do not wait or park here at any time"
+      },
+      {
+        "en": "Parking allowed during the day only"
+      },
+      {
+        "en": "Loading and unloading allowed"
+      },
+      {
+        "en": "Parking for residents only"
+      }
+    ]
+  },
+  {
+    "id": "RS-6009A",
+    "topic": "road-signs",
+    "promptEn": "You see a solid white line across your lane at a junction with a STOP sign. What must you do?",
+    "options": [
+      {
+        "en": "Stop completely at or before the line, then proceed when safe"
+      },
+      {
+        "en": "Slow down and give way if necessary"
+      },
+      {
+        "en": "Stop only if there is other traffic"
+      },
+      {
+        "en": "Continue if the road looks clear"
+      }
+    ]
+  },
+  {
+    "id": "RS-6010",
+    "topic": "road-signs",
+    "promptEn": "What do temporary road signs with a yellow background usually indicate?",
+    "options": [
+      {
+        "en": "Permanent traffic rules"
+      },
+      {
+        "en": "Motorway information"
+      },
+      {
+        "en": "Temporary road works or conditions"
+      },
+      {
+        "en": "Tourist attractions"
+      }
+    ]
+  },
+  {
+    "id": "RS-6011",
+    "topic": "road-signs",
+    "promptEn": "What does a speed limit sign without a red circle usually indicate?",
+    "options": [
+      {
+        "en": "Maximum legal speed"
+      },
+      {
+        "en": "Advisory speed only"
+      },
+      {
+        "en": "Minimum speed"
+      },
+      {
+        "en": "Average speed zone"
+      }
+    ]
+  },
+  {
+    "id": "RS-6012",
+    "topic": "road-signs",
+    "promptEn": "What does a blue rectangular sign on a motorway usually show?",
+    "options": [
+      {
+        "en": "Warnings"
+      },
+      {
+        "en": "Tourist attractions"
+      },
+      {
+        "en": "Directions and services"
+      },
+      {
+        "en": "Temporary diversions"
+      }
+    ]
+  },
+  {
+    "id": "RS-6013",
+    "topic": "road-signs",
+    "promptEn": "What does a white arrow on a blue circular sign mean?",
+    "options": [
+      {
+        "en": "Direction advised"
+      },
+      {
+        "en": "Direction you must follow"
+      },
+      {
+        "en": "No entry"
+      },
+      {
+        "en": "One-way road"
+      }
+    ]
+  },
+  {
+    "id": "RS-6014",
+    "topic": "road-signs",
+    "promptEn": "What does a continuous white line along the edge of the road indicate?",
+    "options": [
+      {
+        "en": "No overtaking"
+      },
+      {
+        "en": "Edge of the carriageway"
+      },
+      {
+        "en": "Cycle lane"
+      },
+      {
+        "en": "Bus lane"
+      }
+    ]
+  },
+  {
+    "id": "RS-6015",
+    "topic": "road-signs",
+    "promptEn": "What should you do if road signs seem to contradict road markings?",
+    "options": [
+      {
+        "en": "Follow road markings"
+      },
+      {
+        "en": "Follow road signs"
+      },
+      {
+        "en": "Ignore both"
+      },
+      {
+        "en": "Stop and wait"
+      }
+    ]
+  },
+  {
+    "id": "RS-6016",
+    "topic": "road-signs",
+    "promptEn": "What does an upside-down triangular sign at a junction mean?",
+    "options": [
+      {
+        "en": "Stop"
+      },
+      {
+        "en": "Give way"
+      },
+      {
+        "en": "No entry"
+      },
+      {
+        "en": "Warning of danger"
+      }
+    ]
+  },
+  {
+    "id": "RS-6017",
+    "topic": "road-signs",
+    "promptEn": "What does a blue circular sign showing a mini-roundabout indicate?",
+    "options": [
+      {
+        "en": "Mini-roundabout ahead – give way to traffic from the right"
+      },
+      {
+        "en": "One-way traffic only"
+      },
+      {
+        "en": "No entry for vehicles"
+      },
+      {
+        "en": "Two-way traffic crosses ahead"
+      }
+    ]
+  },
+  {
+    "id": "RS-6018",
+    "topic": "road-signs",
+    "promptEn": "What does a red and white striped bollard usually show?",
+    "options": [
+      {
+        "en": "Road narrowing"
+      },
+      {
+        "en": "Side of an obstruction"
+      },
+      {
+        "en": "Speed limit change"
+      },
+      {
+        "en": "Pedestrian crossing"
+      }
+    ]
+  },
+  {
+    "id": "RS-6019",
+    "topic": "road-signs",
+    "promptEn": "What does a series of diagonal white lines across the road before a hazard mean?",
+    "options": [
+      {
+        "en": "No overtaking zone"
+      },
+      {
+        "en": "Traffic calming only"
+      },
+      {
+        "en": "Reduce speed and be prepared to stop"
+      },
+      {
+        "en": "End of speed limit"
+      }
+    ]
+  },
+  {
+    "id": "RS-6020",
+    "topic": "road-signs",
+    "promptEn": "What does a green rectangular sign usually indicate?",
+    "options": [
+      {
+        "en": "Motorway directions"
+      },
+      {
+        "en": "Primary route directions"
+      },
+      {
+        "en": "Tourist information"
+      },
+      {
+        "en": "Temporary diversion"
+      }
+    ]
+  },
+  {
+    "id": "RS-6021",
+    "topic": "road-signs",
+    "promptEn": "What does a speed limit sign with a black diagonal line through it mean?",
+    "options": [
+      {
+        "en": "Advisory speed"
+      },
+      {
+        "en": "End of speed limit"
+      },
+      {
+        "en": "Minimum speed"
+      },
+      {
+        "en": "Average speed zone"
+      }
+    ]
+  },
+  {
+    "id": "RS-6022",
+    "topic": "road-signs",
+    "promptEn": "What do white zigzag lines near a school crossing indicate?",
+    "options": [
+      {
+        "en": "Parking allowed briefly"
+      },
+      {
+        "en": "No stopping or parking"
+      },
+      {
+        "en": "Bus stop area"
+      },
+      {
+        "en": "Drop-off zone only"
+      }
+    ]
+  },
+  {
+    "id": "RS-6023",
+    "topic": "road-signs",
+    "promptEn": "What does a temporary speed limit sign at roadworks require you to do?",
+    "options": [
+      {
+        "en": "Treat it as a recommendation"
+      },
+      {
+        "en": "Obey it as a legal limit"
+      },
+      {
+        "en": "Ignore it at night"
+      },
+      {
+        "en": "Follow other drivers"
+      }
+    ]
+  },
+  {
+    "id": "RS-6024",
+    "topic": "road-signs",
+    "promptEn": "You see a solid white line along the centre of the road. What does this mean and what must you do?",
+    "options": [
+      {
+        "en": "Do not cross or straddle this line to overtake"
+      },
+      {
+        "en": "Overtaking allowed if safe"
+      },
+      {
+        "en": "One-way road ahead"
+      },
+      {
+        "en": "Bus lane marking"
+      }
+    ]
+  },
+  {
+    "id": "RS-6025",
+    "topic": "road-signs",
+    "promptEn": "What does a triangular warning sign with an exclamation mark and a plate reading 'Hidden dip' warn you about?",
+    "options": [
+      {
+        "en": "A sudden dip in the road that may not be visible ahead"
+      },
+      {
+        "en": "Slippery road surface"
+      },
+      {
+        "en": "Road narrows ahead"
+      },
+      {
+        "en": "Steep hill ahead"
+      }
+    ]
+  },
+  {
+    "id": "RS-6026",
+    "topic": "road-signs",
+    "promptEn": "What does a sign showing traffic lights crossed out usually indicate?",
+    "options": [
+      {
+        "en": "Traffic signals are not operating and you should follow road signs or markings"
+      },
+      {
+        "en": "Temporary traffic lights ahead"
+      },
+      {
+        "en": "Pedestrian crossing controlled by signals"
+      },
+      {
+        "en": "Traffic lights working normally"
+      }
+    ]
+  },
+  {
+    "id": "RS-6027",
+    "topic": "road-signs",
+    "promptEn": "What does a triangular warning sign showing a snowflake usually warn you about?",
+    "options": [
+      {
+        "en": "Slippery road due to snow or ice ahead"
+      },
+      {
+        "en": "Strong winds likely"
+      },
+      {
+        "en": "Foggy conditions ahead"
+      },
+      {
+        "en": "Loose gravel on the road"
+      }
+    ]
+  },
+  {
+    "id": "RS-6028",
+    "topic": "road-signs",
+    "promptEn": "What does a broken yellow line at the edge of the road usually indicate?",
+    "options": [
+      {
+        "en": "No waiting at any time"
+      },
+      {
+        "en": "Waiting restrictions at certain times"
+      },
+      {
+        "en": "No loading"
+      },
+      {
+        "en": "Bus stop"
+      }
+    ]
+  },
+  {
+    "id": "RS-6029",
+    "topic": "road-signs",
+    "promptEn": "What should you do if a sign is partially obscured but road markings are clear?",
+    "options": [
+      {
+        "en": "Ignore both"
+      },
+      {
+        "en": "Follow the road markings"
+      },
+      {
+        "en": "Stop and wait"
+      },
+      {
+        "en": "Follow other vehicles"
+      }
+    ]
+  },
+  {
+    "id": "RS-6030",
+    "topic": "road-signs",
+    "promptEn": "Why should you always read supplementary plates under road signs?",
+    "options": [
+      {
+        "en": "They repeat the same rule"
+      },
+      {
+        "en": "They give extra details such as times or conditions"
+      },
+      {
+        "en": "They are optional information"
+      },
+      {
+        "en": "They only apply to buses"
+      }
+    ]
+  },
+  {
+    "id": "IN-17",
+    "topic": "incidents",
+    "promptEn": "How can you help injured people at an accident?",
+    "options": [
+      {
+        "en": "Give food"
+      },
+      {
+        "en": "Keep them moving"
+      },
+      {
+        "en": "Keep them warm and reassured"
+      },
+      {
+        "en": "Offer a drink"
+      }
+    ]
+  },
+  {
+    "id": "IN-18",
+    "topic": "incidents",
+    "promptEn": "If a dashboard warning light comes on while driving, what should you do?",
+    "options": [
+      {
+        "en": "Ignore it"
+      },
+      {
+        "en": "Wait until later"
+      },
+      {
+        "en": "Stop safely and investigate"
+      },
+      {
+        "en": "Continue driving"
+      }
+    ]
+  },
+  {
+    "id": "IN-19",
+    "topic": "incidents",
+    "promptEn": "An injured person is lying in a busy road after a crash. What should you do first?",
+    "options": [
+      {
+        "en": "Treat shock"
+      },
+      {
+        "en": "Warn approaching traffic"
+      },
+      {
+        "en": "Move the casualty"
+      },
+      {
+        "en": "Cover them"
+      }
+    ]
+  },
+  {
+    "id": "IN-20",
+    "topic": "incidents",
+    "promptEn": "When should you stop CPR?",
+    "options": [
+      {
+        "en": "After 5 minutes"
+      },
+      {
+        "en": "When calling emergency services"
+      },
+      {
+        "en": "When breathing resumes or professionals take over"
+      },
+      {
+        "en": "When you feel tired"
+      }
+    ]
+  },
+  {
+    "id": "IN-21",
+    "topic": "incidents",
+    "promptEn": "After an incident, once the area is safe, how should you care for casualties?",
+    "options": [
+      {
+        "en": "Move them away from vehicles"
+      },
+      {
+        "en": "Ask them how the crash happened"
+      },
+      {
+        "en": "Give them food"
+      },
+      {
+        "en": "Keep them still and monitor them"
+      }
+    ]
+  },
+  {
+    "id": "IN-22",
+    "topic": "incidents",
+    "promptEn": "A casualty is unconscious but breathing normally in the recovery position. What should you do next?",
+    "options": [
+      {
+        "en": "Press between their shoulders"
+      },
+      {
+        "en": "Put their arms straight"
+      },
+      {
+        "en": "Give them a warm drink"
+      },
+      {
+        "en": "Keep checking their airway stays open"
+      }
+    ]
+  },
+  {
+    "id": "IN-23",
+    "topic": "incidents",
+    "promptEn": "How can you best help someone who is suffering from shock after an accident?",
+    "options": [
+      {
+        "en": "Keep them walking"
+      },
+      {
+        "en": "Give them food"
+      },
+      {
+        "en": "Give them a hot drink"
+      },
+      {
+        "en": "Speak calmly and reassure them"
+      }
+    ]
+  },
+  {
+    "id": "IN-24",
+    "topic": "incidents",
+    "promptEn": "You're first at a serious accident. Engines are off and hazards are on. What should you do next?",
+    "options": [
+      {
+        "en": "Ask drivers nearby to help"
+      },
+      {
+        "en": "Give injured people drinks"
+      },
+      {
+        "en": "Move injured people from vehicles"
+      },
+      {
+        "en": "Make sure emergency services are called"
+      }
+    ]
+  },
+  {
+    "id": "IN-25",
+    "topic": "incidents",
+    "promptEn": "At an accident scene, how can you help an unconscious casualty?",
+    "options": [
+      {
+        "en": "Take photos"
+      },
+      {
+        "en": "Check they're breathing normally"
+      },
+      {
+        "en": "Move them to comfort"
+      },
+      {
+        "en": "Splash water on their face"
+      }
+    ]
+  },
+  {
+    "id": "IN-26",
+    "topic": "incidents",
+    "promptEn": "How will you know how to use a public defibrillator (AED)?",
+    "options": [
+      {
+        "en": "You must be trained"
+      },
+      {
+        "en": "Read the manual first"
+      },
+      {
+        "en": "The casualty explains it"
+      },
+      {
+        "en": "The AED gives clear spoken and visual instructions"
+      }
+    ]
+  },
+  {
+    "id": "IN-27",
+    "topic": "incidents",
+    "promptEn": "You accidentally damage property and the owner isn't present. What must you do?",
+    "options": [
+      {
+        "en": "Tell the owner later"
+      },
+      {
+        "en": "Inform insurance only"
+      },
+      {
+        "en": "Find someone nearby immediately"
+      },
+      {
+        "en": "Report it to police within 24 hours"
+      }
+    ]
+  },
+  {
+    "id": "IN-28",
+    "topic": "incidents",
+    "promptEn": "When should you move an unconscious but breathing casualty?",
+    "options": [
+      {
+        "en": "When others tell you"
+      },
+      {
+        "en": "When ambulance is coming"
+      },
+      {
+        "en": "Only if there's further danger"
+      },
+      {
+        "en": "When helpers arrive"
+      }
+    ]
+  },
+  {
+    "id": "IN-29",
+    "topic": "incidents",
+    "promptEn": "What must you do first if you're involved in a collision?",
+    "options": [
+      {
+        "en": "Call insurance"
+      },
+      {
+        "en": "Call emergency services"
+      },
+      {
+        "en": "Stop at the scene"
+      },
+      {
+        "en": "Continue driving"
+      }
+    ]
+  },
+  {
+    "id": "IN-30",
+    "topic": "incidents",
+    "promptEn": "What details must you give after a collision causing vehicle damage?",
+    "options": [
+      {
+        "en": "Job details"
+      },
+      {
+        "en": "National Insurance number"
+      },
+      {
+        "en": "Internet provider"
+      },
+      {
+        "en": "Name, address, and vehicle registration"
+      }
+    ]
+  },
+  {
+    "id": "IN-31",
+    "topic": "incidents",
+    "promptEn": "What should you do if a tyre bursts while driving?",
+    "options": [
+      {
+        "en": "Use handbrake"
+      },
+      {
+        "en": "Brake hard"
+      },
+      {
+        "en": "Slow down and pull over safely"
+      },
+      {
+        "en": "Keep driving"
+      }
+    ]
+  },
+  {
+    "id": "IN-32",
+    "topic": "incidents",
+    "promptEn": "If your car breaks down in a tunnel, what should you do?",
+    "options": [
+      {
+        "en": "Stay in the car"
+      },
+      {
+        "en": "Stand behind the car"
+      },
+      {
+        "en": "Stand in front of it"
+      },
+      {
+        "en": "Switch hazards and go to call for help"
+      }
+    ]
+  },
+  {
+    "id": "IN-33",
+    "topic": "incidents",
+    "promptEn": "A motorcyclist is unconscious in the road after a crash. What's your first action?",
+    "options": [
+      {
+        "en": "Move the rider"
+      },
+      {
+        "en": "Clear debris"
+      },
+      {
+        "en": "Warn approaching traffic"
+      },
+      {
+        "en": "Reassure the rider"
+      }
+    ]
+  },
+  {
+    "id": "IN-34",
+    "topic": "incidents",
+    "promptEn": "A motorcyclist is unconscious on the road. Traffic has stopped and there's no danger. What could help them?",
+    "options": [
+      {
+        "en": "Remove their helmet"
+      },
+      {
+        "en": "Get medical help"
+      },
+      {
+        "en": "Move them off the road"
+      },
+      {
+        "en": "Remove their jacket"
+      }
+    ]
+  },
+  {
+    "id": "IN-35",
+    "topic": "incidents",
+    "promptEn": "A casualty needs CPR. What is the correct chest compression rate for an adult?",
+    "options": [
+      {
+        "en": "10 per minute"
+      },
+      {
+        "en": "60 per minute"
+      },
+      {
+        "en": "120 per minute"
+      },
+      {
+        "en": "240 per minute"
+      }
+    ]
+  }
+]

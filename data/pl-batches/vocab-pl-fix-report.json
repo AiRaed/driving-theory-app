@@ -1,0 +1,15 @@
+{
+  "totalVocabularyHints": 1029,
+  "polishExplanations": 1029,
+  "missingPolishExplanations": 0,
+  "questionsWithHints": 609,
+  "intentionallyEmptyNoHint": 133,
+  "unprocessedQuestions": 0,
+  "uniqueTerms": 565,
+  "missingPolishTermLabels": 0,
+  "missingTermSamples": [],
+  "englishLeakageInPolishMode": 0,
+  "leakageSample": [],
+  "spotChecked": 45,
+  "spotPass": 45
+}

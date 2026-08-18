@@ -1,0 +1,158 @@
+{
+  "RS-W-04": [
+    {
+      "term": "triangular warning sign",
+      "translations": {
+        "en": "A red-bordered triangle road sign that warns of a hazard ahead.",
+        "ar": "لافتة طريق مثلثة بإطار أحمر تحذّر من خطر أمامك.",
+        "ur": "سرخ کنارے والا تکونی سڑک کا نشان جو آگے خطرے سے خبردار کرتا ہے۔",
+        "ro": "Indicator rutier triunghiular cu bordură roșie care avertizează asupra unui pericol în față."
+      }
+    },
+    {
+      "term": "main road",
+      "translations": {
+        "en": "A larger, busier road that smaller side roads join onto.",
+        "ar": "طريق أكبر وأكثر ازدحاماً تتصل به الطرق الجانبية الأصغر.",
+        "ur": "بڑی، مصروف سڑک جس سے چھوٹی سائیڈ روڈز ملتی ہیں۔",
+        "ro": "Drum mai mare și mai aglomerat pe care se racordează drumuri laterale mai mici."
+      }
+    },
+    {
+      "term": "emerge",
+      "translations": {
+        "en": "Come out onto the road from a side road, driveway, or similar entrance.",
+        "ar": "الخروج إلى الطريق من طريق جانبي أو مدخل مشابه.",
+        "ur": "سائیڈ روڈ یا اسی طرح کے داخلی راستے سے سڑک پر نکلنا۔",
+        "ro": "A ieși pe drum dintr-o stradă laterală, o alee sau o intrare similară."
+      }
+    }
+  ],
+  "RS-I-01": [
+    {
+      "term": "staggered junction",
+      "translations": {
+        "en": "A junction where side roads join from left and right at slightly different points, not opposite each other.",
+        "ar": "تقاطع تتصل فيه الطرق الجانبية من اليسار واليمين عند نقاط متباعدة قليلاً وليست متقابلة.",
+        "ur": "ایسا جنکشن جہاں بائیں اور دائیں سائیڈ روڈز ایک دوسرے کے بالکل سامنے نہیں بلکہ تھوڑی سی فاصلے پر ملتی ہیں۔",
+        "ro": "Intersecție unde drumurile laterale se racordează din stânga și dreapta în puncte ușor diferite, nu față în față."
+      }
+    },
+    {
+      "term": "crossroads",
+      "translations": {
+        "en": "A junction where two roads cross, usually forming a plus-sign shape.",
+        "ar": "تقاطع يتقاطع فيه طريقان، وغالباً بشكل يشبه علامة الزائد.",
+        "ur": "ایسا جنکشن جہاں دو سڑکیں ایک دوسرے کو کاٹتی ہیں، عام طور پر پلس (+) کی شکل میں۔",
+        "ro": "Intersecție unde două drumuri se intersectează, de obicei în formă de cruce."
+      }
+    },
+    {
+      "term": "road narrows",
+      "translations": {
+        "en": "The carriageway becomes narrower ahead, so there is less space for vehicles.",
+        "ar": "يصبح عرض الطريق أضيق أمامك، فيقلّت المساحة للمركبات.",
+        "ur": "آگے سڑک تنگ ہو جاتی ہے، اس لیے گاڑیوں کے لیے کم جگہ ہوتی ہے۔",
+        "ro": "Carosabilul se îngustează în față, deci rămâne mai puțin spațiu pentru vehicule."
+      }
+    }
+  ],
+  "RS-I-02": [
+    {
+      "term": "speed humps",
+      "translations": {
+        "en": "Raised ridges across the road that force drivers to slow down (also called sleeping policemen).",
+        "ar": "نتوءات مرتفعة عبر الطريق تُجبر السائقين على تخفيف السرعة.",
+        "ur": "سڑک پر اٹھے ہوئے ٹیلے جو ڈرائیورز کو رفتار کم کرنے پر مجبور کرتے ہیں۔",
+        "ro": "Denivelări ridicate pe carosabil care obligă șoferii să reducă viteza."
+      }
+    },
+    {
+      "term": "slippery road",
+      "translations": {
+        "en": "A road surface with poor tyre grip, so vehicles can skid more easily.",
+        "ar": "سطح طريق بتماسك ضعيف للإطارات، فيسهل انزلاق المركبات.",
+        "ur": "سڑک کی سطح جس پر ٹائروں کی گرفت کم ہو، اس لیے گاڑی پھسل سکتی ہے۔",
+        "ro": "Suprafață de drum cu aderență slabă a anvelopelor, deci vehiculele pot derapa mai ușor."
+      }
+    },
+    {
+      "term": "uneven road surface",
+      "translations": {
+        "en": "A road that is bumpy or irregular rather than smooth.",
+        "ar": "طريق غير مستوٍ أو وعر بدلاً من أن يكون ناعماً.",
+        "ur": "ایسی سڑک جو ہموار کے بجائے اونچی نیچی یا ناہموار ہو۔",
+        "ro": "Drum denivelat sau neregulat, nu neted."
+      }
+    }
+  ],
+  "RS-I-03": [
+    {
+      "term": "motorway",
+      "translations": {
+        "en": "A high-speed dual-direction road with controlled access for most traffic, shown by blue signs in the UK.",
+        "ar": "طريق سريع ذو وصول محكوم لمعظم المركبات، وتُعرَّف لافتاته عادةً باللون الأزرق في المملكة المتحدة.",
+        "ur": "ایک تیز رفتار، کنٹرولڈ رسائی والی بڑی سڑک؛ برطانیہ میں عام طور پر نیلے نشانوں سے پہچانی جاتی ہے۔",
+        "ro": "Drum de mare viteză cu acces controlat; în Regatul Unit este semnalizat de obicei cu indicatoare albastre."
+      }
+    },
+    {
+      "term": "mileage marker",
+      "translations": {
+        "en": "A roadside post or sign showing distance along a route, often in miles.",
+        "ar": "عمود أو لافتة بجانب الطريق تُظهر المسافة على المسار، غالباً بالأميال.",
+        "ur": "سڑک کے کنارے کا نشان جو راستے پر فاصلہ دکھاتا ہے، اکثر میلوں میں۔",
+        "ro": "Stâlp sau indicator de pe marginea drumului care arată distanța pe traseu, adesea în mile."
+      }
+    },
+    {
+      "term": "mandatory route",
+      "translations": {
+        "en": "A route you are required to follow, not just a suggested direction.",
+        "ar": "مسار يُطلب منك اتباعه، وليس مجرد اتجاه مقترح.",
+        "ur": "ایسا راستہ جس پر چلنا لازمی ہو، صرف تجویز کردہ سمت نہیں۔",
+        "ro": "Traseu pe care sunteți obligat să îl urmați, nu doar o direcție sugerată."
+      }
+    }
+  ],
+  "RS-I-04": [
+    {
+      "term": "primary route",
+      "translations": {
+        "en": "A major UK road between towns and cities, usually signed in green with white lettering.",
+        "ar": "طريق رئيسي في المملكة المتحدة بين البلدات والمدن، وغالباً تُعرَف لافتاته بالأخضر مع نص أبيض.",
+        "ur": "برطانیہ کی بڑی سڑک جو قصبوں اور شہروں کو جوڑتی ہے؛ عام طور پر سبز نشانوں پر سفید لکھائی ہوتی ہے۔",
+        "ro": "Drum principal din Regatul Unit între localități, semnalizat de obicei cu verde și text alb."
+      }
+    },
+    {
+      "term": "route numbers",
+      "translations": {
+        "en": "Official road identifiers such as A1 or M25 shown on direction signs.",
+        "ar": "أرقام تعريف رسمية للطرق مثل A1 أو M25 تظهر على لافتات الاتجاه.",
+        "ur": "سڑکوں کی سرکاری شناخت نمبرز جیسے A1 یا M25 جو سمت کے نشانوں پر دکھائی دیتی ہیں۔",
+        "ro": "Identificatori oficiali ai drumurilor, cum ar fi A1 sau M25, afișați pe indicatoarele de direcție."
+      }
+    }
+  ],
+  "RS-I-05": [
+    {
+      "term": "loose chippings",
+      "translations": {
+        "en": "Small loose stones on a newly surfaced road that can fly up and damage vehicles.",
+        "ar": "حصى صغير مفكوك على طريق مُجدَّد السطح قد يتطاير ويتلف المركبات.",
+        "ur": "نئی سطح والی سڑک پر چھوٹے ڈھیلے پتھر جو اڑ کر گاڑیوں کو نقصان پہنچا سکتے ہیں۔",
+        "ro": "Pietriș afânat pe un drum recent reasfaltat care poate sări și deteriora vehiculele."
+      }
+    },
+    {
+      "term": "kerb",
+      "translations": {
+        "en": "The raised stone or concrete edge between the road and the pavement (US: curb).",
+        "ar": "الحافة المرتفعة من حجر أو خرسانة بين الطريق والرصيف.",
+        "ur": "سڑک اور فٹ پاتھ کے درمیان اٹھی ہوئی پتھر/کنکریٹ کی کنارہ۔",
+        "ro": "Marginea ridicată de piatră sau beton dintre carosabil și trotuar."
+      }
+    }
+  ]
+}

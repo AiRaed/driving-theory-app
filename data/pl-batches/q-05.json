@@ -1,0 +1,952 @@
+[
+  {
+    "id": "VU-50",
+    "topic": "vulnerable-road-users",
+    "promptEn": "When turning left into a side road, what hazard should you watch for most carefully?",
+    "options": [
+      {
+        "en": "Parked vehicles"
+      },
+      {
+        "en": "Traffic congestion"
+      },
+      {
+        "en": "Pedestrians crossing"
+      },
+      {
+        "en": "One-way streets"
+      }
+    ]
+  },
+  {
+    "id": "VU-51",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Why do motorcyclists often wear bright or reflective clothing?",
+    "options": [
+      {
+        "en": "It is legally required"
+      },
+      {
+        "en": "It keeps them cooler"
+      },
+      {
+        "en": "It is fashionable"
+      },
+      {
+        "en": "To be more visible to others"
+      }
+    ]
+  },
+  {
+    "id": "VU-52",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Why might a motorcyclist look over their right shoulder before turning right?",
+    "options": [
+      {
+        "en": "To listen for traffic"
+      },
+      {
+        "en": "Because motorcycles lack mirrors"
+      },
+      {
+        "en": "To help balance"
+      },
+      {
+        "en": "To check blind spots"
+      }
+    ]
+  },
+  {
+    "id": "VU-53",
+    "topic": "vulnerable-road-users",
+    "promptEn": "What does a flashing amber beacon on a moving vehicle usually indicate?",
+    "options": [
+      {
+        "en": "Emergency vehicle"
+      },
+      {
+        "en": "Broken down vehicle"
+      },
+      {
+        "en": "Slow-moving or working vehicle"
+      },
+      {
+        "en": "School patrol"
+      }
+    ]
+  },
+  {
+    "id": "VU-54",
+    "topic": "vulnerable-road-users",
+    "promptEn": "What does a sign showing a bicycle symbol on a blue background usually mean?",
+    "options": [
+      {
+        "en": "No cycling"
+      },
+      {
+        "en": "Cycle route"
+      },
+      {
+        "en": "Bicycle parking"
+      },
+      {
+        "en": "End of cycle route"
+      }
+    ]
+  },
+  {
+    "id": "VU-55",
+    "topic": "vulnerable-road-users",
+    "promptEn": "A pedestrian is walking with a dog wearing a yellow or burgundy coat. What does this indicate?",
+    "options": [
+      {
+        "en": "The person is elderly"
+      },
+      {
+        "en": "The person is a trainer"
+      },
+      {
+        "en": "The person is deaf"
+      },
+      {
+        "en": "The person has a hearing impairment"
+      }
+    ]
+  },
+  {
+    "id": "VU-56",
+    "topic": "vulnerable-road-users",
+    "promptEn": "How should you pass horse riders safely?",
+    "options": [
+      {
+        "en": "Pass quickly"
+      },
+      {
+        "en": "Sound horn"
+      },
+      {
+        "en": "Drive slowly and give space"
+      },
+      {
+        "en": "Pass closely"
+      }
+    ]
+  },
+  {
+    "id": "VU-57",
+    "topic": "vulnerable-road-users",
+    "promptEn": "A learner driver stalls at a junction. What should you do?",
+    "options": [
+      {
+        "en": "Flash headlights"
+      },
+      {
+        "en": "Rev engine"
+      },
+      {
+        "en": "Be patient"
+      },
+      {
+        "en": "Overtake immediately"
+      }
+    ]
+  },
+  {
+    "id": "VU-58",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Where would you normally see a reflective yellow school warning sign?",
+    "options": [
+      {
+        "en": "On cars"
+      },
+      {
+        "en": "On playground gates"
+      },
+      {
+        "en": "On school buses"
+      },
+      {
+        "en": "On roadside near schools"
+      }
+    ]
+  },
+  {
+    "id": "VU-59",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Before turning right into a side road, what should you check last?",
+    "options": [
+      {
+        "en": "Speed"
+      },
+      {
+        "en": "Gear"
+      },
+      {
+        "en": "Mirrors for overtaking traffic"
+      },
+      {
+        "en": "Handbrake"
+      }
+    ]
+  },
+  {
+    "id": "VU-60",
+    "topic": "vulnerable-road-users",
+    "promptEn": "How can new drivers reduce collision risk after passing their test?",
+    "options": [
+      {
+        "en": "Drive close to others"
+      },
+      {
+        "en": "Avoid high speeds only"
+      },
+      {
+        "en": "Take extra training"
+      },
+      {
+        "en": "Stay in left lane always"
+      }
+    ]
+  },
+  {
+    "id": "VU-61",
+    "topic": "vulnerable-road-users",
+    "promptEn": "A pedestrian carries a white stick with a red band. What does this mean?",
+    "options": [
+      {
+        "en": "Limited mobility"
+      },
+      {
+        "en": "Deaf"
+      },
+      {
+        "en": "Blind"
+      },
+      {
+        "en": "Deaf and blind"
+      }
+    ]
+  },
+  {
+    "id": "VU-62",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Pedestrians have started crossing where you want to turn left. What should you do?",
+    "options": [
+      {
+        "en": "Sound horn"
+      },
+      {
+        "en": "Go around"
+      },
+      {
+        "en": "Give way"
+      },
+      {
+        "en": "Flash lights"
+      }
+    ]
+  },
+  {
+    "id": "VU-63",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Why give extra space to motorcyclists on windy days?",
+    "options": [
+      {
+        "en": "They may speed up"
+      },
+      {
+        "en": "They may be blown sideways"
+      },
+      {
+        "en": "They may stop suddenly"
+      },
+      {
+        "en": "They ride faster"
+      }
+    ]
+  },
+  {
+    "id": "VU-64",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Powered mobility vehicles on dual carriageways must display which beacon?",
+    "options": [
+      {
+        "en": "Red"
+      },
+      {
+        "en": "Green"
+      },
+      {
+        "en": "Blue"
+      },
+      {
+        "en": "Amber"
+      }
+    ]
+  },
+  {
+    "id": "VU-65",
+    "topic": "vulnerable-road-users",
+    "promptEn": "A horse rider is in the left lane at a roundabout. Where might they go?",
+    "options": [
+      {
+        "en": "Left only"
+      },
+      {
+        "en": "Right only"
+      },
+      {
+        "en": "Straight only"
+      },
+      {
+        "en": "Any direction"
+      }
+    ]
+  },
+  {
+    "id": "VU-66",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Older people are crossing ahead. What should you do?",
+    "options": [
+      {
+        "en": "Wave them"
+      },
+      {
+        "en": "Rev engine"
+      },
+      {
+        "en": "Be patient"
+      },
+      {
+        "en": "Sound horn"
+      }
+    ]
+  },
+  {
+    "id": "VU-67",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Yellow zigzag lines outside a school mean what?",
+    "options": [
+      {
+        "en": "Parking allowed"
+      },
+      {
+        "en": "Waiting allowed"
+      },
+      {
+        "en": "No stopping or parking"
+      },
+      {
+        "en": "Drop-off only"
+      }
+    ]
+  },
+  {
+    "id": "VU-68",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Loose sheep are on the road. What should you do?",
+    "options": [
+      {
+        "en": "Sound horn"
+      },
+      {
+        "en": "Go slowly"
+      },
+      {
+        "en": "Pass quickly"
+      },
+      {
+        "en": "Herd them"
+      }
+    ]
+  },
+  {
+    "id": "VU-69",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Before turning right from a queue, why check your right mirror?",
+    "options": [
+      {
+        "en": "Pedestrians"
+      },
+      {
+        "en": "Overtaking vehicles"
+      },
+      {
+        "en": "Side road traffic"
+      },
+      {
+        "en": "Parked cars"
+      }
+    ]
+  },
+  {
+    "id": "VU-70",
+    "topic": "vulnerable-road-users",
+    "promptEn": "You're turning left and a pedestrian is waiting to cross the side road. What should you do?",
+    "options": [
+      {
+        "en": "Flash lights"
+      },
+      {
+        "en": "Continue"
+      },
+      {
+        "en": "Sound horn"
+      },
+      {
+        "en": "Give way"
+      }
+    ]
+  },
+  {
+    "id": "VU-71",
+    "topic": "vulnerable-road-users",
+    "promptEn": "Why do motorcyclists use dipped headlights during the day?",
+    "options": [
+      {
+        "en": "Battery protection"
+      },
+      {
+        "en": "To be seen clearly"
+      },
+      {
+        "en": "Better vision"
+      },
+      {
+        "en": "Invitation to pass"
+      }
+    ]
+  },
+  {
+    "id": "VH-01",
+    "topic": "vehicle-handling",
+    "promptEn": "When is it acceptable to pass another vehicle on the left?",
+    "options": [
+      {
+        "en": "When the vehicle ahead is signalling to turn left"
+      },
+      {
+        "en": "When you are approaching a slip road to leave"
+      },
+      {
+        "en": "When you are on a one-way street"
+      },
+      {
+        "en": "When traffic in the right lane is moving slowly in queues"
+      }
+    ]
+  },
+  {
+    "id": "VH-02",
+    "topic": "vehicle-handling",
+    "promptEn": "In fog, why should you leave a bigger gap to the vehicle ahead?",
+    "options": [
+      {
+        "en": "In case it turns suddenly"
+      },
+      {
+        "en": "In case its fog lights dazzle you"
+      },
+      {
+        "en": "In case it stops suddenly"
+      },
+      {
+        "en": "In case its brake lights dazzle you"
+      }
+    ]
+  },
+  {
+    "id": "VH-03",
+    "topic": "vehicle-handling",
+    "promptEn": "On a wet bend, why might a motorcyclist avoid riding over drain covers?",
+    "options": [
+      {
+        "en": "To avoid puncturing the tyre"
+      },
+      {
+        "en": "Because metal covers can be slippery"
+      },
+      {
+        "en": "To use them as turning markers"
+      },
+      {
+        "en": "To avoid splashing pedestrians"
+      }
+    ]
+  },
+  {
+    "id": "VH-04",
+    "topic": "vehicle-handling",
+    "promptEn": "What is most likely to happen when driving up a steep hill?",
+    "options": [
+      {
+        "en": "High gears will pull better"
+      },
+      {
+        "en": "Steering will feel heavier"
+      },
+      {
+        "en": "Overtaking becomes easier"
+      },
+      {
+        "en": "The engine will work harder"
+      }
+    ]
+  },
+  {
+    "id": "VH-05",
+    "topic": "vehicle-handling",
+    "promptEn": "Why is \"coasting\" (rolling with the clutch down or in neutral) unsafe?",
+    "options": [
+      {
+        "en": "It uses more fuel"
+      },
+      {
+        "en": "It overheats the engine"
+      },
+      {
+        "en": "It reduces control of steering and braking"
+      },
+      {
+        "en": "It improves tyre wear"
+      }
+    ]
+  },
+  {
+    "id": "VH-06",
+    "topic": "vehicle-handling",
+    "promptEn": "You meet an oncoming vehicle on a single-track road. What should you do?",
+    "options": [
+      {
+        "en": "Reverse back to the main road"
+      },
+      {
+        "en": "Do an emergency stop"
+      },
+      {
+        "en": "Use a passing place and be prepared to wait"
+      },
+      {
+        "en": "Switch on hazard lights"
+      }
+    ]
+  },
+  {
+    "id": "VH-07",
+    "topic": "vehicle-handling",
+    "promptEn": "You're on a road with speed humps and the driver ahead is slower. What should you do?",
+    "options": [
+      {
+        "en": "Sound your horn"
+      },
+      {
+        "en": "Overtake as soon as you can"
+      },
+      {
+        "en": "Flash headlights"
+      },
+      {
+        "en": "Slow down and stay behind"
+      }
+    ]
+  },
+  {
+    "id": "VH-08",
+    "topic": "vehicle-handling",
+    "promptEn": "Why is it risky to keep the clutch down or stay in neutral for a long time while moving?",
+    "options": [
+      {
+        "en": "Fuel will spill"
+      },
+      {
+        "en": "The engine will be damaged"
+      },
+      {
+        "en": "You have less steering and braking control"
+      },
+      {
+        "en": "Tyres wear faster"
+      }
+    ]
+  },
+  {
+    "id": "IN-01",
+    "topic": "incidents",
+    "promptEn": "What's the safest action if your car catches fire while driving through a tunnel?",
+    "options": [
+      {
+        "en": "Leave the engine running and exit immediately"
+      },
+      {
+        "en": "Stop and walk to an emergency phone"
+      },
+      {
+        "en": "Park on the side and wait"
+      },
+      {
+        "en": "If safe, drive out of the tunnel before stopping"
+      }
+    ]
+  },
+  {
+    "id": "IN-02",
+    "topic": "incidents",
+    "promptEn": "When should an injured motorcyclist's helmet be removed?",
+    "options": [
+      {
+        "en": "Immediately in all cases"
+      },
+      {
+        "en": "Only if they request it"
+      },
+      {
+        "en": "Only if it's essential for first aid"
+      },
+      {
+        "en": "Unless they are conscious"
+      }
+    ]
+  },
+  {
+    "id": "IN-03",
+    "topic": "incidents",
+    "promptEn": "Which lights should you use when driving through a tunnel?",
+    "options": [
+      {
+        "en": "Sidelights"
+      },
+      {
+        "en": "Fog lights"
+      },
+      {
+        "en": "Dipped headlights"
+      },
+      {
+        "en": "Hazard lights"
+      }
+    ]
+  },
+  {
+    "id": "IN-04",
+    "topic": "incidents",
+    "promptEn": "What is the correct chest compression depth for adult CPR?",
+    "options": [
+      {
+        "en": "1–2 cm"
+      },
+      {
+        "en": "5–6 cm"
+      },
+      {
+        "en": "10–15 cm"
+      },
+      {
+        "en": "15–20 cm"
+      }
+    ]
+  },
+  {
+    "id": "IN-05",
+    "topic": "incidents",
+    "promptEn": "If your car stalls on a level crossing and alarms start sounding, what should you do?",
+    "options": [
+      {
+        "en": "Keep restarting the engine"
+      },
+      {
+        "en": "Push the car alone"
+      },
+      {
+        "en": "Exit immediately and move clear of the tracks"
+      },
+      {
+        "en": "Signal the train"
+      }
+    ]
+  },
+  {
+    "id": "IN-06",
+    "topic": "incidents",
+    "promptEn": "What's the first action if a casualty isn't breathing?",
+    "options": [
+      {
+        "en": "Shake them"
+      },
+      {
+        "en": "Roll them onto their side"
+      },
+      {
+        "en": "Open their airway"
+      },
+      {
+        "en": "Raise their arms"
+      }
+    ]
+  },
+  {
+    "id": "IN-07",
+    "topic": "incidents",
+    "promptEn": "How far behind your car should a warning triangle be placed on a two-way road?",
+    "options": [
+      {
+        "en": "5 metres"
+      },
+      {
+        "en": "25 metres"
+      },
+      {
+        "en": "45 metres"
+      },
+      {
+        "en": "100 metres"
+      }
+    ]
+  },
+  {
+    "id": "IN-08",
+    "topic": "incidents",
+    "promptEn": "How can you best help someone suffering from shock after a collision?",
+    "options": [
+      {
+        "en": "Give them a drink"
+      },
+      {
+        "en": "Reassure them calmly"
+      },
+      {
+        "en": "Ask who caused the crash"
+      },
+      {
+        "en": "Give them food"
+      }
+    ]
+  },
+  {
+    "id": "DC-01",
+    "topic": "documents",
+    "promptEn": "When is it legal to drive a vehicle without a valid MOT certificate?",
+    "options": [
+      {
+        "en": "For 7 days after expiry"
+      },
+      {
+        "en": "With the owner's permission"
+      },
+      {
+        "en": "When driving to a pre-booked MOT test"
+      },
+      {
+        "en": "When driving to buy insurance"
+      }
+    ]
+  },
+  {
+    "id": "DC-02",
+    "topic": "documents",
+    "promptEn": "When does a new car usually need its first MOT test?",
+    "options": [
+      {
+        "en": "After 1 year"
+      },
+      {
+        "en": "After 3 years"
+      },
+      {
+        "en": "After 5 years"
+      },
+      {
+        "en": "After 7 years"
+      }
+    ]
+  },
+  {
+    "id": "DC-03",
+    "topic": "documents",
+    "promptEn": "A police officer asks for your driving documents, but you don't have them with you. How long do you have to present them?",
+    "options": [
+      {
+        "en": "5 days"
+      },
+      {
+        "en": "7 days"
+      },
+      {
+        "en": "14 days"
+      },
+      {
+        "en": "21 days"
+      }
+    ]
+  },
+  {
+    "id": "DC-04",
+    "topic": "documents",
+    "promptEn": "What is a Statutory Off-Road Notification (SORN)?",
+    "options": [
+      {
+        "en": "A notice that a vehicle has no insurance"
+      },
+      {
+        "en": "A notice that a vehicle has no MOT"
+      },
+      {
+        "en": "A declaration that a vehicle is not being used on public roads"
+      },
+      {
+        "en": "A police record of vehicle ownership"
+      }
+    ]
+  },
+  {
+    "id": "DC-05",
+    "topic": "documents",
+    "promptEn": "Who is legally responsible for keeping vehicle registration details up to date?",
+    "options": [
+      {
+        "en": "The insurance company"
+      },
+      {
+        "en": "The vehicle manufacturer"
+      },
+      {
+        "en": "The registered keeper"
+      },
+      {
+        "en": "The licensing authority"
+      }
+    ]
+  },
+  {
+    "id": "DC-06",
+    "topic": "documents",
+    "promptEn": "How long is an MOT certificate normally valid?",
+    "options": [
+      {
+        "en": "3 years"
+      },
+      {
+        "en": "10,000 miles"
+      },
+      {
+        "en": "1 year"
+      },
+      {
+        "en": "30,000 miles"
+      }
+    ]
+  },
+  {
+    "id": "DC-07",
+    "topic": "documents",
+    "promptEn": "You pass your first driving test and receive 6 penalty points within 2 years. What happens?",
+    "options": [
+      {
+        "en": "Retake the theory test only"
+      },
+      {
+        "en": "Retake both theory and practical tests"
+      },
+      {
+        "en": "Retake the practical test only"
+      },
+      {
+        "en": "Reapply for a licence immediately"
+      }
+    ]
+  },
+  {
+    "id": "DC-08",
+    "topic": "documents",
+    "promptEn": "When must you show your insurance certificate?",
+    "options": [
+      {
+        "en": "When declaring SORN"
+      },
+      {
+        "en": "When buying or selling a vehicle"
+      },
+      {
+        "en": "When requested by a police officer"
+      },
+      {
+        "en": "During an MOT test"
+      }
+    ]
+  },
+  {
+    "id": "DC-09",
+    "topic": "documents",
+    "promptEn": "What additional requirement must you meet to supervise a learner driver?",
+    "options": [
+      {
+        "en": "Have dual controls"
+      },
+      {
+        "en": "Be at least 21 years old"
+      },
+      {
+        "en": "Be an approved instructor"
+      },
+      {
+        "en": "Hold an advanced licence"
+      }
+    ]
+  },
+  {
+    "id": "DC-10",
+    "topic": "documents",
+    "promptEn": "What must you have to legally drive a motor vehicle on the road?",
+    "options": [
+      {
+        "en": "Breakdown cover"
+      },
+      {
+        "en": "Proof of identity"
+      },
+      {
+        "en": "A vehicle handbook"
+      },
+      {
+        "en": "A valid driving licence"
+      }
+    ]
+  },
+  {
+    "id": "DC-11",
+    "topic": "documents",
+    "promptEn": "What must be in place before renewing vehicle tax?",
+    "options": [
+      {
+        "en": "Vehicle handbook"
+      },
+      {
+        "en": "Chassis number"
+      },
+      {
+        "en": "Valid insurance"
+      },
+      {
+        "en": "Driving licence"
+      }
+    ]
+  },
+  {
+    "id": "DC-12",
+    "topic": "documents",
+    "promptEn": "What does third-party insurance cover?",
+    "options": [
+      {
+        "en": "Damage to your own vehicle"
+      },
+      {
+        "en": "Damage to other vehicles and property"
+      },
+      {
+        "en": "Injury to yourself"
+      },
+      {
+        "en": "All damage and injury"
+      }
+    ]
+  }
+]
