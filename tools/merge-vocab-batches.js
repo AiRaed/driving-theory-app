@@ -13,7 +13,7 @@ const PROGRESS_FILE = path.join(ROOT, 'data/vocab-hints-progress.json');
 const BATCH_DIR = path.join(ROOT, 'data/vocab-batches');
 const QUESTIONS_FILE = path.join(ROOT, 'data/questions.ts');
 
-const VOCAB_LANGS = ['en', 'ar', 'ur', 'ro', 'pl'];
+const VOCAB_LANGS = ['en', 'ar', 'ur', 'ro', 'pl', 'pt', 'bn', 'fa'];
 const MAX_HINTS = 3;
 const MAX_TERM_LEN = 48;
 const MAX_EXPLANATION_LEN = 160;

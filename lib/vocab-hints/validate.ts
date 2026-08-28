@@ -112,7 +112,7 @@ function isTrivialTerm(term: string): boolean {
 }
 
 export function emptyTranslations(): VocabHintTranslations {
-  return { en: '', ar: '', ur: '', ro: '', pl: '', pt: '', bn: '' };
+  return { en: '', ar: '', ur: '', ro: '', pl: '', pt: '', bn: '', fa: '' };
 }
 
 export function isCompleteTranslations(t: VocabHintTranslations): boolean {
@@ -244,7 +244,7 @@ export function getExplanationForLang(
   // Never fall back to English when Polish/Portuguese text exists but was empty/whitespace-only above.
   // If missing entirely, still avoid silent English for pl/pt — return empty so UI
   // does not show an English explanation under a PL/PT session.
-  if (lang === 'pl' || lang === 'pt' || lang === 'bn') {
+  if (lang === 'pl' || lang === 'pt' || lang === 'bn' || lang === 'fa') {
     return '';
   }
   return hint.translations.en || '';

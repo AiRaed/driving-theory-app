@@ -180,6 +180,16 @@ export async function GET(request: NextRequest) {
           (u) => u.last_language_used === 'pt' || u.preferred_language === 'pt'
         );
         break;
+      case 'lang_bn':
+        merged = merged.filter(
+          (u) => u.last_language_used === 'bn' || u.preferred_language === 'bn'
+        );
+        break;
+      case 'lang_fa':
+        merged = merged.filter(
+          (u) => u.last_language_used === 'fa' || u.preferred_language === 'fa'
+        );
+        break;
       case 'mock_started':
         merged = merged.filter((u) => u.mock_tests_started > 0);
         break;

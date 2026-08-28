@@ -19,12 +19,14 @@ import {
   loadPolishTranslations,
   loadPortugueseTranslations,
   loadBengaliTranslations,
+  loadPersianTranslations,
   getQuestionTranslation,
   getUrduOptionTranslation,
   getRomanianOptionTranslation,
   getPolishOptionTranslation,
   getPortugueseOptionTranslation,
   getBengaliOptionTranslation,
+  getPersianOptionTranslation,
   type TranslationData 
 } from '@/lib/translations';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
@@ -35,6 +37,7 @@ import {
   getKeywordRomanianTranslation,
   getKeywordPolishTranslation,
   getKeywordPortugueseTranslation,
+  getKeywordPersianTranslation,
 } from '@/lib/keyword-translations';
 import {
   analyticsLanguage,
@@ -62,6 +65,7 @@ export default function PracticePage() {
     roTranslations: bankRo,
     plTranslations: bankPl,
     ptTranslations: bankPt,
+    faTranslations: bankFa,
     source: bankSource,
   } = useQuestionBank();
   const { lang: translationLang, setLang, ready: languageReady } = useLanguage();
@@ -81,6 +85,7 @@ export default function PracticePage() {
   const [plTranslations, setPlTranslations] = useState<TranslationData | null>(null);
   const [ptTranslations, setPtTranslations] = useState<TranslationData | null>(null);
   const [bnTranslations, setBnTranslations] = useState<TranslationData | null>(null);
+  const [faTranslations, setFaTranslations] = useState<TranslationData | null>(null);
   const [imageError, setImageError] = useState<boolean>(false);
   const [showTopicsGrid, setShowTopicsGrid] = useState<boolean>(true);
   const [showHints, setShowHints] = useState<boolean>(false); // Collapsed by default on mobile
@@ -153,6 +158,20 @@ export default function PracticePage() {
     }
   }, [translationLang]);
 
+  useEffect(() => {
+    if (bankSource === 'database' && bankFa && Object.keys(bankFa).length > 0) {
+      setFaTranslations(bankFa);
+      return;
+    }
+    if (translationLang === 'fa') {
+      loadPersianTranslations(true).then((data) => {
+        if (data) setFaTranslations(data);
+      });
+    } else if (bankSource !== 'database') {
+      setFaTranslations(null);
+    }
+  }, [translationLang, bankSource, bankFa]);
+
   // Load Urdu translations automatically for topics that have Urdu translations
   useEffect(() => {
     if (bankSource === 'database') return;
@@ -189,6 +208,16 @@ export default function PracticePage() {
     if (translationLang === 'pt' && selectedTopic) {
       loadPortugueseTranslations(true).then((data) => {
         if (data) setPtTranslations(data);
+      });
+    }
+  }, [selectedTopic, translationLang, bankSource]);
+
+  // Load Persian translations automatically for topics
+  useEffect(() => {
+    if (bankSource === 'database') return;
+    if (translationLang === 'fa' && selectedTopic) {
+      loadPersianTranslations(true).then((data) => {
+        if (data) setFaTranslations(data);
       });
     }
   }, [selectedTopic, translationLang, bankSource]);
@@ -231,6 +260,14 @@ export default function PracticePage() {
       loadBengaliTranslations(true).then((data) => {
         if (data) setBnTranslations(data);
       });
+    } else if (next === 'fa') {
+      if (bankSource === 'database' && bankFa && Object.keys(bankFa).length > 0) {
+        setFaTranslations(bankFa);
+      } else {
+        loadPersianTranslations(true).then((data) => {
+          if (data) setFaTranslations(data);
+        });
+      }
     }
   };
 
@@ -283,7 +320,14 @@ export default function PracticePage() {
         }
       });
     }
-  }, [currentQuestion?.id, translationLang, urTranslations, roTranslations, plTranslations, ptTranslations, bnTranslations]);
+    if (translationLang === 'fa' && currentQuestion && !faTranslations) {
+      loadPersianTranslations(true).then((data) => {
+        if (data) {
+          setFaTranslations(data);
+        }
+      });
+    }
+  }, [currentQuestion?.id, translationLang, urTranslations, roTranslations, plTranslations, ptTranslations, bnTranslations, faTranslations]);
 
   // Get shuffled options for current question (memoized by question.id)
   // Shuffle runs ONCE per question and remains stable during re-renders
@@ -850,6 +894,23 @@ export default function PracticePage() {
               }
               return null;
             })()}
+            {translationLang === 'fa' && currentQuestion && (() => {
+              if (!faTranslations) {
+                console.warn(`[Practice] Persian translations not loaded for question ${currentQuestion.id}`);
+                return null;
+              }
+              const translation = getQuestionTranslation(currentQuestion.id, currentQuestion.topic, 'fa', faTranslations);
+              if (translation?.prompt) {
+                return (
+                  <h3 className="text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold mb-3 leading-[1.8] tracking-wide" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
+                    {translation.prompt}
+                  </h3>
+                );
+              } else {
+                console.warn(`[Practice] No Persian translation found for question ${currentQuestion.id} in topic ${currentQuestion.topic}`);
+              }
+              return null;
+            })()}
 
             <VocabHintsControl
               questionId={currentQuestion.id}
@@ -1013,6 +1074,26 @@ export default function PracticePage() {
                           }
                           return null;
                         })()}
+                        {translationLang === 'fa' && faTranslations && (() => {
+                          const faOption = getPersianOptionTranslation(
+                            option.en,
+                            currentQuestion.options,
+                            faTranslations,
+                            currentQuestion.id,
+                            currentQuestion.topic
+                          );
+                          if (faOption) {
+                            return (
+                              <div className={cn(
+                                "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
+                                isSelected && !showAsCorrect && !showAsWrong ? "text-[var(--lingo-red-dark)]/90" : 
+                                showAsCorrect ? "text-[var(--correct)]/90" :
+                                showAsWrong ? "text-[var(--wrong)]/90" : "text-[var(--text-secondary)]"
+                              )} dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>{faOption}</div>
+                            );
+                          }
+                          return null;
+                        })()}
                       </div>
                     </div>
                   </button>
@@ -1054,6 +1135,9 @@ export default function PracticePage() {
                 const portugueseTranslation = getKeywordPortugueseTranslation(keyword.term);
                 const hasPortuguese = !!portugueseTranslation?.explainPt;
 
+                const persianTranslation = getKeywordPersianTranslation(keyword.term);
+                const hasPersian = !!persianTranslation?.explainFa;
+
                 if (translationLang === 'ro') {
                   return hasEnglish && hasRomanian;
                 }
@@ -1062,6 +1146,9 @@ export default function PracticePage() {
                 }
                 if (translationLang === 'pt') {
                   return hasEnglish && hasPortuguese;
+                }
+                if (translationLang === 'fa') {
+                  return hasEnglish && hasPersian;
                 }
                 if (translationLang === 'bn') {
                   return hasEnglish;
@@ -1118,6 +1205,7 @@ export default function PracticePage() {
                           const romanianTranslation = getKeywordRomanianTranslation(keyword.term);
                           const polishTranslation = getKeywordPolishTranslation(keyword.term);
                           const portugueseTranslation = getKeywordPortugueseTranslation(keyword.term);
+                          const persianTranslation = getKeywordPersianTranslation(keyword.term);
                           // Get English text - prefer explainEn, fallback to explainAr if it's English
                           const englishText = keyword.explainEn || 
                             (keyword.explainAr && /^[A-Z]/.test(keyword.explainAr.trim()) && 
@@ -1145,6 +1233,9 @@ export default function PracticePage() {
                                 )}
                                 {translationLang === 'pt' && portugueseTranslation && (
                                   <span className="text-[var(--muted-text)]/70 text-sm" dir="ltr" style={{ lineHeight: '1.8' }}>{portugueseTranslation.pt}</span>
+                                )}
+                                {translationLang === 'fa' && persianTranslation && (
+                                  <span className="text-[var(--muted-text)]/70 text-sm" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' }}>{persianTranslation.fa}</span>
                                 )}
                               </div>
                               {translationLang === 'off' && englishText && (
@@ -1175,6 +1266,11 @@ export default function PracticePage() {
                               {translationLang === 'pt' && portugueseTranslation && (
                                 <p className="text-sm text-[var(--navy)] leading-relaxed" dir="ltr">
                                   {portugueseTranslation.explainPt}
+                                </p>
+                              )}
+                              {translationLang === 'fa' && persianTranslation && (
+                                <p className="text-sm text-[var(--navy)] leading-relaxed" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' }}>
+                                  {persianTranslation.explainFa}
                                 </p>
                               )}
                             </div>

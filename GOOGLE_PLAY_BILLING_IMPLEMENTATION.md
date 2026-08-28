@@ -49,13 +49,15 @@ This document describes the complete Google Play Billing implementation for the 
 ```env
 GOOGLE_PLAY_PACKAGE_NAME=io.lingotheory.mobile
 GOOGLE_PLAY_SERVICE_ACCOUNT_JSON={"type":"service_account",...}
-NEXT_PUBLIC_GOOGLE_PRODUCT_ID=full_access  # Optional, defaults to 'full_access'
 ```
+
+Product ID is defined in code: `lingotheory_full_access` (purchase option: `full-access`).
 
 ### Google Play Console
 
 1. Create one-time product:
-   - Product ID: `full_access`
+   - Product ID: `lingotheory_full_access`
+   - Purchase option ID: `full-access`
    - Type: Managed product (non-consumable)
    - Price: £9.99
    - Status: Active
@@ -77,7 +79,7 @@ Run migration to add Google Play fields:
 ### Android
 
 1. User clicks "Buy on Google Play – £9.99"
-2. `PlayBillingPlugin.purchase('full_access')` launches Google Play purchase dialog
+2. `PlayBillingPlugin.purchase('lingotheory_full_access')` launches Google Play purchase dialog
 3. User completes purchase in Google Play
 4. Plugin returns `{ productId, purchaseToken, orderId, ... }`
 5. Frontend sends `purchaseToken` to `/api/billing/google/verify`
@@ -125,7 +127,7 @@ Run migration to add Google Play fields:
 ### Purchase verification fails
 - Check service account JSON is valid
 - Verify service account has Google Play API access
-- Ensure product ID matches: `full_access`
+- Ensure product ID matches: `lingotheory_full_access`
 - Check product is **active** in Google Play Console
 
 ### Purchase completes but access not granted

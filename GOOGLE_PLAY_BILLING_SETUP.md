@@ -15,11 +15,7 @@ Add the following environment variables to your Render dashboard (or `.env.local
 ```env
 # Google Play Configuration
 GOOGLE_PLAY_PACKAGE_NAME=io.lingotheory.mobile
-GOOGLE_PLAY_PRODUCT_ID=full_access
 GOOGLE_PLAY_SERVICE_ACCOUNT_JSON={"type":"service_account","project_id":"...","private_key_id":"...","private_key":"...","client_email":"...","client_id":"...","auth_uri":"...","token_uri":"...","auth_provider_x509_cert_url":"...","client_x509_cert_url":"..."}
-
-# Optional: Override product ID from client
-NEXT_PUBLIC_GOOGLE_PRODUCT_ID=full_access
 ```
 
 ## Setup Steps
@@ -63,21 +59,24 @@ NEXT_PUBLIC_GOOGLE_PRODUCT_ID=full_access
 1. Go to **Monetize** → **Products** → **In-app products** (or **Subscriptions**)
 2. Click **Create product**
 3. Fill in:
-   - **Product ID**: `full_access` (must match `GOOGLE_PLAY_PRODUCT_ID`)
+   - **Product ID**: `lingotheory_full_access`
+   - **Purchase option ID**: `full-access`
    - **Name**: `Full Access`
    - **Description**: `Unlock unlimited practice questions and mock tests`
    - **Price**: £9.99 (or your price)
 4. Click **Save**
 5. **Activate** the product
 
-### 5. Install Capacitor Plugin
+### 5. Native plugin
 
-The plugin `@capacitor-community/in-app-purchase` should already be in `package.json`. If not:
+The custom Capacitor plugin `PlayBilling` is registered in `MainActivity.java`.
+After Java changes, run:
 
 ```bash
-npm install @capacitor-community/in-app-purchase
 npx cap sync android
 ```
+
+Then rebuild the Android app in Android Studio.
 
 ### 6. Test Purchase Flow
 

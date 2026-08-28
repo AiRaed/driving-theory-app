@@ -22,13 +22,14 @@ import {
   loadPolishTranslations,
   loadPortugueseTranslations,
   loadBengaliTranslations,
+  loadPersianTranslations,
   getQuestionPromptTranslation,
   getOptionTranslation,
   isLtrTranslationLang,
   type TranslationData 
 } from '@/lib/translations';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
-import { isRtlLang, type TranslationLang } from '@/lib/i18n/languages';
+import { type TranslationLang } from '@/lib/i18n/languages';
 import {
   analyticsLanguage,
   clearClientSessionId,
@@ -121,18 +122,22 @@ export default function MockTestPage() {
   const [plTranslations, setPlTranslations] = useState<TranslationData | null>(null);
   const [ptTranslations, setPtTranslations] = useState<TranslationData | null>(null);
   const [bnTranslations, setBnTranslations] = useState<TranslationData | null>(null);
+  const [faTranslations, setFaTranslations] = useState<TranslationData | null>(null);
   const {
     questions,
     urTranslations: bankUrdu,
     roTranslations: bankRo,
     plTranslations: bankPl,
     ptTranslations: bankPt,
+    faTranslations: bankFa,
     source: bankSource,
     ready: bankReady,
   } = useQuestionBank();
 
   const localeTranslations =
-    translationLang === 'bn'
+    translationLang === 'fa'
+      ? faTranslations
+      : translationLang === 'bn'
       ? bnTranslations
       : translationLang === 'pt'
       ? ptTranslations
@@ -194,6 +199,16 @@ export default function MockTestPage() {
     }
   }, [translationLang]);
 
+  useEffect(() => {
+    if (bankSource === "database" && bankFa && Object.keys(bankFa).length > 0) {
+      setFaTranslations(bankFa);
+      return;
+    }
+    if (translationLang === "fa") {
+      loadPersianTranslations().then(setFaTranslations);
+    }
+  }, [bankSource, bankFa, translationLang]);
+
   const handleTranslationLangChange = (next: TranslationLang) => {
     setLang(next);
     if (next === "ur" && !(bankSource === "database" && bankUrdu && Object.keys(bankUrdu).length > 0)) {
@@ -210,6 +225,9 @@ export default function MockTestPage() {
     }
     if (next === 'bn') {
       loadBengaliTranslations().then(setBnTranslations);
+    }
+    if (next === "fa" && !(bankSource === "database" && bankFa && Object.keys(bankFa).length > 0)) {
+      loadPersianTranslations().then(setFaTranslations);
     }
   };
 

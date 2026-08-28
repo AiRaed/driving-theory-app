@@ -101,6 +101,7 @@ export const KNOWN_LANGS: Array<{ code: LangCode; label: string }> = [
   { code: 'pt', label: 'Portuguese' },
   { code: 'ro', label: 'Romanian' },
   { code: 'bn', label: 'Bengali' },
+  { code: 'fa', label: 'Persian' },
   { code: 'pa', label: 'Punjabi' },
   { code: 'zh', label: 'Chinese' },
   { code: 'hi', label: 'Hindi' },
@@ -441,6 +442,27 @@ export function rowToPortugueseBucket(row: QuestionRow): {
       { pt: pt.answers[1] || '' },
       { pt: pt.answers[2] || '' },
       { pt: pt.answers[3] || '' },
+    ],
+  };
+}
+
+/** Attach Persian from translations JSONB (no flat question_fa columns). */
+export function rowToPersianBucket(row: QuestionRow): {
+  promptFa?: string;
+  options?: Array<{ fa: string }>;
+} {
+  const map = rowToTranslationsMap(row);
+  const fa = getTranslation(map, 'fa');
+  if (!fa || !translationHasContent(fa)) {
+    return { promptFa: undefined, options: undefined };
+  }
+  return {
+    promptFa: fa.question || undefined,
+    options: [
+      { fa: fa.answers[0] || '' },
+      { fa: fa.answers[1] || '' },
+      { fa: fa.answers[2] || '' },
+      { fa: fa.answers[3] || '' },
     ],
   };
 }

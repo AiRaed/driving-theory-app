@@ -10,7 +10,7 @@ const ROOT = path.join(__dirname, '..');
 const HINTS_FILE = path.join(ROOT, 'data/vocab-hints.json');
 const PROGRESS_FILE = path.join(ROOT, 'data/vocab-hints-progress.json');
 const QUESTIONS_FILE = path.join(ROOT, 'data/questions.ts');
-const LANGS = ['en', 'ar', 'ur', 'ro', 'pl', 'pt'];
+const LANGS = ['en', 'ar', 'ur', 'ro', 'pl', 'pt', 'bn', 'fa'];
 
 function normalizeForMatch(s) {
   return String(s)

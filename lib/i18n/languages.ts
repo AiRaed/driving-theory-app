@@ -6,7 +6,7 @@
  * and add the locale JSON / vocab translations. Do not duplicate language lists in pages.
  */
 
-export const TRANSLATION_LANGS = ['off', 'ar', 'ur', 'ro', 'pl', 'pt', 'bn'] as const;
+export const TRANSLATION_LANGS = ['off', 'ar', 'ur', 'ro', 'pl', 'pt', 'bn', 'fa'] as const;
 export type TranslationLang = (typeof TRANSLATION_LANGS)[number];
 
 export type TextDirection = 'ltr' | 'rtl';
@@ -31,6 +31,7 @@ export const SUPPORTED_LANGUAGES: readonly SupportedLanguage[] = [
   { code: 'pl', urlCode: 'pl', nativeName: 'Polski', englishName: 'Polish', dir: 'ltr', enabled: true, flag: '🇵🇱' },
   { code: 'pt', urlCode: 'pt', nativeName: 'Português', englishName: 'Portuguese', dir: 'ltr', enabled: true, flag: '🇵🇹' },
   { code: 'bn', urlCode: 'bn', nativeName: 'বাংলা', englishName: 'Bengali', dir: 'ltr', enabled: true, flag: '🇧🇩' },
+  { code: 'fa', urlCode: 'fa', nativeName: 'فارسی', englishName: 'Persian', dir: 'rtl', enabled: true, flag: '🇮🇷' },
 ] as const;
 
 export const ENABLED_LANGUAGES = SUPPORTED_LANGUAGES.filter((l) => l.enabled);
@@ -57,7 +58,7 @@ export function isLtrTranslationLang(lang: TranslationLang): boolean {
 
 /** Map TranslationLang ↔ analytics / DB preferred_language ('en' not 'off'). */
 export function toAnalyticsLanguage(lang: TranslationLang | string | null | undefined): string {
-  if (lang === 'ar' || lang === 'ur' || lang === 'ro' || lang === 'pl' || lang === 'pt' || lang === 'bn') {
+  if (lang === 'ar' || lang === 'ur' || lang === 'ro' || lang === 'pl' || lang === 'pt' || lang === 'bn' || lang === 'fa') {
     return lang;
   }
   return 'en';

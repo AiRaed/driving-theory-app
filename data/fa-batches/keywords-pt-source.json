@@ -1,0 +1,894 @@
+{
+  "turning vehicle": {
+    "pt": "veículo a virar",
+    "explainPt": "Um veículo que está a mudar de direção"
+  },
+  "junction": {
+    "pt": "cruzamento",
+    "explainPt": "Local onde se encontram duas ou mais vias"
+  },
+  "path crossing": {
+    "pt": "cruzamento de trajetórias",
+    "explainPt": "Quando um veículo ou peão corta o seu caminho"
+  },
+  "blind spot": {
+    "pt": "ângulo morto",
+    "explainPt": "Zona que não consegue ver nos espelhos"
+  },
+  "stopping distance": {
+    "pt": "distância de paragem",
+    "explainPt": "Distância necessária para o veículo parar"
+  },
+  "slippery surface": {
+    "pt": "piso escorregadio",
+    "explainPt": "Estrada onde os pneus têm menos aderência"
+  },
+  "reaction time": {
+    "pt": "tempo de reação",
+    "explainPt": "Tempo entre ver um perigo e reagir"
+  },
+  "hazard": {
+    "pt": "perigo",
+    "explainPt": "Algo que pode causar um acidente"
+  },
+  "awareness": {
+    "pt": "consciência situacional",
+    "explainPt": "Estar atento ao que se passa à sua volta"
+  },
+  "fatigue": {
+    "pt": "fadiga",
+    "explainPt": "Cansaço ou falta de sono"
+  },
+  "concentration": {
+    "pt": "concentração",
+    "explainPt": "Atenção total numa tarefa"
+  },
+  "speed limit": {
+    "pt": "limite de velocidade",
+    "explainPt": "Velocidade máxima legalmente permitida"
+  },
+  "mirrors": {
+    "pt": "espelhos",
+    "explainPt": "Espelhos do veículo que mostram a traseira e os lados"
+  },
+  "aware": {
+    "pt": "atento",
+    "explainPt": "Consciente da situação à sua volta"
+  },
+  "pedestrian": {
+    "pt": "peão",
+    "explainPt": "Pessoa que se desloca a pé"
+  },
+  "pedestrians": {
+    "pt": "peões",
+    "explainPt": "Pessoas a pé que podem atravessar a estrada"
+  },
+  "signal": {
+    "pt": "sinal",
+    "explainPt": "Indicador do veículo que mostra uma mudança de direção"
+  },
+  "give way": {
+    "pt": "ceder a passagem",
+    "explainPt": "Deixar outros veículos passarem primeiro"
+  },
+  "bend": {
+    "pt": "curva",
+    "explainPt": "Curva ou sinuosidade da estrada"
+  },
+  "bends": {
+    "pt": "curvas",
+    "explainPt": "Várias curvas na estrada"
+  },
+  "slippery": {
+    "pt": "escorregadio",
+    "explainPt": "Onde a aderência do veículo é reduzida"
+  },
+  "parked cars": {
+    "pt": "carros estacionados",
+    "explainPt": "Veículos parados junto ao limite da via"
+  },
+  "wet road": {
+    "pt": "estrada molhada",
+    "explainPt": "Estrada molhada pela chuva ou água"
+  },
+  "brake lights": {
+    "pt": "luzes de travagem",
+    "explainPt": "Luzes traseiras que se acendem ao travar"
+  },
+  "anticipation": {
+    "pt": "antecipação",
+    "explainPt": "Prever perigos que possam surgir"
+  },
+  "elderly pedestrians": {
+    "pt": "peões idosos",
+    "explainPt": "Peões de idade avançada"
+  },
+  "crossing": {
+    "pt": "atravessar",
+    "explainPt": "Passar de um lado da estrada para o outro"
+  },
+  "farm traffic": {
+    "pt": "trânsito agrícola",
+    "explainPt": "Veículos agrícolas"
+  },
+  "slow vehicles": {
+    "pt": "veículos lentos",
+    "explainPt": "Veículos que circulam mais devagar do que o trânsito normal"
+  },
+  "night driving": {
+    "pt": "condução noturna",
+    "explainPt": "Conduzir à noite exige mais atenção devido ao cansaço e à menor visibilidade"
+  },
+  "visibility": {
+    "pt": "visibilidade",
+    "explainPt": "Capacidade de ver peões e outros veículos, sobretudo de noite ou com mau tempo"
+  },
+  "bus stop": {
+    "pt": "paragem de autocarro",
+    "explainPt": "Local onde o autocarro para"
+  },
+  "hidden hazard": {
+    "pt": "perigo oculto",
+    "explainPt": "Um perigo que não se vê de imediato"
+  },
+  "country road": {
+    "pt": "estrada rural",
+    "explainPt": "Estrada em zona rural"
+  },
+  "mud": {
+    "pt": "lama",
+    "explainPt": "Lama ou barro"
+  },
+  "delivery van": {
+    "pt": "carrinha de entregas",
+    "explainPt": "Carrinha usada para entregas"
+  },
+  "hidden pedestrians": {
+    "pt": "peões ocultos",
+    "explainPt": "Peões que não consegue ver"
+  },
+  "residential street": {
+    "pt": "rua residencial",
+    "explainPt": "Rua numa zona habitacional"
+  },
+  "bunching traffic": {
+    "pt": "trânsito a agrupar-se",
+    "explainPt": "Veículos a juntarem-se demasiado perto"
+  },
+  "dual carriageway": {
+    "pt": "via de sentido separado",
+    "explainPt": "Estrada com faixas separadas para sentidos opostos"
+  },
+  "sudden stop": {
+    "pt": "paragem súbita",
+    "explainPt": "Parar sem aviso prévio"
+  },
+  "pram": {
+    "pt": "carrinho de bebé",
+    "explainPt": "Carrinho para transportar crianças"
+  },
+  "slow movement": {
+    "pt": "movimento lento",
+    "explainPt": "Deslocação lenta"
+  },
+  "cyclist": {
+    "pt": "ciclista",
+    "explainPt": "Pessoa que anda de bicicleta"
+  },
+  "swerve": {
+    "pt": "desviar bruscamente",
+    "explainPt": "Mudança súbita de direção"
+  },
+  "busy area": {
+    "pt": "zona movimentada",
+    "explainPt": "Área com muita gente"
+  },
+  "unexpected movement": {
+    "pt": "movimento inesperado",
+    "explainPt": "Um movimento que não se esperava"
+  },
+  "no brake lights": {
+    "pt": "sem luzes de travagem",
+    "explainPt": "As luzes de travagem não funcionam"
+  },
+  "aquaplaning": {
+    "pt": "aquaplanagem",
+    "explainPt": "Perda de aderência sobre a água"
+  },
+  "high speed": {
+    "pt": "alta velocidade",
+    "explainPt": "Circulação rápida"
+  },
+  "heavy rain": {
+    "pt": "chuva intensa",
+    "explainPt": "Chuva forte"
+  },
+  "children": {
+    "pt": "crianças",
+    "explainPt": "Crianças pequenas que se podem mover de forma imprevisível"
+  },
+  "children crossing": {
+    "pt": "crianças a atravessar",
+    "explainPt": "Crianças a atravessar a rua"
+  },
+  "children playing": {
+    "pt": "crianças a brincar",
+    "explainPt": "Crianças que estão a brincar"
+  },
+  "roundabout": {
+    "pt": "rotunda",
+    "explainPt": "Cruzamento de circulação circular"
+  },
+  "overtaking": {
+    "pt": "ultrapassagem",
+    "explainPt": "Passar à frente de outro veículo"
+  },
+  "two-second rule": {
+    "pt": "regra dos dois segundos",
+    "explainPt": "Manter pelo menos dois segundos de distância do veículo à frente"
+  },
+  "time gap": {
+    "pt": "intervalo de tempo",
+    "explainPt": "Intervalo de tempo entre dois veículos"
+  },
+  "tailgating": {
+    "pt": "conduzir demasiado perto",
+    "explainPt": "Circular demasiado perto do veículo à frente"
+  },
+  "ice": {
+    "pt": "gelo",
+    "explainPt": "Gelo na faixa de rodagem"
+  },
+  "rain": {
+    "pt": "chuva",
+    "explainPt": "Chuva ou água da chuva"
+  },
+  "wind": {
+    "pt": "vento",
+    "explainPt": "Vento ou pressão do vento"
+  },
+  "strong wind": {
+    "pt": "vento forte",
+    "explainPt": "Vento intenso"
+  },
+  "strong winds": {
+    "pt": "ventos fortes",
+    "explainPt": "Ventos intensos"
+  },
+  "crosswinds": {
+    "pt": "ventos laterais",
+    "explainPt": "Vento que sopra de lado"
+  },
+  "side winds": {
+    "pt": "ventos laterais",
+    "explainPt": "Vento que sopra de lado"
+  },
+  "windy conditions": {
+    "pt": "condições de vento",
+    "explainPt": "Condições com vento forte"
+  },
+  "ABS": {
+    "pt": "ABS",
+    "explainPt": "Permite controlar a direção durante uma travagem forte"
+  },
+  "alertness": {
+    "pt": "estado de alerta",
+    "explainPt": "O estado de alerta é essencial para conduzir em segurança, sobretudo em viagens longas"
+  },
+  "attention": {
+    "pt": "atenção",
+    "explainPt": "Atenção total na estrada é essencial para conduzir em segurança"
+  },
+  "brakes": {
+    "pt": "travões",
+    "explainPt": "Sistema usado para parar o veículo"
+  },
+  "bus": {
+    "pt": "autocarro",
+    "explainPt": "Veículo de transporte público que para em paragens"
+  },
+  "bus lane": {
+    "pt": "via de autocarros",
+    "explainPt": "Faixa reservada a autocarros em certos horários"
+  },
+  "cyclists": {
+    "pt": "ciclistas",
+    "explainPt": "Pessoas que andam de bicicleta"
+  },
+  "dipped headlights": {
+    "pt": "médios",
+    "explainPt": "Faróis com luz baixa que não encandeiam outros condutores"
+  },
+  "distance": {
+    "pt": "distância",
+    "explainPt": "Espaço entre dois objetos"
+  },
+  "dry road": {
+    "pt": "estrada seca",
+    "explainPt": "Estrada sem água nem humidade"
+  },
+  "elderly": {
+    "pt": "idosos",
+    "explainPt": "Pessoas de idade avançada"
+  },
+  "emergency": {
+    "pt": "emergência",
+    "explainPt": "Situação que exige ajuda imediata"
+  },
+  "emergency stop": {
+    "pt": "paragem de emergência",
+    "explainPt": "Parar de imediato"
+  },
+  "emergency vehicle": {
+    "pt": "veículo de emergência",
+    "explainPt": "Veículo dos serviços de emergência"
+  },
+  "emergency vehicles": {
+    "pt": "veículos de emergência",
+    "explainPt": "Veículos dos serviços de emergência"
+  },
+  "farm animals": {
+    "pt": "animais de quinta",
+    "explainPt": "Animais agrícolas que podem estar na estrada ou perto dela"
+  },
+  "four-second rule": {
+    "pt": "regra dos quatro segundos",
+    "explainPt": "Em estrada molhada, manter pelo menos quatro segundos de distância do veículo à frente"
+  },
+  "give way line": {
+    "pt": "linha de ceder a passagem",
+    "explainPt": "Linha na estrada que indica ceder a passagem"
+  },
+  "give way sign": {
+    "pt": "sinal de ceder a passagem",
+    "explainPt": "Sinal que ordena ceder a passagem"
+  },
+  "hazard awareness": {
+    "pt": "consciência de perigos",
+    "explainPt": "Capacidade de reconhecer e evitar perigos na estrada"
+  },
+  "hazard lights": {
+    "pt": "luzes de perigo",
+    "explainPt": "Luzes de aviso usadas em situação de perigo"
+  },
+  "hazards": {
+    "pt": "perigos",
+    "explainPt": "Coisas que podem causar um acidente"
+  },
+  "headlights": {
+    "pt": "faróis",
+    "explainPt": "Luzes dianteiras do veículo"
+  },
+  "horse riders": {
+    "pt": "cavaleiros",
+    "explainPt": "Pessoas a cavalo"
+  },
+  "junctions": {
+    "pt": "cruzamentos",
+    "explainPt": "Locais onde se encontram duas ou mais vias"
+  },
+  "mandatory": {
+    "pt": "obrigatório",
+    "explainPt": "Exigido por lei"
+  },
+  "mandatory direction": {
+    "pt": "direção obrigatória",
+    "explainPt": "Direção ordenada por lei"
+  },
+  "mirror checks": {
+    "pt": "verificar os espelhos",
+    "explainPt": "Verificar regularmente os espelhos do veículo"
+  },
+  "mobile phone": {
+    "pt": "telemóvel",
+    "explainPt": "Usar o telemóvel ao conduzir é perigoso"
+  },
+  "motorcyclists": {
+    "pt": "motociclistas",
+    "explainPt": "Pessoas que conduzem motociclos"
+  },
+  "motorway": {
+    "pt": "autoestrada",
+    "explainPt": "Estrada de alta velocidade"
+  },
+  "motorway driving": {
+    "pt": "condução em autoestrada",
+    "explainPt": "Conduzir numa autoestrada"
+  },
+  "no overtaking": {
+    "pt": "proibido ultrapassar",
+    "explainPt": "A ultrapassagem é proibida"
+  },
+  "no stopping": {
+    "pt": "proibido parar",
+    "explainPt": "Parar ou estacionar é proibido"
+  },
+  "no waiting": {
+    "pt": "proibido estacionar",
+    "explainPt": "Estacionar ou aguardar é proibido"
+  },
+  "observation": {
+    "pt": "observação",
+    "explainPt": "Observar a estrada e o ambiente"
+  },
+  "obstruction": {
+    "pt": "obstáculo",
+    "explainPt": "Um obstáculo na estrada"
+  },
+  "overtake": {
+    "pt": "ultrapassar",
+    "explainPt": "Passar à frente de outro veículo"
+  },
+  "parked car": {
+    "pt": "carro estacionado",
+    "explainPt": "Veículo parado junto ao limite da via"
+  },
+  "parked vehicle": {
+    "pt": "veículo estacionado",
+    "explainPt": "Veículo parado junto ao limite da via"
+  },
+  "parked vehicles": {
+    "pt": "veículos estacionados",
+    "explainPt": "Veículos parados junto ao limite da via"
+  },
+  "pelican crossing": {
+    "pt": "passagem pelican",
+    "explainPt": "Passagem de peões com semáforos"
+  },
+  "poor visibility": {
+    "pt": "má visibilidade",
+    "explainPt": "Capacidade limitada de ver"
+  },
+  "reduced visibility": {
+    "pt": "visibilidade reduzida",
+    "explainPt": "Capacidade limitada de ver"
+  },
+  "restricted view": {
+    "pt": "visão limitada",
+    "explainPt": "Campo de visão reduzido"
+  },
+  "road narrows": {
+    "pt": "estreitamento da via",
+    "explainPt": "A estrada estreita-se"
+  },
+  "road users": {
+    "pt": "utentes da via",
+    "explainPt": "Pessoas que usam a estrada"
+  },
+  "roadworks": {
+    "pt": "obras na estrada",
+    "explainPt": "Obras ou trabalhos na via"
+  },
+  "safe distance": {
+    "pt": "distância de segurança",
+    "explainPt": "Distância que ajuda a evitar um acidente"
+  },
+  "safety": {
+    "pt": "segurança",
+    "explainPt": "Manter-se em segurança"
+  },
+  "safety margins": {
+    "pt": "margens de segurança",
+    "explainPt": "Distâncias seguras que protegem de acidentes"
+  },
+  "signalling": {
+    "pt": "sinalização",
+    "explainPt": "Usar os indicadores de direção do veículo"
+  },
+  "signals": {
+    "pt": "sinais",
+    "explainPt": "Sinais do veículo"
+  },
+  "single yellow line": {
+    "pt": "linha amarela simples",
+    "explainPt": "Linha amarela junto ao passeio que restringe o estacionamento em certos horários"
+  },
+  "slow down": {
+    "pt": "abrandar",
+    "explainPt": "Reduzir a velocidade"
+  },
+  "slow speed": {
+    "pt": "baixa velocidade",
+    "explainPt": "Velocidade reduzida"
+  },
+  "slow traffic": {
+    "pt": "trânsito lento",
+    "explainPt": "Trânsito a baixa velocidade"
+  },
+  "slow vehicle": {
+    "pt": "veículo lento",
+    "explainPt": "Veículo que circula devagar"
+  },
+  "slow-moving vehicle": {
+    "pt": "veículo lento",
+    "explainPt": "Veículo que se desloca a baixa velocidade"
+  },
+  "slippery roads": {
+    "pt": "estradas escorregadias",
+    "explainPt": "Estradas com pouca aderência"
+  },
+  "speed limits": {
+    "pt": "limites de velocidade",
+    "explainPt": "Velocidades máximas permitidas"
+  },
+  "stop": {
+    "pt": "parar",
+    "explainPt": "Imobilizar o veículo"
+  },
+  "stop line": {
+    "pt": "linha de paragem",
+    "explainPt": "Linha na estrada onde deve parar"
+  },
+  "stopped traffic": {
+    "pt": "trânsito parado",
+    "explainPt": "Trânsito que parou"
+  },
+  "sudden braking": {
+    "pt": "travagem súbita",
+    "explainPt": "Travar sem aviso"
+  },
+  "sudden stops": {
+    "pt": "paragens súbitas",
+    "explainPt": "Paragens sem aviso"
+  },
+  "thick fog": {
+    "pt": "nevoeiro denso",
+    "explainPt": "Nevoeiro intenso"
+  },
+  "tiredness": {
+    "pt": "cansaço",
+    "explainPt": "Cansaço ou falta de sono"
+  },
+  "traffic": {
+    "pt": "trânsito",
+    "explainPt": "Movimento de veículos na estrada"
+  },
+  "traffic flow": {
+    "pt": "fluxo de trânsito",
+    "explainPt": "Circulação de veículos na via"
+  },
+  "turning left": {
+    "pt": "virar à esquerda",
+    "explainPt": "Mudar de direção para a esquerda"
+  },
+  "turning right": {
+    "pt": "virar à direita",
+    "explainPt": "Mudar de direção para a direita"
+  },
+  "waiting restrictions": {
+    "pt": "restrições de estacionamento",
+    "explainPt": "Restrições de estacionar ou aguardar em certos horários"
+  },
+  "wet conditions": {
+    "pt": "condições molhadas",
+    "explainPt": "Condições com chuva ou água"
+  },
+  "wet roads": {
+    "pt": "estradas molhadas",
+    "explainPt": "Estradas molhadas pela chuva ou água"
+  },
+  "wet weather": {
+    "pt": "tempo húmido",
+    "explainPt": "Tempo com chuva"
+  },
+  "hint-HZ-01": {
+    "pt": "Dica",
+    "explainPt": "Reduzir a velocidade quando a estrada estreita dá-lhe mais tempo para reagir em segurança."
+  },
+  "hint-HZ-02": {
+    "pt": "Dica",
+    "explainPt": "Dê tempo e espaço aos ciclistas para evitar acidentes nos cruzamentos."
+  },
+  "hint-HZ-03": {
+    "pt": "Dica",
+    "explainPt": "Usar os espelhos ajuda a ver o que não consegue observar diretamente."
+  },
+  "hint-HZ-04": {
+    "pt": "Dica",
+    "explainPt": "Informar a autoridade de licenciamento ajuda a manter todos em segurança na estrada."
+  },
+  "hint-HZ-05": {
+    "pt": "Dica",
+    "explainPt": "Ler um mapa tira-lhe os olhos da estrada e aumenta o risco de acidente."
+  },
+  "hint-HZ-06": {
+    "pt": "Dica",
+    "explainPt": "Parar perante as luzes vermelhas de aviso evita acidentes graves com comboios."
+  },
+  "hint-HZ-07": {
+    "pt": "Dica",
+    "explainPt": "Uma cruz vermelha significa que a faixa está fechada e deve parar."
+  },
+  "hint-HZ-08": {
+    "pt": "Dica",
+    "explainPt": "Faça uma pausa quando se sentir cansado para evitar acidentes por sonolência."
+  },
+  "hint-HZ-09": {
+    "pt": "Dica",
+    "explainPt": "Mantenha os cruzamentos livres para que os veículos possam entrar e sair em segurança."
+  },
+  "hint-HZ-10": {
+    "pt": "Dica",
+    "explainPt": "Dê tempo e espaço aos ciclistas para evitar acidentes junto aos semáforos."
+  },
+  "hint-HZ-11": {
+    "pt": "Dica",
+    "explainPt": "Autocarros parados podem arrancar de súbito depois de passageiros entrarem ou saírem."
+  },
+  "hint-HZ-12": {
+    "pt": "Dica",
+    "explainPt": "Tratores lentos usam sinais âmbar de aviso para alertar outros condutores."
+  },
+  "hint-HZ-13": {
+    "pt": "Dica",
+    "explainPt": "Siga em frente e procure outro percurso — é mais seguro do que conduzir em marcha-atrás."
+  },
+  "hint-HZ-14": {
+    "pt": "Dica",
+    "explainPt": "Uma faixa central partilhada aumenta o risco de colisão frontal."
+  },
+  "hint-HZ-15": {
+    "pt": "Dica",
+    "explainPt": "Pare atrás da linha e avance depois lentamente para ter visão segura do cruzamento."
+  },
+  "hint-HZ-16": {
+    "pt": "Dica",
+    "explainPt": "Conduza devagar e esteja pronto a parar para ter tempo de reagir aos peões."
+  },
+  "hint-HZ-17": {
+    "pt": "Dica",
+    "explainPt": "Veículos estacionados bloqueiam a visão e aumentam o risco de acidente nos cruzamentos."
+  },
+  "hint-HZ-18": {
+    "pt": "Dica",
+    "explainPt": "Ultrapassar depois do cruzamento evita colisões com veículos que saem dele."
+  },
+  "hint-HZ-19": {
+    "pt": "Dica",
+    "explainPt": "Reduza a velocidade e mantenha distância segura para reagir a trânsito lento."
+  },
+  "hint-HZ-20": {
+    "pt": "Dica",
+    "explainPt": "Os sinais de um polícia têm prioridade sobre os semáforos."
+  },
+  "hint-HZ-21": {
+    "pt": "Dica",
+    "explainPt": "A raiva reduz a atenção e aumenta o risco de acidente."
+  },
+  "hint-HZ-22": {
+    "pt": "Dica",
+    "explainPt": "Abrande cedo para ter tempo de reagir a trânsito oculto."
+  },
+  "hint-HZ-23": {
+    "pt": "Dica",
+    "explainPt": "Esteja pronto a parar para dar espaço seguro a um veículo a sair em marcha-atrás."
+  },
+  "hint-HZ-24": {
+    "pt": "Dica",
+    "explainPt": "Espelhos convexos dão uma visão mais ampla, mas fazem os objetos parecerem mais longe."
+  },
+  "hint-HZ-25": {
+    "pt": "Dica",
+    "explainPt": "Sinais âmbar de aviso alertam para veículos lentos ou de trabalho."
+  },
+  "hint-HZ-26": {
+    "pt": "Dica",
+    "explainPt": "Informar a autoridade de licenciamento ajuda a manter todos em segurança na estrada."
+  },
+  "hint-HZ-27": {
+    "pt": "Dica",
+    "explainPt": "Conduza devagar e esteja pronto a parar para proteger peões mais lentos."
+  },
+  "hint-HZ-28": {
+    "pt": "Dica",
+    "explainPt": "Afaste-se para voltar a criar uma distância segura e ter tempo de reagir a mudanças."
+  },
+  "hint-HZ-29": {
+    "pt": "Dica",
+    "explainPt": "Quando o trânsito muda de faixa, costuma haver um perigo ou obstáculo à frente."
+  },
+  "hint-HZ-30": {
+    "pt": "Dica",
+    "explainPt": "Avance gradualmente até ter visão clara para decidir em segurança."
+  },
+  "hint-HZ-31": {
+    "pt": "Dica",
+    "explainPt": "Acalmar-se antes de conduzir ajuda a manter a atenção e reduz erros."
+  },
+  "hint-HZ-32": {
+    "pt": "Dica",
+    "explainPt": "Verifique os rótulos dos medicamentos para não conduzir sob substâncias que afetam a atenção."
+  },
+  "hint-HZ-33": {
+    "pt": "Dica",
+    "explainPt": "Adie a viagem até se sentir melhor para evitar acidentes por cansaço ou doença."
+  },
+  "hint-HZ-34": {
+    "pt": "Dica",
+    "explainPt": "Use sempre óculos para manter visibilidade clara em quaisquer condições."
+  },
+  "hint-HZ-35": {
+    "pt": "Dica",
+    "explainPt": "O álcool prejudica o julgamento e o controlo e aumenta muito o risco de acidente."
+  },
+  "hint-HZ-36": {
+    "pt": "Dica",
+    "explainPt": "Autocarros parados podem ocultar peões que atravessam à frente."
+  },
+  "hint-HZ-37": {
+    "pt": "Dica",
+    "explainPt": "Viragens à esquerda de veículos agrícolas podem deixar lama ou detritos na estrada."
+  },
+  "hint-HZ-38": {
+    "pt": "Dica",
+    "explainPt": "As drogas reduzem a atenção e o estado de alerta, pondo em risco a segurança rodoviária."
+  },
+  "hint-HZ-39": {
+    "pt": "Dica",
+    "explainPt": "Salpicos de camiões grandes reduzem a visibilidade e aumentam o risco de acidente."
+  },
+  "hint-HZ-40": {
+    "pt": "Dica",
+    "explainPt": "Lentes coloridas reduzem a luz e dificultam a visão à noite."
+  },
+  "hint-HZ-41": {
+    "pt": "Dica",
+    "explainPt": "Quando os semáforos não funcionam, trate o cruzamento como não sinalizado e tenha cuidado extra."
+  },
+  "hint-HZ-42": {
+    "pt": "Dica",
+    "explainPt": "Condutores idosos podem precisar de mais tempo para reagir — dê-lhes espaço."
+  },
+  "hint-HZ-43": {
+    "pt": "Dica",
+    "explainPt": "Um indicador contínuo pode significar que o condutor se esqueceu de o desligar ou que há um problema."
+  },
+  "hint-HZ-44": {
+    "pt": "Dica",
+    "explainPt": "Sinais de curvas apertadas exigem redução de velocidade."
+  },
+  "hint-HZ-45": {
+    "pt": "Dica",
+    "explainPt": "Pontes estreitas exigem estar pronto a ceder a passagem a veículos grandes."
+  },
+  "hint-HZ-46": {
+    "pt": "Dica",
+    "explainPt": "Pare e descanse quando sentir sonolência para evitar um acidente ao volante."
+  },
+  "hint-HZ-47": {
+    "pt": "Dica",
+    "explainPt": "Use as luzes de perigo só quando o veículo está avariado e bloqueia o trânsito."
+  },
+  "hint-HZ-48": {
+    "pt": "Dica",
+    "explainPt": "Camiões grandes podem precisar do centro de uma estrada estreita para passar."
+  },
+  "hint-HZ-49": {
+    "pt": "Dica",
+    "explainPt": "Pausas regulares mantêm a atenção em viagens longas e reduzem o cansaço."
+  },
+  "hint-HZ-50": {
+    "pt": "Dica",
+    "explainPt": "Evite conduzir quando o medicamento causa sonolência para prevenir acidentes graves."
+  },
+  "hint-HZ-51": {
+    "pt": "Dica",
+    "explainPt": "Marcações refletoras em veículos pesados ajudam a vê-los no escuro."
+  },
+  "hint-HZ-52": {
+    "pt": "Dica",
+    "explainPt": "Velocidade mais baixa em zonas de acalmia de trânsito protege peões e ciclistas."
+  },
+  "hint-HZ-53": {
+    "pt": "Dica",
+    "explainPt": "Se toma um medicamento que afeta a condução, deixe outra pessoa conduzir."
+  },
+  "hint-HZ-54": {
+    "pt": "Dica",
+    "explainPt": "Autocarros grandes precisam de mais espaço em pontes estreitas."
+  },
+  "hint-HZ-55": {
+    "pt": "Dica",
+    "explainPt": "Ultrapassar perto de cruzamentos é perigoso devido ao trânsito de várias direções."
+  },
+  "hint-HZ-56": {
+    "pt": "Dica",
+    "explainPt": "Veículos estacionados numa curva podem ocultar peões que saem de súbito."
+  },
+  "hint-HZ-57": {
+    "pt": "Dica",
+    "explainPt": "Visibilidade limitada nos cruzamentos aumenta o risco de acidente com trânsito oculto."
+  },
+  "hint-HZ-58": {
+    "pt": "Dica",
+    "explainPt": "O álcool aumenta perigosamente a confiança e prejudica o bom julgamento."
+  },
+  "hint-HZ-59": {
+    "pt": "Dica",
+    "explainPt": "Portas de carros estacionados podem abrir-se de súbito e causar um acidente grave."
+  },
+  "hint-HZ-60": {
+    "pt": "Dica",
+    "explainPt": "Pare de conduzir quando está doente para manter todos em segurança."
+  },
+  "hint-HZ-61": {
+    "pt": "Dica",
+    "explainPt": "Se planeia conduzir mais tarde, evite completamente o álcool na festa."
+  },
+  "hint-HZ-62": {
+    "pt": "Dica",
+    "explainPt": "Crianças em ruas residenciais podem sair de súbito de entre carros estacionados."
+  },
+  "hint-HZ-63": {
+    "pt": "Dica",
+    "explainPt": "Na autoestrada, pare em segurança o mais depressa possível quando sentir sonolência."
+  },
+  "hint-HZ-64": {
+    "pt": "Dica",
+    "explainPt": "Verifique o rótulo do medicamento antes de conduzir para evitar substâncias perigosas."
+  },
+  "hint-HZ-65": {
+    "pt": "Dica",
+    "explainPt": "Obras na estrada exigem velocidade reduzida e atenção a trabalhadores e veículos."
+  },
+  "hint-HZ-66": {
+    "pt": "Dica",
+    "explainPt": "As luzes de perigo avisam o trânsito de uma avaria que bloqueia a via."
+  },
+  "hint-HZ-67": {
+    "pt": "Dica",
+    "explainPt": "Uma condenação por conduzir sob efeito de álcool ou drogas aumenta muito o custo do seguro."
+  },
+  "hint-HZ-68": {
+    "pt": "Dica",
+    "explainPt": "Ciclistas junto a cruzamentos podem virar de súbito para a faixa de rodagem."
+  },
+  "hint-HZ-69": {
+    "pt": "Dica",
+    "explainPt": "Pausas regulares melhoram a atenção em viagens longas e reduzem o risco de acidente."
+  },
+  "hint-HZ-70": {
+    "pt": "Dica",
+    "explainPt": "A pressa em viagens longas aumenta o cansaço e os erros, pondo a segurança em risco."
+  },
+  "hint-HZ-71": {
+    "pt": "Dica",
+    "explainPt": "O kick-down em veículos automáticos serve para acelerar rapidamente."
+  },
+  "hint-HZ-72": {
+    "pt": "Dica",
+    "explainPt": "Numa autoestrada com várias faixas, a ultrapassagem faz-se pela faixa da direita."
+  },
+  "hint-HZ-73": {
+    "pt": "Dica",
+    "explainPt": "Poças na estrada aumentam o risco de aquaplanagem e perda de controlo."
+  },
+  "hint-HZ-74": {
+    "pt": "Dica",
+    "explainPt": "Peões concentrados no telemóvel podem entrar na faixa sem olhar."
+  },
+  "hint-HZ-75": {
+    "pt": "Dica",
+    "explainPt": "Quando vir cavaleiros, abrande e passe com uma margem larga."
+  },
+  "hint-HZ-76": {
+    "pt": "Dica",
+    "explainPt": "Quando vir um veículo a virar de súbito, aumente a distância para ter tempo de reagir."
+  },
+  "hint-HZ-77": {
+    "pt": "Dica",
+    "explainPt": "Veículos grandes precisam de mais espaço para virar e podem primeiro sair para fora."
+  },
+  "hint-HZ-78": {
+    "pt": "Dica",
+    "explainPt": "Veículos grandes podem usar o centro da estrada para fazer a curva."
+  },
+  "hint-HZ-79": {
+    "pt": "Dica",
+    "explainPt": "Veículos grandes podem primeiro sair para a direita antes de virar à esquerda para ganhar espaço."
+  },
+  "hint-HZ-80": {
+    "pt": "Dica",
+    "explainPt": "Abrande antes de curvas apertadas em estrada molhada para evitar derrapagem."
+  }
+}

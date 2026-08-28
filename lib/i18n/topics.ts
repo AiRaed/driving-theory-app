@@ -99,6 +99,22 @@ const TOPIC_LABELS: Record<Exclude<TranslationLang, 'off'>, Record<string, strin
     attitude: 'চালকের আচরণ',
     'safety-vehicle': 'যানবাহনের নিরাপত্তা',
   },
+  fa: {
+    alertness: 'هوشیاری',
+    'hazard-awareness': 'آگاهی از خطر',
+    'road-signs': 'علائم جاده',
+    'safety-margins': 'فاصله‌های ایمنی',
+    'rules-of-the-road': 'قوانین جاده',
+    'vulnerable-road-users': 'کاربران آسیب‌پذیر جاده',
+    'vehicle-handling': 'کنترل خودرو',
+    incidents: 'حوادث و شرایط اضطراری',
+    documents: 'مدارک',
+    'motorway-driving': 'رانندگی در موتوروی',
+    'other-vehicles': 'سایر وسایل نقلیه',
+    'vehicle-loading': 'بارگیری خودرو',
+    attitude: 'رفتار راننده',
+    'safety-vehicle': 'ایمنی خودرو',
+  },
 };
 
 export function getTopicTranslation(topic: string, lang: TranslationLang): string | null {

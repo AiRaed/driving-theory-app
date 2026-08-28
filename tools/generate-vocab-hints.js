@@ -31,7 +31,7 @@ const DICT_FILE = path.join(ROOT, 'data/vocab-dictionary.json');
 const PROGRESS_FILE = path.join(ROOT, 'data/vocab-hints-progress.json');
 const ENV_LOCAL = path.join(ROOT, '.env.local');
 
-const VOCAB_LANGS = ['en', 'ar', 'ur', 'ro', 'pl'];
+const VOCAB_LANGS = ['en', 'ar', 'ur', 'ro', 'pl', 'pt', 'bn', 'fa'];
 const MAX_HINTS = 3;
 const MAX_TERM_LEN = 48;
 const MAX_EXPLANATION_LEN = 160;

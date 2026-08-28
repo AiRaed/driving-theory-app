@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { questions as staticQuestions, type Question } from '@/data/questions';
 import {
+  loadPersianTranslations,
   loadPolishTranslations,
   loadPortugueseTranslations,
   loadRomanianTranslations,
@@ -16,6 +17,7 @@ export function useQuestionBank() {
   const [roTranslations, setRoTranslations] = useState<TranslationData | null>(null);
   const [plTranslations, setPlTranslations] = useState<TranslationData | null>(null);
   const [ptTranslations, setPtTranslations] = useState<TranslationData | null>(null);
+  const [faTranslations, setFaTranslations] = useState<TranslationData | null>(null);
   const [source, setSource] = useState<'static' | 'database'>('static');
   const [ready, setReady] = useState(false);
 
@@ -35,7 +37,8 @@ export function useQuestionBank() {
               if (data.romanianByTopic) setRoTranslations(data.romanianByTopic);
               if (data.polishByTopic) setPlTranslations(data.polishByTopic);
               if (data.portugueseByTopic) setPtTranslations(data.portugueseByTopic);
-              // Prefer static locale files to fill gaps when DB has no RO/PL/PT yet
+              if (data.persianByTopic) setFaTranslations(data.persianByTopic);
+              // Prefer static locale files to fill gaps when DB has no RO/PL/PT/FA yet
               if (!data.romanianByTopic || Object.keys(data.romanianByTopic).length === 0) {
                 try {
                   const ro = await loadRomanianTranslations();
@@ -60,6 +63,14 @@ export function useQuestionBank() {
                   /* ignore */
                 }
               }
+              if (!data.persianByTopic || Object.keys(data.persianByTopic).length === 0) {
+                try {
+                  const fa = await loadPersianTranslations();
+                  if (!cancelled && fa) setFaTranslations(fa);
+                } catch {
+                  /* ignore */
+                }
+              }
               if (!data.urduByTopic || Object.keys(data.urduByTopic).length === 0) {
                 try {
                   const ur = await loadUrduTranslations();
@@ -78,17 +89,19 @@ export function useQuestionBank() {
       }
 
       try {
-        const [ur, ro, pl, pt] = await Promise.all([
+        const [ur, ro, pl, pt, fa] = await Promise.all([
           loadUrduTranslations(),
           loadRomanianTranslations(),
           loadPolishTranslations(),
           loadPortugueseTranslations(),
+          loadPersianTranslations(),
         ]);
         if (!cancelled) {
           setUrTranslations(ur);
           setRoTranslations(ro);
           setPlTranslations(pl);
           setPtTranslations(pt);
+          setFaTranslations(fa);
         }
       } catch {
         if (!cancelled) {
@@ -96,6 +109,7 @@ export function useQuestionBank() {
           setRoTranslations({});
           setPlTranslations({});
           setPtTranslations({});
+          setFaTranslations({});
         }
       } finally {
         if (!cancelled) setReady(true);
@@ -113,6 +127,7 @@ export function useQuestionBank() {
     roTranslations,
     plTranslations,
     ptTranslations,
+    faTranslations,
     source,
     ready,
   };

@@ -88,6 +88,8 @@ export type AdminUserFilter =
   | 'lang_ro'
   | 'lang_pl'
   | 'lang_pt'
+  | 'lang_bn'
+  | 'lang_fa'
   | 'mock_started'
   | 'mock_completed';
 

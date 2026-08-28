@@ -1,4 +1,4 @@
-// Translation loading utility — English (off) + Arabic + Urdu + Romanian + Polish + Portuguese + Bengali
+// Translation loading utility — English (off) + Arabic + Urdu + Romanian + Polish + Portuguese + Bengali + Persian
 export type { TranslationLang } from '@/lib/i18n/languages';
 export {
   TRANSLATION_LANG_KEY,
@@ -7,7 +7,7 @@ export {
   isLtrTranslationLang,
 } from '@/lib/i18n/languages';
 
-/** Locale JSON shape used by Urdu, Romanian, Polish, Portuguese, Bengali (and future locale files). */
+/** Locale JSON shape used by Urdu, Romanian, Polish, Portuguese, Bengali, Persian (and future locale files). */
 export interface TranslationData {
   [topic: string]: {
     [questionId: string]: {
@@ -16,25 +16,28 @@ export interface TranslationData {
       promptPl?: string;
       promptPt?: string;
       promptBn?: string;
-      options?: Array<{ ur?: string; ro?: string; pl?: string; pt?: string; bn?: string }>;
+      promptFa?: string;
+      options?: Array<{ ur?: string; ro?: string; pl?: string; pt?: string; bn?: string; fa?: string }>;
     };
   };
 }
 
-type LocaleFileLang = 'ur' | 'ro' | 'pl' | 'pt' | 'bn';
+type LocaleFileLang = 'ur' | 'ro' | 'pl' | 'pt' | 'bn' | 'fa';
 
 let urTranslations: TranslationData | null = null;
 let roTranslations: TranslationData | null = null;
 let plTranslations: TranslationData | null = null;
 let ptTranslations: TranslationData | null = null;
 let bnTranslations: TranslationData | null = null;
+let faTranslations: TranslationData | null = null;
 
 function getLocaleCache(lang: LocaleFileLang): TranslationData | null {
   if (lang === 'ur') return urTranslations;
   if (lang === 'ro') return roTranslations;
   if (lang === 'pl') return plTranslations;
   if (lang === 'pt') return ptTranslations;
-  return bnTranslations;
+  if (lang === 'bn') return bnTranslations;
+  return faTranslations;
 }
 
 function setLocaleCache(lang: LocaleFileLang, data: TranslationData): void {
@@ -42,7 +45,8 @@ function setLocaleCache(lang: LocaleFileLang, data: TranslationData): void {
   else if (lang === 'ro') roTranslations = data;
   else if (lang === 'pl') plTranslations = data;
   else if (lang === 'pt') ptTranslations = data;
-  else bnTranslations = data;
+  else if (lang === 'bn') bnTranslations = data;
+  else faTranslations = data;
 }
 
 async function loadLocaleJson(
@@ -107,6 +111,13 @@ export async function loadBengaliTranslations(
   return loadLocaleJson('bn', forceReload);
 }
 
+/** Load Persian / Farsi translations from JSON file */
+export async function loadPersianTranslations(
+  forceReload: boolean = false
+): Promise<TranslationData | null> {
+  return loadLocaleJson('fa', forceReload);
+}
+
 /** @deprecated Prefer loadRomanianTranslations — alias kept for clarity */
 export const loadRoTranslations = loadRomanianTranslations;
 
@@ -115,6 +126,9 @@ export const loadPlTranslations = loadPolishTranslations;
 
 /** @deprecated Prefer loadPortugueseTranslations — alias kept for clarity */
 export const loadPtTranslations = loadPortugueseTranslations;
+
+/** @deprecated Prefer loadPersianTranslations — alias kept for clarity */
+export const loadFaTranslations = loadPersianTranslations;
 
 function getLocalePrompt(
   questionData: TranslationData[string][string] | undefined,
@@ -125,7 +139,8 @@ function getLocalePrompt(
   if (lang === 'ro') return questionData.promptRo;
   if (lang === 'pl') return questionData.promptPl;
   if (lang === 'pt') return questionData.promptPt;
-  return questionData.promptBn;
+  if (lang === 'bn') return questionData.promptBn;
+  return questionData.promptFa;
 }
 
 function getLocaleOption(
@@ -139,11 +154,12 @@ function getLocaleOption(
   if (lang === 'ro') return opt.ro;
   if (lang === 'pl') return opt.pl;
   if (lang === 'pt') return opt.pt;
-  return opt.bn;
+  if (lang === 'bn') return opt.bn;
+  return opt.fa;
 }
 
 export function isLocaleFileLang(lang: string): lang is LocaleFileLang {
-  return lang === 'ur' || lang === 'ro' || lang === 'pl' || lang === 'pt' || lang === 'bn';
+  return lang === 'ur' || lang === 'ro' || lang === 'pl' || lang === 'pt' || lang === 'bn' || lang === 'fa';
 }
 
 // Get translation for a question (locale-file langs: ur, ro, pl, pt, bn)
@@ -283,6 +299,23 @@ export function getBengaliOptionTranslation(
     questionId,
     topic,
     'bn'
+  );
+}
+
+export function getPersianOptionTranslation(
+  optionEn: string,
+  originalOptions: Array<{ en: string }>,
+  faTranslationsData: TranslationData | null,
+  questionId: string,
+  topic: string
+): string | null {
+  return getLocaleOptionTranslation(
+    optionEn,
+    originalOptions,
+    faTranslationsData,
+    questionId,
+    topic,
+    'fa'
   );
 }
 

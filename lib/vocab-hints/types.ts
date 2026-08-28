@@ -8,7 +8,7 @@
 import type { TranslationLang } from '@/lib/translations';
 
 /** Learner UI languages that need vocab explanations (English = 'off' → 'en'). */
-export const VOCAB_HINT_LANGS = ['en', 'ar', 'ur', 'ro', 'pl', 'pt', 'bn'] as const;
+export const VOCAB_HINT_LANGS = ['en', 'ar', 'ur', 'ro', 'pl', 'pt', 'bn', 'fa'] as const;
 export type VocabHintLang = (typeof VOCAB_HINT_LANGS)[number];
 
 export type VocabHintTranslations = Record<VocabHintLang, string>;
@@ -48,7 +48,7 @@ export interface VocabHintsProgress {
   };
 }
 
-/** Map TranslationLang ('off'|'ar'|'ur'|'ro'|'pl'|'pt') → vocab explanation language. */
+/** Map TranslationLang ('off'|'ar'|'ur'|'ro'|'pl'|'pt'|'bn'|'fa') → vocab explanation language. */
 export function translationLangToVocabLang(lang: TranslationLang): VocabHintLang {
   if (lang === 'off') return 'en';
   return lang;

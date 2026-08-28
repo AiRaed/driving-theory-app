@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Capacitor, registerPlugin } from '@capacitor/core';
+import { Capacitor } from '@capacitor/core';
 import { cn } from '@/lib/utils';
 import { useAccess } from '@/lib/providers/AccessProvider';
 import { trackEvent } from '@/lib/analytics/trackEvent';
@@ -12,6 +12,12 @@ import {
   restoreAppleFullAccess,
 } from '@/lib/billing/appleIap';
 import { APPLE_FULL_ACCESS_FALLBACK_PRICE } from '@/lib/billing/appleProduct';
+import {
+  fetchGoogleFullAccessPrice,
+  purchaseGoogleFullAccess,
+  restoreGoogleFullAccess,
+} from '@/lib/billing/googlePlay';
+import { GOOGLE_FULL_ACCESS_FALLBACK_PRICE } from '@/lib/billing/googleProduct';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
 import BilingualLabel from '@/components/BilingualLabel';
 import { enLabel } from '@/lib/i18n/ui-strings';
@@ -28,7 +34,7 @@ type NativePlatform = 'web' | 'android' | 'ios';
  * PaywallOverlay - Stripe (web), Google Play (Android), Apple IAP (iOS)
  * Full screen overlay with backdrop blur
  * Web: "Continue to Payment — £4.99" (Stripe)
- * Android: "Buy on Google Play – £9.99" (Google Play Billing)
+ * Android: "Buy on Google Play – {Google Play price}" (Google Play Billing)
  * iOS: "Unlock Full Access — {App Store price}" + Restore Purchases (StoreKit)
  * NO "Maybe later", NO free option
  * Does NOT disappear unless parent stops rendering it (when paid becomes true)
@@ -38,6 +44,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
   const [restoring, setRestoring] = useState(false);
   const [platform, setPlatform] = useState<NativePlatform>('web');
   const [applePrice, setApplePrice] = useState(APPLE_FULL_ACCESS_FALLBACK_PRICE);
+  const [googlePrice, setGooglePrice] = useState(GOOGLE_FULL_ACCESS_FALLBACK_PRICE);
   const router = useRouter();
   const { refresh } = useAccess();
   const { lang } = useLanguage();
@@ -74,6 +81,19 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
     };
   }, [isIOS]);
 
+  // Fetch localized Google Play price on Android
+  useEffect(() => {
+    if (!isAndroid) return;
+    let cancelled = false;
+    (async () => {
+      const price = await fetchGoogleFullAccessPrice();
+      if (!cancelled) setGooglePrice(price);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [isAndroid]);
+
   // Paywall viewed once per mount
   useEffect(() => {
     void trackEvent('paywall_viewed');
@@ -83,55 +103,43 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
     setLoading(true);
     void trackEvent('checkout_clicked');
     try {
-      // Get PlayBilling plugin from Capacitor
-      const PlayBilling = registerPlugin<any>('PlayBilling');
-      if (!Capacitor.isNativePlatform()) {
-        throw new Error('PlayBilling plugin not available');
+      const result = await purchaseGoogleFullAccess();
+      if (result.ok) {
+        void trackEvent('payment_success', { source: 'google_play_client' });
+        await refresh();
+        return;
       }
-      // Initialize billing client
-      await PlayBilling.init();
-
-      // Get product ID (default to 'unlock_full_access' - must match Play Console)
-      const productId = process.env.NEXT_PUBLIC_GOOGLE_PRODUCT_ID || 'unlock_full_access';
-
-      // Launch purchase flow
-      const purchaseResult = await PlayBilling.purchase({ productId });
-
-      if (!purchaseResult || !purchaseResult.purchaseToken) {
-        throw new Error('Purchase failed or incomplete');
+      if (result.cancelled) {
+        return;
       }
-
-      // Verify purchase with server
-      const verifyResponse = await fetch('/api/billing/google/verify', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          productId: purchaseResult.productId || productId,
-          purchaseToken: purchaseResult.purchaseToken,
-          platform: 'android',
-        }),
-      });
-
-      const verifyData = await verifyResponse.json();
-
-      if (!verifyResponse.ok) {
-        throw new Error(verifyData.error || 'Failed to verify purchase');
+      if (result.pending) {
+        alert(result.error);
+        return;
       }
-
-      void trackEvent('payment_success', { source: 'google_play_client' });
-
-      // Refresh access status from Supabase
-      await refresh();
-      
-      // Paywall will disappear when paid becomes true
-      // No need to redirect - state update will handle it
+      alert(result.error);
     } catch (error) {
       console.error('Google Play purchase error:', error);
       alert(error instanceof Error ? error.message : enLabel('paywallPurchaseFailed'));
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleGoogleRestore = async () => {
+    setRestoring(true);
+    try {
+      const result = await restoreGoogleFullAccess();
+      if (result.ok) {
+        void trackEvent('payment_success', { source: 'google_play_restore' });
+        await refresh();
+        return;
+      }
+      alert(result.error);
+    } catch (error) {
+      console.error('Google Play restore error:', error);
+      alert(error instanceof Error ? error.message : enLabel('restoreFailed'));
+    } finally {
+      setRestoring(false);
     }
   };
 
@@ -239,12 +247,16 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
         : 'paywallContinueStripe';
 
   const primaryButtonVars =
-    primaryButtonKey === 'paywallUnlockApple' ? { price: applePrice } : undefined;
+    primaryButtonKey === 'paywallUnlockApple'
+      ? { price: applePrice }
+      : primaryButtonKey === 'paywallBuyGoogle'
+        ? { price: googlePrice }
+        : undefined;
 
   const oneTimePaymentDetail = isIOS
     ? enLabel('paywallNoRecurring', { price: applePrice })
     : isAndroid
-      ? enLabel('paywallNoRecurring', { price: '£9.99' })
+      ? enLabel('paywallNoRecurring', { price: googlePrice })
       : enLabel('paywallNoRecurring', { price: '£4.99' });
 
   const securePaymentCopy = isIOS
@@ -347,6 +359,22 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
               <button
                 type="button"
                 onClick={handleAppleRestore}
+                disabled={isLoading}
+                className={cn(
+                  "w-full mt-3 py-2.5 text-sm font-medium flex flex-col items-center",
+                  "text-[var(--text-primary)] underline underline-offset-2",
+                  "disabled:opacity-50 disabled:cursor-not-allowed",
+                  "active:opacity-80"
+                )}
+              >
+                <BilingualLabel keyName="restorePurchases" lang={lang} />
+              </button>
+            )}
+
+            {isAndroid && (
+              <button
+                type="button"
+                onClick={handleGoogleRestore}
                 disabled={isLoading}
                 className={cn(
                   "w-full mt-3 py-2.5 text-sm font-medium flex flex-col items-center",

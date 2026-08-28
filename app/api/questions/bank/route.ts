@@ -12,6 +12,7 @@ export async function GET() {
     romanianByTopic: bank.romanianByTopic,
     polishByTopic: bank.polishByTopic,
     portugueseByTopic: bank.portugueseByTopic,
+    persianByTopic: bank.persianByTopic,
     source: bank.source,
     count: bank.count,
   });

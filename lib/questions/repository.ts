@@ -11,6 +11,7 @@ import {
   rowToRomanianBucket,
   rowToPolishBucket,
   rowToPortugueseBucket,
+  rowToPersianBucket,
   type QuestionRow,
 } from '@/lib/questions/types';
 
@@ -22,6 +23,7 @@ export interface LearnerBank {
   romanianByTopic: TranslationData;
   polishByTopic: TranslationData;
   portugueseByTopic: TranslationData;
+  persianByTopic: TranslationData;
   source: BankSource;
   count: number;
 }
@@ -43,6 +45,7 @@ function staticBank(): LearnerBank {
     romanianByTopic: {},
     polishByTopic: {},
     portugueseByTopic: {},
+    persianByTopic: {},
     source: 'static',
     count: staticQuestions.length,
   };
@@ -84,6 +87,7 @@ export async function getPublishedQuestionBank(): Promise<LearnerBank> {
     const romanianByTopic: TranslationData = {};
     const polishByTopic: TranslationData = {};
     const portugueseByTopic: TranslationData = {};
+    const persianByTopic: TranslationData = {};
     for (const row of rows) {
       if (!urduByTopic[row.topic_id]) urduByTopic[row.topic_id] = {};
       urduByTopic[row.topic_id][row.id] = rowToUrduBucket(row);
@@ -102,6 +106,11 @@ export async function getPublishedQuestionBank(): Promise<LearnerBank> {
         if (!portugueseByTopic[row.topic_id]) portugueseByTopic[row.topic_id] = {};
         portugueseByTopic[row.topic_id][row.id] = ptBucket;
       }
+      const faBucket = rowToPersianBucket(row);
+      if (faBucket.promptFa) {
+        if (!persianByTopic[row.topic_id]) persianByTopic[row.topic_id] = {};
+        persianByTopic[row.topic_id][row.id] = faBucket;
+      }
     }
 
     return {
@@ -110,6 +119,7 @@ export async function getPublishedQuestionBank(): Promise<LearnerBank> {
       romanianByTopic,
       polishByTopic,
       portugueseByTopic,
+      persianByTopic,
       source: 'database',
       count: questions.length,
     };

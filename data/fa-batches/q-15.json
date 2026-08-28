@@ -1,0 +1,968 @@
+[
+  {
+    "id": "IN-36",
+    "topic": "incidents",
+    "promptEn": "Why should you only remove a motorcyclist's helmet if it's essential?",
+    "options": [
+      {
+        "en": "They may object",
+        "correct": false
+      },
+      {
+        "en": "It could worsen neck injuries",
+        "correct": true
+      },
+      {
+        "en": "It lets them cool down",
+        "correct": false
+      },
+      {
+        "en": "It could damage the helmet",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-37",
+    "topic": "incidents",
+    "promptEn": "At an incident, an unconscious person needs help. What should you check first?",
+    "options": [
+      {
+        "en": "Their insurance",
+        "correct": false
+      },
+      {
+        "en": "Their allergies",
+        "correct": false
+      },
+      {
+        "en": "Their comfort",
+        "correct": false
+      },
+      {
+        "en": "Their airway",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "IN-38",
+    "topic": "incidents",
+    "promptEn": "When may you use hazard warning lights on a motorway?",
+    "options": [
+      {
+        "en": "When followed closely",
+        "correct": false
+      },
+      {
+        "en": "When slowing suddenly due to danger ahead",
+        "correct": true
+      },
+      {
+        "en": "When being towed",
+        "correct": false
+      },
+      {
+        "en": "When using the hard shoulder as a lane",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-39",
+    "topic": "incidents",
+    "promptEn": "Emergency services are on the way and the scene is safe. What is your first priority for an unconscious motorcyclist?",
+    "options": [
+      {
+        "en": "Check for broken bones",
+        "correct": false
+      },
+      {
+        "en": "Check for bleeding",
+        "correct": false
+      },
+      {
+        "en": "Check breathing",
+        "correct": true
+      },
+      {
+        "en": "Check bruises",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-40",
+    "topic": "incidents",
+    "promptEn": "While driving on the motorway, luggage falls from your vehicle. What should you do?",
+    "options": [
+      {
+        "en": "Stop and collect it",
+        "correct": false
+      },
+      {
+        "en": "Walk back to retrieve it",
+        "correct": false
+      },
+      {
+        "en": "Stop at the next emergency phone and report it",
+        "correct": true
+      },
+      {
+        "en": "Pull over and signal traffic",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-41",
+    "topic": "incidents",
+    "promptEn": "How is CPR for a 6-year-old child different from an adult?",
+    "options": [
+      {
+        "en": "Use two fingers only",
+        "correct": false
+      },
+      {
+        "en": "Press twice as fast",
+        "correct": false
+      },
+      {
+        "en": "Use one hand, pressing 4–5 cm",
+        "correct": true
+      },
+      {
+        "en": "Press more slowly and firmly",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-42",
+    "topic": "incidents",
+    "promptEn": "Your vehicle has a puncture on the motorway. What should you do?",
+    "options": [
+      {
+        "en": "Drive slowly to services",
+        "correct": false
+      },
+      {
+        "en": "Change the wheel quickly",
+        "correct": false
+      },
+      {
+        "en": "Stop in a refuge area and call for help",
+        "correct": true
+      },
+      {
+        "en": "Stop in your lane with hazards on",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-43",
+    "topic": "incidents",
+    "promptEn": "At an incident, how could you help a small child who is not breathing?",
+    "options": [
+      {
+        "en": "Look for parents",
+        "correct": false
+      },
+      {
+        "en": "Open airway and begin CPR",
+        "correct": true
+      },
+      {
+        "en": "Put them in recovery position",
+        "correct": false
+      },
+      {
+        "en": "Talk to them until help arrives",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-44",
+    "topic": "incidents",
+    "promptEn": "After a collision, which document may police ask you to produce?",
+    "options": [
+      {
+        "en": "Vehicle service record",
+        "correct": false
+      },
+      {
+        "en": "Theory test certificate",
+        "correct": false
+      },
+      {
+        "en": "Vehicle registration document",
+        "correct": false
+      },
+      {
+        "en": "Driving licence",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "IN-45",
+    "topic": "incidents",
+    "promptEn": "When performing CPR on an adult, how fast should chest compressions be?",
+    "options": [
+      {
+        "en": "Once per second",
+        "correct": false
+      },
+      {
+        "en": "Twice per second",
+        "correct": true
+      },
+      {
+        "en": "Three times per second",
+        "correct": false
+      },
+      {
+        "en": "Once every five seconds",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-46",
+    "topic": "incidents",
+    "promptEn": "What helps reduce the risk of your vehicle catching fire?",
+    "options": [
+      {
+        "en": "Keeping coolant above maximum",
+        "correct": false
+      },
+      {
+        "en": "Investigating strong fuel smells",
+        "correct": true
+      },
+      {
+        "en": "Avoiding a full fuel tank",
+        "correct": false
+      },
+      {
+        "en": "Using fuel additives",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-47",
+    "topic": "incidents",
+    "promptEn": "A pedestrian has heavy bleeding from a leg wound. Nothing is embedded. What should you do?",
+    "options": [
+      {
+        "en": "Dab the wound",
+        "correct": false
+      },
+      {
+        "en": "Keep the leg flat",
+        "correct": false
+      },
+      {
+        "en": "Give a warm drink",
+        "correct": false
+      },
+      {
+        "en": "Apply firm pressure",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "IN-48",
+    "topic": "incidents",
+    "promptEn": "While performing CPR, someone offers to help. What should you ask them to do?",
+    "options": [
+      {
+        "en": "Fetch a blanket",
+        "correct": false
+      },
+      {
+        "en": "Fetch a first aid kit",
+        "correct": false
+      },
+      {
+        "en": "Fetch a defibrillator (AED)",
+        "correct": true
+      },
+      {
+        "en": "Fetch a privacy screen",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-49",
+    "topic": "incidents",
+    "promptEn": "You're asked to find a defibrillator (AED). What's the best way?",
+    "options": [
+      {
+        "en": "Follow roadside arrows",
+        "correct": false
+      },
+      {
+        "en": "Ask the emergency operator",
+        "correct": true
+      },
+      {
+        "en": "Use your sat nav",
+        "correct": false
+      },
+      {
+        "en": "Search the casualty's belongings",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-50",
+    "topic": "incidents",
+    "promptEn": "Before driving into a tunnel, what should you do?",
+    "options": [
+      {
+        "en": "Switch off the radio",
+        "correct": false
+      },
+      {
+        "en": "Remove sunglasses",
+        "correct": true
+      },
+      {
+        "en": "Close the sunroof",
+        "correct": false
+      },
+      {
+        "en": "Switch on wipers",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-51",
+    "topic": "incidents",
+    "promptEn": "Your vehicle breaks down on an automatic railway crossing. What should you do first?",
+    "options": [
+      {
+        "en": "Call recovery services",
+        "correct": false
+      },
+      {
+        "en": "Warn approaching trains",
+        "correct": false
+      },
+      {
+        "en": "Push the vehicle clear",
+        "correct": false
+      },
+      {
+        "en": "Get everyone out and away from the crossing",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "IN-52",
+    "topic": "incidents",
+    "promptEn": "A large object falls from a lorry onto the motorway. What should you do?",
+    "options": [
+      {
+        "en": "Stop and remove it",
+        "correct": false
+      },
+      {
+        "en": "Chase the lorry",
+        "correct": false
+      },
+      {
+        "en": "Stop nearby",
+        "correct": false
+      },
+      {
+        "en": "Report it at the next emergency phone",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "IN-53",
+    "topic": "incidents",
+    "promptEn": "Someone has severe burns after an incident. How can you help?",
+    "options": [
+      {
+        "en": "Apply lotion",
+        "correct": false
+      },
+      {
+        "en": "Burst blisters",
+        "correct": false
+      },
+      {
+        "en": "Remove stuck clothing",
+        "correct": false
+      },
+      {
+        "en": "Cool burns with clean water",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "IN-54",
+    "topic": "incidents",
+    "promptEn": "After a collision, which is a warning sign of shock?",
+    "options": [
+      {
+        "en": "Flushed skin",
+        "correct": false
+      },
+      {
+        "en": "Warm, dry skin",
+        "correct": false
+      },
+      {
+        "en": "Slow pulse",
+        "correct": false
+      },
+      {
+        "en": "Rapid, shallow breathing",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "id": "IN-55",
+    "topic": "incidents",
+    "promptEn": "Your car breaks down on a railway crossing. What's the first thing to do?",
+    "options": [
+      {
+        "en": "Warn drivers behind",
+        "correct": false
+      },
+      {
+        "en": "Leave the vehicle and clear everyone away",
+        "correct": true
+      },
+      {
+        "en": "Walk along the tracks",
+        "correct": false
+      },
+      {
+        "en": "Stay in the car",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "IN-56",
+    "topic": "incidents",
+    "promptEn": "When may you use hazard warning lights?",
+    "options": [
+      {
+        "en": "When stopped and causing a temporary obstruction",
+        "correct": true
+      },
+      {
+        "en": "When driving without headlights",
+        "correct": false
+      },
+      {
+        "en": "When parked briefly on double yellow lines",
+        "correct": false
+      },
+      {
+        "en": "When driving slowly because you're lost",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-R-01",
+    "topic": "road-signs",
+    "promptEn": "What does a red circular sign showing a bus symbol mean?",
+    "options": [
+      {
+        "en": "Buses are not allowed to enter this road",
+        "correct": true
+      },
+      {
+        "en": "Buses only route",
+        "correct": false
+      },
+      {
+        "en": "Bus stop ahead",
+        "correct": false
+      },
+      {
+        "en": "Public transport lane",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-R-02",
+    "topic": "road-signs",
+    "promptEn": "What does this triangular warning sign indicate?",
+    "options": [
+      {
+        "en": "The dual carriageway is ending ahead",
+        "correct": true
+      },
+      {
+        "en": "The road becomes one-way",
+        "correct": false
+      },
+      {
+        "en": "Overtaking is not allowed",
+        "correct": false
+      },
+      {
+        "en": "Traffic lights ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-R-03",
+    "topic": "road-signs",
+    "promptEn": "What does this triangular warning sign indicate?",
+    "options": [
+      {
+        "en": "The road narrows on both sides ahead",
+        "correct": true
+      },
+      {
+        "en": "The road bends sharply",
+        "correct": false
+      },
+      {
+        "en": "Two-way traffic ends",
+        "correct": false
+      },
+      {
+        "en": "One-way road ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-R-04",
+    "topic": "road-signs",
+    "promptEn": "What does a red circular sign with a motorcycle symbol crossed out mean?",
+    "options": [
+      {
+        "en": "No motorcycles allowed",
+        "correct": true
+      },
+      {
+        "en": "Motorcycles only",
+        "correct": false
+      },
+      {
+        "en": "End of motorcycle restriction",
+        "correct": false
+      },
+      {
+        "en": "Motorcycle route recommended",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-R-05",
+    "topic": "road-signs",
+    "promptEn": "What does this triangular warning sign indicate?",
+    "options": [
+      {
+        "en": "T-junction ahead where you have priority over vehicles from the right",
+        "correct": true
+      },
+      {
+        "en": "T-junction ahead where you must give way to vehicles from the right",
+        "correct": false
+      },
+      {
+        "en": "Crossroads with equal priority",
+        "correct": false
+      },
+      {
+        "en": "Road ends ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-R-06",
+    "topic": "road-signs",
+    "promptEn": "What does this triangular warning sign indicate?",
+    "options": [
+      {
+        "en": "Junction on a bend ahead",
+        "correct": true
+      },
+      {
+        "en": "Sharp bend to the right only",
+        "correct": false
+      },
+      {
+        "en": "Road narrows on one side",
+        "correct": false
+      },
+      {
+        "en": "T-junction ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-R-07",
+    "topic": "road-signs",
+    "promptEn": "What does this road sign indicate?",
+    "options": [
+      {
+        "en": "Traffic lights ahead – stop when lights show",
+        "correct": true
+      },
+      {
+        "en": "Pedestrian crossing with signals",
+        "correct": false
+      },
+      {
+        "en": "Level crossing without barriers",
+        "correct": false
+      },
+      {
+        "en": "Temporary traffic lights only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-R-08",
+    "topic": "road-signs",
+    "promptEn": "What does this road sign indicate?",
+    "options": [
+      {
+        "en": "Level crossing without a barrier or gate ahead",
+        "correct": true
+      },
+      {
+        "en": "Level crossing with barriers ahead",
+        "correct": false
+      },
+      {
+        "en": "Tram crossing only",
+        "correct": false
+      },
+      {
+        "en": "Railway station ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-R-09",
+    "topic": "road-signs",
+    "promptEn": "What does this blue circular sign indicate?",
+    "options": [
+      {
+        "en": "Vehicles must keep to the left of the obstruction",
+        "correct": true
+      },
+      {
+        "en": "Left turn ahead",
+        "correct": false
+      },
+      {
+        "en": "One-way road to the left",
+        "correct": false
+      },
+      {
+        "en": "Overtaking on the left only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-R-10",
+    "topic": "road-signs",
+    "promptEn": "What does this blue circular sign indicate?",
+    "options": [
+      {
+        "en": "Vehicles may pass on either side to reach the same destination",
+        "correct": true
+      },
+      {
+        "en": "Vehicles must pass on the left only",
+        "correct": false
+      },
+      {
+        "en": "Vehicles must pass on the right only",
+        "correct": false
+      },
+      {
+        "en": "One-way traffic ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-R-11",
+    "topic": "road-signs",
+    "promptEn": "What does this triangular warning sign indicate?",
+    "options": [
+      {
+        "en": "Road works ahead",
+        "correct": true
+      },
+      {
+        "en": "Slippery road ahead",
+        "correct": false
+      },
+      {
+        "en": "Road narrows ahead",
+        "correct": false
+      },
+      {
+        "en": "Uneven road surface",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-R-12",
+    "topic": "road-signs",
+    "promptEn": "What does this temporary road sign indicate?",
+    "options": [
+      {
+        "en": "Temporary lane closure ahead",
+        "correct": true
+      },
+      {
+        "en": "Permanent road narrowing",
+        "correct": false
+      },
+      {
+        "en": "Two-way traffic ahead",
+        "correct": false
+      },
+      {
+        "en": "End of road works",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-W-01",
+    "topic": "road-signs",
+    "promptEn": "You're driving on a country lane and see a triangular warning sign showing the road narrowing on the left. What should you prepare for?",
+    "options": [
+      {
+        "en": "Reduced road width on the left requiring careful positioning",
+        "correct": true
+      },
+      {
+        "en": "You must move immediately to the left side",
+        "correct": false
+      },
+      {
+        "en": "Overtaking is mandatory before the narrowing",
+        "correct": false
+      },
+      {
+        "en": "The road becomes one-way ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-W-02",
+    "topic": "road-signs",
+    "promptEn": "You're driving in a hilly area and see a triangular warning sign showing a steep upward slope. What should you prepare for?",
+    "options": [
+      {
+        "en": "A steep uphill climb where you'll need lower gears and may encounter slower vehicles",
+        "correct": true
+      },
+      {
+        "en": "A steep downhill section ahead",
+        "correct": false
+      },
+      {
+        "en": "An uneven road surface only",
+        "correct": false
+      },
+      {
+        "en": "The end of the hill section",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-W-03",
+    "topic": "road-signs",
+    "promptEn": "You're driving through farmland and see a triangular warning sign showing farm animals. What hazard should you be alert for?",
+    "options": [
+      {
+        "en": "Farm animals may wander onto or cross the road",
+        "correct": true
+      },
+      {
+        "en": "A farm entrance is ahead",
+        "correct": false
+      },
+      {
+        "en": "Only farm vehicles are allowed on this road",
+        "correct": false
+      },
+      {
+        "en": "A livestock market is nearby",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-W-04",
+    "topic": "road-signs",
+    "promptEn": "You're driving on a main road and see a triangular warning sign showing a side road joining from the right. What hazard should you anticipate?",
+    "options": [
+      {
+        "en": "Vehicles may emerge from the side road and join your path",
+        "correct": true
+      },
+      {
+        "en": "Traffic from the right always has priority",
+        "correct": false
+      },
+      {
+        "en": "You must overtake before the junction",
+        "correct": false
+      },
+      {
+        "en": "The road becomes one-way ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-I-01",
+    "topic": "road-signs",
+    "promptEn": "You see this warning sign. What does it indicate?",
+    "options": [
+      {
+        "en": "Crossroads ahead",
+        "correct": false
+      },
+      {
+        "en": "Staggered junction ahead",
+        "correct": true
+      },
+      {
+        "en": "Road narrows on both sides",
+        "correct": false
+      },
+      {
+        "en": "Side road on the left only",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-I-02",
+    "topic": "road-signs",
+    "promptEn": "You see this warning sign. What does it indicate?",
+    "options": [
+      {
+        "en": "Slippery road ahead",
+        "correct": false
+      },
+      {
+        "en": "Uneven road surface ahead",
+        "correct": true
+      },
+      {
+        "en": "Road narrows ahead",
+        "correct": false
+      },
+      {
+        "en": "Speed humps ahead",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-I-03",
+    "topic": "road-signs",
+    "promptEn": "A rectangular blue sign with white text showing 'M' followed by a number indicates:",
+    "options": [
+      {
+        "en": "Motorway ahead with route number",
+        "correct": true
+      },
+      {
+        "en": "Maximum speed limit",
+        "correct": false
+      },
+      {
+        "en": "Mileage marker",
+        "correct": false
+      },
+      {
+        "en": "Mandatory route",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-I-04",
+    "topic": "road-signs",
+    "promptEn": "A rectangular green sign with white text and route numbers provides:",
+    "options": [
+      {
+        "en": "Primary route directions and destinations",
+        "correct": true
+      },
+      {
+        "en": "Speed limit for primary routes",
+        "correct": false
+      },
+      {
+        "en": "Restriction on primary routes",
+        "correct": false
+      },
+      {
+        "en": "End of primary route",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "id": "RS-I-05",
+    "topic": "road-signs",
+    "promptEn": "You see a warning sign for loose chippings. What should you do?",
+    "options": [
+      {
+        "en": "Speed up to clear the area quickly",
+        "correct": false
+      },
+      {
+        "en": "Reduce speed and keep a greater distance from the vehicle ahead",
+        "correct": true
+      },
+      {
+        "en": "Brake sharply to test your tyres",
+        "correct": false
+      },
+      {
+        "en": "Drive close to the kerb to avoid the chippings",
+        "correct": false
+      }
+    ]
+  }
+]

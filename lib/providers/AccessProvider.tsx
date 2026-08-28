@@ -4,6 +4,7 @@ import { createContext, useContext, useState, useEffect, ReactNode } from 'react
 import { createClient } from '@/lib/supabase/client';
 import { Capacitor } from '@capacitor/core';
 import { silentRestoreAppleFullAccessIfOwned } from '@/lib/billing/appleIap';
+import { silentRestoreGoogleFullAccessIfOwned } from '@/lib/billing/googlePlay';
 
 interface AccessContextType {
   loading: boolean;
@@ -78,16 +79,18 @@ export function AccessProvider({ children }: { children: ReactNode }) {
     await fetchAccessStatus(false);
   };
 
-  // Fetch on app load; on iOS silently restore Apple entitlement if unpaid
+  // Fetch on app load; silently restore native store entitlement if unpaid
   useEffect(() => {
     void (async () => {
       const isPaid = await fetchAccessStatus(true);
-      if (
-        !isPaid &&
-        Capacitor.isNativePlatform() &&
-        Capacitor.getPlatform() === 'ios'
-      ) {
-        const restored = await silentRestoreAppleFullAccessIfOwned();
+      if (!isPaid && Capacitor.isNativePlatform()) {
+        const platform = Capacitor.getPlatform();
+        let restored = false;
+        if (platform === 'ios') {
+          restored = await silentRestoreAppleFullAccessIfOwned();
+        } else if (platform === 'android') {
+          restored = await silentRestoreGoogleFullAccessIfOwned();
+        }
         if (restored) {
           await fetchAccessStatus(false);
         }
@@ -96,7 +99,7 @@ export function AccessProvider({ children }: { children: ReactNode }) {
   }, []);
 
   // Re-fetch on auth state changes (SIGNED_IN, SIGNED_OUT, TOKEN_REFRESHED)
-  // On iOS SIGNED_IN: silently restore Apple entitlement if unpaid
+  // On SIGNED_IN: silently restore native store entitlement if unpaid
   useEffect(() => {
     const {
       data: { subscription },
@@ -104,14 +107,14 @@ export function AccessProvider({ children }: { children: ReactNode }) {
       if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'TOKEN_REFRESHED') {
         void (async () => {
           const isPaid = await fetchAccessStatus(true);
-          if (
-            event === 'SIGNED_IN' &&
-            session?.user &&
-            !isPaid &&
-            Capacitor.isNativePlatform() &&
-            Capacitor.getPlatform() === 'ios'
-          ) {
-            const restored = await silentRestoreAppleFullAccessIfOwned();
+          if (event === 'SIGNED_IN' && session?.user && !isPaid && Capacitor.isNativePlatform()) {
+            const platform = Capacitor.getPlatform();
+            let restored = false;
+            if (platform === 'ios') {
+              restored = await silentRestoreAppleFullAccessIfOwned();
+            } else if (platform === 'android') {
+              restored = await silentRestoreGoogleFullAccessIfOwned();
+            }
             if (restored) {
               await fetchAccessStatus(false);
             }
