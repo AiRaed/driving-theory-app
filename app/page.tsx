@@ -37,8 +37,12 @@ export default function Home() {
             <span className="font-semibold text-[var(--text-primary)]">Romanian</span>
             {', '}
             <span className="font-semibold text-[var(--text-primary)]">Polish</span>
-            {' '}&{' '}
+            {', '}
             <span className="font-semibold text-[var(--text-primary)]">Portuguese</span>
+            {', '}
+            <span className="font-semibold text-[var(--text-primary)]">Bengali</span>
+            {' '}&{' '}
+            <span className="font-semibold text-[var(--text-primary)]">Persian</span>
             {' '}translations
           </p>
 
