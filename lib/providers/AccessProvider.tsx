@@ -9,13 +9,11 @@ import {
   ReactNode,
 } from 'react';
 import { createClient } from '@/lib/supabase/client';
-import {
-  failClosedAccessState,
-} from '@/lib/access/entitlement';
+import { failClosedAccessState } from '@/lib/access/entitlement';
 
 interface AccessContextType {
   loading: boolean;
-  /** True only after a successful /api/access/status response for the current session */
+  /** True only after a successful /api/access/status for the current account */
   statusConfirmed: boolean;
   paid: boolean;
   freeUsed: number;
@@ -25,15 +23,26 @@ interface AccessContextType {
 
 const AccessContext = createContext<AccessContextType | undefined>(undefined);
 
+function clearAccountState(
+  setPaid: (v: boolean) => void,
+  setFreeUsed: (v: number) => void,
+  setStatusConfirmed: (v: boolean) => void,
+  freeUsedRef: { current: number },
+  statusConfirmedRef: { current: boolean }
+) {
+  setPaid(false);
+  setFreeUsed(0);
+  freeUsedRef.current = 0;
+  setStatusConfirmed(false);
+  statusConfirmedRef.current = false;
+}
+
 /**
- * AccessProvider - client cache of server entitlement.
- * Authoritative source: profiles.access_level + profiles.free_questions_used via /api/access/status.
+ * Client cache of server entitlement for the authenticated LingoTheory account.
  *
- * Rules:
- * - paid === true ONLY when server returns paid === true
- * - API/network errors NEVER grant paid
- * - API/network errors NEVER reset freeUsed to 0 (that would unlock the free trial)
- * - Opening the app / login NEVER auto-promotes a user to paid (no silent store restore)
+ * Authoritative: profiles.access_level + profiles.free_questions_used via /api/access/status
+ * Never grants paid on errors. Never resets freeUsed to 0 on errors.
+ * Never auto-restores Apple/Google store purchases.
  */
 export function AccessProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
@@ -77,12 +86,13 @@ export function AccessProvider({ children }: { children: ReactNode }) {
 
       if (!response.ok) {
         if (response.status === 401) {
-          // Logged out — clear account-specific state
-          setPaid(false);
-          setFreeUsed(0);
-          freeUsedRef.current = 0;
-          setStatusConfirmed(false);
-          statusConfirmedRef.current = false;
+          clearAccountState(
+            setPaid,
+            setFreeUsed,
+            setStatusConfirmed,
+            freeUsedRef,
+            statusConfirmedRef
+          );
           return false;
         }
 
@@ -123,30 +133,42 @@ export function AccessProvider({ children }: { children: ReactNode }) {
     await fetchAccessStatus(false);
   };
 
-  // Fetch on app load only — do NOT silent-restore store purchases here.
-  // Store restore must be an explicit user action (Restore Purchases).
   useEffect(() => {
     void fetchAccessStatus(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Re-fetch on auth state changes; clear stale account state on sign-out.
   useEffect(() => {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event) => {
       if (event === 'SIGNED_OUT') {
-        setPaid(false);
-        setFreeUsed(0);
-        freeUsedRef.current = 0;
-        setStatusConfirmed(false);
-        statusConfirmedRef.current = false;
+        clearAccountState(
+          setPaid,
+          setFreeUsed,
+          setStatusConfirmed,
+          freeUsedRef,
+          statusConfirmedRef
+        );
         setLoading(false);
         return;
       }
 
-      if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+      if (event === 'SIGNED_IN') {
+        // Drop previous account entitlement before loading the new account.
+        clearAccountState(
+          setPaid,
+          setFreeUsed,
+          setStatusConfirmed,
+          freeUsedRef,
+          statusConfirmedRef
+        );
         void fetchAccessStatus(true);
+        return;
+      }
+
+      if (event === 'TOKEN_REFRESHED') {
+        void fetchAccessStatus(false);
       }
     });
 

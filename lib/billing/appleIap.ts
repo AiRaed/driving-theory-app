@@ -258,48 +258,9 @@ export async function restoreAppleFullAccess(): Promise<ApplePurchaseResult> {
 }
 
 /**
- * Silent restore for login/launch: unlocks only if Apple ownership verifies on server.
- * Uses getPurchases only (no restorePurchases) to avoid Apple ID prompts on every launch.
- * Never throws; never grants access without server success.
+ * Disabled: automatic silent restore must never mark the current LingoTheory
+ * account paid based on device Apple ID ownership.
  */
 export async function silentRestoreAppleFullAccessIfOwned(): Promise<boolean> {
-  if (!Capacitor.isNativePlatform() || Capacitor.getPlatform() !== 'ios') {
-    return false;
-  }
-
-  try {
-    const { NativePurchases, PURCHASE_TYPE } = await loadNativePurchases();
-
-    const supported = await NativePurchases.isBillingSupported();
-    if (!supported?.isBillingSupported) {
-      return false;
-    }
-
-    const { purchases } = await NativePurchases.getPurchases({
-      productType: PURCHASE_TYPE.INAPP,
-    });
-
-    const owned = (purchases || []).find(
-      (p) =>
-        p.productIdentifier === APPLE_FULL_ACCESS_PRODUCT_ID ||
-        (p as { productId?: string }).productId === APPLE_FULL_ACCESS_PRODUCT_ID
-    );
-
-    if (!owned?.receipt && !owned?.jwsRepresentation) {
-      return false;
-    }
-
-    await verifyWithServer({
-      platform: 'ios',
-      productId: APPLE_FULL_ACCESS_PRODUCT_ID,
-      transactionId: owned.transactionId,
-      jwsRepresentation: owned.jwsRepresentation,
-      receipt: owned.receipt,
-      restore: true,
-    });
-
-    return true;
-  } catch {
-    return false;
-  }
+  return false;
 }

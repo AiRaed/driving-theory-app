@@ -14,6 +14,7 @@ import BilingualLabel from "@/components/BilingualLabel";
 import { enLabel } from "@/lib/i18n/ui-strings";
 import PaywallOverlay from "@/components/PaywallOverlay";
 import { useAccess } from '@/lib/providers/AccessProvider';
+import { decideMockAccess } from '@/lib/access/entitlement';
 import { createClient } from "@/lib/supabase/client";
 import { useQuestionBank } from "@/lib/questions/useQuestionBank";
 import { 
@@ -81,7 +82,7 @@ export default function MockTestPage() {
   const router = useRouter();
   const supabase = createClient();
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
-  const { loading, paid } = useAccess();
+  const { loading, statusConfirmed, paid } = useAccess();
   const { lang: translationLang, setLang, ready: languageReady } = useLanguage();
   const [user, setUser] = useState<any>(null);
   
@@ -94,13 +95,12 @@ export default function MockTestPage() {
   const mockCompleteTrackedRef = useRef(false);
   const mockStartedTrackedRef = useRef(false);
   
-  // Mock Test: always locked when !paid (no free mock test)
-  // Once paid === true, Paywall must NEVER render
-  // PaywallOverlay must render ONLY when:
-  // 1. loading === false (access state loaded)
-  // 2. paid === false
-  // Do NOT render PaywallOverlay while loading === true
-  const showPaywall = !loading && !paid;
+  // Mock Test is PAID ONLY — free_questions_used never unlocks Mock.
+  const mockAccess = decideMockAccess({
+    paid: paid === true,
+    statusConfirmed,
+  });
+  const showPaywall = !loading && mockAccess.showPaywall;
 
   // Check authentication
   useEffect(() => {
@@ -557,8 +557,15 @@ export default function MockTestPage() {
     );
   }
 
-  // Show loading state while access is being fetched
-  if (loading) {
+  // Show loading while entitlement loads; block Mock until confirmed paid.
+  if (loading || !statusConfirmed) {
+    if (!loading && !statusConfirmed) {
+      return (
+        <div className="min-h-screen bg-[var(--background)] relative">
+          <PaywallOverlay />
+        </div>
+      );
+    }
     return (
       <div className="min-h-screen bg-[var(--background)]">
         <div className="max-w-5xl mx-auto px-4 py-6">
@@ -568,10 +575,8 @@ export default function MockTestPage() {
     );
   }
 
-  // IMPORTANT: PaywallOverlay must render ONLY when:
-  // !loading && !paid
-  // Do NOT render PaywallOverlay while loading === true
-  if (showPaywall) {
+  // Mock Test paywall for confirmed unpaid accounts
+  if (showPaywall || !mockAccess.allow) {
     return (
       <div className="min-h-screen bg-[var(--background)] relative">
         <PaywallOverlay />

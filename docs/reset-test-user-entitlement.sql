@@ -1,10 +1,10 @@
 -- =============================================================================
--- SAFE MANUAL RESET: one designated test user → unpaid free trial
--- Run in Supabase SQL Editor. Replace the email below before executing.
--- DO NOT expose this as a public API endpoint.
+-- SAFE MANUAL RESET: one designated TEST LingoTheory account → free trial
+-- Run in Supabase SQL Editor. Replace the email before executing.
+-- DO NOT expose as a public API endpoint.
 -- =============================================================================
 
--- 1) Preview the target user (confirm id / current entitlement)
+-- 1) Preview
 SELECT
   id,
   email,
@@ -15,18 +15,16 @@ SELECT
 FROM public.profiles
 WHERE lower(email) = lower('TEST_USER_EMAIL_HERE@example.com');
 
--- 2) Reset profile entitlement (authoritative paid/free gate)
+-- 2) Reset authoritative entitlement
 UPDATE public.profiles
 SET
   access_level = 'free',
   free_questions_used = 0,
   paid_at = NULL,
-  -- Keep stripe_customer_id unless you also want a clean Stripe customer link:
-  -- stripe_customer_id = NULL,
   updated_at = now()
 WHERE lower(email) = lower('TEST_USER_EMAIL_HERE@example.com');
 
--- 3) Optional: clear analytics mirror so admin UI matches
+-- 3) Optional analytics mirror
 UPDATE public.user_learning_stats
 SET
   free_questions_used = 0,
@@ -38,9 +36,10 @@ WHERE user_id = (
   WHERE lower(email) = lower('TEST_USER_EMAIL_HERE@example.com')
 );
 
--- 4) Optional: remove payment rows so admin/history does not show prior purchases.
---    Access status itself does NOT read payments — only profiles.access_level.
---    Still recommended for clean test accounts.
+-- 4) Remove payment history for a clean retest (recommended)
+--    Access status reads profiles only, but payment rows bind Apple/Google
+--    transactions to this LingoTheory user. Deleting them prevents Restore
+--    from re-attaching paid via an existing payments link.
 DELETE FROM public.payments
 WHERE user_id = (
   SELECT id FROM public.profiles
@@ -48,28 +47,17 @@ WHERE user_id = (
 );
 
 -- 5) Verify
-SELECT
-  id,
-  email,
-  access_level,
-  free_questions_used,
-  paid_at
+SELECT id, email, access_level, free_questions_used, paid_at
 FROM public.profiles
 WHERE lower(email) = lower('TEST_USER_EMAIL_HERE@example.com');
 
 -- =============================================================================
--- IMPORTANT: why a reset user can become paid again without paying
+-- After reset, why the account stays free
 -- =============================================================================
--- Stripe:
---   - Returning to /payment/success?session_id=<OLD_PAID_SESSION> can re-verify
---     that session and set access_level=paid again if metadata.user_id matches.
---   - Mitigation: do not reuse old success URLs; use a fresh unpaid checkout only.
---
--- Google Play / Apple:
---   - Explicit "Restore Purchases" still verifies device-store ownership and can
---     mark the *currently logged-in* profile paid if that store account owns IAP.
---   - Automatic silent restore on app launch/login has been removed.
---   - Mitigation for testing: use a store sandbox account that does NOT own the
---     product, or test on a device/account without the purchase, and avoid tapping
---     Restore Purchases on a store account that already bought Full Access.
+-- • Automatic silent Apple/Google restore on launch/login is DISABLED.
+-- • Explicit Restore only succeeds if a payments row already links the store
+--   transaction to THIS LingoTheory user (which step 4 deletes).
+-- • Do NOT reopen old Stripe success URLs with a paid session_id for this user.
+-- • Cross-platform Full Access returns only after a NEW verified purchase while
+--   logged into this account (or after you manually set access_level=paid).
 -- =============================================================================

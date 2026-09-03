@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { productId, purchaseToken, platform } = body;
+    const { productId, purchaseToken, platform, restore } = body;
 
     if (!productId || !purchaseToken || platform !== 'android') {
       return NextResponse.json(
@@ -126,7 +126,10 @@ export async function POST(request: NextRequest) {
     if (existingPayment) {
       if (existingPayment.user_id !== user.id) {
         return NextResponse.json(
-          { error: 'Purchase token already linked to another account' },
+          {
+            error:
+              'This Google Play purchase is linked to a different LingoTheory account. Sign in to that account for Full Access.',
+          },
           { status: 403 }
         );
       }
@@ -140,6 +143,17 @@ export async function POST(request: NextRequest) {
         .eq('id', user.id);
 
       return NextResponse.json({ ok: true, alreadyVerified: true });
+    }
+
+    // Explicit restore: only refresh entitlement already bound to this account.
+    if (restore === true) {
+      return NextResponse.json(
+        {
+          error:
+            'No Full Access purchase is linked to this LingoTheory account. Purchase while logged in, or sign in to the account that bought Full Access.',
+        },
+        { status: 403 }
+      );
     }
 
     // Acknowledge purchase if not already acknowledged (required for non-consumable)

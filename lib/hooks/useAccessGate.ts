@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import {
   FREE_QUESTION_LIMIT,
-  decideAccess,
+  decidePracticeAccess,
   failClosedAccessState,
 } from '@/lib/access/entitlement';
 
@@ -20,14 +20,14 @@ export interface AccessGate {
 }
 
 /**
- * Legacy gate hook — reads the same /api/access/status contract as AccessProvider.
- * Field names must match the API: paid, free_questions_used.
+ * Legacy gate hook — same /api/access/status contract as AccessProvider.
  */
 export function useAccessGate(): AccessGate {
   const [status, setStatus] = useState<AccessStatus>('locked');
   const [freeUsed, setFreeUsed] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [statusConfirmed, setStatusConfirmed] = useState(false);
   const supabase = createClient();
 
   const fetchAccess = async (silent: boolean = false) => {
@@ -46,11 +46,13 @@ export function useAccessGate(): AccessGate {
       });
 
       if (!response.ok) {
+        setStatusConfirmed(false);
         if (response.status === 401) {
           setStatus('locked');
+          setFreeUsed(0);
           setError('Please log in to continue');
         } else {
-          const closed = failClosedAccessState(FREE_QUESTION_LIMIT, false);
+          const closed = failClosedAccessState(freeUsed, statusConfirmed);
           setFreeUsed(closed.freeUsed);
           setStatus('locked');
           setError('Failed to fetch access status');
@@ -66,19 +68,27 @@ export function useAccessGate(): AccessGate {
           : 0;
 
       setFreeUsed(freeQuestionsUsed);
+      setStatusConfirmed(true);
 
-      const decision = decideAccess(paid, freeQuestionsUsed);
+      const decision = decidePracticeAccess({
+        paid,
+        freeQuestionsUsed,
+        statusConfirmed: true,
+      });
       if (decision.paid) {
         setStatus('paid');
       } else if (decision.showPaywall) {
         setStatus('locked');
-      } else {
+      } else if (decision.allow) {
         setStatus('trial');
+      } else {
+        setStatus('locked');
       }
     } catch (err) {
       console.error('Error fetching access:', err);
+      setStatusConfirmed(false);
       setError(err instanceof Error ? err.message : "Couldn't verify access, please refresh");
-      const closed = failClosedAccessState(FREE_QUESTION_LIMIT, false);
+      const closed = failClosedAccessState(freeUsed, statusConfirmed);
       setFreeUsed(closed.freeUsed);
       setStatus('locked');
     } finally {
@@ -97,34 +107,25 @@ export function useAccessGate(): AccessGate {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((event) => {
-      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'TOKEN_REFRESHED') {
+      if (event === 'SIGNED_OUT') {
+        setStatus('locked');
+        setFreeUsed(0);
+        setStatusConfirmed(false);
+        setLoading(false);
+        return;
+      }
+      if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+        if (event === 'SIGNED_IN') {
+          setStatusConfirmed(false);
+          setFreeUsed(0);
+          setStatus('locked');
+        }
         fetchAccess(false);
       }
     });
 
     return () => {
       subscription.unsubscribe();
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    const handleFocus = () => {
-      fetchAccess(true);
-    };
-
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
-        fetchAccess(true);
-      }
-    };
-
-    window.addEventListener('focus', handleFocus);
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-
-    return () => {
-      window.removeEventListener('focus', handleFocus);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

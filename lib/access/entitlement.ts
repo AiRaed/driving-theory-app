@@ -1,61 +1,142 @@
 /**
- * Shared entitlement contract for Web + Android + iOS.
- * Server profiles.* remains authoritative; this module only interprets confirmed values.
+ * Shared LingoTheory entitlement contract (Web + Android + iOS).
+ *
+ * Source of truth: Supabase profiles.access_level + profiles.free_questions_used
+ * belonging to the authenticated LingoTheory USER ACCOUNT — never the device,
+ * Apple ID, Google Play account, or local storage.
  */
 
 export const FREE_QUESTION_LIMIT = 15;
 
-export type AccessDecision = {
-  /** True only when profiles.access_level === 'paid' was confirmed */
+export type PracticeAccessDecision = {
   paid: boolean;
-  /** From profiles.free_questions_used (confirmed) */
   freeQuestionsUsed: number;
-  /** Practice / full content allowed */
-  canAccessContent: boolean;
-  /** Show Full Access paywall for free users at/over limit */
+  statusConfirmed: boolean;
+  /** Practice content may be used */
+  allow: boolean;
+  /** Show Full Access paywall over Practice */
   showPaywall: boolean;
-  /** Free trial still available */
   inFreeTrial: boolean;
 };
 
-/**
- * Interpret confirmed server entitlement values.
- * Never call this with guessed/default values from a failed fetch.
- */
-export function decideAccess(
-  paid: boolean,
-  freeQuestionsUsed: number
-): AccessDecision {
-  const used = Number.isFinite(freeQuestionsUsed)
+export type MockAccessDecision = {
+  paid: boolean;
+  statusConfirmed: boolean;
+  /** Mock Test may be started / used */
+  allow: boolean;
+  /** Show Full Access paywall over Mock Test */
+  showPaywall: boolean;
+};
+
+function normalizeUsed(freeQuestionsUsed: number): number {
+  return Number.isFinite(freeQuestionsUsed)
     ? Math.max(0, Math.floor(freeQuestionsUsed))
     : 0;
-  const isPaid = paid === true;
+}
 
-  if (isPaid) {
+/**
+ * Practice access.
+ *
+ * paid=true → allow
+ * paid=false + confirmed + used < 15 → allow (free trial)
+ * paid=false + confirmed + used >= 15 → paywall
+ * status unconfirmed → do NOT grant Practice
+ */
+export function decidePracticeAccess(input: {
+  paid: boolean;
+  freeQuestionsUsed: number;
+  statusConfirmed: boolean;
+}): PracticeAccessDecision {
+  const paid = input.paid === true;
+  const statusConfirmed = input.statusConfirmed === true;
+  const freeQuestionsUsed = normalizeUsed(input.freeQuestionsUsed);
+
+  if (!statusConfirmed) {
     return {
-      paid: true,
-      freeQuestionsUsed: used,
-      canAccessContent: true,
+      paid: false,
+      freeQuestionsUsed,
+      statusConfirmed: false,
+      allow: false,
       showPaywall: false,
       inFreeTrial: false,
     };
   }
 
-  const inFreeTrial = used < FREE_QUESTION_LIMIT;
+  if (paid) {
+    return {
+      paid: true,
+      freeQuestionsUsed,
+      statusConfirmed: true,
+      allow: true,
+      showPaywall: false,
+      inFreeTrial: false,
+    };
+  }
+
+  const inFreeTrial = freeQuestionsUsed < FREE_QUESTION_LIMIT;
   return {
     paid: false,
-    freeQuestionsUsed: used,
-    canAccessContent: inFreeTrial,
+    freeQuestionsUsed,
+    statusConfirmed: true,
+    allow: inFreeTrial,
     showPaywall: !inFreeTrial,
     inFreeTrial,
   };
 }
 
 /**
- * Fail-closed client state when access status cannot be confirmed.
- * Never assumes paid. Never resets free usage to 0 (that would unlock practice).
- * If status was never confirmed, lock the free trial.
- * If status was previously confirmed, preserve the last known freeUsed.
+ * Mock Test is PAID ONLY. free_questions_used never grants Mock access.
+ *
+ * paid=true + confirmed → allow
+ * otherwise → locked (paywall when confirmed unpaid; blocked while unconfirmed)
+ */
+export function decideMockAccess(input: {
+  paid: boolean;
+  statusConfirmed: boolean;
+}): MockAccessDecision {
+  const paid = input.paid === true;
+  const statusConfirmed = input.statusConfirmed === true;
+
+  if (!statusConfirmed) {
+    return {
+      paid: false,
+      statusConfirmed: false,
+      allow: false,
+      showPaywall: false,
+    };
+  }
+
+  if (paid) {
+    return {
+      paid: true,
+      statusConfirmed: true,
+      allow: true,
+      showPaywall: false,
+    };
+  }
+
+  return {
+    paid: false,
+    statusConfirmed: true,
+    allow: false,
+    showPaywall: true,
+  };
+}
+
+/**
+ * @deprecated Use decidePracticeAccess. Kept for transitional call sites.
+ */
+export function decideAccess(
+  paid: boolean,
+  freeQuestionsUsed: number,
+  statusConfirmed: boolean = true
+): PracticeAccessDecision {
+  return decidePracticeAccess({ paid, freeQuestionsUsed, statusConfirmed });
+}
+
+/**
+ * Fail-closed client values when /api/access/status cannot be confirmed.
+ * Never assumes paid. Never resets free usage to 0.
  */
 export function failClosedAccessState(
   previousFreeUsed: number,
@@ -64,20 +145,10 @@ export function failClosedAccessState(
   paid: false;
   freeUsed: number;
 } {
-  const used = Number.isFinite(previousFreeUsed)
-    ? Math.max(0, Math.floor(previousFreeUsed))
-    : 0;
-
-  if (hadConfirmedStatus) {
-    return {
-      paid: false,
-      freeUsed: used,
-    };
-  }
-
+  const used = normalizeUsed(previousFreeUsed);
   return {
     paid: false,
-    freeUsed: FREE_QUESTION_LIMIT,
+    freeUsed: hadConfirmedStatus ? used : used,
   };
 }
 
@@ -85,4 +156,30 @@ export function isPaidAccessLevel(
   accessLevel: string | null | undefined
 ): boolean {
   return accessLevel === 'paid';
+}
+
+/**
+ * Pure helpers for account-switch regression tests (no I/O).
+ */
+export function clientStateAfterLogout(): {
+  paid: false;
+  freeQuestionsUsed: 0;
+  statusConfirmed: false;
+} {
+  return { paid: false, freeQuestionsUsed: 0, statusConfirmed: false };
+}
+
+export function clientStateFromServer(input: {
+  paid: boolean;
+  freeQuestionsUsed: number;
+}): {
+  paid: boolean;
+  freeQuestionsUsed: number;
+  statusConfirmed: true;
+} {
+  return {
+    paid: input.paid === true,
+    freeQuestionsUsed: normalizeUsed(input.freeQuestionsUsed),
+    statusConfirmed: true,
+  };
 }

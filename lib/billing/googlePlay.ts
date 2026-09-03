@@ -118,7 +118,10 @@ export async function fetchGoogleFullAccessPrice(): Promise<string> {
   return GOOGLE_FULL_ACCESS_FALLBACK_PRICE;
 }
 
-async function verifyOwnedPurchase(purchase: PlayBillingPurchase): Promise<void> {
+async function verifyOwnedPurchase(
+  purchase: PlayBillingPurchase,
+  options?: { restore?: boolean }
+): Promise<void> {
   if (!purchase.purchaseToken) {
     throw new Error('Purchase token missing.');
   }
@@ -130,6 +133,7 @@ async function verifyOwnedPurchase(purchase: PlayBillingPurchase): Promise<void>
     platform: 'android',
     productId: purchase.productId || GOOGLE_FULL_ACCESS_PRODUCT_ID,
     purchaseToken: purchase.purchaseToken,
+    restore: options?.restore === true,
   });
 }
 
@@ -157,7 +161,23 @@ export async function purchaseGoogleFullAccess(): Promise<GooglePurchaseResult> 
         return { ok: false, cancelled: true, error: 'Purchase cancelled.' };
       }
       if (code === 'ITEM_ALREADY_OWNED') {
-        return restoreGoogleFullAccess();
+        // Claim/verify as a purchase for the current LingoTheory account (not restore).
+        const { purchases } = await plugin.restore();
+        const owned = (purchases || []).find(
+          (p) =>
+            p.productId === GOOGLE_FULL_ACCESS_PRODUCT_ID &&
+            p.purchaseToken &&
+            p.status !== 'pending' &&
+            p.purchaseState !== 2
+        );
+        if (!owned) {
+          return {
+            ok: false,
+            error: 'Product already owned, but purchase details were unavailable.',
+          };
+        }
+        await verifyOwnedPurchase(owned, { restore: false });
+        return { ok: true, alreadyOwned: true };
       }
       return { ok: false, error: message };
     }
@@ -211,7 +231,7 @@ export async function restoreGoogleFullAccess(): Promise<GooglePurchaseResult> {
       };
     }
 
-    await verifyOwnedPurchase(owned);
+    await verifyOwnedPurchase(owned, { restore: true });
     return { ok: true, alreadyOwned: true };
   } catch (error) {
     console.error('[googlePlay] restore error:', error);
@@ -226,33 +246,9 @@ export async function restoreGoogleFullAccess(): Promise<GooglePurchaseResult> {
 }
 
 /**
- * Silent restore for login/launch: unlocks only if Google ownership verifies on server.
- * Never throws; never grants access without server success.
+ * Disabled: automatic silent restore must never mark the current LingoTheory
+ * account paid based on device Google Play ownership.
  */
 export async function silentRestoreGoogleFullAccessIfOwned(): Promise<boolean> {
-  if (!isAndroidNative()) {
-    return false;
-  }
-
-  try {
-    const plugin = await ensureBillingReady();
-    const { purchases } = await plugin.restore();
-
-    const owned = (purchases || []).find(
-      (p) =>
-        p.productId === GOOGLE_FULL_ACCESS_PRODUCT_ID &&
-        p.purchaseToken &&
-        p.status !== 'pending' &&
-        p.purchaseState !== 2
-    );
-
-    if (!owned) {
-      return false;
-    }
-
-    await verifyOwnedPurchase(owned);
-    return true;
-  } catch {
-    return false;
-  }
+  return false;
 }

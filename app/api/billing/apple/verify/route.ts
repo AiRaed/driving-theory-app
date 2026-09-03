@@ -73,8 +73,14 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { productId, platform, transactionId, receipt, jwsRepresentation } =
-      body;
+    const {
+      productId,
+      platform,
+      transactionId,
+      receipt,
+      jwsRepresentation,
+      restore,
+    } = body;
 
     if (platform !== 'ios') {
       return NextResponse.json(
@@ -147,6 +153,79 @@ export async function POST(request: NextRequest) {
         persistSession: false,
       },
     });
+
+    // Bind Apple transactions to LingoTheory accounts (same model as Google).
+    // Never let a store-owned purchase silently attach to a different user.
+    const txId = verified.transactionId;
+    const originalTxId = verified.originalTransactionId;
+
+    let existingPayment:
+      | { id: string; user_id: string }
+      | null = null;
+
+    if (txId) {
+      const { data } = await adminClient
+        .from('payments')
+        .select('id, user_id')
+        .eq('apple_transaction_id', txId)
+        .maybeSingle();
+      existingPayment = data;
+    }
+
+    if (!existingPayment && originalTxId) {
+      const { data } = await adminClient
+        .from('payments')
+        .select('id, user_id')
+        .eq('apple_original_transaction_id', originalTxId)
+        .maybeSingle();
+      existingPayment = data;
+    }
+
+    if (existingPayment && existingPayment.user_id !== user.id) {
+      return NextResponse.json(
+        {
+          error:
+            'This Apple purchase is linked to a different LingoTheory account. Sign in to that account for Full Access.',
+        },
+        { status: 403 }
+      );
+    }
+
+    // Explicit restore: only refresh entitlement already bound to this account.
+    // Do not first-claim unbound store ownership onto whoever is logged in.
+    if (restore === true && !existingPayment) {
+      return NextResponse.json(
+        {
+          error:
+            'No Full Access purchase is linked to this LingoTheory account. Purchase while logged in, or sign in to the account that bought Full Access.',
+        },
+        { status: 403 }
+      );
+    }
+
+    if (existingPayment) {
+      const { error: existingProfileError } = await adminClient
+        .from('profiles')
+        .update({
+          access_level: 'paid',
+          paid_at: new Date().toISOString(),
+        })
+        .eq('id', user.id);
+
+      if (existingProfileError) {
+        console.error('[apple/verify] Error updating profile:', existingProfileError);
+        return NextResponse.json(
+          { error: 'Failed to update profile' },
+          { status: 500 }
+        );
+      }
+
+      return NextResponse.json({
+        ok: true,
+        alreadyVerified: true,
+        transactionId: txId,
+      });
+    }
 
     const { error: profileError } = await adminClient
       .from('profiles')

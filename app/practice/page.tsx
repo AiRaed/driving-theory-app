@@ -14,7 +14,7 @@ import PaywallOverlay from '@/components/PaywallOverlay';
 import { useAccess } from '@/lib/providers/AccessProvider';
 import {
   FREE_QUESTION_LIMIT,
-  decideAccess,
+  decidePracticeAccess,
 } from '@/lib/access/entitlement';
 import { useQuestionBank } from '@/lib/questions/useQuestionBank';
 import { 
@@ -62,7 +62,7 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function PracticePage() {
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
-  const { loading, paid, freeUsed, silentRefresh } = useAccess();
+  const { loading, statusConfirmed, paid, freeUsed, silentRefresh } = useAccess();
   const {
     questions,
     urTranslations: bankUrdu,
@@ -556,17 +556,25 @@ export default function PracticePage() {
     setImageError(true);
   };
 
-  // Determine correctness based ONLY on the selected option's correct boolean property
-  const selectedOption = selectedAnswerIndex !== null ? shuffledOptions[selectedAnswerIndex] : null;
-  const isCorrect = selectedOption?.correct === true;
-
-  // Practice: allow exactly FREE_QUESTION_LIMIT free questions when !paid.
-  // Fail-closed AccessProvider sets freeUsed >= limit when status cannot be confirmed.
-  const access = decideAccess(paid === true, freeUsed ?? 0);
+  // Practice: server-backed free trial (15) or paid unlimited.
+  // Unconfirmed status must not grant Practice.
+  const access = decidePracticeAccess({
+    paid: paid === true,
+    freeQuestionsUsed: freeUsed ?? 0,
+    statusConfirmed,
+  });
   const showPaywall = !loading && access.showPaywall;
 
-  // Show loading state while access is being fetched
-  if (loading) {
+  // Wait until entitlement is confirmed (or fail-closed paywall after load)
+  if (loading || !statusConfirmed) {
+    // After load failure statusConfirmed=false: show paywall rather than infinite spinner
+    if (!loading && !statusConfirmed) {
+      return (
+        <div className="min-h-screen bg-[var(--background)] relative">
+          <PaywallOverlay />
+        </div>
+      );
+    }
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         <div className="max-w-5xl mx-auto px-4 py-6">
