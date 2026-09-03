@@ -1,5 +1,4 @@
 'use client';
 
-// Re-export from store for backward compatibility
-export { useAccess } from '@/lib/stores/accessStore';
-
+// Canonical access hook lives in AccessProvider (server-backed entitlement).
+export { useAccess } from '@/lib/providers/AccessProvider';

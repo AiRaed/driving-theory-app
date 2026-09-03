@@ -2,6 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
+import {
+  FREE_QUESTION_LIMIT,
+  decideAccess,
+  failClosedAccessState,
+} from '@/lib/access/entitlement';
 
 export type AccessStatus = 'paid' | 'trial' | 'locked';
 
@@ -14,10 +19,12 @@ export interface AccessGate {
   refetch: () => Promise<void>;
 }
 
-const TRIAL_LIMIT = 15;
-
+/**
+ * Legacy gate hook — reads the same /api/access/status contract as AccessProvider.
+ * Field names must match the API: paid, free_questions_used.
+ */
 export function useAccessGate(): AccessGate {
-  const [status, setStatus] = useState<AccessStatus>('trial');
+  const [status, setStatus] = useState<AccessStatus>('locked');
   const [freeUsed, setFreeUsed] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -25,51 +32,54 @@ export function useAccessGate(): AccessGate {
 
   const fetchAccess = async (silent: boolean = false) => {
     try {
-      // Only show loading state if not silent (for initial load)
       if (!silent) {
         setLoading(true);
       }
       setError(null);
 
-      // Use SINGLE SOURCE OF TRUTH: /api/access/status
       const response = await fetch('/api/access/status', {
         cache: 'no-store',
+        credentials: 'include',
         headers: {
           'Cache-Control': 'no-cache',
         },
       });
-      
+
       if (!response.ok) {
         if (response.status === 401) {
-          // Unauthorized - user not logged in
           setStatus('locked');
           setError('Please log in to continue');
         } else {
-          throw new Error('Failed to fetch access status');
+          const closed = failClosedAccessState(FREE_QUESTION_LIMIT, false);
+          setFreeUsed(closed.freeUsed);
+          setStatus('locked');
+          setError('Failed to fetch access status');
         }
         return;
       }
 
       const data = await response.json();
       const paid = data.paid === true;
-      const accessLevel = data.accessLevel || 'free';
-      const freeQuestionsUsed = data.freeQuestionsUsed || 0;
+      const freeQuestionsUsed =
+        typeof data.free_questions_used === 'number'
+          ? data.free_questions_used
+          : 0;
 
       setFreeUsed(freeQuestionsUsed);
 
-      // Determine status - access_level === 'paid' is the ONLY gate
-      // If paid, always return 'paid' status regardless of free_questions_used
-      if (paid && accessLevel === 'paid') {
+      const decision = decideAccess(paid, freeQuestionsUsed);
+      if (decision.paid) {
         setStatus('paid');
-      } else if (freeQuestionsUsed >= TRIAL_LIMIT) {
+      } else if (decision.showPaywall) {
         setStatus('locked');
       } else {
         setStatus('trial');
       }
     } catch (err) {
       console.error('Error fetching access:', err);
-      setError(err instanceof Error ? err.message : 'Couldn\'t verify access, please refresh');
-      // Default to locked on error to be safe
+      setError(err instanceof Error ? err.message : "Couldn't verify access, please refresh");
+      const closed = failClosedAccessState(FREE_QUESTION_LIMIT, false);
+      setFreeUsed(closed.freeUsed);
       setStatus('locked');
     } finally {
       if (!silent) {
@@ -78,18 +88,17 @@ export function useAccessGate(): AccessGate {
     }
   };
 
-  // Initial fetch
   useEffect(() => {
     fetchAccess();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Re-check access on auth state changes
   useEffect(() => {
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((event, session) => {
+    } = supabase.auth.onAuthStateChange((event) => {
       if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'TOKEN_REFRESHED') {
-        fetchAccess(false); // Show loading on auth changes
+        fetchAccess(false);
       }
     });
 
@@ -99,15 +108,14 @@ export function useAccessGate(): AccessGate {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Re-check access when window regains focus (e.g., returning from Stripe checkout)
   useEffect(() => {
     const handleFocus = () => {
-      fetchAccess(true); // Silent refetch on focus
+      fetchAccess(true);
     };
 
     const handleVisibilityChange = () => {
       if (document.visibilityState === 'visible') {
-        fetchAccess(true); // Silent refetch on visibility change
+        fetchAccess(true);
       }
     };
 
@@ -124,10 +132,9 @@ export function useAccessGate(): AccessGate {
   return {
     status,
     freeUsed,
-    trialLimit: TRIAL_LIMIT,
+    trialLimit: FREE_QUESTION_LIMIT,
     loading,
     error,
-    refetch: () => fetchAccess(true), // Silent refetch to avoid loading screen
+    refetch: () => fetchAccess(true),
   };
 }
-

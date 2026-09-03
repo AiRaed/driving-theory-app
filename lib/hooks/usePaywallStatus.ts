@@ -74,11 +74,10 @@ export function usePaywallStatus(): PaywallStatus {
       }
     } catch (error) {
       console.error('[usePaywallStatus] Error:', error);
-      // Default to locked on error - DO NOT set hydrated=true
-      // This prevents paywall from showing on error
+      // Fail closed: never paid; never reset trial usage to 0
       setPaid(false);
-      setTrialUsed(0);
-      setTrialLimit(15);
+      setTrialUsed((prev) => Math.max(prev, 15));
+      // DO NOT set hydrated=true on error
     } finally {
       setLoading(false);
     }

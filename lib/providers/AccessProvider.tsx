@@ -1,33 +1,60 @@
 'use client';
 
-import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  useRef,
+  ReactNode,
+} from 'react';
 import { createClient } from '@/lib/supabase/client';
-import { Capacitor } from '@capacitor/core';
-import { silentRestoreAppleFullAccessIfOwned } from '@/lib/billing/appleIap';
-import { silentRestoreGoogleFullAccessIfOwned } from '@/lib/billing/googlePlay';
+import {
+  failClosedAccessState,
+} from '@/lib/access/entitlement';
 
 interface AccessContextType {
   loading: boolean;
+  /** True only after a successful /api/access/status response for the current session */
+  statusConfirmed: boolean;
   paid: boolean;
   freeUsed: number;
   refresh: () => Promise<void>;
-  silentRefresh: () => Promise<void>; // Refresh without setting loading=true
+  silentRefresh: () => Promise<void>;
 }
 
 const AccessContext = createContext<AccessContextType | undefined>(undefined);
 
 /**
- * AccessProvider - SINGLE SOURCE OF TRUTH for access state
- * Fetches /api/access/status on load and on auth state changes
- * NO localStorage, NO caching, NO assumptions
- * paid === true ONLY when profiles.access_level === 'paid'
- * freeUsed comes from profiles.free_questions_used
+ * AccessProvider - client cache of server entitlement.
+ * Authoritative source: profiles.access_level + profiles.free_questions_used via /api/access/status.
+ *
+ * Rules:
+ * - paid === true ONLY when server returns paid === true
+ * - API/network errors NEVER grant paid
+ * - API/network errors NEVER reset freeUsed to 0 (that would unlock the free trial)
+ * - Opening the app / login NEVER auto-promotes a user to paid (no silent store restore)
  */
 export function AccessProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
+  const [statusConfirmed, setStatusConfirmed] = useState(false);
   const [paid, setPaid] = useState(false);
   const [freeUsed, setFreeUsed] = useState(0);
+  const statusConfirmedRef = useRef(false);
+  const freeUsedRef = useRef(0);
   const supabase = createClient();
+
+  const applyFailClosed = () => {
+    const closed = failClosedAccessState(
+      freeUsedRef.current,
+      statusConfirmedRef.current
+    );
+    setPaid(closed.paid);
+    setFreeUsed(closed.freeUsed);
+    freeUsedRef.current = closed.freeUsed;
+    setStatusConfirmed(false);
+    statusConfirmedRef.current = false;
+  };
 
   const fetchAccessStatus = async (setLoadingState: boolean = true) => {
     const controller = new AbortController();
@@ -37,7 +64,7 @@ export function AccessProvider({ children }: { children: ReactNode }) {
       if (setLoadingState) {
         setLoading(true);
       }
-      console.log('[access/status] refresh started', { setLoadingState });
+
       const response = await fetch('/api/access/status', {
         cache: 'no-store',
         credentials: 'include',
@@ -50,27 +77,35 @@ export function AccessProvider({ children }: { children: ReactNode }) {
 
       if (!response.ok) {
         if (response.status === 401) {
-          // Not logged in - default to unpaid
+          // Logged out — clear account-specific state
           setPaid(false);
           setFreeUsed(0);
+          freeUsedRef.current = 0;
+          setStatusConfirmed(false);
+          statusConfirmedRef.current = false;
+          return false;
         }
+
+        applyFailClosed();
         return false;
       }
 
       const data = await response.json();
-      // paid === true ONLY when profiles.access_level === 'paid'
-      // freeUsed comes from profiles.free_questions_used
-      setPaid(data.paid === true);
-      setFreeUsed(data.free_questions_used || 0);
-      console.log('[access/status] refresh completed', {
-        paid: data.paid === true,
-      });
-      return data.paid === true;
+      const nextPaid = data.paid === true;
+      const nextFreeUsed =
+        typeof data.free_questions_used === 'number'
+          ? data.free_questions_used
+          : 0;
+
+      setPaid(nextPaid);
+      setFreeUsed(nextFreeUsed);
+      freeUsedRef.current = nextFreeUsed;
+      setStatusConfirmed(true);
+      statusConfirmedRef.current = true;
+      return nextPaid;
     } catch (error) {
       console.error('[AccessProvider] Error:', error);
-      // Default to unpaid on error
-      setPaid(false);
-      setFreeUsed(0);
+      applyFailClosed();
       return false;
     } finally {
       clearTimeout(timeoutId);
@@ -88,57 +123,43 @@ export function AccessProvider({ children }: { children: ReactNode }) {
     await fetchAccessStatus(false);
   };
 
-  // Fetch on app load; silently restore native store entitlement if unpaid
+  // Fetch on app load only — do NOT silent-restore store purchases here.
+  // Store restore must be an explicit user action (Restore Purchases).
   useEffect(() => {
-    void (async () => {
-      const isPaid = await fetchAccessStatus(true);
-      if (!isPaid && Capacitor.isNativePlatform()) {
-        const platform = Capacitor.getPlatform();
-        let restored = false;
-        if (platform === 'ios') {
-          restored = await silentRestoreAppleFullAccessIfOwned();
-        } else if (platform === 'android') {
-          restored = await silentRestoreGoogleFullAccessIfOwned();
-        }
-        if (restored) {
-          await fetchAccessStatus(false);
-        }
-      }
-    })();
+    void fetchAccessStatus(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Re-fetch on auth state changes (SIGNED_IN, SIGNED_OUT, TOKEN_REFRESHED)
-  // On SIGNED_IN: silently restore native store entitlement if unpaid
+  // Re-fetch on auth state changes; clear stale account state on sign-out.
   useEffect(() => {
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((event, session) => {
-      if (event === 'SIGNED_IN' || event === 'SIGNED_OUT' || event === 'TOKEN_REFRESHED') {
-        void (async () => {
-          const isPaid = await fetchAccessStatus(true);
-          if (event === 'SIGNED_IN' && session?.user && !isPaid && Capacitor.isNativePlatform()) {
-            const platform = Capacitor.getPlatform();
-            let restored = false;
-            if (platform === 'ios') {
-              restored = await silentRestoreAppleFullAccessIfOwned();
-            } else if (platform === 'android') {
-              restored = await silentRestoreGoogleFullAccessIfOwned();
-            }
-            if (restored) {
-              await fetchAccessStatus(false);
-            }
-          }
-        })();
+    } = supabase.auth.onAuthStateChange((event) => {
+      if (event === 'SIGNED_OUT') {
+        setPaid(false);
+        setFreeUsed(0);
+        freeUsedRef.current = 0;
+        setStatusConfirmed(false);
+        statusConfirmedRef.current = false;
+        setLoading(false);
+        return;
+      }
+
+      if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+        void fetchAccessStatus(true);
       }
     });
 
     return () => {
       subscription.unsubscribe();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [supabase]);
 
   return (
-    <AccessContext.Provider value={{ loading, paid, freeUsed, refresh, silentRefresh }}>
+    <AccessContext.Provider
+      value={{ loading, statusConfirmed, paid, freeUsed, refresh, silentRefresh }}
+    >
       {children}
     </AccessContext.Provider>
   );

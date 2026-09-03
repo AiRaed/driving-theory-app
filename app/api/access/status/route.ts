@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
+import { isPaidAccessLevel } from '@/lib/access/entitlement';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,10 +10,11 @@ export const dynamic = 'force-dynamic';
  * Returns { paid: boolean, free_questions_used: number }
  * paid === true ONLY when profiles.access_level === 'paid'
  * free_questions_used comes from profiles.free_questions_used
+ *
+ * Fail closed: DB/config errors return HTTP 5xx (never invent free_questions_used: 0).
  */
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
-    // Get authenticated user
     const supabase = await createClient();
     const {
       data: { user },
@@ -23,7 +25,6 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    // Use SERVICE_ROLE_KEY to query profiles (bypasses RLS)
     const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
     const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
 
@@ -41,7 +42,6 @@ export async function GET(request: NextRequest) {
       },
     });
 
-    // Query profiles table - access_level and free_questions_used are the ONLY source of truth
     const { data: profile, error: profileError } = await adminClient
       .from('profiles')
       .select('access_level, free_questions_used')
@@ -49,22 +49,26 @@ export async function GET(request: NextRequest) {
       .maybeSingle();
 
     if (profileError) {
-      // Profile doesn't exist - return unpaid with 0 free questions used
-      if (profileError.code === 'PGRST116') {
-        return NextResponse.json({ paid: false, free_questions_used: 0 });
-      }
-      // Other error - return unpaid with 0 free questions used
-      return NextResponse.json({ paid: false, free_questions_used: 0 });
+      console.error('[access/status] profile query error:', profileError.code);
+      return NextResponse.json(
+        { error: 'Failed to load access status' },
+        { status: 500 }
+      );
     }
 
-    // EXACTLY ONE source of truth: profiles.access_level === 'paid'
-    const paid = profile?.access_level === 'paid';
-    const free_questions_used = profile?.free_questions_used || 0;
+    // Missing profile: treat as unpaid with 0 used (new account), not as an error unlock.
+    const paid = isPaidAccessLevel(profile?.access_level);
+    const free_questions_used =
+      typeof profile?.free_questions_used === 'number'
+        ? profile.free_questions_used
+        : 0;
 
     return NextResponse.json({ paid, free_questions_used });
   } catch (error) {
     console.error('[access/status] Error:', error);
-    return NextResponse.json({ paid: false, free_questions_used: 0 });
+    return NextResponse.json(
+      { error: 'Failed to load access status' },
+      { status: 500 }
+    );
   }
 }
-

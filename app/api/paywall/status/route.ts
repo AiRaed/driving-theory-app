@@ -1,6 +1,6 @@
 import { createClient } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
@@ -10,7 +10,7 @@ export const dynamic = 'force-dynamic';
  * Returns { paid: boolean, trialUsed: number, trialLimit: number }
  * paid === true ONLY when profiles.access_level === 'paid'
  */
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
     // Get authenticated user from Supabase auth cookies
     const supabase = await createClient();
@@ -77,11 +77,10 @@ export async function GET(request: NextRequest) {
     });
   } catch (error) {
     console.error('[paywall/status] Error:', error);
-    return NextResponse.json({
-      paid: false,
-      trialUsed: 0,
-      trialLimit: 15,
-    });
+    return NextResponse.json(
+      { error: 'Failed to load paywall status' },
+      { status: 500 }
+    );
   }
 }
 

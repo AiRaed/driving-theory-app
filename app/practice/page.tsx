@@ -12,6 +12,10 @@ import BilingualLabel from '@/components/BilingualLabel';
 import { enLabel } from '@/lib/i18n/ui-strings';
 import PaywallOverlay from '@/components/PaywallOverlay';
 import { useAccess } from '@/lib/providers/AccessProvider';
+import {
+  FREE_QUESTION_LIMIT,
+  decideAccess,
+} from '@/lib/access/entitlement';
 import { useQuestionBank } from '@/lib/questions/useQuestionBank';
 import { 
   loadUrduTranslations,
@@ -58,7 +62,7 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function PracticePage() {
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
-  const { loading, paid, freeUsed, refresh, silentRefresh } = useAccess();
+  const { loading, paid, freeUsed, silentRefresh } = useAccess();
   const {
     questions,
     urTranslations: bankUrdu,
@@ -431,7 +435,7 @@ export default function PracticePage() {
   // Free limit reached (once)
   useEffect(() => {
     if (loading || paid) return;
-    if ((freeUsed ?? 0) < 15) return;
+    if ((freeUsed ?? 0) < FREE_QUESTION_LIMIT) return;
     if (freeLimitTrackedRef.current) return;
     freeLimitTrackedRef.current = true;
     void trackEvent('free_limit_reached', { free_used: freeUsed ?? 0 });
@@ -496,30 +500,29 @@ export default function PracticePage() {
     // Only increment if not paid and question not already counted
     if (!paid && currentQuestion && !countedQuestionIds.current.has(currentQuestion.id)) {
       countedQuestionIds.current.add(currentQuestion.id);
-      
-      // Track previous freeUsed to detect when crossing 15
-      const previousFreeUsed = freeUsed ?? 0;
-      
-      // Fire-and-forget: increment usage in background, don't block UI
+
+      // Persist free usage server-side, then sync client from authoritative response
       fetch('/api/practice/increment-usage', {
         method: 'POST',
-      }).then(response => {
-        if (response.ok) {
-          // Only refresh when freeUsed crosses 15 exactly (to show paywall)
-          // Use silentRefresh to avoid flicker (doesn't set loading=true)
-          // This prevents paywall from flashing between questions
-          const newFreeUsed = previousFreeUsed + 1;
-          if (newFreeUsed >= 15 && previousFreeUsed < 15) {
-            // Crossing 15 - refresh to show paywall (silent to avoid flicker)
-            silentRefresh().catch(err => console.error('Error refreshing access:', err));
-          } else {
-            // Not crossing 15 - silent refresh to update count without flicker
-            silentRefresh().catch(err => console.error('Error refreshing access:', err));
+      })
+        .then(async (response) => {
+          if (!response.ok) {
+            // Fail closed: refresh status; AccessProvider will lock on error
+            await silentRefresh();
+            return;
           }
-        }
-      }).catch(error => {
-        console.error('Error incrementing usage:', error);
-      });
+          const data = await response.json().catch(() => null);
+          if (data && typeof data.free_questions_used === 'number') {
+            // Keep AccessProvider in sync via silent refresh (server is source of truth)
+            await silentRefresh();
+            return;
+          }
+          await silentRefresh();
+        })
+        .catch((error) => {
+          console.error('Error incrementing usage:', error);
+          void silentRefresh();
+        });
     }
     
     if (currentQuestionIndex < topicQuestions.length - 1) {
@@ -557,18 +560,10 @@ export default function PracticePage() {
   const selectedOption = selectedAnswerIndex !== null ? shuffledOptions[selectedAnswerIndex] : null;
   const isCorrect = selectedOption?.correct === true;
 
-  // Practice: allow exactly 15 free questions total when !paid
-  // After freeUsed >= 15, show Paywall and block answering/next
-  // Normalize freeUsed: if null/undefined => 0
-  const normalizedFreeUsed = freeUsed ?? 0;
-  const freeLimit = 15;
-  
-  // PaywallOverlay must render ONLY when:
-  // 1. loading === false (access state loaded)
-  // 2. paid === false
-  // 3. normalizedFreeUsed >= freeLimit (15)
-  // Do NOT render PaywallOverlay while loading === true
-  const showPaywall = !loading && !paid && normalizedFreeUsed >= freeLimit;
+  // Practice: allow exactly FREE_QUESTION_LIMIT free questions when !paid.
+  // Fail-closed AccessProvider sets freeUsed >= limit when status cannot be confirmed.
+  const access = decideAccess(paid === true, freeUsed ?? 0);
+  const showPaywall = !loading && access.showPaywall;
 
   // Show loading state while access is being fetched
   if (loading) {
