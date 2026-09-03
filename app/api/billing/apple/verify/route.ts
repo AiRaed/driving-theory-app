@@ -25,6 +25,23 @@ const APPLE_APPLE_ID = process.env.APPLE_APPLE_ID
 
 const APPLE_ROOT_CERTIFICATES = [Buffer.from(REAL_APPLE_ROOT_BASE64_ENCODED, 'base64')];
 
+/**
+ * Buy may only first-bind an Apple transaction whose signed purchaseDate is recent.
+ * Non-consumable "already owned" returns from StoreKit reuse old purchaseDate — those
+ * must NOT attach to whichever LingoTheory account is currently logged in.
+ */
+const FRESH_PURCHASE_MAX_AGE_MS = 15 * 60 * 1000;
+
+type VerifiedApplePurchase = {
+  ok: true;
+  transactionId: string;
+  originalTransactionId: string | null;
+  /** UNIX ms from signed Apple data when available */
+  purchaseDateMs: number | null;
+};
+
+type AppleVerifyFailure = { ok: false; error: string };
+
 type AppleVerifyReceiptResponse = {
   status: number;
   environment?: string;
@@ -154,25 +171,18 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // Bind Apple transactions to LingoTheory accounts (same model as Google).
-    // Never let a store-owned purchase silently attach to a different user.
+    // Bind Apple transactions to exactly ONE LingoTheory account.
+    // Prefer originalTransactionId for non-consumable ownership identity.
     const txId = verified.transactionId;
     const originalTxId = verified.originalTransactionId;
+    const isRestore = restore === true;
 
     let existingPayment:
       | { id: string; user_id: string }
       | null = null;
 
-    if (txId) {
-      const { data } = await adminClient
-        .from('payments')
-        .select('id, user_id')
-        .eq('apple_transaction_id', txId)
-        .maybeSingle();
-      existingPayment = data;
-    }
-
-    if (!existingPayment && originalTxId) {
+    // Ownership key: originalTransactionId first (stable for non-consumables).
+    if (originalTxId) {
       const { data } = await adminClient
         .from('payments')
         .select('id, user_id')
@@ -181,7 +191,17 @@ export async function POST(request: NextRequest) {
       existingPayment = data;
     }
 
+    if (!existingPayment && txId) {
+      const { data } = await adminClient
+        .from('payments')
+        .select('id, user_id')
+        .eq('apple_transaction_id', txId)
+        .maybeSingle();
+      existingPayment = data;
+    }
+
     if (existingPayment && existingPayment.user_id !== user.id) {
+      console.log('[apple/verify] Rejected: Apple transaction bound to another user');
       return NextResponse.json(
         {
           error:
@@ -191,18 +211,43 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Explicit restore: only refresh entitlement already bound to this account.
-    // Do not first-claim unbound store ownership onto whoever is logged in.
-    if (restore === true && !existingPayment) {
-      return NextResponse.json(
-        {
-          error:
-            'No Full Access purchase is linked to this LingoTheory account. Purchase while logged in, or sign in to the account that bought Full Access.',
-        },
-        { status: 403 }
-      );
+    // Explicit Restore: only unlock when already bound to THIS LingoTheory user.
+    if (isRestore) {
+      if (!existingPayment) {
+        console.log('[apple/verify] Rejected restore: unbound historical Apple ownership');
+        return NextResponse.json(
+          {
+            error:
+              'No Full Access purchase is linked to this LingoTheory account. Purchase while logged in, or sign in to the account that bought Full Access.',
+          },
+          { status: 403 }
+        );
+      }
+
+      const { error: restoreProfileError } = await adminClient
+        .from('profiles')
+        .update({
+          access_level: 'paid',
+          paid_at: new Date().toISOString(),
+        })
+        .eq('id', user.id);
+
+      if (restoreProfileError) {
+        console.error('[apple/verify] Error updating profile:', restoreProfileError);
+        return NextResponse.json(
+          { error: 'Failed to update profile' },
+          { status: 500 }
+        );
+      }
+
+      return NextResponse.json({
+        ok: true,
+        alreadyVerified: true,
+        transactionId: txId,
+      });
     }
 
+    // Already bound to THIS user (Buy or re-verify).
     if (existingPayment) {
       const { error: existingProfileError } = await adminClient
         .from('profiles')
@@ -227,6 +272,36 @@ export async function POST(request: NextRequest) {
       });
     }
 
+    // Unbound transaction on Buy: only first-bind if signed purchaseDate is fresh.
+    // StoreKit returns old owned non-consumable transactions on "Buy" — those must not
+    // be claimable by a new LingoTheory account.
+    const purchaseDateMs = verified.purchaseDateMs;
+    if (purchaseDateMs == null || !Number.isFinite(purchaseDateMs)) {
+      console.log('[apple/verify] Rejected Buy: missing signed purchaseDate');
+      return NextResponse.json(
+        {
+          error:
+            'Could not confirm a new Apple purchase for this LingoTheory account. If you already bought Full Access, sign in to the account that purchased it.',
+        },
+        { status: 403 }
+      );
+    }
+
+    const ageMs = Date.now() - purchaseDateMs;
+    if (ageMs < -60_000 || ageMs > FRESH_PURCHASE_MAX_AGE_MS) {
+      console.log('[apple/verify] Rejected Buy: Apple transaction not fresh', {
+        ageMinutes: Math.round(ageMs / 60000),
+      });
+      return NextResponse.json(
+        {
+          error:
+            'This Apple ID already owns Full Access from an earlier purchase that is not linked to this LingoTheory account. Sign in to the account that bought it, or use a different Apple ID to purchase.',
+        },
+        { status: 403 }
+      );
+    }
+
+    // Fresh unbound purchase — bind to current LingoTheory user.
     const { error: profileError } = await adminClient
       .from('profiles')
       .update({
@@ -294,14 +369,7 @@ async function verifyAppleJws(
   expectedBundleId: string,
   expectedProductId: string,
   expectedTransactionId?: string
-): Promise<
-  | {
-      ok: true;
-      transactionId: string;
-      originalTransactionId: string | null;
-    }
-  | { ok: false; error: string }
-> {
+): Promise<VerifiedApplePurchase | AppleVerifyFailure> {
   const verifyInEnvironment = async (environment: Environment) => {
     if (environment === Environment.PRODUCTION && !APPLE_APPLE_ID) {
       return {
@@ -359,10 +427,16 @@ async function verifyAppleJws(
       return { ok: false as const, error: 'Apple JWS transaction is revoked' };
     }
 
+    const purchaseDateMs =
+      typeof decoded.purchaseDate === 'number' && Number.isFinite(decoded.purchaseDate)
+        ? decoded.purchaseDate
+        : null;
+
     return {
       ok: true as const,
       transactionId: transactionIdFromPayload,
       originalTransactionId,
+      purchaseDateMs,
     };
   };
 
@@ -386,14 +460,7 @@ async function verifyAppleReceipt(
   receiptData: string,
   expectedBundleId: string,
   expectedProductId: string
-): Promise<
-  | {
-      ok: true;
-      transactionId: string;
-      originalTransactionId: string | null;
-    }
-  | { ok: false; error: string }
-> {
+): Promise<VerifiedApplePurchase | AppleVerifyFailure> {
   const sharedSecret =
     process.env.APPLE_IAP_SHARED_SECRET || process.env.APPLE_SHARED_SECRET;
 
@@ -472,10 +539,18 @@ async function verifyAppleReceipt(
     };
   }
 
+  const purchaseDateMs = match.purchase_date_ms
+    ? Number(match.purchase_date_ms)
+    : null;
+
   return {
     ok: true,
     transactionId: match.transaction_id,
     originalTransactionId: match.original_transaction_id || match.transaction_id,
+    purchaseDateMs:
+      purchaseDateMs != null && Number.isFinite(purchaseDateMs)
+        ? purchaseDateMs
+        : null,
   };
 }
 

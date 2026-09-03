@@ -174,6 +174,8 @@ export async function purchaseAppleFullAccess(): Promise<ApplePurchaseResult> {
       transactionId: transaction.transactionId,
       jwsRepresentation: transaction.jwsRepresentation,
       receipt: transaction.receipt,
+      // Buy must never be treated as Restore. Server enforces fresh-purchase binding.
+      restore: false,
     });
 
     return { ok: true };
