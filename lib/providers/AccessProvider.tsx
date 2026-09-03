@@ -30,10 +30,14 @@ export function AccessProvider({ children }: { children: ReactNode }) {
   const supabase = createClient();
 
   const fetchAccessStatus = async (setLoadingState: boolean = true) => {
+    const controller = new AbortController();
+    const timeoutMs = 10_000;
+    const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
     try {
       if (setLoadingState) {
         setLoading(true);
       }
+      console.log('[access/status] refresh started', { setLoadingState });
       const response = await fetch('/api/access/status', {
         cache: 'no-store',
         credentials: 'include',
@@ -41,6 +45,7 @@ export function AccessProvider({ children }: { children: ReactNode }) {
           'Cache-Control': 'no-cache, no-store, must-revalidate',
           'Pragma': 'no-cache',
         },
+        signal: controller.signal,
       });
 
       if (!response.ok) {
@@ -57,6 +62,9 @@ export function AccessProvider({ children }: { children: ReactNode }) {
       // freeUsed comes from profiles.free_questions_used
       setPaid(data.paid === true);
       setFreeUsed(data.free_questions_used || 0);
+      console.log('[access/status] refresh completed', {
+        paid: data.paid === true,
+      });
       return data.paid === true;
     } catch (error) {
       console.error('[AccessProvider] Error:', error);
@@ -65,6 +73,7 @@ export function AccessProvider({ children }: { children: ReactNode }) {
       setFreeUsed(0);
       return false;
     } finally {
+      clearTimeout(timeoutId);
       if (setLoadingState) {
         setLoading(false);
       }

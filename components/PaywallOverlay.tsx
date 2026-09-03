@@ -147,9 +147,15 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
     setLoading(true);
     void trackEvent('checkout_clicked');
     try {
+      console.log('[paywall] iOS purchase: handler started');
       const result = await purchaseAppleFullAccess();
+      console.log('[paywall] iOS purchase: purchaseAppleFullAccess resolved', {
+        ok: result.ok,
+        cancelled: 'cancelled' in result ? result.cancelled : undefined,
+      });
       if (result.ok) {
         void trackEvent('payment_success', { source: 'apple_iap_client' });
+        console.log('[paywall] iOS purchase: verification ok; refreshing access');
         await refresh();
         return;
       }
@@ -162,6 +168,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
       console.error('Apple IAP purchase error:', error);
       alert(error instanceof Error ? error.message : enLabel('paywallPurchaseFailed'));
     } finally {
+      console.log('[paywall] iOS purchase: finally reached; clearing loading');
       setLoading(false);
     }
   };
