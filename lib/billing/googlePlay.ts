@@ -45,6 +45,25 @@ type PlayBillingPlugin = {
   restore(): Promise<{ purchases: PlayBillingPurchase[] }>;
 };
 
+/** Server verify — matches Apple-style bounded fetch. */
+const VERIFY_TIMEOUT_MS = 20_000;
+/** BillingClient connect / init must not hang the Paywall. */
+const BILLING_INIT_TIMEOUT_MS = 15_000;
+/** Product details query for price + purchase offer. */
+const GET_PRODUCT_TIMEOUT_MS = 15_000;
+/** Owned-purchase query (ITEM_ALREADY_OWNED / Restore). */
+const RESTORE_QUERY_TIMEOUT_MS = 20_000;
+/**
+ * Interactive Google Play purchase sheet.
+ * Generous bound so a real user can approve payment; still settles if the
+ * native bridge never resolves. Late native completion after timeout does
+ * NOT auto-verify — entitlement only after a successful verify path.
+ */
+const NATIVE_PURCHASE_TIMEOUT_MS = 5 * 60_000;
+
+const PURCHASE_CONFIRM_TIMEOUT_MESSAGE =
+  'The Google Play purchase could not be confirmed. Please try again.';
+
 function getPlayBilling(): PlayBillingPlugin {
   return registerPlugin<PlayBillingPlugin>('PlayBilling');
 }
@@ -70,26 +89,66 @@ function parseBillingError(error: unknown): {
   return { message: String(error) };
 }
 
+async function withTimeout<T>(
+  promise: Promise<T>,
+  timeoutMs: number,
+  timeoutMessage: string
+): Promise<T> {
+  let timeoutId: ReturnType<typeof setTimeout> | undefined;
+  try {
+    return await Promise.race([
+      promise,
+      new Promise<T>((_, reject) => {
+        timeoutId = setTimeout(() => reject(new Error(timeoutMessage)), timeoutMs);
+      }),
+    ]);
+  } finally {
+    if (timeoutId !== undefined) {
+      clearTimeout(timeoutId);
+    }
+  }
+}
+
 async function ensureBillingReady(): Promise<PlayBillingPlugin> {
   if (!isAndroidNative()) {
     throw new Error('Google Play Billing is only available on Android.');
   }
   const plugin = getPlayBilling();
-  await plugin.init();
+  await withTimeout(
+    plugin.init(),
+    BILLING_INIT_TIMEOUT_MS,
+    'Google Play Billing timed out. Please try again.'
+  );
   return plugin;
 }
 
 async function verifyWithServer(body: Record<string, unknown>): Promise<void> {
-  const response = await fetch('/api/billing/google/verify', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    credentials: 'include',
-    body: JSON.stringify(body),
-  });
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), VERIFY_TIMEOUT_MS);
 
-  const data = await response.json().catch(() => ({}));
-  if (!response.ok) {
-    throw new Error(data.error || 'Failed to verify Google Play purchase');
+  try {
+    const response = await fetch('/api/billing/google/verify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify(body),
+      signal: controller.signal,
+    });
+
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(data.error || 'Failed to verify Google Play purchase');
+    }
+  } catch (error) {
+    if (
+      error instanceof Error &&
+      (error.name === 'AbortError' || /aborted/i.test(error.message))
+    ) {
+      throw new Error('Google Play verification timed out. Please try again.');
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeoutId);
   }
 }
 
@@ -104,10 +163,14 @@ export async function fetchGoogleFullAccessPrice(): Promise<string> {
 
   try {
     const plugin = await ensureBillingReady();
-    const product = await plugin.getProduct({
-      productId: GOOGLE_FULL_ACCESS_PRODUCT_ID,
-      purchaseOptionId: GOOGLE_FULL_ACCESS_PURCHASE_OPTION_ID,
-    });
+    const product = await withTimeout(
+      plugin.getProduct({
+        productId: GOOGLE_FULL_ACCESS_PRODUCT_ID,
+        purchaseOptionId: GOOGLE_FULL_ACCESS_PURCHASE_OPTION_ID,
+      }),
+      GET_PRODUCT_TIMEOUT_MS,
+      'Google Play product lookup timed out.'
+    );
     if (product?.formattedPrice) {
       return product.formattedPrice;
     }
@@ -151,18 +214,29 @@ export async function purchaseGoogleFullAccess(): Promise<GooglePurchaseResult> 
 
     let purchase: PlayBillingPurchase;
     try {
-      purchase = await plugin.purchase({
-        productId: GOOGLE_FULL_ACCESS_PRODUCT_ID,
-        purchaseOptionId: GOOGLE_FULL_ACCESS_PURCHASE_OPTION_ID,
-      });
+      purchase = await withTimeout(
+        plugin.purchase({
+          productId: GOOGLE_FULL_ACCESS_PRODUCT_ID,
+          purchaseOptionId: GOOGLE_FULL_ACCESS_PURCHASE_OPTION_ID,
+        }),
+        NATIVE_PURCHASE_TIMEOUT_MS,
+        PURCHASE_CONFIRM_TIMEOUT_MESSAGE
+      );
     } catch (error) {
       const { code, message } = parseBillingError(error);
       if (code === 'USER_CANCELED') {
         return { ok: false, cancelled: true, error: 'Purchase cancelled.' };
       }
+      if (message === PURCHASE_CONFIRM_TIMEOUT_MESSAGE) {
+        return { ok: false, error: PURCHASE_CONFIRM_TIMEOUT_MESSAGE };
+      }
       if (code === 'ITEM_ALREADY_OWNED') {
         // Claim/verify as a purchase for the current LingoTheory account (not restore).
-        const { purchases } = await plugin.restore();
+        const { purchases } = await withTimeout(
+          plugin.restore(),
+          RESTORE_QUERY_TIMEOUT_MS,
+          'Google Play purchase lookup timed out. Please try again.'
+        );
         const owned = (purchases || []).find(
           (p) =>
             p.productId === GOOGLE_FULL_ACCESS_PRODUCT_ID &&
@@ -214,7 +288,11 @@ export async function restoreGoogleFullAccess(): Promise<GooglePurchaseResult> {
 
   try {
     const plugin = await ensureBillingReady();
-    const { purchases } = await plugin.restore();
+    const { purchases } = await withTimeout(
+      plugin.restore(),
+      RESTORE_QUERY_TIMEOUT_MS,
+      'Google Play restore timed out. Please try again.'
+    );
 
     const owned = (purchases || []).find(
       (p) =>

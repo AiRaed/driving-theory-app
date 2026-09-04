@@ -71,6 +71,8 @@ export async function POST(request: NextRequest) {
     const authClient = await auth.getClient();
     const androidpublisher = google.androidpublisher({
       version: 'v3',
+      // googleapis client typing is loose for credential clients
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       auth: authClient as any,
     });
 
@@ -186,7 +188,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const amount = 999;
+    // Metadata/accounting only (GBP pence). Does NOT determine Google Play billing price —
+    // Play Console / device product details are authoritative for what the user pays.
+    const amount = 499;
     const currency = 'gbp';
 
     const { error: paymentError } = await adminClient.from('payments').insert({
