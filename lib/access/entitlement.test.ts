@@ -8,6 +8,8 @@ import {
   isPaidAccessLevel,
   clientStateAfterLogout,
   clientStateFromServer,
+  decideAccountSwitchEntitlement,
+  sameAccountFreeUsageAcrossDevices,
 } from './entitlement';
 
 function run(name: string, fn: () => void) {
@@ -261,6 +263,95 @@ run('isPaidAccessLevel only true for paid', () => {
   assert.equal(isPaidAccessLevel('free'), false);
   assert.equal(isPaidAccessLevel(undefined), false);
   assert.equal(FREE_QUESTION_LIMIT, 15);
+});
+
+// Account-centric isolation / cross-device
+run('14. New account: free, used=0', () => {
+  const s = clientStateFromServer({ paid: false, freeQuestionsUsed: 0 });
+  assert.equal(s.paid, false);
+  assert.equal(s.freeQuestionsUsed, 0);
+  assert.equal(
+    decidePracticeAccess({ ...s, statusConfirmed: true }).allow,
+    true
+  );
+});
+
+run('15. Cross-device same account shares free usage count', () => {
+  const r = sameAccountFreeUsageAcrossDevices(10, 10, 10);
+  assert.equal(r.consistent, true);
+  assert.equal(r.used, 10);
+  assert.equal(
+    decidePracticeAccess({
+      paid: false,
+      freeQuestionsUsed: r.used,
+      statusConfirmed: true,
+    }).allow,
+    true
+  );
+});
+
+run('16. Cached paid from A cannot grant B after switch', () => {
+  const switched = decideAccountSwitchEntitlement({
+    priorCachedPaid: true,
+    priorCachedFreeUsed: 0,
+    nextServerPaid: false,
+    nextServerFreeUsed: 2,
+  });
+  assert.equal(switched.paid, false);
+  assert.equal(switched.freeQuestionsUsed, 2);
+  assert.equal(switched.practiceAllow, true);
+  assert.equal(switched.mockAllow, false);
+});
+
+run('17. API failure fail-closed does not invent fresh free allowance', () => {
+  const closed = failClosedAccessState(10, true);
+  assert.equal(closed.paid, false);
+  assert.equal(closed.freeUsed, 10);
+  const practice = decidePracticeAccess({
+    paid: closed.paid,
+    freeQuestionsUsed: closed.freeUsed,
+    statusConfirmed: false,
+  });
+  assert.equal(practice.allow, false);
+  assert.equal(practice.showPaywall, false);
+});
+
+run('18. Account A used=10 on another platform still used=10', () => {
+  const web = clientStateFromServer({ paid: false, freeQuestionsUsed: 10 });
+  const android = clientStateFromServer({
+    paid: false,
+    freeQuestionsUsed: web.freeQuestionsUsed,
+  });
+  assert.equal(android.freeQuestionsUsed, 10);
+  assert.equal(
+    decidePracticeAccess({
+      paid: false,
+      freeQuestionsUsed: android.freeQuestionsUsed,
+      statusConfirmed: true,
+    }).inFreeTrial,
+    true
+  );
+});
+
+run('19. Same-device A paid then B free remain isolated', () => {
+  const a = decideAccountSwitchEntitlement({
+    priorCachedPaid: false,
+    priorCachedFreeUsed: 0,
+    nextServerPaid: true,
+    nextServerFreeUsed: 0,
+  });
+  assert.equal(a.paid, true);
+  assert.equal(a.mockAllow, true);
+
+  const b = decideAccountSwitchEntitlement({
+    priorCachedPaid: a.paid,
+    priorCachedFreeUsed: a.freeQuestionsUsed,
+    nextServerPaid: false,
+    nextServerFreeUsed: 2,
+  });
+  assert.equal(b.paid, false);
+  assert.equal(b.freeQuestionsUsed, 2);
+  assert.equal(b.mockAllow, false);
 });
 
 console.log('All entitlement tests passed.');

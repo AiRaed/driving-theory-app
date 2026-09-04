@@ -50,6 +50,12 @@ import {
   trackEvent,
   trackSessionStart,
 } from '@/lib/analytics/client';
+import { createClient } from '@/lib/supabase/client';
+import {
+  ACCOUNT_LOCAL_KEYS,
+  readAccountJson,
+  writeAccountJson,
+} from '@/lib/account/clientAccountStorage';
 
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];
@@ -63,6 +69,8 @@ function shuffleArray<T>(array: T[]): T[] {
 export default function PracticePage() {
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
   const { loading, statusConfirmed, paid, freeUsed, refresh, silentRefresh } = useAccess();
+  const supabase = createClient();
+  const [accountUserId, setAccountUserId] = useState<string | null>(null);
   const {
     questions,
     urTranslations: bankUrdu,
@@ -84,6 +92,36 @@ export default function PracticePage() {
   const practiceSessionKeyRef = useRef<string | null>(null);
   const freeLimitTrackedRef = useRef(false);
   const practiceStartedTopicsRef = useRef<Set<string>>(new Set());
+
+  // Bind Practice UI cache to the authenticated LingoTheory account.
+  useEffect(() => {
+    const applyUser = (userId: string | null) => {
+      setAccountUserId((prev) => {
+        if (prev && prev !== userId) {
+          setAnsweredQuestionIds(new Set());
+          countedQuestionIds.current = new Set();
+          practiceSessionKeyRef.current = null;
+          practiceStartedTopicsRef.current = new Set();
+          freeLimitTrackedRef.current = false;
+          setCurrentQuestionIndex(0);
+          setSelectedAnswerIndex(null);
+        }
+        return userId;
+      });
+    };
+
+    void supabase.auth.getUser().then(({ data: { user } }) => {
+      applyUser(user?.id ?? null);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      applyUser(session?.user?.id ?? null);
+    });
+
+    return () => subscription.unsubscribe();
+  }, [supabase]);
 
   const [urTranslations, setUrTranslations] = useState<TranslationData | null>(null);
   const [roTranslations, setRoTranslations] = useState<TranslationData | null>(null);
@@ -342,53 +380,50 @@ export default function PracticePage() {
     return shuffleArray([...currentQuestion.options]);
   }, [currentQuestion?.id]);
 
-  // Load saved index from localStorage
+  // Account-scoped topic index cache (UI convenience only — not authoritative).
   const loadSavedIndex = (topic: string): number => {
-    if (typeof window === 'undefined') return 0;
-    try {
-      const saved = localStorage.getItem('theory_last_index_v1');
-      if (saved) {
-        const indices: Record<string, number> = JSON.parse(saved);
-        return indices[topic] ?? 0;
-      }
-    } catch (e) {
-      console.error('Failed to load saved index:', e);
-    }
-    return 0;
+    if (!accountUserId) return 0;
+    const indices = readAccountJson<Record<string, number>>(
+      accountUserId,
+      ACCOUNT_LOCAL_KEYS.practiceLastIndex
+    );
+    return indices?.[topic] ?? 0;
   };
 
-  // Save current index to localStorage
   const saveIndex = (topic: string, index: number) => {
-    if (typeof window === 'undefined' || !topic) return;
-    try {
-      const saved = localStorage.getItem('theory_last_index_v1');
-      const indices: Record<string, number> = saved ? JSON.parse(saved) : {};
-      indices[topic] = index;
-      localStorage.setItem('theory_last_index_v1', JSON.stringify(indices));
-    } catch (e) {
-      console.error('Failed to save index:', e);
-    }
+    if (!accountUserId || !topic) return;
+    const prev =
+      readAccountJson<Record<string, number>>(
+        accountUserId,
+        ACCOUNT_LOCAL_KEYS.practiceLastIndex
+      ) ?? {};
+    writeAccountJson(accountUserId, ACCOUNT_LOCAL_KEYS.practiceLastIndex, {
+      ...prev,
+      [topic]: index,
+    });
   };
 
-  // Restore index when topic changes
+  // Restore index when topic changes (per authenticated account)
   useEffect(() => {
-    if (selectedTopic && topicQuestions.length > 0) {
-      const savedIndex = loadSavedIndex(selectedTopic);
-      // Clamp index to valid range
-      const validIndex = Math.max(0, Math.min(savedIndex, topicQuestions.length - 1));
-      setCurrentQuestionIndex(validIndex);
-      setSelectedAnswerIndex(null);
-      setSelectedKeywordIndex(null);
-      setShowHints(false); // Reset hints to collapsed when topic changes
+    if (!accountUserId || !selectedTopic || topicQuestions.length === 0) {
+      return;
     }
-  }, [selectedTopic, topicQuestions.length]);
+    const savedIndex = loadSavedIndex(selectedTopic);
+    const validIndex = Math.max(0, Math.min(savedIndex, topicQuestions.length - 1));
+    setCurrentQuestionIndex(validIndex);
+    setSelectedAnswerIndex(null);
+    setSelectedKeywordIndex(null);
+    setShowHints(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [accountUserId, selectedTopic, topicQuestions.length]);
 
   // Save index when it changes
   useEffect(() => {
-    if (selectedTopic && topicQuestions.length > 0) {
+    if (accountUserId && selectedTopic && topicQuestions.length > 0) {
       saveIndex(selectedTopic, currentQuestionIndex);
     }
-  }, [currentQuestionIndex, selectedTopic]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [accountUserId, currentQuestionIndex, selectedTopic]);
 
   // Handle topic selection
   const handleTopicSelect = (topic: string) => {

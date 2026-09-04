@@ -10,6 +10,7 @@ import {
 } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import { failClosedAccessState } from '@/lib/access/entitlement';
+import { clearAccountClientCache } from '@/lib/account/clientAccountStorage';
 
 interface AccessContextType {
   loading: boolean;
@@ -51,6 +52,7 @@ export function AccessProvider({ children }: { children: ReactNode }) {
   const [freeUsed, setFreeUsed] = useState(0);
   const statusConfirmedRef = useRef(false);
   const freeUsedRef = useRef(0);
+  const lastUserIdRef = useRef<string | null>(null);
   const supabase = createClient();
 
   const applyFailClosed = () => {
@@ -141,8 +143,13 @@ export function AccessProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const {
       data: { subscription },
-    } = supabase.auth.onAuthStateChange((event) => {
+    } = supabase.auth.onAuthStateChange((event, session) => {
+      const nextUserId = session?.user?.id ?? null;
+
       if (event === 'SIGNED_OUT') {
+        clearAccountClientCache(lastUserIdRef.current);
+        clearAccountClientCache(null);
+        lastUserIdRef.current = null;
         clearAccountState(
           setPaid,
           setFreeUsed,
@@ -155,7 +162,16 @@ export function AccessProvider({ children }: { children: ReactNode }) {
       }
 
       if (event === 'SIGNED_IN') {
-        // Drop previous account entitlement before loading the new account.
+        // Drop previous account entitlement + device caches BEFORE hydrating B.
+        if (
+          lastUserIdRef.current &&
+          nextUserId &&
+          lastUserIdRef.current !== nextUserId
+        ) {
+          clearAccountClientCache(lastUserIdRef.current);
+        }
+        // Always clear legacy unscoped keys + analytics session ids on sign-in.
+        clearAccountClientCache(null);
         clearAccountState(
           setPaid,
           setFreeUsed,
@@ -163,11 +179,15 @@ export function AccessProvider({ children }: { children: ReactNode }) {
           freeUsedRef,
           statusConfirmedRef
         );
+        lastUserIdRef.current = nextUserId;
         void fetchAccessStatus(true);
         return;
       }
 
       if (event === 'TOKEN_REFRESHED') {
+        if (nextUserId) {
+          lastUserIdRef.current = nextUserId;
+        }
         void fetchAccessStatus(false);
       }
     });

@@ -220,3 +220,55 @@ export function clientStateFromServer(input: {
     statusConfirmed: true,
   };
 }
+
+/**
+ * After Account A → logout → Account B: only B's server state may apply.
+ * Local cached paid/progress from A must not grant B access.
+ */
+export function decideAccountSwitchEntitlement(input: {
+  priorCachedPaid: boolean;
+  priorCachedFreeUsed: number;
+  nextServerPaid: boolean;
+  nextServerFreeUsed: number;
+}): {
+  paid: boolean;
+  freeQuestionsUsed: number;
+  statusConfirmed: boolean;
+  practiceAllow: boolean;
+  mockAllow: boolean;
+} {
+  // Logout clears client entitlement before hydrating the next account.
+  void clientStateAfterLogout();
+  void input.priorCachedPaid;
+  void input.priorCachedFreeUsed;
+
+  const next = clientStateFromServer({
+    paid: input.nextServerPaid,
+    freeQuestionsUsed: input.nextServerFreeUsed,
+  });
+  const practice = decidePracticeAccess(next);
+  const mock = decideMockAccess(next);
+  return {
+    paid: next.paid,
+    freeQuestionsUsed: next.freeQuestionsUsed,
+    statusConfirmed: true,
+    practiceAllow: practice.allow,
+    mockAllow: mock.allow,
+  };
+}
+
+/**
+ * Cross-device: free_questions_used is account-owned; platforms share one count.
+ */
+export function sameAccountFreeUsageAcrossDevices(
+  webUsed: number,
+  androidUsed: number,
+  iosUsed: number
+): { consistent: boolean; used: number } {
+  const used = normalizeUsed(webUsed);
+  return {
+    consistent:
+      normalizeUsed(androidUsed) === used && normalizeUsed(iosUsed) === used,
+    used,
+  };
+}

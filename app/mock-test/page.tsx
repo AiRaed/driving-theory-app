@@ -16,6 +16,7 @@ import PaywallOverlay from "@/components/PaywallOverlay";
 import { useAccess } from '@/lib/providers/AccessProvider';
 import { decideMockAccess } from '@/lib/access/entitlement';
 import { createClient } from "@/lib/supabase/client";
+import type { User } from "@supabase/supabase-js";
 import { useQuestionBank } from "@/lib/questions/useQuestionBank";
 import { 
   loadUrduTranslations,
@@ -40,6 +41,13 @@ import {
   trackSessionComplete,
   trackSessionStart,
 } from '@/lib/analytics/client';
+import {
+  ACCOUNT_LOCAL_KEYS,
+  ACCOUNT_SESSION_KEYS,
+  readAccountJson,
+  removeAccountKey,
+  writeAccountJson,
+} from '@/lib/account/clientAccountStorage';
 
 interface AnswerRecord {
   questionId: string;
@@ -62,21 +70,19 @@ interface MockSession {
 
 /**
  * MOCK TEST CONFIGURATION CONSTANTS
- * 
+ *
  * SAFEGUARDED - DO NOT MODIFY WITHOUT REVIEW
- * 
- * SESSION_KEY: Versioned session storage key
- * - Increment version (v1 -> v2) if session structure changes
- * - Prevents conflicts with old session data
- * 
+ *
+ * Session cache is account-scoped (UI convenience). Authoritative Mock access
+ * and learning analytics are server-side per Supabase user_id.
+ *
  * QUESTION_COUNT: Number of questions per mock test
  * - Set to 50 to match DVSA official mock test standard
  * - Must not exceed total available questions in database
  * - Used in generateMockQuestions() to limit selection
  */
-const SESSION_KEY = "mock_session_v1";
 const QUESTION_COUNT = 50;
-const MOCK_ANALYTICS_SESSION_KEY = "lt_mock_analytics_session";
+const MOCK_ANALYTICS_SESSION_KEY = ACCOUNT_SESSION_KEYS.mockAnalytics;
 
 export default function MockTestPage() {
   const router = useRouter();
@@ -84,7 +90,7 @@ export default function MockTestPage() {
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
   const { loading, statusConfirmed, paid } = useAccess();
   const { lang: translationLang, setLang, ready: languageReady } = useLanguage();
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -102,19 +108,39 @@ export default function MockTestPage() {
   });
   const showPaywall = !loading && mockAccess.showPaywall;
 
-  // Check authentication
+  // Check authentication + reset in-memory Mock state on account switch
   useEffect(() => {
-    const checkAuth = async () => {
-      const { data: { user } } = await supabase.auth.getUser();
-      setUser(user);
-      
-      if (!user) {
+    const applyUser = (nextUser: User | null) => {
+      setUser((prev) => {
+        if (prev?.id && nextUser?.id && prev.id !== nextUser.id) {
+          setMockQuestions([]);
+          setCurrentIndex(0);
+          setSelectedOptionIndex(null);
+          setAnswers([]);
+          setIsFinished(false);
+          mockSessionIdRef.current = null;
+          mockCompleteTrackedRef.current = false;
+          mockStartedTrackedRef.current = false;
+          clearClientSessionId(MOCK_ANALYTICS_SESSION_KEY);
+        }
+        return nextUser;
+      });
+      if (!nextUser) {
         router.push('/auth');
-        return;
       }
     };
-    
-    checkAuth();
+
+    void supabase.auth.getUser().then(({ data: { user: authUser } }) => {
+      applyUser(authUser);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      applyUser(session?.user ?? null);
+    });
+
+    return () => subscription.unsubscribe();
   }, [router, supabase]);
 
   const [urTranslations, setUrTranslations] = useState<TranslationData | null>(null);
@@ -285,38 +311,22 @@ export default function MockTestPage() {
     return indices;
   };
 
-  // Load session from localStorage
+  // Load session from account-scoped localStorage (cache only)
   const loadSession = (): MockSession | null => {
-    if (typeof window === "undefined") return null;
-    try {
-      const saved = localStorage.getItem(SESSION_KEY);
-      if (saved) {
-        return JSON.parse(saved);
-      }
-    } catch (e) {
-      console.error("Failed to load session:", e);
-    }
-    return null;
+    if (!user?.id) return null;
+    return readAccountJson<MockSession>(user.id, ACCOUNT_LOCAL_KEYS.mockSession);
   };
 
-  // Save session to localStorage
+  // Save session to account-scoped localStorage
   const saveSession = (session: MockSession) => {
-    if (typeof window === "undefined") return;
-    try {
-      localStorage.setItem(SESSION_KEY, JSON.stringify(session));
-    } catch (e) {
-      console.error("Failed to save session:", e);
-    }
+    if (!user?.id) return;
+    writeAccountJson(user.id, ACCOUNT_LOCAL_KEYS.mockSession, session);
   };
 
-  // Clear session from localStorage
+  // Clear session from account-scoped localStorage
   const clearSession = () => {
-    if (typeof window === "undefined") return;
-    try {
-      localStorage.removeItem(SESSION_KEY);
-    } catch (e) {
-      console.error("Failed to clear session:", e);
-    }
+    if (!user?.id) return;
+    removeAccountKey(user.id, ACCOUNT_LOCAL_KEYS.mockSession);
   };
 
   // Restore session or initialize new test
@@ -725,7 +735,6 @@ export default function MockTestPage() {
     currentAnswer?.correct || 
     (selectedOptionIndex !== null && currentQuestion.optionsShuffled[selectedOptionIndex].correct)
   );
-  const correctIndex = currentQuestion.optionsShuffled.findIndex((opt) => opt.correct);
 
   return (
       <div className="min-h-screen bg-[var(--background)]">

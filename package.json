@@ -8,7 +8,7 @@
     "postbuild": "next-sitemap",
     "start": "next start -p $PORT",
     "lint": "next lint",
-    "test:entitlement": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" lib/access/entitlement.test.ts",
+    "test:entitlement": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" lib/access/entitlement.test.ts && ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" lib/account/clientAccountStorage.test.ts",
     "import:questions": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" tools/import-questions-to-supabase.ts",
     "verify:questions": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" tools/verify-question-bank.ts",
     "export:questions": "ts-node tools/export-questions.ts",
