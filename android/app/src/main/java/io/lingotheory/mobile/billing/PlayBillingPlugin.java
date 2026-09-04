@@ -7,12 +7,14 @@ import com.android.billingclient.api.BillingClient;
 import com.android.billingclient.api.BillingClientStateListener;
 import com.android.billingclient.api.BillingFlowParams;
 import com.android.billingclient.api.BillingResult;
+import com.android.billingclient.api.PendingPurchasesParams;
 import com.android.billingclient.api.ProductDetails;
 import com.android.billingclient.api.ProductDetailsResponseListener;
 import com.android.billingclient.api.Purchase;
 import com.android.billingclient.api.PurchasesResponseListener;
 import com.android.billingclient.api.PurchasesUpdatedListener;
 import com.android.billingclient.api.QueryProductDetailsParams;
+import com.android.billingclient.api.QueryProductDetailsResult;
 import com.android.billingclient.api.QueryPurchasesParams;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
@@ -50,7 +52,11 @@ public class PlayBillingPlugin extends Plugin implements PurchasesUpdatedListene
 
         billingClient = BillingClient.newBuilder(getContext())
                 .setListener(this)
-                .enablePendingPurchases()
+                .enablePendingPurchases(
+                        PendingPurchasesParams.newBuilder()
+                                .enableOneTimeProducts()
+                                .build()
+                )
                 .build();
 
         billingClient.startConnection(new BillingClientStateListener() {
@@ -302,7 +308,12 @@ public class PlayBillingPlugin extends Plugin implements PurchasesUpdatedListene
 
         billingClient.queryProductDetailsAsync(params, new ProductDetailsResponseListener() {
             @Override
-            public void onProductDetailsResponse(BillingResult billingResult, List<ProductDetails> productDetailsList) {
+            public void onProductDetailsResponse(
+                    BillingResult billingResult,
+                    QueryProductDetailsResult queryProductDetailsResult
+            ) {
+                List<ProductDetails> productDetailsList =
+                        queryProductDetailsResult.getProductDetailsList();
                 if (billingResult.getResponseCode() != BillingClient.BillingResponseCode.OK) {
                     callback.onFailure(
                             "Failed to query product: " + billingResult.getDebugMessage(),
