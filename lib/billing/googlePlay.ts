@@ -64,8 +64,54 @@ const NATIVE_PURCHASE_TIMEOUT_MS = 5 * 60_000;
 const PURCHASE_CONFIRM_TIMEOUT_MESSAGE =
   'The Google Play purchase could not be confirmed. Please try again.';
 
+/** Must match @CapacitorPlugin(name = "PlayBilling") on PlayBillingPlugin.java */
+const PLAY_BILLING_PLUGIN_NAME = 'PlayBilling';
+
+/** Skip a second native init() on Buy once paywall-load init has resolved in JS. */
+let playBillingSingleton: PlayBillingPlugin | null = null;
+let billingInitSucceeded = false;
+
+function getInjectedPlayBilling(): PlayBillingPlugin | null {
+  if (typeof window === 'undefined') {
+    return null;
+  }
+  const cap = (window as unknown as {
+    Capacitor?: { Plugins?: Record<string, PlayBillingPlugin | undefined> };
+  }).Capacitor;
+  const injected = cap?.Plugins?.[PLAY_BILLING_PLUGIN_NAME];
+  if (
+    injected &&
+    typeof injected.init === 'function' &&
+    typeof injected.purchase === 'function'
+  ) {
+    return injected;
+  }
+  return null;
+}
+
 function getPlayBilling(): PlayBillingPlugin {
-  return registerPlugin<PlayBillingPlugin>('PlayBilling');
+  if (playBillingSingleton) {
+    return playBillingSingleton;
+  }
+
+  const injected = getInjectedPlayBilling();
+  if (injected) {
+    console.log('[googlePlay] using Capacitor.Plugins.PlayBilling (native injected)');
+    playBillingSingleton = injected;
+    return playBillingSingleton;
+  }
+
+  console.log('[googlePlay] using registerPlugin("PlayBilling")');
+  playBillingSingleton = registerPlugin<PlayBillingPlugin>(PLAY_BILLING_PLUGIN_NAME);
+  return playBillingSingleton;
+}
+
+function assertPlayBillingPlugin(plugin: PlayBillingPlugin): void {
+  if (typeof plugin.init !== 'function' || typeof plugin.purchase !== 'function') {
+    throw new Error(
+      'PlayBilling plugin is missing init/purchase. Expected custom PlayBilling, not capgo NativePurchases.'
+    );
+  }
 }
 
 function isAndroidNative(): boolean {
@@ -114,11 +160,18 @@ async function ensureBillingReady(): Promise<PlayBillingPlugin> {
     throw new Error('Google Play Billing is only available on Android.');
   }
   const plugin = getPlayBilling();
+  assertPlayBillingPlugin(plugin);
+  if (billingInitSucceeded) {
+    return plugin;
+  }
+  console.log('[googlePlay] before init');
   await withTimeout(
     plugin.init(),
     BILLING_INIT_TIMEOUT_MS,
     'Google Play Billing timed out. Please try again.'
   );
+  billingInitSucceeded = true;
+  console.log('[googlePlay] init success');
   return plugin;
 }
 
@@ -205,12 +258,42 @@ async function verifyOwnedPurchase(
  * Unlocks only after server verification of a PURCHASED (non-pending) state.
  */
 export async function purchaseGoogleFullAccess(): Promise<GooglePurchaseResult> {
+  console.log('[googlePlay] purchaseGoogleFullAccess start');
   if (!isAndroidNative()) {
+    console.error('[googlePlay] not android native', {
+      isNativePlatform: Capacitor.isNativePlatform(),
+      platform: Capacitor.getPlatform(),
+    });
     return { ok: false, error: 'Google Play Billing is only available on Android.' };
   }
 
   try {
-    const plugin = await ensureBillingReady();
+    const plugin = getPlayBilling();
+    assertPlayBillingPlugin(plugin);
+
+    // Paywall load already connected BillingClient. Do not block Buy on a
+    // second init() Promise that can stay unresolved in JS while native is ready.
+    console.log('[googlePlay] before init');
+    if (billingInitSucceeded) {
+      console.log('[googlePlay] init success');
+    } else {
+      try {
+        await withTimeout(
+          plugin.init(),
+          1000,
+          'Google Play Billing init did not resolve; continuing to purchase.'
+        );
+        billingInitSucceeded = true;
+        console.log('[googlePlay] init success');
+      } catch (initError) {
+        console.error('[googlePlay] init failed or timed out; continuing to plugin.purchase', initError);
+      }
+    }
+
+    console.log('[googlePlay] before plugin.purchase', {
+      productId: GOOGLE_FULL_ACCESS_PRODUCT_ID,
+      purchaseOptionId: GOOGLE_FULL_ACCESS_PURCHASE_OPTION_ID,
+    });
 
     let purchase: PlayBillingPurchase;
     try {
@@ -222,7 +305,9 @@ export async function purchaseGoogleFullAccess(): Promise<GooglePurchaseResult> 
         NATIVE_PURCHASE_TIMEOUT_MS,
         PURCHASE_CONFIRM_TIMEOUT_MESSAGE
       );
+      console.log('[googlePlay] plugin.purchase resolved', purchase);
     } catch (error) {
+      console.error('[googlePlay] plugin.purchase rejected', error);
       const { code, message } = parseBillingError(error);
       if (code === 'USER_CANCELED') {
         return { ok: false, cancelled: true, error: 'Purchase cancelled.' };

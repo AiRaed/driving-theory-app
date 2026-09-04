@@ -16,6 +16,7 @@ import com.android.billingclient.api.PurchasesUpdatedListener;
 import com.android.billingclient.api.QueryProductDetailsParams;
 import com.android.billingclient.api.QueryProductDetailsResult;
 import com.android.billingclient.api.QueryPurchasesParams;
+import com.android.billingclient.api.UnfetchedProduct;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -160,26 +161,42 @@ public class PlayBillingPlugin extends Plugin implements PurchasesUpdatedListene
                     return;
                 }
 
-                BillingResult launchResult = billingClient.launchBillingFlow(activity, flowParams);
-                int launchCode = launchResult.getResponseCode();
-                if (launchCode == BillingClient.BillingResponseCode.OK) {
-                    return;
-                }
+                activity.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Log.d(TAG, "launchBillingFlow for product: " + productId);
+                            BillingResult launchResult = billingClient.launchBillingFlow(activity, flowParams);
+                            int launchCode = launchResult.getResponseCode();
+                            Log.d(TAG, "launchBillingFlow responseCode=" + launchCode
+                                    + " debugMessage=" + launchResult.getDebugMessage());
+                            if (launchCode == BillingClient.BillingResponseCode.OK) {
+                                return;
+                            }
 
-                if (launchCode == BillingClient.BillingResponseCode.USER_CANCELED) {
-                    rejectPendingPurchase("Purchase cancelled", "USER_CANCELED");
-                    return;
-                }
+                            if (launchCode == BillingClient.BillingResponseCode.USER_CANCELED) {
+                                rejectPendingPurchase("Purchase cancelled", "USER_CANCELED");
+                                return;
+                            }
 
-                if (launchCode == BillingClient.BillingResponseCode.ITEM_ALREADY_OWNED) {
-                    rejectPendingPurchase("Product already owned", "ITEM_ALREADY_OWNED");
-                    return;
-                }
+                            if (launchCode == BillingClient.BillingResponseCode.ITEM_ALREADY_OWNED) {
+                                rejectPendingPurchase("Product already owned", "ITEM_ALREADY_OWNED");
+                                return;
+                            }
 
-                rejectPendingPurchase(
-                        "Failed to launch purchase: " + launchResult.getDebugMessage(),
-                        "LAUNCH_FAILED"
-                );
+                            rejectPendingPurchase(
+                                    "Failed to launch purchase: " + launchResult.getDebugMessage(),
+                                    "LAUNCH_FAILED"
+                            );
+                        } catch (Exception e) {
+                            Log.e(TAG, "launchBillingFlow threw", e);
+                            rejectPendingPurchase(
+                                    "Failed to launch purchase: " + e.getMessage(),
+                                    "LAUNCH_FAILED"
+                            );
+                        }
+                    }
+                });
             }
 
             @Override
@@ -230,7 +247,8 @@ public class PlayBillingPlugin extends Plugin implements PurchasesUpdatedListene
 
     @Override
     public void onPurchasesUpdated(BillingResult billingResult, List<Purchase> purchases) {
-        Log.d(TAG, "onPurchasesUpdated: responseCode=" + billingResult.getResponseCode());
+        Log.d(TAG, "onPurchasesUpdated responseCode=" + billingResult.getResponseCode()
+                + " debugMessage=" + billingResult.getDebugMessage());
 
         if (pendingPurchaseCall == null) {
             Log.w(TAG, "onPurchasesUpdated called but no pending purchase call");
@@ -306,12 +324,35 @@ public class PlayBillingPlugin extends Plugin implements PurchasesUpdatedListene
                 .setProductList(productList)
                 .build();
 
+        Log.d(TAG, "queryProductDetails productId=" + productId);
         billingClient.queryProductDetailsAsync(params, new ProductDetailsResponseListener() {
             @Override
             public void onProductDetailsResponse(
                     BillingResult billingResult,
                     QueryProductDetailsResult queryProductDetailsResult
             ) {
+                if (queryProductDetailsResult == null) {
+                    Log.e(TAG, "queryProductDetails returned null result");
+                    callback.onFailure(
+                            "Failed to query product: empty result",
+                            "PRODUCT_QUERY_FAILED"
+                    );
+                    return;
+                }
+
+                List<UnfetchedProduct> unfetchedProducts =
+                        queryProductDetailsResult.getUnfetchedProductList();
+                if (unfetchedProducts != null) {
+                    for (UnfetchedProduct unfetched : unfetchedProducts) {
+                        if (unfetched == null) {
+                            continue;
+                        }
+                        Log.d(TAG, "UnfetchedProduct productId=" + unfetched.getProductId()
+                                + " productType=" + unfetched.getProductType()
+                                + " statusCode=" + unfetched.getStatusCode());
+                    }
+                }
+
                 List<ProductDetails> productDetailsList =
                         queryProductDetailsResult.getProductDetailsList();
                 if (billingResult.getResponseCode() != BillingClient.BillingResponseCode.OK) {

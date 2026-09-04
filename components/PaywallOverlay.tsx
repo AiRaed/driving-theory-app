@@ -100,6 +100,7 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
   }, []);
 
   const handleGooglePlayPurchase = async () => {
+    console.log('[googlePlay] buy handler start');
     setLoading(true);
     void trackEvent('checkout_clicked');
     try {
