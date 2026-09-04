@@ -14,7 +14,7 @@ import PaywallOverlay from '@/components/PaywallOverlay';
 import { useAccess } from '@/lib/providers/AccessProvider';
 import {
   FREE_QUESTION_LIMIT,
-  decidePracticeAccess,
+  decidePracticePageGate,
 } from '@/lib/access/entitlement';
 import { useQuestionBank } from '@/lib/questions/useQuestionBank';
 import { 
@@ -62,7 +62,7 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export default function PracticePage() {
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
-  const { loading, statusConfirmed, paid, freeUsed, silentRefresh } = useAccess();
+  const { loading, statusConfirmed, paid, freeUsed, refresh, silentRefresh } = useAccess();
   const {
     questions,
     urTranslations: bankUrdu,
@@ -77,6 +77,7 @@ export default function PracticePage() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
   const [selectedKeywordIndex, setSelectedKeywordIndex] = useState<number | null>(null);
+  void selectedKeywordIndex;
   const [answeredQuestionIds, setAnsweredQuestionIds] = useState<Set<string>>(new Set());
   // Track which questions have already been counted to avoid double-counting
   const countedQuestionIds = useRef<Set<string>>(new Set());
@@ -556,25 +557,16 @@ export default function PracticePage() {
     setImageError(true);
   };
 
-  // Practice: server-backed free trial (15) or paid unlimited.
-  // Unconfirmed status must not grant Practice.
-  const access = decidePracticeAccess({
+  // Practice page gate: unconfirmed ≠ paywall.
+  const pageGate = decidePracticePageGate({
+    loading,
     paid: paid === true,
     freeQuestionsUsed: freeUsed ?? 0,
     statusConfirmed,
   });
-  const showPaywall = !loading && access.showPaywall;
+  const showPaywall = pageGate === 'paywall';
 
-  // Wait until entitlement is confirmed (or fail-closed paywall after load)
-  if (loading || !statusConfirmed) {
-    // After load failure statusConfirmed=false: show paywall rather than infinite spinner
-    if (!loading && !statusConfirmed) {
-      return (
-        <div className="min-h-screen bg-[var(--background)] relative">
-          <PaywallOverlay />
-        </div>
-      );
-    }
+  if (pageGate === 'loading') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30">
         <div className="max-w-5xl mx-auto px-4 py-6">
@@ -584,10 +576,32 @@ export default function PracticePage() {
     );
   }
 
+  if (pageGate === 'retry') {
+    return (
+      <div className="min-h-screen bg-[var(--background)] flex items-center justify-center px-4">
+        <div className="max-w-md w-full text-center space-y-4">
+          <p className="text-[var(--text-primary)] font-medium">
+            We couldn&apos;t confirm your access status.
+            <br />
+            Please try again.
+          </p>
+          <button
+            type="button"
+            onClick={() => {
+              void refresh();
+            }}
+            className="lt-btn-primary px-6 py-3 text-base"
+          >
+            Try Again
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[var(--background)] relative">
-      {/* Paywall Overlay - blocks everything when locked */}
-      {/* Only show when: !loading && !paid && freeUsed >= 15 */}
+      {/* Paywall only when confirmed free trial is exhausted */}
       {showPaywall && <PaywallOverlay />}
       
       {/* Content - blurred and non-interactive when paywall is shown */}

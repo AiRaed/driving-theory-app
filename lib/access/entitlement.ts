@@ -124,6 +124,43 @@ export function decideMockAccess(input: {
 }
 
 /**
+ * Practice page UI gate — unconfirmed status is NOT a paywall.
+ *
+ * loading        → spinner
+ * unconfirmed    → neutral retry (no PaywallOverlay, no Practice)
+ * confirmed paid / free trial → Practice
+ * confirmed free exhausted    → PaywallOverlay
+ */
+export type PracticePageGate = 'loading' | 'retry' | 'practice' | 'paywall';
+
+export function decidePracticePageGate(input: {
+  loading: boolean;
+  paid: boolean;
+  freeQuestionsUsed: number;
+  statusConfirmed: boolean;
+}): PracticePageGate {
+  if (input.loading) {
+    return 'loading';
+  }
+
+  if (!input.statusConfirmed) {
+    return 'retry';
+  }
+
+  const access = decidePracticeAccess({
+    paid: input.paid,
+    freeQuestionsUsed: input.freeQuestionsUsed,
+    statusConfirmed: true,
+  });
+
+  if (access.showPaywall) {
+    return 'paywall';
+  }
+
+  return 'practice';
+}
+
+/**
  * @deprecated Use decidePracticeAccess. Kept for transitional call sites.
  */
 export function decideAccess(

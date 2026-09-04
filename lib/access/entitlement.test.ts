@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {
   FREE_QUESTION_LIMIT,
   decidePracticeAccess,
+  decidePracticePageGate,
   decideMockAccess,
   failClosedAccessState,
   isPaidAccessLevel,
@@ -19,7 +20,85 @@ function run(name: string, fn: () => void) {
   }
 }
 
-// PRACTICE
+// Practice page gate (A–E)
+run('A. unconfirmed => retry, not paywall, not practice', () => {
+  const gate = decidePracticePageGate({
+    loading: false,
+    paid: false,
+    freeQuestionsUsed: 0,
+    statusConfirmed: false,
+  });
+  assert.equal(gate, 'retry');
+  const access = decidePracticeAccess({
+    paid: false,
+    freeQuestionsUsed: 0,
+    statusConfirmed: false,
+  });
+  assert.equal(access.allow, false);
+  assert.equal(access.showPaywall, false);
+});
+
+run('B. confirmed free used=0 => practice', () => {
+  assert.equal(
+    decidePracticePageGate({
+      loading: false,
+      paid: false,
+      freeQuestionsUsed: 0,
+      statusConfirmed: true,
+    }),
+    'practice'
+  );
+});
+
+run('C. confirmed free used=14 => practice', () => {
+  assert.equal(
+    decidePracticePageGate({
+      loading: false,
+      paid: false,
+      freeQuestionsUsed: 14,
+      statusConfirmed: true,
+    }),
+    'practice'
+  );
+});
+
+run('D. confirmed free used=15 => paywall', () => {
+  assert.equal(
+    decidePracticePageGate({
+      loading: false,
+      paid: false,
+      freeQuestionsUsed: 15,
+      statusConfirmed: true,
+    }),
+    'paywall'
+  );
+});
+
+run('E. confirmed paid => practice', () => {
+  assert.equal(
+    decidePracticePageGate({
+      loading: false,
+      paid: true,
+      freeQuestionsUsed: 999,
+      statusConfirmed: true,
+    }),
+    'practice'
+  );
+});
+
+run('loading => loading gate', () => {
+  assert.equal(
+    decidePracticePageGate({
+      loading: true,
+      paid: false,
+      freeQuestionsUsed: 0,
+      statusConfirmed: false,
+    }),
+    'loading'
+  );
+});
+
+// PRACTICE access contract
 run('1. free used=0 => Practice allowed', () => {
   const d = decidePracticeAccess({
     paid: false,
@@ -108,7 +187,6 @@ run('10. unknown entitlement => Practice+Mock not granted', () => {
   assert.equal(mock.allow, false);
   assert.equal(mock.showPaywall, false);
 
-  // Even if stale paid flag were present, unconfirmed must not grant
   const practiceStale = decidePracticeAccess({
     paid: true,
     freeQuestionsUsed: 0,
@@ -153,7 +231,6 @@ run('12. Same paid account on any platform => Full Access', () => {
 });
 
 run('13. Different free account on same device => stays free', () => {
-  // Device store ownership is irrelevant to decide* — only DB account state.
   const accountB = clientStateFromServer({ paid: false, freeQuestionsUsed: 0 });
   const practice = decidePracticeAccess({
     paid: accountB.paid,
