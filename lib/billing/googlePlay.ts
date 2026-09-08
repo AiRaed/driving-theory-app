@@ -155,6 +155,119 @@ async function withTimeout<T>(
   }
 }
 
+function isPurchaseLike(value: unknown): value is PlayBillingPurchase {
+  if (!value || typeof value !== 'object') {
+    return false;
+  }
+  const obj = value as Record<string, unknown>;
+  return typeof obj.purchaseToken === 'string' || typeof obj.productId === 'string';
+}
+
+/**
+ * Native restore resolves JSObject { purchases: ArrayList<JSObject> }.
+ * Capacitor often delivers that list as a real array, a single object, or
+ * a numeric-key object — never assume .find() exists.
+ */
+function normalizePurchases(raw: unknown): PlayBillingPurchase[] {
+  if (!raw) {
+    return [];
+  }
+  if (Array.isArray(raw)) {
+    return raw.filter(isPurchaseLike);
+  }
+  if (typeof raw !== 'object') {
+    return [];
+  }
+
+  const obj = raw as Record<string, unknown>;
+
+  if (Array.isArray(obj.purchases)) {
+    return obj.purchases.filter(isPurchaseLike);
+  }
+  if (Array.isArray(obj.products)) {
+    return obj.products.filter(isPurchaseLike);
+  }
+  if (isPurchaseLike(obj.purchases)) {
+    return [obj.purchases];
+  }
+  if (isPurchaseLike(obj.products)) {
+    return [obj.products];
+  }
+
+  if (obj.purchases && typeof obj.purchases === 'object' && !Array.isArray(obj.purchases)) {
+    const nested = normalizePurchases(obj.purchases);
+    if (nested.length > 0) {
+      return nested;
+    }
+  }
+  if (obj.products && typeof obj.products === 'object' && !Array.isArray(obj.products)) {
+    const nested = normalizePurchases(obj.products);
+    if (nested.length > 0) {
+      return nested;
+    }
+  }
+
+  const numericKeys = Object.keys(obj).filter((key) => /^\d+$/.test(key));
+  if (numericKeys.length > 0) {
+    const fromKeys = numericKeys
+      .sort((a, b) => Number(a) - Number(b))
+      .map((key) => obj[key])
+      .filter(isPurchaseLike);
+    if (fromKeys.length > 0) {
+      return fromKeys;
+    }
+  }
+
+  if (isPurchaseLike(obj)) {
+    return [obj];
+  }
+
+  return [];
+}
+
+function findFullAccessPurchase(
+  purchases: PlayBillingPurchase[]
+): PlayBillingPurchase | undefined {
+  return purchases.find(
+    (purchase) =>
+      purchase &&
+      typeof purchase.purchaseToken === 'string' &&
+      purchase.purchaseToken.length > 0 &&
+      purchase.status !== 'pending' &&
+      purchase.purchaseState !== 2 &&
+      (purchase.productId === GOOGLE_FULL_ACCESS_PRODUCT_ID ||
+        !purchase.productId)
+  );
+}
+
+function normalizePurchaseResult(raw: unknown): PlayBillingPurchase | null {
+  return findFullAccessPurchase(normalizePurchases(raw)) ?? null;
+}
+
+async function activateFullAccessFromRestoreResult(
+  rawRestore: unknown,
+  options: { restore: boolean; notFoundMessage: string }
+): Promise<GooglePurchaseResult> {
+  console.log('[googlePlay] raw restore result', rawRestore);
+  const purchases = normalizePurchases(rawRestore);
+  console.log('[googlePlay] normalized purchases', purchases);
+
+  const owned = findFullAccessPurchase(purchases);
+  if (!owned) {
+    return { ok: false, error: options.notFoundMessage };
+  }
+
+  console.log('[googlePlay] full access ownership found', {
+    productId: owned.productId,
+    hasPurchaseToken: Boolean(owned.purchaseToken),
+    status: owned.status,
+    purchaseState: owned.purchaseState,
+  });
+
+  await verifyOwnedPurchase(owned, { restore: options.restore });
+  return { ok: true, alreadyOwned: true };
+}
+
 async function ensureBillingReady(): Promise<PlayBillingPlugin> {
   if (!isAndroidNative()) {
     throw new Error('Google Play Billing is only available on Android.');
@@ -297,7 +410,7 @@ export async function purchaseGoogleFullAccess(): Promise<GooglePurchaseResult> 
 
     let purchase: PlayBillingPurchase;
     try {
-      purchase = await withTimeout(
+      const rawPurchase = await withTimeout(
         plugin.purchase({
           productId: GOOGLE_FULL_ACCESS_PRODUCT_ID,
           purchaseOptionId: GOOGLE_FULL_ACCESS_PURCHASE_OPTION_ID,
@@ -305,7 +418,21 @@ export async function purchaseGoogleFullAccess(): Promise<GooglePurchaseResult> 
         NATIVE_PURCHASE_TIMEOUT_MS,
         PURCHASE_CONFIRM_TIMEOUT_MESSAGE
       );
-      console.log('[googlePlay] plugin.purchase resolved', purchase);
+      console.log('[googlePlay] plugin.purchase resolved', rawPurchase);
+      const normalizedPurchase = normalizePurchaseResult(rawPurchase);
+      if (!normalizedPurchase) {
+        const rawRestore = await withTimeout(
+          plugin.restore(),
+          RESTORE_QUERY_TIMEOUT_MS,
+          'Google Play purchase lookup timed out. Please try again.'
+        );
+        return activateFullAccessFromRestoreResult(rawRestore, {
+          restore: false,
+          notFoundMessage:
+            'Purchase completed, but Full Access details were unavailable. Try Restore Purchases.',
+        });
+      }
+      purchase = normalizedPurchase;
     } catch (error) {
       console.error('[googlePlay] plugin.purchase rejected', error);
       const { code, message } = parseBillingError(error);
@@ -316,27 +443,16 @@ export async function purchaseGoogleFullAccess(): Promise<GooglePurchaseResult> 
         return { ok: false, error: PURCHASE_CONFIRM_TIMEOUT_MESSAGE };
       }
       if (code === 'ITEM_ALREADY_OWNED') {
-        // Claim/verify as a purchase for the current LingoTheory account (not restore).
-        const { purchases } = await withTimeout(
+        const rawRestore = await withTimeout(
           plugin.restore(),
           RESTORE_QUERY_TIMEOUT_MS,
           'Google Play purchase lookup timed out. Please try again.'
         );
-        const owned = (purchases || []).find(
-          (p) =>
-            p.productId === GOOGLE_FULL_ACCESS_PRODUCT_ID &&
-            p.purchaseToken &&
-            p.status !== 'pending' &&
-            p.purchaseState !== 2
-        );
-        if (!owned) {
-          return {
-            ok: false,
-            error: 'Product already owned, but purchase details were unavailable.',
-          };
-        }
-        await verifyOwnedPurchase(owned, { restore: false });
-        return { ok: true, alreadyOwned: true };
+        return activateFullAccessFromRestoreResult(rawRestore, {
+          restore: false,
+          notFoundMessage:
+            'Product already owned, but purchase details were unavailable.',
+        });
       }
       return { ok: false, error: message };
     }
@@ -373,29 +489,15 @@ export async function restoreGoogleFullAccess(): Promise<GooglePurchaseResult> {
 
   try {
     const plugin = await ensureBillingReady();
-    const { purchases } = await withTimeout(
+    const rawRestore = await withTimeout(
       plugin.restore(),
       RESTORE_QUERY_TIMEOUT_MS,
       'Google Play restore timed out. Please try again.'
     );
-
-    const owned = (purchases || []).find(
-      (p) =>
-        p.productId === GOOGLE_FULL_ACCESS_PRODUCT_ID &&
-        p.purchaseToken &&
-        p.status !== 'pending' &&
-        p.purchaseState !== 2
-    );
-
-    if (!owned) {
-      return {
-        ok: false,
-        error: 'No previous Full Access purchase found for this Google account.',
-      };
-    }
-
-    await verifyOwnedPurchase(owned, { restore: true });
-    return { ok: true, alreadyOwned: true };
+    return activateFullAccessFromRestoreResult(rawRestore, {
+      restore: true,
+      notFoundMessage: 'No previous Full Access purchase found for this Google account.',
+    });
   } catch (error) {
     console.error('[googlePlay] restore error:', error);
     return {
