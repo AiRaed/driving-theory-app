@@ -248,11 +248,33 @@ async function activateFullAccessFromRestoreResult(
   rawRestore: unknown,
   options: { restore: boolean; notFoundMessage: string }
 ): Promise<GooglePurchaseResult> {
-  console.log('[googlePlay] raw restore result', rawRestore);
-  const purchases = normalizePurchases(rawRestore);
-  console.log('[googlePlay] normalized purchases', purchases);
+  const result = rawRestore as { purchases?: unknown } | null | undefined;
+  try {
+    console.log('[googlePlay] restore RAW:', JSON.stringify(result));
+  } catch (stringifyError) {
+    console.log('[googlePlay] restore RAW: [unserializable]', result, stringifyError);
+  }
+  console.log('[googlePlay] restore typeof:', typeof result);
+  console.log('[googlePlay] restore Object.keys:', Object.keys(result || {}));
+  console.log('[googlePlay] restore purchases typeof:', typeof result?.purchases);
+  console.log('[googlePlay] restore purchases isArray:', Array.isArray(result?.purchases));
+  console.log(
+    '[googlePlay] restore purchases keys:',
+    Object.keys(
+      result?.purchases && typeof result.purchases === 'object'
+        ? (result.purchases as object)
+        : {}
+    )
+  );
 
-  const owned = findFullAccessPurchase(purchases);
+  const normalized = normalizePurchases(rawRestore);
+  try {
+    console.log('[googlePlay] restore NORMALIZED:', JSON.stringify(normalized));
+  } catch (stringifyError) {
+    console.log('[googlePlay] restore NORMALIZED: [unserializable]', normalized, stringifyError);
+  }
+
+  const owned = findFullAccessPurchase(normalized);
   if (!owned) {
     return { ok: false, error: options.notFoundMessage };
   }
