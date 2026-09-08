@@ -17,6 +17,7 @@ import com.android.billingclient.api.QueryProductDetailsParams;
 import com.android.billingclient.api.QueryProductDetailsResult;
 import com.android.billingclient.api.QueryPurchasesParams;
 import com.android.billingclient.api.UnfetchedProduct;
+import com.getcapacitor.JSArray;
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -208,12 +209,11 @@ public class PlayBillingPlugin extends Plugin implements PurchasesUpdatedListene
 
     @PluginMethod
     public void restore(PluginCall call) {
+        Log.d(TAG, "restore() called");
         if (!isServiceConnected) {
             call.reject("BillingClient not connected. Call init() first.", "BILLING_UNAVAILABLE");
             return;
         }
-
-        Log.d(TAG, "Restoring purchases");
 
         QueryPurchasesParams params = QueryPurchasesParams.newBuilder()
                 .setProductType(BillingClient.ProductType.INAPP)
@@ -228,18 +228,25 @@ public class PlayBillingPlugin extends Plugin implements PurchasesUpdatedListene
                     return;
                 }
 
-                List<JSObject> purchaseList = new ArrayList<>();
+                int count = purchases == null ? 0 : purchases.size();
+                Log.d(TAG, "restore query returned count=" + count);
+
+                JSArray purchasesArray = new JSArray();
                 if (purchases != null) {
                     for (Purchase purchase : purchases) {
+                        Log.d(TAG, "restore purchase productIds=" + purchase.getProducts());
+                        String token = purchase.getPurchaseToken();
+                        Log.d(TAG, "restore token present=" + (token != null && !token.isEmpty()));
+
                         int state = purchase.getPurchaseState();
                         if (state == Purchase.PurchaseState.PURCHASED || state == Purchase.PurchaseState.PENDING) {
-                            purchaseList.add(purchaseToJSObject(purchase));
+                            purchasesArray.put(purchaseToJSObject(purchase));
                         }
                     }
                 }
 
                 JSObject result = new JSObject();
-                result.put("purchases", purchaseList);
+                result.put("purchases", purchasesArray);
                 call.resolve(result);
             }
         });
@@ -443,11 +450,29 @@ public class PlayBillingPlugin extends Plugin implements PurchasesUpdatedListene
         }
     }
 
+    private String primaryProductId(Purchase purchase) {
+        List<String> products = purchase.getProducts();
+        if (products == null || products.isEmpty()) {
+            return "";
+        }
+        for (String productId : products) {
+            if ("lingotheory_full_access".equals(productId)) {
+                return productId;
+            }
+        }
+        return products.get(0);
+    }
+
     private JSObject purchaseToJSObject(Purchase purchase) {
         JSObject obj = new JSObject();
         try {
-            obj.put("productId", purchase.getProducts().isEmpty() ? "" : purchase.getProducts().get(0));
-            obj.put("purchaseToken", purchase.getPurchaseToken());
+            String productId = primaryProductId(purchase);
+            String purchaseToken = purchase.getPurchaseToken();
+            if (purchaseToken == null) {
+                purchaseToken = "";
+            }
+            obj.put("productId", productId);
+            obj.put("purchaseToken", purchaseToken);
             obj.put("orderId", purchase.getOrderId());
             obj.put("acknowledged", purchase.isAcknowledged());
             obj.put("purchaseState", purchase.getPurchaseState());
