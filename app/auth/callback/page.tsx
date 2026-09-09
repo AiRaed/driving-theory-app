@@ -1,74 +1,66 @@
 'use client';
 
-import { useEffect, Suspense } from 'react';
+import { useEffect, useRef, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import type { EmailOtpType } from '@supabase/supabase-js';
 import { createClient } from '@/lib/supabase/client';
+
+const OTP_TYPES = new Set<EmailOtpType>([
+  'signup',
+  'invite',
+  'magiclink',
+  'recovery',
+  'email_change',
+  'email',
+]);
+
+function asOtpType(value: string | null): EmailOtpType | null {
+  if (value && OTP_TYPES.has(value as EmailOtpType)) {
+    return value as EmailOtpType;
+  }
+  return null;
+}
+
+function looksLikeConsumedOrExpiredAuthError(message: string | undefined): boolean {
+  if (!message) {
+    return false;
+  }
+  const m = message.toLowerCase();
+  return (
+    m.includes('expired') ||
+    m.includes('invalid flow state') ||
+    m.includes('code verifier') ||
+    m.includes('already been used') ||
+    m.includes('otp_expired') ||
+    m.includes('invalid or has expired')
+  );
+}
 
 function CallbackContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const supabase = createClient();
+  const ran = useRef(false);
 
   useEffect(() => {
+    if (ran.current) {
+      return;
+    }
+    ran.current = true;
+
     const handleCallback = async () => {
-      const params = {
-        code: searchParams.get('code'),
-        token_hash: searchParams.get('token_hash'),
-        type: searchParams.get('type'),
-        error: searchParams.get('error'),
-        error_code: searchParams.get('error_code'),
-        error_description: searchParams.get('error_description'),
+      const code = searchParams.get('code');
+      const tokenHash = searchParams.get('token_hash');
+      const typeParam = searchParams.get('type');
+      const error = searchParams.get('error');
+      const errorCode = searchParams.get('error_code');
+      const errorDescription = searchParams.get('error_description');
+
+      const goConfirmedNoSession = () => {
+        router.replace('/auth?confirmed=1');
       };
 
-      // Check for errors first
-      if (params.error) {
-        router.push(`/auth?error=confirm_failed`);
-        return;
-      }
-
-      // If code exists, exchange it for a session
-      if (params.code) {
-        const { error } = await supabase.auth.exchangeCodeForSession(params.code);
-        
-        if (error) {
-          // If exchange fails, redirect to auth with error
-          router.push(`/auth?error=confirm_failed`);
-          return;
-        }
-        
-        // Get user after session exchange
-        const {
-          data: { user },
-        } = await supabase.auth.getUser();
-
-        if (user) {
-          // Ensure profile exists for new users via API (SINGLE SOURCE OF TRUTH)
-          try {
-            const response = await fetch('/api/access/status', {
-              cache: 'no-store',
-              headers: {
-                'Cache-Control': 'no-cache',
-              },
-            });
-            if (!response.ok) {
-              // Profile will be created by the API if missing
-              console.log('[Callback] Profile check completed');
-            }
-          } catch (err) {
-            console.error('[Callback] Error checking profile:', err);
-          }
-        }
-        
-        // Successfully exchanged code for session, redirect to dashboard
-        router.push('/dashboard');
-        return;
-      }
-
-      // No code, but check if user session exists
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      if (session?.user) {
-        // User has a session, ensure profile exists via API (SINGLE SOURCE OF TRUTH)
+      const goSuccess = async () => {
         try {
           await fetch('/api/access/status', {
             cache: 'no-store',
@@ -79,17 +71,87 @@ function CallbackContent() {
         } catch (err) {
           console.error('[Callback] Error checking profile:', err);
         }
-        
-        // User has a session, redirect to dashboard
-        router.push('/dashboard');
+        router.replace('/dashboard');
+      };
+
+      const establishedUser = async () => {
+        const {
+          data: { user },
+        } = await supabase.auth.getUser();
+        return user ?? null;
+      };
+
+      if (error) {
+        const user = await establishedUser();
+        if (user) {
+          await goSuccess();
+          return;
+        }
+
+        const alreadyResolved =
+          errorCode === 'otp_expired' ||
+          looksLikeConsumedOrExpiredAuthError(errorDescription || error);
+        if (alreadyResolved) {
+          goConfirmedNoSession();
+          return;
+        }
+
+        router.replace('/auth?error=confirm_failed');
         return;
       }
 
-      // No code and no session, redirect to auth with confirmed flag
-      router.push('/auth?confirmed=1');
+      if (code) {
+        const { error: exchangeError } = await supabase.auth.exchangeCodeForSession(code);
+        if (exchangeError) {
+          const user = await establishedUser();
+          if (user) {
+            await goSuccess();
+            return;
+          }
+          if (looksLikeConsumedOrExpiredAuthError(exchangeError.message)) {
+            goConfirmedNoSession();
+            return;
+          }
+          router.replace('/auth?error=confirm_failed');
+          return;
+        }
+        await goSuccess();
+        return;
+      }
+
+      if (tokenHash) {
+        const otpType = asOtpType(typeParam) ?? 'email';
+        const { error: otpError } = await supabase.auth.verifyOtp({
+          token_hash: tokenHash,
+          type: otpType,
+        });
+        if (!otpError) {
+          await goSuccess();
+          return;
+        }
+        const user = await establishedUser();
+        if (user) {
+          await goSuccess();
+          return;
+        }
+        if (looksLikeConsumedOrExpiredAuthError(otpError.message)) {
+          goConfirmedNoSession();
+          return;
+        }
+        router.replace('/auth?error=confirm_failed');
+        return;
+      }
+
+      const user = await establishedUser();
+      if (user) {
+        await goSuccess();
+        return;
+      }
+
+      goConfirmedNoSession();
     };
 
-    handleCallback();
+    void handleCallback();
   }, [searchParams, router, supabase]);
 
   return (
@@ -116,4 +178,3 @@ export default function CallbackPage() {
     </Suspense>
   );
 }
-

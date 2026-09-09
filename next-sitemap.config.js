@@ -9,6 +9,8 @@ module.exports = {
     '/auth/callback',
     '/auth/reset',
     '/cover',
+    '/.well-known/*',
+    '/apple-app-site-association',
   ],
   robotsTxtOptions: {
     policies: [

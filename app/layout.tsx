@@ -9,6 +9,7 @@ import { LanguageProvider } from "@/lib/i18n/LanguageProvider";
 import PWAMetaTags from "@/components/PWAMetaTags";
 import RegisterServiceWorker from "@/components/RegisterServiceWorker";
 import IOSInstallBanner from "@/components/IOSInstallBanner";
+import DeepLinkHandler from "@/components/DeepLinkHandler";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -60,6 +61,7 @@ export default function RootLayout({
       >
         <PWAMetaTags />
         <RegisterServiceWorker />
+        <DeepLinkHandler />
         <IOSInstallBanner />
         <Analytics />
         <AccessProvider>

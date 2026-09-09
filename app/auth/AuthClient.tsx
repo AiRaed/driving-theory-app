@@ -34,11 +34,12 @@ export default function AuthClient() {
   }, [router, next, supabase]);
 
   useEffect(() => {
-    // Handle email confirmation success
     if (confirmed === '1') {
+      setMode('login');
+      setError(null);
       setMessage('Email confirmed successfully! You can now log in.');
+      return;
     }
-    // Handle email confirmation error
     if (errorParam === 'confirm_failed') {
       setError('Email confirmation failed. Please try again or request a new confirmation email.');
     }
@@ -83,12 +84,14 @@ export default function AuthClient() {
       return;
     }
 
-    const origin = typeof window !== 'undefined' ? window.location.origin : '';
+    const siteUrl =
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      (typeof window !== 'undefined' ? window.location.origin : 'https://www.lingotheory.org');
     const { error } = await supabase.auth.signUp({
       email,
       password,
       options: {
-        emailRedirectTo: `${origin}/auth/callback`,
+        emailRedirectTo: `${siteUrl}/auth/callback`,
       },
     });
 
