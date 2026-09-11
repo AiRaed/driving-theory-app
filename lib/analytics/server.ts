@@ -7,6 +7,10 @@ import type {
   SessionStartPayload,
   UserLearningStatsRow,
 } from '@/lib/analytics/types';
+import {
+  normalizeRuntimePlatform,
+  type RuntimePlatform,
+} from '@/lib/analytics/platform';
 
 function admin() {
   return createServiceClient();
@@ -14,6 +18,39 @@ function admin() {
 
 function logAnalyticsError(scope: string, error: unknown) {
   console.error(`[analytics:${scope}]`, error);
+}
+
+/** Skip pure activity touches within this window unless platform changed. */
+const ACTIVITY_TOUCH_MIN_MS = 5 * 60 * 1000;
+
+function platformsUsedList(stats: UserLearningStatsRow): string[] {
+  return Array.isArray(stats.platforms_used) ? [...stats.platforms_used] : [];
+}
+
+/** Fields to set last_platform / append platforms_used (never removes). */
+function platformPatch(
+  stats: UserLearningStatsRow,
+  platform: unknown
+): Record<string, unknown> {
+  const plat = normalizeRuntimePlatform(platform);
+  if (!plat) return {};
+  const used = platformsUsedList(stats);
+  const patch: Record<string, unknown> = { last_platform: plat };
+  if (!used.includes(plat)) {
+    patch.platforms_used = [...used, plat];
+  }
+  return patch;
+}
+
+function extractPlatform(
+  metadata?: AnalyticsMetadata,
+  explicit?: unknown
+): RuntimePlatform | null {
+  return (
+    normalizeRuntimePlatform(explicit) ||
+    normalizeRuntimePlatform(metadata?.platform) ||
+    null
+  );
 }
 
 /** Ensure a stats row exists; sync free_questions_used from profiles. */
@@ -91,17 +128,49 @@ export async function ensureStats(userId: string): Promise<UserLearningStatsRow 
   return inserted as UserLearningStatsRow;
 }
 
-export async function touchActivity(userId: string): Promise<void> {
+export async function touchActivity(
+  userId: string,
+  platform?: unknown
+): Promise<void> {
   try {
     const stats = await ensureStats(userId);
     if (!stats) return;
     const sb = admin();
     const now = new Date().toISOString();
-    const patch: Record<string, unknown> = { last_activity_at: now };
+    const plat = normalizeRuntimePlatform(platform);
+    const platFields = platformPatch(stats, plat);
+
+    const lastAt = stats.last_activity_at
+      ? new Date(stats.last_activity_at).getTime()
+      : 0;
+    const recent =
+      Number.isFinite(lastAt) && Date.now() - lastAt < ACTIVITY_TOUCH_MIN_MS;
+    const platformChanged =
+      !!plat && plat !== normalizeRuntimePlatform(stats.last_platform);
+    const needsPlatformAdd =
+      !!plat && !platformsUsedList(stats).includes(plat);
+
+    // Throttle repeated touches; always write when platform is new/changed.
+    if (
+      recent &&
+      stats.first_activity_at &&
+      !platformChanged &&
+      !needsPlatformAdd
+    ) {
+      return;
+    }
+
+    const patch: Record<string, unknown> = {
+      last_activity_at: now,
+      ...platFields,
+    };
     if (!stats.first_activity_at) {
       patch.first_activity_at = now;
     }
-    const { error } = await sb.from('user_learning_stats').update(patch).eq('user_id', userId);
+    const { error } = await sb
+      .from('user_learning_stats')
+      .update(patch)
+      .eq('user_id', userId);
     if (error) logAnalyticsError('touchActivity', error);
   } catch (e) {
     logAnalyticsError('touchActivity', e);
@@ -128,14 +197,17 @@ export async function recordProductEvent(
 
 async function incrementStats(
   userId: string,
-  deltas: Partial<Record<keyof UserLearningStatsRow, number | boolean | string | null>>
+  deltas: Partial<Record<keyof UserLearningStatsRow, number | boolean | string | null>>,
+  platform?: unknown
 ): Promise<void> {
   const sb = admin();
   const stats = await ensureStats(userId);
   if (!stats) return;
 
   const statsRec = stats as unknown as Record<string, unknown>;
-  const patch: Record<string, unknown> = {};
+  const patch: Record<string, unknown> = {
+    ...platformPatch(stats, platform),
+  };
   for (const [key, value] of Object.entries(deltas)) {
     if (typeof value === 'number' && typeof statsRec[key] === 'number') {
       // Clamp counters at 0 when applying negative deltas (e.g. mock answer change)
@@ -167,6 +239,7 @@ export async function recordQuestionAttempt(payload: AttemptPayload): Promise<vo
     mode,
     language,
     sessionId,
+    platform,
   } = payload;
 
   if (!userId || !questionId || !sessionId) {
@@ -217,13 +290,17 @@ export async function recordQuestionAttempt(payload: AttemptPayload): Promise<vo
       throw insErr;
     }
 
-    await incrementStats(userId, {
-      questions_attempted: 1,
-      unique_questions_attempted: isFirstForQuestion ? 1 : 0,
-      correct_answers: isCorrect ? 1 : 0,
-      incorrect_answers: isCorrect ? 0 : 1,
-      ...(language ? { last_language_used: language } : {}),
-    });
+    await incrementStats(
+      userId,
+      {
+        questions_attempted: 1,
+        unique_questions_attempted: isFirstForQuestion ? 1 : 0,
+        correct_answers: isCorrect ? 1 : 0,
+        incorrect_answers: isCorrect ? 0 : 1,
+        ...(language ? { last_language_used: language } : {}),
+      },
+      platform
+    );
   } else {
     // Update existing attempt (e.g. mock answer change) — adjust correct/incorrect deltas
     const wasCorrect = !!existing.is_correct;
@@ -246,13 +323,17 @@ export async function recordQuestionAttempt(payload: AttemptPayload): Promise<vo
     }
 
     if (wasCorrect !== nowCorrect) {
-      await incrementStats(userId, {
-        correct_answers: nowCorrect ? 1 : -1,
-        incorrect_answers: nowCorrect ? -1 : 1,
-        ...(language ? { last_language_used: language } : {}),
-      });
+      await incrementStats(
+        userId,
+        {
+          correct_answers: nowCorrect ? 1 : -1,
+          incorrect_answers: nowCorrect ? -1 : 1,
+          ...(language ? { last_language_used: language } : {}),
+        },
+        platform
+      );
     } else {
-      await touchActivity(userId);
+      await touchActivity(userId, platform);
       if (language) {
         const { error } = await sb
           .from('user_learning_stats')
@@ -277,11 +358,14 @@ export async function recordQuestionAttempt(payload: AttemptPayload): Promise<vo
     mode,
     language: language ?? null,
     session_id: sessionId,
+    ...(normalizeRuntimePlatform(platform)
+      ? { platform: normalizeRuntimePlatform(platform) }
+      : {}),
   });
 }
 
 export async function startLearningSession(payload: SessionStartPayload): Promise<void> {
-  const { userId, mode, language, clientSessionId } = payload;
+  const { userId, mode, language, clientSessionId, platform } = payload;
   if (!userId || !mode) throw new Error('Missing required session start fields');
 
   const sb = admin();
@@ -305,7 +389,7 @@ export async function startLearningSession(payload: SessionStartPayload): Promis
 
   if (existing) {
     // Idempotent: do not re-increment counters or re-fire start events
-    await touchActivity(userId);
+    await touchActivity(userId, platform);
     return;
   }
 
@@ -320,7 +404,7 @@ export async function startLearningSession(payload: SessionStartPayload): Promis
     // Unique race on client_session_id — treat as already started
     const code = (insErr as { code?: string }).code;
     if (clientSessionId && (code === '23505' || /duplicate|unique/i.test(String(insErr.message || '')))) {
-      await touchActivity(userId);
+      await touchActivity(userId, platform);
       return;
     }
     logAnalyticsError('startLearningSession.insert', insErr);
@@ -328,28 +412,43 @@ export async function startLearningSession(payload: SessionStartPayload): Promis
   }
 
   if (mode === 'practice') {
-    await incrementStats(userId, {
-      practice_sessions: 1,
-      ...(language ? { last_language_used: language } : {}),
-    });
+    await incrementStats(
+      userId,
+      {
+        practice_sessions: 1,
+        ...(language ? { last_language_used: language } : {}),
+      },
+      platform
+    );
     await recordProductEvent(userId, 'practice_started', {
       client_session_id: clientSessionId ?? null,
       language: language ?? null,
+      ...(normalizeRuntimePlatform(platform)
+        ? { platform: normalizeRuntimePlatform(platform) }
+        : {}),
     });
   } else {
-    await incrementStats(userId, {
-      mock_tests_started: 1,
-      ...(language ? { last_language_used: language } : {}),
-    });
+    await incrementStats(
+      userId,
+      {
+        mock_tests_started: 1,
+        ...(language ? { last_language_used: language } : {}),
+      },
+      platform
+    );
     await recordProductEvent(userId, 'mock_test_started', {
       client_session_id: clientSessionId ?? null,
       language: language ?? null,
+      ...(normalizeRuntimePlatform(platform)
+        ? { platform: normalizeRuntimePlatform(platform) }
+        : {}),
     });
   }
 }
 
 export async function completeLearningSession(payload: SessionCompletePayload): Promise<void> {
-  const { userId, clientSessionId, questionsAttempted, correctAnswers, score } = payload;
+  const { userId, clientSessionId, questionsAttempted, correctAnswers, score, platform } =
+    payload;
   if (!userId || !clientSessionId) throw new Error('Missing required session complete fields');
 
   const sb = admin();
@@ -391,7 +490,7 @@ export async function completeLearningSession(payload: SessionCompletePayload): 
   }
 
   if (alreadyCompleted) {
-    await touchActivity(userId);
+    await touchActivity(userId, platform);
     return;
   }
 
@@ -405,9 +504,11 @@ export async function completeLearningSession(payload: SessionCompletePayload): 
 
     await incrementStats(userId, {
       mock_tests_completed: 1,
-    });
+    }, platform);
 
-    const patch: Record<string, unknown> = {};
+    const patch: Record<string, unknown> = {
+      ...platformPatch(stats as UserLearningStatsRow, platform),
+    };
     if (scoreVal != null) {
       patch.latest_mock_score = scoreVal;
       patch.best_mock_score = best;
@@ -422,9 +523,12 @@ export async function completeLearningSession(payload: SessionCompletePayload): 
       questions_attempted: questionsAttempted ?? session.questions_attempted,
       correct_answers: correctAnswers ?? session.correct_answers,
       score: scoreVal,
+      ...(normalizeRuntimePlatform(platform)
+        ? { platform: normalizeRuntimePlatform(platform) }
+        : {}),
     });
   } else {
-    await touchActivity(userId);
+    await touchActivity(userId, platform);
   }
 }
 
@@ -436,6 +540,7 @@ export async function applyProductEventSideEffects(
   try {
     await ensureStats(userId);
     const sb = admin();
+    const platform = extractPlatform(metadata);
 
     switch (eventName) {
       case 'free_limit_reached': {
@@ -444,15 +549,15 @@ export async function applyProductEventSideEffects(
           .update({ free_limit_reached: true })
           .eq('user_id', userId);
         if (error) logAnalyticsError('sideEffects.free_limit', error);
-        await touchActivity(userId);
+        await touchActivity(userId, platform);
         break;
       }
       case 'paywall_viewed': {
-        await incrementStats(userId, { paywall_seen_count: 1 });
+        await incrementStats(userId, { paywall_seen_count: 1 }, platform);
         break;
       }
       case 'checkout_clicked': {
-        await incrementStats(userId, { checkout_clicked_count: 1 });
+        await incrementStats(userId, { checkout_clicked_count: 1 }, platform);
         break;
       }
       case 'language_changed': {
@@ -470,21 +575,21 @@ export async function applyProductEventSideEffects(
             .eq('user_id', userId);
           if (error) logAnalyticsError('sideEffects.language', error);
         }
-        await touchActivity(userId);
+        await touchActivity(userId, platform);
         break;
       }
       case 'login':
       case 'signup_completed': {
-        await touchActivity(userId);
+        await touchActivity(userId, platform);
         break;
       }
       case 'payment_success': {
         // Intentionally do NOT set has_purchased here (client-callable track route).
-        await touchActivity(userId);
+        await touchActivity(userId, platform);
         break;
       }
       default:
-        await touchActivity(userId);
+        await touchActivity(userId, platform);
         break;
     }
   } catch (e) {

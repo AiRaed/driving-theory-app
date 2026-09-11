@@ -1,13 +1,35 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
+import { cn } from '@/lib/utils';
+
+/** Practice + Mock Test (including nested review/result under same paths). */
+function isQuestionTakingRoute(pathname: string | null): boolean {
+  if (!pathname) return false;
+  return (
+    pathname === '/practice' ||
+    pathname.startsWith('/practice/') ||
+    pathname === '/mock-test' ||
+    pathname.startsWith('/mock-test/')
+  );
+}
 
 export default function FooterClient() {
   const { t } = useLanguage();
+  const pathname = usePathname();
+  const hideOnMobile = isQuestionTakingRoute(pathname);
 
   return (
-    <footer className="mt-auto border-t border-[var(--border)] bg-[var(--surface)]">
+    <footer
+      className={cn(
+        'mt-auto border-t border-[var(--border)] bg-[var(--surface)]',
+        // Mobile WebView / phone: free vertical space on question flows.
+        // Desktop (md+): keep existing footer on all routes.
+        hideOnMobile && 'hidden md:block'
+      )}
+    >
       <div className="max-w-5xl mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-4">
           <div>

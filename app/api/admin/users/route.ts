@@ -70,7 +70,7 @@ export async function GET(request: NextRequest) {
     const profileList = (profiles || []) as ProfileRow[];
     const ids = profileList.map((p) => p.id);
 
-    let statsByUser = new Map<string, UserLearningStatsRow>();
+    const statsByUser = new Map<string, UserLearningStatsRow>();
     if (ids.length > 0) {
       // Chunk to avoid URL limits
       const chunkSize = 200;
@@ -117,6 +117,10 @@ export async function GET(request: NextRequest) {
         last_language_used: stats?.last_language_used ?? null,
         last_activity_at: stats?.last_activity_at ?? null,
         last_active_relative: relativeTime(stats?.last_activity_at),
+        last_platform: stats?.last_platform ?? null,
+        platforms_used: Array.isArray(stats?.platforms_used)
+          ? stats.platforms_used
+          : [],
         first_activity_at: stats?.first_activity_at ?? null,
         paid_at: p.paid_at,
         updated_at: p.updated_at,

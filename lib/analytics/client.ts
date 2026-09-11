@@ -2,6 +2,7 @@
  * Client analytics helpers — fire-and-forget, never block UI.
  */
 import { trackEvent } from '@/lib/analytics/trackEvent';
+import { getClientRuntimePlatform } from '@/lib/analytics/platform';
 import type { AnalyticsMode } from '@/lib/analytics/types';
 import { toAnalyticsLanguage } from '@/lib/i18n/languages';
 
@@ -51,7 +52,10 @@ export function trackAttempt(payload: {
   language?: string | null;
   session_id: string;
 }) {
-  postJson('/api/analytics/attempt', payload);
+  postJson('/api/analytics/attempt', {
+    ...payload,
+    platform: getClientRuntimePlatform(),
+  });
 }
 
 export function trackSessionStart(payload: {
@@ -59,7 +63,11 @@ export function trackSessionStart(payload: {
   language?: string | null;
   client_session_id: string;
 }) {
-  postJson('/api/analytics/session', { action: 'start', ...payload });
+  postJson('/api/analytics/session', {
+    action: 'start',
+    ...payload,
+    platform: getClientRuntimePlatform(),
+  });
 }
 
 export function trackSessionComplete(payload: {
@@ -69,7 +77,11 @@ export function trackSessionComplete(payload: {
   correct_answers?: number;
   score?: number | null;
 }) {
-  postJson('/api/analytics/session', { action: 'complete', ...payload });
+  postJson('/api/analytics/session', {
+    action: 'complete',
+    ...payload,
+    platform: getClientRuntimePlatform(),
+  });
 }
 
 /** Map TranslationLang to analytics language label. */

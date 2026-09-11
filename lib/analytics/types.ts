@@ -29,6 +29,8 @@ export type AttemptPayload = {
   mode: AnalyticsMode;
   language?: string | null;
   sessionId: string;
+  /** Runtime client platform (ios|android|web) — not payment provider */
+  platform?: string | null;
 };
 
 export type SessionStartPayload = {
@@ -36,6 +38,7 @@ export type SessionStartPayload = {
   mode: AnalyticsMode;
   language?: string | null;
   clientSessionId?: string | null;
+  platform?: string | null;
 };
 
 export type SessionCompletePayload = {
@@ -44,6 +47,7 @@ export type SessionCompletePayload = {
   questionsAttempted?: number;
   correctAnswers?: number;
   score?: number | null;
+  platform?: string | null;
 };
 
 export type SessionAction = 'start' | 'complete';
@@ -62,6 +66,7 @@ export type AttemptBody = {
   mode: AnalyticsMode;
   language?: string | null;
   session_id: string;
+  platform?: string | null;
 };
 
 export type SessionBody = {
@@ -72,6 +77,7 @@ export type SessionBody = {
   questions_attempted?: number;
   correct_answers?: number;
   score?: number | null;
+  platform?: string | null;
 };
 
 export type AdminUserFilter =
@@ -113,6 +119,10 @@ export type UserLearningStatsRow = {
   last_language_used: string | null;
   first_activity_at: string | null;
   last_activity_at: string | null;
+  /** Runtime platform of most recent activity: ios | android | web */
+  last_platform: string | null;
+  /** Unique runtime platforms seen for this user */
+  platforms_used: string[] | null;
   updated_at: string;
 };
 

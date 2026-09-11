@@ -104,7 +104,7 @@ export async function loadPortugueseTranslations(
   return loadLocaleJson('pt', forceReload);
 }
 
-/** Load Bengali translations from JSON file (UI-ready; question bank may still be incomplete). */
+/** Load Bengali translations from JSON file (public/locales/bn.json). */
 export async function loadBengaliTranslations(
   forceReload: boolean = false
 ): Promise<TranslationData | null> {

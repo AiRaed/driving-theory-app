@@ -21,6 +21,7 @@ export async function POST(request: NextRequest) {
       mode?: AnalyticsMode;
       language?: string | null;
       session_id?: string;
+      platform?: string | null;
     };
 
     if (!body.question_id || !body.session_id || !body.mode) {
@@ -48,6 +49,7 @@ export async function POST(request: NextRequest) {
       mode: body.mode,
       language: body.language,
       sessionId: body.session_id,
+      platform: body.platform,
     });
 
     return NextResponse.json({ ok: true });

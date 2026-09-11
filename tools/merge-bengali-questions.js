@@ -53,7 +53,7 @@ function mayKeepEnglish(option) {
   if (/^[\d,]+\s*kg$/i.test(t)) return true;
   if (/^\d+[–\-]\d+\s*cm$/i.test(t)) return true;
   if (/^£[\d,]+(\s*fine)?$/i.test(t)) return true;
-  if (/^(Puffin|Pelican|Zebra|Toucan|Van|ABS|ESC|MOT|DVLA|STOP|CPR|AED)$/i.test(t)) return true;
+  if (/^(Puffin|Pelican|Zebra|Toucan|Van|ABS|ESC|MOT|DVLA|STOP|CPR|AED|Highway Code)$/i.test(t)) return true;
   return false;
 }
 
@@ -78,7 +78,9 @@ function main() {
   const errors = [];
 
   for (const file of outFiles) {
-    const data = JSON.parse(fs.readFileSync(path.join(BATCH_DIR, file), 'utf8'));
+    const raw = fs.readFileSync(path.join(BATCH_DIR, file), 'utf8');
+    if (!raw.trim()) { console.warn('skip empty', file); continue; }
+    const data = JSON.parse(raw);
     // Support nested by topic OR flat by id with topic field OR { results: ... }
     const root = data.results || data;
 

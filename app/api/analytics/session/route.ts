@@ -23,6 +23,7 @@ export async function POST(request: NextRequest) {
       questions_attempted?: number;
       correct_answers?: number;
       score?: number | null;
+      platform?: string | null;
     };
 
     if (!body.action || !body.client_session_id) {
@@ -41,6 +42,7 @@ export async function POST(request: NextRequest) {
         mode: body.mode,
         language: body.language,
         clientSessionId: body.client_session_id,
+        platform: body.platform,
       });
       return NextResponse.json({ ok: true });
     }
@@ -52,6 +54,7 @@ export async function POST(request: NextRequest) {
         questionsAttempted: body.questions_attempted,
         correctAnswers: body.correct_answers,
         score: body.score,
+        platform: body.platform,
       });
       return NextResponse.json({ ok: true });
     }

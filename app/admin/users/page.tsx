@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import type { AdminUserFilter } from '@/lib/analytics/types';
+import { formatPlatformsForAdmin } from '@/lib/analytics/platform';
 
 type AdminUserListItem = {
   id: string;
@@ -21,6 +22,8 @@ type AdminUserListItem = {
   last_language_used: string | null;
   last_activity_at: string | null;
   last_active_relative: string;
+  last_platform: string | null;
+  platforms_used: string[];
   first_activity_at: string | null;
   paid_at: string | null;
   updated_at: string;
@@ -169,12 +172,13 @@ export default function AdminUsersPage() {
       )}
 
       <div className="lt-card overflow-x-auto">
-        <table className="w-full text-sm min-w-[1100px]">
+        <table className="w-full text-sm min-w-[1200px]">
           <thead>
             <tr className="border-b border-[var(--border)] text-left text-[11px] uppercase tracking-wider text-[var(--text-secondary)]">
               <th className="px-4 py-3 font-bold">User</th>
               <th className="px-3 py-3 font-bold">Joined</th>
               <th className="px-3 py-3 font-bold">Last active</th>
+              <th className="px-3 py-3 font-bold">Platform</th>
               <th className="px-3 py-3 font-bold">Questions</th>
               <th className="px-3 py-3 font-bold">Accuracy</th>
               <th className="px-3 py-3 font-bold">Mock tests</th>
@@ -188,13 +192,13 @@ export default function AdminUsersPage() {
           <tbody>
             {loading ? (
               <tr>
-                <td colSpan={11} className="px-4 py-8 text-center text-[var(--text-secondary)]">
+                <td colSpan={12} className="px-4 py-8 text-center text-[var(--text-secondary)]">
                   Loading…
                 </td>
               </tr>
             ) : users.length === 0 ? (
               <tr>
-                <td colSpan={11} className="px-4 py-8 text-center text-[var(--text-secondary)]">
+                <td colSpan={12} className="px-4 py-8 text-center text-[var(--text-secondary)]">
                   No users match this search.
                 </td>
               </tr>
@@ -202,6 +206,10 @@ export default function AdminUsersPage() {
               users.map((u) => {
                 const hasActivity = Boolean(u.last_activity_at) || u.questions_attempted > 0;
                 const joined = u.first_activity_at || u.updated_at;
+                const platformCell = formatPlatformsForAdmin(
+                  u.last_platform,
+                  u.platforms_used
+                );
                 return (
                   <tr
                     key={u.id}
@@ -226,6 +234,23 @@ export default function AdminUsersPage() {
                         </span>
                       ) : (
                         <span className="text-[var(--text-secondary)]">No activity recorded yet</span>
+                      )}
+                    </td>
+                    <td className="px-3 py-3 whitespace-nowrap text-xs">
+                      {platformCell.primary === '—' ? (
+                        <span className="text-[var(--text-secondary)]">—</span>
+                      ) : (
+                        <span
+                          className="text-[var(--text-primary)]"
+                          title={platformCell.all ?? platformCell.primary}
+                        >
+                          {platformCell.primary}
+                          {platformCell.all ? (
+                            <span className="block text-[10px] text-[var(--text-secondary)] mt-0.5">
+                              {platformCell.all}
+                            </span>
+                          ) : null}
+                        </span>
                       )}
                     </td>
                     <td className="px-3 py-3 tabular-nums">

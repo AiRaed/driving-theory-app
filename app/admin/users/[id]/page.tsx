@@ -222,6 +222,30 @@ export default function AdminUserDetailPage() {
                     : 'Never'
                 }
               />
+              <StatLine
+                label="Last platform"
+                value={
+                  stats?.last_platform === 'ios'
+                    ? 'iOS'
+                    : stats?.last_platform === 'android'
+                      ? 'Android'
+                      : stats?.last_platform === 'web'
+                        ? 'Web'
+                        : '—'
+                }
+              />
+              <StatLine
+                label="Platforms used"
+                value={
+                  Array.isArray(stats?.platforms_used) && stats.platforms_used.length > 0
+                    ? stats.platforms_used
+                        .map((p) =>
+                          p === 'ios' ? 'iOS' : p === 'android' ? 'Android' : p === 'web' ? 'Web' : p
+                        )
+                        .join(' + ')
+                    : '—'
+                }
+              />
             </>
           )}
         </section>
