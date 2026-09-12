@@ -48,9 +48,15 @@ STRIPE_SECRET_KEY=your_stripe_secret_key
 STRIPE_PRICE_ID_FULL_ACCESS=your_stripe_price_id
 
 NEXT_PUBLIC_SITE_URL=https://your-app-name.onrender.com
+
+# Required for Admin UI + /admin + /api/admin/* (server-only; not NEXT_PUBLIC_)
+# Exact admin login email, case-insensitive. Example: you@example.com
+ADMIN_EMAIL=your_admin_login_email
 ```
 
 **ملاحظة:** استبدل القيم بقيمك الفعلية من Supabase و Stripe.
+
+**Admin:** بدون `ADMIN_EMAIL` على Render لن يظهر رابط Admin ولن يفتح `/admin` حتى لو الحساب صحيح محلياً (لأن `.env.local` لا يُرفع إلى الإنتاج).
 
 ### 5. Plan
 - اختر **Starter** plan (مجاني مع قيود)

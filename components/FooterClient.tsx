@@ -16,10 +16,19 @@ function isQuestionTakingRoute(pathname: string | null): boolean {
   );
 }
 
+function isDownloadLanding(pathname: string | null): boolean {
+  return pathname === '/download';
+}
+
 export default function FooterClient() {
   const { t } = useLanguage();
   const pathname = usePathname();
   const hideOnMobile = isQuestionTakingRoute(pathname);
+  const hideFully = isDownloadLanding(pathname);
+
+  if (hideFully) {
+    return null;
+  }
 
   return (
     <footer

@@ -1,5 +1,4 @@
 import LandingClient from './LandingClient';
-import Subtitle from '@/components/Subtitle';
 import AppVersionBadge from '@/components/AppVersionBadge';
 
 export default function Home() {
@@ -10,11 +9,9 @@ export default function Home() {
         <section className="w-full max-w-xl text-center">
           <p className="lt-kicker mb-4">LingoTheory</p>
 
-          <h1 className="text-[1.75rem] sm:text-[2.35rem] font-bold mb-4 text-[var(--text-primary)] leading-[1.15] text-balance">
+          <h1 className="text-[1.75rem] sm:text-[2.35rem] font-bold mb-6 text-[var(--text-primary)] leading-[1.15] text-balance">
             Driving Theory Helper
           </h1>
-
-          <Subtitle />
 
           <p className="text-[var(--text-primary)] mb-3 text-lg sm:text-xl font-semibold leading-snug text-balance">
             Pass your UK driving theory test faster — in your own language.

@@ -5,7 +5,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
 
 const SKIP_PREFIXES = ['/choose-language', '/auth', '/admin'];
-const PUBLIC_EXACT = ['/', '/terms', '/privacy', '/support'];
+const PUBLIC_EXACT = ['/', '/terms', '/privacy', '/support', '/download'];
 const LEARNER_PREFIXES = ['/dashboard', '/practice', '/mock-test', '/choose-language'];
 
 export default function LanguageGate({ children }: { children: React.ReactNode }) {

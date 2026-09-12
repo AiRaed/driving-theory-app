@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { createClient } from '@/lib/supabase/client';
 import { User } from '@supabase/supabase-js';
@@ -12,6 +11,7 @@ import {
   isIOSDevice,
   isStandaloneMode,
 } from '@/lib/utils/platform';
+import { gaEvent } from '@/lib/ga';
 
 function AndroidInstallHeroCta() {
   const [eligible, setEligible] = useState(false);
@@ -50,18 +50,30 @@ function AndroidInstallHeroCta() {
   );
 }
 
+function DownloadAppCta({ className }: { className?: string }) {
+  return (
+    <Link
+      href="/download"
+      onClick={() => gaEvent('landing_download_app_clicked', { source: 'landing_hero' })}
+      className={
+        className ??
+        'lt-btn-secondary px-10 py-3.5 text-[0.95rem] sm:text-base min-w-[240px] sm:min-w-[200px] w-full sm:w-auto'
+      }
+    >
+      Download App
+    </Link>
+  );
+}
+
 export default function LandingClient() {
   const [user, setUser] = useState<User | null>(null);
-  const router = useRouter();
   const supabase = createClient();
 
   useEffect(() => {
-    // Get initial user
     supabase.auth.getUser().then(({ data: { user } }) => {
       setUser(user);
     });
 
-    // Listen for auth state changes
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -73,26 +85,32 @@ export default function LandingClient() {
 
   if (user) {
     return (
-      <div className="flex flex-col items-center gap-3">
-        <Link
-          href="/dashboard"
-          className="lt-btn-primary px-10 py-3.5 text-[0.95rem] sm:text-base min-w-[240px] sm:min-w-[280px] shadow-[var(--shadow-sm)]"
-        >
-          Go to Dashboard
-        </Link>
+      <div className="flex flex-col items-center gap-3 w-full">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full max-w-lg">
+          <Link
+            href="/dashboard"
+            className="lt-btn-primary px-10 py-3.5 text-[0.95rem] sm:text-base min-w-[240px] sm:min-w-[200px] w-full sm:w-auto shadow-[var(--shadow-sm)]"
+          >
+            Go to Dashboard
+          </Link>
+          <DownloadAppCta />
+        </div>
         <AndroidInstallHeroCta />
       </div>
     );
   }
 
   return (
-    <div className="flex flex-col items-center gap-3">
-      <Link
-        href="/auth"
-        className="lt-btn-primary px-10 py-3.5 text-[0.95rem] sm:text-base min-w-[240px] sm:min-w-[280px] shadow-[var(--shadow-sm)]"
-      >
-        Log in / Get started
-      </Link>
+    <div className="flex flex-col items-center gap-3 w-full">
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full max-w-lg">
+        <Link
+          href="/auth"
+          className="lt-btn-primary px-10 py-3.5 text-[0.95rem] sm:text-base min-w-[240px] sm:min-w-[200px] w-full sm:w-auto shadow-[var(--shadow-sm)]"
+        >
+          Log in / Get started
+        </Link>
+        <DownloadAppCta />
+      </div>
       <AndroidInstallHeroCta />
       <Link
         href="/auth"
@@ -103,4 +121,3 @@ export default function LandingClient() {
     </div>
   );
 }
-

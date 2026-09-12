@@ -10,6 +10,7 @@ import { useIsAdmin } from '@/lib/admin/useIsAdmin';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
 import { BilingualNavLabel } from '@/components/BilingualLabel';
 import { enLabel } from '@/lib/i18n/ui-strings';
+import { gaEvent } from '@/lib/ga';
 
 export default function Navigation() {
   const pathname = usePathname();
@@ -103,6 +104,18 @@ export default function Navigation() {
               {enLabel('navAdmin')}
             </Link>
           ) : null}
+          {/* Desktop-only: keep mobile header compact; hero CTA covers phones */}
+          <Link
+            href="/download"
+            prefetch={true}
+            data-active={pathname === '/download'}
+            onClick={() =>
+              gaEvent('landing_download_app_clicked', { source: 'header_nav' })
+            }
+            className={cn(navLinkClass(pathname === '/download'), 'hidden md:inline-flex')}
+          >
+            Download App
+          </Link>
         </>
       )}
       {user ? (

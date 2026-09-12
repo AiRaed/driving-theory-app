@@ -5,5 +5,9 @@ export const dynamic = 'force-dynamic';
 
 export async function GET() {
   const user = await requireAdminApi();
-  return NextResponse.json({ isAdmin: !!user });
+  if (!user) {
+    // 401 for non-admin / unauthenticated — UI link stays hidden; not an unlock.
+    return NextResponse.json({ isAdmin: false }, { status: 401 });
+  }
+  return NextResponse.json({ isAdmin: true });
 }
