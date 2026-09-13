@@ -7,8 +7,6 @@ import { createClient } from '@/lib/supabase/client';
 import { User } from '@supabase/supabase-js';
 import { cn } from '@/lib/utils';
 import { useIsAdmin } from '@/lib/admin/useIsAdmin';
-import { useLanguage } from '@/lib/i18n/LanguageProvider';
-import { BilingualNavLabel } from '@/components/BilingualLabel';
 import { enLabel } from '@/lib/i18n/ui-strings';
 import { gaEvent } from '@/lib/ga';
 
@@ -20,7 +18,6 @@ export default function Navigation() {
   const [authReady, setAuthReady] = useState(false);
   const [loggingOut, setLoggingOut] = useState(false);
   const { isAdmin, ready: adminReady } = useIsAdmin(authReady ? user : undefined);
-  const { lang } = useLanguage();
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -76,11 +73,7 @@ export default function Navigation() {
             data-active={pathname === '/practice'}
             className={navLinkClass(pathname === '/practice')}
           >
-            <BilingualNavLabel
-              keyName="navPractice"
-              lang={lang}
-              active={pathname === '/practice'}
-            />
+            {enLabel('navPractice')}
           </Link>
           <Link
             href="/mock-test"
@@ -88,11 +81,7 @@ export default function Navigation() {
             data-active={pathname === '/mock-test'}
             className={navLinkClass(pathname === '/mock-test')}
           >
-            <BilingualNavLabel
-              keyName="navMockTest"
-              lang={lang}
-              active={pathname === '/mock-test'}
-            />
+            {enLabel('navMockTest')}
           </Link>
           {showAdmin ? (
             <Link
@@ -124,11 +113,7 @@ export default function Navigation() {
           disabled={loggingOut}
           className="px-3 py-1.5 md:px-3.5 md:py-2 rounded-[var(--radius-sm)] text-xs md:text-sm font-semibold tracking-tight transition-colors duration-150 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-secondary)] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap flex-shrink-0"
         >
-          {loggingOut ? (
-            <BilingualNavLabel keyName="loggingOut" lang={lang} />
-          ) : (
-            <BilingualNavLabel keyName="logOut" lang={lang} />
-          )}
+          {loggingOut ? enLabel('loggingOut') : enLabel('logOut')}
         </button>
       ) : (
         <Link
@@ -138,7 +123,7 @@ export default function Navigation() {
             pathname !== '/auth' && 'text-[var(--lingo-red)]'
           )}
         >
-          <BilingualNavLabel keyName="logIn" lang={lang} active={pathname === '/auth'} />
+          {enLabel('logIn')}
         </Link>
       )}
     </nav>

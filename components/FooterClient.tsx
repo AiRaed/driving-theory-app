@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useLanguage } from '@/lib/i18n/LanguageProvider';
 import { cn } from '@/lib/utils';
+import { enLabel } from '@/lib/i18n/ui-strings';
 
 /** Practice + Mock Test (including nested review/result under same paths). */
 function isQuestionTakingRoute(pathname: string | null): boolean {
@@ -20,8 +20,11 @@ function isDownloadLanding(pathname: string | null): boolean {
   return pathname === '/download';
 }
 
+/**
+ * Global footer chrome stays English-only.
+ * Learning-language localization does not apply here.
+ */
 export default function FooterClient() {
-  const { t } = useLanguage();
   const pathname = usePathname();
   const hideOnMobile = isQuestionTakingRoute(pathname);
   const hideFully = isDownloadLanding(pathname);
@@ -43,32 +46,34 @@ export default function FooterClient() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-4">
           <div>
             <p className="text-sm font-semibold text-[var(--text-primary)]">LingoTheory</p>
-            <p className="text-xs text-[var(--text-secondary)] mt-0.5">{t('footerTagline')}</p>
+            <p className="text-xs text-[var(--text-secondary)] mt-0.5">
+              {enLabel('footerTagline')}
+            </p>
           </div>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <Link
               href="/terms"
               className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors"
             >
-              {t('terms')}
+              {enLabel('terms')}
             </Link>
             <Link
               href="/privacy"
               className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors"
             >
-              {t('privacy')}
+              {enLabel('privacy')}
             </Link>
             <Link
               href="/support"
               className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors"
             >
-              {t('support')}
+              {enLabel('support')}
             </Link>
           </div>
         </div>
         <div className="border-t border-[var(--border)] pt-4 space-y-1">
           <p className="text-xs text-[var(--text-secondary)]">
-            {t('support')}:{' '}
+            {enLabel('support')}:{' '}
             <a
               href="mailto:support@lingotheory.org"
               className="font-medium hover:text-[var(--lingo-red)] transition-colors"
