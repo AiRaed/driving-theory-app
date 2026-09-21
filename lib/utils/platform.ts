@@ -222,6 +222,42 @@ export function isIOSInAppOrChrome(): boolean {
 }
 
 /**
+ * Audience for store download CTAs (Landing Page).
+ * - ios: iPhone / iPad / iPadOS (including desktop-UA iPads)
+ * - android: Android phones/tablets
+ * - desktop: non-mobile browsers
+ * - unknown: other mobile (show both stores as safe fallback)
+ */
+export type StoreAudiencePlatform = 'ios' | 'android' | 'desktop' | 'unknown';
+
+export function isAndroidDevice(): boolean {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+  // Android UA; exclude iOS (some WebViews can be noisy)
+  if (isIOSDevice()) {
+    return false;
+  }
+  return /Android/i.test(navigator.userAgent || '');
+}
+
+export function detectStoreAudiencePlatform(): StoreAudiencePlatform {
+  if (typeof window === 'undefined') {
+    return 'unknown';
+  }
+  if (isIOSDevice()) {
+    return 'ios';
+  }
+  if (isAndroidDevice()) {
+    return 'android';
+  }
+  if (isMobileDevice()) {
+    return 'unknown';
+  }
+  return 'desktop';
+}
+
+/**
  * Safely copy text to clipboard
  * Falls back to textarea method if clipboard API is not available
  * @param text - The text to copy

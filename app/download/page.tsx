@@ -1,20 +1,28 @@
-import type { Metadata } from 'next';
-import DownloadClient from './DownloadClient';
+import { redirect } from 'next/navigation';
 
-export const metadata: Metadata = {
-  title: 'LingoTheory App | UK Driving Theory Practice',
-  description:
-    'Download LingoTheory and practise the UK Driving Theory Test in your language.',
-  openGraph: {
-    title: 'LingoTheory App | UK Driving Theory Practice',
-    description:
-      'Download LingoTheory and practise the UK Driving Theory Test in your language.',
-    url: 'https://www.lingotheory.org/download',
-    siteName: 'LingoTheory',
-    type: 'website',
-  },
-};
+/**
+ * Legacy TikTok / ad entry URL.
+ * Redirects to the main Landing Page and preserves all query / UTM params.
+ */
+export default function DownloadRedirectPage({
+  searchParams,
+}: {
+  searchParams: Record<string, string | string[] | undefined>;
+}) {
+  const params = new URLSearchParams();
 
-export default function DownloadPage() {
-  return <DownloadClient />;
+  for (const [key, value] of Object.entries(searchParams || {})) {
+    if (Array.isArray(value)) {
+      for (const item of value) {
+        if (item != null && item !== '') {
+          params.append(key, item);
+        }
+      }
+    } else if (value != null && value !== '') {
+      params.set(key, value);
+    }
+  }
+
+  const qs = params.toString();
+  redirect(qs ? `/?${qs}` : '/');
 }

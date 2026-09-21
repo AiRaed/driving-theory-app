@@ -11,7 +11,7 @@ import {
   isIOSDevice,
   isStandaloneMode,
 } from '@/lib/utils/platform';
-import { gaEvent } from '@/lib/ga';
+import StoreDownloadCta from '@/components/StoreDownloadCta';
 
 function AndroidInstallHeroCta() {
   const [eligible, setEligible] = useState(false);
@@ -50,21 +50,6 @@ function AndroidInstallHeroCta() {
   );
 }
 
-function DownloadAppCta({ className }: { className?: string }) {
-  return (
-    <Link
-      href="/download"
-      onClick={() => gaEvent('landing_download_app_clicked', { source: 'landing_hero' })}
-      className={
-        className ??
-        'lt-btn-secondary px-10 py-3.5 text-[0.95rem] sm:text-base min-w-[240px] sm:min-w-[200px] w-full sm:w-auto'
-      }
-    >
-      Download App
-    </Link>
-  );
-}
-
 export default function LandingClient() {
   const [user, setUser] = useState<User | null>(null);
   const supabase = createClient();
@@ -93,8 +78,8 @@ export default function LandingClient() {
           >
             Go to Dashboard
           </Link>
-          <DownloadAppCta />
         </div>
+        <StoreDownloadCta />
         <AndroidInstallHeroCta />
       </div>
     );
@@ -109,8 +94,8 @@ export default function LandingClient() {
         >
           Log in / Get started
         </Link>
-        <DownloadAppCta />
       </div>
+      <StoreDownloadCta />
       <AndroidInstallHeroCta />
       <Link
         href="/auth"
