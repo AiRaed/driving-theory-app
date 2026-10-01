@@ -95,15 +95,13 @@ export function isAskToBuyOrPendingMessage(message: string): boolean {
   );
 }
 
+/**
+ * @capgo/native-purchases 8.6.5 iOS dismiss signal is exactly "User cancelled".
+ * Match only that phrase (and the US spelling), after trim + lowercase.
+ */
 export function isUserCancelledMessage(message: string): boolean {
-  const lower = message.toLowerCase();
-  return (
-    lower.includes('cancel') ||
-    lower.includes('cancelled') ||
-    lower.includes('canceled') ||
-    lower.includes('paymentcancelled') ||
-    lower.includes('skerrorpaymentcancelled')
-  );
+  const normalized = message.trim().toLowerCase();
+  return normalized === 'user cancelled' || normalized === 'user canceled';
 }
 
 export function classifyVerifyFailure(input: {

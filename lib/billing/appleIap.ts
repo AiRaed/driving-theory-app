@@ -8,6 +8,7 @@ import {
 } from '@/lib/billing/appleProduct';
 import {
   classifyVerifyFailure,
+  isUserCancelledMessage,
   sanitizeAppleEvent,
 } from '@/lib/billing/applePurchaseDiagnostics';
 import { runApplePurchaseFlow } from '@/lib/billing/applePurchaseFlow';
@@ -17,22 +18,20 @@ export type ApplePurchaseResult =
   | { ok: false; cancelled?: boolean; error: string };
 
 function isUserCancelled(error: unknown): boolean {
-  const message =
-    error instanceof Error
-      ? error.message
-      : typeof error === 'string'
-        ? error
-        : JSON.stringify(error);
-  const lower = message.toLowerCase();
-  return (
-    lower.includes('cancel') ||
-    lower.includes('cancelled') ||
-    lower.includes('canceled') ||
-    lower.includes('user cancelled') ||
-    lower.includes('user canceled') ||
-    lower.includes('paymentcancelled') ||
-    lower.includes('skerrorpaymentcancelled')
-  );
+  let message = '';
+  if (error instanceof Error) {
+    message = error.message;
+  } else if (typeof error === 'string') {
+    message = error;
+  } else if (
+    error &&
+    typeof error === 'object' &&
+    'message' in error &&
+    typeof (error as { message: unknown }).message === 'string'
+  ) {
+    message = (error as { message: string }).message;
+  }
+  return isUserCancelledMessage(message);
 }
 
 async function loadNativePurchases() {

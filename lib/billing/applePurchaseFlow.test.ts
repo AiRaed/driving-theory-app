@@ -4,6 +4,7 @@ import {
   APPLE_NATIVE_TIMEOUT_MESSAGE,
   sanitizeAppleEvent,
   classifyVerifyFailure,
+  isUserCancelledMessage,
 } from './applePurchaseDiagnostics';
 import { runApplePurchaseFlow, type AppleTx } from './applePurchaseFlow';
 
@@ -97,7 +98,7 @@ async function main() {
         isIos: () => true,
         isBillingSupported: async () => true,
         purchaseProduct: async () => {
-          throw new Error('SKErrorPaymentCancelled');
+          throw new Error('User cancelled');
         },
         getPurchases: async () => [],
         verify: async () => {
@@ -295,6 +296,20 @@ async function main() {
       assert.equal(captured.body?.productId, 'org.lingotheory.fullaccess');
       assert.equal(captured.body?.restore, false);
       assert.equal(typeof captured.body?.jwsRepresentation, 'string');
+    })
+  );
+
+  tests.push(
+    run('13. user cancellation is an exact plugin message only', () => {
+      assert.equal(isUserCancelledMessage('User cancelled'), true);
+      assert.equal(isUserCancelledMessage('user cancelled'), true);
+      assert.equal(isUserCancelledMessage('  User cancelled  '), true);
+      assert.equal(isUserCancelledMessage('User canceled'), true);
+      assert.equal(isUserCancelledMessage('Payment was cancelled by network'), false);
+      assert.equal(isUserCancelledMessage('SKError paymentCancelled'), false);
+      assert.equal(isUserCancelledMessage('SKErrorPaymentCancelled'), false);
+      assert.equal(isUserCancelledMessage('StoreKit failed'), false);
+      assert.equal(isUserCancelledMessage(''), false);
     })
   );
 
