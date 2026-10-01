@@ -11,7 +11,8 @@ import {
   purchaseAppleFullAccess,
   restoreAppleFullAccess,
 } from '@/lib/billing/appleIap';
-import { APPLE_FULL_ACCESS_FALLBACK_PRICE } from '@/lib/billing/appleProduct';
+import { APPLE_FULL_ACCESS_FALLBACK_PRICE, APPLE_FULL_ACCESS_PRODUCT_ID } from '@/lib/billing/appleProduct';
+import { sanitizeAppleEvent } from '@/lib/billing/applePurchaseDiagnostics';
 import {
   fetchGoogleFullAccessPrice,
   purchaseGoogleFullAccess,
@@ -157,7 +158,18 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
       if (result.ok) {
         void trackEvent('payment_success', { source: 'apple_iap_client' });
         console.log('[paywall] iOS purchase: verification ok; refreshing access');
-        await refresh();
+        const paid = await refresh();
+        if (paid) {
+          void trackEvent(
+            'entitlement_granted',
+            sanitizeAppleEvent({
+              platform: 'ios',
+              product_id: APPLE_FULL_ACCESS_PRODUCT_ID,
+              source: 'apple_iap',
+              stage: 'access_refresh',
+            })
+          );
+        }
         return;
       }
       if (result.cancelled) {

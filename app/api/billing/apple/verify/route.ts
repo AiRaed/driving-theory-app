@@ -60,6 +60,30 @@ type AppleInAppPurchase = {
   cancellation_date_ms?: string;
 };
 
+async function logAppleVerifyFailure(
+  userId: string,
+  fields: { stage: string; http_status: number; error_category: string }
+): Promise<void> {
+  console.log('[apple/verify] rejected', {
+    stage: fields.stage,
+    http_status: fields.http_status,
+    error_category: fields.error_category,
+  });
+  try {
+    const { recordProductEvent } = await import('@/lib/analytics/server');
+    await recordProductEvent(userId, 'purchase_verify_failed', {
+      platform: 'ios',
+      source: 'apple_iap',
+      stage: fields.stage,
+      http_status: fields.http_status,
+      error_category: fields.error_category,
+      product_id: APPLE_FULL_ACCESS_PRODUCT_ID,
+    });
+  } catch {
+    console.error('[apple/verify] diagnostic event failed');
+  }
+}
+
 /**
  * Verify Apple IAP and unlock Full Access in Supabase.
  * POST /api/billing/apple/verify
@@ -118,7 +142,20 @@ export async function POST(request: NextRequest) {
     const hasReceipt =
       typeof receipt === 'string' && receipt.trim().length > 0;
 
+    console.log('[apple/verify] request received', {
+      platform: 'ios',
+      restore: restore === true,
+      jws_present: hasJws,
+      legacy_receipt_present: hasReceipt,
+      product_id: typeof productId === 'string' ? productId : null,
+    });
+
     if (!hasJws && !hasReceipt) {
+      await logAppleVerifyFailure(user.id, {
+        stage: 'payload',
+        http_status: 400,
+        error_category: 'receipt_missing',
+      });
       return NextResponse.json(
         { error: 'Apple JWS or receipt is required for verification' },
         { status: 400 }
@@ -139,6 +176,11 @@ export async function POST(request: NextRequest) {
         )
       : await verifyAppleReceipt(receipt, expectedBundleId, productId);
     if (!verified.ok) {
+      await logAppleVerifyFailure(user.id, {
+        stage: 'apple_signature',
+        http_status: 400,
+        error_category: 'verify_4xx',
+      });
       return NextResponse.json({ error: verified.error }, { status: 400 });
     }
 
@@ -202,6 +244,11 @@ export async function POST(request: NextRequest) {
 
     if (existingPayment && existingPayment.user_id !== user.id) {
       console.log('[apple/verify] Rejected: Apple transaction bound to another user');
+      await logAppleVerifyFailure(user.id, {
+        stage: 'account_binding',
+        http_status: 403,
+        error_category: 'already_owned_other_account',
+      });
       return NextResponse.json(
         {
           error:
@@ -215,6 +262,11 @@ export async function POST(request: NextRequest) {
     if (isRestore) {
       if (!existingPayment) {
         console.log('[apple/verify] Rejected restore: unbound historical Apple ownership');
+        await logAppleVerifyFailure(user.id, {
+          stage: 'restore_binding',
+          http_status: 403,
+          error_category: 'verify_4xx',
+        });
         return NextResponse.json(
           {
             error:
@@ -278,6 +330,11 @@ export async function POST(request: NextRequest) {
     const purchaseDateMs = verified.purchaseDateMs;
     if (purchaseDateMs == null || !Number.isFinite(purchaseDateMs)) {
       console.log('[apple/verify] Rejected Buy: missing signed purchaseDate');
+      await logAppleVerifyFailure(user.id, {
+        stage: 'purchase_date',
+        http_status: 403,
+        error_category: 'verify_4xx',
+      });
       return NextResponse.json(
         {
           error:
@@ -291,6 +348,11 @@ export async function POST(request: NextRequest) {
     if (ageMs < -60_000 || ageMs > FRESH_PURCHASE_MAX_AGE_MS) {
       console.log('[apple/verify] Rejected Buy: Apple transaction not fresh', {
         ageMinutes: Math.round(ageMs / 60000),
+      });
+      await logAppleVerifyFailure(user.id, {
+        stage: 'purchase_date',
+        http_status: 403,
+        error_category: 'already_owned_other_account',
       });
       return NextResponse.json(
         {
@@ -317,6 +379,7 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
+    console.log('[apple/verify] verification success');
     console.log('[apple/verify] Entitlement write succeeded (profiles.access_level=paid)');
 
     const { error: paymentError } = await adminClient.from('payments').insert({
@@ -353,7 +416,9 @@ export async function POST(request: NextRequest) {
       transactionId: verified.transactionId,
     });
   } catch (error) {
-    console.error('[apple/verify] Error:', error);
+    console.error('[apple/verify] verification rejected', {
+      error_category: 'verify_5xx',
+    });
     return NextResponse.json(
       {
         error:

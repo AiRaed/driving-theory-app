@@ -1,10 +1,16 @@
 'use client';
 
 import { Capacitor } from '@capacitor/core';
+import { trackEvent } from '@/lib/analytics/trackEvent';
 import {
   APPLE_FULL_ACCESS_FALLBACK_PRICE,
   APPLE_FULL_ACCESS_PRODUCT_ID,
 } from '@/lib/billing/appleProduct';
+import {
+  classifyVerifyFailure,
+  sanitizeAppleEvent,
+} from '@/lib/billing/applePurchaseDiagnostics';
+import { runApplePurchaseFlow } from '@/lib/billing/applePurchaseFlow';
 
 export type ApplePurchaseResult =
   | { ok: true; alreadyOwned?: boolean }
@@ -65,13 +71,27 @@ export async function fetchAppleFullAccessPrice(): Promise<string> {
   return APPLE_FULL_ACCESS_FALLBACK_PRICE;
 }
 
-async function verifyWithServer(body: Record<string, unknown>): Promise<void> {
+async function verifyWithServer(body: Record<string, unknown>): Promise<{
+  ok: true;
+} | {
+  ok: false;
+  status?: number;
+  message: string;
+  timedOut?: boolean;
+  network?: boolean;
+}> {
   const controller = new AbortController();
   const timeoutMs = 20_000;
   const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
-    console.log('[appleIap] Apple verify request started');
+    console.log('[appleIap] Apple verify request started', {
+      platform: 'ios',
+      product_id: APPLE_FULL_ACCESS_PRODUCT_ID,
+      jws_present: typeof body.jwsRepresentation === 'string' && body.jwsRepresentation.length > 0,
+      legacy_receipt_present: typeof body.receipt === 'string' && body.receipt.length > 0,
+      restore: body.restore === true,
+    });
     const response = await fetch('/api/billing/apple/verify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -84,17 +104,40 @@ async function verifyWithServer(body: Record<string, unknown>): Promise<void> {
     console.log('[appleIap] Apple verify request completed', {
       ok: response.ok,
       status: response.status,
+      error_category: response.ok
+        ? undefined
+        : classifyVerifyFailure({
+            status: response.status,
+            message: typeof data.error === 'string' ? data.error : '',
+          }),
     });
 
     if (!response.ok) {
-      throw new Error(data.error || 'Failed to verify Apple purchase');
+      return {
+        ok: false,
+        status: response.status,
+        message:
+          typeof data.error === 'string' && data.error
+            ? data.error
+            : 'Failed to verify Apple purchase',
+      };
     }
+    return { ok: true };
   } catch (error) {
-    // Ensure we never leave an unresolved promise.
-    if (error instanceof Error && (error.name === 'AbortError' || /aborted/i.test(error.message))) {
-      throw new Error('Apple verification timed out. Please try again.');
+    const aborted =
+      error instanceof Error && (error.name === 'AbortError' || /aborted/i.test(error.message));
+    if (aborted) {
+      return {
+        ok: false,
+        message: 'Apple verification timed out. Please try again.',
+        timedOut: true,
+      };
     }
-    throw error;
+    return {
+      ok: false,
+      message: 'Failed to verify Apple purchase',
+      network: true,
+    };
   } finally {
     clearTimeout(timeoutId);
   }
@@ -105,87 +148,41 @@ async function verifyWithServer(body: Record<string, unknown>): Promise<void> {
  * Unlocks only after server verification succeeds.
  */
 export async function purchaseAppleFullAccess(): Promise<ApplePurchaseResult> {
-  if (!Capacitor.isNativePlatform() || Capacitor.getPlatform() !== 'ios') {
-    return { ok: false, error: 'Apple In-App Purchase is only available on iOS.' };
-  }
-
   try {
     const { NativePurchases, PURCHASE_TYPE } = await loadNativePurchases();
-
-    const supported = await NativePurchases.isBillingSupported();
-    if (!supported?.isBillingSupported) {
-      return { ok: false, error: 'In-App Purchases are not available on this device.' };
-    }
-
-    let transaction = await NativePurchases.purchaseProduct({
-      productIdentifier: APPLE_FULL_ACCESS_PRODUCT_ID,
-      productType: PURCHASE_TYPE.INAPP,
-    });
-
-    // StoreKit 2 via this plugin can return either legacy `receipt` (local receipt file)
-    // and/or `jwsRepresentation` (StoreKit 2 signed transaction). For verification,
-    // prefer JWS when present.
-    if (!transaction?.jwsRepresentation && !transaction?.receipt) {
-      // On some iOS/TestFlight setups, the local app receipt file may not exist
-      // at the exact moment `purchaseProduct()` resolves. Retry for a short window.
-      const maxAttempts = 3;
-      const delayMs = 1000;
-
-      for (let attempt = 1; attempt <= maxAttempts; attempt++) {
-        console.warn('[appleIap] Receipt missing after purchase; retrying getPurchases', {
-          attempt,
-          maxAttempts,
-        });
-
-        // eslint-disable-next-line no-await-in-loop
-        await new Promise((resolve) => setTimeout(resolve, delayMs));
-
+    return await runApplePurchaseFlow({
+      isIos: () => Capacitor.isNativePlatform() && Capacitor.getPlatform() === 'ios',
+      isBillingSupported: async () => {
+        const supported = await NativePurchases.isBillingSupported();
+        return !!supported?.isBillingSupported;
+      },
+      purchaseProduct: () =>
+        NativePurchases.purchaseProduct({
+          productIdentifier: APPLE_FULL_ACCESS_PRODUCT_ID,
+          productType: PURCHASE_TYPE.INAPP,
+        }),
+      getPurchases: async () => {
         const { purchases } = await NativePurchases.getPurchases({
           productType: PURCHASE_TYPE.INAPP,
         });
-
-        const ownedWithReceipt = (purchases || []).find(
-          (p) =>
-            p.productIdentifier === APPLE_FULL_ACCESS_PRODUCT_ID ||
-            (p as { productId?: string }).productId === APPLE_FULL_ACCESS_PRODUCT_ID
-        );
-
-        if (ownedWithReceipt?.receipt) {
-          transaction = ownedWithReceipt as typeof transaction;
-          break;
-        }
-      }
-
-      if (!transaction?.receipt) {
-        return {
-          ok: false,
-          error: 'Purchase did not complete. Missing Apple receipt.',
-        };
-      }
-    }
-
-    console.log('[appleIap] Native purchase returned verification payload', {
-      hasReceipt: !!transaction?.receipt,
-      hasJws: !!transaction?.jwsRepresentation,
-    });
-    await verifyWithServer({
-      platform: 'ios',
+        return purchases || [];
+      },
+      verify: async (body) => {
+        // Buy must never be treated as Restore. Server enforces fresh-purchase binding.
+        const result = await verifyWithServer({ ...body, restore: false });
+        return result;
+      },
+      track: (name, data) => {
+        void trackEvent(name, sanitizeAppleEvent(data));
+      },
       productId: APPLE_FULL_ACCESS_PRODUCT_ID,
-      transactionId: transaction.transactionId,
-      jwsRepresentation: transaction.jwsRepresentation,
-      receipt: transaction.receipt,
-      // Buy must never be treated as Restore. Server enforces fresh-purchase binding.
-      restore: false,
     });
-
-    return { ok: true };
   } catch (error) {
+    console.error('[appleIap] purchase error category', {
+      cancelled: isUserCancelled(error),
+    });
     if (isUserCancelled(error)) {
       return { ok: false, cancelled: true, error: 'Purchase cancelled.' };
-    }
-    console.error('[appleIap] purchase error:', error);
-    if (error instanceof Error && (error.message || '').toLowerCase().includes('timed out')) {
-      return { ok: false, error: 'Apple verification timed out. Please try again.' };
     }
     return {
       ok: false,
@@ -237,7 +234,7 @@ export async function restoreAppleFullAccess(): Promise<ApplePurchaseResult> {
       };
     }
 
-    await verifyWithServer({
+    const verified = await verifyWithServer({
       platform: 'ios',
       productId: APPLE_FULL_ACCESS_PRODUCT_ID,
       transactionId: owned.transactionId,
@@ -245,6 +242,9 @@ export async function restoreAppleFullAccess(): Promise<ApplePurchaseResult> {
       receipt: owned.receipt,
       restore: true,
     });
+    if (!verified.ok) {
+      throw new Error(verified.message);
+    }
 
     return { ok: true, alreadyOwned: true };
   } catch (error) {

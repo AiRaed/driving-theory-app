@@ -18,8 +18,8 @@ interface AccessContextType {
   statusConfirmed: boolean;
   paid: boolean;
   freeUsed: number;
-  refresh: () => Promise<void>;
-  silentRefresh: () => Promise<void>;
+  refresh: () => Promise<boolean>;
+  silentRefresh: () => Promise<boolean>;
 }
 
 const AccessContext = createContext<AccessContextType | undefined>(undefined);
@@ -128,11 +128,11 @@ export function AccessProvider({ children }: { children: ReactNode }) {
   };
 
   const refresh = async () => {
-    await fetchAccessStatus(true);
+    return fetchAccessStatus(true);
   };
 
   const silentRefresh = async () => {
-    await fetchAccessStatus(false);
+    return fetchAccessStatus(false);
   };
 
   useEffect(() => {
