@@ -10,6 +10,8 @@ export type AnalyticsEventName =
   | 'checkout_clicked'
   | 'purchase_started'
   | 'purchase_storekit_call_started'
+  | 'purchase_googleplay_call_started'
+  | 'purchase_token_missing'
   | 'purchase_native_returned'
   | 'purchase_cancelled'
   | 'purchase_pending'

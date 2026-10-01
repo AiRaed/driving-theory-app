@@ -18,7 +18,8 @@ import {
   purchaseGoogleFullAccess,
   restoreGoogleFullAccess,
 } from '@/lib/billing/googlePlay';
-import { GOOGLE_FULL_ACCESS_FALLBACK_PRICE } from '@/lib/billing/googleProduct';
+import { GOOGLE_FULL_ACCESS_FALLBACK_PRICE, GOOGLE_FULL_ACCESS_PRODUCT_ID } from '@/lib/billing/googleProduct';
+import { sanitizeGoogleEvent } from '@/lib/billing/googlePurchaseDiagnostics';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
 import BilingualLabel from '@/components/BilingualLabel';
 import { enLabel } from '@/lib/i18n/ui-strings';
@@ -108,7 +109,18 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
       const result = await purchaseGoogleFullAccess();
       if (result.ok) {
         void trackEvent('payment_success', { source: 'google_play_client' });
-        await refresh();
+        const paid = await refresh();
+        if (paid) {
+          void trackEvent(
+            'entitlement_granted',
+            sanitizeGoogleEvent({
+              platform: 'android',
+              product_id: GOOGLE_FULL_ACCESS_PRODUCT_ID,
+              source: 'google_play_iap',
+              stage: 'access_refresh',
+            })
+          );
+        }
         return;
       }
       if (result.cancelled) {

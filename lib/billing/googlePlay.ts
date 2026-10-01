@@ -1,11 +1,14 @@
 'use client';
 
 import { Capacitor, registerPlugin } from '@capacitor/core';
+import { trackEvent } from '@/lib/analytics/trackEvent';
 import {
   GOOGLE_FULL_ACCESS_FALLBACK_PRICE,
   GOOGLE_FULL_ACCESS_PRODUCT_ID,
   GOOGLE_FULL_ACCESS_PURCHASE_OPTION_ID,
 } from '@/lib/billing/googleProduct';
+import { sanitizeGoogleEvent } from '@/lib/billing/googlePurchaseDiagnostics';
+import { runGooglePurchaseFlow, type GoogleTx } from '@/lib/billing/googlePurchaseFlow';
 
 export type GooglePurchaseResult =
   | { ok: true; alreadyOwned?: boolean }
@@ -53,16 +56,6 @@ const BILLING_INIT_TIMEOUT_MS = 15_000;
 const GET_PRODUCT_TIMEOUT_MS = 15_000;
 /** Owned-purchase query (ITEM_ALREADY_OWNED / Restore). */
 const RESTORE_QUERY_TIMEOUT_MS = 20_000;
-/**
- * Interactive Google Play purchase sheet.
- * Generous bound so a real user can approve payment; still settles if the
- * native bridge never resolves. Late native completion after timeout does
- * NOT auto-verify — entitlement only after a successful verify path.
- */
-const NATIVE_PURCHASE_TIMEOUT_MS = 5 * 60_000;
-
-const PURCHASE_CONFIRM_TIMEOUT_MESSAGE =
-  'The Google Play purchase could not be confirmed. Please try again.';
 
 /** Must match @CapacitorPlugin(name = "PlayBilling") on PlayBillingPlugin.java */
 const PLAY_BILLING_PLUGIN_NAME = 'PlayBilling';
@@ -258,11 +251,14 @@ async function activateFullAccessFromRestoreResult(
   rawRestore: unknown,
   options: { restore: boolean; notFoundMessage: string }
 ): Promise<GooglePurchaseResult> {
-  console.log('[googlePlay] raw restore result', rawRestore);
-
   const canonical = purchasesFromCanonicalRestore(rawRestore);
   const purchases = canonical ?? normalizePurchases(rawRestore);
-  console.log('[googlePlay] normalized purchases', purchases);
+  console.log('[googlePlay] restore lookup', {
+    purchase_count: purchases.length,
+    purchase_token_present: purchases.some(
+      (purchase) => typeof purchase.purchaseToken === 'string' && purchase.purchaseToken.length > 0
+    ),
+  });
 
   const owned = findFullAccessPurchase(purchases);
   if (!owned || !owned.purchaseToken) {
@@ -300,7 +296,11 @@ async function ensureBillingReady(): Promise<PlayBillingPlugin> {
   return plugin;
 }
 
-async function verifyWithServer(body: Record<string, unknown>): Promise<void> {
+type GoogleVerifyHttpResult =
+  | { ok: true }
+  | { ok: false; status?: number; message: string; timedOut?: boolean; network?: boolean };
+
+async function verifyWithServer(body: Record<string, unknown>): Promise<GoogleVerifyHttpResult> {
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), VERIFY_TIMEOUT_MS);
 
@@ -313,18 +313,31 @@ async function verifyWithServer(body: Record<string, unknown>): Promise<void> {
       signal: controller.signal,
     });
 
-    const data = await response.json().catch(() => ({}));
+    const data = (await response.json().catch(() => ({}))) as { error?: string };
     if (!response.ok) {
-      throw new Error(data.error || 'Failed to verify Google Play purchase');
+      return {
+        ok: false,
+        status: response.status,
+        message: data.error || 'Failed to verify Google Play purchase',
+      };
     }
+    return { ok: true };
   } catch (error) {
     if (
       error instanceof Error &&
       (error.name === 'AbortError' || /aborted/i.test(error.message))
     ) {
-      throw new Error('Google Play verification timed out. Please try again.');
+      return {
+        ok: false,
+        message: 'Google Play verification timed out. Please try again.',
+        timedOut: true,
+      };
     }
-    throw error;
+    return {
+      ok: false,
+      message: error instanceof Error ? error.message : 'Failed to verify Google Play purchase',
+      network: true,
+    };
   } finally {
     clearTimeout(timeoutId);
   }
@@ -370,17 +383,38 @@ async function verifyOwnedPurchase(
     throw new Error('Purchase is still pending.');
   }
 
-  await verifyWithServer({
+  const verified = await verifyWithServer({
     platform: 'android',
     productId: purchase.productId || GOOGLE_FULL_ACCESS_PRODUCT_ID,
     purchaseToken: purchase.purchaseToken,
     restore: options?.restore === true,
   });
+  if (!verified.ok) {
+    throw new Error(verified.message);
+  }
+}
+
+/** Keep a pending Play result visible. findFullAccessPurchase drops pending on purpose. */
+function selectPurchaseForFlow(raw: unknown): GoogleTx | null {
+  const purchased = normalizePurchaseResult(raw);
+  if (purchased) return purchased;
+  const purchases = normalizePurchases(raw);
+  return (
+    purchases.find(
+      (purchase) =>
+        purchase.productId === GOOGLE_FULL_ACCESS_PRODUCT_ID &&
+        (purchase.status === 'pending' || purchase.purchaseState === 2)
+    ) ?? null
+  );
 }
 
 /**
  * Launch Google Play purchase UI for permanent Full Access.
  * Unlocks only after server verification of a PURCHASED (non-pending) state.
+ *
+ * Native JS await timeout is 90s (GOOGLE_NATIVE_PURCHASE_TIMEOUT_MS).
+ * The Play sheet is not cancelled, purchase() is not called again, and a late
+ * native result is not auto-verified.
  */
 export async function purchaseGoogleFullAccess(): Promise<GooglePurchaseResult> {
   console.log('[googlePlay] purchaseGoogleFullAccess start');
@@ -411,7 +445,8 @@ export async function purchaseGoogleFullAccess(): Promise<GooglePurchaseResult> 
         billingInitSucceeded = true;
         console.log('[googlePlay] init success');
       } catch (initError) {
-        console.error('[googlePlay] init failed or timed out; continuing to plugin.purchase', initError);
+        const initMessage = initError instanceof Error ? initError.message : 'init failed';
+        console.error('[googlePlay] init failed or timed out; continuing to plugin.purchase', initMessage);
       }
     }
 
@@ -420,74 +455,53 @@ export async function purchaseGoogleFullAccess(): Promise<GooglePurchaseResult> 
       purchaseOptionId: GOOGLE_FULL_ACCESS_PURCHASE_OPTION_ID,
     });
 
-    let purchase: PlayBillingPurchase;
-    try {
-      const rawPurchase = await withTimeout(
-        plugin.purchase({
+    return await runGooglePurchaseFlow({
+      isAndroid: () => true,
+      productId: GOOGLE_FULL_ACCESS_PRODUCT_ID,
+      parseError: parseBillingError,
+      track: (name, data) => {
+        void trackEvent(name, data);
+      },
+      purchase: async () => {
+        const rawPurchase = await plugin.purchase({
           productId: GOOGLE_FULL_ACCESS_PRODUCT_ID,
           purchaseOptionId: GOOGLE_FULL_ACCESS_PURCHASE_OPTION_ID,
-        }),
-        NATIVE_PURCHASE_TIMEOUT_MS,
-        PURCHASE_CONFIRM_TIMEOUT_MESSAGE
-      );
-      console.log('[googlePlay] plugin.purchase resolved', rawPurchase);
-      const normalizedPurchase = normalizePurchaseResult(rawPurchase);
-      if (!normalizedPurchase) {
+        });
+        const selected = selectPurchaseForFlow(rawPurchase);
+        console.log('[googlePlay] plugin.purchase resolved', {
+          productId: selected?.productId ?? null,
+          purchase_token_present:
+            typeof selected?.purchaseToken === 'string' && selected.purchaseToken.length > 0,
+          purchase_state: selected?.purchaseState ?? null,
+          status: selected?.status ?? null,
+        });
+        return selected;
+      },
+      lookupOwned: async () => {
         const rawRestore = await withTimeout(
           plugin.restore(),
           RESTORE_QUERY_TIMEOUT_MS,
           'Google Play purchase lookup timed out. Please try again.'
         );
-        return activateFullAccessFromRestoreResult(rawRestore, {
-          restore: false,
-          notFoundMessage:
-            'Purchase completed, but Full Access details were unavailable. Try Restore Purchases.',
-        });
-      }
-      purchase = normalizedPurchase;
-    } catch (error) {
-      console.error('[googlePlay] plugin.purchase rejected', error);
-      const { code, message } = parseBillingError(error);
-      if (code === 'USER_CANCELED') {
-        return { ok: false, cancelled: true, error: 'Purchase cancelled.' };
-      }
-      if (message === PURCHASE_CONFIRM_TIMEOUT_MESSAGE) {
-        return { ok: false, error: PURCHASE_CONFIRM_TIMEOUT_MESSAGE };
-      }
-      if (code === 'ITEM_ALREADY_OWNED') {
-        const rawRestore = await withTimeout(
-          plugin.restore(),
-          RESTORE_QUERY_TIMEOUT_MS,
-          'Google Play purchase lookup timed out. Please try again.'
-        );
-        return activateFullAccessFromRestoreResult(rawRestore, {
-          restore: false,
-          notFoundMessage:
-            'Product already owned, but purchase details were unavailable.',
-        });
-      }
-      return { ok: false, error: message };
-    }
-
-    if (purchase.status === 'pending' || purchase.purchaseState === 2) {
-      return {
-        ok: false,
-        pending: true,
-        error: 'Your payment is pending. Full Access will unlock once Google confirms the purchase.',
-      };
-    }
-
-    await verifyOwnedPurchase(purchase);
-    return { ok: true };
+        return selectPurchaseForFlow(rawRestore);
+      },
+      verify: (body) => verifyWithServer(body),
+    });
   } catch (error) {
-    console.error('[googlePlay] purchase error:', error);
-    return {
-      ok: false,
-      error:
-        error instanceof Error
-          ? error.message
-          : 'Failed to complete purchase. Please try again.',
-    };
+    const message =
+      error instanceof Error ? error.message : 'Failed to complete purchase. Please try again.';
+    console.error('[googlePlay] purchase error:', message);
+    void trackEvent(
+      'purchase_failed',
+      sanitizeGoogleEvent({
+        platform: 'android',
+        product_id: GOOGLE_FULL_ACCESS_PRODUCT_ID,
+        source: 'google_play_iap',
+        stage: 'purchase',
+        error_category: 'native_purchase_error',
+      })
+    );
+    return { ok: false, error: message };
   }
 }
 
@@ -511,14 +525,10 @@ export async function restoreGoogleFullAccess(): Promise<GooglePurchaseResult> {
       notFoundMessage: 'No previous Full Access purchase found for this Google account.',
     });
   } catch (error) {
-    console.error('[googlePlay] restore error:', error);
-    return {
-      ok: false,
-      error:
-        error instanceof Error
-          ? error.message
-          : 'Failed to restore purchases. Please try again.',
-    };
+    const message =
+      error instanceof Error ? error.message : 'Failed to restore purchases. Please try again.';
+    console.error('[googlePlay] restore error:', message);
+    return { ok: false, error: message };
   }
 }
 
