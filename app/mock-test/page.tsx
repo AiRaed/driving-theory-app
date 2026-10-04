@@ -13,11 +13,13 @@ import LanguageSelector from "@/components/LanguageSelector";
 import BilingualLabel from "@/components/BilingualLabel";
 import { enLabel } from "@/lib/i18n/ui-strings";
 import PaywallOverlay from "@/components/PaywallOverlay";
+import ContentMaintenanceNotice from "@/components/ContentMaintenanceNotice";
 import { useAccess } from '@/lib/providers/AccessProvider';
 import { decideMockAccess } from '@/lib/access/entitlement';
 import { createClient } from "@/lib/supabase/client";
 import type { User } from "@supabase/supabase-js";
 import { useQuestionBank } from "@/lib/questions/useQuestionBank";
+import { useContentMaintenance } from "@/lib/hooks/useContentMaintenance";
 import { 
   loadUrduTranslations,
   loadRomanianTranslations,
@@ -89,6 +91,8 @@ export default function MockTestPage() {
   const supabase = createClient();
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
   const { loading, statusConfirmed, paid } = useAccess();
+  const { loading: maintenanceLoading, enabled: contentMaintenance } =
+    useContentMaintenance();
   const { lang: translationLang, setLang, ready: languageReady } = useLanguage();
   const [user, setUser] = useState<User | null>(null);
   
@@ -554,6 +558,22 @@ export default function MockTestPage() {
       question: mockQuestions[idx],
     }))
     .filter((item) => item.answer && !item.answer.correct);
+
+  if (maintenanceLoading) {
+    return (
+      <div className="min-h-screen bg-[var(--background)]">
+        <div className="max-w-5xl mx-auto px-4 py-6">
+          <div className="text-center text-[var(--text-secondary)] font-medium">
+            {enLabel('loading')}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (contentMaintenance) {
+    return <ContentMaintenanceNotice />;
+  }
 
   // Show minimal loading state only on initial mount (no full-page overlay)
   // Don't block UI for access status checks

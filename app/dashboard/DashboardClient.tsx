@@ -15,7 +15,9 @@ import { trackEvent } from '@/lib/analytics/trackEvent';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
 import DashboardLanguagePicker from '@/components/DashboardLanguagePicker';
 import BilingualLabel from '@/components/BilingualLabel';
+import ContentMaintenanceNotice from '@/components/ContentMaintenanceNotice';
 import { enLabel } from '@/lib/i18n/ui-strings';
+import { useContentMaintenance } from '@/lib/hooks/useContentMaintenance';
 
 export default function DashboardClient() {
   const [user, setUser] = useState<User | null>(null);
@@ -27,6 +29,8 @@ export default function DashboardClient() {
   const supabase = createClient();
   const { hasInstallPrompt, isInstalled, triggerInstall } = useInstallPrompt();
   const { lang, setLang } = useLanguage();
+  const { loading: maintenanceLoading, enabled: contentMaintenance } =
+    useContentMaintenance();
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -136,6 +140,13 @@ export default function DashboardClient() {
         </div>
 
         <div className="lt-card p-5 sm:p-6 w-full space-y-4">
+          {!maintenanceLoading && contentMaintenance ? (
+            <>
+              <ContentMaintenanceNotice variant="card" showDashboardLink={false} />
+              <IosInstallHint />
+            </>
+          ) : (
+            <>
           <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--lingo-red-soft)]/50 p-4">
             <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--lingo-red)] mb-2">
               {enLabel('dashboardPrimary')}
@@ -178,6 +189,8 @@ export default function DashboardClient() {
               {enLabel('mockTestMeta', { n: mockTestQuestionsCount })}
             </p>
           </div>
+            </>
+          )}
 
           <div className="border-t border-[var(--border)] pt-4 space-y-2">
             <button

@@ -22,8 +22,10 @@ import { GOOGLE_FULL_ACCESS_FALLBACK_PRICE, GOOGLE_FULL_ACCESS_PRODUCT_ID } from
 import { sanitizeGoogleEvent } from '@/lib/billing/googlePurchaseDiagnostics';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
 import BilingualLabel from '@/components/BilingualLabel';
+import ContentMaintenanceNotice from '@/components/ContentMaintenanceNotice';
 import { enLabel } from '@/lib/i18n/ui-strings';
 import type { UiKey } from '@/lib/i18n/ui-strings';
+import { useContentMaintenance } from '@/lib/hooks/useContentMaintenance';
 
 interface PaywallOverlayProps {
   onPay?: () => void;
@@ -50,6 +52,8 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
   const router = useRouter();
   const { refresh } = useAccess();
   const { lang } = useLanguage();
+  const { loading: maintenanceLoading, enabled: contentMaintenance } =
+    useContentMaintenance();
 
   const isAndroid = platform === 'android';
   const isIOS = platform === 'ios';
@@ -296,6 +300,39 @@ export default function PaywallOverlay({ onPay, loading: externalLoading }: Payw
     : isAndroid
       ? enLabel('paywallSecureGoogle')
       : enLabel('paywallSecureStripe');
+
+  if (!maintenanceLoading && contentMaintenance) {
+    return (
+      <>
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-[9998]"
+          style={{
+            pointerEvents: 'auto',
+            touchAction: 'none',
+            userSelect: 'none',
+          }}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+        />
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
+          <div className="lt-card-accent relative w-full max-w-md shadow-[var(--shadow-md)] p-6 sm:p-8">
+            <ContentMaintenanceNotice variant="inline" showDashboardLink={false} />
+            <div className="mt-6 text-center">
+              <button
+                type="button"
+                onClick={() => router.push('/dashboard')}
+                className="lt-btn-secondary px-5 py-2.5 text-sm"
+              >
+                {enLabel('backToDashboard')}
+              </button>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>

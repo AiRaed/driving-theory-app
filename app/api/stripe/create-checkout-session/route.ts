@@ -1,7 +1,11 @@
 import { createClient } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
+import {
+  contentMaintenanceJsonBody,
+  isContentMaintenanceMode,
+} from '@/lib/maintenance/contentMaintenance';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -13,8 +17,12 @@ export const revalidate = 0;
  * Otherwise create Stripe Checkout session and return { url }
  */
 
-export async function POST(request: NextRequest) {
+export async function POST() {
   try {
+    if (isContentMaintenanceMode()) {
+      return NextResponse.json(contentMaintenanceJsonBody(), { status: 503 });
+    }
+
     const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
     const priceId = process.env.STRIPE_PRICE_ID_FULL_ACCESS;
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;

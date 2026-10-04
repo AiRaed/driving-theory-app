@@ -2,6 +2,10 @@ import { createClient } from '@/lib/supabase/server';
 import { createClient as createAdminClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
+import {
+  contentMaintenanceJsonBody,
+  isContentMaintenanceMode,
+} from '@/lib/maintenance/contentMaintenance';
 
 // Validate required environment variables
 const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
@@ -13,6 +17,10 @@ const stripe = stripeSecretKey ? new Stripe(stripeSecretKey) : null;
 
 export async function POST(request: NextRequest) {
   try {
+    if (isContentMaintenanceMode()) {
+      return NextResponse.json(contentMaintenanceJsonBody(), { status: 503 });
+    }
+
     const supabase = await createClient();
     const {
       data: { user },

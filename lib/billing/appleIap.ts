@@ -12,6 +12,8 @@ import {
   sanitizeAppleEvent,
 } from '@/lib/billing/applePurchaseDiagnostics';
 import { runApplePurchaseFlow } from '@/lib/billing/applePurchaseFlow';
+import { CONTENT_MAINTENANCE_API_MESSAGE } from '@/lib/maintenance/contentMaintenance';
+import { fetchIsContentMaintenanceMode } from '@/lib/hooks/useContentMaintenance';
 
 export type ApplePurchaseResult =
   | { ok: true; alreadyOwned?: boolean }
@@ -148,6 +150,10 @@ async function verifyWithServer(body: Record<string, unknown>): Promise<{
  */
 export async function purchaseAppleFullAccess(): Promise<ApplePurchaseResult> {
   try {
+    if (await fetchIsContentMaintenanceMode()) {
+      return { ok: false, error: CONTENT_MAINTENANCE_API_MESSAGE };
+    }
+
     const { NativePurchases, PURCHASE_TYPE } = await loadNativePurchases();
     return await runApplePurchaseFlow({
       isIos: () => Capacitor.isNativePlatform() && Capacitor.getPlatform() === 'ios',

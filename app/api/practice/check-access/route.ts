@@ -1,8 +1,16 @@
 import { createClient } from '@/lib/supabase/server';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
+import {
+  contentMaintenanceJsonBody,
+  isContentMaintenanceMode,
+} from '@/lib/maintenance/contentMaintenance';
 
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
+    if (isContentMaintenanceMode()) {
+      return NextResponse.json(contentMaintenanceJsonBody(), { status: 503 });
+    }
+
     const supabase = await createClient();
     const {
       data: { user },

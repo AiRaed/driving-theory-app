@@ -10,15 +10,17 @@ import {
   loadUrduTranslations,
   type TranslationData,
 } from '@/lib/translations';
+import { fetchIsContentMaintenanceMode } from '@/lib/hooks/useContentMaintenance';
 
 export function useQuestionBank() {
-  const [questions, setQuestions] = useState<Question[]>(staticQuestions);
+  // Start empty so static bundle cannot flash during content maintenance.
+  const [questions, setQuestions] = useState<Question[]>([]);
   const [urTranslations, setUrTranslations] = useState<TranslationData | null>(null);
   const [roTranslations, setRoTranslations] = useState<TranslationData | null>(null);
   const [plTranslations, setPlTranslations] = useState<TranslationData | null>(null);
   const [ptTranslations, setPtTranslations] = useState<TranslationData | null>(null);
   const [faTranslations, setFaTranslations] = useState<TranslationData | null>(null);
-  const [source, setSource] = useState<'static' | 'database'>('static');
+  const [source, setSource] = useState<'static' | 'database' | 'maintenance'>('static');
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -26,7 +28,27 @@ export function useQuestionBank() {
 
     (async () => {
       try {
+        if (await fetchIsContentMaintenanceMode()) {
+          if (!cancelled) {
+            setQuestions([]);
+            setSource('maintenance');
+            setReady(true);
+          }
+          return;
+        }
+
         const res = await fetch('/api/questions/bank');
+        if (res.status === 503) {
+          const data = await res.json().catch(() => null);
+          if (data?.error === 'content_maintenance') {
+            if (!cancelled) {
+              setQuestions([]);
+              setSource('maintenance');
+              setReady(true);
+            }
+            return;
+          }
+        }
         if (res.ok) {
           const data = await res.json();
           if (!cancelled && Array.isArray(data.questions) && data.questions.length > 0) {
@@ -97,19 +119,23 @@ export function useQuestionBank() {
           loadPersianTranslations(),
         ]);
         if (!cancelled) {
+          setQuestions(staticQuestions);
           setUrTranslations(ur);
           setRoTranslations(ro);
           setPlTranslations(pl);
           setPtTranslations(pt);
           setFaTranslations(fa);
+          setSource('static');
         }
       } catch {
         if (!cancelled) {
+          setQuestions(staticQuestions);
           setUrTranslations({});
           setRoTranslations({});
           setPlTranslations({});
           setPtTranslations({});
           setFaTranslations({});
+          setSource('static');
         }
       } finally {
         if (!cancelled) setReady(true);

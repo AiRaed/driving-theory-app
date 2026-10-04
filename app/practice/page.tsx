@@ -11,12 +11,14 @@ import LanguageSelector from '@/components/LanguageSelector';
 import BilingualLabel from '@/components/BilingualLabel';
 import { enLabel } from '@/lib/i18n/ui-strings';
 import PaywallOverlay from '@/components/PaywallOverlay';
+import ContentMaintenanceNotice from '@/components/ContentMaintenanceNotice';
 import { useAccess } from '@/lib/providers/AccessProvider';
 import {
   FREE_QUESTION_LIMIT,
   decidePracticePageGate,
 } from '@/lib/access/entitlement';
 import { useQuestionBank } from '@/lib/questions/useQuestionBank';
+import { useContentMaintenance } from '@/lib/hooks/useContentMaintenance';
 import { 
   loadUrduTranslations,
   loadRomanianTranslations,
@@ -69,6 +71,8 @@ function shuffleArray<T>(array: T[]): T[] {
 export default function PracticePage() {
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
   const { loading, statusConfirmed, paid, freeUsed, refresh, silentRefresh } = useAccess();
+  const { loading: maintenanceLoading, enabled: contentMaintenance } =
+    useContentMaintenance();
   const supabase = createClient();
   const [accountUserId, setAccountUserId] = useState<string | null>(null);
   const {
@@ -600,6 +604,22 @@ export default function PracticePage() {
     statusConfirmed,
   });
   const showPaywall = pageGate === 'paywall';
+
+  if (maintenanceLoading) {
+    return (
+      <div className="min-h-screen bg-[var(--background)]">
+        <div className="max-w-5xl mx-auto px-4 py-6">
+          <div className="text-center text-[var(--text-secondary)] font-medium">
+            {enLabel('loading')}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (contentMaintenance) {
+    return <ContentMaintenanceNotice />;
+  }
 
   if (pageGate === 'loading') {
     return (

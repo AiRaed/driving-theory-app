@@ -5,6 +5,10 @@ import {
   FREE_QUESTION_LIMIT,
   isPaidAccessLevel,
 } from '@/lib/access/entitlement';
+import {
+  contentMaintenanceJsonBody,
+  isContentMaintenanceMode,
+} from '@/lib/maintenance/contentMaintenance';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -16,6 +20,10 @@ export const revalidate = 0;
  */
 export async function POST() {
   try {
+    if (isContentMaintenanceMode()) {
+      return NextResponse.json(contentMaintenanceJsonBody(), { status: 503 });
+    }
+
     const supabase = await createClient();
     const {
       data: { user },

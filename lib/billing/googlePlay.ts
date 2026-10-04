@@ -9,6 +9,8 @@ import {
 } from '@/lib/billing/googleProduct';
 import { sanitizeGoogleEvent } from '@/lib/billing/googlePurchaseDiagnostics';
 import { runGooglePurchaseFlow, type GoogleTx } from '@/lib/billing/googlePurchaseFlow';
+import { CONTENT_MAINTENANCE_API_MESSAGE } from '@/lib/maintenance/contentMaintenance';
+import { fetchIsContentMaintenanceMode } from '@/lib/hooks/useContentMaintenance';
 
 export type GooglePurchaseResult =
   | { ok: true; alreadyOwned?: boolean }
@@ -418,6 +420,9 @@ function selectPurchaseForFlow(raw: unknown): GoogleTx | null {
  */
 export async function purchaseGoogleFullAccess(): Promise<GooglePurchaseResult> {
   console.log('[googlePlay] purchaseGoogleFullAccess start');
+  if (await fetchIsContentMaintenanceMode()) {
+    return { ok: false, error: CONTENT_MAINTENANCE_API_MESSAGE };
+  }
   if (!isAndroidNative()) {
     console.error('[googlePlay] not android native', {
       isNativePlatform: Capacitor.isNativePlatform(),

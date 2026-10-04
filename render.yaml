@@ -26,4 +26,8 @@ services:
         sync: false
       - key: GOOGLE_PLAY_SERVICE_ACCOUNT_JSON
         sync: false
+      # Temporary content pause. Set true to disable Practice/Mock/purchases.
+      # Restore normal service with false (no data migration required).
+      - key: CONTENT_MAINTENANCE_MODE
+        value: "false"
 
