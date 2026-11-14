@@ -18,7 +18,17 @@
     "generate:pwa-icons": "node tools/generate-pwa-icons.js",
     "generate:vocab-hints": "node tools/generate-vocab-hints.js",
     "generate:vocab-hints:sample": "node tools/generate-vocab-hints.js --sample=20",
-    "generate:vocab-hints:dry": "node tools/generate-vocab-hints.js --sample=20 --dry-run"
+    "generate:vocab-hints:dry": "node tools/generate-vocab-hints.js --sample=20 --dry-run",
+    "analyze:dvsa": "node tools/analyze-dvsa-workbook.js",
+    "transform:dvsa": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" tools/transform-dvsa-bank.ts",
+    "test:dvsa": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" lib/questions/dvsaV2.test.ts",
+    "test:dvsa-import": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" lib/questions/dvsaV2Import.test.ts",
+    "import:dvsa-v2:dry-run": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" tools/import-dvsa-v2-to-supabase.ts",
+    "prepare:dvsa-v2:phase-4a": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" tools/phase-4a-safety-prepare.ts",
+    "apply:dvsa-v2:migration-0008": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" tools/apply-migration-0008.ts",
+    "upload:dvsa-v2:media": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" tools/upload-dvsa-v2-media.ts --confirm-shared-supabase",
+    "cutover:dvsa-v2": "ts-node --compiler-options \"{\\\"module\\\":\\\"commonjs\\\"}\" tools/cutover-dvsa-v2.ts --confirm-shared-supabase --i-understand-archive-v1",
+    "review:dvsa-media": "node tools/dvsa-media-review/server.mjs"
   },
   "dependencies": {
     "@apple/app-store-server-library": "^3.1.0",
@@ -48,6 +58,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.33",
+    "exceljs": "^4.4.0",
     "next-sitemap": "^4.2.3",
     "postcss": "^8",
     "sharp": "^0.34.5",

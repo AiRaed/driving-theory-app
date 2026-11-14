@@ -205,6 +205,8 @@ export default function AdminQuestionsPage() {
           <option value="">All statuses</option>
           <option value="published">Published</option>
           <option value="draft">Draft</option>
+          <option value="submitted">Submitted</option>
+          <option value="approved">Approved</option>
           <option value="archived">Archived</option>
           <option value="needs_review">Needs review</option>
         </select>

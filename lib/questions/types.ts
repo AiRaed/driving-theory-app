@@ -1,9 +1,38 @@
 import type { Question } from '@/data/questions';
 
-export type QuestionStatus = 'draft' | 'published' | 'archived';
+/**
+ * Admin workflow statuses. Learners only ever see `published` (RLS + repository).
+ * `submitted` / `approved` support progressive review without exposing draft V2.
+ */
+export type QuestionStatus = 'draft' | 'submitted' | 'approved' | 'published' | 'archived';
+
+/** Internal media QA only — never treat as DVSA endorsement. */
+export type MediaReviewStatus =
+  | 'not_applicable'
+  | 'unreviewed'
+  | 'needs_fix'
+  | 'reviewed';
+
+export type ContentVersion = 'v1' | 'v2' | string;
 
 /** ISO-ish language codes: 'ar' | 'ur' | 'fr' | … */
 export type LangCode = string;
+
+export const QUESTION_WORKFLOW_STATUSES: QuestionStatus[] = [
+  'draft',
+  'submitted',
+  'approved',
+  'published',
+  'archived',
+];
+
+/** Statuses that must never appear in Practice / Mock / public learner APIs. */
+export const NON_PUBLIC_QUESTION_STATUSES: QuestionStatus[] = [
+  'draft',
+  'submitted',
+  'approved',
+  'archived',
+];
 
 export interface QuestionTranslation {
   question: string;
@@ -46,10 +75,20 @@ export interface QuestionRow {
   /** Extensible lang map; may be absent until migration 0005 is applied. */
   translations?: TranslationsMap | null;
   source_id?: string | null;
+  /** Official DVSA Item id when content_version=v2 (usually equals id). */
+  official_source_id?: string | null;
   keywords: Question['keywords'] | null;
   image_url: string | null;
   image_alt: string | null;
+  answer_1_image_url?: string | null;
+  answer_2_image_url?: string | null;
+  answer_3_image_url?: string | null;
+  answer_4_image_url?: string | null;
   status: QuestionStatus;
+  content_version?: ContentVersion | null;
+  media_review_status?: MediaReviewStatus | null;
+  official_locked?: boolean | null;
+  media_original_refs?: Record<string, string> | null;
   sort_order: number;
   created_at?: string;
   updated_at?: string;
@@ -88,8 +127,17 @@ export interface QuestionFormData {
   keywords?: Question['keywords'];
   image_url: string;
   image_alt: string;
+  answer_1_image_url: string;
+  answer_2_image_url: string;
+  answer_3_image_url: string;
+  answer_4_image_url: string;
   status: QuestionStatus;
   source_id?: string | null;
+  official_source_id?: string | null;
+  content_version?: ContentVersion | null;
+  media_review_status?: MediaReviewStatus | null;
+  official_locked?: boolean;
+  media_original_refs?: Record<string, string> | null;
 }
 
 export const KNOWN_LANGS: Array<{ code: LangCode; label: string }> = [
@@ -294,10 +342,39 @@ export function formToDbPayload(form: QuestionFormData): Record<string, unknown>
     keywords: form.keywords || [],
     image_url: form.image_url.trim() || null,
     image_alt: form.image_alt.trim() || null,
+    answer_1_image_url: form.answer_1_image_url.trim() || null,
+    answer_2_image_url: form.answer_2_image_url.trim() || null,
+    answer_3_image_url: form.answer_3_image_url.trim() || null,
+    answer_4_image_url: form.answer_4_image_url.trim() || null,
     status: form.status,
     translations: map,
     source_id: form.source_id ?? null,
+    official_source_id: form.official_source_id ?? null,
+    content_version: form.content_version ?? null,
+    media_review_status: form.media_review_status ?? null,
+    official_locked: form.official_locked ?? false,
+    media_original_refs: form.media_original_refs ?? {},
   };
+}
+
+/** Option has learner-visible content: English text and/or image URL. */
+export function dbOptionHasContent(
+  row: Pick<
+    QuestionRow,
+    | 'answer_1_en'
+    | 'answer_2_en'
+    | 'answer_3_en'
+    | 'answer_4_en'
+    | 'answer_1_image_url'
+    | 'answer_2_image_url'
+    | 'answer_3_image_url'
+    | 'answer_4_image_url'
+  >,
+  slot: 1 | 2 | 3 | 4
+): boolean {
+  const en = row[`answer_${slot}_en` as const];
+  const img = row[`answer_${slot}_image_url` as const];
+  return !!(typeof en === 'string' && en.trim()) || !!(typeof img === 'string' && img.trim());
 }
 
 export function langBadgeStatus(row: QuestionRow): {
@@ -321,10 +398,12 @@ export function questionNeedsReview(row: QuestionRow): boolean {
   return (
     !badges.ar ||
     !badges.ur ||
-    !row.answer_1_en?.trim() ||
-    !row.answer_2_en?.trim() ||
+    !dbOptionHasContent(row, 1) ||
+    !dbOptionHasContent(row, 2) ||
     !row.topic_id ||
-    !row.correct_answer
+    !row.correct_answer ||
+    row.media_review_status === 'unreviewed' ||
+    row.media_review_status === 'needs_fix'
   );
 }
 
@@ -333,6 +412,7 @@ export function rowToLearnerQuestion(row: QuestionRow): Question {
   const map = rowToTranslationsMap(row);
   const ar = getTranslation(map, 'ar');
   // Prefer flat ar columns when set (editor live edits + always-synced writes).
+  // Option presence: English text and/or answer_N_image_url (migration 0008).
   return {
     id: row.id,
     topic: row.topic_id,
@@ -343,23 +423,27 @@ export function rowToLearnerQuestion(row: QuestionRow): Question {
         en: row.answer_1_en || '',
         ar: row.answer_1_ar || ar?.answers[0] || '',
         correct: row.correct_answer === 1,
+        image: row.answer_1_image_url || undefined,
       },
       {
         en: row.answer_2_en || '',
         ar: row.answer_2_ar || ar?.answers[1] || '',
         correct: row.correct_answer === 2,
+        image: row.answer_2_image_url || undefined,
       },
       {
         en: row.answer_3_en || '',
         ar: row.answer_3_ar || ar?.answers[2] || '',
         correct: row.correct_answer === 3,
+        image: row.answer_3_image_url || undefined,
       },
       {
         en: row.answer_4_en || '',
         ar: row.answer_4_ar || ar?.answers[3] || '',
         correct: row.correct_answer === 4,
+        image: row.answer_4_image_url || undefined,
       },
-    ].filter((a) => a.en.trim().length > 0),
+    ].filter((a) => a.en.trim().length > 0 || !!(a.image && a.image.trim())),
     keywords: Array.isArray(row.keywords) ? row.keywords : [],
     image: row.image_url || undefined,
   };
@@ -493,8 +577,17 @@ export function emptyQuestionForm(topicId = 'alertness'): QuestionFormData {
     keywords: [],
     image_url: '',
     image_alt: '',
+    answer_1_image_url: '',
+    answer_2_image_url: '',
+    answer_3_image_url: '',
+    answer_4_image_url: '',
     status: 'draft',
     source_id: null,
+    official_source_id: null,
+    content_version: 'v1',
+    media_review_status: 'not_applicable',
+    official_locked: false,
+    media_original_refs: {},
   };
 }
 
@@ -528,29 +621,72 @@ export function rowToForm(row: QuestionRow): QuestionFormData {
     keywords: Array.isArray(row.keywords) ? row.keywords : [],
     image_url: row.image_url || '',
     image_alt: row.image_alt || '',
+    answer_1_image_url: row.answer_1_image_url || '',
+    answer_2_image_url: row.answer_2_image_url || '',
+    answer_3_image_url: row.answer_3_image_url || '',
+    answer_4_image_url: row.answer_4_image_url || '',
     status: row.status,
     source_id: row.source_id ?? null,
+    official_source_id: row.official_source_id ?? null,
+    content_version: row.content_version ?? 'v1',
+    media_review_status: row.media_review_status ?? 'not_applicable',
+    official_locked: !!row.official_locked,
+    media_original_refs: row.media_original_refs ?? {},
   };
 }
 
 export function validateQuestionForm(data: QuestionFormData): string | null {
   if (!data.topic_id) return 'Topic is required';
   if (!data.question_en.trim()) return 'English question is required';
-  if (!data.answer_1_en.trim() || !data.answer_2_en.trim()) {
-    return 'At least Answer A and B (English) are required';
+  const hasA =
+    !!data.answer_1_en.trim() || !!data.answer_1_image_url.trim();
+  const hasB =
+    !!data.answer_2_en.trim() || !!data.answer_2_image_url.trim();
+  if (!hasA || !hasB) {
+    return 'At least Answer A and B need English text and/or an image';
   }
   if (data.correct_answer < 1 || data.correct_answer > 4) {
     return 'Select a correct answer (1–4)';
   }
-  const correctEn =
-    data[`answer_${data.correct_answer}_en` as keyof QuestionFormData];
-  if (typeof correctEn === 'string' && !correctEn.trim()) {
-    return 'Correct answer option must have English text';
+  const n = data.correct_answer as 1 | 2 | 3 | 4;
+  const correctEn = data[`answer_${n}_en`];
+  const correctImg = data[`answer_${n}_image_url`];
+  if (!String(correctEn || '').trim() && !String(correctImg || '').trim()) {
+    return 'Correct answer option must have English text and/or an image';
   }
-  if (!['draft', 'published', 'archived'].includes(data.status)) {
+  if (!QUESTION_WORKFLOW_STATUSES.includes(data.status)) {
     return 'Invalid status';
   }
   return null;
+}
+
+/**
+ * Strip official licensed fields from an update payload when official_locked.
+ * Explanations, keywords, translations, media URLs, and workflow status remain writable.
+ */
+export function applyOfficialLockToUpdatePayload(
+  existing: QuestionRow,
+  payload: Record<string, unknown>
+): Record<string, unknown> {
+  if (!existing.official_locked) return payload;
+  const next = { ...payload };
+  const lockedKeys = [
+    'question_en',
+    'answer_1_en',
+    'answer_2_en',
+    'answer_3_en',
+    'answer_4_en',
+    'correct_answer',
+    'official_source_id',
+    'source_id',
+    'id',
+  ] as const;
+  for (const key of lockedKeys) {
+    if (key in next) delete next[key];
+  }
+  // Never allow unlocking via normal admin save
+  next.official_locked = true;
+  return next;
 }
 
 export function isMissingColumnError(
@@ -569,8 +705,14 @@ export function isMissingColumnError(
   );
 }
 
-/** Target published unique count for learner DB bank gate. */
-export const EXPECTED_PUBLISHED_COUNT = 742;
+/**
+ * Target published unique count for the LIVE learner DB bank gate.
+ * Phase 4B cutover: DVSA Feb 2026 bank (758).
+ */
+export const EXPECTED_PUBLISHED_COUNT = 758;
+
+/** Alias kept for importer/cutover tooling. */
+export const EXPECTED_PUBLISHED_COUNT_V2 = 758;
 
 export const TOPIC_META: Array<{
   id: string;
@@ -598,8 +740,10 @@ export const TOPIC_META: Array<{
 /**
  * Completeness gate for switching learners onto the DB bank.
  * Published count must equal expectedCount; every row must have topic_id,
- * question_en, answer_1_en, answer_2_en, valid correct_answer matching a
- * non-empty English option, and topic_id in TOPIC_META.
+ * question_en, options A+B with text and/or image, valid correct_answer
+ * matching a contentful option, and topic_id in TOPIC_META.
+ *
+ * Live gate defaults to EXPECTED_PUBLISHED_COUNT (758 after Phase 4B cutover).
  */
 export function isDatabaseBankComplete(
   rows: QuestionRow[],
@@ -621,21 +765,17 @@ export function isDatabaseBankComplete(
     if (!row.question_en?.trim()) {
       reasons.push(`${row.id}: missing question_en`);
     }
-    if (!row.answer_1_en?.trim()) {
-      reasons.push(`${row.id}: missing answer_1_en`);
+    if (!dbOptionHasContent(row, 1)) {
+      reasons.push(`${row.id}: missing answer_1 text/image`);
     }
-    if (!row.answer_2_en?.trim()) {
-      reasons.push(`${row.id}: missing answer_2_en`);
+    if (!dbOptionHasContent(row, 2)) {
+      reasons.push(`${row.id}: missing answer_2 text/image`);
     }
     const ca = row.correct_answer;
     if (typeof ca !== 'number' || ca < 1 || ca > 4) {
       reasons.push(`${row.id}: correct_answer not in 1..4`);
-    } else {
-      const key = `answer_${ca}_en` as keyof QuestionRow;
-      const ans = row[key];
-      if (typeof ans !== 'string' || !ans.trim()) {
-        reasons.push(`${row.id}: correct answer slot ${ca} is empty`);
-      }
+    } else if (!dbOptionHasContent(row, ca as 1 | 2 | 3 | 4)) {
+      reasons.push(`${row.id}: correct answer slot ${ca} has no text/image`);
     }
     if (reasons.length >= 40) {
       reasons.push('…truncated');

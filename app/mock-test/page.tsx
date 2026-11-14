@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
 import VocabHintsControl from "@/components/VocabHintsControl";
+import AnswerOptionContent from "@/components/AnswerOptionContent";
 import DisclaimerModal from "@/components/DisclaimerModal";
 import LanguageSelector from "@/components/LanguageSelector";
 import BilingualLabel from "@/components/BilingualLabel";
@@ -68,7 +69,11 @@ interface MockSession {
   answers: AnswerRecord[];
   currentIndex: number;
   isFinished: boolean;
+  /** Invalidate in-progress mocks after DVSA bank cutover */
+  bankVersion?: string;
 }
+
+const MOCK_BANK_VERSION = 'dvsa-v2-758';
 
 /**
  * MOCK TEST CONFIGURATION CONSTANTS
@@ -340,8 +345,15 @@ export default function MockTestPage() {
     }
 
     const savedSession = loadSession();
-    
-    if (savedSession && !forceNew && savedSession.shuffledOptionIndices) {
+
+    // Drop incompatible saved mocks (pre-V2 IDs / missing bankVersion).
+    if (
+      savedSession &&
+      !forceNew &&
+      savedSession.bankVersion !== MOCK_BANK_VERSION
+    ) {
+      clearSession();
+    } else if (savedSession && !forceNew && savedSession.shuffledOptionIndices) {
       // Restore from saved session
       const restoredQuestions = savedSession.questionIds
         .map(id => {
@@ -406,6 +418,7 @@ export default function MockTestPage() {
       answers: [],
       currentIndex: 0,
       isFinished: false,
+      bankVersion: MOCK_BANK_VERSION,
     });
   };
 
@@ -429,6 +442,7 @@ export default function MockTestPage() {
         answers,
         currentIndex,
         isFinished,
+        bankVersion: MOCK_BANK_VERSION,
       });
     }
   }, [mockQuestions, answers, currentIndex, isFinished]);
@@ -710,31 +724,43 @@ export default function MockTestPage() {
                         </p>
                       );
                     })()}
-                    <p className="text-sm text-[var(--text-secondary)]">
-                      <span className="font-semibold">{enLabel('correctAnswer')}</span> <span className="font-semibold text-[var(--correct)]">{correctOption.en}</span>
-                      {(() => {
-                        const optionTranslation = getOptionTranslation(
-                          correctOption,
-                          translationLang,
-                          localeTranslations,
-                          question.options,
-                          question.id,
-                          question.topic
-                        );
-                        if (!optionTranslation) return null;
-                        return (
-                          <>
-                            {' · '}
-                            <span 
-                              dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'} 
-                              style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' } : { lineHeight: '1.8' }}
-                            >
-                              {optionTranslation}
-                            </span>
-                          </>
-                        );
-                      })()}
-                    </p>
+                    <div className="text-sm text-[var(--text-secondary)]">
+                      <span className="font-semibold">{enLabel('correctAnswer')}</span>{' '}
+                      <div className="inline-block align-middle mt-1">
+                        <AnswerOptionContent
+                          option={correctOption}
+                          enClassName="font-semibold text-[var(--correct)] inline"
+                          imageClassName="max-h-16"
+                        >
+                          {(() => {
+                            const optionTranslation = getOptionTranslation(
+                              correctOption,
+                              translationLang,
+                              localeTranslations,
+                              question.options,
+                              question.id,
+                              question.topic
+                            );
+                            if (!optionTranslation) return null;
+                            return (
+                              <>
+                                {' · '}
+                                <span
+                                  dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'}
+                                  style={
+                                    translationLang === 'ar'
+                                      ? { fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' }
+                                      : { lineHeight: '1.8' }
+                                  }
+                                >
+                                  {optionTranslation}
+                                </span>
+                              </>
+                            );
+                          })()}
+                        </AnswerOptionContent>
+                      </div>
+                    </div>
                   </div>
                 );
               })}
@@ -923,13 +949,15 @@ export default function MockTestPage() {
                         {showCorrect ? "✓" : "✕"}
                       </span>
                     )}
-                    <div className="flex-1">
-                      <div className={cn(
+                    <AnswerOptionContent
+                      option={option}
+                      enClassName={cn(
                         "font-bold text-[17px] sm:text-[18px] leading-relaxed",
                         isSelected && !showCorrect && !showWrong ? "text-[var(--lingo-red-dark)]" : 
                         showCorrect ? "text-[var(--correct)]" :
                         showWrong ? "text-[var(--wrong)]" : "text-[var(--text-primary)]"
-                      )}>{option.en}</div>
+                      )}
+                    >
                       {(() => {
                         const translationText = getOptionTranslation(
                           option,
@@ -956,7 +984,7 @@ export default function MockTestPage() {
                           </div>
                         );
                       })()}
-                    </div>
+                    </AnswerOptionContent>
                   </div>
                 </button>
               );

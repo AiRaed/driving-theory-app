@@ -124,6 +124,9 @@ export default function AdminDashboardPage() {
           <Link href="/admin/questions" className="lt-btn-primary px-4 py-2.5 text-sm">
             Manage Questions
           </Link>
+          <Link href="/admin/content-review" className="lt-btn-secondary px-4 py-2.5 text-sm">
+            V2 Content Review
+          </Link>
           <Link href="/admin/questions/new" className="lt-btn-secondary px-4 py-2.5 text-sm">
             Add Question
           </Link>

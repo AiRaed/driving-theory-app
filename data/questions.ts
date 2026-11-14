@@ -1,9 +1,17 @@
+export interface QuestionOption {
+  en: string;
+  ar: string;
+  correct: boolean;
+  /** Optional answer-option image (DVSA image-choice questions). */
+  image?: string;
+}
+
 export interface Question {
   id: string;
   topic: string;
   promptEn: string;
   promptAr: string;
-  options: { en: string; ar: string; correct: boolean }[];
+  options: QuestionOption[];
   keywords: { term: string; ar: string; explainAr: string; explainEn?: string }[];
   image?: string; // path to an image in /public
 }

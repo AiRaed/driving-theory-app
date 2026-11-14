@@ -6,7 +6,7 @@ import { createClient } from '@/lib/supabase/client';
 import Link from 'next/link';
 import { User } from '@supabase/supabase-js';
 import { cn } from '@/lib/utils';
-import { questions } from '@/data/questions';
+import { EXPECTED_PUBLISHED_COUNT } from '@/lib/questions/types';
 import AddToHomeScreenPopup from '@/components/AddToHomeScreenPopup';
 import IosInstallHint from '@/components/IosInstallHint';
 import { useInstallPrompt } from '@/lib/hooks/useInstallPrompt';
@@ -88,7 +88,7 @@ export default function DashboardClient() {
     }
   };
 
-  const practiceQuestionsCount = questions.length;
+  const practiceQuestionsCount = EXPECTED_PUBLISHED_COUNT;
   const mockTestQuestionsCount = 50;
 
   const handleInstallClick = async () => {

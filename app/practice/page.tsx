@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import VocabHintsControl from '@/components/VocabHintsControl';
+import AnswerOptionContent from '@/components/AnswerOptionContent';
 import DisclaimerModal from '@/components/DisclaimerModal';
 import LanguageSelector from '@/components/LanguageSelector';
 import BilingualLabel from '@/components/BilingualLabel';
@@ -1031,13 +1032,15 @@ export default function PracticePage() {
                           {showAsCorrect ? "✓" : "✕"}
                         </span>
                       )}
-                      <div className="flex-1">
-                        <div className={cn(
+                      <AnswerOptionContent
+                        option={option}
+                        enClassName={cn(
                           "font-bold text-[17px] sm:text-[18px] leading-relaxed",
                           isSelected && !showAsCorrect && !showAsWrong ? "text-[var(--lingo-red-dark)]" : 
                           showAsCorrect ? "text-[var(--correct)]" :
                           showAsWrong ? "text-[var(--wrong)]" : "text-[var(--text-primary)]"
-                        )}>{option.en}</div>
+                        )}
+                      >
                         {translationLang === 'ar' && option.ar && (
                           <div className={cn(
                             "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
@@ -1166,7 +1169,7 @@ export default function PracticePage() {
                           }
                           return null;
                         })()}
-                      </div>
+                      </AnswerOptionContent>
                     </div>
                   </button>
                 );

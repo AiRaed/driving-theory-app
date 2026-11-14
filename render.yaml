@@ -27,7 +27,8 @@ services:
       - key: GOOGLE_PLAY_SERVICE_ACCOUNT_JSON
         sync: false
       # Temporary content pause. Set true to disable Practice/Mock/purchases.
+      # Phase 4C cutover: keep true until V2 bank is live and smoke-verified.
       # Restore normal service with false (no data migration required).
       - key: CONTENT_MAINTENANCE_MODE
-        value: "false"
+        value: "true"
 

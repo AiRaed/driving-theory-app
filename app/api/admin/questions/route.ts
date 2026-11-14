@@ -38,8 +38,23 @@ export async function GET(request: NextRequest) {
       .order('updated_at', { ascending: false });
 
     if (topic) query = query.eq('topic_id', topic);
-    if (!needsReviewFilter && status && ['draft', 'published', 'archived'].includes(status)) {
+    if (
+      !needsReviewFilter &&
+      status &&
+      ['draft', 'submitted', 'approved', 'published', 'archived'].includes(status)
+    ) {
       query = query.eq('status', status as QuestionStatus);
+    }
+    const contentVersion = searchParams.get('content_version') || '';
+    if (contentVersion === 'v1' || contentVersion === 'v2') {
+      query = query.eq('content_version', contentVersion);
+    }
+    const mediaReview = searchParams.get('media_review_status') || '';
+    if (
+      mediaReview &&
+      ['not_applicable', 'unreviewed', 'needs_fix', 'reviewed'].includes(mediaReview)
+    ) {
+      query = query.eq('media_review_status', mediaReview);
     }
     if (q) {
       query = query.or(

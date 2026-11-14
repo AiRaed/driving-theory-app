@@ -17,8 +17,10 @@ import {
   type LangCode,
   type QuestionFormData,
   type QuestionRow,
+  type MediaReviewStatus,
   type QuestionStatus,
   type QuestionTranslation,
+  QUESTION_WORKFLOW_STATUSES,
 } from '@/lib/questions/types';
 
 type Props = {
@@ -162,7 +164,27 @@ export default function QuestionEditor({ mode, questionId, initialPreview }: Pro
   const previewTranslation =
     previewLang === 'en' ? null : getTranslation(form.translations, previewLang);
 
-  const uploadImage = async (file: File) => {
+  const officialLocked = !!form.official_locked;
+
+  const uploadStemImage = async (file: File) => {
+    if (mode === 'edit' && questionId) {
+      const body = new FormData();
+      body.append('file', file);
+      body.append('slot', 'stem');
+      body.append('review_status', form.media_review_status === 'reviewed' ? 'unreviewed' : (form.media_review_status || 'unreviewed'));
+      body.append('notes', 'Stem image replacement via admin editor');
+      const res = await fetch(`/api/admin/questions/${encodeURIComponent(questionId)}/media`, {
+        method: 'POST',
+        body,
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || data.hint || 'Upload failed');
+      if (data.question) {
+        setForm(rowToForm(data.question));
+        setUpdatedAt(data.question.updated_at || null);
+      }
+      return;
+    }
     const body = new FormData();
     body.append('file', file);
     const res = await fetch('/api/admin/images', { method: 'POST', body });
@@ -170,6 +192,34 @@ export default function QuestionEditor({ mode, questionId, initialPreview }: Pro
     if (!res.ok) throw new Error(data.error || data.hint || 'Upload failed');
     setField('image_url', data.url);
     if (!form.image_alt) setField('image_alt', file.name.replace(/\.[^.]+$/, ''));
+  };
+
+  const uploadOptionImage = async (slot: 1 | 2 | 3 | 4, file: File) => {
+    const field = `answer_${slot}_image_url` as const;
+    if (mode === 'edit' && questionId) {
+      const body = new FormData();
+      body.append('file', file);
+      body.append('slot', `answer_${slot}`);
+      body.append('review_status', 'unreviewed');
+      body.append('notes', `Answer ${slot} image replacement via admin editor`);
+      const res = await fetch(`/api/admin/questions/${encodeURIComponent(questionId)}/media`, {
+        method: 'POST',
+        body,
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || data.hint || 'Upload failed');
+      if (data.question) {
+        setForm(rowToForm(data.question));
+        setUpdatedAt(data.question.updated_at || null);
+      }
+      return;
+    }
+    const body = new FormData();
+    body.append('file', file);
+    const res = await fetch('/api/admin/images', { method: 'POST', body });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || data.hint || 'Upload failed');
+    setField(field, data.url);
   };
 
   const save = async (status?: QuestionStatus) => {
@@ -227,6 +277,10 @@ export default function QuestionEditor({ mode, questionId, initialPreview }: Pro
           {updatedAt && (
             <p className="text-xs text-[var(--text-secondary)] mt-1">
               Last updated {new Date(updatedAt).toLocaleString()} · Status: {form.status}
+              {form.content_version ? ` · ${form.content_version}` : ''}
+              {form.media_review_status && form.media_review_status !== 'not_applicable'
+                ? ` · media: ${form.media_review_status}`
+                : ''}
             </p>
           )}
           <p className="text-xs text-[var(--text-secondary)] mt-1">
@@ -235,6 +289,12 @@ export default function QuestionEditor({ mode, questionId, initialPreview }: Pro
             {badges.ur ? ' · UR' : ''}
             {badges.extra.length ? ` · ${badges.extra.map((c) => c.toUpperCase()).join(' · ')}` : ''}
           </p>
+          {officialLocked ? (
+            <p className="text-xs mt-2 text-[var(--text-secondary)] border border-[var(--border)] rounded-[var(--radius-sm)] px-2 py-1.5 bg-[var(--surface-secondary)]">
+              Official licensed stem, options, and correct answer are read-only. Edit explanations,
+              translations, keywords, and images. Media QA is internal only — never mark as DVSA-approved.
+            </p>
+          ) : null}
         </div>
         <div className="flex flex-wrap gap-2">
           <button
@@ -332,7 +392,15 @@ export default function QuestionEditor({ mode, questionId, initialPreview }: Pro
                     }`}
                     onClick={() => setPreviewSelected(i)}
                   >
-                    <span className="font-medium">{o.en}</span>
+                    {o.image ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={o.image}
+                        alt={o.en?.trim() || `Option ${i + 1}`}
+                        className="max-h-24 w-auto object-contain mb-1"
+                      />
+                    ) : null}
+                    {o.en?.trim() ? <span className="font-medium">{o.en}</span> : null}
                     {previewTranslation?.answers?.[i] ? (
                       <span
                         className="block text-sm text-[var(--text-secondary)] mt-0.5"
@@ -376,15 +444,32 @@ export default function QuestionEditor({ mode, questionId, initialPreview }: Pro
             </select>
           </label>
           <label className="block text-sm">
-            <span className="font-medium text-[var(--text-primary)]">Status</span>
+            <span className="font-medium text-[var(--text-primary)]">Workflow status</span>
             <select
               className="lt-input mt-1.5"
               value={form.status}
               onChange={(e) => setField('status', e.target.value as QuestionStatus)}
             >
-              <option value="draft">Draft</option>
-              <option value="published">Published</option>
-              <option value="archived">Archived</option>
+              {QUESTION_WORKFLOW_STATUSES.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="block text-sm">
+            <span className="font-medium text-[var(--text-primary)]">Media review (internal)</span>
+            <select
+              className="lt-input mt-1.5"
+              value={form.media_review_status || 'not_applicable'}
+              onChange={(e) =>
+                setField('media_review_status', e.target.value as MediaReviewStatus)
+              }
+            >
+              <option value="not_applicable">Not applicable</option>
+              <option value="unreviewed">Unreviewed (provisional)</option>
+              <option value="needs_fix">Needs fix</option>
+              <option value="reviewed">Reviewed (internal)</option>
             </select>
           </label>
         </div>
@@ -424,6 +509,7 @@ export default function QuestionEditor({ mode, questionId, initialPreview }: Pro
               <textarea
                 className="lt-input mt-1.5 min-h-[72px]"
                 value={form.question_en}
+                readOnly={officialLocked}
                 onChange={(e) => setField('question_en', e.target.value)}
               />
             </label>
@@ -441,6 +527,7 @@ export default function QuestionEditor({ mode, questionId, initialPreview }: Pro
                       type="radio"
                       name="correct_answer"
                       checked={form.correct_answer === n}
+                      disabled={officialLocked}
                       onChange={() => setField('correct_answer', n)}
                     />
                     Answer {String.fromCharCode(64 + n)}
@@ -450,8 +537,34 @@ export default function QuestionEditor({ mode, questionId, initialPreview }: Pro
                     className="lt-input"
                     placeholder="English"
                     value={form[`answer_${n}_en` as const]}
+                    readOnly={officialLocked}
                     onChange={(e) => setField(`answer_${n}_en`, e.target.value)}
                   />
+                  <div className="flex flex-wrap items-center gap-2">
+                    <input
+                      className="lt-input flex-1 min-w-[12rem]"
+                      placeholder="Option image URL (optional)"
+                      value={form[`answer_${n}_image_url` as const]}
+                      onChange={(e) => setField(`answer_${n}_image_url`, e.target.value)}
+                    />
+                    <label className="lt-btn-ghost px-3 py-2 text-xs cursor-pointer">
+                      Replace image
+                      <input
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp"
+                        className="hidden"
+                        onChange={(e) => {
+                          const f = e.target.files?.[0];
+                          if (f) {
+                            uploadOptionImage(n, f).catch((err) =>
+                              setError(err instanceof Error ? err.message : 'Upload failed')
+                            );
+                          }
+                          e.target.value = '';
+                        }}
+                      />
+                    </label>
+                  </div>
                 </div>
               ))}
             </fieldset>
@@ -564,7 +677,7 @@ export default function QuestionEditor({ mode, questionId, initialPreview }: Pro
                     onChange={(e) => {
                       const file = e.target.files?.[0];
                       if (!file) return;
-                      void uploadImage(file).catch((err) =>
+                      void uploadStemImage(file).catch((err) =>
                         setError(err instanceof Error ? err.message : 'Upload failed')
                       );
                     }}
@@ -592,7 +705,7 @@ export default function QuestionEditor({ mode, questionId, initialPreview }: Pro
                 onChange={(e) => {
                   const file = e.target.files?.[0];
                   if (!file) return;
-                  void uploadImage(file).catch((err) =>
+                  void uploadStemImage(file).catch((err) =>
                     setError(err instanceof Error ? err.message : 'Upload failed')
                   );
                 }}

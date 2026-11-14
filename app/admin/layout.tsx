@@ -38,6 +38,12 @@ export default async function AdminLayout({
                 Questions
               </Link>
               <Link
+                href="/admin/content-review"
+                className="px-3 py-1.5 rounded-[var(--radius-sm)] text-[var(--text-secondary)] hover:bg-[var(--surface-secondary)] hover:text-[var(--text-primary)]"
+              >
+                V2 Review
+              </Link>
+              <Link
                 href="/admin/questions/new"
                 className="px-3 py-1.5 rounded-[var(--radius-sm)] text-[var(--text-secondary)] hover:bg-[var(--surface-secondary)] hover:text-[var(--text-primary)]"
               >

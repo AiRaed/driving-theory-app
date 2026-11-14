@@ -2,7 +2,13 @@ import { NextRequest, NextResponse } from 'next/server';
 import { requireAdminApi } from '@/lib/admin/auth';
 import { createServiceClient } from '@/lib/admin/supabaseAdmin';
 import { writeQuestionWithFallback } from '@/lib/questions/repository';
-import { formToDbPayload, validateQuestionForm, type QuestionFormData } from '@/lib/questions/types';
+import {
+  applyOfficialLockToUpdatePayload,
+  formToDbPayload,
+  validateQuestionForm,
+  type QuestionFormData,
+  type QuestionRow,
+} from '@/lib/questions/types';
 
 export const dynamic = 'force-dynamic';
 
@@ -45,10 +51,37 @@ export async function PATCH(request: NextRequest, ctx: Ctx) {
     }
 
     const admin = createServiceClient();
-    const payload = {
+    const { data: existing, error: loadError } = await admin
+      .from('questions')
+      .select('*')
+      .eq('id', id)
+      .maybeSingle();
+    if (loadError) {
+      return NextResponse.json({ error: loadError.message }, { status: 500 });
+    }
+    if (!existing) {
+      return NextResponse.json({ error: 'Not found' }, { status: 404 });
+    }
+
+    // Block accidental publish of incomplete V2 drafts from the editor until cutover.
+    if (
+      body.status === 'published' &&
+      (existing as QuestionRow).content_version === 'v2' &&
+      process.env.DVSA_V2_ALLOW_PUBLISH !== 'true'
+    ) {
+      return NextResponse.json(
+        {
+          error:
+            'Publishing content_version=v2 is blocked until cutover (set DVSA_V2_ALLOW_PUBLISH=true only in an approved window).',
+        },
+        { status: 403 }
+      );
+    }
+
+    const payload = applyOfficialLockToUpdatePayload(existing as QuestionRow, {
       ...formToDbPayload(body),
       updated_by: user.id,
-    };
+    });
 
     const { data, error } = await writeQuestionWithFallback(admin, payload, {
       type: 'update',
