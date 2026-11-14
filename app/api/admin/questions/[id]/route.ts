@@ -9,6 +9,7 @@ import {
   type QuestionFormData,
   type QuestionRow,
 } from '@/lib/questions/types';
+import { isV2FirstPublishBlocked } from '@/lib/questions/v2PublishGate';
 
 export const dynamic = 'force-dynamic';
 
@@ -63,16 +64,13 @@ export async function PATCH(request: NextRequest, ctx: Ctx) {
       return NextResponse.json({ error: 'Not found' }, { status: 404 });
     }
 
-    // Block accidental publish of incomplete V2 drafts from the editor until cutover.
-    if (
-      body.status === 'published' &&
-      (existing as QuestionRow).content_version === 'v2' &&
-      process.env.DVSA_V2_ALLOW_PUBLISH !== 'true'
-    ) {
+    // Block first-time publish of unpublished V2 drafts. Already-published V2
+    // rows may be updated (explanations / translations / media) without this flag.
+    if (isV2FirstPublishBlocked(existing as QuestionRow, body.status)) {
       return NextResponse.json(
         {
           error:
-            'Publishing content_version=v2 is blocked until cutover (set DVSA_V2_ALLOW_PUBLISH=true only in an approved window).',
+            'Publishing unpublished content_version=v2 is blocked (set DVSA_V2_ALLOW_PUBLISH=true only in an approved window).',
         },
         { status: 403 }
       );

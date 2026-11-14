@@ -3,6 +3,7 @@ import type { TranslationLang } from '@/lib/i18n/languages';
 export const UI_EN = {
   navPractice: 'Practice',
   navMockTest: 'Mock Test',
+  navSavedCards: 'Saved cards',
   navAdmin: 'Admin',
   logOut: 'Log out',
   loggingOut: 'Logging out...',
@@ -117,6 +118,7 @@ type UiDict = Record<UiKey, string>;
 const ar: UiDict = {
   navPractice: 'تدريب',
   navMockTest: 'اختبار تجريبي',
+  navSavedCards: 'البطاقات المحفوظة',
   navAdmin: 'Admin',
   logOut: 'تسجيل الخروج',
   loggingOut: 'جاري تسجيل الخروج...',
@@ -226,6 +228,7 @@ const ar: UiDict = {
 const ur: UiDict = {
   navPractice: 'مشق',
   navMockTest: 'فرضی ٹیسٹ',
+  navSavedCards: 'محفوظ کارڈز',
   navAdmin: 'Admin',
   logOut: 'لاگ آؤٹ',
   loggingOut: 'لاگ آؤٹ ہو رہا ہے...',
@@ -335,6 +338,7 @@ const ur: UiDict = {
 const ro: UiDict = {
   navPractice: 'Exersare',
   navMockTest: 'Test simulare',
+  navSavedCards: 'Carduri salvate',
   navAdmin: 'Admin',
   logOut: 'Deconectare',
   loggingOut: 'Se deconectează...',
@@ -444,6 +448,7 @@ const ro: UiDict = {
 const pl: UiDict = {
   navPractice: 'Ćwiczenia',
   navMockTest: 'Test próbny',
+  navSavedCards: 'Zapisane karty',
   navAdmin: 'Admin',
   logOut: 'Wyloguj',
   loggingOut: 'Wylogowywanie...',
@@ -553,6 +558,7 @@ const pl: UiDict = {
 const pt: UiDict = {
   navPractice: 'Prática',
   navMockTest: 'Teste simulado',
+  navSavedCards: 'Cartões guardados',
   navAdmin: 'Admin',
   logOut: 'Terminar sessão',
   loggingOut: 'A terminar sessão...',
@@ -662,6 +668,7 @@ const pt: UiDict = {
 const bn: UiDict = {
   navPractice: 'অনুশীলন',
   navMockTest: 'মক টেস্ট',
+  navSavedCards: 'সংরক্ষিত কার্ড',
   navAdmin: 'Admin',
   logOut: 'লগ আউট',
   loggingOut: 'লগ আউট হচ্ছে...',
@@ -771,6 +778,7 @@ const bn: UiDict = {
 const fa: UiDict = {
   navPractice: 'تمرین',
   navMockTest: 'آزمون آزمایشی',
+  navSavedCards: 'کارت‌های ذخیره‌شده',
   navAdmin: 'Admin',
   logOut: 'خروج',
   loggingOut: 'در حال خروج...',

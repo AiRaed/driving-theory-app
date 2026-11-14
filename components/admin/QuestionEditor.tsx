@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import ExplanationRecommendationPanel from '@/components/admin/ExplanationRecommendationPanel';
+import KeywordCardEditor from '@/components/admin/KeywordCardEditor';
 import {
   KNOWN_LANGS,
   TOPIC_META,
@@ -726,6 +728,13 @@ export default function QuestionEditor({ mode, questionId, initialPreview }: Pro
           />
         </fieldset>
       </div>
+
+      {mode === 'edit' && questionId ? (
+        <>
+          <ExplanationRecommendationPanel questionId={questionId} />
+          <KeywordCardEditor questionId={questionId} />
+        </>
+      ) : null}
     </div>
   );
 }

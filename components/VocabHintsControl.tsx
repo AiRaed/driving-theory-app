@@ -19,6 +19,7 @@ interface VocabHintsControlProps {
  * Compact vocabulary hint control.
  * Hidden when the question has no stored vocab hints.
  * Does not replace existing post-answer "Learning Hints".
+ * Practice only — Mock Test must not import this (exam integrity).
  */
 export default function VocabHintsControl({
   questionId,

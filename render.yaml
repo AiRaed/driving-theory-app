@@ -27,8 +27,12 @@ services:
       - key: GOOGLE_PLAY_SERVICE_ACCOUNT_JSON
         sync: false
       # Temporary content pause. Set true to disable Practice/Mock/purchases.
-      # Phase 4C cutover: keep true until V2 bank is live and smoke-verified.
-      # Restore normal service with false (no data migration required).
+      # Phase 5A: V2 758-question bank is live. Keep false unless an explicit
+      # content pause is required. Existing accounts/purchases are unaffected.
       - key: CONTENT_MAINTENANCE_MODE
-        value: "true"
+        value: "false"
+      # Phase 5C: keep false until 0009 is applied in an approved window.
+      # Production never uses gitignored local JSON for cards.
+      - key: LEARNING_CARDS_USE_SUPABASE
+        value: "false"
 

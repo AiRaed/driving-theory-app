@@ -44,6 +44,18 @@ export default async function AdminLayout({
                 V2 Review
               </Link>
               <Link
+                href="/admin/learning-cards"
+                className="px-3 py-1.5 rounded-[var(--radius-sm)] text-[var(--text-secondary)] hover:bg-[var(--surface-secondary)] hover:text-[var(--text-primary)]"
+              >
+                Learning cards
+              </Link>
+              <Link
+                href="/admin/content-production"
+                className="px-3 py-1.5 rounded-[var(--radius-sm)] text-[var(--text-secondary)] hover:bg-[var(--surface-secondary)] hover:text-[var(--text-primary)]"
+              >
+                Production
+              </Link>
+              <Link
                 href="/admin/questions/new"
                 className="px-3 py-1.5 rounded-[var(--radius-sm)] text-[var(--text-secondary)] hover:bg-[var(--surface-secondary)] hover:text-[var(--text-primary)]"
               >

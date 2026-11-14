@@ -127,6 +127,12 @@ export default function AdminDashboardPage() {
           <Link href="/admin/content-review" className="lt-btn-secondary px-4 py-2.5 text-sm">
             V2 Content Review
           </Link>
+          <Link href="/admin/learning-cards" className="lt-btn-secondary px-4 py-2.5 text-sm">
+            Learning cards
+          </Link>
+          <Link href="/admin/content-production" className="lt-btn-secondary px-4 py-2.5 text-sm">
+            Content production
+          </Link>
           <Link href="/admin/questions/new" className="lt-btn-secondary px-4 py-2.5 text-sm">
             Add Question
           </Link>

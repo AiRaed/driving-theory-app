@@ -189,6 +189,21 @@ export default function DashboardClient() {
               {enLabel('mockTestMeta', { n: mockTestQuestionsCount })}
             </p>
           </div>
+
+          <div className="rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] p-4">
+            <p className="text-[11px] font-bold uppercase tracking-wider text-[var(--text-secondary)] mb-2">
+              {enLabel('navSavedCards')}
+            </p>
+            <Link
+              href="/saved-cards"
+              className="lt-btn-secondary w-full py-3.5 text-sm sm:text-base flex flex-col items-center justify-center"
+            >
+              {enLabel('navSavedCards')}
+            </Link>
+            <p className="text-xs text-[var(--text-secondary)] mt-2.5 text-center">
+              Keyword and explanation cards from Practice. Not shown in Mock Test.
+            </p>
+          </div>
             </>
           )}
 

@@ -83,6 +83,16 @@ export default function Navigation() {
           >
             {enLabel('navMockTest')}
           </Link>
+          {user ? (
+            <Link
+              href="/saved-cards"
+              prefetch={true}
+              data-active={pathname === '/saved-cards'}
+              className={navLinkClass(pathname === '/saved-cards')}
+            >
+              {enLabel('navSavedCards')}
+            </Link>
+          ) : null}
           {showAdmin ? (
             <Link
               href="/admin"

@@ -6,6 +6,9 @@ import Link from 'next/link';
 import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import VocabHintsControl from '@/components/VocabHintsControl';
+import PracticeLearningAids, {
+  PracticeExplanationAfterAnswer,
+} from '@/components/PracticeLearningAids';
 import AnswerOptionContent from '@/components/AnswerOptionContent';
 import DisclaimerModal from '@/components/DisclaimerModal';
 import LanguageSelector from '@/components/LanguageSelector';
@@ -871,11 +874,15 @@ export default function PracticePage() {
               )
             ) : null}
 
-            {/* English Prompt */}
+            {/* English Prompt — Practice-only keyword cards (never in Mock Test) */}
             <div className="flex items-start justify-between gap-2 mb-1">
-              <h2 className="text-[19px] sm:text-[21px] font-bold text-[var(--text-primary)] leading-[1.4] flex-1 min-w-0 break-words whitespace-normal">
-                {currentQuestion.promptEn}
-              </h2>
+              <div className="flex-1 min-w-0">
+                <PracticeLearningAids
+                  questionId={currentQuestion.id}
+                  language={translationLang === 'ar' ? 'ar' : 'en'}
+                  prompt={currentQuestion.promptEn}
+                />
+              </div>
               <div className="flex items-center gap-2 flex-shrink-0 mt-0.5">
                 <TTSButton text={currentQuestion.promptEn} options={shuffledOptions} />
               </div>
@@ -1357,6 +1364,12 @@ export default function PracticePage() {
                 </div>
               );
             })()}
+
+            <PracticeExplanationAfterAnswer
+              questionId={currentQuestion.id}
+              language={translationLang === 'ar' ? 'ar' : 'en'}
+              visible={selectedAnswerIndex !== null}
+            />
 
             {/* Navigation Buttons */}
             <div className="flex justify-between items-center mt-4 gap-2 flex-wrap">

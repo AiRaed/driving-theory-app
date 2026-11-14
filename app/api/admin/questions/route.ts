@@ -11,6 +11,7 @@ import {
   type QuestionRow,
   type QuestionStatus,
 } from '@/lib/questions/types';
+import { getLearningCardsRepository } from '@/lib/learning-cards/store';
 
 export const dynamic = 'force-dynamic';
 
@@ -31,6 +32,55 @@ export async function GET(request: NextRequest) {
     const to = from + pageSize - 1;
 
     const needsReviewFilter = status === 'needs_review';
+    const recClassification = searchParams.get('rec_classification') || '';
+    const recPriority = searchParams.get('rec_priority') || '';
+    const recCardStatus = searchParams.get('rec_card_status') || '';
+    const recFilterOn = !!(recClassification || recPriority || recCardStatus);
+
+    let recs: Array<{
+      question_id: string;
+      recommended_classification: string;
+      effective_classification: string;
+      priority: string;
+      suggested_format: string;
+      card_status: string;
+    }> = [];
+    try {
+      const cardsRepo = await getLearningCardsRepository({ mode: 'admin' });
+      recs = (await cardsRepo.listRecommendations()).rows;
+    } catch {
+      recs = [];
+    }
+    const recById = new Map(recs.map((r) => [r.question_id, r]));
+    const recStatuses: Record<string, string> = {};
+    for (const row of recs) recStatuses[row.question_id] = row.card_status;
+
+    const decorate = (rows: QuestionRow[]) =>
+      rows.map((q) => {
+        const rec = recById.get(q.id);
+        return {
+          ...q,
+          explanation_recommendation: rec
+            ? {
+                recommended_classification: rec.recommended_classification,
+                effective_classification: rec.effective_classification,
+                priority: rec.priority,
+                suggested_format: rec.suggested_format,
+                card_status: recStatuses[q.id] || 'none',
+              }
+            : null,
+        };
+      });
+
+    const matchesRec = (id: string) => {
+      const rec = recById.get(id);
+      if (!rec) return false;
+      if (recClassification && rec.effective_classification !== recClassification) return false;
+      if (recPriority && rec.priority !== recPriority) return false;
+      const cardStatus = recStatuses[id] || 'none';
+      if (recCardStatus && cardStatus !== recCardStatus) return false;
+      return true;
+    };
 
     let query = admin
       .from('questions')
@@ -62,17 +112,19 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    if (needsReviewFilter) {
-      // Computed filter — load matching set then paginate in memory (~742 rows).
+    if (needsReviewFilter || recFilterOn) {
+      // Computed filter — load matching set then paginate in memory.
       const { data, error } = await query;
       if (error) {
         console.error('[admin/questions] list', error);
         return NextResponse.json({ error: error.message }, { status: 500 });
       }
-      const filtered = ((data || []) as QuestionRow[]).filter(questionNeedsReview);
+      let filtered = (data || []) as QuestionRow[];
+      if (needsReviewFilter) filtered = filtered.filter(questionNeedsReview);
+      if (recFilterOn) filtered = filtered.filter((row) => matchesRec(row.id));
       const pageSlice = filtered.slice(from, to + 1);
       return NextResponse.json({
-        questions: pageSlice,
+        questions: decorate(pageSlice),
         total: filtered.length,
         page,
         pageSize,
@@ -88,7 +140,7 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json({
-      questions: data || [],
+      questions: decorate((data || []) as QuestionRow[]),
       total: count || 0,
       page,
       pageSize,

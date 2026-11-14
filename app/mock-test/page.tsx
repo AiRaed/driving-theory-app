@@ -7,7 +7,6 @@ import { Question } from "@/data/questions";
 import { cn } from "@/lib/utils";
 import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
-import VocabHintsControl from "@/components/VocabHintsControl";
 import AnswerOptionContent from "@/components/AnswerOptionContent";
 import DisclaimerModal from "@/components/DisclaimerModal";
 import LanguageSelector from "@/components/LanguageSelector";
@@ -902,10 +901,7 @@ export default function MockTestPage() {
             );
           })()}
 
-          <VocabHintsControl
-            questionId={currentQuestion.id}
-            translationLang={translationLang}
-          />
+          {/* Exam integrity: no hints, vocab cards, or tappable keywords during Mock. */}
 
           {/* Divider */}
           <div className="border-t border-[var(--border)] mb-4 mt-2"></div>

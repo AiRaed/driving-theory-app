@@ -43,6 +43,9 @@ export default function AdminQuestionsPage() {
   const [qDraft, setQDraft] = useState('');
   const [topic, setTopic] = useState('');
   const [status, setStatus] = useState('published');
+  const [recClassification, setRecClassification] = useState('');
+  const [recPriority, setRecPriority] = useState('');
+  const [recCardStatus, setRecCardStatus] = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const pageSize = 25;
@@ -59,6 +62,9 @@ export default function AdminQuestionsPage() {
       if (q.trim()) params.set('q', q.trim());
       if (topic) params.set('topic', topic);
       if (status) params.set('status', status);
+      if (recClassification) params.set('rec_classification', recClassification);
+      if (recPriority) params.set('rec_priority', recPriority);
+      if (recCardStatus) params.set('rec_card_status', recCardStatus);
       const res = await fetch(`/api/admin/questions?${params}`);
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Failed to load');
@@ -69,7 +75,7 @@ export default function AdminQuestionsPage() {
     } finally {
       setLoading(false);
     }
-  }, [page, q, topic, status]);
+  }, [page, q, topic, status, recClassification, recPriority, recCardStatus]);
 
   useEffect(() => {
     void load();
@@ -167,9 +173,14 @@ export default function AdminQuestionsPage() {
             {total} total · page {page} of {totalPages}
           </p>
         </div>
-        <Link href="/admin/questions/new" className="lt-btn-primary px-4 py-2.5 text-sm">
-          Add Question
-        </Link>
+        <div className="flex flex-wrap gap-2">
+          <Link href="/admin/learning-cards" className="lt-btn-ghost px-4 py-2.5 text-sm">
+            Learning cards
+          </Link>
+          <Link href="/admin/questions/new" className="lt-btn-primary px-4 py-2.5 text-sm">
+            Add Question
+          </Link>
+        </div>
       </div>
 
       <div className="lt-card p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -210,6 +221,48 @@ export default function AdminQuestionsPage() {
           <option value="archived">Archived</option>
           <option value="needs_review">Needs review</option>
         </select>
+        <select
+          className="lt-input"
+          value={recClassification}
+          onChange={(e) => {
+            setPage(1);
+            setRecClassification(e.target.value);
+          }}
+        >
+          <option value="">All explanation recs</option>
+          <option value="needs_explanation">needs_explanation</option>
+          <option value="image_is_enough">image_is_enough</option>
+          <option value="review_later">review_later</option>
+          <option value="unnecessary">unnecessary</option>
+        </select>
+        <select
+          className="lt-input"
+          value={recPriority}
+          onChange={(e) => {
+            setPage(1);
+            setRecPriority(e.target.value);
+          }}
+        >
+          <option value="">All rec priorities</option>
+          <option value="high">high</option>
+          <option value="medium">medium</option>
+          <option value="low">low</option>
+        </select>
+        <select
+          className="lt-input"
+          value={recCardStatus}
+          onChange={(e) => {
+            setPage(1);
+            setRecCardStatus(e.target.value);
+          }}
+        >
+          <option value="">Any explanation card</option>
+          <option value="none">no card</option>
+          <option value="draft">draft</option>
+          <option value="submitted">submitted</option>
+          <option value="approved">approved</option>
+          <option value="published">published</option>
+        </select>
       </div>
 
       {error && (
@@ -227,6 +280,7 @@ export default function AdminQuestionsPage() {
               <th className="px-3 py-3 font-bold">Translations</th>
               <th className="px-3 py-3 font-bold">Image</th>
               <th className="px-3 py-3 font-bold">Status</th>
+              <th className="px-3 py-3 font-bold">Explanation rec</th>
               <th className="px-3 py-3 font-bold">Updated</th>
               <th className="px-3 py-3 font-bold">Actions</th>
             </tr>
@@ -234,18 +288,28 @@ export default function AdminQuestionsPage() {
           <tbody>
             {loading ? (
               <tr>
-                <td colSpan={7} className="px-4 py-8 text-center text-[var(--text-secondary)]">
+                <td colSpan={8} className="px-4 py-8 text-center text-[var(--text-secondary)]">
                   Loading…
                 </td>
               </tr>
             ) : questions.length === 0 ? (
               <tr>
-                <td colSpan={7} className="px-4 py-8 text-center text-[var(--text-secondary)]">
+                <td colSpan={8} className="px-4 py-8 text-center text-[var(--text-secondary)]">
                   No questions found. Run the import script if the bank is empty.
                 </td>
               </tr>
             ) : (
-              questions.map((row) => (
+              questions.map((row) => {
+                const rec = (
+                  row as QuestionRow & {
+                    explanation_recommendation?: {
+                      effective_classification: string;
+                      priority: string;
+                      card_status: string;
+                    } | null;
+                  }
+                ).explanation_recommendation;
+                return (
                 <tr key={row.id} className="border-b border-[var(--border)] align-top">
                   <td className="px-4 py-3">
                     <p className="font-semibold text-[var(--text-primary)]">{row.id}</p>
@@ -281,6 +345,19 @@ export default function AdminQuestionsPage() {
                     >
                       {row.status}
                     </span>
+                  </td>
+                  <td className="px-3 py-3 text-xs text-[var(--text-secondary)]">
+                    {rec ? (
+                      <>
+                        <span className="font-medium text-[var(--text-primary)]">
+                          {rec.effective_classification}
+                        </span>
+                        <br />
+                        {rec.priority} · {rec.card_status}
+                      </>
+                    ) : (
+                      '—'
+                    )}
                   </td>
                   <td className="px-3 py-3 whitespace-nowrap text-[var(--text-secondary)] text-xs">
                     {row.updated_at ? new Date(row.updated_at).toLocaleDateString() : '—'}
@@ -323,7 +400,8 @@ export default function AdminQuestionsPage() {
                     </div>
                   </td>
                 </tr>
-              ))
+                );
+              })
             )}
           </tbody>
         </table>

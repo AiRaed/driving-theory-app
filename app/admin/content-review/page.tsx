@@ -56,7 +56,11 @@ export default function AdminContentReviewPage() {
           Progressive review for draft DVSA V2 questions: explanations, keyword cards, and
           provisional images. Official stem/options/correct answers stay read-only when locked.
           Images are internal QA only — never mark as DVSA-approved. Draft rows never appear in
-          live Practice or Mock Test.
+          live Practice or Mock Test.{' '}
+          <Link href="/admin/learning-cards" className="text-[var(--lingo-red)] font-semibold">
+            Learning cards
+          </Link>{' '}
+          persist in Supabase after migration 0009. Learners only see published cards.
         </p>
       </div>
 

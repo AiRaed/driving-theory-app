@@ -302,6 +302,7 @@ Prefer the DELETE approach above if only drafts were added.
     path.join(cwd, 'app/api/admin/questions/[id]/route.ts'),
     'utf8'
   );
+  const gateSrc = fs.readFileSync(path.join(cwd, 'lib/questions/v2PublishGate.ts'), 'utf8');
   const migration = fs.readFileSync(
     path.join(cwd, 'supabase/migrations/0008_dvsa_v2_content_schema.sql'),
     'utf8'
@@ -327,8 +328,11 @@ Prefer the DELETE approach above if only drafts were added.
   });
   checks.push({
     name: 'admin_publish_v2_blocked',
-    ok: adminPatch.includes('DVSA_V2_ALLOW_PUBLISH') && adminPatch.includes("content_version === 'v2'"),
-    detail: 'PATCH publish of content_version=v2 blocked unless DVSA_V2_ALLOW_PUBLISH=true',
+    ok:
+      adminPatch.includes('isV2FirstPublishBlocked') &&
+      gateSrc.includes("existing.status === 'published'") &&
+      gateSrc.includes('DVSA_V2_ALLOW_PUBLISH'),
+    detail: 'First-time V2 publish blocked; already-published V2 updates allowed',
   });
   checks.push({
     name: 'migration_additive_no_publish',
