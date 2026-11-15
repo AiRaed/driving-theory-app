@@ -58,9 +58,9 @@ export default function AdminContentReviewPage() {
           Images are internal QA only — never mark as DVSA-approved. Draft rows never appear in
           live Practice or Mock Test.{' '}
           <Link href="/admin/learning-cards" className="text-[var(--lingo-red)] font-semibold">
-            Learning cards
+            Explanation hints
           </Link>{' '}
-          persist in Supabase after migration 0009. Learners only see published cards.
+          persist in Supabase after migration 0009. Learners only see complete active hints.
         </p>
       </div>
 

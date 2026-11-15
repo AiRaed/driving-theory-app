@@ -1,18 +1,16 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import KeywordInlineText, { type InlineKeyword } from '@/components/KeywordInlineText';
-import ExplanationCardPanel from '@/components/ExplanationCardPanel';
+import PracticeHintDialog from '@/components/PracticeHintDialog';
+import { hintDialogCopy, type PracticeHintCard } from '@/lib/learning-cards/hintDialog';
+
+type HintCard = PracticeHintCard;
 
 type Payload = {
   keywords: InlineKeyword[];
   terms: Array<{ term_key: string; term_en: string }>;
-  explanation: {
-    id: string;
-    explanation: string;
-    format?: string;
-    language?: string;
-  } | null;
+  explanation: HintCard | null;
 };
 
 function usePublishedCards(questionId: string, language: string) {
@@ -31,7 +29,12 @@ function usePublishedCards(questionId: string, language: string) {
             ...k,
             term_en: terms.find((t: { term_key: string }) => t.term_key === k.term_key)?.term_en,
           }));
-          setData({ keywords, terms, explanation: body.explanation || null });
+          const explanation = body.explanation || null;
+          const complete =
+            explanation && String(explanation.explanation || '').trim().length > 0
+              ? explanation
+              : null;
+          setData({ keywords, terms, explanation: complete });
         }
       })
       .catch(() => {
@@ -62,6 +65,53 @@ export default function PracticeLearningAids({
   );
 }
 
+/** Hint button only when a complete active explanation hint exists. */
+export function PracticeExplanationHint({
+  questionId,
+  language,
+}: {
+  questionId: string;
+  language: string;
+}) {
+  const data = usePublishedCards(questionId, language);
+  const [open, setOpen] = useState(false);
+  const [scope, setScope] = useState(`${questionId}:${language}`);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const nextScope = `${questionId}:${language}`;
+  if (scope !== nextScope) {
+    setScope(nextScope);
+    setOpen(false);
+  }
+  const card = data?.explanation || null;
+  if (!card) return null;
+  const copy = hintDialogCopy(card.language || language);
+  return (
+    <div className="mt-3">
+      <button
+        ref={triggerRef}
+        type="button"
+        className="lt-btn-ghost px-3 py-2 text-sm"
+        dir={copy.dir}
+        lang={copy.lang}
+        aria-haspopup="dialog"
+        aria-expanded={open}
+        aria-controls={open ? 'practice-hint-dialog' : undefined}
+        data-testid="practice-hint-trigger"
+        onClick={() => setOpen(true)}
+      >
+        {copy.triggerLabel}
+      </button>
+      <PracticeHintDialog
+        open={open}
+        card={card}
+        returnFocusRef={triggerRef}
+        onClose={() => setOpen(false)}
+      />
+    </div>
+  );
+}
+
+/** @deprecated Use PracticeExplanationHint. Kept so older imports fail closed. */
 export function PracticeExplanationAfterAnswer({
   questionId,
   language,
@@ -71,7 +121,6 @@ export function PracticeExplanationAfterAnswer({
   language: string;
   visible: boolean;
 }) {
-  const data = usePublishedCards(questionId, language);
   if (!visible) return null;
-  return <ExplanationCardPanel card={data?.explanation || null} />;
+  return <PracticeExplanationHint questionId={questionId} language={language} />;
 }

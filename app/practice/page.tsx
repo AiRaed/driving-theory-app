@@ -7,8 +7,9 @@ import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import VocabHintsControl from '@/components/VocabHintsControl';
 import PracticeLearningAids, {
-  PracticeExplanationAfterAnswer,
+  PracticeExplanationHint,
 } from '@/components/PracticeLearningAids';
+import PracticeKeywordControl from '@/components/PracticeKeywordControl';
 import AnswerOptionContent from '@/components/AnswerOptionContent';
 import DisclaimerModal from '@/components/DisclaimerModal';
 import LanguageSelector from '@/components/LanguageSelector';
@@ -810,8 +811,13 @@ export default function PracticePage() {
             {/* Progress Section */}
             <div className="mb-4 pt-1">
               <div className="flex items-center justify-between mb-1.5">
-                <div className="text-xs text-[var(--text-secondary)] font-medium">
-                  {enLabel('questionOf', { current: currentQuestionIndex + 1, total: topicQuestions.length })}
+                <div className="text-xs text-[var(--text-secondary)] font-medium flex items-center gap-3">
+                  <span>
+                    {enLabel('questionOf', { current: currentQuestionIndex + 1, total: topicQuestions.length })}
+                  </span>
+                  <Link href="/saved-cards" className="text-[var(--lingo-red)] font-semibold">
+                    Saved cards
+                  </Link>
                 </div>
                 <div className="text-xs text-[var(--text-secondary)]">
                   {enLabel('percentComplete', { percent: Math.round(((currentQuestionIndex + 1) / topicQuestions.length) * 100) })}
@@ -1365,10 +1371,13 @@ export default function PracticePage() {
               );
             })()}
 
-            <PracticeExplanationAfterAnswer
+            <PracticeExplanationHint
               questionId={currentQuestion.id}
               language={translationLang === 'ar' ? 'ar' : 'en'}
-              visible={selectedAnswerIndex !== null}
+            />
+            <PracticeKeywordControl
+              questionId={currentQuestion.id}
+              language={translationLang === 'ar' ? 'ar' : 'en'}
             />
 
             {/* Navigation Buttons */}

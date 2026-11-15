@@ -2,6 +2,8 @@ import {
   linkKeywordToQuestion,
   mergeRecommendation,
   readLocalLearningCards,
+  disableExplanationCard,
+  removeExplanationCard,
   saveOverride,
   setCardStatus,
   toggleSavedCard,
@@ -11,6 +13,7 @@ import {
 import { loadBundledRecommendations, countBy } from './recommendations';
 import { seedDraftExampleCards } from './seedDrafts';
 import { isLearnerVisibleCardStatus } from './types';
+import { isLearnerVisibleExplanationHint } from './hints';
 import type { LearningCardsRepository } from './repository';
 
 function cardStatusMap() {
@@ -63,6 +66,16 @@ export function createLocalLearningCardsRepository(): LearningCardsRepository {
     },
     async upsertExplanationCard(input) {
       return upsertExplanationCard({ ...input, status: input.status || 'draft' });
+    },
+    async removeExplanationCard(questionId, language = 'en', updated_by) {
+      return removeExplanationCard(questionId, language, updated_by);
+    },
+    async disableExplanationCard(questionId, language = 'en', updated_by) {
+      return disableExplanationCard(questionId, language, updated_by);
+    },
+    async listReusableExplanationHints() {
+      const state = readLocalLearningCards();
+      return state.explanation_cards.filter((c) => isLearnerVisibleExplanationHint(c));
     },
     async listRecommendations(filters = {}) {
       let rows = mergedRows();
@@ -121,13 +134,13 @@ export function createLocalLearningCardsRepository(): LearningCardsRepository {
           (c) =>
             c.question_id === questionId &&
             c.language === lang &&
-            isLearnerVisibleCardStatus(c.status)
+            isLearnerVisibleExplanationHint(c)
         ) ||
         state.explanation_cards.find(
           (c) =>
             c.question_id === questionId &&
             c.language === 'en' &&
-            isLearnerVisibleCardStatus(c.status)
+            isLearnerVisibleExplanationHint(c)
         ) ||
         null;
       return {
@@ -150,7 +163,7 @@ export function createLocalLearningCardsRepository(): LearningCardsRepository {
         ),
         explanations: state.explanation_cards.filter(
           (c) =>
-            isLearnerVisibleCardStatus(c.status) &&
+            isLearnerVisibleExplanationHint(c) &&
             mine.some((s) => s.explanation_card_id === c.id)
         ),
       };

@@ -47,7 +47,13 @@ export default async function AdminLayout({
                 href="/admin/learning-cards"
                 className="px-3 py-1.5 rounded-[var(--radius-sm)] text-[var(--text-secondary)] hover:bg-[var(--surface-secondary)] hover:text-[var(--text-primary)]"
               >
-                Learning cards
+                Explanation hints
+              </Link>
+              <Link
+                href="/admin/keyword-cards"
+                className="px-3 py-1.5 rounded-[var(--radius-sm)] text-[var(--text-secondary)] hover:bg-[var(--surface-secondary)] hover:text-[var(--text-primary)]"
+              >
+                Keyword Cards
               </Link>
               <Link
                 href="/admin/content-production"

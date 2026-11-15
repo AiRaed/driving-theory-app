@@ -127,15 +127,23 @@ run('Classifier marks factual documents as image_is_enough', () => {
   assert.equal(rec.priority, 'low');
 });
 
-run('Classifier leaves ambiguous items as review_later', () => {
-  const rec = classifyExplanationNeed({
+run('Classifier leaves a mirror-check rule as a hint, and plain colour recall as enough', () => {
+  const mirrors = classifyExplanationNeed({
     id: 'AB9995',
     topic: 'alertness',
     promptEn: 'How often should you check your mirrors?',
     options: [{ en: 'Frequently' }],
-    explanationEn: 'Check mirrors often.',
+    explanationEn: 'Check mirrors often so you know what is behind you before you manoeuvre.',
   });
-  assert.equal(rec.recommended_classification, 'review_later');
+  assert.equal(mirrors.recommended_classification, 'needs_explanation');
+  const colour = classifyExplanationNeed({
+    id: 'AB9996',
+    topic: 'attitude',
+    promptEn: 'Which colour follows the green signal at a puffin crossing?',
+    options: [{ en: 'Amber' }],
+    explanationEn: 'Amber follows green.',
+  });
+  assert.equal(colour.recommended_classification, 'image_is_enough');
 });
 
 run('Admin override can force a card on image_is_enough or mark unnecessary', () => {
@@ -183,7 +191,8 @@ run('Admin learning-cards page filters classification, topic, priority, card sta
   assert.ok(page.includes('review_later'));
   assert.ok(page.includes('All priorities'));
   assert.ok(page.includes('Any card status'));
-  assert.ok(page.includes('Seed draft examples'));
+  assert.ok(page.includes('Explanation hints'));
+  assert.ok(page.includes('Add hint'));
 });
 
 run('Seed drafts never auto-publish', () => {
@@ -203,7 +212,7 @@ run('Practice mounts learning aids; Mock Test does not', () => {
   const practice = readFileSync(path.join(root, 'app/practice/page.tsx'), 'utf8');
   const mock = readFileSync(path.join(root, 'app/mock-test/page.tsx'), 'utf8');
   assert.ok(practice.includes('PracticeLearningAids'));
-  assert.ok(practice.includes('PracticeExplanationAfterAnswer'));
+  assert.ok(practice.includes('PracticeExplanationHint'));
   assert.ok(!mock.includes('PracticeLearningAids'));
   assert.ok(!mock.includes('KeywordInlineText'));
   assert.ok(!mock.includes('SaveCardButton'));

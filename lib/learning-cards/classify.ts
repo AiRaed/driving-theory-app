@@ -56,6 +56,69 @@ const MEDIUM_TOPICS = new Set([
   'vehicle-loading',
 ]);
 
+const ACTION_OR_REASON =
+  /\b(why|what should you|what must you|what could you|when should you|when must you|when may you|when would you|how can you|how should you|how often should you|how will|what will happen|what'?s the first|who has priority|what hazard|what danger|main hazard|most likely to distract|how'?s it different|how far are you allowed|when are you allowed)\b/i;
+
+/** Sign, shape, or signal naming that the picture and official explanation already answer. */
+export function isStraightforwardSignIdentification(prompt: string): boolean {
+  const p = prompt.replace(/\s+/g, ' ').trim();
+  if (/\bhow can you identify traffic signs that give orders\b/i.test(p)) return true;
+  if (ACTION_OR_REASON.test(p)) return false;
+  return (
+    /\bwhat does this (traffic |motorway )?(sign|signal|line|marking|road marking)\b/i.test(p) ||
+    /\bwhat('s| is) the meaning of this (traffic )?sign\b/i.test(p) ||
+    /\bwhich (sign|diagram|shape)\b/i.test(p) ||
+    /\bwhat do these (motorway )?signs mean\b/i.test(p) ||
+    /\bwhat does ['‘"]?\d+['’"]? mean on this (motorway )?sign\b/i.test(p) ||
+    /\bwhat does (a|the) red traffic light mean\b/i.test(p) ||
+    /\bamber light shows on its own\b/i.test(p) ||
+    /\bhow can you identify traffic signs that give orders\b/i.test(p)
+  );
+}
+
+/** Direct label or number recall. A hint would only repeat the official fact. */
+export function isDirectFactRecall(prompt: string): boolean {
+  const p = prompt.replace(/\s+/g, ' ').trim();
+  if (ACTION_OR_REASON.test(p)) return false;
+  if (/reflective studs/i.test(p)) return false;
+  return (
+    /\bwhat colour\b/i.test(p) ||
+    /\bwhich colour follows\b/i.test(p) ||
+    /\bwhat type of (emergency )?vehicle\b/i.test(p) ||
+    /\bwhich type of vehicle (displays|uses|is fitted|will use)\b/i.test(p) ||
+    /\bwhich instrument-panel\b/i.test(p) ||
+    /\bwhat'?s the national speed limit\b/i.test(p) ||
+    /\bwhat'?s the speed limit for cars and motorcycles on a dual carriageway\b/i.test(p)
+  );
+}
+
+export function questionTeachesADecision(prompt: string): boolean {
+  return ACTION_OR_REASON.test(prompt);
+}
+
+function reconcileHintSelection(input: {
+  prompt: string;
+  recommended: ExplanationClassification;
+  priority: ExplanationPriority;
+  docsFactual: boolean;
+}): { recommended: ExplanationClassification; priority: ExplanationPriority; rationale: string } {
+  const { prompt, recommended, priority, docsFactual } = input;
+  if (isStraightforwardSignIdentification(prompt)) {
+    return { recommended: 'image_is_enough', priority: 'low', rationale: '' };
+  }
+  if (isDirectFactRecall(prompt) || (docsFactual && !questionTeachesADecision(prompt))) {
+    return { recommended: 'image_is_enough', priority: 'low', rationale: '' };
+  }
+  if (recommended !== 'needs_explanation' && questionTeachesADecision(prompt)) {
+    return {
+      recommended: 'needs_explanation',
+      priority: priority === 'low' ? 'medium' : priority,
+      rationale: '',
+    };
+  }
+  return { recommended, priority, rationale: '' };
+}
+
 export function classifyExplanationNeed(q: ClassifyQuestionInput): ExplanationRecommendation {
   const prompt = String(q.promptEn || '');
   const expl = String(q.explanationEn || '');
@@ -152,6 +215,16 @@ export function classifyExplanationNeed(q: ClassifyQuestionInput): ExplanationRe
     rationale =
       'Not clearly a sign-only item and not clearly a reasoning item. Leave for human review before commissioning a card.';
   }
+
+  const reconciled = reconcileHintSelection({
+    prompt,
+    recommended,
+    priority,
+    docsFactual,
+  });
+  recommended = reconciled.recommended;
+  priority = reconciled.priority;
+  rationale = reconciled.rationale || rationale;
 
   return {
     question_id: q.id,

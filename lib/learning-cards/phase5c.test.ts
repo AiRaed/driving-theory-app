@@ -13,6 +13,7 @@ import {
   type LearningCardsSupabaseClient,
 } from './supabaseStore';
 import { canAdvanceCardStatus, mockExamAllowsLearningAids } from './types';
+import { isLearnerVisibleExplanationHint } from './hints';
 import { DVSA_V2_EXPECTED_COUNT } from '../questions/dvsaV2';
 import type { LearningCardsLocalState } from './localStore';
 
@@ -467,6 +468,56 @@ async function main() {
     assert.equal(ov?.dvsa_approved, false);
     const listed = await repo.listRecommendations();
     assert.equal(listed.totals.unique_ids, DVSA_V2_EXPECTED_COUNT);
+  });
+
+  await run('Admin activate publishes a complete hint; empty and removed stay hidden', async () => {
+    const repo = createSupabaseLearningCardsRepository(createMemoryClient());
+    const empty = await repo.upsertExplanationCard({
+      question_id: 'HINT-EMPTY',
+      language: 'en',
+      explanation: '   ',
+      format: 'text',
+      activate: true,
+    });
+    assert.equal(empty.status, 'draft');
+    assert.equal(isLearnerVisibleExplanationHint(empty), false);
+    assert.equal((await repo.getPublishedForQuestion('HINT-EMPTY', 'en')).explanation, null);
+
+    const active = await repo.upsertExplanationCard({
+      question_id: 'HINT-EMPTY',
+      language: 'en',
+      explanation: 'Leave a two-second gap in the dry.',
+      format: 'text',
+      activate: true,
+    });
+    assert.equal(active.status, 'published');
+    assert.equal(isLearnerVisibleExplanationHint(active), true);
+    assert.equal(
+      (await repo.getPublishedForQuestion('HINT-EMPTY', 'en')).explanation?.explanation,
+      'Leave a two-second gap in the dry.'
+    );
+
+    const copied = await repo.upsertExplanationCard({
+      question_id: 'HINT-REUSE',
+      language: 'en',
+      explanation: active.explanation,
+      format: active.format,
+      image_url: active.image_url,
+      video_url: active.video_url,
+      activate: true,
+    });
+    assert.equal(copied.status, 'published');
+    const reusable = await repo.listReusableExplanationHints();
+    assert.equal(reusable.some((c) => c.question_id === 'HINT-EMPTY'), true);
+    assert.equal(reusable.some((c) => c.question_id === 'HINT-REUSE'), true);
+
+    const removed = await repo.removeExplanationCard('HINT-EMPTY', 'en');
+    assert.equal(removed?.status, 'archived');
+    assert.equal((await repo.getPublishedForQuestion('HINT-EMPTY', 'en')).explanation, null);
+    assert.equal(
+      (await repo.getPublishedForQuestion('HINT-REUSE', 'en')).explanation?.status,
+      'published'
+    );
   });
 }
 

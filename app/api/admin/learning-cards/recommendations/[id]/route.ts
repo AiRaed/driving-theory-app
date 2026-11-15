@@ -3,6 +3,8 @@ import { requireAdminApi } from '@/lib/admin/auth';
 import { EXPLANATION_OVERRIDE_VALUES, type ExplanationOverride } from '@/lib/learning-cards/types';
 import { getLearningCardsRepository } from '@/lib/learning-cards/store';
 import { isLearningCardsNotMigratedError } from '@/lib/learning-cards/errors';
+import { loadHintDraft, PROVISIONAL_HINT_LABEL } from '@/lib/learning-cards/hintDraftStore';
+import { hintPresentationLabel } from '@/lib/learning-cards/hints';
 
 export const dynamic = 'force-dynamic';
 
@@ -29,8 +31,22 @@ export async function GET(_request: NextRequest, ctx: Ctx) {
     const id = await resolveId(ctx);
     const rec = await repo.getRecommendation(id);
     if (!rec) return NextResponse.json({ error: 'Not found' }, { status: 404 });
+    const draft = loadHintDraft(id);
     return NextResponse.json({
       recommendation: rec,
+      suggested_hint: draft
+        ? {
+            english: draft.english,
+            presentation: draft.presentation,
+            presentation_label: hintPresentationLabel(draft.suggested_format),
+            linked_question_ids: draft.linked_question_ids,
+            review_status: draft.review_status,
+            provisional: draft.provisional === true,
+            review_label: draft.provisional ? draft.review_label || PROVISIONAL_HINT_LABEL : null,
+            published: false,
+            dvsa_approved: false,
+          }
+        : null,
       dvsa_approved: false,
       backend: repo.backend,
     });

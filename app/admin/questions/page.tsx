@@ -175,7 +175,7 @@ export default function AdminQuestionsPage() {
         </div>
         <div className="flex flex-wrap gap-2">
           <Link href="/admin/learning-cards" className="lt-btn-ghost px-4 py-2.5 text-sm">
-            Learning cards
+            Explanation hints
           </Link>
           <Link href="/admin/questions/new" className="lt-btn-primary px-4 py-2.5 text-sm">
             Add Question

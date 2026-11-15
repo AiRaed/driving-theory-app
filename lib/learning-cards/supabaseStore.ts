@@ -1,7 +1,8 @@
 /**
  * Supabase-backed Learning Cards repository.
  * Admin writes use the service role. Learner reads rely on RLS (published only)
- * plus an application-level published filter. Never auto-publishes.
+ * plus an application-level published filter.
+ * Explanation hints publish only when admin Save sets activate on complete text.
  */
 
 import {
@@ -20,6 +21,7 @@ import {
 } from './types';
 import { LearningCardsNotMigratedError, isMissingLearningCardsTable } from './errors';
 import { loadBundledRecommendations, countBy } from './recommendations';
+import { isLearnerVisibleExplanationHint, resolveExplanationSaveStatus } from './hints';
 import type { LearningCardsRepository } from './repository';
 
 type FilterBuilder = {
@@ -113,13 +115,20 @@ export function createSupabaseLearningCardsRepository(
     }
     const bundled = loadBundledRecommendations();
     const dbById = new Map(recs.map((r) => [r.question_id, r]));
-    const source: RecSource[] =
-      recs.length >= bundled.length && recs.length > 0
-        ? recs
-        : bundled.map((b) => {
-            const row = dbById.get(b.question_id);
-            return row ? { ...b, ...row, dvsa_approved: false as const } : { ...b };
-          });
+    // Bundled file is the current review of all 758 questions.
+    // Database rows keep admin overrides only, so a stored older classification
+    // does not hide the re-evaluation. This read does not write to Supabase.
+    const source: RecSource[] = bundled.map((b) => {
+      const row = dbById.get(b.question_id);
+      if (!row) return { ...b };
+      return {
+        ...b,
+        admin_override: row.admin_override,
+        override_note: row.override_note,
+        card_unnecessary: row.card_unnecessary,
+        dvsa_approved: false as const,
+      };
+    });
     return source.map((r) => {
       const admin_override = r.admin_override || null;
       const card_unnecessary = r.card_unnecessary === true;
@@ -239,10 +248,14 @@ export function createSupabaseLearningCardsRepository(
       const existing = (await selectAll<ExplanationCard>(client, 'explanation_cards', false)).find(
         (c) => c.question_id === input.question_id && c.language === language
       );
-      if (input.status === 'published' && existing?.status !== 'published') {
+      if (input.status === 'published' && input.activate !== true && existing?.status !== 'published') {
         throw new Error('Cannot create a published card; workflow is draft → submitted → approved → published');
       }
-      const status: LearningCardStatus = existing?.status || 'draft';
+      const resolved = resolveExplanationSaveStatus({
+        explanation: input.explanation,
+        activate: input.activate === true,
+        existingStatus: existing?.status || null,
+      });
       const row: Record<string, unknown> = {
         question_id: input.question_id,
         language,
@@ -251,11 +264,14 @@ export function createSupabaseLearningCardsRepository(
         image_url: input.image_url ?? existing?.image_url ?? null,
         image_alt: input.image_alt ?? existing?.image_alt ?? null,
         video_url: input.video_url ?? existing?.video_url ?? null,
-        status,
+        status: resolved.status,
         notes: input.notes ?? existing?.notes ?? 'Not DVSA-approved.',
         created_by: existing?.created_by || input.created_by || null,
         updated_by: input.created_by || null,
-        published_at: existing?.published_at || null,
+        published_at:
+          resolved.status === 'published'
+            ? resolved.published_at || existing?.published_at || null
+            : null,
       };
       if (existing?.id) row.id = existing.id;
       const upserted = await client.from('explanation_cards').upsert(row, {
@@ -268,6 +284,40 @@ export function createSupabaseLearningCardsRepository(
       );
       if (!found) throw new Error('Failed to upsert explanation card');
       return found;
+    },
+    async disableExplanationCard(questionId, language = 'en', updated_by) {
+      const lang = (language || 'en').trim().toLowerCase() || 'en';
+      const existing = (await selectAll<ExplanationCard>(client, 'explanation_cards', false)).find(
+        (c) => c.question_id === questionId && c.language === lang
+      );
+      if (!existing) return null;
+      const patch = {
+        status: 'draft' as const,
+        published_at: null,
+        updated_by: updated_by || null,
+      };
+      const upd = await client.from('explanation_cards').update(patch).eq('id', existing.id);
+      missingOrThrow(upd.error, false);
+      return { ...existing, ...patch };
+    },
+    async removeExplanationCard(questionId, language = 'en', updated_by) {
+      const lang = (language || 'en').trim().toLowerCase() || 'en';
+      const existing = (await selectAll<ExplanationCard>(client, 'explanation_cards', false)).find(
+        (c) => c.question_id === questionId && c.language === lang
+      );
+      if (!existing) return null;
+      const patch = {
+        status: 'archived' as const,
+        published_at: null,
+        updated_by: updated_by || null,
+      };
+      const upd = await client.from('explanation_cards').update(patch).eq('id', existing.id);
+      missingOrThrow(upd.error, false);
+      return { ...existing, ...patch };
+    },
+    async listReusableExplanationHints() {
+      const rows = await selectAll<ExplanationCard>(client, 'explanation_cards', learnerEmpty);
+      return rows.filter((c) => isLearnerVisibleExplanationHint(c));
     },
     async listRecommendations(filters = {}) {
       let rows = await recRows();
@@ -355,13 +405,13 @@ export function createSupabaseLearningCardsRepository(
           (c) =>
             c.question_id === questionId &&
             c.language === lang &&
-            isLearnerVisibleCardStatus(c.status)
+            isLearnerVisibleExplanationHint(c)
         ) ||
         explanations.find(
           (c) =>
             c.question_id === questionId &&
             c.language === 'en' &&
-            isLearnerVisibleCardStatus(c.status)
+            isLearnerVisibleExplanationHint(c)
         ) ||
         null;
       const terms = (await selectAll<KeywordTerm>(client, 'keyword_terms', true)).filter((t) =>
@@ -388,7 +438,7 @@ export function createSupabaseLearningCardsRepository(
         await selectAll<ExplanationCard>(client, 'explanation_cards', true)
       ).filter(
         (c) =>
-          isLearnerVisibleCardStatus(c.status) && saved.some((s) => s.explanation_card_id === c.id)
+          isLearnerVisibleExplanationHint(c) && saved.some((s) => s.explanation_card_id === c.id)
       );
       return { saved, keywords, explanations };
     },

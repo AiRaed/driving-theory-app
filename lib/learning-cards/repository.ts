@@ -37,6 +37,8 @@ export interface UpsertExplanationInput {
   notes?: string | null;
   status?: LearningCardStatus;
   created_by?: string | null;
+  /** Admin Save Hint: publish immediately when explanation text is complete. */
+  activate?: boolean;
 }
 
 export interface OverridePatch {
@@ -99,6 +101,17 @@ export interface LearningCardsRepository {
   ): Promise<KeywordCard | ExplanationCard>;
   listExplanationCards(questionId?: string): Promise<ExplanationCard[]>;
   upsertExplanationCard(input: UpsertExplanationInput): Promise<ExplanationCard>;
+  removeExplanationCard(
+    questionId: string,
+    language?: string,
+    updated_by?: string | null
+  ): Promise<ExplanationCard | null>;
+  disableExplanationCard(
+    questionId: string,
+    language?: string,
+    updated_by?: string | null
+  ): Promise<ExplanationCard | null>;
+  listReusableExplanationHints(): Promise<ExplanationCard[]>;
   listRecommendations(filters?: RecommendationListFilters): Promise<{
     rows: Array<ExplanationRecommendationRecord & { card_status: string }>;
     totals: Record<string, Record<string, number> | number>;

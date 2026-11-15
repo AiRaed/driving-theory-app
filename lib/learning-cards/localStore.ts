@@ -22,6 +22,7 @@ import {
   type LearningCardStatus,
   type SavedCard,
 } from './types';
+import { resolveExplanationSaveStatus } from './hints';
 
 export const LOCAL_LEARNING_CARDS_DIR = path.join(
   process.cwd(),
@@ -66,10 +67,15 @@ function nowIso(): string {
   return new Date().toISOString();
 }
 
+export function learningCardsStorePath(): string {
+  return process.env.LOCAL_LEARNING_CARDS_STORE || LOCAL_LEARNING_CARDS_STORE;
+}
+
 export function readLocalLearningCards(): LearningCardsLocalState {
-  if (!existsSync(LOCAL_LEARNING_CARDS_STORE)) return emptyState();
+  const storePath = learningCardsStorePath();
+  if (!existsSync(storePath)) return emptyState();
   try {
-    const raw = JSON.parse(readFileSync(LOCAL_LEARNING_CARDS_STORE, 'utf8'));
+    const raw = JSON.parse(readFileSync(storePath, 'utf8'));
     return {
       ...emptyState(),
       ...raw,
@@ -86,8 +92,9 @@ export function readLocalLearningCards(): LearningCardsLocalState {
 }
 
 export function writeLocalLearningCards(state: LearningCardsLocalState): void {
-  mkdirSync(LOCAL_LEARNING_CARDS_DIR, { recursive: true });
-  writeFileSync(LOCAL_LEARNING_CARDS_STORE, JSON.stringify(state, null, 2) + '\n', 'utf8');
+  const storePath = learningCardsStorePath();
+  mkdirSync(path.dirname(storePath), { recursive: true });
+  writeFileSync(storePath, JSON.stringify(state, null, 2) + '\n', 'utf8');
 }
 
 export function upsertKeywordCard(input: {
@@ -175,17 +182,23 @@ export function upsertExplanationCard(input: {
   notes?: string | null;
   status?: LearningCardStatus;
   created_by?: string | null;
+  activate?: boolean;
 }): ExplanationCard {
   const state = readLocalLearningCards();
   const language = input.language.trim().toLowerCase();
   const existing = state.explanation_cards.find(
     (c) => c.question_id === input.question_id && c.language === language
   );
-  if (input.status === 'published' && existing?.status !== 'published') {
+  if (input.status === 'published' && input.activate !== true && existing?.status !== 'published') {
     throw new Error(
       'Cannot create a published card; workflow is draft → submitted → approved → published'
     );
   }
+  const resolved = resolveExplanationSaveStatus({
+    explanation: input.explanation,
+    activate: input.activate === true,
+    existingStatus: existing?.status || null,
+  });
   const card: ExplanationCard = {
     id: existing?.id || randomUUID(),
     question_id: input.question_id,
@@ -195,13 +208,16 @@ export function upsertExplanationCard(input: {
     image_url: input.image_url ?? existing?.image_url ?? null,
     image_alt: input.image_alt ?? existing?.image_alt ?? null,
     video_url: input.video_url ?? existing?.video_url ?? null,
-    status: existing?.status || 'draft',
+    status: resolved.status,
     notes: input.notes ?? existing?.notes ?? '[Draft example. Not DVSA-approved.]',
     created_at: existing?.created_at || nowIso(),
     updated_at: nowIso(),
     created_by: existing?.created_by || input.created_by || null,
     updated_by: input.created_by || null,
-    published_at: existing?.published_at || null,
+    published_at:
+      resolved.status === 'published'
+        ? resolved.published_at || existing?.published_at || null
+        : null,
   };
   if (existing) {
     state.explanation_cards = state.explanation_cards.map((c) =>
@@ -212,6 +228,44 @@ export function upsertExplanationCard(input: {
   }
   writeLocalLearningCards(state);
   return card;
+}
+
+export function disableExplanationCard(
+  question_id: string,
+  language = 'en',
+  updated_by?: string | null
+): ExplanationCard | null {
+  const state = readLocalLearningCards();
+  const lang = language.trim().toLowerCase() || 'en';
+  const existing = state.explanation_cards.find(
+    (c) => c.question_id === question_id && c.language === lang
+  );
+  if (!existing) return null;
+  existing.status = 'draft';
+  existing.published_at = null;
+  existing.updated_at = nowIso();
+  existing.updated_by = updated_by || null;
+  writeLocalLearningCards(state);
+  return existing;
+}
+
+export function removeExplanationCard(
+  question_id: string,
+  language = 'en',
+  updated_by?: string | null
+): ExplanationCard | null {
+  const state = readLocalLearningCards();
+  const lang = language.trim().toLowerCase() || 'en';
+  const existing = state.explanation_cards.find(
+    (c) => c.question_id === question_id && c.language === lang
+  );
+  if (!existing) return null;
+  existing.status = 'archived';
+  existing.published_at = null;
+  existing.updated_at = nowIso();
+  existing.updated_by = updated_by || null;
+  writeLocalLearningCards(state);
+  return existing;
 }
 
 export function setCardStatus(

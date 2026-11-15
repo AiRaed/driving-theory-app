@@ -1,0 +1,2200 @@
+{
+  "schema": "lingotheory.keyword_card_draft_audit.v1",
+  "published": false,
+  "do_not_write_database": true,
+  "source_of_terms": {
+    "source_grounded": "The phrase, or an inflection of the same concept, appears in the official prompt, correct answer, or explanation.",
+    "editorial": "The canonical name or the question link was inferred. Every editorial item is review_flag true and is listed separately."
+  },
+  "summary": {
+    "unique_keywords": 290,
+    "lexicon_entries": 290,
+    "lexicon_entries_with_no_match": [],
+    "priority": {
+      "high": 164,
+      "medium": 110,
+      "low": 16
+    },
+    "image_recommended": 225,
+    "text_only": 65,
+    "official_questions": 758,
+    "questions_with_a_keyword": 724,
+    "questions_with_no_keyword": 34,
+    "keyword_question_links": 1729,
+    "source_links": 1727,
+    "editorial_links": 2,
+    "duplicate_candidate_groups_merged": 150,
+    "review_flag_count": 10
+  },
+  "duplicate_candidates_merged": [
+    {
+      "term_en": "20 mph zone",
+      "matched_forms": [
+        "20 mph restriction",
+        "20 mph zone"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Advanced driver assistance",
+      "matched_forms": [
+        "adaptive cruise control",
+        "ADAS",
+        "advanced driver assistance"
+      ],
+      "link_count": 6
+    },
+    {
+      "term_en": "Airbag",
+      "matched_forms": [
+        "airbag",
+        "airbags"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Amber reflective studs",
+      "matched_forms": [
+        "amber reflective studs",
+        "amber studs",
+        "amber-coloured studs"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Anti-lock brakes",
+      "matched_forms": [
+        "ABS",
+        "anti-lock brakes",
+        "anti-lock braking system"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Anticipation",
+      "matched_forms": [
+        "anticipate",
+        "anticipation"
+      ],
+      "link_count": 13
+    },
+    {
+      "term_en": "Arm signal",
+      "matched_forms": [
+        "arm signal",
+        "arm signals"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Automatic transmission",
+      "matched_forms": [
+        "automatic transmission",
+        "have an automatic"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Blind spot",
+      "matched_forms": [
+        "blind area",
+        "blind spot",
+        "blind spots",
+        "look over your shoulder"
+      ],
+      "link_count": 8
+    },
+    {
+      "term_en": "Blue Badge",
+      "matched_forms": [
+        "Blue Badge",
+        "disabled drivers"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Blue flashing lights",
+      "matched_forms": [
+        "blue flashing",
+        "flashing blue lights"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Box junction",
+      "matched_forms": [
+        "box junction",
+        "box junctions",
+        "yellow box"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Brake fluid",
+      "matched_forms": [
+        "brake fluid",
+        "brake-fluid"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Breakdown",
+      "matched_forms": [
+        "breakdown",
+        "breaks down",
+        "broken down"
+      ],
+      "link_count": 20
+    },
+    {
+      "term_en": "Bright clothing",
+      "matched_forms": [
+        "bright clothing",
+        "reflective clothing"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Built-up area",
+      "matched_forms": [
+        "built-up",
+        "built-up area"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Bus lane",
+      "matched_forms": [
+        "bus lane",
+        "bus lanes"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Bus stop",
+      "matched_forms": [
+        "bus stop",
+        "bus stops"
+      ],
+      "link_count": 9
+    },
+    {
+      "term_en": "Caravan",
+      "matched_forms": [
+        "caravan",
+        "caravans"
+      ],
+      "link_count": 9
+    },
+    {
+      "term_en": "Cardiopulmonary resuscitation",
+      "matched_forms": [
+        "cardiopulmonary resuscitation",
+        "chest compressions",
+        "CPR"
+      ],
+      "link_count": 9
+    },
+    {
+      "term_en": "Casualty",
+      "matched_forms": [
+        "casualties",
+        "casualty"
+      ],
+      "link_count": 16
+    },
+    {
+      "term_en": "Child restraint",
+      "matched_forms": [
+        "child restraint",
+        "child seat"
+      ],
+      "link_count": 6
+    },
+    {
+      "term_en": "Circular traffic sign",
+      "matched_forms": [
+        "give orders",
+        "shape of a circle",
+        "signs giving orders"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Clearway",
+      "matched_forms": [
+        "clearway",
+        "clearways"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Comprehensive insurance",
+      "matched_forms": [
+        "comprehensive",
+        "comprehensive cover"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Contraflow",
+      "matched_forms": [
+        "contraflow",
+        "contraflow system"
+      ],
+      "link_count": 7
+    },
+    {
+      "term_en": "Crawler lane",
+      "matched_forms": [
+        "crawler lane",
+        "crawler or climbing lane"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Cycle lane",
+      "matched_forms": [
+        "cycle lane",
+        "cycle lanes"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Cycle route",
+      "matched_forms": [
+        "cycle route ahead",
+        "cycle routes"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Dazzle",
+      "matched_forms": [
+        "dazzle",
+        "dazzled",
+        "dazzling"
+      ],
+      "link_count": 14
+    },
+    {
+      "term_en": "Deaf pedestrian",
+      "matched_forms": [
+        "pedestrian is deaf",
+        "yellow or burgundy coat"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Defibrillator",
+      "matched_forms": [
+        "AED",
+        "defibrillator",
+        "public access defibrillator"
+      ],
+      "link_count": 6
+    },
+    {
+      "term_en": "Dipped headlights",
+      "matched_forms": [
+        "dipped beam",
+        "dipped headlights",
+        "headlights on dipped"
+      ],
+      "link_count": 14
+    },
+    {
+      "term_en": "Double white lines",
+      "matched_forms": [
+        "double white lines along the centre",
+        "road marked with double white lines"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Drowsiness",
+      "matched_forms": [
+        "drowsiness",
+        "drowsy"
+      ],
+      "link_count": 7
+    },
+    {
+      "term_en": "Dual carriageway",
+      "matched_forms": [
+        "dual carriageway",
+        "dual carriageways"
+      ],
+      "link_count": 20
+    },
+    {
+      "term_en": "Electronic stability control",
+      "matched_forms": [
+        "electronic stability control",
+        "ESC"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Emergency area",
+      "matched_forms": [
+        "emergency area",
+        "emergency areas"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Emergency telephone",
+      "matched_forms": [
+        "emergency roadside telephone",
+        "emergency telephone",
+        "roadside emergency telephone"
+      ],
+      "link_count": 11
+    },
+    {
+      "term_en": "Emerging",
+      "matched_forms": [
+        "emerge",
+        "emerged",
+        "emerging"
+      ],
+      "link_count": 16
+    },
+    {
+      "term_en": "Engine braking",
+      "matched_forms": [
+        "engine as a brake",
+        "engine braking"
+      ],
+      "link_count": 6
+    },
+    {
+      "term_en": "Engine oil",
+      "matched_forms": [
+        "engine oil",
+        "too much oil"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Etched registration number",
+      "matched_forms": [
+        "etched on all your windows",
+        "etching the registration number"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Exhaust emissions",
+      "matched_forms": [
+        "emissions",
+        "exhaust emissions"
+      ],
+      "link_count": 8
+    },
+    {
+      "term_en": "Eyesight",
+      "matched_forms": [
+        "eyesight",
+        "glasses"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Flashing amber",
+      "matched_forms": [
+        "flashing amber",
+        "flashing amber light"
+      ],
+      "link_count": 7
+    },
+    {
+      "term_en": "Flashing amber beacon",
+      "matched_forms": [
+        "amber flashing beacon",
+        "flashing amber beacon"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Fog",
+      "matched_forms": [
+        "fog",
+        "foggy"
+      ],
+      "link_count": 13
+    },
+    {
+      "term_en": "Fog lights",
+      "matched_forms": [
+        "fog lights",
+        "front and rear fog lights"
+      ],
+      "link_count": 6
+    },
+    {
+      "term_en": "Following too closely",
+      "matched_forms": [
+        "follow the vehicle in front too closely",
+        "follow this vehicle too closely",
+        "following too closely",
+        "follows the vehicle in front too closely",
+        "too close to the vehicle ahead",
+        "too close to the vehicle in front"
+      ],
+      "link_count": 6
+    },
+    {
+      "term_en": "Fuel consumption",
+      "matched_forms": [
+        "fuel consumption",
+        "fuel-efficient"
+      ],
+      "link_count": 13
+    },
+    {
+      "term_en": "Gantry",
+      "matched_forms": [
+        "gantry",
+        "overhead gantry"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Hatched markings",
+      "matched_forms": [
+        "hatched area",
+        "hatched markings"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Hazard warning line",
+      "matched_forms": [
+        "hazard warning line",
+        "long white lines"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Head restraint",
+      "matched_forms": [
+        "head restraint",
+        "head restraints"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Heavy goods vehicle",
+      "matched_forms": [
+        "heavy goods vehicle",
+        "heavy goods vehicles"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "High-sided vehicle",
+      "matched_forms": [
+        "high-sided",
+        "high-sided vehicle"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Horse",
+      "matched_forms": [
+        "horse",
+        "horse and rider",
+        "horse rider",
+        "horse riders",
+        "horses"
+      ],
+      "link_count": 10
+    },
+    {
+      "term_en": "Hump bridge",
+      "matched_forms": [
+        "hump bridge",
+        "hump bridges"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Icy road",
+      "matched_forms": [
+        "icy",
+        "icy conditions",
+        "icy road",
+        "risk of ice"
+      ],
+      "link_count": 6
+    },
+    {
+      "term_en": "Indicators",
+      "matched_forms": [
+        "indicating",
+        "indicator",
+        "indicators"
+      ],
+      "link_count": 9
+    },
+    {
+      "term_en": "Insurance excess",
+      "matched_forms": [
+        "an excess",
+        "the excess"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Junction",
+      "matched_forms": [
+        "junction",
+        "junctions"
+      ],
+      "link_count": 71
+    },
+    {
+      "term_en": "Lane closed",
+      "matched_forms": [
+        "lane closed",
+        "lane is closed"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Lay-by",
+      "matched_forms": [
+        "lay-by",
+        "lay-bys"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Learner driver",
+      "matched_forms": [
+        "as a learner",
+        "learner driver"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Level crossing",
+      "matched_forms": [
+        "level crossing",
+        "level crossings"
+      ],
+      "link_count": 13
+    },
+    {
+      "term_en": "Long vehicle",
+      "matched_forms": [
+        "long vehicle",
+        "long vehicles"
+      ],
+      "link_count": 9
+    },
+    {
+      "term_en": "Lorry",
+      "matched_forms": [
+        "lorries",
+        "lorry"
+      ],
+      "link_count": 15
+    },
+    {
+      "term_en": "Main beam",
+      "matched_forms": [
+        "full beam",
+        "full-beam headlights",
+        "main beam"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Mandatory speed limit",
+      "matched_forms": [
+        "are mandatory",
+        "mandatory signs",
+        "mandatory speed limit"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Marker posts",
+      "matched_forms": [
+        "marker post",
+        "marker posts"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Maximum authorised mass",
+      "matched_forms": [
+        "MAM",
+        "maximum authorised mass"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Medicine",
+      "matched_forms": [
+        "cough medicine",
+        "medicine"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Mini-roundabout",
+      "matched_forms": [
+        "mini-roundabout",
+        "mini-roundabouts"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Mirrors",
+      "matched_forms": [
+        "mirror",
+        "mirrors"
+      ],
+      "link_count": 29
+    },
+    {
+      "term_en": "Missing out gears",
+      "matched_forms": [
+        "missing out intermediate gears",
+        "missing out some gears"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Moped",
+      "matched_forms": [
+        "moped",
+        "mopeds"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "MOT",
+      "matched_forms": [
+        "MOT",
+        "MOT certificate",
+        "MOT test"
+      ],
+      "link_count": 10
+    },
+    {
+      "term_en": "Motorcyclist",
+      "matched_forms": [
+        "motorcyclist",
+        "motorcyclists"
+      ],
+      "link_count": 26
+    },
+    {
+      "term_en": "Motorway",
+      "matched_forms": [
+        "motorway",
+        "motorways"
+      ],
+      "link_count": 100
+    },
+    {
+      "term_en": "Number plate",
+      "matched_forms": [
+        "number plate",
+        "number plates"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Obstruction",
+      "matched_forms": [
+        "obstruction",
+        "obstructions"
+      ],
+      "link_count": 17
+    },
+    {
+      "term_en": "Oncoming traffic",
+      "matched_forms": [
+        "oncoming",
+        "oncoming traffic"
+      ],
+      "link_count": 30
+    },
+    {
+      "term_en": "One-way street",
+      "matched_forms": [
+        "one-way",
+        "one-way street"
+      ],
+      "link_count": 13
+    },
+    {
+      "term_en": "Overtake",
+      "matched_forms": [
+        "overtake",
+        "overtaken",
+        "overtaking"
+      ],
+      "link_count": 61
+    },
+    {
+      "term_en": "Pavement",
+      "matched_forms": [
+        "pavement",
+        "pavements"
+      ],
+      "link_count": 10
+    },
+    {
+      "term_en": "Pedestrian crossing",
+      "matched_forms": [
+        "pedestrian crossing",
+        "pedestrian crossings"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Pelican crossing",
+      "matched_forms": [
+        "pelican crossing",
+        "pelican crossings"
+      ],
+      "link_count": 7
+    },
+    {
+      "term_en": "Police stop signal",
+      "matched_forms": [
+        "flashes the headlights and points to the left",
+        "signal for you to stop"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Powered vehicle used by a disabled person",
+      "matched_forms": [
+        "powered mobility",
+        "powered vehicles used by disabled"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Produce documents",
+      "matched_forms": [
+        "asks to see your documents",
+        "produce them at a police station",
+        "produce this document"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Puffin crossing",
+      "matched_forms": [
+        "puffin",
+        "puffin crossing"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Puncture",
+      "matched_forms": [
+        "puncture",
+        "punctures"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Queuing traffic",
+      "matched_forms": [
+        "queuing traffic",
+        "traffic queue"
+      ],
+      "link_count": 10
+    },
+    {
+      "term_en": "Red reflective studs",
+      "matched_forms": [
+        "red reflective studs",
+        "red studs"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Reflective studs",
+      "matched_forms": [
+        "reflective studs",
+        "studs"
+      ],
+      "link_count": 8
+    },
+    {
+      "term_en": "Registered keeper",
+      "matched_forms": [
+        "registered keeper",
+        "registered vehicle keeper"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Rejoin",
+      "matched_forms": [
+        "rejoin a motorway",
+        "rejoin safely",
+        "rejoin the carriageway",
+        "rejoin the main carriageway",
+        "rejoin the motorway"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Reversing",
+      "matched_forms": [
+        "reverse",
+        "reverse gear",
+        "reversing"
+      ],
+      "link_count": 14
+    },
+    {
+      "term_en": "Ring road",
+      "matched_forms": [
+        "ring road",
+        "ring roads"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Road hump",
+      "matched_forms": [
+        "humps in the road",
+        "road hump",
+        "road humps"
+      ],
+      "link_count": 11
+    },
+    {
+      "term_en": "Roundabout",
+      "matched_forms": [
+        "roundabout",
+        "roundabouts"
+      ],
+      "link_count": 17
+    },
+    {
+      "term_en": "Sat nav",
+      "matched_forms": [
+        "sat nav",
+        "sat navs",
+        "satellite navigation"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "School crossing patrol",
+      "matched_forms": [
+        "school crossing patrol",
+        "school crossing patrols"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Seat belt",
+      "matched_forms": [
+        "seat belt",
+        "seat belts"
+      ],
+      "link_count": 8
+    },
+    {
+      "term_en": "Separation distance",
+      "matched_forms": [
+        "separation distance",
+        "separation gap"
+      ],
+      "link_count": 8
+    },
+    {
+      "term_en": "Shared route",
+      "matched_forms": [
+        "route for pedestrians and cyclists",
+        "shared route"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Shock",
+      "matched_forms": [
+        "effects of shock",
+        "suffering from shock",
+        "warning sign for shock"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Side road",
+      "matched_forms": [
+        "side road",
+        "side roads"
+      ],
+      "link_count": 18
+    },
+    {
+      "term_en": "Side wind",
+      "matched_forms": [
+        "side wind",
+        "side winds"
+      ],
+      "link_count": 6
+    },
+    {
+      "term_en": "Single-track road",
+      "matched_forms": [
+        "single-track",
+        "single-track road"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Skid",
+      "matched_forms": [
+        "skid",
+        "skidding"
+      ],
+      "link_count": 6
+    },
+    {
+      "term_en": "Slip road",
+      "matched_forms": [
+        "slip road",
+        "slip roads"
+      ],
+      "link_count": 8
+    },
+    {
+      "term_en": "Smell of fuel",
+      "matched_forms": [
+        "catching fire",
+        "smell of fuel"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Snow",
+      "matched_forms": [
+        "deep snow",
+        "fall of snow",
+        "on snow",
+        "snowy"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Soft road surface",
+      "matched_forms": [
+        "becomes soft",
+        "can soften"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "SORN",
+      "matched_forms": [
+        "SORN",
+        "Statutory Off-Road Notification"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Speed limit",
+      "matched_forms": [
+        "speed limit",
+        "speed limits"
+      ],
+      "link_count": 30
+    },
+    {
+      "term_en": "Steep hill",
+      "matched_forms": [
+        "gradient",
+        "steep gradient",
+        "steep hill"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Stop at the scene of the incident",
+      "matched_forms": [
+        "by law you must stop",
+        "name, address and vehicle registration number",
+        "report the incident to the police within 24 hours",
+        "stop at the scene of the incident"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Stop line",
+      "matched_forms": [
+        "stop line",
+        "stop lines"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Stopping distance",
+      "matched_forms": [
+        "overall stopping distance",
+        "stopping distance",
+        "stopping distances"
+      ],
+      "link_count": 8
+    },
+    {
+      "term_en": "Street lights",
+      "matched_forms": [
+        "presence of street lights",
+        "see street lights",
+        "where there are street lights"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Third-party insurance",
+      "matched_forms": [
+        "third party",
+        "third-party",
+        "third-party insurance"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Tiredness",
+      "matched_forms": [
+        "sleepy",
+        "tired"
+      ],
+      "link_count": 6
+    },
+    {
+      "term_en": "Toucan crossing",
+      "matched_forms": [
+        "toucan",
+        "toucan crossing"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Tourist directions",
+      "matched_forms": [
+        "brown background",
+        "places of interest",
+        "tourist attraction",
+        "tourist directions"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Tow bar",
+      "matched_forms": [
+        "tow ball",
+        "tow bar",
+        "tow hitch"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Towing",
+      "matched_forms": [
+        "towing",
+        "towing a trailer"
+      ],
+      "link_count": 18
+    },
+    {
+      "term_en": "Traffic calming",
+      "matched_forms": [
+        "traffic calming",
+        "traffic-calming measures"
+      ],
+      "link_count": 7
+    },
+    {
+      "term_en": "Traffic lights",
+      "matched_forms": [
+        "traffic light",
+        "traffic lights"
+      ],
+      "link_count": 19
+    },
+    {
+      "term_en": "Traffic officer",
+      "matched_forms": [
+        "traffic officer",
+        "traffic officers"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Trailer",
+      "matched_forms": [
+        "trailer",
+        "trailers"
+      ],
+      "link_count": 23
+    },
+    {
+      "term_en": "Tram",
+      "matched_forms": [
+        "tram",
+        "tram rails",
+        "trams"
+      ],
+      "link_count": 9
+    },
+    {
+      "term_en": "Tunnel",
+      "matched_forms": [
+        "tunnel",
+        "tunnels"
+      ],
+      "link_count": 9
+    },
+    {
+      "term_en": "Two-second rule",
+      "matched_forms": [
+        "two-second",
+        "two-second rule"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Tyre tread",
+      "matched_forms": [
+        "tread",
+        "tread depth",
+        "treads"
+      ],
+      "link_count": 6
+    },
+    {
+      "term_en": "Unmarked junction",
+      "matched_forms": [
+        "unmarked crossroads",
+        "unmarked junction"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "V5C",
+      "matched_forms": [
+        "registration certificate",
+        "registration document",
+        "V5C",
+        "vehicle registration certificate"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Vehicle handbook",
+      "matched_forms": [
+        "handbook",
+        "vehicle handbook"
+      ],
+      "link_count": 5
+    },
+    {
+      "term_en": "Verge",
+      "matched_forms": [
+        "verge",
+        "verges"
+      ],
+      "link_count": 3
+    },
+    {
+      "term_en": "Vulnerable road users",
+      "matched_forms": [
+        "older people",
+        "vulnerable",
+        "vulnerable road user",
+        "vulnerable road users"
+      ],
+      "link_count": 13
+    },
+    {
+      "term_en": "Warning light",
+      "matched_forms": [
+        "instrument panel",
+        "instrument-panel",
+        "warning light",
+        "warning lights"
+      ],
+      "link_count": 4
+    },
+    {
+      "term_en": "Warning triangle",
+      "matched_forms": [
+        "a warning triangle",
+        "advance warning triangle",
+        "the warning triangle",
+        "warning triangles"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Water across the road",
+      "matched_forms": [
+        "shallow stream",
+        "water across the road"
+      ],
+      "link_count": 1
+    },
+    {
+      "term_en": "Wheelchair",
+      "matched_forms": [
+        "wheelchair",
+        "wheelchairs"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Windscreen pillar",
+      "matched_forms": [
+        "windscreen pillar",
+        "windscreen pillars"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "With-flow lane",
+      "matched_forms": [
+        "with-flow bus and cycle lane",
+        "with-flow cycle lane"
+      ],
+      "link_count": 2
+    },
+    {
+      "term_en": "Zigzag lines",
+      "matched_forms": [
+        "zigzag lines",
+        "zigzag white lines"
+      ],
+      "link_count": 3
+    }
+  ],
+  "ambiguous_terms": [
+    {
+      "term_en": "Blind spot",
+      "review_note": "Blind spot, blind spots and blind area are one concept. AB2001 and AB2687 are linked from \"look over your shoulder\" and do not use the words blind spot. Confirm those two links before import.",
+      "review_concern": "mapping",
+      "previous_explanation_en": null,
+      "label_origin": "source_term",
+      "grounding": "mixed",
+      "link_count": 8,
+      "question_ids": [
+        "AB2001",
+        "AB2123",
+        "AB2160",
+        "AB2687",
+        "BB1145",
+        "BB1147",
+        "BB1390",
+        "BB1626"
+      ]
+    },
+    {
+      "term_en": "Double white lines",
+      "review_note": "AB2528 states the parking rule, including where one line is broken. AB2007 and BB1236 use \"double white lines\" for the path past hatch markings and for where you return after overtaking. Those two questions are no longer linked. Confirm that split before import.",
+      "review_concern": "mapping",
+      "previous_explanation_en": "Pairs of white lines along the centre of the road. They may both be solid, or one may be broken. You must not park or stop on a road marked with them except to pick up or set down passengers.",
+      "label_origin": "source_term",
+      "grounding": "source",
+      "link_count": 1,
+      "question_ids": [
+        "AB2528"
+      ]
+    },
+    {
+      "term_en": "National speed limit",
+      "review_note": "BB1207 answers 50 mph for a car towing a trailer on a single carriageway that \"has this sign\". The sign is not named in the text, so 50 mph is not stated on this card. Confirm the sign before adding that figure.",
+      "review_concern": "explanation",
+      "previous_explanation_en": "The default maximum speed where no lower limit is signed. The actual number depends on the type of road and vehicle. The sign is a white circle with a black diagonal bar.",
+      "label_origin": "source_term",
+      "grounding": "source",
+      "link_count": 8,
+      "question_ids": [
+        "AB2222",
+        "AB2246",
+        "AB2248",
+        "AB2429",
+        "AB2430",
+        "AB2824",
+        "AB2845",
+        "BB1011"
+      ]
+    },
+    {
+      "term_en": "Overtake on the left",
+      "review_note": "Both official cases are now in the explanation: the works-vehicle sign, and a queue moving faster than the lane on your right. Confirm that no other case has been added before import.",
+      "review_concern": "explanation",
+      "previous_explanation_en": "To pass on the left side of another vehicle. In the official question, a slow works vehicle shows a sign telling you to pass on its left. Follow the sign and pass with care.",
+      "label_origin": "source_term",
+      "grounding": "source",
+      "link_count": 2,
+      "question_ids": [
+        "AB2701",
+        "AB2752"
+      ]
+    },
+    {
+      "term_en": "Police stop signal",
+      "review_note": "The bank describes the signal and does not use the name \"police stop signal\". Confirm the label before import.",
+      "review_concern": "terminology",
+      "previous_explanation_en": null,
+      "label_origin": "editorial_label",
+      "grounding": "source",
+      "link_count": 2,
+      "question_ids": [
+        "AB2405",
+        "AB2757"
+      ]
+    },
+    {
+      "term_en": "Roadworks studs",
+      "review_note": "The bank describes the colour but does not name a separate stud type. Confirm the label before import.",
+      "review_concern": "terminology",
+      "previous_explanation_en": null,
+      "label_origin": "editorial_label",
+      "grounding": "source",
+      "link_count": 1,
+      "question_ids": [
+        "AB2612"
+      ]
+    },
+    {
+      "term_en": "School zigzag lines",
+      "review_note": "BB1577 names yellow zigzag lines. AB2545 and AB2729 are picture questions about markings outside schools and do not use the words zigzag lines, so they are not linked. A reviewer who can see the image should confirm whether they belong on this card.",
+      "review_concern": "mapping",
+      "previous_explanation_en": null,
+      "label_origin": "source_term",
+      "grounding": "source",
+      "link_count": 1,
+      "question_ids": [
+        "BB1577"
+      ]
+    },
+    {
+      "term_en": "Shock",
+      "review_note": "This is medical shock. It is kept separate from the electric shock given by a defibrillator. The aliases are full phrases so the defibrillator questions are not linked. \"Frightening event\" was removed because the questions do not use it.",
+      "review_concern": "terminology",
+      "previous_explanation_en": "A medical reaction after injury or a frightening event. Warning signs include a rapid pulse, sweating, pale skin, and rapid shallow breathing. Keep the person warm and comfortable, do not give them anything to eat or drink, reassure them, and try not to leave them alone.",
+      "label_origin": "source_term",
+      "grounding": "source",
+      "link_count": 4,
+      "question_ids": [
+        "AB2867",
+        "AB2915",
+        "AB2924",
+        "AB2947"
+      ]
+    },
+    {
+      "term_en": "Stop at the scene of the incident",
+      "review_note": "One card groups three official duties: stop, share details, and report property damage to the police within 24 hours. Split them if a reviewer wants separate cards.",
+      "review_concern": "explanation",
+      "previous_explanation_en": null,
+      "label_origin": "source_term",
+      "grounding": "source",
+      "link_count": 3,
+      "question_ids": [
+        "BB1788",
+        "BB1790",
+        "BB1792"
+      ]
+    },
+    {
+      "term_en": "Yellow bar markings",
+      "review_note": "The official question says \"yellow lines painted across the road\" and does not use the name yellow bar markings.",
+      "review_concern": "terminology",
+      "previous_explanation_en": null,
+      "label_origin": "editorial_label",
+      "grounding": "source",
+      "link_count": 2,
+      "question_ids": [
+        "AB2009",
+        "AB2665"
+      ]
+    }
+  ],
+  "potentially_overbroad_or_suspicious": [
+    {
+      "term_en": "Blind spot",
+      "link_count": 8,
+      "watch_coverage": false,
+      "grounding": "mixed",
+      "reason": "Includes an editorially inferred link.",
+      "sample_question_ids": [
+        "AB2001",
+        "AB2123",
+        "AB2160",
+        "AB2687",
+        "BB1145",
+        "BB1147",
+        "BB1390",
+        "BB1626"
+      ]
+    },
+    {
+      "term_en": "Emerging",
+      "link_count": 16,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2100",
+        "AB2114",
+        "AB2151",
+        "AB2402",
+        "AB2403",
+        "AB2617",
+        "AB2628",
+        "AB2658"
+      ]
+    },
+    {
+      "term_en": "Insurance",
+      "link_count": 13,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2819",
+        "AB2874",
+        "AB2875",
+        "AB2878",
+        "AB2936",
+        "BB1112",
+        "BB1243",
+        "BB1245"
+      ]
+    },
+    {
+      "term_en": "Junction",
+      "link_count": 71,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2009",
+        "AB2087",
+        "AB2100",
+        "AB2105",
+        "AB2116",
+        "AB2119",
+        "AB2150",
+        "AB2156"
+      ]
+    },
+    {
+      "term_en": "Lorry",
+      "link_count": 15,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2028",
+        "AB2102",
+        "AB2103",
+        "AB2177",
+        "AB2179",
+        "AB2180",
+        "AB2193",
+        "AB2575"
+      ]
+    },
+    {
+      "term_en": "Main road",
+      "link_count": 12,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2105",
+        "AB2134",
+        "AB2346",
+        "AB2402",
+        "AB2952",
+        "AB2955",
+        "BB1145",
+        "BB1225"
+      ]
+    },
+    {
+      "term_en": "Mirrors",
+      "link_count": 29,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2001",
+        "AB2089",
+        "AB2123",
+        "AB2176",
+        "AB2184",
+        "AB2223",
+        "AB2273",
+        "AB2288"
+      ]
+    },
+    {
+      "term_en": "Motorway",
+      "link_count": 100,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2219",
+        "AB2222",
+        "AB2223",
+        "AB2225",
+        "AB2232",
+        "AB2236",
+        "AB2237",
+        "AB2241"
+      ]
+    },
+    {
+      "term_en": "Oncoming traffic",
+      "link_count": 30,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2003",
+        "AB2005",
+        "AB2102",
+        "AB2211",
+        "AB2281",
+        "AB2282",
+        "AB2319",
+        "AB2320"
+      ]
+    },
+    {
+      "term_en": "Overtake",
+      "link_count": 61,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2005",
+        "AB2007",
+        "AB2028",
+        "AB2080",
+        "AB2123",
+        "AB2147",
+        "AB2176",
+        "AB2177"
+      ]
+    },
+    {
+      "term_en": "Penalty points",
+      "link_count": 4,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2682",
+        "AB2819",
+        "AB2824",
+        "AB2877"
+      ]
+    },
+    {
+      "term_en": "Roundabout",
+      "link_count": 17,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2009",
+        "AB2143",
+        "AB2168",
+        "AB2222",
+        "AB2256",
+        "AB2275",
+        "AB2276",
+        "AB2344"
+      ]
+    },
+    {
+      "term_en": "Side road",
+      "link_count": 18,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2041",
+        "AB2114",
+        "AB2119",
+        "AB2122",
+        "AB2123",
+        "AB2151",
+        "AB2396",
+        "AB2952"
+      ]
+    },
+    {
+      "term_en": "Speed limit",
+      "link_count": 30,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2246",
+        "AB2248",
+        "AB2249",
+        "AB2250",
+        "AB2254",
+        "AB2296",
+        "AB2379",
+        "AB2418"
+      ]
+    },
+    {
+      "term_en": "Traffic lights",
+      "link_count": 19,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2384",
+        "AB2385",
+        "AB2388",
+        "AB2389",
+        "AB2390",
+        "AB2392",
+        "AB2407",
+        "AB2501"
+      ]
+    },
+    {
+      "term_en": "Trailer",
+      "link_count": 23,
+      "watch_coverage": true,
+      "grounding": "source",
+      "reason": "High coverage. Links follow the words, but a reviewer should confirm the card is not too broad.",
+      "sample_question_ids": [
+        "AB2180",
+        "AB2713",
+        "AB2845",
+        "BB1193",
+        "BB1207",
+        "BB1209",
+        "BB1271",
+        "BB1679"
+      ]
+    }
+  ],
+  "editorial_links": [
+    {
+      "term_en": "Blind spot",
+      "question_id": "AB2001",
+      "evidence": [
+        {
+          "field": "correct_answer",
+          "alias": "look over your shoulder",
+          "grounding": "editorial",
+          "snippet": "Look over your shoulder for a final check"
+        }
+      ]
+    },
+    {
+      "term_en": "Blind spot",
+      "question_id": "AB2687",
+      "evidence": [
+        {
+          "field": "explanation",
+          "alias": "look over your shoulder",
+          "grounding": "editorial",
+          "snippet": "…ind or to the side of your vehicle. Before you move off, you'll need to look over your shoulder to check for anything not visible in the mirrors."
+        }
+      ]
+    }
+  ],
+  "questions_with_no_keyword": [
+    "BB1007",
+    "BB1366",
+    "BB1725",
+    "AB2091",
+    "AB2099",
+    "AB2657",
+    "AB2719",
+    "AB2720",
+    "AB2721",
+    "BB1380",
+    "BB1398",
+    "AB2921",
+    "AB2317",
+    "AB2897",
+    "AB2614",
+    "AB2629",
+    "BB1435",
+    "BB1693",
+    "BB1039",
+    "BB1303",
+    "BB1348",
+    "BB1393",
+    "BB1604",
+    "BB1607",
+    "BB1646",
+    "BB1653",
+    "BB1769",
+    "AB2800",
+    "AB2802",
+    "AB2805",
+    "AB2545",
+    "AB2729",
+    "AB2850",
+    "AB2943"
+  ],
+  "sample": [
+    {
+      "term_en": "Blind spot",
+      "explanation_en": "The area around your vehicle that the mirrors do not show. Look around, including over your shoulder, before you move off, change lane or turn.",
+      "example_en": "Before you move off from behind a parked car, check the mirrors and look around for the blind spots.",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A car with shaded zones that the interior and door mirrors do not cover.",
+      "grounding": "mixed",
+      "label_origin": "source_term",
+      "review_flag": true,
+      "question_ids": [
+        "AB2001",
+        "AB2123",
+        "AB2160",
+        "AB2687",
+        "BB1145",
+        "BB1147",
+        "BB1390",
+        "BB1626"
+      ]
+    },
+    {
+      "term_en": "Box junction",
+      "explanation_en": "A yellow criss-cross box at a junction, painted so the junction does not become blocked. Do not enter unless your exit is clear. You may wait in the box to turn right if your exit is clear but oncoming traffic, or other vehicles waiting to turn right, stops you turning.",
+      "example_en": "The exit road is full, so you wait before the yellow box instead of driving into it.",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A yellow box junction, with a car waiting inside only because it is turning right and its exit is clear.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2211",
+        "AB2281",
+        "AB2282",
+        "BB1355"
+      ]
+    },
+    {
+      "term_en": "Hard shoulder",
+      "explanation_en": "The surfaced strip along the left edge of a motorway. Use it for an emergency or a breakdown, not for a rest or a phone call. On some motorways it can be opened as a running lane when a mandatory speed limit is displayed above it. A red cross above it means it is not open as a running lane.",
+      "example_en": "If you break down, you may use the hard shoulder. Do not use it for a rest or a phone call.",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A motorway hard shoulder beside a solid white line, with a gantry that can show either a red cross or a mandatory speed limit above it.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2232",
+        "AB2236",
+        "AB2244",
+        "AB2525",
+        "AB2572",
+        "AB2576",
+        "AB2612",
+        "AB2747",
+        "AB2789",
+        "AB2790",
+        "AB2792",
+        "AB2843",
+        "AB2846",
+        "AB2856",
+        "AB2857",
+        "AB2882",
+        "AB2891",
+        "AB2951",
+        "BB1199",
+        "BB1259",
+        "BB1481",
+        "BB1649",
+        "BB1688",
+        "BB1690",
+        "BB1779"
+      ]
+    },
+    {
+      "term_en": "Give way",
+      "explanation_en": "Let other road users go first. Do not make them slow down or stop for you.",
+      "example_en": "At a pelican crossing, flashing amber means give way to people already on the crossing.",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "An inverted triangular give-way sign and the double broken line at a junction.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2012",
+        "AB2033",
+        "AB2102",
+        "AB2119",
+        "AB2122",
+        "AB2219",
+        "AB2292",
+        "AB2320",
+        "AB2352",
+        "AB2392",
+        "AB2403",
+        "AB2573",
+        "AB2615",
+        "AB2659",
+        "AB2674",
+        "AB2717",
+        "AB2733",
+        "AB2763",
+        "AB2952",
+        "AB2955",
+        "BB1132",
+        "BB1139",
+        "BB1399"
+      ]
+    },
+    {
+      "term_en": "Toucan crossing",
+      "explanation_en": "A crossing where pedestrians and cyclists may cross at the same time. Cyclists may approach the crossing quickly.",
+      "example_en": "",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A toucan crossing with a pedestrian and a cyclist crossing side by side.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2124",
+        "AB2290",
+        "AB2503",
+        "AB2854"
+      ]
+    },
+    {
+      "term_en": "SORN",
+      "explanation_en": "A Statutory Off-Road Notification to the DVLA. It tells them a vehicle is not being used on the public road, so it can stay untaxed. It lasts until the vehicle is taxed, sold or scrapped.",
+      "example_en": "The car is kept off the road and is not taxed. You make a SORN, and it ends when you tax, sell or scrap the car.",
+      "priority": "high",
+      "image_recommended": false,
+      "image_concept": null,
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2782",
+        "AB2783",
+        "BB1533"
+      ]
+    },
+    {
+      "term_en": "Aquaplaning",
+      "explanation_en": "When a tyre rides up on a layer of water and loses contact with the road. The steering can suddenly feel light. Ease off and do not brake until the steering feels normal again.",
+      "example_en": "In heavy rain the steering suddenly feels very light. That is aquaplaning.",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A tyre lifted off the road surface on a film of water.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "BB1405"
+      ]
+    },
+    {
+      "term_en": "Two-second rule",
+      "explanation_en": "A way to check the gap in front in good, dry conditions. When the vehicle ahead passes a fixed point, you should be able to say \"Only a fool breaks the two-second rule\" before you reach it. Leave a longer gap in the wet or on ice.",
+      "example_en": "The car ahead passes a bridge. You should not reach that bridge for about two seconds.",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "Two cars and a roadside post, with a two-second gap marked between them.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2699",
+        "BB1636",
+        "BB1657",
+        "BB1664"
+      ]
+    },
+    {
+      "term_en": "Red reflective studs",
+      "explanation_en": "Motorway studs between the hard shoulder and the left edge of the carriageway.",
+      "example_en": "",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "Red studs between the hard shoulder and the left-hand lane.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2576",
+        "AB2612"
+      ]
+    },
+    {
+      "term_en": "Contraflow",
+      "explanation_en": "A temporary layout, often at roadworks, where traffic is directed onto the opposite carriageway and passes oncoming vehicles without the usual barrier.",
+      "example_en": "In a contraflow, keep your distance and do not change lanes.",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A motorway contraflow with cones and traffic passing in both directions on one carriageway.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2335",
+        "AB2336",
+        "AB2379",
+        "AB2611",
+        "AB2612",
+        "AB2944",
+        "BB1690"
+      ]
+    },
+    {
+      "term_en": "Puffin crossing",
+      "explanation_en": "A pedestrian crossing with sensors that hold the red light while people are still crossing. After green, the next light is steady amber, not flashing amber.",
+      "example_en": "",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A puffin crossing with a sensor watching the crossing area.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2124",
+        "AB2703"
+      ]
+    },
+    {
+      "term_en": "Noseweight",
+      "explanation_en": "The downward force of the trailer hitch on the tow ball. The maximum your vehicle may take is in the handbook. The hitch should press down on the ball, not lift it.",
+      "example_en": "",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A trailer hitch pressing down on a tow ball, labelled as noseweight.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "BB1735"
+      ]
+    },
+    {
+      "term_en": "Recovery position",
+      "explanation_en": "A position for an unconscious person who is breathing, used to help keep the airway open. Keep checking the airway until medical help arrives.",
+      "example_en": "",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A person placed in the recovery position, with the airway kept open.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2870"
+      ]
+    },
+    {
+      "term_en": "National speed limit",
+      "explanation_en": "The default maximum speed where no lower limit is signed. The number depends on the road and the vehicle. For cars and motorcycles, the questions give 70 mph on a motorway or dual carriageway and 60 mph on a single carriageway, unless signs show otherwise. Towing a trailer is lower: the questions give 60 mph on a dual carriageway or motorway. The sign is a white circle with a black diagonal bar.",
+      "example_en": "The national speed limit applies and traffic is coming towards you, so you use dipped headlights rather than main beam.",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "The national speed limit sign: a white circle with a black diagonal stripe.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": true,
+      "question_ids": [
+        "AB2222",
+        "AB2246",
+        "AB2248",
+        "AB2429",
+        "AB2430",
+        "AB2824",
+        "AB2845",
+        "BB1011"
+      ]
+    },
+    {
+      "term_en": "Zigzag lines",
+      "explanation_en": "White zigzag markings on the approach to, and the exit from, a pedestrian crossing. You must not park on them. The official questions call that illegal and an offence. You must also not overtake the leading vehicle when approaching the crossing. Parking there blocks the view for people crossing and for approaching drivers.",
+      "example_en": "",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "White zigzag lines on both approaches to a pedestrian crossing, with a car wrongly parked on them.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2088",
+        "AB2394",
+        "BB1603"
+      ]
+    },
+    {
+      "term_en": "Crawler lane",
+      "explanation_en": "An extra lane on a steep uphill stretch for slow vehicles, so faster traffic can pass. Also called a climbing lane.",
+      "example_en": "",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A steep motorway hill with an extra left lane for slow lorries.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2237",
+        "AB2381"
+      ]
+    },
+    {
+      "term_en": "Rear fog lights",
+      "explanation_en": "Very bright lights at the back for when visibility is seriously reduced. The questions describe this as about 100 metres (328 feet) or less. Switch them off when visibility improves, because they dazzle drivers behind you.",
+      "example_en": "",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A rear fog light switched on in thick fog, and switched off once the road is clearer.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "BB1339",
+        "BB1343",
+        "BB1598",
+        "BB1680",
+        "BB1685",
+        "BB1749"
+      ]
+    },
+    {
+      "term_en": "Level crossing",
+      "explanation_en": "A place where a railway crosses the road. A steady amber light comes on first, then flashing red lights, and you must stop. If you break down on the crossing, get everyone clear and use the railway telephone.",
+      "example_en": "The amber light comes on as you approach. Stop before the barrier unless you have already crossed the line.",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A level crossing with amber then flashing red lights and a barrier.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2363",
+        "AB2393",
+        "AB2596",
+        "AB2630",
+        "AB2724",
+        "AB2778",
+        "AB2826",
+        "BB1085",
+        "BB1226",
+        "BB1227",
+        "BB1254",
+        "BB1363",
+        "BB1785"
+      ]
+    },
+    {
+      "term_en": "Dual carriageway",
+      "explanation_en": "A road where traffic in opposite directions is separated by a central reservation. Each side may have more than one lane.",
+      "example_en": "Before you turn right onto a dual carriageway, check that the central reservation can shelter your vehicle.",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A dual carriageway with a central reservation and two lanes each way.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2248",
+        "AB2269",
+        "AB2357",
+        "AB2358",
+        "AB2430",
+        "AB2616",
+        "AB2618",
+        "AB2660",
+        "AB2755",
+        "AB2766",
+        "AB2844",
+        "BB1207",
+        "BB1209",
+        "BB1240",
+        "BB1454",
+        "BB1575",
+        "BB1632",
+        "BB1670",
+        "BB1694",
+        "BB4431"
+      ]
+    },
+    {
+      "term_en": "White stick",
+      "explanation_en": "A cane carried by a person who is blind. A white stick with a red band means the person is deaf as well as blind, so they may not hear a horn.",
+      "example_en": "",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A white stick, and a white stick with a red reflective band.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2136"
+      ]
+    },
+    {
+      "term_en": "Kick-down",
+      "explanation_en": "On an automatic, pressing the accelerator firmly through so the gearbox changes to a lower gear and the car can accelerate more quickly.",
+      "example_en": "You need to accelerate quickly, so you use kick-down rather than changing gear by hand.",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "An accelerator pedal pressed fully down, with the automatic gearbox changing down.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "BB1596"
+      ]
+    },
+    {
+      "term_en": "Hatched markings",
+      "explanation_en": "Diagonal stripes painted on the road to separate traffic streams that could endanger each other. If a solid white line borders the area, do not enter it except in an emergency.",
+      "example_en": "",
+      "priority": "high",
+      "image_recommended": true,
+      "image_concept": "A hatched area in the centre of the road bordered by a solid white line.",
+      "grounding": "source",
+      "label_origin": "source_term",
+      "review_flag": false,
+      "question_ids": [
+        "AB2681"
+      ]
+    }
+  ],
+  "untouched": {
+    "official_questions": 758,
+    "needs_explanation": 490,
+    "review_later": 57,
+    "image_is_enough": 211,
+    "hint_drafts": 547
+  },
+  "import_later": "Import only from Admin → Keyword Cards, after a human reviews this file. The importer writes status = draft and question links only. It requires an explicit confirmation, does not run on page load, and has no bulk-publish action. Do not call the status route. Arabic stays empty until the translation phase. Upload at most one image, and only after the card is accepted."
+}

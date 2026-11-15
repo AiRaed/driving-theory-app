@@ -89,7 +89,7 @@ export type ExplanationFormat = (typeof EXPLANATION_FORMATS)[number];
 /** English + Arabic first; other codes remain valid. */
 export const LEARNING_CARD_INITIAL_LANGUAGES = ['en', 'ar'] as const;
 
-export const CLASSIFIER_VERSION = '5b.1';
+export const CLASSIFIER_VERSION = '5e.2';
 
 export interface ExplanationCard {
   id: string;
@@ -147,6 +147,14 @@ export function normalizeTermKey(term: string): string {
 
 export function isLearnerVisibleCardStatus(status: LearningCardStatus): boolean {
   return status === 'published';
+}
+
+/** Empty drafts and archived cards never appear in Practice. */
+export function isLearnerVisibleExplanationHint(card: {
+  status: LearningCardStatus;
+  explanation?: string | null;
+}): boolean {
+  return isLearnerVisibleCardStatus(card.status) && String(card.explanation || '').trim().length > 0;
 }
 
 /** Mock Test exam surface must never render hints or tappable keywords. */

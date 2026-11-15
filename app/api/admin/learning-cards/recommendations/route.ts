@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { requireAdminApi } from '@/lib/admin/auth';
 import { getLearningCardsRepository } from '@/lib/learning-cards/store';
 import { isLearningCardsNotMigratedError } from '@/lib/learning-cards/errors';
+import { loadHintDraftsByQuestion } from '@/lib/learning-cards/hintDraftStore';
 
 export const dynamic = 'force-dynamic';
 
@@ -18,12 +19,20 @@ export async function GET(request: NextRequest) {
       card_status: searchParams.get('card_status') || '',
     });
 
+    const drafts = loadHintDraftsByQuestion();
     return NextResponse.json({
       ok: true,
       backend: repo.backend,
       dvsa_approved: false,
       totals: listed.totals,
-      recommendations: listed.rows,
+      recommendations: listed.rows.map((row) => {
+        const draft = drafts.get(row.question_id);
+        return {
+          ...row,
+          draft_review: draft?.review_status || null,
+          draft_label: draft?.review_label || null,
+        };
+      }),
     });
   } catch (e) {
     const status = isLearningCardsNotMigratedError(e) ? 503 : 500;
