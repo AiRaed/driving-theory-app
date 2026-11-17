@@ -151,8 +151,11 @@ run('Practice shows Hint only for complete active hints; Mock Test stays clean',
   const aids = readFileSync(path.join(root, 'components/PracticeLearningAids.tsx'), 'utf8');
   const mock = readFileSync(path.join(root, 'app/mock-test/page.tsx'), 'utf8');
   const panel = readFileSync(path.join(root, 'components/ExplanationCardPanel.tsx'), 'utf8');
+  const chrome = readFileSync(path.join(root, 'components/DashboardChrome.tsx'), 'utf8');
+  const header = readFileSync(path.join(root, 'components/HeaderClient.tsx'), 'utf8');
   assert.ok(practice.includes('PracticeExplanationHint'));
-  assert.ok(practice.includes('Saved cards'));
+  assert.ok(chrome.includes('Saved Cards'));
+  assert.ok(header.includes("pathname.startsWith('/practice')"));
   assert.ok(aids.includes('PracticeHintDialog'));
   assert.ok(aids.includes('useState(false)'));
   assert.ok(aids.includes('setOpen(true)'));

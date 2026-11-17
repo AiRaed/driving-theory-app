@@ -39,7 +39,7 @@ function PlayIcon({ className }: { className?: string }) {
  * Device-aware App Store / Google Play CTAs for the public Landing Page.
  * Hidden inside the installed Capacitor app.
  */
-export default function StoreDownloadCta() {
+export default function StoreDownloadCta({ tone = 'onLight' }: { tone?: 'onLight' | 'onNavy' }) {
   const [platform, setPlatform] = useState<StoreAudiencePlatform | null>(null);
   const [inNativeApp, setInNativeApp] = useState(false);
 
@@ -52,6 +52,7 @@ export default function StoreDownloadCta() {
     return null;
   }
 
+  const onNavy = tone === 'onNavy';
   const showApple = platform === 'ios' || platform === 'desktop' || platform === 'unknown';
   const showGoogle =
     platform === 'android' || platform === 'desktop' || platform === 'unknown';
@@ -59,10 +60,10 @@ export default function StoreDownloadCta() {
   return (
     <div className="flex flex-col items-center gap-3 w-full max-w-sm mt-2">
       <div className="text-center">
-        <p className="text-sm font-semibold text-[var(--text-primary)]">
+        <p className={onNavy ? 'text-sm font-semibold text-white' : 'text-sm font-semibold text-[var(--text-primary)]'}>
           Download LingoTheory free
         </p>
-        <p className="text-xs text-[var(--text-secondary)] mt-0.5">
+        <p className={onNavy ? 'mt-0.5 text-xs text-white/70' : 'mt-0.5 text-xs text-[var(--text-secondary)]'}>
           Try before you pay
         </p>
       </div>
@@ -79,7 +80,9 @@ export default function StoreDownloadCta() {
                 detected_platform: platform,
               })
             }
-            className="flex w-full items-center justify-center gap-2.5 rounded-[var(--radius-md)] bg-[var(--navy)] px-4 py-3.5 text-white shadow-sm transition-opacity hover:opacity-95 active:opacity-90"
+            className={onNavy
+              ? 'flex w-full min-h-11 items-center justify-center gap-2.5 rounded-[var(--radius-md)] bg-white px-4 py-3.5 text-[var(--navy)] shadow-sm'
+              : 'flex w-full min-h-11 items-center justify-center gap-2.5 rounded-[var(--radius-md)] bg-[var(--navy)] px-4 py-3.5 text-white shadow-sm transition-opacity hover:opacity-95 active:opacity-90'}
           >
             <AppleIcon className="h-6 w-6 flex-shrink-0" />
             <span className="text-sm font-semibold">Download on the App Store</span>

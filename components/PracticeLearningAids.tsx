@@ -1,50 +1,54 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import KeywordInlineText, { type InlineKeyword } from '@/components/KeywordInlineText';
 import PracticeHintDialog from '@/components/PracticeHintDialog';
+import PracticeKeywordText from '@/components/PracticeKeywordText';
 import { hintDialogCopy, type PracticeHintCard } from '@/lib/learning-cards/hintDialog';
 
 type HintCard = PracticeHintCard;
 
-type Payload = {
-  keywords: InlineKeyword[];
-  terms: Array<{ term_key: string; term_en: string }>;
-  explanation: HintCard | null;
-};
-
-function usePublishedCards(questionId: string, language: string) {
-  const [data, setData] = useState<Payload | null>(null);
+function usePublishedExplanation(questionId: string, language: string) {
+  const [card, setCard] = useState<HintCard | null>(null);
   useEffect(() => {
     let cancelled = false;
-    setData(null);
+    setCard(null);
     fetch(
       `/api/learning-cards/for-question?question_id=${encodeURIComponent(questionId)}&language=${encodeURIComponent(language || 'en')}`
     )
       .then((r) => r.json())
       .then((body) => {
-        if (!cancelled) {
-          const terms = body.terms || [];
-          const keywords = (body.keywords || []).map((k: InlineKeyword) => ({
-            ...k,
-            term_en: terms.find((t: { term_key: string }) => t.term_key === k.term_key)?.term_en,
-          }));
-          const explanation = body.explanation || null;
-          const complete =
-            explanation && String(explanation.explanation || '').trim().length > 0
-              ? explanation
-              : null;
-          setData({ keywords, terms, explanation: complete });
+        if (cancelled) return;
+        const explanation = body.explanation || null;
+        const text = String(explanation?.explanation || '').trim();
+        const explanationAr = String(body.explanation_ar || '').trim();
+        if (!text && !explanationAr) {
+          setCard(null);
+          return;
         }
+        const review =
+          body.arabic_review === 'draft' || body.arabic_review === 'approved'
+            ? body.arabic_review
+            : undefined;
+        setCard({
+          id: explanation?.id || `${questionId}-ar`,
+          explanation: text,
+          format: explanation?.format,
+          language: explanation?.language || 'en',
+          image_url: explanation?.image_url,
+          image_alt: explanation?.image_alt,
+          video_url: explanation?.video_url,
+          explanation_ar: explanationAr || undefined,
+          arabic_review: review,
+        });
       })
       .catch(() => {
-        if (!cancelled) setData({ keywords: [], terms: [], explanation: null });
+        if (!cancelled) setCard(null);
       });
     return () => {
       cancelled = true;
     };
   }, [questionId, language]);
-  return data;
+  return card;
 }
 
 /** Practice only. Mock Test must not import this module. */
@@ -57,10 +61,13 @@ export default function PracticeLearningAids({
   language: string;
   prompt: string;
 }) {
-  const data = usePublishedCards(questionId, language);
   return (
-    <div className="text-[19px] sm:text-[21px] font-bold text-[var(--text-primary)] leading-[1.4] flex-1 min-w-0 break-words whitespace-normal">
-      <KeywordInlineText text={prompt} keywords={data?.keywords || []} />
+    <div
+      dir="ltr"
+      lang="en"
+      className="text-[1.4rem] font-bold leading-[1.3] tracking-tight text-[#102D4E] sm:text-[1.7rem] flex-1 min-w-0 break-words whitespace-normal"
+    >
+      <PracticeKeywordText questionId={questionId} language={language} text={prompt} />
     </div>
   );
 }
@@ -73,7 +80,7 @@ export function PracticeExplanationHint({
   questionId: string;
   language: string;
 }) {
-  const data = usePublishedCards(questionId, language);
+  const card = usePublishedExplanation(questionId, language);
   const [open, setOpen] = useState(false);
   const [scope, setScope] = useState(`${questionId}:${language}`);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -82,15 +89,14 @@ export function PracticeExplanationHint({
     setScope(nextScope);
     setOpen(false);
   }
-  const card = data?.explanation || null;
   if (!card) return null;
-  const copy = hintDialogCopy(card.language || language);
+  const copy = hintDialogCopy(language);
   return (
-    <div className="mt-3">
+    <div className="shrink-0">
       <button
         ref={triggerRef}
         type="button"
-        className="lt-btn-ghost px-3 py-2 text-sm"
+        className="lt-btn-ghost lt-hint-trigger inline-flex items-center gap-2 px-4 py-2 text-sm"
         dir={copy.dir}
         lang={copy.lang}
         aria-haspopup="dialog"
@@ -99,11 +105,16 @@ export function PracticeExplanationHint({
         data-testid="practice-hint-trigger"
         onClick={() => setOpen(true)}
       >
+        <svg viewBox="0 0 24 24" aria-hidden className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M9 18h6M10 21h4" />
+          <path d="M12 3a6 6 0 0 0-3.2 11.1c.4.3.7.8.7 1.3V16h5v-.6c0-.5.3-1 .7-1.3A6 6 0 0 0 12 3Z" />
+        </svg>
         {copy.triggerLabel}
       </button>
       <PracticeHintDialog
         open={open}
         card={card}
+        uiLanguage={language}
         returnFocusRef={triggerRef}
         onClose={() => setOpen(false)}
       />

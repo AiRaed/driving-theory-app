@@ -1,7 +1,7 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import Image from 'next/image';
+import BrandLogo from '@/components/BrandLogo';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
 import { cn } from '@/lib/utils';
@@ -46,24 +46,16 @@ export default function ChooseLanguageClient() {
   };
 
   return (
-    <div className="min-h-[calc(100vh-64px)] flex items-start justify-center py-8 md:py-12 px-4">
-      <div className="w-full max-w-lg">
-        <div className="flex flex-col items-center text-center mb-6">
-          <Image
-            src="/logo-lingotheory.png"
-            alt="LingoTheory"
-            width={72}
-            height={72}
-            className="h-14 w-14 sm:h-16 sm:w-16 mb-3"
-            priority
-          />
-          <p className="text-2xl" aria-hidden>
-            🌐
-          </p>
-          <h1 className="mt-2 text-2xl sm:text-[1.75rem] font-bold text-[var(--text-primary)] tracking-tight">
+    <div className="lt-page py-8 sm:py-12">
+      <div className="mx-auto w-full max-w-3xl">
+        <div className="mb-6 max-w-xl rounded-[1.35rem] bg-[var(--navy)] p-5 text-white">
+          <span className="inline-flex rounded-xl bg-white px-2 py-1">
+            <BrandLogo size="header" priority />
+          </span>
+          <h1 className="mt-4 text-2xl font-bold tracking-tight text-white sm:text-[2rem]">
             {t('chooseLanguageTitle')}
           </h1>
-          <p className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed px-2">
+          <p className="mt-2 text-sm leading-relaxed text-white/75">
             {ENABLED_LANGUAGES.map((l) => `${l.flag} ${l.nativeName}`).join('  ·  ')}
           </p>
         </div>

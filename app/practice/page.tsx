@@ -2,7 +2,6 @@
 
 import { useState, useMemo, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { cn, toTitleCaseLabel } from '@/lib/utils';
 import TTSButton from '@/components/TTSButton';
 import VocabHintsControl from '@/components/VocabHintsControl';
@@ -11,8 +10,9 @@ import PracticeLearningAids, {
 } from '@/components/PracticeLearningAids';
 import PracticeKeywordControl from '@/components/PracticeKeywordControl';
 import AnswerOptionContent from '@/components/AnswerOptionContent';
+import ArabicDraftNote from '@/components/ArabicDraftNote';
 import DisclaimerModal from '@/components/DisclaimerModal';
-import LanguageSelector from '@/components/LanguageSelector';
+import TopicGlyph from '@/components/TopicGlyph';
 import BilingualLabel from '@/components/BilingualLabel';
 import { enLabel } from '@/lib/i18n/ui-strings';
 import PaywallOverlay from '@/components/PaywallOverlay';
@@ -42,7 +42,6 @@ import {
 } from '@/lib/translations';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
 import { getTopicTranslation, topicTranslationDir } from '@/lib/i18n/topics';
-import { isRtlLang, type TranslationLang } from '@/lib/i18n/languages';
 import {
   getKeywordUrduTranslation,
   getKeywordRomanianTranslation,
@@ -73,6 +72,44 @@ function shuffleArray<T>(array: T[]): T[] {
   return shuffled;
 }
 
+const PRACTICE_TOPIC_ORDER = [
+  'alertness',
+  'attitude',
+  'hazard-awareness',
+  'documents',
+  'motorway-driving',
+  'road-signs',
+  'incidents',
+  'other-vehicles',
+  'rules-of-the-road',
+  'safety-margins',
+  'safety-vehicle',
+  'vehicle-handling',
+  'vehicle-loading',
+  'vulnerable-road-users',
+];
+
+function PracticeWave() {
+  return (
+    <svg aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-14 w-full sm:h-16" viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0 36c90 28 170-22 280-4 100 16 150 30 250 8 110-24 170-34 270-6 90 26 150 6 230-8 60-10 110 0 170 12v42H0Z" fill="rgba(22,140,186,0.55)" />
+      <path d="M0 56c130 16 210-18 340 0 110 14 170 16 270 0 120-18 190-6 290 8 80 10 150 2 300-6v22H0Z" fill="rgba(22,140,186,0.28)" />
+    </svg>
+  );
+}
+
+function PracticeCarIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M4 15h16" />
+      <path d="M6 15 8.2 9.6A2 2 0 0 1 10 8.5h4a2 2 0 0 1 1.8 1.1L18 15" />
+      <path d="M5 15h14v3.2a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V15Z" />
+      <circle cx="8" cy="18.2" r="1.1" fill="currentColor" stroke="none" />
+      <circle cx="16" cy="18.2" r="1.1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
 export default function PracticePage() {
   // SINGLE SOURCE OF TRUTH: useAccess from AccessProvider
   const { loading, statusConfirmed, paid, freeUsed, refresh, silentRefresh } = useAccess();
@@ -89,7 +126,7 @@ export default function PracticePage() {
     faTranslations: bankFa,
     source: bankSource,
   } = useQuestionBank();
-  const { lang: translationLang, setLang, ready: languageReady } = useLanguage();
+  const { lang: translationLang } = useLanguage();
   const [selectedTopic, setSelectedTopic] = useState<string>('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState<number>(0);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(null);
@@ -274,64 +311,22 @@ export default function PracticePage() {
     }
   }, [selectedTopic, translationLang, bankSource]);
 
-  const handleTranslationLangChange = (next: TranslationLang) => {
-    setLang(next);
-    if (next === 'ur') {
-      if (bankSource === 'database' && bankUrdu && Object.keys(bankUrdu).length > 0) {
-        setUrTranslations(bankUrdu);
-      } else {
-        loadUrduTranslations(true).then((data) => {
-          if (data) setUrTranslations(data);
-        });
-      }
-    } else if (next === 'ro') {
-      if (bankSource === 'database' && bankRo && Object.keys(bankRo).length > 0) {
-        setRoTranslations(bankRo);
-      } else {
-        loadRomanianTranslations(true).then((data) => {
-          if (data) setRoTranslations(data);
-        });
-      }
-    } else if (next === 'pl') {
-      if (bankSource === 'database' && bankPl && Object.keys(bankPl).length > 0) {
-        setPlTranslations(bankPl);
-      } else {
-        loadPolishTranslations(true).then((data) => {
-          if (data) setPlTranslations(data);
-        });
-      }
-    } else if (next === 'pt') {
-      if (bankSource === 'database' && bankPt && Object.keys(bankPt).length > 0) {
-        setPtTranslations(bankPt);
-      } else {
-        loadPortugueseTranslations(true).then((data) => {
-          if (data) setPtTranslations(data);
-        });
-      }
-    } else if (next === 'bn') {
-      loadBengaliTranslations(true).then((data) => {
-        if (data) setBnTranslations(data);
-      });
-    } else if (next === 'fa') {
-      if (bankSource === 'database' && bankFa && Object.keys(bankFa).length > 0) {
-        setFaTranslations(bankFa);
-      } else {
-        loadPersianTranslations(true).then((data) => {
-          if (data) setFaTranslations(data);
-        });
-      }
+  const topicCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const question of questions) {
+      counts.set(question.topic, (counts.get(question.topic) || 0) + 1);
     }
-  };
+    return counts;
+  }, [questions]);
 
-  // Get all unique topics
   const topics = useMemo(() => {
-    const uniqueTopics = Array.from(new Set(questions.map(q => q.topic)));
-    return uniqueTopics;
+    const present = new Set(questions.map((question) => question.topic));
+    const ordered = PRACTICE_TOPIC_ORDER.filter((id) => present.has(id));
+    const extras = Array.from(present).filter((id) => !PRACTICE_TOPIC_ORDER.includes(id));
+    return [...ordered, ...extras];
   }, [questions]);
 
   // Compute totals
-  const totalQuestions = questions.length;
-  const totalTopics = topics.length;
 
   // Get questions for the selected topic
   const topicQuestions = useMemo(() => {
@@ -435,15 +430,25 @@ export default function PracticePage() {
   }, [accountUserId, currentQuestionIndex, selectedTopic]);
 
   // Handle topic selection
+  const topicFromUrlApplied = useRef(false);
+
+  useEffect(() => {
+    if (topicFromUrlApplied.current || selectedTopic || topics.length === 0) return;
+    const requested = new URLSearchParams(window.location.search).get('topic');
+    if (!requested || !topics.includes(requested)) return;
+    topicFromUrlApplied.current = true;
+    setSelectedTopic(requested);
+    setSelectedAnswerIndex(null);
+    setSelectedKeywordIndex(null);
+    setShowTopicsGrid(false);
+  }, [topics, selectedTopic]);
+
   const handleTopicSelect = (topic: string) => {
     setSelectedTopic(topic);
     // Index will be restored by useEffect
     setSelectedAnswerIndex(null);
     setSelectedKeywordIndex(null);
-    // Hide topics grid on mobile after selection
-    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
-      setShowTopicsGrid(false);
-    }
+    setShowTopicsGrid(false);
   };
 
   // Handle change topic button
@@ -659,180 +664,133 @@ export default function PracticePage() {
     );
   }
 
-  return (
-    <div className="min-h-screen bg-[var(--background)] relative">
-      {/* Paywall only when confirmed free trial is exhausted */}
-      {showPaywall && <PaywallOverlay />}
-      
-      {/* Content - blurred and non-interactive when paywall is shown */}
-      <div
-            className={cn(
-              showPaywall && "pointer-events-none blur-sm opacity-50"
-            )}
-      >
-      <div className="max-w-5xl mx-auto px-4 py-6">
-        {/* Compact Summary Row */}
-        <div className="mb-4 flex flex-wrap items-center gap-3 justify-between">
-          <div className="flex items-center gap-3 flex-wrap flex-1 min-w-0">
-            <Link
-              href="/dashboard"
-              className="lt-btn-ghost hidden sm:inline-flex px-4 py-2 text-sm flex-col items-center"
-            >
-              <BilingualLabel keyName="backToDashboard" lang={translationLang} />
-            </Link>
-            <span className="hidden md:inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-[var(--lingo-red-soft)] text-[var(--lingo-red)] border border-[var(--lingo-red-muted)]">
-              {enLabel('practice')}
-            </span>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-start sm:gap-3 flex-1 min-w-0">
-              <span className="text-xs md:text-sm font-medium text-[var(--text-secondary)] whitespace-nowrap">
-                <span className="md:hidden">{enLabel('questionsTopicsShort', { n: totalQuestions, t: totalTopics })}</span>
-                <span className="hidden md:inline">{enLabel('questionsTopicsCount', { n: totalQuestions, t: totalTopics })}</span>
-              </span>
-              {languageReady && (
-                <LanguageSelector
-                  value={translationLang}
-                  onChange={handleTranslationLangChange}
-                  className="flex-1 min-w-0"
-                />
-              )}
-            </div>
-          </div>
-        </div>
-        {/* Mobile: Selected Topic Bar (shown when grid is hidden) */}
-        {selectedTopic && !showTopicsGrid && (
-          <div className="md:hidden mb-4">
-            <div className="flex items-start justify-between gap-3 px-4 py-3 rounded-[var(--radius-md)] border border-[var(--border)] bg-[var(--surface)] shadow-[var(--shadow-sm)]">
-              {/* Title stack: English + Translation (mobile: stacked vertically, full width) */}
-              <div className="flex-1 min-w-0 flex flex-col gap-1 pr-2">
-                {/* English topic name - first line, full width */}
-                <div className="font-semibold text-base text-[var(--text-primary)] leading-tight w-full block">
-                  {toTitleCaseLabel(selectedTopic)}
-                </div>
-                {/* Translation - second line, directly under English, full width */}
-                {getTopicTranslation(selectedTopic, translationLang) && (
-                  <div
-                    className={cn(
-                      'text-sm text-[var(--text-secondary)] font-normal leading-tight w-full block',
-                      isRtlLang(translationLang) && 'text-right'
-                    )}
-                    dir={topicTranslationDir(translationLang)}
-                    style={isRtlLang(translationLang) ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
-                  >
-                    {getTopicTranslation(selectedTopic, translationLang)}
-                  </div>
-                )}
-              </div>
-              {/* Change button: stays on the right, doesn't wrap */}
-              <button
-                onClick={handleChangeTopic}
-                className="lt-btn-primary flex-shrink-0 px-4 py-1.5 text-xs whitespace-nowrap self-start flex flex-col items-center"
-              >
-                <BilingualLabel keyName="changeTopic" lang={translationLang} align="center" />
-              </button>
-            </div>
-          </div>
-        )}
+  const progressPercent = topicQuestions.length
+    ? Math.round(((currentQuestionIndex + 1) / topicQuestions.length) * 100)
+    : 0;
 
-        {/* Topic Selection - Chips */}
-        <div 
-          id="topics-grid"
-          className={cn(
-            "relative mb-8 transition-all duration-500 ease-out",
-            // Hide on mobile when topic is selected
-            !showTopicsGrid && "hidden md:block"
-          )}>
-          {/* Responsive grid: 2 cols on mobile (<=640px), 3 cols on sm, 5 cols on desktop */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 md:grid-rows-3">
-            {topics.map((topic) => {
-              const englishLabel = toTitleCaseLabel(topic);
-              const topicLabel = getTopicTranslation(topic, translationLang);
-              const isActive = topic === selectedTopic;
-              return (
-                <button
-                  key={topic}
-                  onClick={() => handleTopicSelect(topic)}
-                  data-active={isActive}
-                  className={cn(
-                    "lt-topic-chip",
-                    "hover:shadow-md active:scale-[0.98]",
-                    "py-2.5 px-3 md:py-2 md:px-3.5",
-                    "min-h-[64px] sm:min-h-[56px] md:min-h-[44px]",
-                    "flex flex-col justify-center"
-                  )}
-                >
-                  <div className="flex items-start gap-1.5 md:gap-2 w-full">
-                    {isActive && (
-                      <div className="w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white flex-shrink-0 mt-0.5"></div>
+  return (
+    <div dir="ltr" className="relative min-h-screen bg-[#F7F9FC] pb-28 md:pb-10">
+      {showPaywall && <PaywallOverlay />}
+
+      <div className={cn(showPaywall && 'pointer-events-none blur-sm opacity-50')}>
+      <div className={cn('mx-auto w-full min-w-0 px-4 py-4 sm:px-6 sm:py-6', showTopicsGrid ? 'max-w-[1120px]' : 'max-w-[1000px]')}>
+        {showTopicsGrid ? (
+          <>
+            <section className="relative overflow-hidden rounded-[22px] bg-[#102D4E] px-4 pb-7 pt-4 text-white shadow-[0_12px_28px_rgba(16,45,78,0.12)] sm:px-7 sm:pb-8 sm:pt-6">
+              <PracticeWave />
+              <div className="relative z-[1] flex flex-wrap items-center gap-3 sm:gap-4">
+                <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-white/10 sm:h-14 sm:w-14">
+                  <PracticeCarIcon />
+                </span>
+                <div className="min-w-0 flex-1">
+                  <h1 className="text-xl font-bold tracking-tight sm:text-[1.7rem]">Practice</h1>
+                  <p className="mt-0.5 text-xs font-medium leading-snug text-white/85 sm:text-sm">
+                    Choose a topic to start practising questions.
+                  </p>
+                </div>
+                <span className="shrink-0 rounded-full bg-white/15 px-2.5 py-1.5 text-center text-[11px] font-semibold leading-tight sm:px-3 sm:text-xs">
+                  {questions.length} questions · {topics.length} topics
+                </span>
+              </div>
+            </section>
+
+            <div id="topics-grid" className="mt-4 grid grid-cols-1 gap-2.5 md:mt-5 md:grid-cols-3 md:gap-4">
+              {topics.map((topic) => {
+                const englishLabel = toTitleCaseLabel(topic);
+                const topicLabel = translationLang === 'off' ? '' : getTopicTranslation(topic, translationLang);
+                const isActive = selectedTopic !== '' && topic === selectedTopic;
+                const count = topicCounts.get(topic) || 0;
+                return (
+                  <button
+                    key={topic}
+                    type="button"
+                    onClick={() => handleTopicSelect(topic)}
+                    data-active={isActive}
+                    className={cn(
+                      'relative flex min-h-14 w-full items-center gap-3 rounded-[14px] border border-[#D5DEE8] bg-white px-3.5 py-2.5 text-left shadow-[0_8px_20px_rgba(16,45,78,0.05)] md:min-h-[104px] md:px-4',
+                      isActive && 'border-[#D71920] bg-[#FDECEE]'
                     )}
-                    <div className="flex-1 min-w-0 flex flex-col">
-                      <div className={cn(
-                        "font-semibold text-xs md:text-xs leading-tight",
-                        "line-clamp-2 sm:line-clamp-1 md:line-clamp-1",
-                        "overflow-hidden",
-                        isActive ? "text-white" : "text-[var(--text-primary)]"
-                      )}>{englishLabel}</div>
-                      {topicLabel && (
-                        <div 
-                          className={cn(
-                            "text-[10px] md:text-[11px] font-normal mt-1 leading-tight",
-                            "line-clamp-1 overflow-hidden text-ellipsis",
-                            isActive ? "text-white/85" : "text-[var(--text-secondary)]"
-                          )} 
+                  >
+                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E7F4F9] text-[#168CBA]">
+                      <TopicGlyph topic={topic} />
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-[15px] font-bold leading-tight text-[#102D4E] md:text-base">{englishLabel}</span>
+                      {topicLabel ? (
+                        <span
+                          className="mt-0.5 block text-xs leading-snug text-[#4E5D73]"
                           dir={topicTranslationDir(translationLang)}
-                          style={isRtlLang(translationLang) ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
+                          lang={translationLang === 'ar' ? 'ar' : undefined}
                         >
                           {topicLabel}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Disclaimer Message - Desktop only */}
-        <div className="hidden sm:block text-center mt-4 mb-2 max-w-5xl mx-auto">
-          <p
-            className="text-[10px] text-[var(--muted-text)]/70 leading-tight max-w-4xl mx-auto"
-          >
-            <span className="mr-1">ℹ️</span>
-            {enLabel('disclaimerBody')}
-          </p>
-        </div>
-
-        {/* Mobile Disclaimer Modal */}
-        <DisclaimerModal lang={translationLang} />
-
-            {/* Question Display */}
-        {currentQuestion ? (
-          <div className="lt-card-accent p-6 sm:p-7 mt-4">
-            {/* Progress Section */}
-            <div className="mb-4 pt-1">
-              <div className="flex items-center justify-between mb-1.5">
-                <div className="text-xs text-[var(--text-secondary)] font-medium flex items-center gap-3">
-                  <span>
-                    {enLabel('questionOf', { current: currentQuestionIndex + 1, total: topicQuestions.length })}
-                  </span>
-                  <Link href="/saved-cards" className="text-[var(--lingo-red)] font-semibold">
-                    Saved cards
-                  </Link>
-                </div>
-                <div className="text-xs text-[var(--text-secondary)]">
-                  {enLabel('percentComplete', { percent: Math.round(((currentQuestionIndex + 1) / topicQuestions.length) * 100) })}
-                </div>
-              </div>
-              <div className="h-1.5 w-full bg-[var(--surface-secondary)] rounded-full overflow-hidden">
-                <div
-                  className="h-full bg-[var(--lingo-red)] rounded-full transition-all duration-500 ease-out"
-                  style={{ width: `${((currentQuestionIndex + 1) / topicQuestions.length) * 100}%` }}
-                />
-              </div>
-              {currentQuestionIndex + 1 === topicQuestions.length && (
-                <p className="text-xs text-[var(--teal)] mt-2 font-medium">{enLabel('almostThere')}</p>
-              )}
+                        </span>
+                      ) : null}
+                      <span className="mt-1 hidden text-xs font-medium text-[#4E5D73] md:block">
+                        {count} {count === 1 ? 'question' : 'questions'}
+                      </span>
+                    </span>
+                    {isActive ? (
+                      <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#D71920] text-white md:absolute md:-right-1.5 md:-top-1.5 md:shadow-[0_4px_10px_rgba(215,25,32,0.35)]">
+                        <svg viewBox="0 0 24 24" aria-hidden className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12.5 9.5 17 19 7.5" />
+                        </svg>
+                      </span>
+                    ) : (
+                      <svg viewBox="0 0 24 24" aria-hidden className="h-5 w-5 shrink-0 text-[#168CBA] md:hidden" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M9 6l6 6-6 6" />
+                      </svg>
+                    )}
+                  </button>
+                );
+              })}
             </div>
+
+            <p className="mx-auto mt-5 hidden max-w-4xl text-center text-[10px] leading-tight text-[#4E5D73]/80 sm:block">
+              {enLabel('disclaimerBody')}
+            </p>
+            <DisclaimerModal lang={translationLang} />
+          </>
+        ) : null}
+
+        {currentQuestion && !showTopicsGrid ? (
+          <div dir="ltr">
+            <button
+              type="button"
+              onClick={handleChangeTopic}
+              className="mb-3 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-[#102D4E]"
+              aria-label={enLabel('changeTopic')}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 6 9 12l6 6" />
+              </svg>
+              Practice
+            </button>
+
+            <article className="w-full min-w-0 overflow-hidden rounded-[22px] border border-[#E6EDF5] bg-white shadow-[0_12px_28px_rgba(16,45,78,0.06)]">
+              <header className="relative overflow-hidden bg-[#102D4E] px-4 pb-6 pt-3.5 text-white sm:px-6 sm:pb-7 sm:pt-5">
+                <PracticeWave />
+                <div className="relative z-[1] flex items-center gap-3">
+                  <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-white sm:h-11 sm:w-11">
+                    <TopicGlyph topic={currentQuestion.topic} />
+                  </span>
+                  <h2 className="min-w-0 flex-1 text-base font-bold leading-tight sm:text-xl">
+                    {toTitleCaseLabel(currentQuestion.topic)}
+                  </h2>
+                  <p className="shrink-0 text-right text-xs font-semibold text-white/90 sm:text-sm">
+                    {enLabel('questionOf', { current: currentQuestionIndex + 1, total: topicQuestions.length })}
+                  </p>
+                </div>
+              </header>
+
+              <div className="px-4 py-4 sm:px-7 sm:py-6">
+                <div className="mb-5 flex items-center gap-3">
+                  <div className="h-2 flex-1 overflow-hidden rounded-full bg-[#E7F4F9]" aria-hidden>
+                    <div className="h-full rounded-full bg-[#168CBA]" style={{ width: `${progressPercent}%` }} />
+                  </div>
+                  <span className="shrink-0 text-xs font-semibold text-[#168CBA] sm:text-sm">
+                    {enLabel('percentComplete', { percent: progressPercent })}
+                  </span>
+                </div>
 
             {/* Question Image */}
             {currentQuestion.image ? (
@@ -881,24 +839,20 @@ export default function PracticePage() {
             ) : null}
 
             {/* English Prompt — Practice-only keyword cards (never in Mock Test) */}
-            <div className="flex items-start justify-between gap-2 mb-1">
-              <div className="flex-1 min-w-0">
-                <PracticeLearningAids
-                  questionId={currentQuestion.id}
-                  language={translationLang === 'ar' ? 'ar' : 'en'}
-                  prompt={currentQuestion.promptEn}
-                />
-              </div>
-              <div className="flex items-center gap-2 flex-shrink-0 mt-0.5">
-                <TTSButton text={currentQuestion.promptEn} options={shuffledOptions} />
-              </div>
-            </div>
+            <PracticeLearningAids
+              questionId={currentQuestion.id}
+              language={translationLang === 'ar' ? 'ar' : 'en'}
+              prompt={currentQuestion.promptEn}
+            />
 
             {/* Translation Prompt */}
             {translationLang === 'ar' && currentQuestion.promptAr && (
-              <h3 className="text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold mb-3 leading-[1.8] tracking-wide" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
-                {currentQuestion.promptAr}
-              </h3>
+              <div className="mb-3">
+                <ArabicDraftNote show={currentQuestion.arabicReview === 'draft'} />
+                <h3 className="text-start text-base font-semibold leading-[1.8] tracking-wide text-[#4E5D73] break-words sm:text-lg" dir="rtl" lang="ar" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
+                  {currentQuestion.promptAr}
+                </h3>
+              </div>
             )}
             {translationLang === 'ur' && currentQuestion && (() => {
               if (!urTranslations) {
@@ -998,13 +952,24 @@ export default function PracticePage() {
               return null;
             })()}
 
+            <div className="mt-4 flex items-center justify-between gap-3">
+              <PracticeExplanationHint
+                questionId={currentQuestion.id}
+                language={translationLang === 'ar' ? 'ar' : 'en'}
+              />
+              <span className="practice-voice">
+                <TTSButton
+                  text={currentQuestion.promptEn}
+                  options={shuffledOptions}
+                  className="!h-auto !w-auto gap-2 rounded-full px-2 py-1 text-[#168CBA]"
+                />
+              </span>
+            </div>
+
             <VocabHintsControl
               questionId={currentQuestion.id}
               translationLang={translationLang}
             />
-
-            {/* Divider */}
-            <div className="border-t border-[var(--border)] mb-4 mt-2"></div>
 
             {/* Answer Options */}
             <div className="space-y-2.5 mb-4">
@@ -1029,22 +994,11 @@ export default function PracticePage() {
                     disabled={selectedAnswerIndex !== null}
                     data-state={optionState}
                     className={cn(
-                      "lt-option active:scale-[0.99]",
-                      selectedAnswerIndex !== null && "cursor-default"
+                      'practice-answer lt-option active:scale-[0.99]',
+                      selectedAnswerIndex !== null && 'cursor-default'
                     )}
                   >
-                    <div className="flex items-start gap-3">
-                      {isSelected && !showAsCorrect && !showAsWrong && (
-                        <span className="text-xl flex-shrink-0 mt-0.5 text-[var(--lingo-red)] font-bold">○</span>
-                      )}
-                      {(showAsCorrect || showAsWrong) && (
-                        <span className={cn(
-                          "text-xl flex-shrink-0 mt-0.5 font-bold transition-all duration-300",
-                          showAsCorrect ? "text-[var(--correct)]" : "text-[var(--wrong)]"
-                        )}>
-                          {showAsCorrect ? "✓" : "✕"}
-                        </span>
-                      )}
+                    <div className="min-w-0 flex-1">
                       <AnswerOptionContent
                         option={option}
                         enClassName={cn(
@@ -1056,11 +1010,11 @@ export default function PracticePage() {
                       >
                         {translationLang === 'ar' && option.ar && (
                           <div className={cn(
-                            "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
+                            "text-start break-words text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
                             isSelected && !showAsCorrect && !showAsWrong ? "text-[var(--lingo-red-dark)]/90" : 
                             showAsCorrect ? "text-[var(--correct)]/90" :
                             showAsWrong ? "text-[var(--wrong)]/90" : "text-[var(--text-secondary)]"
-                          )} dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>{option.ar}</div>
+                          )} dir="rtl" lang="ar" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>{option.ar}</div>
                         )}
                         {translationLang === 'ur' && urTranslations && (() => {
                           const urOption = getUrduOptionTranslation(
@@ -1303,10 +1257,10 @@ export default function PracticePage() {
                           return (
                             <div
                               key={index}
-                              className="bg-[var(--teal-soft)] border border-[var(--teal)]/25 rounded-[var(--radius-md)] p-5 transition-shadow duration-200 hover:shadow-[var(--shadow-sm)]"
+                              className="rounded-[14px] border border-[#168CBA]/25 bg-[#E7F4F9] p-5"
                             >
                               <div className="flex items-start gap-3 mb-2">
-                                <span className="text-[var(--teal)] font-bold text-sm flex-shrink-0 mt-0.5">{keyword.term}</span>
+                                <span className="mt-0.5 flex-shrink-0 text-sm font-bold text-[#168CBA]">{keyword.term}</span>
                                 {translationLang === 'ar' && (
                                   <span className="text-[var(--muted-text)]/70 text-sm" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' }}>{keyword.ar}</span>
                                 )}
@@ -1371,52 +1325,56 @@ export default function PracticePage() {
               );
             })()}
 
-            <PracticeExplanationHint
-              questionId={currentQuestion.id}
-              language={translationLang === 'ar' ? 'ar' : 'en'}
-            />
             <PracticeKeywordControl
               questionId={currentQuestion.id}
               language={translationLang === 'ar' ? 'ar' : 'en'}
             />
 
-            {/* Navigation Buttons */}
-            <div className="flex justify-between items-center mt-4 gap-2 flex-wrap">
-              <div className="flex gap-2">
-                <button
-                  onClick={handlePrevious}
-                  disabled={currentQuestionIndex === 0}
-                  className={cn(
-                    "lt-btn-ghost px-5 py-2.5 text-sm",
-                    currentQuestionIndex === 0 && "opacity-50 cursor-not-allowed"
-                  )}
-                >
-                  <BilingualLabel keyName="previous" lang={translationLang} />
-                </button>
-                <button
-                  onClick={handleRestart}
-                  className="lt-btn-ghost px-5 py-2.5 text-sm flex flex-col items-center"
-                >
-                  <BilingualLabel keyName="restart" lang={translationLang} />
-                </button>
-              </div>
+            <div className="mt-6 flex flex-wrap items-center gap-2">
               <button
+                type="button"
+                onClick={handlePrevious}
+                disabled={currentQuestionIndex === 0}
+                className={cn(
+                  'inline-flex min-h-12 items-center gap-1 rounded-xl border border-[#D5DEE8] bg-white px-3 text-sm font-semibold text-[#102D4E] sm:px-4',
+                  currentQuestionIndex === 0 && 'cursor-not-allowed opacity-40'
+                )}
+              >
+                <svg viewBox="0 0 24 24" aria-hidden className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M15 6 9 12l6 6" />
+                </svg>
+                {enLabel('previous')}
+              </button>
+              <button
+                type="button"
+                onClick={handleRestart}
+                className="inline-flex min-h-12 items-center rounded-xl border border-[#D5DEE8] bg-white px-3 text-sm font-semibold text-[#102D4E] sm:px-4"
+              >
+                {enLabel('restart')}
+              </button>
+              <button
+                type="button"
                 onClick={handleNext}
                 disabled={currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall}
                 className={cn(
-                  "lt-btn-primary px-5 py-2.5 text-sm flex flex-col items-center",
-                  (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall) && "opacity-50 cursor-not-allowed"
+                  'practice-next lt-btn-primary ml-auto min-h-12 gap-1.5 px-4 text-sm sm:px-5',
+                  (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall) && 'cursor-not-allowed'
                 )}
               >
-                <BilingualLabel keyName="next" lang={translationLang} />
+                {enLabel('next')}
+                <svg viewBox="0 0 24 24" aria-hidden className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 6l6 6-6 6" />
+                </svg>
               </button>
             </div>
+              </div>
+            </article>
           </div>
-        ) : (
+        ) : !showTopicsGrid ? (
           <div className="lt-card p-8 sm:p-10 mt-4 text-center text-[var(--text-secondary)]">
             <p className="text-lg font-medium text-[var(--text-primary)]">{enLabel('selectTopic')}</p>
           </div>
-        )}
+        ) : null}
       </div>
       </div>
     </div>

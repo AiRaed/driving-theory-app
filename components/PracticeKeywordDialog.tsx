@@ -2,8 +2,10 @@
 
 import { useEffect, useId, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
+import ArabicDraftNote from '@/components/ArabicDraftNote';
+import { keywordDisplay } from '@/lib/i18n/arabic/display';
 import { keywordDialogCopy } from '@/lib/keyword-cards/dialog';
-import { clampKeywordIndex, showsKeywordImage } from '@/lib/keyword-cards/rules';
+import { clampKeywordIndex, keywordIndexForId, showsKeywordImage } from '@/lib/keyword-cards/rules';
 import type { LearnerKeywordCard } from '@/lib/keyword-cards/types';
 import {
   HINT_DIALOG_FOCUSABLE_SELECTOR,
@@ -51,12 +53,25 @@ export default function PracticeKeywordDialog({
   language,
   onClose,
   returnFocusRef,
+  initialKeywordId,
+  dialogId = 'practice-keyword-dialog',
+  performSave,
+  onSavedChange,
+  initialSavedIds,
 }: {
   open: boolean;
   keywords: LearnerKeywordCard[];
   language: string;
   onClose: () => void;
   returnFocusRef?: { current: HTMLElement | null };
+  /** Opens this card immediately. The learner does not pick it again. */
+  initialKeywordId?: string | null;
+  dialogId?: string;
+  /** Saved Cards supplies the same save request. Practice keeps the built-in request. */
+  performSave?: (keywordId: string) => Promise<Response>;
+  onSavedChange?: (keywordId: string, saved: boolean) => void;
+  /** Ids already saved when the dialog opens. Practice leaves this unset. */
+  initialSavedIds?: string[];
 }) {
   const titleId = useId();
   const descriptionId = useId();
@@ -64,15 +79,21 @@ export default function PracticeKeywordDialog({
   const dialogRef = useRef<HTMLDivElement>(null);
   const onCloseRef = useRef(onClose);
   onCloseRef.current = onClose;
-  const [index, setIndex] = useState(0);
+  const initialSavedRef = useRef(initialSavedIds);
+  initialSavedRef.current = initialSavedIds;
+  const [index, setIndex] = useState(() =>
+    open ? keywordIndexForId(keywords, initialKeywordId) : 0
+  );
   const [savedIds, setSavedIds] = useState<string[]>([]);
   const [saveError, setSaveError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
   const keywordKey = keywords.map((item) => item.id).join('|');
-
-  useEffect(() => {
-    setIndex(0);
-  }, [keywordKey, open]);
+  const selectionKey = `${open ? 'open' : 'closed'}|${keywordKey}|${initialKeywordId || ''}`;
+  const [selectionScope, setSelectionScope] = useState(selectionKey);
+  if (selectionScope !== selectionKey) {
+    setSelectionScope(selectionKey);
+    setIndex(open ? keywordIndexForId(keywords, initialKeywordId) : 0);
+  }
 
   useEffect(() => {
     if (!open) return;
@@ -84,10 +105,11 @@ export default function PracticeKeywordDialog({
       })
       .then((body) => {
         if (cancelled) return;
-        setSavedIds((body.keywords || []).map((item: { id: string }) => item.id));
+        const ids = (body.keywords || []).map((item: { id: string }) => item.id);
+        setSavedIds(Array.from(new Set([...ids, ...(initialSavedRef.current || [])])));
       })
       .catch(() => {
-        if (!cancelled) setSavedIds([]);
+        if (!cancelled) setSavedIds([...(initialSavedRef.current || [])]);
       });
     return () => {
       cancelled = true;
@@ -146,6 +168,14 @@ export default function PracticeKeywordDialog({
 
   const copy = keywordDialogCopy(language);
   const keyword = keywords[clampKeywordIndex(keywords.length, index)];
+  const keywordView = keywordDisplay({
+    language,
+    term_en: keyword.term_en,
+    translation_ar: keyword.translation_ar,
+    explanation_en: keyword.explanation_en,
+    explanation_ar: keyword.explanation_ar,
+    arabic_review: keyword.arabic_review,
+  });
   const saved = savedIds.includes(keyword.id);
   const showImage = showsKeywordImage(keyword);
 
@@ -153,11 +183,13 @@ export default function PracticeKeywordDialog({
     setSaving(true);
     setSaveError(null);
     try {
-      const res = await fetch('/api/keyword-cards/saved', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ keyword_id: keyword.id }),
-      });
+      const res = performSave
+        ? await performSave(keyword.id)
+        : await fetch('/api/keyword-cards/saved', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ keyword_id: keyword.id }),
+          });
       const data = await res.json();
       if (res.status === 401) {
         setSaveError(copy.loginToSave);
@@ -170,6 +202,7 @@ export default function PracticeKeywordDialog({
       setSavedIds((current) =>
         data.saved ? Array.from(new Set([...current, keyword.id])) : current.filter((id) => id !== keyword.id)
       );
+      onSavedChange?.(keyword.id, !!data.saved);
     } catch {
       setSaveError('Could not save');
     } finally {
@@ -182,14 +215,14 @@ export default function PracticeKeywordDialog({
       <div data-keyword-backdrop="" className="absolute inset-0 bg-black/40" aria-hidden="true" />
       <div
         ref={dialogRef}
-        id="practice-keyword-dialog"
+        id={dialogId}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
         tabIndex={-1}
-        dir={copy.dir}
-        lang={copy.lang}
+        dir="ltr"
+        lang="en"
         data-testid="practice-keyword-dialog"
         className="lt-hint-dialog-panel focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--lingo-red)]"
       >
@@ -198,7 +231,7 @@ export default function PracticeKeywordDialog({
         </div>
         <div className="flex shrink-0 items-start gap-3 border-b border-[var(--border)] px-5 pb-3 pt-3">
           <div className="min-w-0 flex-1">
-            <h2 id={titleId} className="text-lg font-bold text-[var(--text-primary)]">
+            <h2 id={titleId} dir={copy.dir} lang={copy.lang} className="text-lg font-bold text-[var(--text-primary)]">
               {copy.title}
             </h2>
             {keywords.length > 1 ? (
@@ -270,29 +303,45 @@ export default function PracticeKeywordDialog({
           <p className="text-[11px] font-bold uppercase tracking-wide text-[var(--lingo-red)]">
             Keyword Card
           </p>
-          <h3 dir="ltr" lang="en" className="mt-1 text-xl font-bold text-[var(--text-primary)]">
+          <h3
+            dir="ltr"
+            lang="en"
+            data-testid="practice-keyword-term-title"
+            data-keyword-id={keyword.id}
+            className="mt-1 text-xl font-bold text-[var(--text-primary)]"
+          >
             {keyword.term_en}
           </h3>
-          {keyword.translation_ar.trim() ? (
-            <p dir="rtl" lang="ar" className="mt-1 text-base font-semibold text-[var(--text-primary)]">
-              {keyword.translation_ar}
-            </p>
-          ) : null}
           <p
             id={descriptionId}
             dir="ltr"
             lang="en"
             className="mt-3 text-base leading-7 text-[var(--text-primary)] whitespace-pre-wrap"
           >
-            {keyword.explanation_en}
+            {keywordView.englishDefinition}
           </p>
-          {keyword.explanation_ar.trim() ? (
-            <p
-              dir="rtl"
-              lang="ar"
-              className="mt-3 text-base leading-7 text-[var(--text-primary)] whitespace-pre-wrap"
-            >
-              {keyword.explanation_ar}
+          {keywordView.showArabic ? (
+            <div className="mt-3">
+              <ArabicDraftNote show={keywordView.draft} />
+              {keywordView.arabicTerm ? (
+                <p dir="rtl" lang="ar" className="text-start text-base font-semibold text-[var(--text-primary)]">
+                  {keywordView.arabicTerm}
+                </p>
+              ) : null}
+              {keywordView.arabicDefinition ? (
+                <p
+                  dir="rtl"
+                  lang="ar"
+                  className="mt-2 text-start text-base leading-7 text-[var(--text-primary)] whitespace-pre-wrap break-words"
+                >
+                  {keywordView.arabicDefinition}
+                </p>
+              ) : null}
+            </div>
+          ) : null}
+          {keywordView.fallback ? (
+            <p dir="ltr" lang="en" className="mt-2 text-[11px] text-[var(--text-secondary)]">
+              Arabic definition is not on this card yet. Showing the English definition.
             </p>
           ) : null}
           {showImage && keyword.image_url ? (
@@ -300,7 +349,7 @@ export default function PracticeKeywordDialog({
             <img
               src={keyword.image_url}
               alt={keyword.image_alt || copy.imageAltFallback}
-              className="mt-3 h-auto w-full max-h-72 object-contain rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-secondary)]"
+              className="mt-3 h-auto w-full max-h-72 object-contain rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--background)] p-2"
             />
           ) : null}
           <div className="mt-3">

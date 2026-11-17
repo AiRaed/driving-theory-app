@@ -12,7 +12,8 @@ export type InlineKeyword = {
 };
 
 /**
- * Practice-only tappable keywords. Never import from Mock Test.
+ * Older learning-card highlighter. Practice question text uses PracticeKeywordText
+ * and the Keyword Cards popup. Never import from Mock Test.
  */
 export default function KeywordInlineText({
   text,

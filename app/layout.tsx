@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F4F2EF",
+  themeColor: "#102D4E",
 };
 
 export default function RootLayout({
@@ -67,7 +67,7 @@ export default function RootLayout({
         <AccessProvider>
           <LanguageProvider>
             <LanguageGate>
-              <div className="min-h-screen flex flex-col bg-[var(--background)]">
+              <div className="flex min-h-screen w-full min-w-0 flex-col overflow-x-clip bg-[var(--background)]">
                 <HeaderClient />
                 <main className="flex-1 relative z-10">
                   {children}

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { chooseExplanationArabic } from '@/lib/i18n/arabic/preview';
 import { getCurrentUser } from '@/lib/supabase/auth';
 import { getLearningCardsRepository } from '@/lib/learning-cards/store';
 
@@ -10,8 +11,23 @@ export async function GET() {
   try {
     const repo = await getLearningCardsRepository({ mode: 'learner' });
     const library = await repo.listSavedForUser(user.id);
+    const explanations = await Promise.all(
+      library.explanations.map(async (card) => {
+        if (card.language === 'ar') return card;
+        const published = await repo.getPublishedForQuestion(card.question_id, 'ar');
+        const arabic = chooseExplanationArabic({
+          publishedArabic: published.explanation?.explanation,
+          publishedLanguage: published.explanation?.language,
+          fallback: published.explanation_fallback === true,
+          questionId: card.question_id,
+        });
+        if (!arabic.explanation_ar) return card;
+        return { ...card, ...arabic };
+      })
+    );
     return NextResponse.json({
       ...library,
+      explanations,
       backend: repo.backend,
       user_id: user.id,
     });

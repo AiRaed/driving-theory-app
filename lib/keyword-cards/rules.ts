@@ -112,6 +112,16 @@ export function clampKeywordIndex(length: number, index: number): number {
   return index;
 }
 
+/** Index of the card a learner tapped. Unknown ids stay on the first card. */
+export function keywordIndexForId(
+  keywords: readonly { id: string }[],
+  keywordId: string | null | undefined
+): number {
+  if (!keywordId || keywords.length === 0) return 0;
+  const index = keywords.findIndex((item) => item.id === keywordId);
+  return index < 0 ? 0 : index;
+}
+
 export function asKeywordRecord(row: KeywordRecord): KeywordRecord {
   return {
     ...row,

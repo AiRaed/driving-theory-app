@@ -28,6 +28,7 @@ export default function FooterClient() {
   const pathname = usePathname();
   const hideOnMobile = isQuestionTakingRoute(pathname);
   const hideFully = isDownloadLanding(pathname);
+  const dashboard = pathname === '/dashboard' || pathname.startsWith('/saved-cards');
 
   if (hideFully) {
     return null;
@@ -35,17 +36,19 @@ export default function FooterClient() {
 
   return (
     <footer
+      dir={dashboard ? 'ltr' : undefined}
       className={cn(
-        'mt-auto border-t border-[var(--border)] bg-[var(--surface)]',
+        'mt-auto border-t border-[var(--border)] bg-white text-[var(--navy)]',
         // Mobile WebView / phone: free vertical space on question flows.
         // Desktop (md+): keep existing footer on all routes.
-        hideOnMobile && 'hidden md:block'
+        hideOnMobile && 'hidden md:block',
+        dashboard && 'pb-[calc(5.25rem+env(safe-area-inset-bottom))] md:pb-0'
       )}
     >
       <div className="max-w-5xl mx-auto px-4 py-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-3 mb-4">
           <div>
-            <p className="text-sm font-semibold text-[var(--text-primary)]">LingoTheory</p>
+            <p className="text-sm font-semibold text-[var(--navy)]">LingoTheory</p>
             <p className="text-xs text-[var(--text-secondary)] mt-0.5">
               {enLabel('footerTagline')}
             </p>
@@ -53,19 +56,19 @@ export default function FooterClient() {
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <Link
               href="/terms"
-              className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors"
+              className="inline-flex items-center min-h-11 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--navy)] transition-colors"
             >
               {enLabel('terms')}
             </Link>
             <Link
               href="/privacy"
-              className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors"
+              className="inline-flex items-center min-h-11 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--navy)] transition-colors"
             >
               {enLabel('privacy')}
             </Link>
             <Link
               href="/support"
-              className="text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--lingo-red)] transition-colors"
+              className="inline-flex items-center min-h-11 text-xs font-medium text-[var(--text-secondary)] hover:text-[var(--navy)] transition-colors"
             >
               {enLabel('support')}
             </Link>
@@ -76,7 +79,7 @@ export default function FooterClient() {
             {enLabel('support')}:{' '}
             <a
               href="mailto:support@lingotheory.org"
-              className="font-medium hover:text-[var(--lingo-red)] transition-colors"
+              className="font-medium text-[var(--navy)]"
             >
               support@lingotheory.org
             </a>

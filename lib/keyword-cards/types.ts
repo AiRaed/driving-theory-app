@@ -56,6 +56,10 @@ export interface LearnerKeywordCard {
   explanation_ar: string;
   image_url: string | null;
   image_alt: string | null;
+  /** Approved literal phrases for this term. Omitted from saved-card lists. */
+  aliases?: string[];
+  /** Present when Arabic on this response came from the development draft preview. */
+  arabic_review?: 'approved' | 'draft';
 }
 
 export interface KeywordInput {

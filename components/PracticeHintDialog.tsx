@@ -51,11 +51,18 @@ export default function PracticeHintDialog({
   card,
   onClose,
   returnFocusRef,
+  uiLanguage,
+  requestSave,
+  onSavedChange,
 }: {
   open: boolean;
   card: PracticeHintCard | null;
   onClose: () => void;
   returnFocusRef?: { current: HTMLElement | null };
+  uiLanguage?: string;
+  /** Saved Cards supplies the same save request. Practice keeps the built-in request. */
+  requestSave?: () => Promise<Response>;
+  onSavedChange?: (saved: boolean) => void;
 }) {
   const titleId = useId();
   const descriptionId = useId();
@@ -111,11 +118,17 @@ export default function PracticeHintDialog({
     };
   }, [open, returnFocusRef]);
 
-  if (!open || !card || !String(card.explanation || '').trim()) return null;
+  if (
+    !open ||
+    !card ||
+    (!String(card.explanation || '').trim() && !String(card.explanation_ar || '').trim())
+  ) {
+    return null;
+  }
   if (typeof document === 'undefined') return null;
 
-  const copy = hintDialogCopy(card.language);
-  const formatLabel = hintFormatLabel(card.format, card.language);
+  const copy = hintDialogCopy(uiLanguage || card.language);
+  const formatLabel = hintFormatLabel(card.format, uiLanguage || card.language);
 
   return createPortal(
     <div ref={rootRef} data-practice-hint-root="" className="lt-hint-dialog-overlay">
@@ -128,8 +141,8 @@ export default function PracticeHintDialog({
         aria-labelledby={titleId}
         aria-describedby={descriptionId}
         tabIndex={-1}
-        dir={copy.dir}
-        lang={copy.lang}
+        dir="ltr"
+        lang="en"
         data-testid="practice-hint-dialog"
         className="lt-hint-dialog-panel focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--lingo-red)]"
       >
@@ -138,7 +151,7 @@ export default function PracticeHintDialog({
         </div>
         <div className="flex shrink-0 items-start gap-3 border-b border-[var(--border)] px-5 pb-3 pt-3">
           <div className="min-w-0 flex-1">
-            <h2 id={titleId} className="text-lg font-bold text-[var(--text-primary)]">
+            <h2 id={titleId} dir={copy.dir} lang={copy.lang} className="text-lg font-bold text-[var(--text-primary)]">
               {copy.title}
             </h2>
             <p className="mt-1 text-[13px] font-semibold text-[var(--text-secondary)]">
@@ -166,7 +179,12 @@ export default function PracticeHintDialog({
           </button>
         </div>
         <div className="lt-hint-dialog-scroll">
-          <ExplanationCardPanel card={card} descriptionId={descriptionId} />
+          <ExplanationCardPanel
+            card={card}
+            descriptionId={descriptionId}
+            requestSave={requestSave}
+            onSavedChange={onSavedChange}
+          />
         </div>
         <div className="lt-hint-dialog-footer">
           <button

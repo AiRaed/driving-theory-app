@@ -5,7 +5,7 @@
 
 import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
-import { existsSync, mkdtempSync, readFileSync, unlinkSync } from 'node:fs';
+import { existsSync, mkdtempSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { loadBundledRecommendations } from '../learning-cards/recommendations';
@@ -16,6 +16,11 @@ import { isOfficialQuestionId } from './questionId';
 import { createLocalKeywordCardsRepository } from './localRepository';
 import type { KeywordCardsRepository } from './repository';
 import { keywordImageBytesMatch, keywordImageUploadError } from './imageFile';
+import { approvedAliasesForTerm } from './approvedAliases';
+import { segmentKeywordText } from './highlightTerms';
+import { readLocalKeywordImage, resolveLocalKeywordImage, saveLocalKeywordImage } from './localMedia';
+import { KeywordCardsStoreCorruptError, readKeywordCards } from './localStore';
+import type { KeywordDraft, KeywordDraftFile } from './draftTypes';
 import { loadOfficialQuestionIds } from './importDrafts';
 import { clampKeywordIndex, keywordImageIsReferencedByAnother, normalizeKeywordTerm, showsKeywordImage } from './rules';
 import { createSupabaseKeywordCardsRepository, type KeywordDb } from './supabaseStore';
@@ -289,6 +294,11 @@ async function exercise(repo: KeywordCardsRepository) {
   );
   assert.equal((await repo.listSaved('user-a')).some((card) => card.id === carriageway.id), false);
 
+  const countBeforeDelete = (await repo.list()).keywords.length;
+  await assert.rejects(() => repo.remove(shoulder.id), /Unpublish/);
+  assert.equal((await repo.list()).keywords.length, countBeforeDelete);
+  assert.equal((await repo.listPublishedForQuestion('AB2001')).some((card) => card.id === shoulder.id), true);
+  await repo.setStatus(shoulder.id, 'approved', 'admin-1');
   await repo.remove(shoulder.id);
   assert.equal((await repo.listPublishedForQuestion('AB2001')).some((card) => card.id === shoulder.id), false);
   assert.equal((await repo.listSaved('user-b')).length, 0);
@@ -541,6 +551,216 @@ async function main() {
     assert.equal(needs.length, 490);
     assert.equal(review.length, 57);
     assert.equal(imageEnough.length, 211);
+  });
+
+  await run('Published keyword survives reload, keeps its links, and import cannot replace it', async () => {
+    resetLocal();
+    const repo = createLocalKeywordCardsRepository();
+    const created = await repo.create(
+      {
+        term_en: 'Hard shoulder',
+        explanation_en: 'The strip at the edge of a motorway for emergencies.',
+        translation_ar: 'الكتف',
+        explanation_ar: 'مكان للتوقف الاضطراري.',
+        image_url: 'https://cdn.example/shoulder.png',
+        image_alt: 'Hard shoulder',
+      },
+      'admin-1'
+    );
+    const companion = await repo.create(
+      { term_en: 'Give way', explanation_en: 'Let other road users go first.' },
+      'admin-1'
+    );
+    await repo.link(created.id, 'AB2232', 'admin-1');
+    await repo.link(created.id, 'AB2236', 'admin-1');
+    await repo.link(companion.id, 'AB2243', 'admin-1');
+    const before = (await repo.list()).keywords.length;
+    await repo.setStatus(created.id, 'submitted', 'admin-1');
+    await repo.setStatus(created.id, 'approved', 'admin-1');
+    const published = await repo.setStatus(created.id, 'published', 'admin-1');
+    assert.equal(published.status, 'published');
+    assert.equal((await repo.list()).keywords.length, before);
+    assert.equal((await repo.list({ status: '' })).keywords.length, before);
+    assert.equal((await repo.list()).keywords.some((row) => row.id === companion.id), true);
+
+    const reloaded = createLocalKeywordCardsRepository();
+    const again = (await reloaded.list()).keywords.find((row) => row.id === created.id);
+    assert.equal(again?.status, 'published');
+    assert.equal(again?.explanation_en, 'The strip at the edge of a motorway for emergencies.');
+    assert.equal(again?.image_url, 'https://cdn.example/shoulder.png');
+    assert.deepEqual(
+      (await reloaded.list()).links
+        .filter((link) => link.keyword_id === created.id)
+        .map((link) => link.question_id)
+        .sort(),
+      ['AB2232', 'AB2236']
+    );
+
+    await reloaded.update(
+      created.id,
+      {
+        term_en: 'Hard shoulder',
+        explanation_en: 'Edited definition that must survive refresh.',
+        translation_ar: 'كتف الطريق',
+        explanation_ar: 'شرح معدّل.',
+        image_url: 'https://cdn.example/shoulder-2.png',
+        image_alt: 'Shoulder diagram',
+        notes: again?.notes,
+      },
+      'admin-1'
+    );
+    const edited = (await createLocalKeywordCardsRepository().list()).keywords.find((row) => row.id === created.id);
+    assert.equal(edited?.status, 'published');
+    assert.equal(edited?.explanation_en, 'Edited definition that must survive refresh.');
+    assert.equal(edited?.translation_ar, 'كتف الطريق');
+    assert.equal(edited?.explanation_ar, 'شرح معدّل.');
+    assert.equal(edited?.image_url, 'https://cdn.example/shoulder-2.png');
+    assert.equal(edited?.image_alt, 'Shoulder diagram');
+
+    const visible = await createLocalKeywordCardsRepository().listPublishedForQuestion('AB2232');
+    assert.equal(visible.length, 1);
+    assert.equal(visible[0].id, created.id);
+    const highlight = {
+      id: visible[0].id,
+      term_en: visible[0].term_en,
+      aliases: approvedAliasesForTerm(visible[0].term_en),
+      status: 'published' as const,
+      explanation_en: visible[0].explanation_en,
+    };
+    const stem = segmentKeywordText('You may use the hard shoulder.', [highlight]);
+    assert.deepEqual(
+      stem.filter((part) => part.keywordId).map((part) => part.text),
+      ['hard shoulder']
+    );
+    assert.equal(stem.map((part) => part.text).join(''), 'You may use the hard shoulder.');
+    const practice = readFileSync(path.join(root, 'app/practice/page.tsx'), 'utf8');
+    const options = readFileSync(path.join(root, 'components/AnswerOptionContent.tsx'), 'utf8');
+    assert.equal((practice.match(/prompt=\{currentQuestion\.promptEn\}/g) || []).length, 1);
+    assert.equal(options.includes('segmentKeywordText'), false);
+    assert.equal(options.includes('PracticeKeywordText'), false);
+
+    assert.equal((await reloaded.addSave('learner-1', created.id)).keyword_id, created.id);
+    assert.equal((await reloaded.toggleSave('learner-1', created.id)).saved, false);
+    assert.equal((await reloaded.listSaved('learner-1')).length, 0);
+    assert.equal((await reloaded.toggleSave('learner-1', created.id)).saved, true);
+    assert.equal((await createLocalKeywordCardsRepository().listSaved('learner-1'))[0].explanation_en, edited?.explanation_en);
+
+    const official = loadOfficialQuestionIds();
+    assert.equal(official.has('AB2232') && official.has('AB2236') && official.has('AB2243'), true);
+    const draftKeyword: KeywordDraft = {
+      draft_id: 'kw_hard-shoulder',
+      term_en: 'Hard shoulder',
+      term_normalized: 'hard shoulder',
+      explanation_en: 'Replacement text that must not overwrite the published card.',
+      example_en: '',
+      translation_ar: '',
+      explanation_ar: '',
+      image_url: null,
+      image_alt: null,
+      image_storage_path: null,
+      image_recommended: false,
+      image_concept: null,
+      priority: 'high',
+      status: 'draft',
+      published: false,
+      label_origin: 'source_term',
+      grounding: 'source',
+      review_flag: false,
+      review_note: null,
+      review_concern: null,
+      previous_explanation_en: null,
+      watch_coverage: false,
+      notes: null,
+      aliases: ['hard shoulder'],
+      matched_forms: ['hard shoulder'],
+      question_ids: ['AB2232', 'AB2243'],
+      links: ['AB2232', 'AB2243'].map((question_id) => ({
+        question_id,
+        grounding: 'source' as const,
+        evidence: [],
+      })),
+    };
+    const draftFile: KeywordDraftFile = {
+      schema: 'lingotheory.keyword_card_drafts.v1',
+      migration_reference: '0011_keyword_cards.sql',
+      status: 'draft',
+      published: false,
+      review_required: true,
+      arabic_pending: true,
+      do_not_publish: true,
+      do_not_write_database: true,
+      source: 'test',
+      question_count: official.size,
+      keyword_count: 1,
+      link_count: 2,
+      generated_by: 'tools/generate-keyword-card-drafts.ts',
+      import_note: 'test',
+      keywords: [draftKeyword],
+    };
+    const imported = await reloaded.importDrafts(draftFile, official, 'admin-1');
+    assert.equal(imported.published, false);
+    assert.equal(imported.skipped_protected, 1);
+    assert.equal(imported.updated, 0);
+    const protectedCard = (await createLocalKeywordCardsRepository().list()).keywords.find(
+      (row) => row.id === created.id
+    );
+    assert.equal(protectedCard?.status, 'published');
+    assert.equal(protectedCard?.explanation_en, 'Edited definition that must survive refresh.');
+    assert.equal(protectedCard?.image_url, 'https://cdn.example/shoulder-2.png');
+    assert.equal((await reloaded.list()).keywords.length, before);
+    assert.equal(
+      (await reloaded.list()).links.some(
+        (link) => link.keyword_id === created.id && link.question_id === 'AB2243'
+      ),
+      false
+    );
+    assert.equal(
+      (await reloaded.list()).links.filter((link) => link.keyword_id === created.id).length,
+      2
+    );
+
+    await assert.rejects(() => reloaded.remove(created.id), /Unpublish/);
+    assert.equal((await readKeywordCards()).keywords.length, before);
+    const manager = readFileSync(path.join(root, 'components/admin/KeywordCardsManager.tsx'), 'utf8');
+    assert.ok(manager.includes('Unpublish it before deleting.'));
+    assert.ok(manager.includes('<option value="">All statuses</option>'));
+    assert.ok(manager.includes('data.backend'));
+  });
+
+  await run('A damaged store is not replaced by an empty catalog', async () => {
+    writeFileSync(storeFile, '{', 'utf8');
+    const repo = createLocalKeywordCardsRepository();
+    await assert.rejects(() => repo.list(), KeywordCardsStoreCorruptError);
+    await assert.rejects(
+      () => repo.create({ term_en: 'Box junction', explanation_en: 'Must not replace the file.' }, 'admin-1'),
+      KeywordCardsStoreCorruptError
+    );
+    assert.equal(readFileSync(storeFile, 'utf8'), '{');
+    resetLocal();
+  });
+
+  await run('A local image file survives a new repository read', async () => {
+    resetLocal();
+    const repo = createLocalKeywordCardsRepository();
+    const card = await repo.create(
+      { term_en: 'Box junction', explanation_en: 'Yellow criss-cross markings.' },
+      'admin-1'
+    );
+    const png = new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+    const saved = saveLocalKeywordImage(card.id, png, 'png');
+    await repo.setImage(
+      card.id,
+      { image_url: saved.image_url, image_alt: 'Box junction', image_storage_path: saved.image_storage_path },
+      'admin-1'
+    );
+    const fresh = (await createLocalKeywordCardsRepository().list()).keywords.find((row) => row.id === card.id);
+    assert.equal(fresh?.image_url, saved.image_url);
+    assert.equal(fresh?.image_storage_path, saved.image_storage_path);
+    const bytes = readLocalKeywordImage(card.id, saved.fileName);
+    assert.equal(bytes?.contentType, 'image/png');
+    assert.equal(bytes?.bytes[0], 0x89);
+    assert.equal(resolveLocalKeywordImage(card.id, '../store.json'), null);
+    assert.equal(resolveLocalKeywordImage('not-an-id', saved.fileName), null);
   });
 }
 

@@ -1,8 +1,10 @@
 /**
- * Minimal service worker: stale-while-revalidate for static app shell and assets.
- * Does not cache API calls or auth; dynamic pages use network-first.
+ * Minimal service worker: stale-while-revalidate for the public app shell.
+ * Does not cache API calls, auth, or Next.js build output. Caching /_next
+ * JavaScript kept an older header after the navigation redesign, so the
+ * Admin account-menu entry could stay missing after the source was updated.
  */
-const CACHE_NAME = 'lingotheory-v1';
+const CACHE_NAME = 'lingotheory-v3';
 
 const STATIC_ASSETS = [
   '/',
@@ -31,10 +33,12 @@ self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Never cache API, auth, or non-GET
+  // Never cache API, auth, Next bundles, or non-GET
   if (request.method !== 'GET') return;
   if (url.pathname.startsWith('/api/')) return;
   if (url.pathname.startsWith('/auth')) return;
+  if (url.pathname.startsWith('/_next/')) return;
+  if (url.pathname === '/sw.js') return;
 
   // Static assets: stale-while-revalidate
   const isStatic =

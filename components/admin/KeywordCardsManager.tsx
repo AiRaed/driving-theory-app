@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { canAdvanceCardStatus, type LearningCardStatus } from '@/lib/learning-cards/types';
 
 type KeywordRow = {
@@ -118,12 +118,14 @@ export default function KeywordCardsManager() {
   const [message, setMessage] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const [storage, setStorage] = useState<'local' | 'supabase' | ''>('');
   const [busy, setBusy] = useState(false);
   const [libraryOpen, setLibraryOpen] = useState(false);
   const [library, setLibrary] = useState<Array<{ url: string; label: string }>>([]);
   const [importPreview, setImportPreview] = useState<ImportPreview | null>(null);
   const [importResult, setImportResult] = useState<ImportResult | null>(null);
   const [importConfirmed, setImportConfirmed] = useState(false);
+  const editorPanelRef = useRef<HTMLElement>(null);
 
   const load = useCallback(async () => {
     setLoading(true);
@@ -133,10 +135,12 @@ export default function KeywordCardsManager() {
       setError(data.error || 'Could not load keyword cards');
       setRows([]);
       setLinks([]);
+      setStorage('');
     } else {
       setError(null);
       setRows(data.keywords || []);
       setLinks(data.links || []);
+      setStorage(data.backend === 'local' || data.backend === 'supabase' ? data.backend : '');
     }
     setLoading(false);
   }, []);
@@ -160,11 +164,34 @@ export default function KeywordCardsManager() {
     });
   }, [rows, query, status]);
 
+  const statusCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const row of rows) counts.set(row.status, (counts.get(row.status) || 0) + 1);
+    return counts;
+  }, [rows]);
+
   const linked = editor.id
     ? links.filter((link) => link.keyword_id === editor.id).map((link) => link.question_id)
     : [];
 
   const dirty = JSON.stringify(draftFields(editor)) !== JSON.stringify(savedDraft);
+
+  const revealEditor = () => {
+    if (typeof window === 'undefined') return;
+    if (!window.matchMedia('(max-width: 1023px)').matches) return;
+    window.requestAnimationFrame(() => {
+      editorPanelRef.current?.scrollIntoView({ block: 'start' });
+    });
+  };
+
+  const startNewKeyword = () => {
+    setEditor(EMPTY);
+    setSavedDraft(draftFields(EMPTY));
+    setQuestionId('');
+    setMessage(null);
+    setError(null);
+    revealEditor();
+  };
 
   const fillEditor = (row: KeywordRow, options?: { keepNotice?: boolean }) => {
     const next: EditorState = {
@@ -254,6 +281,10 @@ export default function KeywordCardsManager() {
 
   const remove = async () => {
     if (!editor.id) return;
+    if (editor.status === 'published') {
+      setError('Unpublish the keyword card before deleting it.');
+      return;
+    }
     const confirmed = window.confirm(
       `Delete “${editor.term_en}”? This removes ${linked.length} question link(s) and any saved copies. Official questions are not changed.`
     );
@@ -543,8 +574,35 @@ export default function KeywordCardsManager() {
           {message}
         </p>
       ) : null}
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-        <section className="lt-card p-4 space-y-3">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+        <section className="lt-card space-y-3 p-4">
+          <div className="flex flex-wrap items-end justify-between gap-2">
+            <h2 className="text-lg font-bold" data-testid="keyword-card-count">
+              {loading ? 'Loading keyword cards' : `${rows.length} keyword cards`}
+            </h2>
+            <button type="button" className="lt-btn-secondary px-3 py-2 text-sm" onClick={startNewKeyword}>
+              New keyword
+            </button>
+          </div>
+          {storage ? (
+            <p className="text-xs text-[var(--text-secondary)]">
+              {storage === 'local'
+                ? 'Local development store. Refresh and restart read this file.'
+                : 'Supabase. Refresh and restart read these rows.'}
+            </p>
+          ) : null}
+          <p className="text-sm text-[var(--text-secondary)]" aria-live="polite">
+            {loading
+              ? 'The list will appear here.'
+              : query || status
+                ? `Showing ${visible.length} of ${rows.length}. Scroll the list to browse.`
+                : `Scroll the list to browse all ${rows.length}.`}
+          </p>
+          {!loading && rows.length > 0 ? (
+            <p className="text-xs font-semibold uppercase tracking-wide text-[var(--text-secondary)]">
+              {STATUSES.map((item) => `${statusCounts.get(item) || 0} ${item}`).join(' · ')}
+            </p>
+          ) : null}
           <div className="flex flex-wrap gap-2">
             <input
               className="lt-input min-w-0 flex-1"
@@ -567,31 +625,17 @@ export default function KeywordCardsManager() {
               ))}
             </select>
           </div>
-          <button
-            type="button"
-            className="lt-btn-secondary px-3 py-2 text-sm"
-            onClick={() => {
-              setEditor(EMPTY);
-              setSavedDraft(draftFields(EMPTY));
-              setMessage(null);
-              setError(null);
-            }}
-          >
-            New keyword
-          </button>
-          <p className="text-xs text-[var(--text-secondary)]" aria-live="polite">
-            {loading
-              ? 'Loading keyword cards'
-              : query || status
-                ? `${visible.length} of ${rows.length} keyword cards`
-                : `${rows.length} keyword cards`}
-          </p>
           {!loading && visible.length === 0 ? (
             <p className="text-sm text-[var(--text-secondary)]">
               {rows.length === 0 ? 'No keyword cards yet.' : 'No keyword cards match this search.'}
             </p>
           ) : null}
-          <ul className="max-h-[50vh] space-y-2 overflow-y-auto lg:max-h-[70vh]" aria-label="Keyword cards">
+          <ul
+            className="lt-keyword-list h-[min(32rem,62vh)] space-y-2 overflow-y-scroll rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-secondary)] p-2"
+            aria-label={
+              loading ? 'Keyword cards' : `${visible.length} of ${rows.length} keyword cards`
+            }
+          >
             {visible.map((row) => (
               <li key={row.id}>
                 <button
@@ -602,7 +646,11 @@ export default function KeywordCardsManager() {
                       ? 'border-[var(--lingo-red)] bg-[var(--surface-secondary)]'
                       : 'border-[var(--border)]'
                   }`}
-                  onClick={() => fillEditor(row)}
+                  onClick={() => {
+                    fillEditor(row);
+                    setQuestionId('');
+                    revealEditor();
+                  }}
                 >
                   <span className="block font-semibold">{row.term_en}</span>
                   <span className="text-[11px] uppercase text-[var(--text-secondary)]">
@@ -616,7 +664,17 @@ export default function KeywordCardsManager() {
             ))}
           </ul>
         </section>
-        <section className="lt-card p-4 space-y-4">
+        <section ref={editorPanelRef} className="lt-card scroll-mt-4 space-y-4 p-4">
+          <div>
+            <h2 className="text-base font-bold">{editor.id ? 'Edit keyword' : 'New keyword'}</h2>
+            <p className="mt-1 text-sm text-[var(--text-secondary)]">
+              {editor.id
+                ? `${editor.term_en} · ${editor.status} · ${linked.length} linked questions · ${
+                    editor.image_url ? 'image attached' : 'text only'
+                  }`
+                : 'Blank card. The keyword list stays beside this editor.'}
+            </p>
+          </div>
           <form
             className="space-y-3"
             onSubmit={(event) => {
@@ -727,12 +785,17 @@ export default function KeywordCardsManager() {
               <button type="submit" className="lt-btn-primary px-3 py-2 text-sm" disabled={busy}>
                 {editor.id ? 'Save changes' : 'Save draft'}
               </button>
-              {editor.id ? (
+              {editor.id && editor.status !== 'published' ? (
                 <button type="button" className="lt-btn-ghost px-3 py-2 text-sm text-[var(--wrong)]" onClick={() => void remove()}>
                   Delete
                 </button>
               ) : null}
             </div>
+            {editor.status === 'published' ? (
+              <p className="text-xs text-[var(--text-secondary)]">
+                This card stays in the list while it is published. Unpublish it before deleting.
+              </p>
+            ) : null}
           </form>
           {editor.id ? (
             <div className="space-y-2 border-t border-[var(--border)] pt-3">
@@ -764,7 +827,9 @@ export default function KeywordCardsManager() {
             </div>
           ) : null}
           <div className="space-y-2 border-t border-[var(--border)] pt-3">
-            <h2 className="text-sm font-bold">Linked official questions</h2>
+            <h2 className="text-sm font-bold">
+              Linked official questions{editor.id ? ` (${linked.length})` : ''}
+            </h2>
             {editor.id ? (
               <form
                 className="flex flex-wrap gap-2"
@@ -787,7 +852,7 @@ export default function KeywordCardsManager() {
             ) : (
               <p className="text-xs text-[var(--text-secondary)]">Save the keyword before linking questions.</p>
             )}
-            <ul className="space-y-1">
+            <ul className="max-h-48 space-y-1 overflow-y-auto">
               {linked.map((id) => (
                 <li key={id} className="flex items-center justify-between gap-2 text-sm">
                   <span>{id}</span>

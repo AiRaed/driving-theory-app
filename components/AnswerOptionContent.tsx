@@ -50,7 +50,11 @@ export default function AnswerOptionContent({
       {hasImage && imageFailed ? (
         <div className="text-sm text-[var(--text-secondary)] italic mb-1">{missingLabel}</div>
       ) : null}
-      {hasText ? <div className={enClassName}>{option.en}</div> : null}
+      {hasText ? (
+        <div className={enClassName} dir="ltr" lang="en">
+          {option.en}
+        </div>
+      ) : null}
       {children}
     </div>
   );

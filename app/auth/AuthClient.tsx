@@ -149,8 +149,18 @@ export default function AuthClient() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 py-8">
-      <div className="w-full max-w-md">
+    <div className="lt-page flex items-center py-8 sm:py-12">
+      <div className="grid w-full items-stretch gap-4 lg:grid-cols-[0.85fr_1.15fr]">
+        <aside className="hidden flex-col justify-between rounded-[1.35rem] bg-[var(--navy)] p-8 text-white lg:flex">
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-white/65">LingoTheory</p>
+          <div>
+            <h2 className="text-3xl font-bold leading-tight">Your theory practice, in one account.</h2>
+            <p className="mt-3 text-sm leading-relaxed text-white/75">
+              Sign in to practise, sit a mock test, and keep the cards you save. English stays first.
+            </p>
+          </div>
+          <p className="text-xs text-white/55">UK driving theory</p>
+        </aside>
         <div className="lt-card-accent p-6 sm:p-8">
           <h1 className="text-2xl font-semibold mb-6 text-[var(--text-primary)] text-center pt-1">
             {mode === 'login' && 'Log in'}
@@ -159,7 +169,7 @@ export default function AuthClient() {
           </h1>
 
           {/* Tabs */}
-          <div className="flex gap-2 mb-6 border-b border-[var(--border)]">
+          <div className="lt-segmented mb-6 w-full">
             <button
               onClick={() => {
                 setMode('login');
@@ -167,11 +177,9 @@ export default function AuthClient() {
                 setMessage(null);
               }}
               className={cn(
-                'px-4 py-2 text-sm font-medium transition-colors',
-                mode === 'login'
-                  ? 'text-[var(--lingo-red)] border-b-2 border-[var(--lingo-red)]'
-                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                'lt-segmented-btn inline-flex flex-1 items-center justify-center min-h-11 px-3 py-2 text-sm'
               )}
+              data-active={mode === 'login'}
             >
               Login
             </button>
@@ -182,11 +190,9 @@ export default function AuthClient() {
                 setMessage(null);
               }}
               className={cn(
-                'px-4 py-2 text-sm font-medium transition-colors',
-                mode === 'register'
-                  ? 'text-[var(--lingo-red)] border-b-2 border-[var(--lingo-red)]'
-                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                'lt-segmented-btn inline-flex flex-1 items-center justify-center min-h-11 px-3 py-2 text-sm'
               )}
+              data-active={mode === 'register'}
             >
               Register
             </button>
@@ -197,11 +203,9 @@ export default function AuthClient() {
                 setMessage(null);
               }}
               className={cn(
-                'px-4 py-2 text-sm font-medium transition-colors',
-                mode === 'forgot'
-                  ? 'text-[var(--lingo-red)] border-b-2 border-[var(--lingo-red)]'
-                  : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
+                'lt-segmented-btn inline-flex flex-1 items-center justify-center min-h-11 px-3 py-2 text-sm'
               )}
+              data-active={mode === 'forgot'}
             >
               Forgot
             </button>

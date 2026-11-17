@@ -1,5 +1,6 @@
 'use client';
 
+import ArabicDraftNote from '@/components/ArabicDraftNote';
 import SaveCardButton from '@/components/SaveCardButton';
 import {
   hintDialogCopy,
@@ -10,22 +11,45 @@ import {
 export default function ExplanationCardPanel({
   card,
   descriptionId,
+  requestSave,
+  onSavedChange,
 }: {
   card: PracticeHintCard | null;
   descriptionId?: string;
+  requestSave?: () => Promise<Response>;
+  onSavedChange?: (saved: boolean) => void;
 }) {
-  if (!card || !String(card.explanation || '').trim()) return null;
+  if (
+    !card ||
+    (!String(card.explanation || '').trim() && !String(card.explanation_ar || '').trim())
+  ) {
+    return null;
+  }
   const copy = hintDialogCopy(card.language);
   const media = hintMediaVisibility(card);
   return (
     <div className="space-y-3">
-      <p
-        dir={copy.dir}
-        lang={copy.lang}
-        className="text-base leading-7 text-[var(--text-primary)] whitespace-pre-wrap"
-      >
-        {card.explanation}
-      </p>
+      {String(card.explanation || '').trim() ? (
+        <p
+          dir="ltr"
+          lang="en"
+          className="text-base leading-7 text-[var(--text-primary)] whitespace-pre-wrap"
+        >
+          {card.explanation}
+        </p>
+      ) : null}
+      {String(card.explanation_ar || '').trim() ? (
+        <div>
+          <ArabicDraftNote show={card.arabic_review === 'draft'} />
+          <p
+            dir="rtl"
+            lang="ar"
+            className="text-start text-base leading-7 text-[var(--text-primary)] whitespace-pre-wrap break-words"
+          >
+            {card.explanation_ar}
+          </p>
+        </div>
+      ) : null}
       {media.image && card.image_url ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -49,7 +73,12 @@ export default function ExplanationCardPanel({
         This is a LingoTheory learning hint, not a DVSA-approved explanation. Official wording
         stays on the question.
       </p>
-      <SaveCardButton cardKind="explanation" explanationCardId={card.id} />
+      <SaveCardButton
+        cardKind="explanation"
+        explanationCardId={card.id}
+        requestSave={requestSave}
+        onSavedChange={onSavedChange}
+      />
     </div>
   );
 }

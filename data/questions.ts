@@ -14,6 +14,8 @@ export interface Question {
   options: QuestionOption[];
   keywords: { term: string; ar: string; explainAr: string; explainEn?: string }[];
   image?: string; // path to an image in /public
+  /** Set only when Arabic was filled from an unreviewed local draft. */
+  arabicReview?: 'approved' | 'draft';
 }
 
 export const questions: Question[] = [

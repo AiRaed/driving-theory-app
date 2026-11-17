@@ -1,4 +1,5 @@
 import type { Question } from '@/data/questions';
+import { applyDevelopmentQuestionArabic } from '@/lib/i18n/arabic/preview';
 import type { TranslationData } from '@/lib/translations';
 import { createClient } from '@/lib/supabase/server';
 import {
@@ -83,7 +84,14 @@ export async function getPublishedQuestionBank(): Promise<LearnerBank> {
       return emptyBank(gate.reasons);
     }
 
-    const questions = rows.map(rowToLearnerQuestion);
+    const questions = rows.map((row) =>
+      applyDevelopmentQuestionArabic(rowToLearnerQuestion(row), [
+        row.answer_1_en || '',
+        row.answer_2_en || '',
+        row.answer_3_en || '',
+        row.answer_4_en || '',
+      ])
+    );
     const urduByTopic: TranslationData = {};
     const romanianByTopic: TranslationData = {};
     const polishByTopic: TranslationData = {};

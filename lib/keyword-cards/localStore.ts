@@ -4,7 +4,7 @@
  */
 
 import { randomUUID } from 'node:crypto';
-import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import type { LearningCardStatus } from '../learning-cards/types';
 import {
@@ -38,6 +38,14 @@ function emptyState(): KeywordCardsLocalState {
   return { keywords: [], links: [], saves: [] };
 }
 
+export class KeywordCardsStoreCorruptError extends Error {
+  constructor() {
+    super('Keyword card store could not be read. Refusing to replace it.');
+    this.name = 'KeywordCardsStoreCorruptError';
+    Object.setPrototypeOf(this, new.target.prototype);
+  }
+}
+
 function nowIso(): string {
   return new Date().toISOString();
 }
@@ -49,22 +57,30 @@ export function keywordCardsStorePath(): string {
 export function readKeywordCards(): KeywordCardsLocalState {
   const storePath = keywordCardsStorePath();
   if (!existsSync(storePath)) return emptyState();
+  let raw: unknown;
   try {
-    const raw = JSON.parse(readFileSync(storePath, 'utf8'));
-    return {
-      keywords: Array.isArray(raw.keywords) ? raw.keywords : [],
-      links: Array.isArray(raw.links) ? raw.links : [],
-      saves: Array.isArray(raw.saves) ? raw.saves : [],
-    };
+    raw = JSON.parse(readFileSync(storePath, 'utf8'));
   } catch {
-    return emptyState();
+    throw new KeywordCardsStoreCorruptError();
   }
+  if (!raw || typeof raw !== 'object') throw new KeywordCardsStoreCorruptError();
+  const record = raw as Partial<KeywordCardsLocalState>;
+  if (!Array.isArray(record.keywords) || !Array.isArray(record.links) || !Array.isArray(record.saves)) {
+    throw new KeywordCardsStoreCorruptError();
+  }
+  return {
+    keywords: record.keywords,
+    links: record.links,
+    saves: record.saves,
+  };
 }
 
 export function writeKeywordCards(state: KeywordCardsLocalState): void {
   const storePath = keywordCardsStorePath();
   mkdirSync(path.dirname(storePath), { recursive: true });
-  writeFileSync(storePath, JSON.stringify(state, null, 2) + '\n', 'utf8');
+  const temporary = `${storePath}.${process.pid}.tmp`;
+  writeFileSync(temporary, JSON.stringify(state, null, 2) + '\n', 'utf8');
+  renameSync(temporary, storePath);
 }
 
 function requireKeyword(state: KeywordCardsLocalState, id: string): KeywordRecord {
@@ -214,7 +230,10 @@ export function setKeywordImage(
 
 export function removeKeyword(id: string): void {
   const state = readKeywordCards();
-  requireKeyword(state, id);
+  const existing = requireKeyword(state, id);
+  if (existing.status === 'published') {
+    throw new Error('Unpublish the keyword card before deleting it');
+  }
   state.keywords = state.keywords.filter((row) => row.id !== id);
   state.links = state.links.filter((row) => row.keyword_id !== id);
   state.saves = state.saves.filter((row) => row.keyword_id !== id);

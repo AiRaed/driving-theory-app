@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { applyDevelopmentKeywordArabic } from '@/lib/i18n/arabic/preview';
+import { approvedAliasesForTerm } from '@/lib/keyword-cards/approvedAliases';
 import { getKeywordCardsRepository } from '@/lib/keyword-cards/store';
 
 export const dynamic = 'force-dynamic';
@@ -11,7 +13,12 @@ export async function GET(request: NextRequest) {
   }
   try {
     const repo = await getKeywordCardsRepository({ mode: 'learner' });
-    const keywords = await repo.listPublishedForQuestion(questionId);
+    const keywords = (await repo.listPublishedForQuestion(questionId)).map((card) =>
+      applyDevelopmentKeywordArabic({
+        ...card,
+        aliases: approvedAliasesForTerm(card.term_en),
+      })
+    );
     return NextResponse.json({ keywords, dvsa_approved: false, backend: repo.backend });
   } catch (error) {
     console.error(

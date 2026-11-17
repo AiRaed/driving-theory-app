@@ -131,7 +131,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     if (typeof document === 'undefined') return;
-    document.documentElement.lang = getLanguageMeta(lang).urlCode;
+    const meta = getLanguageMeta(lang);
+    document.documentElement.lang = meta.urlCode;
+    document.documentElement.dir = 'ltr';
   }, [lang]);
 
   const setLang = useCallback(

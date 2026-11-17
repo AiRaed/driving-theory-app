@@ -246,7 +246,10 @@ export function createSupabaseKeywordCardsRepository(
       return asKeywordRecord(updated);
     },
     async remove(id) {
-      await requireRow(id);
+      const existing = await requireRow(id);
+      if (existing.status === 'published') {
+        throw new Error('Unpublish the keyword card before deleting it');
+      }
       await unwrap(client.from('keyword_saves').delete().eq('keyword_id', id), false);
       await unwrap(client.from('keyword_question_links').delete().eq('keyword_id', id), false);
       await unwrap(client.from('keywords').delete().eq('id', id), false);

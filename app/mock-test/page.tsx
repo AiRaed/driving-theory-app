@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { shuffleArray } from "@/lib/shuffle";
 import TTSButton from "@/components/TTSButton";
 import AnswerOptionContent from "@/components/AnswerOptionContent";
+import ArabicDraftNote from "@/components/ArabicDraftNote";
 import DisclaimerModal from "@/components/DisclaimerModal";
 import LanguageSelector from "@/components/LanguageSelector";
 import BilingualLabel from "@/components/BilingualLabel";
@@ -105,11 +106,18 @@ export default function MockTestPage() {
   const [selectedOptionIndex, setSelectedOptionIndex] = useState<number | null>(null);
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
   const [isFinished, setIsFinished] = useState(false);
+  const [elapsedSec, setElapsedSec] = useState(0);
   const mockSessionIdRef = useRef<string | null>(null);
   const mockCompleteTrackedRef = useRef(false);
   const mockStartedTrackedRef = useRef(false);
   
   // Mock Test is PAID ONLY — free_questions_used never unlocks Mock.
+  useEffect(() => {
+    if (!mockQuestions.length || isFinished) return;
+    const id = window.setInterval(() => setElapsedSec((value) => value + 1), 1000);
+    return () => window.clearInterval(id);
+  }, [mockQuestions.length, isFinished]);
+
   const mockAccess = decideMockAccess({
     paid: paid === true,
     statusConfirmed,
@@ -341,6 +349,7 @@ export default function MockTestPage() {
   const initializeTest = (forceNew: boolean = false) => {
     if (forceNew) {
       clearSession();
+      setElapsedSec(0);
     }
 
     const savedSession = loadSession();
@@ -559,6 +568,7 @@ export default function MockTestPage() {
     setCurrentIndex(0);
     setSelectedOptionIndex(null);
     setAnswers([]);
+    setElapsedSec(0);
   };
 
   // Calculate score
@@ -703,9 +713,10 @@ export default function MockTestPage() {
                 return (
                   <div
                     key={`${question.id}-${idx}`}
+                    dir="ltr"
                     className="lt-card p-5 sm:p-6 mb-3 text-sm"
                   >
-                    <p className="font-bold mb-2 text-[var(--text-primary)] text-base">{question.promptEn}</p>
+                    <p dir="ltr" lang="en" className="font-bold mb-2 text-[var(--text-primary)] text-base">{question.promptEn}</p>
                     {(() => {
                       const promptTranslation = getQuestionPromptTranslation(
                         question,
@@ -714,13 +725,17 @@ export default function MockTestPage() {
                       );
                       if (!promptTranslation) return null;
                       return (
-                        <p 
-                          className="text-[var(--text-secondary)] mb-3 leading-[1.8] tracking-wide font-medium" 
-                          dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'} 
-                          style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
-                        >
-                          {promptTranslation}
-                        </p>
+                        <div className="mb-3">
+                          <ArabicDraftNote show={translationLang === 'ar' && question.arabicReview === 'draft'} />
+                          <p 
+                            className="text-start break-words text-[var(--text-secondary)] leading-[1.8] tracking-wide font-medium" 
+                            dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'}
+                            lang={translationLang === 'ar' ? 'ar' : undefined}
+                            style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
+                          >
+                            {promptTranslation}
+                          </p>
+                        </div>
                       );
                     })()}
                     <div className="text-sm text-[var(--text-secondary)]">
@@ -746,6 +761,7 @@ export default function MockTestPage() {
                                 {' · '}
                                 <span
                                   dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'}
+                                  lang={translationLang === 'ar' ? 'ar' : undefined}
                                   style={
                                     translationLang === 'ar'
                                       ? { fontFeatureSettings: '"liga" 1, "kern" 1', lineHeight: '1.8' }
@@ -793,8 +809,11 @@ export default function MockTestPage() {
             >
               <BilingualLabel keyName="backToDashboard" lang={translationLang} />
             </Link>
-            <span className="hidden md:inline-flex items-center px-3 py-1.5 rounded-md text-xs font-semibold bg-[var(--lingo-red-soft)] text-[var(--lingo-red)] border border-[var(--lingo-red-muted)]">
+            <span className="inline-flex min-h-11 items-center rounded-xl bg-[var(--navy)] px-3 text-xs font-bold text-white">
               {enLabel('mockTest')}
+            </span>
+            <span className="inline-flex min-h-11 items-center rounded-xl bg-[var(--teal-soft)] px-3 text-sm font-bold tabular-nums text-[var(--teal)]">
+              {String(Math.floor(elapsedSec / 60)).padStart(2, '0')}:{String(elapsedSec % 60).padStart(2, '0')}
             </span>
             <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-start sm:gap-3 flex-1 min-w-0">
               <span className="text-xs md:text-sm font-medium text-[var(--text-secondary)] whitespace-nowrap">
@@ -822,7 +841,7 @@ export default function MockTestPage() {
         </div>
         <DisclaimerModal lang={translationLang} />
         {/* Question Card */}
-        <div className="lt-card-accent p-6 sm:p-7 mt-4">
+        <div dir="ltr" className="mx-auto max-w-3xl rounded-[18px] border border-[var(--border)] bg-white p-4 shadow-[var(--shadow-sm)] sm:p-7">
           {/* Progress Section */}
           <div className="mb-3">
             <div className="flex items-center justify-between mb-1.5">
@@ -833,11 +852,8 @@ export default function MockTestPage() {
                 {enLabel('percentComplete', { percent: Math.round(((currentIndex + 1) / mockQuestions.length) * 100) })}
               </div>
             </div>
-            <div className="h-1.5 w-full bg-[var(--surface-secondary)] rounded-full overflow-hidden">
-              <div
-                className="h-full bg-[var(--lingo-red)] rounded-full transition-all duration-500 ease-out"
-                style={{ width: `${((currentIndex + 1) / mockQuestions.length) * 100}%` }}
-              />
+            <div className="lt-progress" aria-hidden>
+              <span style={{ width: `${((currentIndex + 1) / mockQuestions.length) * 100}%` }} />
             </div>
             {currentIndex + 1 === mockQuestions.length && (
               <p className="text-xs text-[var(--teal)] mt-2 font-medium">{enLabel('finalQuestion')}</p>
@@ -874,7 +890,7 @@ export default function MockTestPage() {
 
           {/* Question Prompt */}
           <div className="flex items-start justify-between gap-2 sm:gap-3 mb-2">
-            <h2 className="text-[19px] sm:text-[21px] font-bold text-[var(--text-primary)] leading-[1.4] flex-1 min-w-0 break-words whitespace-normal">
+            <h2 dir="ltr" lang="en" className="text-[19px] sm:text-[21px] font-bold text-[var(--text-primary)] leading-[1.4] flex-1 min-w-0 break-words whitespace-normal">
               {currentQuestion.promptEn}
             </h2>
             <div className="flex items-center gap-2 flex-shrink-0 mt-1">
@@ -891,13 +907,17 @@ export default function MockTestPage() {
             if (!translationText) return null;
             
             return (
-              <p 
-                className="text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold mb-3 leading-[1.8] tracking-wide" 
-                dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'} 
-                style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
-              >
-                {translationText}
-              </p>
+              <div className="mb-3">
+                <ArabicDraftNote show={translationLang === 'ar' && currentQuestion.arabicReview === 'draft'} />
+                <p 
+                  className="text-start break-words text-[16px] sm:text-[17px] text-[var(--text-primary)] font-semibold leading-[1.8] tracking-wide" 
+                  dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'}
+                  lang={translationLang === 'ar' ? 'ar' : undefined}
+                  style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
+                >
+                  {translationText}
+                </p>
+              </div>
             );
           })()}
 
@@ -968,12 +988,13 @@ export default function MockTestPage() {
                         return (
                           <div 
                             className={cn(
-                              "text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
+                              "text-start break-words text-[15px] sm:text-[16px] mt-2 leading-[1.8] tracking-wide font-medium",
                               isSelected && !showCorrect && !showWrong ? "text-[var(--lingo-red-dark)]/90" : 
                               showCorrect ? "text-[var(--correct)]/90" :
                               showWrong ? "text-[var(--wrong)]/90" : "text-[var(--text-secondary)]"
                             )} 
-                            dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'} 
+                            dir={isLtrTranslationLang(translationLang) ? 'ltr' : 'rtl'}
+                            lang={translationLang === 'ar' ? 'ar' : undefined}
                             style={translationLang === 'ar' ? { fontFeatureSettings: '"liga" 1, "kern" 1' } : undefined}
                           >
                             {translationText}
@@ -1001,7 +1022,7 @@ export default function MockTestPage() {
           )}
 
           {/* Navigation Buttons */}
-          <div className="mt-6 grid grid-cols-3 gap-3 md:flex md:justify-between md:items-center">
+          <div className="mt-6 flex flex-col gap-2 sm:grid sm:grid-cols-3 sm:gap-3 md:flex md:justify-between md:items-center">
             {/* Base button styles - consistent for all buttons */}
             <button
               onClick={handlePrevious}

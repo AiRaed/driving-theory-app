@@ -11,6 +11,8 @@ export interface PracticeHintCard {
   image_url?: string | null;
   image_alt?: string | null;
   video_url?: string | null;
+  explanation_ar?: string | null;
+  arabic_review?: 'approved' | 'draft' | null;
 }
 
 export interface HintDialogCopy {

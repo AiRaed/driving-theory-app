@@ -149,6 +149,7 @@ export function createLocalLearningCardsRepository(): LearningCardsRepository {
         keywords: [...keywords, ...fallbackKeywords],
         terms: state.keyword_terms.filter((t) => termKeys.includes(t.term_key)),
         explanation,
+        explanation_fallback: explanation != null && explanation.language !== lang,
         dvsa_approved: false,
       };
     },

@@ -53,10 +53,10 @@ export default function Navigation() {
 
   const navLinkClass = (active: boolean) =>
     cn(
-      'relative px-3 py-1.5 md:px-3.5 md:py-2 rounded-[var(--radius-sm)] text-xs md:text-sm font-semibold tracking-tight transition-colors duration-150 whitespace-nowrap flex-shrink-0',
+      'relative inline-flex items-center min-h-11 px-2.5 py-1.5 md:px-3.5 md:py-2 rounded-xl text-xs md:text-sm font-semibold tracking-tight transition-colors duration-150 whitespace-nowrap flex-shrink-0',
       active
-        ? 'text-[var(--lingo-red)] bg-[var(--lingo-red-soft)]'
-        : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-secondary)]'
+        ? 'bg-white text-[var(--navy)]'
+        : 'text-white/80 hover:bg-white/10 hover:text-white'
     );
 
   const showAdmin = authReady && adminReady && !!user && isAdmin;
@@ -71,7 +71,7 @@ export default function Navigation() {
             href="/practice"
             prefetch={true}
             data-active={pathname === '/practice'}
-            className={navLinkClass(pathname === '/practice')}
+            className={cn(navLinkClass(pathname === '/practice'), 'hidden md:inline-flex')}
           >
             {enLabel('navPractice')}
           </Link>
@@ -79,7 +79,7 @@ export default function Navigation() {
             href="/mock-test"
             prefetch={true}
             data-active={pathname === '/mock-test'}
-            className={navLinkClass(pathname === '/mock-test')}
+            className={cn(navLinkClass(pathname === '/mock-test'), 'hidden md:inline-flex')}
           >
             {enLabel('navMockTest')}
           </Link>
@@ -88,7 +88,7 @@ export default function Navigation() {
               href="/saved-cards"
               prefetch={true}
               data-active={pathname === '/saved-cards'}
-              className={navLinkClass(pathname === '/saved-cards')}
+              className={cn(navLinkClass(pathname === '/saved-cards'), 'hidden md:inline-flex')}
             >
               {enLabel('navSavedCards')}
             </Link>
@@ -121,7 +121,7 @@ export default function Navigation() {
         <button
           onClick={handleLogout}
           disabled={loggingOut}
-          className="px-3 py-1.5 md:px-3.5 md:py-2 rounded-[var(--radius-sm)] text-xs md:text-sm font-semibold tracking-tight transition-colors duration-150 text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--surface-secondary)] disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap flex-shrink-0"
+          className="inline-flex min-h-11 flex-shrink-0 items-center whitespace-nowrap rounded-xl px-2.5 py-1.5 text-xs font-semibold tracking-tight text-white/80 transition-colors duration-150 hover:bg-white/10 hover:text-white disabled:cursor-not-allowed disabled:opacity-50 md:px-3.5 md:py-2 md:text-sm"
         >
           {loggingOut ? enLabel('loggingOut') : enLabel('logOut')}
         </button>
@@ -130,7 +130,7 @@ export default function Navigation() {
           href="/auth"
           className={cn(
             navLinkClass(pathname === '/auth'),
-            pathname !== '/auth' && 'text-[var(--lingo-red)]'
+            pathname !== '/auth' && 'text-white'
           )}
         >
           {enLabel('logIn')}

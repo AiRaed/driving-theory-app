@@ -8,6 +8,7 @@ import { requireAdminApi } from '@/lib/admin/auth';
 import { createServiceClient } from '@/lib/admin/supabaseAdmin';
 import { keywordImageExtension, keywordImageUploadError } from '@/lib/keyword-cards/imageFile';
 import { keywordCardsError } from '@/lib/keyword-cards/http';
+import { removeLocalKeywordImage, saveLocalKeywordImage } from '@/lib/keyword-cards/localMedia';
 import { keywordImageIsReferencedByAnother } from '@/lib/keyword-cards/rules';
 import { getKeywordCardsRepository } from '@/lib/keyword-cards/store';
 import { learningCardsBackend } from '@/lib/learning-cards/backend';
@@ -22,7 +23,12 @@ async function resolveId(ctx: Ctx): Promise<string> {
 }
 
 async function removeOwnedImage(storagePath: string | null | undefined) {
-  if (!storagePath || !storagePath.startsWith('keyword-cards/')) return;
+  if (!storagePath) return;
+  if (storagePath.startsWith('local/')) {
+    removeLocalKeywordImage(storagePath);
+    return;
+  }
+  if (!storagePath.startsWith('keyword-cards/')) return;
   try {
     const admin = createServiceClient();
     await admin.storage.from('question-images').remove([storagePath]);
@@ -34,15 +40,6 @@ async function removeOwnedImage(storagePath: string | null | undefined) {
 export async function POST(request: NextRequest, ctx: Ctx) {
   const user = await requireAdminApi();
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-  if (learningCardsBackend() !== 'supabase') {
-    return NextResponse.json(
-      {
-        error:
-          'Image upload needs Supabase Storage. You can still save a text-only keyword card, or choose an existing image when storage is available.',
-      },
-      { status: 503 }
-    );
-  }
   try {
     const id = await resolveId(ctx);
     const form = await request.formData();
@@ -71,6 +68,35 @@ export async function POST(request: NextRequest, ctx: Ctx) {
       return NextResponse.json({ error: 'Keyword card not found' }, { status: 404 });
     }
 
+    if (learningCardsBackend() !== 'supabase') {
+      const saved = saveLocalKeywordImage(id, bytes, keywordImageExtension(checked.kind));
+      const keyword = await repo.setImage(
+        id,
+        {
+          image_url: saved.image_url,
+          image_alt: alt,
+          image_storage_path: saved.image_storage_path,
+        },
+        user.id
+      );
+      const afterUpload = await repo.list();
+      const previousPath = existing.image_storage_path || '';
+      if (
+        !keywordImageIsReferencedByAnother(afterUpload.keywords, id, {
+          image_url: existing.image_url,
+          image_storage_path: previousPath,
+        })
+      ) {
+        await removeOwnedImage(previousPath);
+      }
+      return NextResponse.json({
+        keyword,
+        image_url: saved.image_url,
+        official_question_unchanged: true,
+        backend: 'local',
+      });
+    }
+
     const storagePath = `keyword-cards/${id}/${Date.now()}.${keywordImageExtension(checked.kind)}`;
     const admin = createServiceClient();
     const { error: uploadError } = await admin.storage
@@ -88,7 +114,7 @@ export async function POST(request: NextRequest, ctx: Ctx) {
     const afterUpload = await repo.list();
     const previousPath = existing.image_storage_path || '';
     if (
-      previousPath.startsWith('keyword-cards/') &&
+      (previousPath.startsWith('keyword-cards/') || previousPath.startsWith('local/')) &&
       !keywordImageIsReferencedByAnother(afterUpload.keywords, id, {
         image_url: existing.image_url,
         image_storage_path: previousPath,
@@ -124,7 +150,7 @@ export async function DELETE(_request: NextRequest, ctx: Ctx) {
     );
     const afterClear = await repo.list();
     if (
-      previousPath.startsWith('keyword-cards/') &&
+      (previousPath.startsWith('keyword-cards/') || previousPath.startsWith('local/')) &&
       !keywordImageIsReferencedByAnother(afterClear.keywords, id, {
         image_url: existing.image_url,
         image_storage_path: previousPath,

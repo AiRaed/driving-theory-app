@@ -423,6 +423,7 @@ export function createSupabaseLearningCardsRepository(
         keywords: [...keywords, ...fallback],
         terms,
         explanation,
+        explanation_fallback: explanation != null && explanation.language !== lang,
         dvsa_approved: false as const,
       };
     },

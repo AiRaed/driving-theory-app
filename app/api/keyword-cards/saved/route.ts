@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { applyDevelopmentKeywordArabic } from '@/lib/i18n/arabic/preview';
 import { getCurrentUser } from '@/lib/supabase/auth';
 import { isKeywordCardsNotMigratedError } from '@/lib/keyword-cards/errors';
 import { keywordCardsError } from '@/lib/keyword-cards/http';
@@ -11,7 +12,9 @@ export async function GET() {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   try {
     const repo = await getKeywordCardsRepository({ mode: 'learner' });
-    const keywords = await repo.listSaved(user.id);
+    const keywords = (await repo.listSaved(user.id)).map((card) =>
+      applyDevelopmentKeywordArabic(card)
+    );
     return NextResponse.json({ keywords, backend: repo.backend, user_id: user.id });
   } catch (error) {
     if (isKeywordCardsNotMigratedError(error)) {

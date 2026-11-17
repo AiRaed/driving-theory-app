@@ -61,6 +61,8 @@ export interface PublishedForQuestion {
   keywords: KeywordCard[];
   terms: KeywordTerm[];
   explanation: ExplanationCard | null;
+  /** True when the returned hint is English because the requested language has no published hint. */
+  explanation_fallback: boolean;
   dvsa_approved: false;
 }
 

@@ -9,7 +9,7 @@ export function keywordCardsError(error: unknown) {
   else if (error instanceof KeywordDraftImportRejectedError) status = 400;
   else if (/not found/i.test(message)) status = 404;
   else if (
-    /required|already exists|already linked|already saved|Cannot move|Only published|do not support video|Official question|too long|unpublished/i.test(
+    /required|already exists|already linked|already saved|Cannot move|Only published|do not support video|Official question|too long|Unpublish|unpublished/i.test(
       message
     )
   ) {

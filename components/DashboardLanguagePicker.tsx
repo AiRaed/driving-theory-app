@@ -46,7 +46,7 @@ export default function DashboardLanguagePicker({
               aria-label={language.englishName}
               onClick={() => onChange(language.code)}
               className={cn(
-                'relative min-h-11 sm:min-h-10 px-2 py-2 rounded-[var(--radius-md)] border transition-all duration-150',
+                'relative min-h-11 px-2 py-2 rounded-[var(--radius-md)] border transition-all duration-150',
                 'flex items-center justify-center active:scale-[0.98]',
                 selected
                   ? 'border-[var(--lingo-red)] bg-[var(--lingo-red-soft)] ring-2 ring-[var(--lingo-red-muted)] shadow-sm'

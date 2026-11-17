@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { requireAdminApi } from '@/lib/admin/auth';
 import { createServiceClient } from '@/lib/admin/supabaseAdmin';
 import { keywordCardsError } from '@/lib/keyword-cards/http';
+import { removeLocalKeywordImage } from '@/lib/keyword-cards/localMedia';
 import { keywordImageIsReferencedByAnother } from '@/lib/keyword-cards/rules';
 import { getKeywordCardsRepository } from '@/lib/keyword-cards/store';
 
@@ -36,13 +37,19 @@ export async function PATCH(request: NextRequest, ctx: Ctx) {
       user.id
     );
     const previousPath = existing?.image_storage_path || '';
-    if (previousPath.startsWith('keyword-cards/') && existing?.image_url !== keyword.image_url) {
+    if (
+      (previousPath.startsWith('local/') || previousPath.startsWith('keyword-cards/')) &&
+      existing?.image_url !== keyword.image_url
+    ) {
       const remaining = await repo.list();
       const shared = keywordImageIsReferencedByAnother(remaining.keywords, id, {
         image_url: existing?.image_url,
         image_storage_path: previousPath,
       });
-      if (!shared) {
+      if (!shared && previousPath.startsWith('local/')) {
+        removeLocalKeywordImage(previousPath);
+      }
+      if (!shared && previousPath.startsWith('keyword-cards/')) {
         try {
           const admin = createServiceClient();
           await admin.storage.from('question-images').remove([previousPath]);
@@ -66,13 +73,16 @@ export async function DELETE(_request: NextRequest, ctx: Ctx) {
     const existing = (await repo.list()).keywords.find((row) => row.id === id);
     await repo.remove(id);
     const previousPath = existing?.image_storage_path || '';
-    if (previousPath.startsWith('keyword-cards/')) {
+    if (previousPath.startsWith('local/') || previousPath.startsWith('keyword-cards/')) {
       const remaining = await repo.list();
       const shared = keywordImageIsReferencedByAnother(remaining.keywords, id, {
         image_url: existing?.image_url,
         image_storage_path: previousPath,
       });
-      if (!shared) {
+      if (!shared && previousPath.startsWith('local/')) {
+        removeLocalKeywordImage(previousPath);
+      }
+      if (!shared && previousPath.startsWith('keyword-cards/')) {
         try {
           const admin = createServiceClient();
           await admin.storage.from('question-images').remove([previousPath]);
