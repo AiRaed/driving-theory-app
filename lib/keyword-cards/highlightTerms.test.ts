@@ -11,7 +11,7 @@ import { readFileSync } from 'node:fs';
 import { approvedAliasesForTerm } from './approvedAliases';
 import { keywordDialogCopy } from './dialog';
 import { highlightedKeywordIds, segmentKeywordText, type KeywordHighlightSource } from './highlightTerms';
-import { isolateKeywordActivation } from './keywordActivation';
+import { eventHitsKeyword, isolateKeywordActivation, shouldSelectAnswer, suppressAnswerActivation } from './keywordActivation';
 import { createLocalKeywordCardsRepository } from './localRepository';
 import { keywordIndexForId } from './rules';
 
@@ -151,6 +151,19 @@ async function main() {
     assert.equal(keywordDialogCopy('en').learnMoreLabel, 'Learn more');
     assert.equal(keywordDialogCopy('ar').learnMoreLabel, 'اعرف المزيد');
     assert.equal(keywordDialogCopy('ar').dir, 'rtl');
+
+    const chip = {
+      closest(selector: string) {
+        return selector.includes('practice-keyword-term') || selector.includes('data-keyword-control') ? chip : null;
+      },
+    };
+    const textNode = { parentElement: chip };
+    assert.equal(eventHitsKeyword({ target: textNode }), true);
+    assert.equal(shouldSelectAnswer({ target: textNode }, 10_000), false);
+    assert.equal(shouldSelectAnswer({ target: { closest: () => null } }, 10_000), true);
+    suppressAnswerActivation(5_000, 600);
+    assert.equal(shouldSelectAnswer({ target: { closest: () => null } }, 5_100), false);
+    assert.equal(shouldSelectAnswer({ target: { closest: () => null } }, 5_700), true);
   });
 
   await run('A keyword is highlighted only when it is passed for this question', () => {
@@ -308,7 +321,11 @@ async function main() {
     assert.equal(answerBlock.includes('<button'), false);
     assert.ok(answerBlock.includes('role="radio"'));
     assert.ok(answerBlock.includes('keywordQuestionId={currentQuestion.id}'));
-    assert.ok(answerBlock.includes('practice-keyword-term'));
+    assert.ok(answerBlock.includes('practice-answer-hit'));
+    assert.ok(answerBlock.includes('practice-answer-body'));
+    assert.ok(answerBlock.includes('shouldSelectAnswer'));
+    assert.ok(answerBlock.indexOf('role="radio"') < answerBlock.indexOf('<AnswerOptionContent'));
+    assert.ok(text.includes('data-keyword-control="true"'));
     assert.equal(mock.includes('keywordQuestionId'), false);
     assert.ok(practice.includes('<PracticeKeywordControl'));
     assert.ok(practice.includes('<PracticeExplanationHint'));

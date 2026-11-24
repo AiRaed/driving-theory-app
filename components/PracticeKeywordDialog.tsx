@@ -6,6 +6,7 @@ import ArabicDraftNote from '@/components/ArabicDraftNote';
 import { keywordDisplay } from '@/lib/i18n/arabic/display';
 import { useSessionUserId } from '@/lib/saved-cards/useSessionUserId';
 import { keywordDialogCopy } from '@/lib/keyword-cards/dialog';
+import { suppressAnswerActivation } from '@/lib/keyword-cards/keywordActivation';
 import { clampKeywordIndex, keywordIndexForId, showsKeywordImage } from '@/lib/keyword-cards/rules';
 import type { LearnerKeywordCard } from '@/lib/keyword-cards/types';
 import {
@@ -79,6 +80,7 @@ export default function PracticeKeywordDialog({
   const descriptionId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const focusTimerRef = useRef<number | null>(null);
   const onCloseRef = useRef(onClose);
   onCloseRef.current = onClose;
   const initialSavedRef = useRef(initialSavedIds);
@@ -132,6 +134,10 @@ export default function PracticeKeywordDialog({
         ? document.activeElement
         : returnFocusRef?.current ?? null;
 
+    if (focusTimerRef.current != null) {
+      window.clearTimeout(focusTimerRef.current);
+      focusTimerRef.current = null;
+    }
     dialog.focus({ preventScroll: true });
     const releaseBackground = suppressBackground(root);
     const unlockScroll = lockPageScroll(document, window.scrollY, (y) => window.scrollTo(0, y));
@@ -157,6 +163,9 @@ export default function PracticeKeywordDialog({
 
     document.addEventListener('keydown', onKeyDown);
     return () => {
+      // Arm this before the portal unmounts, so the dismiss click cannot land
+      // on the answer that was underneath the dialog.
+      suppressAnswerActivation();
       document.removeEventListener('keydown', onKeyDown);
       releaseBackground();
       unlockScroll();
@@ -164,12 +173,28 @@ export default function PracticeKeywordDialog({
         previouslyFocused && document.contains(previouslyFocused)
           ? previouslyFocused
           : returnFocusRef?.current;
-      restore?.focus({ preventScroll: true });
+      focusTimerRef.current = window.setTimeout(() => {
+        focusTimerRef.current = null;
+        restore?.focus({ preventScroll: true });
+      }, 480);
     };
   }, [open, returnFocusRef]);
 
   if (!open || keywords.length === 0) return null;
   if (typeof document === 'undefined') return null;
+
+  const closeDialog = () => {
+    suppressAnswerActivation();
+    // Unmount on a later turn. Removing the dialog inside the current click
+    // lets WebKit and Android WebView deliver that click to the answer beneath it.
+    window.setTimeout(() => onCloseRef.current(), 0);
+  };
+  const closeFromPointer = (event: { button?: number; preventDefault: () => void; stopPropagation: () => void }) => {
+    if (event.button != null && event.button !== 0) return;
+    event.preventDefault();
+    event.stopPropagation();
+    closeDialog();
+  };
 
   const copy = keywordDialogCopy(language);
   const keyword = keywords[clampKeywordIndex(keywords.length, index)];
@@ -250,7 +275,12 @@ export default function PracticeKeywordDialog({
             className="lt-btn-ghost h-11 w-11 shrink-0 p-0"
             aria-label={copy.closeLabel}
             data-testid="practice-keyword-close"
-            onClick={() => onCloseRef.current()}
+            onPointerDown={closeFromPointer}
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              closeDialog();
+            }}
           >
             <svg
               aria-hidden="true"
@@ -378,7 +408,12 @@ export default function PracticeKeywordDialog({
             type="button"
             className="lt-btn-primary w-full px-4 py-3 text-sm"
             data-testid="practice-keyword-got-it"
-            onClick={() => onCloseRef.current()}
+            onPointerDown={closeFromPointer}
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              closeDialog();
+            }}
           >
             {copy.gotItLabel}
           </button>

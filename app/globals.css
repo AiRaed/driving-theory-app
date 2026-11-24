@@ -383,10 +383,49 @@
   }
 
   .practice-answer.lt-option {
+    position: relative;
     align-items: center;
     border-color: #d5dee8;
     border-radius: 14px;
     box-shadow: 0 4px 14px rgba(16, 45, 78, 0.04);
+  }
+
+  /* Selection target. The keyword chip is a sibling, not a child of this layer. */
+  .practice-answer-hit {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    border: 0;
+    border-radius: inherit;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .practice-answer-hit:disabled,
+  .practice-answer-hit[aria-disabled='true'] {
+    cursor: default;
+  }
+
+  .practice-answer-body,
+  .practice-answer-body * {
+    pointer-events: none;
+  }
+
+  .practice-answer-body {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .practice-answer-body .lt-keyword-term {
+    position: relative;
+    z-index: 2;
+  }
+
+  .practice-answer-body .lt-keyword-term,
+  .practice-answer-body .lt-keyword-term * {
+    pointer-events: auto;
   }
 
   .practice-answer.lt-option:active:not(:has(.lt-keyword-term:active)) {

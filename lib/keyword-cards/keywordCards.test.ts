@@ -494,6 +494,7 @@ async function main() {
     assert.ok(dialog.includes("setAttribute('aria-hidden', 'true')"));
     assert.ok(dialog.includes('node.inert = true'));
     assert.ok(dialog.includes('restore?.focus({ preventScroll: true })'));
+    assert.ok(dialog.includes('suppressAnswerActivation'));
     assert.ok(dialog.includes('object-contain'));
     assert.ok(dialog.includes('showsKeywordImage'));
     assert.ok(!dialog.includes('<video'));

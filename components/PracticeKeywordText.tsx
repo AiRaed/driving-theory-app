@@ -57,6 +57,7 @@ export default function PracticeKeywordText({
               aria-controls={open ? dialogId : undefined}
               aria-label={`${segment.text}, ${copy.learnMoreLabel}`}
               data-testid="practice-keyword-term"
+              data-keyword-control="true"
               data-keyword-id={segment.keywordId}
               onPointerDown={(event) => event.stopPropagation()}
               onMouseDown={(event) => event.stopPropagation()}

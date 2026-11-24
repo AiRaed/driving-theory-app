@@ -9,6 +9,7 @@ import PracticeLearningAids, {
   PracticeExplanationHint,
 } from '@/components/PracticeLearningAids';
 import PracticeKeywordControl from '@/components/PracticeKeywordControl';
+import { shouldSelectAnswer } from '@/lib/keyword-cards/keywordActivation';
 import AnswerOptionContent from '@/components/AnswerOptionContent';
 import ArabicDraftNote from '@/components/ArabicDraftNote';
 import DisclaimerModal from '@/components/DisclaimerModal';
@@ -990,28 +991,31 @@ export default function PracticePage() {
                 return (
                   <div
                     key={index}
-                    role="radio"
-                    aria-checked={isSelected}
-                    aria-disabled={selectedAnswerIndex !== null}
-                    aria-label={option.en || 'Answer option'}
-                    tabIndex={selectedAnswerIndex !== null ? -1 : 0}
                     data-state={optionState}
                     className={cn(
-                      'practice-answer lt-option cursor-pointer',
+                      'practice-answer lt-option',
                       selectedAnswerIndex !== null && 'cursor-default'
                     )}
-                    onClick={(event) => {
-                      if ((event.target as HTMLElement).closest?.('[data-testid="practice-keyword-term"]')) return;
-                      handleAnswerClick(index);
-                    }}
-                    onKeyDown={(event) => {
-                      if (event.target !== event.currentTarget) return;
-                      if (event.key !== 'Enter' && event.key !== ' ') return;
-                      event.preventDefault();
-                      handleAnswerClick(index);
-                    }}
                   >
-                    <div className="min-w-0 flex-1">
+                    <div
+                      role="radio"
+                      aria-checked={isSelected}
+                      aria-disabled={selectedAnswerIndex !== null}
+                      aria-label={option.en || 'Answer option'}
+                      tabIndex={selectedAnswerIndex !== null ? -1 : 0}
+                      className="practice-answer-hit"
+                      onClick={(event) => {
+                        if (!shouldSelectAnswer(event)) return;
+                        handleAnswerClick(index);
+                      }}
+                      onKeyDown={(event) => {
+                        if (event.target !== event.currentTarget) return;
+                        if (event.key !== 'Enter' && event.key !== ' ') return;
+                        event.preventDefault();
+                        handleAnswerClick(index);
+                      }}
+                    />
+                    <div className="practice-answer-body">
                       <AnswerOptionContent
                         option={option}
                         keywordQuestionId={currentQuestion.id}
