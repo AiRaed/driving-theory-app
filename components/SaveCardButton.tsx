@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useSessionUserId } from '@/lib/saved-cards/useSessionUserId';
 
 export default function SaveCardButton({
   cardKind,
@@ -18,16 +19,20 @@ export default function SaveCardButton({
 }) {
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const sessionUserId = useSessionUserId();
 
   useEffect(() => {
     let cancelled = false;
-    fetch('/api/learning-cards/saved')
+    setSaved(false);
+    if (!sessionUserId) return;
+    fetch('/api/learning-cards/saved', { cache: 'no-store', credentials: 'same-origin' })
       .then(async (res) => {
         if (!res.ok) return null;
         return res.json();
       })
       .then((body) => {
         if (cancelled || !body) return;
+        if (body.user_id && body.user_id !== sessionUserId) return;
         const mine =
           cardKind === 'explanation'
             ? (body.explanations || []).some(
@@ -42,7 +47,7 @@ export default function SaveCardButton({
     return () => {
       cancelled = true;
     };
-  }, [cardKind, explanationCardId, keywordCardId]);
+  }, [cardKind, explanationCardId, keywordCardId, sessionUserId]);
 
   const toggle = async () => {
     setError(null);

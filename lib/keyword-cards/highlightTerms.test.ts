@@ -9,7 +9,9 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { readFileSync } from 'node:fs';
 import { approvedAliasesForTerm } from './approvedAliases';
+import { keywordDialogCopy } from './dialog';
 import { highlightedKeywordIds, segmentKeywordText, type KeywordHighlightSource } from './highlightTerms';
+import { isolateKeywordActivation } from './keywordActivation';
 import { createLocalKeywordCardsRepository } from './localRepository';
 import { keywordIndexForId } from './rules';
 
@@ -110,6 +112,45 @@ async function main() {
     const text = 'The right-hand lane closed ahead.';
     assert.deepEqual(hits(text, [right, closed]), ['right-hand lane']);
     assert.deepEqual(highlightedKeywordIds(segments(text, [right, closed])), ['right']);
+  });
+
+  await run('Level crossing is interactive in both road-sign answers and nowhere else', () => {
+    const level = card('level-crossing', 'Level crossing', approvedAliasesForTerm('Level crossing'));
+    const withGate = 'Level crossing with gate or barrier';
+    const withoutGate = 'Level crossing without gate or barrier';
+    const gated = 'Gated road ahead';
+    const cattle = 'Cattle grid ahead';
+    assert.deepEqual(hits(withGate, [level]), ['Level crossing']);
+    assert.deepEqual(hits(withoutGate, [level]), ['Level crossing']);
+    assert.equal(segments(withGate, [level]).map((part) => part.text).join(''), withGate);
+    assert.equal(segments(withoutGate, [level]).map((part) => part.text).join(''), withoutGate);
+    assert.deepEqual(hits(gated, [level]), []);
+    assert.deepEqual(hits(cattle, [level]), []);
+    assert.deepEqual(hits('level crossing without gate or barrier', [level]), ['level crossing']);
+    assert.deepEqual(hits(withGate, [card('level-crossing', 'Level crossing', ['level crossing'], { status: 'draft' })]), []);
+    assert.deepEqual(hits('A level crossing and another level crossing.', [level]), ['level crossing', 'level crossing']);
+  });
+
+  await run('A keyword tap is stopped before the answer option can select it', () => {
+    let selected = false;
+    const event = {
+      preventDefault() {
+        this.prevented = true;
+      },
+      stopPropagation() {
+        this.stopped = true;
+      },
+      prevented: false,
+      stopped: false,
+    };
+    isolateKeywordActivation(event);
+    if (!event.stopped) selected = true;
+    assert.equal(event.prevented, true);
+    assert.equal(event.stopped, true);
+    assert.equal(selected, false);
+    assert.equal(keywordDialogCopy('en').learnMoreLabel, 'Learn more');
+    assert.equal(keywordDialogCopy('ar').learnMoreLabel, 'اعرف المزيد');
+    assert.equal(keywordDialogCopy('ar').dir, 'rtl');
   });
 
   await run('A keyword is highlighted only when it is passed for this question', () => {
@@ -226,6 +267,10 @@ async function main() {
 
     assert.ok(text.includes('type="button"'));
     assert.ok(text.includes('segmentKeywordText'));
+    assert.ok(text.includes('isolateKeywordActivation'));
+    assert.ok(text.includes('event.stopPropagation()'));
+    assert.ok(text.includes('copy.learnMoreLabel'));
+    assert.ok(text.includes('data-testid="practice-keyword-term"'));
     assert.ok(text.includes('initialKeywordId={selectedId}'));
     assert.ok(text.includes('returnFocusRef={triggerRef}'));
     assert.ok(text.includes('triggerRef.current = event.currentTarget'));
@@ -256,8 +301,15 @@ async function main() {
     assert.ok(practice.includes('<PracticeLearningAids'));
     assert.equal((practice.match(/prompt=\{currentQuestion\.promptEn\}/g) || []).length, 1);
     const options = readFileSync(path.join(root, 'components/AnswerOptionContent.tsx'), 'utf8');
-    assert.equal(options.includes('PracticeKeywordText'), false);
+    assert.ok(options.includes('PracticeKeywordText'));
+    assert.ok(options.includes('keywordQuestionId'));
     assert.equal(options.includes('segmentKeywordText'), false);
+    const answerBlock = practice.slice(practice.indexOf('{/* Answer Options */}'), practice.indexOf('validHints'));
+    assert.equal(answerBlock.includes('<button'), false);
+    assert.ok(answerBlock.includes('role="radio"'));
+    assert.ok(answerBlock.includes('keywordQuestionId={currentQuestion.id}'));
+    assert.ok(answerBlock.includes('practice-keyword-term'));
+    assert.equal(mock.includes('keywordQuestionId'), false);
     assert.ok(practice.includes('<PracticeKeywordControl'));
     assert.ok(practice.includes('<PracticeExplanationHint'));
     assert.equal(practice.includes('PracticeKeywordDialog'), false);

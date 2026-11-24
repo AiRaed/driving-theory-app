@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import PracticeKeywordText from '@/components/PracticeKeywordText';
 import { cn } from '@/lib/utils';
 
 type OptionLike = {
@@ -16,6 +17,12 @@ type Props = {
   children?: React.ReactNode;
   imageClassName?: string;
   missingLabel?: string;
+  /**
+   * Practice only. When set, published keywords linked to this question
+   * become tappable inside the official English answer. Mock Test omits it.
+   */
+  keywordQuestionId?: string | null;
+  keywordLanguage?: string | null;
 };
 
 /**
@@ -28,6 +35,8 @@ export default function AnswerOptionContent({
   children,
   imageClassName,
   missingLabel = 'Image unavailable',
+  keywordQuestionId,
+  keywordLanguage,
 }: Props) {
   const [imageFailed, setImageFailed] = useState(false);
   const hasText = !!(option.en && option.en.trim());
@@ -51,9 +60,19 @@ export default function AnswerOptionContent({
         <div className="text-sm text-[var(--text-secondary)] italic mb-1">{missingLabel}</div>
       ) : null}
       {hasText ? (
-        <div className={enClassName} dir="ltr" lang="en">
-          {option.en}
-        </div>
+        keywordQuestionId ? (
+          <div className={enClassName}>
+            <PracticeKeywordText
+              questionId={keywordQuestionId}
+              language={keywordLanguage || 'en'}
+              text={option.en || ''}
+            />
+          </div>
+        ) : (
+          <div className={enClassName} dir="ltr" lang="en">
+            {option.en}
+          </div>
+        )
       ) : null}
       {children}
     </div>

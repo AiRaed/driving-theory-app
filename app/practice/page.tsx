@@ -972,7 +972,7 @@ export default function PracticePage() {
             />
 
             {/* Answer Options */}
-            <div className="space-y-2.5 mb-4">
+            <div className="space-y-2.5 mb-4" role="radiogroup" aria-label="Answer options">
               {shuffledOptions.map((option, index) => {
                 const isSelected = selectedAnswerIndex === index;
                 // Determine correctness based ONLY on the option's correct boolean property
@@ -988,19 +988,34 @@ export default function PracticePage() {
                       : undefined;
 
                 return (
-                  <button
+                  <div
                     key={index}
-                    onClick={() => handleAnswerClick(index)}
-                    disabled={selectedAnswerIndex !== null}
+                    role="radio"
+                    aria-checked={isSelected}
+                    aria-disabled={selectedAnswerIndex !== null}
+                    aria-label={option.en || 'Answer option'}
+                    tabIndex={selectedAnswerIndex !== null ? -1 : 0}
                     data-state={optionState}
                     className={cn(
-                      'practice-answer lt-option active:scale-[0.99]',
+                      'practice-answer lt-option cursor-pointer',
                       selectedAnswerIndex !== null && 'cursor-default'
                     )}
+                    onClick={(event) => {
+                      if ((event.target as HTMLElement).closest?.('[data-testid="practice-keyword-term"]')) return;
+                      handleAnswerClick(index);
+                    }}
+                    onKeyDown={(event) => {
+                      if (event.target !== event.currentTarget) return;
+                      if (event.key !== 'Enter' && event.key !== ' ') return;
+                      event.preventDefault();
+                      handleAnswerClick(index);
+                    }}
                   >
                     <div className="min-w-0 flex-1">
                       <AnswerOptionContent
                         option={option}
+                        keywordQuestionId={currentQuestion.id}
+                        keywordLanguage={translationLang === 'ar' ? 'ar' : 'en'}
                         enClassName={cn(
                           "font-bold text-[17px] sm:text-[18px] leading-relaxed",
                           isSelected && !showAsCorrect && !showAsWrong ? "text-[var(--lingo-red-dark)]" : 
@@ -1138,7 +1153,7 @@ export default function PracticePage() {
                         })()}
                       </AnswerOptionContent>
                     </div>
-                  </button>
+                  </div>
                 );
               })}
             </div>

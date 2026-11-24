@@ -389,6 +389,10 @@
     box-shadow: 0 4px 14px rgba(16, 45, 78, 0.04);
   }
 
+  .practice-answer.lt-option:active:not(:has(.lt-keyword-term:active)) {
+    transform: scale(0.99);
+  }
+
   .practice-answer.lt-option::before {
     margin-top: 0;
     width: 1.25rem;
@@ -442,44 +446,81 @@
     color: var(--lingo-red);
   }
 
-  /* Inline Practice keyword. Same type size as the question; dotted underline only. */
+  /* Inline Practice keyword. Own button, so it never selects the answer around it. */
   .lt-keyword-term {
-    display: inline;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: inherit;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    max-width: 100%;
+    margin: 0.12em 0.15em;
+    padding: 0.28rem 0.6rem 0.22rem;
+    border: 1px solid #8ec3dc;
+    border-radius: 0.7rem;
+    background: #e8f6fc;
+    color: #0e6f96;
     font: inherit;
-    vertical-align: baseline;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: inherit;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
-    letter-spacing: inherit;
-    line-height: inherit;
-    cursor: pointer;
-    text-decoration-line: underline;
-    text-decoration-style: dotted;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 0.18em;
-    text-decoration-color: var(--blue);
-    color: var(--blue);
-    border-radius: 0.15em;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: none;
+  }
+
+  .lt-keyword-term-label {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+  }
+
+  .lt-keyword-term-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.22rem;
+    margin-top: 0.12rem;
+    font-size: 0.68em;
+    font-weight: 650;
+    line-height: 1;
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .lt-keyword-term-icon {
+    width: 0.95em;
+    height: 0.95em;
+    flex: none;
   }
 
   .lt-keyword-term:hover {
-    text-decoration-style: solid;
+    background: #dff3fb;
+    border-color: #168cba;
   }
 
   .lt-keyword-term:focus-visible {
-    outline: 2px solid var(--lingo-red);
+    outline: 2px solid #168cba;
     outline-offset: 2px;
-    text-decoration-style: solid;
+  }
+
+  .lt-option[data-state='correct'] .lt-keyword-term,
+  .lt-option[data-state='wrong'] .lt-keyword-term,
+  .lt-option[data-state='selected'] .lt-keyword-term {
+    color: #0e6f96;
+    background: #e8f6fc;
+    border-color: #8ec3dc;
   }
 
   @media (pointer: coarse) {
     .lt-keyword-term {
-      text-decoration-thickness: 2px;
-      text-underline-offset: 0.22em;
+      min-height: 2.75rem;
+      padding: 0.35rem 0.7rem 0.28rem;
     }
   }
 

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { chooseExplanationArabic } from '@/lib/i18n/arabic/preview';
 import { getCurrentUser } from '@/lib/supabase/auth';
 import { getLearningCardsRepository } from '@/lib/learning-cards/store';
+import { savedCardOwner, SavedCardOwnerError } from '@/lib/saved-cards/ownership';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,8 +10,9 @@ export async function GET() {
   const user = await getCurrentUser();
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   try {
+    const owner = savedCardOwner(user.id);
     const repo = await getLearningCardsRepository({ mode: 'learner' });
-    const library = await repo.listSavedForUser(user.id);
+    const library = await repo.listSavedForUser(owner);
     const explanations = await Promise.all(
       library.explanations.map(async (card) => {
         if (card.language === 'ar') return card;
@@ -27,11 +29,15 @@ export async function GET() {
     );
     return NextResponse.json({
       ...library,
+      saved: library.saved.filter((row) => row.user_id === owner),
       explanations,
       backend: repo.backend,
       user_id: user.id,
     });
   } catch (e) {
+    if (e instanceof SavedCardOwnerError) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: e.status });
+    }
     return NextResponse.json(
       { error: e instanceof Error ? e.message : 'Failed' },
       { status: 500 }
@@ -44,6 +50,7 @@ export async function POST(request: NextRequest) {
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   const body = await request.json();
   try {
+    savedCardOwner(user.id, body);
     const repo = await getLearningCardsRepository({ mode: 'learner' });
     const result = await repo.toggleSavedCard({
       user_id: user.id,
@@ -53,6 +60,9 @@ export async function POST(request: NextRequest) {
     });
     return NextResponse.json({ ...result, backend: repo.backend, user_id: user.id });
   } catch (e) {
+    if (e instanceof SavedCardOwnerError) {
+      return NextResponse.json({ error: 'Forbidden' }, { status: e.status });
+    }
     return NextResponse.json(
       { error: e instanceof Error ? e.message : 'Failed' },
       { status: 400 }

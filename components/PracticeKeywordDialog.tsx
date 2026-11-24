@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import ArabicDraftNote from '@/components/ArabicDraftNote';
 import { keywordDisplay } from '@/lib/i18n/arabic/display';
+import { useSessionUserId } from '@/lib/saved-cards/useSessionUserId';
 import { keywordDialogCopy } from '@/lib/keyword-cards/dialog';
 import { clampKeywordIndex, keywordIndexForId, showsKeywordImage } from '@/lib/keyword-cards/rules';
 import type { LearnerKeywordCard } from '@/lib/keyword-cards/types';
@@ -73,6 +74,7 @@ export default function PracticeKeywordDialog({
   /** Ids already saved when the dialog opens. Practice leaves this unset. */
   initialSavedIds?: string[];
 }) {
+  const sessionUserId = useSessionUserId();
   const titleId = useId();
   const descriptionId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
@@ -97,14 +99,17 @@ export default function PracticeKeywordDialog({
 
   useEffect(() => {
     if (!open) return;
+    setSavedIds([]);
+    if (!sessionUserId) return;
     let cancelled = false;
-    fetch('/api/keyword-cards/saved')
+    fetch('/api/keyword-cards/saved', { cache: 'no-store', credentials: 'same-origin' })
       .then(async (res) => {
-        if (!res.ok) return { keywords: [] as Array<{ id: string }> };
+        if (!res.ok) return { keywords: [] as Array<{ id: string }>, user_id: '' };
         return res.json();
       })
       .then((body) => {
         if (cancelled) return;
+        if (body.user_id && body.user_id !== sessionUserId) return;
         const ids = (body.keywords || []).map((item: { id: string }) => item.id);
         setSavedIds(Array.from(new Set([...ids, ...(initialSavedRef.current || [])])));
       })
@@ -114,7 +119,7 @@ export default function PracticeKeywordDialog({
     return () => {
       cancelled = true;
     };
-  }, [open]);
+  }, [open, sessionUserId]);
 
   useEffect(() => {
     if (!open) return;

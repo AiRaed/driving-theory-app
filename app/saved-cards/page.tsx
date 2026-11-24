@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import PracticeHintDialog from '@/components/PracticeHintDialog';
 import PracticeKeywordDialog from '@/components/PracticeKeywordDialog';
 import { keywordDisplay } from '@/lib/i18n/arabic/display';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
+import { useSessionUserId } from '@/lib/saved-cards/useSessionUserId';
 import type { LearnerKeywordCard } from '@/lib/keyword-cards/types';
 import type { PracticeHintCard } from '@/lib/learning-cards/hintDialog';
 
@@ -129,6 +130,8 @@ function toHintCard(card: ExplanationCard): PracticeHintCard {
 export default function SavedCardsPage() {
   const { lang } = useLanguage();
   const arabicUi = lang === 'ar';
+  const sessionUserId = useSessionUserId();
+  const requestRef = useRef(0);
   const [filter, setFilter] = useState<Filter>('all');
   const [keywords, setKeywords] = useState<NewKeyword[]>([]);
   const [legacyKeywords, setLegacyKeywords] = useState<LegacyKeyword[]>([]);
@@ -139,18 +142,42 @@ export default function SavedCardsPage() {
   const [openExplanation, setOpenExplanation] = useState<ExplanationCard | null>(null);
   const returnFocusRef = useRef<HTMLButtonElement | null>(null);
 
-  const load = (mode: 'initial' | 'refresh' = 'initial') => {
-    if (mode === 'initial') setLoading(true);
+  const clearCollection = () => {
+    setKeywords([]);
+    setLegacyKeywords([]);
+    setExplanations([]);
+    setOpenKeyword(null);
+    setOpenExplanation(null);
+  };
+
+  const load = useCallback((mode: 'initial' | 'refresh' = 'initial') => {
+    const ticket = ++requestRef.current;
+    const owner = sessionUserId;
+    if (mode === 'initial') {
+      clearCollection();
+      setLoading(true);
+    }
+    if (owner === null) {
+      setError('Log in to view saved cards.');
+      setLoading(false);
+      return;
+    }
+    const belongsToOwner = (body: { user_id?: string }) =>
+      owner === undefined || !body?.user_id || body.user_id === owner;
     Promise.all([
-      fetch('/api/learning-cards/saved').then(async (res) => ({ res, body: await res.json() })),
-      fetch('/api/keyword-cards/saved').then(async (res) => ({ res, body: await res.json() })),
+      fetch('/api/learning-cards/saved', { cache: 'no-store', credentials: 'same-origin' }).then(
+        async (res) => ({ res, body: await res.json() })
+      ),
+      fetch('/api/keyword-cards/saved', { cache: 'no-store', credentials: 'same-origin' }).then(
+        async (res) => ({ res, body: await res.json() })
+      ),
     ])
       .then(([legacy, keyword]) => {
+        if (ticket !== requestRef.current) return;
+        if (!belongsToOwner(legacy.body) || !belongsToOwner(keyword.body)) return;
         if (legacy.res.status === 401 || keyword.res.status === 401) {
+          clearCollection();
           setError('Log in to view saved cards.');
-          setKeywords([]);
-          setLegacyKeywords([]);
-          setExplanations([]);
           return;
         }
         if (!legacy.res.ok) throw new Error(legacy.body.error || 'Failed');
@@ -159,13 +186,19 @@ export default function SavedCardsPage() {
         setExplanations(legacy.body.explanations || []);
         setKeywords(keyword.res.ok ? keyword.body.keywords || [] : []);
       })
-      .catch((reason) => setError(reason instanceof Error ? reason.message : 'Failed'))
-      .finally(() => setLoading(false));
-  };
+      .catch((reason) => {
+        if (ticket !== requestRef.current) return;
+        setError(reason instanceof Error ? reason.message : 'Failed');
+      })
+      .finally(() => {
+        if (ticket === requestRef.current) setLoading(false);
+      });
+  }, [sessionUserId]);
 
   useEffect(() => {
-    load();
-  }, []);
+    clearCollection();
+    load('initial');
+  }, [load]);
 
   const showKeywords = filter !== 'explanations';
   const showExplanations = filter !== 'keywords';

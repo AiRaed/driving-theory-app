@@ -22,6 +22,7 @@ import {
 import { LearningCardsNotMigratedError, isMissingLearningCardsTable } from './errors';
 import { loadBundledRecommendations, countBy } from './recommendations';
 import { isLearnerVisibleExplanationHint, resolveExplanationSaveStatus } from './hints';
+import { rowsOwnedBy } from '../saved-cards/ownership';
 import type { LearningCardsRepository } from './repository';
 
 type FilterBuilder = {
@@ -428,9 +429,18 @@ export function createSupabaseLearningCardsRepository(
       };
     },
     async listSavedForUser(userId) {
-      const saved = (await selectAll<SavedCard>(client, 'saved_cards', true)).filter(
-        (s) => s.user_id === userId
-      );
+      const { data, error } = (await client
+        .from('saved_cards')
+        .select('*')
+        .eq('user_id', userId)) as {
+        data: SavedCard[] | null;
+        error: QueryError | null;
+      };
+      if (error) {
+        if (isMissingLearningCardsTable(error)) return { saved: [], keywords: [], explanations: [] };
+        missingOrThrow(error, true);
+      }
+      const saved = rowsOwnedBy(data || [], userId);
       const keywords = (await selectAll<KeywordCard>(client, 'keyword_cards', true)).filter(
         (c) =>
           isLearnerVisibleCardStatus(c.status) && saved.some((s) => s.keyword_card_id === c.id)
@@ -451,16 +461,25 @@ export function createSupabaseLearningCardsRepository(
           ? catalogKw.find((c) => c.id === input.keyword_card_id)?.status === 'published'
           : catalogEx.find((c) => c.id === input.explanation_card_id)?.status === 'published';
       if (!published) throw new Error('Only published cards can be saved');
-      const saved = (await selectAll<SavedCard>(client, 'saved_cards', false)).filter(
-        (s) => s.user_id === input.user_id
+      const saved = rowsOwnedBy(
+        (
+          (await client.from('saved_cards').select('*').eq('user_id', input.user_id)) as {
+            data: SavedCard[] | null;
+          }
+        ).data || [],
+        input.user_id
       );
       const existing = saved.find((s) => {
         if (s.card_kind !== input.card_kind) return false;
         if (input.card_kind === 'keyword') return s.keyword_card_id === input.keyword_card_id;
         return s.explanation_card_id === input.explanation_card_id;
       });
-      if (existing) {
-        const del = client.from('saved_cards').delete().eq('id', existing.id);
+      if (existing && existing.user_id === input.user_id) {
+        const del = client
+          .from('saved_cards')
+          .delete()
+          .eq('id', existing.id)
+          .eq('user_id', input.user_id);
         const res = await (del as unknown as PromiseLike<{ error: QueryError | null }>);
         missingOrThrow(res.error, false);
         return { saved: false, row: null };
@@ -474,7 +493,14 @@ export function createSupabaseLearningCardsRepository(
       };
       const ins = await client.from('saved_cards').insert(row);
       missingOrThrow(ins.error, false);
-      const created = (await selectAll<SavedCard>(client, 'saved_cards', false)).find((s) => {
+      const created = rowsOwnedBy(
+        (
+          (await client.from('saved_cards').select('*').eq('user_id', input.user_id)) as {
+            data: SavedCard[] | null;
+          }
+        ).data || [],
+        input.user_id
+      ).find((s) => {
         if (s.user_id !== input.user_id || s.card_kind !== input.card_kind) return false;
         if (input.card_kind === 'keyword') return s.keyword_card_id === input.keyword_card_id;
         return s.explanation_card_id === input.explanation_card_id;

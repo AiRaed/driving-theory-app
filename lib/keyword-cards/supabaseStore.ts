@@ -7,6 +7,7 @@
 
 import type { LearningCardStatus } from '../learning-cards/types';
 import { KeywordCardsNotMigratedError, isMissingKeywordCardsTable } from './errors';
+import { rowsOwnedBy } from '../saved-cards/ownership';
 import type { KeywordCardsRepository } from './repository';
 import { executeKeywordDraftImport } from './importDrafts';
 import type { KeywordDraftFile } from './draftTypes';
@@ -312,11 +313,14 @@ export function createSupabaseKeywordCardsRepository(
         .map(toLearnerKeyword);
     },
     async listSaved(userId) {
-      const saves = await unwrap<KeywordSave[]>(
-        client.from('keyword_saves').select('*').eq('user_id', userId),
-        learnerEmpty
+      const saves = rowsOwnedBy(
+        (await unwrap<KeywordSave[]>(
+          client.from('keyword_saves').select('*').eq('user_id', userId),
+          learnerEmpty
+        )) || [],
+        userId
       );
-      const ids = Array.from(new Set((saves || []).map((row) => row.keyword_id)));
+      const ids = Array.from(new Set(saves.map((row) => row.keyword_id)));
       if (ids.length === 0) return [];
       const rows = await unwrap<KeywordRecord[]>(
         client.from('keywords').select('*').in('id', ids),
@@ -342,7 +346,7 @@ export function createSupabaseKeywordCardsRepository(
           .maybeSingle(),
         learnerEmpty
       );
-      if (existing) return existing;
+      if (existing && existing.user_id === userId) return existing;
       const inserted = await unwrap<KeywordSave>(
         client
           .from('keyword_saves')
@@ -364,7 +368,7 @@ export function createSupabaseKeywordCardsRepository(
           .maybeSingle(),
         learnerEmpty
       );
-      if (existing) {
+      if (existing && existing.user_id === userId) {
         await unwrap(
           client.from('keyword_saves').delete().eq('id', existing.id).eq('user_id', userId),
           false

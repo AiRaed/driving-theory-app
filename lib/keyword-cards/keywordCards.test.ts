@@ -637,7 +637,8 @@ async function main() {
     const options = readFileSync(path.join(root, 'components/AnswerOptionContent.tsx'), 'utf8');
     assert.equal((practice.match(/prompt=\{currentQuestion\.promptEn\}/g) || []).length, 1);
     assert.equal(options.includes('segmentKeywordText'), false);
-    assert.equal(options.includes('PracticeKeywordText'), false);
+    assert.ok(options.includes('PracticeKeywordText'));
+    assert.ok(options.includes('keywordQuestionId'));
 
     assert.equal((await reloaded.addSave('learner-1', created.id)).keyword_id, created.id);
     assert.equal((await reloaded.toggleSave('learner-1', created.id)).saved, false);

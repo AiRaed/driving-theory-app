@@ -16,6 +16,7 @@ export interface KeywordDialogCopy {
   previousLabel: string;
   nextLabel: string;
   chooseLabel: string;
+  learnMoreLabel: string;
   imageAltFallback: string;
   englishHeading: string;
   arabicHeading: string;
@@ -41,6 +42,7 @@ export function keywordDialogCopy(language: string | null | undefined): KeywordD
       previousLabel: 'السابق',
       nextLabel: 'التالي',
       chooseLabel: 'اختر الكلمة',
+      learnMoreLabel: 'اعرف المزيد',
       imageAltFallback: 'صورة الكلمة',
       englishHeading: 'English',
       arabicHeading: 'العربية',
@@ -61,6 +63,7 @@ export function keywordDialogCopy(language: string | null | undefined): KeywordD
     previousLabel: 'Previous',
     nextLabel: 'Next',
     chooseLabel: 'Choose keyword',
+    learnMoreLabel: 'Learn more',
     imageAltFallback: 'Keyword image',
     englishHeading: 'English',
     arabicHeading: 'Arabic',
