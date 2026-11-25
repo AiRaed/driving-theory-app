@@ -488,23 +488,23 @@
   /* Inline Practice keyword. Own button, so it never selects the answer around it. */
   .lt-keyword-term {
     display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
+    align-items: baseline;
+    vertical-align: baseline;
+    gap: 0.18em;
     max-width: 100%;
-    margin: 0.12em 0.15em;
-    padding: 0.28rem 0.6rem 0.22rem;
+    margin: 0 0.08em;
+    padding: 0.02em 0.32em 0.06em;
     border: 1px solid #8ec3dc;
-    border-radius: 0.7rem;
+    border-radius: 0.4rem;
     background: #e8f6fc;
     color: #0e6f96;
     font: inherit;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: inherit;
     letter-spacing: inherit;
-    text-align: center;
+    text-align: start;
     text-decoration: none;
+    white-space: normal;
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
@@ -514,28 +514,16 @@
   }
 
   .lt-keyword-term-label {
-    max-width: 100%;
-    overflow-wrap: anywhere;
+    min-width: 0;
+    overflow-wrap: break-word;
     text-decoration: none;
   }
 
-  .lt-keyword-term-more {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.22rem;
-    margin-top: 0.12rem;
-    font-size: 0.68em;
-    font-weight: 650;
-    line-height: 1;
-    letter-spacing: 0;
-    white-space: nowrap;
-  }
-
   .lt-keyword-term-icon {
-    width: 0.95em;
-    height: 0.95em;
+    width: 0.92em;
+    height: 0.92em;
     flex: none;
+    align-self: center;
   }
 
   .lt-keyword-term:hover {
@@ -556,10 +544,192 @@
     border-color: #8ec3dc;
   }
 
-  @media (pointer: coarse) {
-    .lt-keyword-term {
-      min-height: 2.75rem;
-      padding: 0.35rem 0.7rem 0.28rem;
+  /* Floating Keyword Card. Separate from the explanation-hint sheet. */
+  .lt-keyword-card-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 80;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    overscroll-behavior: none;
+    padding: 0.75rem 0.875rem max(0.875rem, env(safe-area-inset-bottom, 0px));
+    padding-left: max(0.875rem, env(safe-area-inset-left, 0px));
+    padding-right: max(0.875rem, env(safe-area-inset-right, 0px));
+  }
+
+  .lt-keyword-card-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(16, 45, 78, 0.46);
+  }
+
+  .lt-keyword-card-panel {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    max-width: 32rem;
+    min-height: 0;
+    max-height: min(88dvh, calc(100dvh - env(safe-area-inset-top, 0px) - 1.25rem));
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 1.15rem;
+    background: var(--surface);
+    color: var(--text-primary);
+    box-shadow: 0 18px 48px rgba(16, 45, 78, 0.28);
+  }
+
+  .lt-keyword-card-header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.9rem 0.95rem 0.85rem 1.05rem;
+    background: #e8f6fc;
+    border-bottom: 1px solid #8ec3dc;
+  }
+
+  .lt-keyword-card-kicker {
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0;
+    color: #0e6f96;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .lt-keyword-card-book {
+    width: 0.95rem;
+    height: 0.95rem;
+    flex: none;
+  }
+
+  .lt-keyword-card-title {
+    margin: 0.35rem 0 0;
+    color: var(--navy);
+    font-size: 1.45rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    overflow-wrap: break-word;
+  }
+
+  .lt-keyword-card-translation {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0.2rem 0 0;
+    color: var(--navy);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.45;
+  }
+
+  .lt-keyword-card-close {
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: var(--navy);
+    cursor: pointer;
+  }
+
+  .lt-keyword-card-close:focus-visible {
+    outline: 2px solid #168cba;
+    outline-offset: 2px;
+  }
+
+  .lt-keyword-card-scroll {
+    min-height: 0;
+    flex: 1 1 auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
+    padding: 0.9rem 1rem max(1rem, env(safe-area-inset-bottom, 0px));
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .lt-keyword-card-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: min(52vh, 24rem);
+    margin: 0 0 0.9rem;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 0.9rem;
+    background: #f7fbfd;
+  }
+
+  .lt-keyword-card-copy {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  .lt-keyword-save {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.9rem;
+    min-height: 2.5rem;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid #168cba;
+    border-radius: 0.75rem;
+    background: #e8f6fc;
+    color: #0e6f96;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .lt-keyword-save.is-saved {
+    background: #168cba;
+    color: #fff;
+  }
+
+  .lt-keyword-save:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+
+  .lt-keyword-save-icon {
+    width: 1.05rem;
+    height: 1.05rem;
+    flex: none;
+  }
+
+  .lt-keyword-card-note {
+    margin: 0.75rem 0 0;
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+
+  .lt-keyword-card-done {
+    width: 100%;
+    margin-top: 0.85rem;
+  }
+
+  @media (min-width: 640px) {
+    .lt-keyword-card-overlay {
+      align-items: center;
+      padding: 1.5rem;
     }
   }
 

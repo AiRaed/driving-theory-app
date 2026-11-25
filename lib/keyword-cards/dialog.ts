@@ -8,6 +8,7 @@ export interface KeywordDialogCopy {
   dir: 'ltr' | 'rtl';
   lang: string;
   title: string;
+  cardKicker: string;
   triggerLabel: string;
   closeLabel: string;
   gotItLabel: string;
@@ -34,11 +35,12 @@ export function keywordDialogCopy(language: string | null | undefined): KeywordD
       dir: 'rtl',
       lang: 'ar',
       title: 'كلمات',
+      cardKicker: 'بطاقة كلمة',
       triggerLabel: 'كلمات',
       closeLabel: 'إغلاق',
       gotItLabel: 'فهمت',
       saveLabel: 'حفظ البطاقة',
-      unsaveLabel: 'إلغاء الحفظ',
+      unsaveLabel: 'محفوظة',
       previousLabel: 'السابق',
       nextLabel: 'التالي',
       chooseLabel: 'اختر الكلمة',
@@ -55,11 +57,12 @@ export function keywordDialogCopy(language: string | null | undefined): KeywordD
     dir: 'ltr',
     lang: 'en',
     title: 'Keywords',
+    cardKicker: 'Keyword card',
     triggerLabel: 'Keywords',
     closeLabel: 'Close',
     gotItLabel: 'Got it',
-    saveLabel: 'Save keyword card',
-    unsaveLabel: 'Unsave keyword card',
+    saveLabel: 'Save card',
+    unsaveLabel: 'Saved',
     previousLabel: 'Previous',
     nextLabel: 'Next',
     chooseLabel: 'Choose keyword',

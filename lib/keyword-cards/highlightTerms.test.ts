@@ -283,6 +283,8 @@ async function main() {
     assert.ok(text.includes('isolateKeywordActivation'));
     assert.ok(text.includes('event.stopPropagation()'));
     assert.ok(text.includes('copy.learnMoreLabel'));
+    assert.equal(text.includes('lt-keyword-term-more'), false);
+    assert.ok(text.includes('lt-keyword-term-icon'));
     assert.ok(text.includes('data-testid="practice-keyword-term"'));
     assert.ok(text.includes('initialKeywordId={selectedId}'));
     assert.ok(text.includes('returnFocusRef={triggerRef}'));

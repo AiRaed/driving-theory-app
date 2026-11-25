@@ -74,20 +74,17 @@ export default function PracticeKeywordText({
               <span className="lt-keyword-term-label" dir="ltr" lang="en">
                 {segment.text}
               </span>
-              <span className="lt-keyword-term-more" dir={copy.dir} lang={copy.lang}>
-                <svg className="lt-keyword-term-icon" viewBox="0 0 20 20" aria-hidden="true">
-                  <circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" strokeWidth="1.6" />
-                  <path
-                    d="M7.7 7.8a2.35 2.35 0 1 1 3.15 2.2c-.55.28-.95.78-.95 1.35V12.2"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.6"
-                    strokeLinecap="round"
-                  />
-                  <circle cx="10" cy="14.7" r="0.85" fill="currentColor" />
-                </svg>
-                {copy.learnMoreLabel}
-              </span>
+              <svg className="lt-keyword-term-icon" viewBox="0 0 20 20" aria-hidden="true">
+                <circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" strokeWidth="1.6" />
+                <path
+                  d="M7.7 7.8a2.35 2.35 0 1 1 3.15 2.2c-.55.28-.95.78-.95 1.35V12.2"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                />
+                <circle cx="10" cy="14.7" r="0.85" fill="currentColor" />
+              </svg>
             </button>
           ) : (
             <span key={index}>{segment.text}</span>

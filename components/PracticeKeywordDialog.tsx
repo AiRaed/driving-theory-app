@@ -241,8 +241,8 @@ export default function PracticeKeywordDialog({
   };
 
   return createPortal(
-    <div ref={rootRef} data-practice-keyword-root="" className="lt-hint-dialog-overlay">
-      <div data-keyword-backdrop="" className="absolute inset-0 bg-black/40" aria-hidden="true" />
+    <div ref={rootRef} data-practice-keyword-root="" className="lt-keyword-card-overlay">
+      <div data-keyword-backdrop="" className="lt-keyword-card-backdrop" aria-hidden="true" />
       <div
         ref={dialogRef}
         id={dialogId}
@@ -254,25 +254,84 @@ export default function PracticeKeywordDialog({
         dir="ltr"
         lang="en"
         data-testid="practice-keyword-dialog"
-        className="lt-hint-dialog-panel focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--lingo-red)]"
+        className="lt-keyword-card-panel focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--lingo-red)]"
       >
-        <div className="lt-hint-dialog-grabber" aria-hidden="true">
-          <span />
-        </div>
-        <div className="flex shrink-0 items-start gap-3 border-b border-[var(--border)] px-5 pb-3 pt-3">
+        <header className="lt-keyword-card-header">
           <div className="min-w-0 flex-1">
-            <h2 id={titleId} dir={copy.dir} lang={copy.lang} className="text-lg font-bold text-[var(--text-primary)]">
-              {copy.title}
+            <p className="lt-keyword-card-kicker" dir={copy.dir} lang={copy.lang}>
+              <svg className="lt-keyword-card-book" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M5 5.2A2.2 2.2 0 0 1 7.2 3H19v15.2H7.2A2.2 2.2 0 0 0 5 20.4V5.2Z"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinejoin="round"
+                />
+                <path d="M5 20.4h14" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+                <path d="M8.5 7.2h7" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+              </svg>
+              {copy.cardKicker}
+            </p>
+            <h2
+              id={titleId}
+              dir="ltr"
+              lang="en"
+              data-testid="practice-keyword-term-title"
+              data-keyword-id={keyword.id}
+              className="lt-keyword-card-title"
+            >
+              {keyword.term_en}
             </h2>
-            {keywords.length > 1 ? (
-              <p className="mt-1 text-[13px] font-semibold text-[var(--text-secondary)]">
-                {index + 1} / {keywords.length}
+            {keywordView.showArabic && keywordView.arabicTerm ? (
+              <p dir="rtl" lang="ar" className="lt-keyword-card-translation">
+                {keywordView.arabicTerm}
               </p>
+            ) : null}
+            {keywords.length > 1 ? (
+              <div className="mt-2 flex flex-wrap items-center gap-2">
+                <label className="sr-only" htmlFor="practice-keyword-picker">
+                  {copy.chooseLabel}
+                </label>
+                <select
+                  id="practice-keyword-picker"
+                  className="lt-input min-w-0 flex-1"
+                  aria-label={copy.chooseLabel}
+                  value={keyword.id}
+                  onChange={(event) => {
+                    const next = keywords.findIndex((item) => item.id === event.target.value);
+                    setIndex(next < 0 ? 0 : next);
+                  }}
+                >
+                  {keywords.map((item) => (
+                    <option key={item.id} value={item.id}>
+                      {item.term_en}
+                    </option>
+                  ))}
+                </select>
+                <button
+                  type="button"
+                  className="lt-btn-ghost px-3 py-2 text-sm"
+                  data-testid="practice-keyword-previous"
+                  disabled={index === 0}
+                  onClick={() => setIndex((current) => Math.max(0, current - 1))}
+                >
+                  {copy.previousLabel}
+                </button>
+                <button
+                  type="button"
+                  className="lt-btn-ghost px-3 py-2 text-sm"
+                  data-testid="practice-keyword-next"
+                  disabled={index >= keywords.length - 1}
+                  onClick={() => setIndex((current) => Math.min(keywords.length - 1, current + 1))}
+                >
+                  {copy.nextLabel}
+                </button>
+              </div>
             ) : null}
           </div>
           <button
             type="button"
-            className="lt-btn-ghost h-11 w-11 shrink-0 p-0"
+            className="lt-keyword-card-close"
             aria-label={copy.closeLabel}
             data-testid="practice-keyword-close"
             onPointerDown={closeFromPointer}
@@ -282,93 +341,33 @@ export default function PracticeKeywordDialog({
               closeDialog();
             }}
           >
-            <svg
-              aria-hidden="true"
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg aria-hidden="true" className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
-        </div>
-        <div className="lt-hint-dialog-scroll">
-          {keywords.length > 1 ? (
-            <div className="mb-4 flex flex-wrap items-center gap-2">
-              <label className="sr-only" htmlFor="practice-keyword-picker">
-                {copy.chooseLabel}
-              </label>
-              <select
-                id="practice-keyword-picker"
-                className="lt-input min-w-0 flex-1"
-                aria-label={copy.chooseLabel}
-                value={keyword.id}
-                onChange={(event) => {
-                  const next = keywords.findIndex((item) => item.id === event.target.value);
-                  setIndex(next < 0 ? 0 : next);
-                }}
-              >
-                {keywords.map((item) => (
-                  <option key={item.id} value={item.id}>
-                    {item.term_en}
-                  </option>
-                ))}
-              </select>
-              <button
-                type="button"
-                className="lt-btn-ghost px-3 py-2 text-sm"
-                data-testid="practice-keyword-previous"
-                disabled={index === 0}
-                onClick={() => setIndex((current) => Math.max(0, current - 1))}
-              >
-                {copy.previousLabel}
-              </button>
-              <button
-                type="button"
-                className="lt-btn-ghost px-3 py-2 text-sm"
-                data-testid="practice-keyword-next"
-                disabled={index >= keywords.length - 1}
-                onClick={() => setIndex((current) => Math.min(keywords.length - 1, current + 1))}
-              >
-                {copy.nextLabel}
-              </button>
-            </div>
+        </header>
+        <div className="lt-keyword-card-scroll">
+          {showImage && keyword.image_url ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={keyword.image_url}
+              alt={keyword.image_alt || copy.imageAltFallback}
+              className="lt-keyword-card-image object-contain"
+            />
           ) : null}
-          <p className="text-[11px] font-bold uppercase tracking-wide text-[var(--lingo-red)]">
-            Keyword Card
-          </p>
-          <h3
-            dir="ltr"
-            lang="en"
-            data-testid="practice-keyword-term-title"
-            data-keyword-id={keyword.id}
-            className="mt-1 text-xl font-bold text-[var(--text-primary)]"
-          >
-            {keyword.term_en}
-          </h3>
           <p
             id={descriptionId}
             dir="ltr"
             lang="en"
-            className="mt-3 text-base leading-7 text-[var(--text-primary)] whitespace-pre-wrap"
+            className="lt-keyword-card-copy"
           >
             {keywordView.englishDefinition}
           </p>
           {keywordView.showArabic ? (
             <div className="mt-3">
               <ArabicDraftNote show={keywordView.draft} />
-              {keywordView.arabicTerm ? (
-                <p dir="rtl" lang="ar" className="text-start text-base font-semibold text-[var(--text-primary)]">
-                  {keywordView.arabicTerm}
-                </p>
-              ) : null}
               {keywordView.arabicDefinition ? (
-                <p
-                  dir="rtl"
-                  lang="ar"
-                  className="mt-2 text-start text-base leading-7 text-[var(--text-primary)] whitespace-pre-wrap break-words"
-                >
+                <p dir="rtl" lang="ar" className="lt-keyword-card-copy">
                   {keywordView.arabicDefinition}
                 </p>
               ) : null}
@@ -379,34 +378,32 @@ export default function PracticeKeywordDialog({
               Arabic definition is not on this card yet. Showing the English definition.
             </p>
           ) : null}
-          {showImage && keyword.image_url ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img
-              src={keyword.image_url}
-              alt={keyword.image_alt || copy.imageAltFallback}
-              className="mt-3 h-auto w-full max-h-72 object-contain rounded-[var(--radius-lg)] border border-[var(--border)] bg-[var(--background)] p-2"
-            />
-          ) : null}
-          <div className="mt-3">
-            <button
-              type="button"
-              className="lt-btn-ghost px-3 py-1.5 text-xs"
-              data-testid="practice-keyword-save"
-              disabled={saving}
-              onClick={() => void toggleSave()}
-            >
-              {saved ? copy.unsaveLabel : copy.saveLabel}
-            </button>
-            {saveError ? <p className="mt-1 text-[11px] text-[var(--wrong)]">{saveError}</p> : null}
-          </div>
-          <p dir={copy.dir} lang={copy.lang} className="mt-3 text-[11px] text-[var(--text-secondary)]">
-            {copy.disclaimer}
-          </p>
-        </div>
-        <div className="lt-hint-dialog-footer">
           <button
             type="button"
-            className="lt-btn-primary w-full px-4 py-3 text-sm"
+            className={saved ? 'lt-keyword-save is-saved' : 'lt-keyword-save'}
+            aria-pressed={saved}
+            data-testid="practice-keyword-save"
+            disabled={saving}
+            onClick={() => void toggleSave()}
+          >
+            <svg className="lt-keyword-save-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M7 4.5h10A1.5 1.5 0 0 1 18.5 6v14l-6.5-3.4L5.5 20V6A1.5 1.5 0 0 1 7 4.5Z"
+                fill={saved ? 'currentColor' : 'none'}
+                stroke="currentColor"
+                strokeWidth="1.7"
+                strokeLinejoin="round"
+              />
+            </svg>
+            {saved ? copy.unsaveLabel : copy.saveLabel}
+          </button>
+          {saveError ? <p className="mt-1 text-[11px] text-[var(--wrong)]">{saveError}</p> : null}
+          <p dir={copy.dir} lang={copy.lang} className="lt-keyword-card-note">
+            {copy.disclaimer}
+          </p>
+          <button
+            type="button"
+            className="lt-btn-primary lt-keyword-card-done"
             data-testid="practice-keyword-got-it"
             onPointerDown={closeFromPointer}
             onClick={(event) => {
