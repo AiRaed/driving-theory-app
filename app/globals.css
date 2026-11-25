@@ -4,6 +4,17 @@
 
 :root {
   /*
+   * One safe-area measurement for the Capacitor WebView and mobile browsers.
+   * viewport-fit=cover makes these non-zero only when the page actually
+   * extends under the status bar, Dynamic Island, or home indicator.
+   * Desktop and inset WebViews report 0, so this adds no extra padding there.
+   */
+  --lt-safe-top: env(safe-area-inset-top, 0px);
+  --lt-safe-right: env(safe-area-inset-right, 0px);
+  --lt-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --lt-safe-left: env(safe-area-inset-left, 0px);
+
+  /*
    * Approved LingoTheory palette.
    * Navy for structure, British red for actions, teal for progress and correct answers.
    */
@@ -554,9 +565,10 @@
     justify-content: center;
     overflow: hidden;
     overscroll-behavior: none;
-    padding: 0.75rem 0.875rem max(0.875rem, env(safe-area-inset-bottom, 0px));
-    padding-left: max(0.875rem, env(safe-area-inset-left, 0px));
-    padding-right: max(0.875rem, env(safe-area-inset-right, 0px));
+    padding-top: max(0.75rem, var(--lt-safe-top));
+    padding-right: max(0.875rem, var(--lt-safe-right));
+    padding-bottom: max(0.875rem, var(--lt-safe-bottom));
+    padding-left: max(0.875rem, var(--lt-safe-left));
   }
 
   .lt-keyword-card-backdrop {
@@ -572,7 +584,7 @@
     width: 100%;
     max-width: 32rem;
     min-height: 0;
-    max-height: min(88dvh, calc(100dvh - env(safe-area-inset-top, 0px) - 1.25rem));
+    max-height: min(88dvh, 100%);
     flex-direction: column;
     overflow: hidden;
     border-radius: 1.15rem;
@@ -658,7 +670,7 @@
     overflow-y: auto;
     overscroll-behavior: contain;
     touch-action: pan-y;
-    padding: 0.9rem 1rem max(1rem, env(safe-area-inset-bottom, 0px));
+    padding: 0.9rem 1rem 1rem;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -729,7 +741,10 @@
   @media (min-width: 640px) {
     .lt-keyword-card-overlay {
       align-items: center;
-      padding: 1.5rem;
+      padding-top: max(1.5rem, var(--lt-safe-top));
+      padding-right: max(1.5rem, var(--lt-safe-right));
+      padding-bottom: max(1.5rem, var(--lt-safe-bottom));
+      padding-left: max(1.5rem, var(--lt-safe-left));
     }
   }
 
@@ -759,9 +774,10 @@
     justify-content: center;
     overflow: hidden;
     overscroll-behavior: none;
-    padding: 0.75rem 0.875rem max(0.875rem, env(safe-area-inset-bottom, 0px));
-    padding-left: max(0.875rem, env(safe-area-inset-left, 0px));
-    padding-right: max(0.875rem, env(safe-area-inset-right, 0px));
+    padding-top: max(0.75rem, var(--lt-safe-top));
+    padding-right: max(0.875rem, var(--lt-safe-right));
+    padding-bottom: max(0.875rem, var(--lt-safe-bottom));
+    padding-left: max(0.875rem, var(--lt-safe-left));
   }
 
   .lt-hint-dialog-backdrop {
@@ -777,7 +793,7 @@
     width: 100%;
     max-width: 32rem;
     min-height: 0;
-    max-height: min(88dvh, calc(100dvh - env(safe-area-inset-top, 0px) - 1.25rem));
+    max-height: min(88dvh, 100%);
     flex-direction: column;
     overflow: hidden;
     border-radius: 1.15rem;
@@ -857,7 +873,7 @@
     overflow-y: auto;
     overscroll-behavior: contain;
     touch-action: pan-y;
-    padding: 0.9rem 1rem max(1rem, env(safe-area-inset-bottom, 0px));
+    padding: 0.9rem 1rem 1rem;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -945,9 +961,9 @@
 
   .lt-tabbar {
     position: fixed;
-    left: 0.55rem;
-    right: 0.55rem;
-    bottom: max(0.45rem, env(safe-area-inset-bottom, 0px));
+    left: max(0.55rem, var(--lt-safe-left));
+    right: max(0.55rem, var(--lt-safe-right));
+    bottom: max(0.45rem, var(--lt-safe-bottom));
     z-index: 40;
     display: flex;
     gap: 0.2rem;
@@ -1015,12 +1031,33 @@
   @media (min-width: 640px) {
     .lt-hint-dialog-overlay {
       align-items: center;
-      padding: 1.5rem;
+      padding-top: max(1.5rem, var(--lt-safe-top));
+      padding-right: max(1.5rem, var(--lt-safe-right));
+      padding-bottom: max(1.5rem, var(--lt-safe-bottom));
+      padding-left: max(1.5rem, var(--lt-safe-left));
     }
   }
 }
 
 @layer utilities {
+  .lt-safe-top {
+    padding-top: var(--lt-safe-top);
+  }
+
+  .lt-safe-bottom {
+    padding-bottom: var(--lt-safe-bottom);
+  }
+
+  .lt-clear-bottom-nav {
+    padding-bottom: calc(5.25rem + var(--lt-safe-bottom));
+  }
+
+  @media (min-width: 768px) {
+    .lt-clear-bottom-nav {
+      padding-bottom: 0;
+    }
+  }
+
   .text-balance {
     text-wrap: balance;
   }

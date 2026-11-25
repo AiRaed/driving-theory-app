@@ -91,7 +91,7 @@ export default function DashboardChrome({
 
   return (
     <>
-      <header ref={rootRef} dir="ltr" className="sticky top-0 z-30 min-w-0 border-b border-[#E6EDF5] bg-white pt-[env(safe-area-inset-top)] shadow-[0_1px_0_rgba(16,45,78,0.04)]">
+      <header ref={rootRef} dir="ltr" className="lt-safe-top sticky top-0 z-30 min-w-0 border-b border-[#E6EDF5] bg-white shadow-[0_1px_0_rgba(16,45,78,0.04)]">
         <div className="mx-auto flex h-[4.5rem] w-full min-w-0 max-w-[1120px] items-center gap-3 px-4 md:h-20 md:gap-6 md:px-6">
           <Link href="/dashboard" aria-label={enLabel('homeAria')} className="flex min-w-0 max-w-[9.5rem] shrink items-center sm:max-w-[11rem] md:max-w-[12.5rem] md:shrink-0">
             <BrandLogo size="header" priority />
@@ -202,7 +202,7 @@ export default function DashboardChrome({
       <nav
         dir="ltr"
         aria-label="Primary"
-        className="fixed inset-x-0 bottom-0 z-30 border-t border-[#E6EDF5] bg-white pb-[env(safe-area-inset-bottom)] shadow-[0_-6px_20px_rgba(16,45,78,0.06)] md:hidden"
+        className="lt-safe-bottom fixed inset-x-0 bottom-0 z-30 border-t border-[#E6EDF5] bg-white shadow-[0_-6px_20px_rgba(16,45,78,0.06)] md:hidden"
       >
         <div className="grid grid-cols-4">
           {NAV.map((item) => {

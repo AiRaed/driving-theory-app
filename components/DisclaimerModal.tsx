@@ -46,7 +46,7 @@ export default function DisclaimerModal(props: DisclaimerModalProps) {
             className="fixed inset-0 bg-black/40 z-50 sm:hidden"
             onClick={() => setIsOpen(false)}
           />
-          <div className="fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-50 sm:hidden max-h-[80vh] overflow-y-auto">
+          <div className="lt-safe-bottom fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-2xl z-50 sm:hidden max-h-[80vh] overflow-y-auto">
             <div className="sticky top-0 bg-white border-b border-slate-200 px-4 py-3 flex items-center justify-between">
               <h3 className="text-base font-semibold text-slate-800">{t(lang, 'disclaimerTitle')}</h3>
               <button

@@ -27,7 +27,7 @@ export default function IOSInstallBanner() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-[9997] safe-area-pb bg-[var(--navy)] text-white text-center py-2.5 px-4 shadow-lg flex items-center justify-center gap-3"
+      className="lt-safe-bottom fixed bottom-0 left-0 right-0 z-[9997] bg-[var(--navy)] text-white text-center py-2.5 px-4 shadow-lg flex items-center justify-center gap-3"
       role="banner"
     >
       <span className="text-sm">

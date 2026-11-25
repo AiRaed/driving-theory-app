@@ -61,5 +61,5 @@ run('Admin visibility uses the server check, not a client email comparison', () 
 run('Next bundles are not served from the stale app-shell cache', () => {
   const worker = source('public/sw.js');
   assert.ok(worker.includes("startsWith('/_next/')"));
-  assert.ok(worker.includes('lingotheory-v3'));
+  assert.ok(worker.includes('lingotheory-v4'));
 });

@@ -142,7 +142,7 @@ export default function HeaderClient() {
   }
 
   return (
-    <header className="sticky top-0 z-30 border-b border-[var(--border)] bg-white pt-[env(safe-area-inset-top)]">
+    <header className="lt-safe-top sticky top-0 z-30 border-b border-[var(--border)] bg-white">
       <div className="mx-auto flex h-16 max-w-[1200px] items-center gap-2 px-3 md:h-20 md:gap-6 md:px-6">
         <button
           ref={menuButtonRef}

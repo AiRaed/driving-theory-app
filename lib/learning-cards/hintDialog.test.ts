@@ -159,14 +159,16 @@ run('Hint dialog uses the keyword card floating layout with a red header', () =>
   assert.ok(overlay.includes('align-items: flex-end'));
   assert.ok(overlay.includes('overflow: hidden'));
   assert.ok(overlay.includes('overscroll-behavior: none'));
-  assert.ok(overlay.includes('safe-area-inset-bottom'));
-  assert.ok(overlay.includes('safe-area-inset-left'));
-  assert.ok(overlay.includes('safe-area-inset-right'));
+  assert.ok(overlay.includes('--lt-safe-top'));
+  assert.ok(overlay.includes('--lt-safe-bottom'));
+  assert.ok(overlay.includes('--lt-safe-left'));
+  assert.ok(overlay.includes('--lt-safe-right'));
   assert.ok(!overlay.includes('overflow-y: auto'));
 
   assert.ok(panel.includes('overflow: hidden'));
-  assert.ok(panel.includes('88dvh'));
-  assert.ok(panel.includes('safe-area-inset-top'));
+  assert.ok(panel.includes('min(88dvh, 100%)'));
+  assert.ok(!panel.includes('safe-area-inset-top'));
+  assert.ok(!panel.includes('--lt-safe-top'));
   assert.ok(panel.includes('max-width: 32rem'));
   assert.ok(panel.includes('border-radius: 1.15rem'));
   assert.ok(panel.includes('var(--surface)'));
@@ -176,7 +178,8 @@ run('Hint dialog uses the keyword card floating layout with a red header', () =>
   assert.ok(scroll.includes('overflow-y: auto'));
   assert.ok(scroll.includes('overscroll-behavior: contain'));
   assert.ok(scroll.includes('min-height: 0'));
-  assert.ok(scroll.includes('safe-area-inset-bottom'));
+  assert.ok(!scroll.includes('safe-area-inset-bottom'));
+  assert.ok(!scroll.includes('--lt-safe-bottom'));
   const imageRule = css.slice(css.indexOf('.lt-hint-dialog-image {'), css.indexOf('.lt-hint-dialog-video {'));
   assert.ok(imageRule.includes('width: 100%'));
   assert.ok(imageRule.includes('height: auto'));
@@ -187,7 +190,9 @@ run('Hint dialog uses the keyword card floating layout with a red header', () =>
   assert.ok(!hintCss.includes('92dvh'));
 
   assert.ok(media.includes('align-items: center'));
-  assert.ok(media.includes('padding: 1.5rem'));
+  assert.ok(media.includes('1.5rem'));
+  assert.ok(media.includes('--lt-safe-top'));
+  assert.ok(media.includes('--lt-safe-bottom'));
   assert.ok(!media.includes('align-items: flex-end'));
 });
 

@@ -42,7 +42,7 @@ export default function FooterClient() {
         // Mobile WebView / phone: free vertical space on question flows.
         // Desktop (md+): keep existing footer on all routes.
         hideOnMobile && 'hidden md:block',
-        dashboard && 'pb-[calc(5.25rem+env(safe-area-inset-bottom))] md:pb-0'
+        dashboard ? 'lt-clear-bottom-nav' : 'lt-safe-bottom'
       )}
     >
       <div className="max-w-5xl mx-auto px-4 py-6">

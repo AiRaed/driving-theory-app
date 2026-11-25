@@ -4,10 +4,9 @@
  * JavaScript kept an older header after the navigation redesign, so the
  * Admin account-menu entry could stay missing after the source was updated.
  */
-const CACHE_NAME = 'lingotheory-v3';
+const CACHE_NAME = 'lingotheory-v4';
 
 const STATIC_ASSETS = [
-  '/',
   '/manifest.webmanifest',
   '/favicon-check.svg',
   '/icons/icon-192.png',
@@ -43,8 +42,7 @@ self.addEventListener('fetch', (event) => {
   // Static assets: stale-while-revalidate
   const isStatic =
     url.origin === location.origin &&
-    (url.pathname === '/' ||
-      url.pathname === '/manifest.webmanifest' ||
+    (url.pathname === '/manifest.webmanifest' ||
       /^\/(favicon|icons|pwa)\//.test(url.pathname) ||
       url.pathname.endsWith('.svg') ||
       url.pathname.endsWith('.png') ||

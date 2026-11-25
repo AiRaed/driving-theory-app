@@ -118,7 +118,7 @@ export default function AddToHomeScreenPopup({ onClose, forceShow = false }: Add
       <div className="fixed inset-0 bg-black/50 z-[9998] animate-in fade-in pointer-events-none" />
       <div
         className={cn(
-          'fixed bottom-0 left-0 right-0 z-[9999] pointer-events-auto',
+          'lt-safe-bottom fixed bottom-0 left-0 right-0 z-[9999] pointer-events-auto',
           'bg-white rounded-t-2xl shadow-2xl',
           'animate-in slide-in-from-bottom duration-300',
           'max-w-md mx-auto'
