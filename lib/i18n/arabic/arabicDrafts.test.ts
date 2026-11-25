@@ -6,7 +6,7 @@
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
-import { keywordDisplay, directionForLanguage } from './display';
+import { keywordDisplay, directionForLanguage, savedCardLanguageView } from './display';
 import {
   chooseExplanationArabic,
   isArabicDraftPreviewEnabled,
@@ -162,6 +162,35 @@ async function main() {
       explanation_ar: 'مسار الطوارئ.',
     });
     assert.equal(englishOnly.showArabic, false);
+    const englishSaved = savedCardLanguageView({
+      language: 'off',
+      englishBody: 'Emergency lane.',
+      arabicTitle: 'الكتف الصلب',
+      arabicBody: 'مسار الطوارئ.',
+    });
+    assert.equal(englishSaved.showExtra, false);
+    assert.equal(englishSaved.englishBody, 'Emergency lane.');
+    const arabicSaved = savedCardLanguageView({
+      language: 'ar',
+      englishBody: 'Emergency lane.',
+      arabicTitle: 'الكتف الصلب',
+      arabicBody: 'مسار الطوارئ.',
+    });
+    assert.equal(arabicSaved.showExtra, true);
+    assert.equal(arabicSaved.extraDir, 'rtl');
+    assert.equal(arabicSaved.extraLang, 'ar');
+    assert.equal(arabicSaved.englishBody, 'Emergency lane.');
+    const urduSaved = savedCardLanguageView({
+      language: 'ur',
+      englishBody: 'Emergency lane.',
+      arabicTitle: 'الكتف الصلب',
+      arabicBody: 'مسار الطوارئ.',
+      selected: { lang: 'ur', body: 'ایمرجنسی لین' },
+    });
+    assert.equal(urduSaved.showExtra, true);
+    assert.equal(urduSaved.extraLang, 'ur');
+    assert.equal(urduSaved.extraBody, 'ایمرجنسی لین');
+    assert.equal(urduSaved.extraTitle, '');
     assert.equal(directionForLanguage('ar'), 'rtl');
     assert.equal(directionForLanguage('en'), 'ltr');
   });

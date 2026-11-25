@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import PracticeHintDialog from '@/components/PracticeHintDialog';
 import PracticeKeywordDialog from '@/components/PracticeKeywordDialog';
-import { keywordDisplay } from '@/lib/i18n/arabic/display';
+import { savedCardLanguageView } from '@/lib/i18n/arabic/display';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
 import { useSessionUserId } from '@/lib/saved-cards/useSessionUserId';
 import type { LearnerKeywordCard } from '@/lib/keyword-cards/types';
@@ -70,19 +70,19 @@ function SavedWave() {
   );
 }
 
-function KeywordIcon() {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M7 4.5h10a1 1 0 0 1 1 1V20l-6-3.2L6 20V5.5a1 1 0 0 1 1-1Z" />
-    </svg>
-  );
-}
-
 function ExplanationIcon() {
   return (
     <svg viewBox="0 0 24 24" aria-hidden className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
       <path d="M8 6.5h8M8 10.5h8M8 14.5h5" />
       <path d="M6.5 3.5h11a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1v-15a1 1 0 0 1 1-1Z" />
+    </svg>
+  );
+}
+
+function BookmarkIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden className={className || 'h-5 w-5'} fill="currentColor">
+      <path d="M7 4.5h10A1.5 1.5 0 0 1 18.5 6v14l-6.5-3.4L5.5 20V6A1.5 1.5 0 0 1 7 4.5Z" />
     </svg>
   );
 }
@@ -317,68 +317,73 @@ export default function SavedCardsPage() {
           <ul className="mt-4 grid grid-cols-1 gap-4 min-[640px]:grid-cols-2 min-[640px]:gap-[18px] min-[1100px]:grid-cols-3 xl:grid-cols-4">
             {visibleKeywords.map(({ kind, card }) => {
               const learner = kind === 'new' ? toLearnerKeyword(card) : legacyToLearner(card);
-              const display = keywordDisplay({
-                language: arabicUi ? 'ar' : 'en',
-                term_en: learner.term_en,
-                translation_ar: learner.translation_ar,
-                explanation_en: learner.explanation_en,
-                explanation_ar: learner.explanation_ar,
-                arabic_review: learner.arabic_review,
+              const copy = savedCardLanguageView({
+                language: lang,
+                englishBody: learner.explanation_en,
+                arabicTitle: learner.translation_ar,
+                arabicBody: learner.explanation_ar,
               });
-              const preview = display.showArabic && display.arabicDefinition
-                ? display.arabicDefinition
-                : display.englishDefinition;
               return (
                 <li key={`${kind}-${card.id}`} className="h-full min-w-0">
                   <article
                     aria-label={`Keyword Card ${learner.term_en}`}
-                    className="flex h-full min-w-0 flex-col overflow-hidden rounded-[14px] border border-[#D5DEE8] bg-white shadow-[0_8px_20px_rgba(16,45,78,0.05)]"
+                    className="flex h-full min-w-0 flex-col overflow-hidden rounded-[1.15rem] bg-white shadow-[0_8px_24px_rgba(16,45,78,0.08)]"
                   >
-                    <div className="h-1.5 bg-[#168CBA]" />
-                    <div className="flex min-w-0 flex-1 flex-col p-4">
-                      <div className="flex items-center gap-2 text-[#168CBA]">
-                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#168CBA]/10">
-                          <KeywordIcon />
-                        </span>
-                        <span className="text-[11px] font-bold uppercase tracking-[0.08em]">Keyword</span>
+                    <header className="flex items-start gap-3 border-b border-[#8ec3dc] bg-[#e8f6fc] px-4 py-3">
+                      <div className="min-w-0 flex-1">
+                        <h2 dir="ltr" lang="en" className="break-words text-[1.15rem] font-extrabold leading-tight tracking-tight text-[#102D4E]">
+                          {learner.term_en}
+                        </h2>
+                        {copy.showExtra && copy.extraLang === 'ar' && copy.extraTitle ? (
+                          <p dir="rtl" lang="ar" className="mt-0.5 break-words text-base font-bold leading-snug text-[#102D4E]">
+                            {copy.extraTitle}
+                          </p>
+                        ) : null}
+                        {copy.showExtra && copy.extraLang !== 'ar' && copy.extraTitle ? (
+                          <p dir={copy.extraDir} lang={copy.extraLang} className="mt-0.5 break-words text-base font-bold leading-snug text-[#102D4E]">
+                            {copy.extraTitle}
+                          </p>
+                        ) : null}
                       </div>
-                      <h2 dir="ltr" lang="en" className="mt-3 line-clamp-2 break-words text-base font-bold leading-snug text-[#102D4E]">
-                        {learner.term_en}
-                      </h2>
-                      {display.arabicTerm ? (
-                        <p dir="rtl" lang="ar" className="mt-1 line-clamp-2 break-words text-start text-sm font-semibold leading-snug text-[#102D4E]">
-                          {display.arabicTerm}
+                      <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center text-[#0e6f96]" aria-hidden>
+                        <BookmarkIcon />
+                      </span>
+                    </header>
+                    {learner.image_url ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={learner.image_url}
+                        alt={learner.image_alt || ''}
+                        className="block h-auto w-full max-h-[min(52vh,24rem)] object-contain"
+                      />
+                    ) : null}
+                    <div className="flex min-w-0 flex-1 flex-col px-4 pb-4 pt-3">
+                      {copy.englishBody ? (
+                        <p dir="ltr" lang="en" className="line-clamp-3 break-words text-sm leading-5 text-[#4E5D73]">
+                          {copy.englishBody}
                         </p>
                       ) : null}
-                      {learner.image_url ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                          src={learner.image_url}
-                          alt={learner.image_alt || ''}
-                          className="mt-3 h-14 w-full rounded-lg border border-[#D5DEE8] object-contain"
-                        />
-                      ) : null}
-                      {preview ? (
+                      {copy.showExtra && copy.extraBody ? (
                         <p
-                          dir={display.showArabic && display.arabicDefinition ? 'rtl' : 'ltr'}
-                          lang={display.showArabic && display.arabicDefinition ? 'ar' : 'en'}
-                          className="mt-2 line-clamp-3 break-words text-start text-sm leading-5 text-[#4E5D73]"
+                          dir={copy.extraDir}
+                          lang={copy.extraLang}
+                          className="mt-2 line-clamp-3 break-words text-sm leading-6 text-[#102D4E]"
                         >
-                          {preview}
+                          {copy.extraBody}
                         </p>
                       ) : null}
                       <div className="mt-auto pt-3">
-                      <button
-                        type="button"
-                        className="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#168CBA] px-4 text-sm font-bold text-white"
-                        onClick={(event) => {
-                          returnFocusRef.current = event.currentTarget;
-                          setOpenExplanation(null);
-                          setOpenKeyword({ kind, card: learner });
-                        }}
-                      >
-                        View
-                      </button>
+                        <button
+                          type="button"
+                          className="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#168CBA] px-4 text-sm font-bold text-white"
+                          onClick={(event) => {
+                            returnFocusRef.current = event.currentTarget;
+                            setOpenExplanation(null);
+                            setOpenKeyword({ kind, card: learner });
+                          }}
+                        >
+                          View
+                        </button>
                       </div>
                     </div>
                   </article>
@@ -387,54 +392,67 @@ export default function SavedCardsPage() {
             })}
 
             {visibleExplanations.map((card) => {
-              const arabicPreview = arabicUi && String(card.explanation_ar || '').trim();
-              const preview = arabicPreview ? String(card.explanation_ar) : card.explanation;
+              const storedArabic = card.language === 'ar';
+              const copy = savedCardLanguageView({
+                language: lang,
+                englishBody: storedArabic ? '' : card.explanation,
+                arabicBody: card.explanation_ar || (storedArabic ? card.explanation : ''),
+              });
               return (
                 <li key={card.id} className="h-full min-w-0">
                   <article
                     aria-label={`Explanation Card ${card.question_id}`}
-                    className="flex h-full min-w-0 flex-col overflow-hidden rounded-[14px] border border-[#D5DEE8] bg-white shadow-[0_8px_20px_rgba(16,45,78,0.05)]"
+                    className="flex h-full min-w-0 flex-col overflow-hidden rounded-[1.15rem] bg-white shadow-[0_8px_24px_rgba(16,45,78,0.08)]"
                   >
-                    <div className="h-1.5 bg-[#D71920]" />
-                    <div className="flex min-w-0 flex-1 flex-col p-4">
-                      <div className="flex items-center gap-2 text-[#D71920]">
-                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-[#D71920]/10">
+                    <header className="flex items-start gap-3 border-b border-[#f3c1c4] bg-[#fdecee] px-4 py-3">
+                      <div className="min-w-0 flex-1">
+                        <p className="flex items-center gap-1.5 text-[0.68rem] font-extrabold uppercase tracking-[0.08em] text-[#D71920]">
                           <ExplanationIcon />
-                        </span>
-                        <span className="text-[11px] font-bold uppercase tracking-[0.08em]">Explanation</span>
+                          Explanation
+                        </p>
+                        <h2 dir="ltr" lang="en" className="mt-1 break-words text-[1.15rem] font-extrabold leading-tight tracking-tight text-[#102D4E]">
+                          {card.question_id}
+                        </h2>
                       </div>
-                      <h2 dir="ltr" lang="en" className="mt-3 line-clamp-2 break-words text-base font-bold leading-snug text-[#102D4E]">
-                        {card.question_id}
-                      </h2>
-                      {card.image_url ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                          src={card.image_url}
-                          alt={card.image_alt || ''}
-                          className="mt-3 h-14 w-full rounded-lg border border-[#D5DEE8] object-contain"
-                        />
+                      <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center text-[#D71920]" aria-hidden>
+                        <BookmarkIcon />
+                      </span>
+                    </header>
+                    {card.image_url ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={card.image_url}
+                        alt={card.image_alt || ''}
+                        className="block h-auto w-full max-h-[min(52vh,24rem)] object-contain"
+                      />
+                    ) : null}
+                    <div className="flex min-w-0 flex-1 flex-col px-4 pb-4 pt-3">
+                      {copy.englishBody ? (
+                        <p dir="ltr" lang="en" className="line-clamp-3 break-words text-sm leading-5 text-[#4E5D73]">
+                          {copy.englishBody}
+                        </p>
                       ) : null}
-                      {preview ? (
+                      {copy.showExtra && copy.extraBody ? (
                         <p
-                          dir={arabicPreview ? 'rtl' : 'ltr'}
-                          lang={arabicPreview ? 'ar' : 'en'}
-                          className="mt-2 line-clamp-3 break-words text-start text-sm leading-5 text-[#4E5D73]"
+                          dir={copy.extraDir}
+                          lang={copy.extraLang}
+                          className="mt-2 line-clamp-3 break-words text-sm leading-6 text-[#102D4E]"
                         >
-                          {preview}
+                          {copy.extraBody}
                         </p>
                       ) : null}
                       <div className="mt-auto pt-3">
-                      <button
-                        type="button"
-                        className="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#D71920] px-4 text-sm font-bold text-white"
-                        onClick={(event) => {
-                          returnFocusRef.current = event.currentTarget;
-                          setOpenKeyword(null);
-                          setOpenExplanation(card);
-                        }}
-                      >
-                        View
-                      </button>
+                        <button
+                          type="button"
+                          className="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-[#D71920] px-4 text-sm font-bold text-white"
+                          onClick={(event) => {
+                            returnFocusRef.current = event.currentTarget;
+                            setOpenKeyword(null);
+                            setOpenExplanation(card);
+                          }}
+                        >
+                          View
+                        </button>
                       </div>
                     </div>
                   </article>
