@@ -1,13 +1,16 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
-import { TOPIC_META } from '@/lib/questions/types';
 import KeywordCardEditor from '@/components/admin/KeywordCardEditor';
 import ExplanationHintEditor from '@/components/admin/ExplanationHintEditor';
 
 type Rec = {
   question_id: string;
   topic: string;
+  category_id?: string;
+  category_name?: string;
+  position?: number | null;
+  category_total?: number;
   recommended_classification: string;
   effective_classification: string;
   priority: string;
@@ -19,8 +22,11 @@ type Rec = {
   draft_label?: string | null;
 };
 
+type PracticeCategory = { id: string; name: string };
+
 export default function AdminLearningCardsPage() {
   const [rows, setRows] = useState<Rec[]>([]);
+  const [categories, setCategories] = useState<PracticeCategory[]>([]);
   const [totals, setTotals] = useState<Record<string, unknown>>({});
   const [classification, setClassification] = useState('needs_explanation');
   const [topic, setTopic] = useState('');
@@ -44,6 +50,7 @@ export default function AdminLearningCardsPage() {
     const res = await fetch(`/api/admin/learning-cards/recommendations?${params}`);
     const data = await res.json();
     setRows(data.recommendations || []);
+    setCategories(data.categories || []);
     setTotals(data.totals || {});
     setLoading(false);
   }, [classification, topic, priority, cardStatus]);
@@ -107,14 +114,22 @@ export default function AdminLearningCardsPage() {
           <option value="review_later">review_later</option>
           <option value="unnecessary">unnecessary (override)</option>
         </select>
-        <select className="lt-input" value={topic} onChange={(e) => setTopic(e.target.value)}>
-          <option value="">All topics</option>
-          {TOPIC_META.map((t) => (
-            <option key={t.id} value={t.id}>
-              {t.label_en}
-            </option>
-          ))}
-        </select>
+        <label className="block text-xs font-semibold text-[var(--text-secondary)]">
+          Practice category
+          <select
+            className="lt-input mt-1 font-normal"
+            aria-label="Practice category"
+            value={topic}
+            onChange={(e) => setTopic(e.target.value)}
+          >
+            <option value="">All categories</option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+        </label>
         <select className="lt-input" value={priority} onChange={(e) => setPriority(e.target.value)}>
           <option value="">All priorities</option>
           <option value="high">high</option>
@@ -179,7 +194,8 @@ export default function AdminLearningCardsPage() {
           <thead>
             <tr className="border-b border-[var(--border)] text-left text-[11px] uppercase tracking-wider text-[var(--text-secondary)]">
               <th className="px-4 py-3">ID</th>
-              <th className="px-3 py-3">Topic</th>
+              <th className="px-3 py-3">Category</th>
+              <th className="px-3 py-3">Position</th>
               <th className="px-3 py-3">Recommended</th>
               <th className="px-3 py-3">Effective</th>
               <th className="px-3 py-3">Priority</th>
@@ -191,13 +207,13 @@ export default function AdminLearningCardsPage() {
           <tbody>
             {loading ? (
               <tr>
-                <td colSpan={8} className="px-4 py-8 text-center">
+                <td colSpan={9} className="px-4 py-8 text-center">
                   Loading…
                 </td>
               </tr>
             ) : visible.length === 0 ? (
               <tr>
-                <td colSpan={8} className="px-4 py-8 text-center">
+                <td colSpan={9} className="px-4 py-8 text-center">
                   No questions match these filters.
                 </td>
               </tr>
@@ -217,7 +233,10 @@ export default function AdminLearningCardsPage() {
                       </span>
                     ) : null}
                   </td>
-                  <td className="px-3 py-3">{r.topic}</td>
+                  <td className="px-3 py-3">{r.category_name || r.topic}</td>
+                  <td className="px-3 py-3 tabular-nums">
+                    {r.position ? `${r.position}${r.category_total ? ` of ${r.category_total}` : ''}` : '—'}
+                  </td>
                   <td className="px-3 py-3">{r.recommended_classification}</td>
                   <td className="px-3 py-3">{r.effective_classification}</td>
                   <td className="px-3 py-3">{r.priority}</td>

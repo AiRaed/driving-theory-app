@@ -26,6 +26,13 @@ type Card = {
   video_url?: string | null;
 };
 
+type PracticeCategory = {
+  categoryId: string;
+  categoryName: string;
+  position: number | null;
+  total: number;
+};
+
 type QuestionDetail = {
   id: string;
   question_en: string;
@@ -70,6 +77,7 @@ export default function ExplanationHintEditor({
   onOpenQuestion?: (questionId: string) => void;
 }) {
   const [rec, setRec] = useState<Rec | null>(null);
+  const [practiceCategory, setPracticeCategory] = useState<PracticeCategory | null>(null);
   const [question, setQuestion] = useState<QuestionDetail | null>(null);
   const [card, setCard] = useState<Card | null>(null);
   const [explanation, setExplanation] = useState('');
@@ -106,8 +114,11 @@ export default function ExplanationHintEditor({
     setDraftRejected(rejected);
     if (r.ok) {
       setRec(recData.recommendation);
+      setPracticeCategory(recData.practice_category || null);
       setOverride(recData.recommendation?.admin_override || '');
       setFormat(recData.recommendation?.suggested_format || 'text');
+    } else {
+      setPracticeCategory(null);
     }
     const enCard = (cardData.cards || []).find((item: Card) => item.language === 'en') || null;
     setCard(enCard);
@@ -332,13 +343,24 @@ export default function ExplanationHintEditor({
         </span>
       </div>
 
+      <div className="rounded-[var(--radius-sm)] border border-[var(--border)] bg-[var(--surface-secondary)] p-4">
+        <p className="text-[11px] uppercase tracking-wider text-[var(--text-secondary)]">Question ID</p>
+        <p className="font-mono text-lg font-bold">{questionId}</p>
+        <p className="mt-3 text-[11px] uppercase tracking-wider text-[var(--text-secondary)]">
+          Practice category
+        </p>
+        <p className="text-base font-semibold">
+          {practiceCategory?.categoryName || '—'}
+        </p>
+        {practiceCategory?.position ? (
+          <p className="mt-2 text-sm font-medium tabular-nums">
+            Position {practiceCategory.position}
+            {practiceCategory.total ? ` of ${practiceCategory.total}` : ''}
+          </p>
+        ) : null}
+      </div>
+
       <dl className="grid grid-cols-1 gap-2 text-sm">
-        <div>
-          <dt className="text-[11px] uppercase tracking-wider text-[var(--text-secondary)]">
-            Question ID
-          </dt>
-          <dd className="font-mono">{questionId}</dd>
-        </div>
         <div>
           <dt className="text-[11px] uppercase tracking-wider text-[var(--text-secondary)]">
             Official question

@@ -5,6 +5,8 @@ import { getLearningCardsRepository } from '@/lib/learning-cards/store';
 import { isLearningCardsNotMigratedError } from '@/lib/learning-cards/errors';
 import { loadHintDraft, PROVISIONAL_HINT_LABEL } from '@/lib/learning-cards/hintDraftStore';
 import { hintPresentationLabel } from '@/lib/learning-cards/hints';
+import { practiceCategoryName, practiceCategoryPlacements } from '@/lib/questions/practiceCategory';
+import { loadPublishedPracticeOrder } from '@/lib/questions/practiceCategoryOrder';
 
 export const dynamic = 'force-dynamic';
 
@@ -32,8 +34,17 @@ export async function GET(_request: NextRequest, ctx: Ctx) {
     const rec = await repo.getRecommendation(id);
     if (!rec) return NextResponse.json({ error: 'Not found' }, { status: 404 });
     const draft = loadHintDraft(id);
+    const order = await loadPublishedPracticeOrder();
+    const place = order ? practiceCategoryPlacements(order).get(id) || null : null;
     return NextResponse.json({
       recommendation: rec,
+      practice_category: place || {
+        questionId: id,
+        categoryId: rec.topic,
+        categoryName: practiceCategoryName(rec.topic),
+        position: null,
+        total: 0,
+      },
       suggested_hint: draft
         ? {
             english: draft.english,

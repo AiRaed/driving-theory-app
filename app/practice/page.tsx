@@ -23,6 +23,7 @@ import {
   FREE_QUESTION_LIMIT,
   decidePracticePageGate,
 } from '@/lib/access/entitlement';
+import { practiceCategoryIds } from '@/lib/questions/practiceCategory';
 import { useQuestionBank } from '@/lib/questions/useQuestionBank';
 import { useContentMaintenance } from '@/lib/hooks/useContentMaintenance';
 import { 
@@ -72,23 +73,6 @@ function shuffleArray<T>(array: T[]): T[] {
   }
   return shuffled;
 }
-
-const PRACTICE_TOPIC_ORDER = [
-  'alertness',
-  'attitude',
-  'hazard-awareness',
-  'documents',
-  'motorway-driving',
-  'road-signs',
-  'incidents',
-  'other-vehicles',
-  'rules-of-the-road',
-  'safety-margins',
-  'safety-vehicle',
-  'vehicle-handling',
-  'vehicle-loading',
-  'vulnerable-road-users',
-];
 
 function PracticeWave() {
   return (
@@ -320,12 +304,10 @@ export default function PracticePage() {
     return counts;
   }, [questions]);
 
-  const topics = useMemo(() => {
-    const present = new Set(questions.map((question) => question.topic));
-    const ordered = PRACTICE_TOPIC_ORDER.filter((id) => present.has(id));
-    const extras = Array.from(present).filter((id) => !PRACTICE_TOPIC_ORDER.includes(id));
-    return [...ordered, ...extras];
-  }, [questions]);
+  const topics = useMemo(
+    () => practiceCategoryIds(questions.map((question) => question.topic)),
+    [questions]
+  );
 
   // Compute totals
 
