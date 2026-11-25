@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Question } from "@/data/questions";
 import { cn } from "@/lib/utils";
@@ -10,8 +9,6 @@ import TTSButton from "@/components/TTSButton";
 import AnswerOptionContent from "@/components/AnswerOptionContent";
 import ArabicDraftNote from "@/components/ArabicDraftNote";
 import DisclaimerModal from "@/components/DisclaimerModal";
-import LanguageSelector from "@/components/LanguageSelector";
-import BilingualLabel from "@/components/BilingualLabel";
 import { enLabel } from "@/lib/i18n/ui-strings";
 import PaywallOverlay from "@/components/PaywallOverlay";
 import ContentMaintenanceNotice from "@/components/ContentMaintenanceNotice";
@@ -34,7 +31,6 @@ import {
   type TranslationData 
 } from '@/lib/translations';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
-import { type TranslationLang } from '@/lib/i18n/languages';
 import {
   analyticsLanguage,
   clearClientSessionId,
@@ -69,8 +65,27 @@ interface MockSession {
   answers: AnswerRecord[];
   currentIndex: number;
   isFinished: boolean;
+  /** Seconds already spent, so leaving the page does not restart the clock. */
+  elapsedSec?: number;
   /** Invalidate in-progress mocks after DVSA bank cutover */
   bankVersion?: string;
+}
+
+const MOCK_PAGE_SHELL = 'relative min-h-screen bg-[#F7F9FC] pb-28 md:pb-10';
+
+function formatMockTime(totalSeconds: number) {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+}
+
+function MockWave() {
+  return (
+    <svg aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-14 w-full sm:h-16" viewBox="0 0 1200 80" preserveAspectRatio="none">
+      <path d="M0 36c90 28 170-22 280-4 100 16 150 30 250 8 110-24 170-34 270-6 90 26 150 6 230-8 60-10 110 0 170 12v42H0Z" fill="rgba(22,140,186,0.55)" />
+      <path d="M0 56c130 16 210-18 340 0 110 14 170 16 270 0 120-18 190-6 290 8 80 10 150 2 300-6v22H0Z" fill="rgba(22,140,186,0.28)" />
+    </svg>
+  );
 }
 
 const MOCK_BANK_VERSION = 'dvsa-v2-758';
@@ -98,7 +113,7 @@ export default function MockTestPage() {
   const { loading, statusConfirmed, paid } = useAccess();
   const { loading: maintenanceLoading, enabled: contentMaintenance } =
     useContentMaintenance();
-  const { lang: translationLang, setLang, ready: languageReady } = useLanguage();
+  const { lang: translationLang } = useLanguage();
   const [user, setUser] = useState<User | null>(null);
   
   const [mockQuestions, setMockQuestions] = useState<QuestionWithShuffled[]>([]);
@@ -110,6 +125,9 @@ export default function MockTestPage() {
   const mockSessionIdRef = useRef<string | null>(null);
   const mockCompleteTrackedRef = useRef(false);
   const mockStartedTrackedRef = useRef(false);
+  const userIdRef = useRef<string | null>(null);
+  const sessionRef = useRef<MockSession | null>(null);
+  userIdRef.current = user?.id ?? null;
   
   // Mock Test is PAID ONLY — free_questions_used never unlocks Mock.
   useEffect(() => {
@@ -134,6 +152,7 @@ export default function MockTestPage() {
           setSelectedOptionIndex(null);
           setAnswers([]);
           setIsFinished(false);
+          setElapsedSec(0);
           mockSessionIdRef.current = null;
           mockCompleteTrackedRef.current = false;
           mockStartedTrackedRef.current = false;
@@ -251,28 +270,6 @@ export default function MockTestPage() {
     }
   }, [bankSource, bankFa, translationLang]);
 
-  const handleTranslationLangChange = (next: TranslationLang) => {
-    setLang(next);
-    if (next === "ur" && !(bankSource === "database" && bankUrdu && Object.keys(bankUrdu).length > 0)) {
-      loadUrduTranslations().then(setUrTranslations);
-    }
-    if (next === "ro" && !(bankSource === "database" && bankRo && Object.keys(bankRo).length > 0)) {
-      loadRomanianTranslations().then(setRoTranslations);
-    }
-    if (next === "pl" && !(bankSource === "database" && bankPl && Object.keys(bankPl).length > 0)) {
-      loadPolishTranslations().then(setPlTranslations);
-    }
-    if (next === "pt" && !(bankSource === "database" && bankPt && Object.keys(bankPt).length > 0)) {
-      loadPortugueseTranslations().then(setPtTranslations);
-    }
-    if (next === 'bn') {
-      loadBengaliTranslations().then(setBnTranslations);
-    }
-    if (next === "fa" && !(bankSource === "database" && bankFa && Object.keys(bankFa).length > 0)) {
-      loadPersianTranslations().then(setFaTranslations);
-    }
-  };
-
   /**
    * MOCK TEST QUESTION GENERATION LOGIC
    * 
@@ -381,6 +378,7 @@ export default function MockTestPage() {
         setCurrentIndex(savedSession.currentIndex);
         setAnswers(savedSession.answers);
         setIsFinished(savedSession.isFinished);
+        setElapsedSec(typeof savedSession.elapsedSec === 'number' ? savedSession.elapsedSec : 0);
         mockSessionIdRef.current = getOrCreateClientSessionId(MOCK_ANALYTICS_SESSION_KEY);
         // Don't re-fire started/completed for restored sessions
         mockStartedTrackedRef.current = true;
@@ -400,6 +398,7 @@ export default function MockTestPage() {
     setSelectedOptionIndex(null);
     setAnswers([]);
     setIsFinished(false);
+    setElapsedSec(0);
     mockCompleteTrackedRef.current = false;
     mockStartedTrackedRef.current = false;
     clearClientSessionId(MOCK_ANALYTICS_SESSION_KEY);
@@ -426,6 +425,7 @@ export default function MockTestPage() {
       answers: [],
       currentIndex: 0,
       isFinished: false,
+      elapsedSec: 0,
       bankVersion: MOCK_BANK_VERSION,
     });
   };
@@ -438,22 +438,41 @@ export default function MockTestPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user, bankReady, questions]);
 
-  // Save session whenever state changes
+  const persistCurrent = (overrides?: Partial<Pick<MockSession, 'answers' | 'currentIndex' | 'isFinished' | 'elapsedSec'>>) => {
+    if (!user?.id || mockQuestions.length === 0) return;
+    const session: MockSession = {
+      questionIds: mockQuestions.map((q) => q.id),
+      shuffledOptionIndices: getShuffledOptionIndices(mockQuestions),
+      answers: overrides?.answers ?? answers,
+      currentIndex: overrides?.currentIndex ?? currentIndex,
+      isFinished: overrides?.isFinished ?? isFinished,
+      elapsedSec: overrides?.elapsedSec ?? elapsedSec,
+      bankVersion: MOCK_BANK_VERSION,
+    };
+    sessionRef.current = session;
+    saveSession(session);
+  };
+
+  // Save session whenever state changes, including the running clock.
   useEffect(() => {
-    if (mockQuestions.length > 0) {
-      // Build shuffled option indices map
-      const shuffledOptionIndices = getShuffledOptionIndices(mockQuestions);
-      
-      saveSession({
-        questionIds: mockQuestions.map(q => q.id),
-        shuffledOptionIndices,
-        answers,
-        currentIndex,
-        isFinished,
-        bankVersion: MOCK_BANK_VERSION,
-      });
+    if (!user?.id || mockQuestions.length === 0) {
+      sessionRef.current = null;
+      return;
     }
-  }, [mockQuestions, answers, currentIndex, isFinished]);
+    persistCurrent();
+    // persistCurrent closes over the latest session fields listed below.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mockQuestions, answers, currentIndex, isFinished, elapsedSec, user?.id]);
+
+  // Flush the latest snapshot if the page unmounts before the effect runs.
+  useEffect(() => {
+    return () => {
+      const userId = userIdRef.current;
+      const session = sessionRef.current;
+      if (!userId || !session) return;
+      writeAccountJson(userId, ACCOUNT_LOCAL_KEYS.mockSession, session);
+    };
+  }, []);
 
   // Reset selected option when question changes (if no saved answer exists)
   useEffect(() => {
@@ -485,6 +504,7 @@ export default function MockTestPage() {
     const newAnswers = [...answers];
     newAnswers[currentIndex] = newAnswer;
     setAnswers(newAnswers);
+    persistCurrent({ answers: newAnswers });
 
     const sid =
       mockSessionIdRef.current ||
@@ -511,6 +531,7 @@ export default function MockTestPage() {
       // Restore previous answer state if exists
       const prevAnswer = answers[newIndex];
       setSelectedOptionIndex(prevAnswer?.chosenIndex ?? null);
+      persistCurrent({ currentIndex: newIndex });
     }
   };
 
@@ -524,6 +545,7 @@ export default function MockTestPage() {
       // Restore next answer state if exists
       const nextAnswer = answers[newIndex];
       setSelectedOptionIndex(nextAnswer?.chosenIndex ?? null);
+      persistCurrent({ currentIndex: newIndex });
     }
   };
 
@@ -531,6 +553,7 @@ export default function MockTestPage() {
     // Block finish when no answer is selected
     if (!isAnswered) return;
     setIsFinished(true);
+    persistCurrent({ isFinished: true });
   };
 
   // Record mock completion once when finished (uses latest answers state)
@@ -569,6 +592,7 @@ export default function MockTestPage() {
     setSelectedOptionIndex(null);
     setAnswers([]);
     setElapsedSec(0);
+    persistCurrent({ answers: [], currentIndex: 0, elapsedSec: 0 });
   };
 
   // Calculate score
@@ -584,8 +608,8 @@ export default function MockTestPage() {
 
   if (maintenanceLoading) {
     return (
-      <div className="min-h-screen bg-[var(--background)]">
-        <div className="max-w-5xl mx-auto px-4 py-6">
+      <div className={MOCK_PAGE_SHELL}>
+        <div className="mx-auto max-w-[1000px] px-4 py-6">
           <div className="text-center text-[var(--text-secondary)] font-medium">
             {enLabel('loading')}
           </div>
@@ -602,8 +626,8 @@ export default function MockTestPage() {
   // Don't block UI for access status checks
   if (!user) {
     return (
-      <div className="min-h-screen bg-[var(--background)]">
-        <div className="max-w-5xl mx-auto px-4 py-6">
+      <div className={MOCK_PAGE_SHELL}>
+        <div className="mx-auto max-w-[1000px] px-4 py-6">
           <div className="text-center text-[var(--text-secondary)] font-medium">{enLabel('loading')}</div>
         </div>
       </div>
@@ -614,14 +638,14 @@ export default function MockTestPage() {
   if (loading || !statusConfirmed) {
     if (!loading && !statusConfirmed) {
       return (
-        <div className="min-h-screen bg-[var(--background)] relative">
+        <div className={`${MOCK_PAGE_SHELL} relative`}>
           <PaywallOverlay />
         </div>
       );
     }
     return (
-      <div className="min-h-screen bg-[var(--background)]">
-        <div className="max-w-5xl mx-auto px-4 py-6">
+      <div className={MOCK_PAGE_SHELL}>
+        <div className="mx-auto max-w-[1000px] px-4 py-6">
           <div className="text-center text-[var(--text-secondary)] font-medium">{enLabel('loading')}</div>
         </div>
       </div>
@@ -631,7 +655,7 @@ export default function MockTestPage() {
   // Mock Test paywall for confirmed unpaid accounts
   if (showPaywall || !mockAccess.allow) {
     return (
-      <div className="min-h-screen bg-[var(--background)] relative">
+      <div className={`${MOCK_PAGE_SHELL} relative`}>
         <PaywallOverlay />
         <div className="pointer-events-none blur-sm opacity-50">
           <div className="max-w-5xl mx-auto px-4 py-6">
@@ -645,8 +669,8 @@ export default function MockTestPage() {
   // Show loading state for questions
   if (mockQuestions.length === 0) {
     return (
-      <div className="min-h-screen bg-[var(--background)]">
-        <div className="max-w-5xl mx-auto px-4 py-6">
+      <div className={MOCK_PAGE_SHELL}>
+        <div className="mx-auto max-w-[1000px] px-4 py-6">
           <div className="text-center text-[var(--text-secondary)] font-medium">{enLabel('loadingQuestions')}</div>
         </div>
       </div>
@@ -662,25 +686,31 @@ export default function MockTestPage() {
     const pass = percent >= 86; // DVSA-style pass threshold
 
     return (
-      <div className="min-h-screen bg-[var(--background)]">
-        <div className="max-w-5xl mx-auto px-4 py-6">
-          <div className="mb-4 flex flex-wrap items-center gap-3">
-            <Link href="/dashboard" className="lt-btn-ghost hidden sm:inline-flex px-4 py-2 text-sm flex-col items-center">
-              <BilingualLabel keyName="backToDashboard" lang={translationLang} />
-            </Link>
-            {languageReady && (
-              <LanguageSelector
-                value={translationLang}
-                onChange={handleTranslationLangChange}
-                className="flex-1 min-w-0"
-              />
-            )}
-          </div>
-          {/* Results Card */}
-          <div className="lt-card-accent p-6 sm:p-8 mt-4 mb-6">
+      <div dir="ltr" className={MOCK_PAGE_SHELL}>
+        <div className="mx-auto w-full min-w-0 max-w-[1000px] px-4 py-4 sm:px-6 sm:py-6">
+          <article className="mb-6 w-full min-w-0 overflow-hidden rounded-[22px] border border-[#E6EDF5] bg-white shadow-[0_12px_28px_rgba(16,45,78,0.06)]">
+            <header className="relative overflow-hidden bg-[#102D4E] px-4 pb-6 pt-3.5 text-white sm:px-6 sm:pb-7 sm:pt-5">
+              <MockWave />
+              <div className="relative z-[1] flex items-center gap-3">
+                <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 sm:h-11 sm:w-11">
+                  <svg viewBox="0 0 24 24" aria-hidden className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="6" y="3.5" width="12" height="17" rx="2" />
+                    <path d="M9 8h6M9 12h6M9 16h3" />
+                  </svg>
+                </span>
+                <div className="min-w-0 flex-1">
+                  <h1 className="text-base font-bold leading-tight sm:text-xl">{enLabel('mockTest')}</h1>
+                  <p className="text-xs font-semibold text-white/90 sm:text-sm">{enLabel('mockResult')}</p>
+                </div>
+                <p className="shrink-0 rounded-full bg-white/15 px-3 py-1.5 text-sm font-bold tabular-nums">
+                  {formatMockTime(elapsedSec)}
+                </p>
+              </div>
+            </header>
+            <div className="px-4 py-5 sm:px-7 sm:py-6">
             <div className="flex items-center gap-2 mb-2">
               <span className="text-2xl">{pass ? "🎉" : "📝"}</span>
-              <h1 className="text-xl font-bold text-[var(--text-primary)]">{enLabel('mockResult')}</h1>
+              <h2 className="text-xl font-bold text-[#102D4E]">{enLabel('mockResult')}</h2>
             </div>
             <p className="text-lg font-semibold mb-1 text-[var(--text-primary)]">
               {enLabel('youScored', { correct, total, percent })}
@@ -697,11 +727,12 @@ export default function MockTestPage() {
             <button
               type="button"
               onClick={handleRetake}
-              className="lt-btn-primary px-6 py-3 text-sm flex flex-col items-center"
+              className="practice-next lt-btn-primary mt-2 min-h-12 px-5 text-sm"
             >
-              <BilingualLabel keyName="retake" lang={translationLang} />
+              {enLabel('retake')}
             </button>
-          </div>
+            </div>
+          </article>
 
           {/* Wrong Answers Section */}
           {wrongAnswers.length > 0 && (
@@ -797,73 +828,50 @@ export default function MockTestPage() {
     (selectedOptionIndex !== null && currentQuestion.optionsShuffled[selectedOptionIndex].correct)
   );
 
+  const progressPercent = Math.round(((currentIndex + 1) / mockQuestions.length) * 100);
+
   return (
-      <div className="min-h-screen bg-[var(--background)]">
-      <div className="max-w-5xl mx-auto px-4 py-6">
-        {/* Header with Translation Switcher */}
-        <div className="mb-4 flex flex-wrap items-center gap-3 justify-between">
-          <div className="flex items-center gap-3 flex-wrap flex-1 min-w-0">
-            <Link
-              href="/dashboard"
-              className="lt-btn-ghost hidden sm:inline-flex px-4 py-2 text-sm flex-col items-center"
-            >
-              <BilingualLabel keyName="backToDashboard" lang={translationLang} />
-            </Link>
-            <span className="inline-flex min-h-11 items-center rounded-xl bg-[var(--navy)] px-3 text-xs font-bold text-white">
-              {enLabel('mockTest')}
-            </span>
-            <span className="inline-flex min-h-11 items-center rounded-xl bg-[var(--teal-soft)] px-3 text-sm font-bold tabular-nums text-[var(--teal)]">
-              {String(Math.floor(elapsedSec / 60)).padStart(2, '0')}:{String(elapsedSec % 60).padStart(2, '0')}
-            </span>
-            <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-start sm:gap-3 flex-1 min-w-0">
-              <span className="text-xs md:text-sm font-medium text-[var(--text-secondary)] whitespace-nowrap">
-                <span className="md:hidden">{enLabel('questionsShort', { n: mockQuestions.length })}</span>
-                <span className="hidden md:inline">{enLabel('questionsCount', { n: mockQuestions.length })}</span>
+    <div dir="ltr" className={MOCK_PAGE_SHELL}>
+      <div className="mx-auto w-full min-w-0 max-w-[1000px] px-4 py-4 sm:px-6 sm:py-6">
+        <article className="w-full min-w-0 overflow-hidden rounded-[22px] border border-[#E6EDF5] bg-white shadow-[0_12px_28px_rgba(16,45,78,0.06)]">
+          <header className="relative overflow-hidden bg-[#102D4E] px-4 pb-6 pt-3.5 text-white sm:px-6 sm:pb-7 sm:pt-5">
+            <MockWave />
+            <div className="relative z-[1] flex items-center gap-3">
+              <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 sm:h-11 sm:w-11">
+                <svg viewBox="0 0 24 24" aria-hidden className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="6" y="3.5" width="12" height="17" rx="2" />
+                  <path d="M9 8h6M9 12h6M9 16h3" />
+                </svg>
               </span>
-              {languageReady && (
-                <LanguageSelector
-                  value={translationLang}
-                  onChange={handleTranslationLangChange}
-                  className="flex-1 min-w-0"
-                />
-              )}
-            </div>
-          </div>
-        </div>
-        {/* Disclaimer Message - Desktop only */}
-        <div className="hidden sm:block text-center mt-4 mb-2 max-w-5xl mx-auto">
-          <p
-            className="text-[10px] text-[var(--muted-text)]/70 leading-tight max-w-4xl mx-auto"
-          >
-            <span className="mr-1">ℹ️</span>
-            {enLabel('disclaimerBody')}
-          </p>
-        </div>
-        <DisclaimerModal lang={translationLang} />
-        {/* Question Card */}
-        <div dir="ltr" className="mx-auto max-w-3xl rounded-[18px] border border-[var(--border)] bg-white p-4 shadow-[var(--shadow-sm)] sm:p-7">
-          {/* Progress Section */}
-          <div className="mb-3">
-            <div className="flex items-center justify-between mb-1.5">
-              <div className="text-xs text-[var(--text-secondary)] font-medium">
-                {enLabel('questionOf', { current: currentIndex + 1, total: mockQuestions.length })}
+              <div className="min-w-0 flex-1">
+                <h2 className="text-base font-bold leading-tight sm:text-xl">{enLabel('mockTest')}</h2>
+                <p className="text-xs font-semibold text-white/90 sm:text-sm">
+                  {enLabel('questionOf', { current: currentIndex + 1, total: mockQuestions.length })}
+                </p>
               </div>
-              <div className="text-xs text-[var(--text-secondary)]">
-                {enLabel('percentComplete', { percent: Math.round(((currentIndex + 1) / mockQuestions.length) * 100) })}
-              </div>
+              <p className="shrink-0 rounded-full bg-white/15 px-3 py-1.5 text-sm font-bold tabular-nums" aria-live="polite">
+                {formatMockTime(elapsedSec)}
+              </p>
             </div>
-            <div className="lt-progress" aria-hidden>
-              <span style={{ width: `${((currentIndex + 1) / mockQuestions.length) * 100}%` }} />
+          </header>
+
+          <div className="px-4 py-4 sm:px-7 sm:py-6">
+            <div className="mb-5 flex items-center gap-3">
+              <div className="h-2 flex-1 overflow-hidden rounded-full bg-[#E7F4F9]" aria-hidden>
+                <div className="h-full rounded-full bg-[#168CBA]" style={{ width: `${progressPercent}%` }} />
+              </div>
+              <span className="shrink-0 text-xs font-semibold text-[#168CBA] sm:text-sm">
+                {enLabel('percentComplete', { percent: progressPercent })}
+              </span>
             </div>
             {currentIndex + 1 === mockQuestions.length && (
-              <p className="text-xs text-[var(--teal)] mt-2 font-medium">{enLabel('finalQuestion')}</p>
+              <p className="mb-3 text-xs font-medium text-[#168CBA]">{enLabel('finalQuestion')}</p>
             )}
             {answers.filter(a => a && a.correct).length > 0 && (
-              <p className="text-xs text-[var(--correct)] mt-2 font-medium">
+              <p className="mb-3 text-xs font-medium text-[var(--correct)]">
                 {enLabel('correctSoFar', { n: answers.filter(a => a && a.correct).length })}
               </p>
             )}
-          </div>
 
           {/* Question Image */}
           {currentQuestion.image && (
@@ -889,13 +897,17 @@ export default function MockTestPage() {
           )}
 
           {/* Question Prompt */}
-          <div className="flex items-start justify-between gap-2 sm:gap-3 mb-2">
-            <h2 dir="ltr" lang="en" className="text-[19px] sm:text-[21px] font-bold text-[var(--text-primary)] leading-[1.4] flex-1 min-w-0 break-words whitespace-normal">
+          <div className="mb-2 flex items-start justify-between gap-2 sm:gap-3">
+            <h2 dir="ltr" lang="en" className="min-w-0 flex-1 break-words text-[1.4rem] font-bold leading-[1.3] tracking-tight text-[#102D4E] sm:text-[1.7rem]">
               {currentQuestion.promptEn}
             </h2>
-            <div className="flex items-center gap-2 flex-shrink-0 mt-1">
-              <TTSButton text={currentQuestion.promptEn} options={currentQuestion.optionsShuffled} />
-            </div>
+            <span className="practice-voice mt-1 shrink-0">
+              <TTSButton
+                text={currentQuestion.promptEn}
+                options={currentQuestion.optionsShuffled}
+                className="!h-auto !w-auto gap-2 rounded-full px-2 py-1 text-[#168CBA]"
+              />
+            </span>
           </div>
           {/* Translation Prompt */}
           {(() => {
@@ -944,27 +956,16 @@ export default function MockTestPage() {
               return (
                 <button
                   key={index}
+                  type="button"
                   onClick={() => handleOptionClick(index)}
                   disabled={isFinished}
                   data-state={optionState}
                   className={cn(
-                    "lt-option active:scale-[0.99]",
-                    isFinished && "cursor-not-allowed",
+                    "practice-answer lt-option w-full text-left",
                     isAnswered && "cursor-default"
                   )}
                 >
-                  <div className="flex items-start gap-3">
-                    {isSelected && !showCorrect && !showWrong && (
-                      <span className="text-xl flex-shrink-0 mt-0.5 text-[var(--lingo-red)] font-bold">○</span>
-                    )}
-                    {(showCorrect || showWrong) && (
-                      <span className={cn(
-                        "text-xl flex-shrink-0 mt-0.5 font-bold transition-all duration-300",
-                        showCorrect ? "text-[var(--correct)]" : "text-[var(--wrong)]"
-                      )}>
-                        {showCorrect ? "✓" : "✕"}
-                      </span>
-                    )}
+                  <div className="practice-answer-body">
                     <AnswerOptionContent
                       option={option}
                       enClassName={cn(
@@ -1021,26 +1022,30 @@ export default function MockTestPage() {
             </div>
           )}
 
-          {/* Navigation Buttons */}
-          <div className="mt-6 flex flex-col gap-2 sm:grid sm:grid-cols-3 sm:gap-3 md:flex md:justify-between md:items-center">
-            {/* Base button styles - consistent for all buttons */}
+          <div className="mt-6 flex flex-wrap items-center gap-2">
             <button
+              type="button"
               onClick={handlePrevious}
               disabled={currentIndex === 0}
               className={cn(
-                "lt-btn-ghost h-12 w-full text-sm flex flex-col items-center justify-center",
-                currentIndex === 0 && "opacity-50 cursor-not-allowed"
+                'inline-flex min-h-12 items-center gap-1 rounded-xl border border-[#D5DEE8] bg-white px-3 text-sm font-semibold text-[#102D4E] sm:px-4',
+                currentIndex === 0 && 'cursor-not-allowed opacity-40'
               )}
             >
-              <BilingualLabel keyName="previous" lang={translationLang} />
+              <svg viewBox="0 0 24 24" aria-hidden className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 6 9 12l6 6" />
+              </svg>
+              {enLabel('previous')}
             </button>
             <button
+              type="button"
               onClick={handleRestart}
-              className="lt-btn-ghost h-12 w-full text-sm flex flex-col items-center justify-center"
+              className="inline-flex min-h-12 items-center rounded-xl border border-[#D5DEE8] bg-white px-3 text-sm font-semibold text-[#102D4E] sm:px-4"
             >
-              <BilingualLabel keyName="restart" lang={translationLang} />
+              {enLabel('restart')}
             </button>
             <button
+              type="button"
               onClick={() => {
                 if (!isAnswered) return;
                 if (currentIndex === mockQuestions.length - 1) {
@@ -1051,20 +1056,23 @@ export default function MockTestPage() {
               }}
               disabled={!isAnswered}
               className={cn(
-                "lt-btn-primary h-12 w-full text-sm whitespace-nowrap flex flex-col items-center justify-center",
-                !isAnswered && "opacity-50 cursor-not-allowed"
+                'practice-next lt-btn-primary ml-auto min-h-12 gap-1.5 px-4 text-sm sm:px-5',
+                !isAnswered && 'cursor-not-allowed'
               )}
             >
-              {currentIndex === mockQuestions.length - 1 ? (
-                <BilingualLabel keyName="finish" lang={translationLang} />
-              ) : (
-                <BilingualLabel keyName="next" lang={translationLang} />
-              )}
+              {currentIndex === mockQuestions.length - 1 ? enLabel('finish') : enLabel('next')}
+              <svg viewBox="0 0 24 24" aria-hidden className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 6l6 6-6 6" />
+              </svg>
             </button>
           </div>
-        </div>
+          </div>
+        </article>
+        <p className="mx-auto mt-5 hidden max-w-4xl text-center text-[10px] leading-tight text-[#4E5D73]/80 sm:block">
+          {enLabel('disclaimerBody')}
+        </p>
+        <DisclaimerModal lang={translationLang} />
       </div>
-      
     </div>
   );
 }

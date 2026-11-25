@@ -128,7 +128,12 @@ export default function HeaderClient() {
 
   const languageName = getLanguageMeta(lang).nativeName;
 
-  if (pathname === '/dashboard' || pathname.startsWith('/practice') || pathname.startsWith('/saved-cards')) {
+  if (
+    pathname === '/dashboard' ||
+    pathname.startsWith('/practice') ||
+    pathname.startsWith('/saved-cards') ||
+    pathname.startsWith('/mock-test')
+  ) {
     return (
       <DashboardChrome
         user={user}
