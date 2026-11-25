@@ -406,10 +406,15 @@ export default function SavedCardsPage() {
                   >
                     <header className="flex items-start gap-3 border-b border-[#f3c1c4] bg-[#fdecee] px-4 py-3">
                       <div className="min-w-0 flex-1">
-                        <p className="flex items-center gap-1.5 text-[0.68rem] font-extrabold uppercase tracking-[0.08em] text-[#D71920]">
+                        <p dir="ltr" lang="en" className="flex items-center gap-1.5 text-[0.68rem] font-extrabold uppercase tracking-[0.08em] text-[#D71920]">
                           <ExplanationIcon />
-                          Explanation
+                          Explanation Hint
                         </p>
+                        {arabicUi ? (
+                          <p dir="rtl" lang="ar" className="mt-1 text-base font-bold leading-snug text-[#102D4E]">
+                            تلميح الشرح
+                          </p>
+                        ) : null}
                         <h2 dir="ltr" lang="en" className="mt-1 break-words text-[1.15rem] font-extrabold leading-tight tracking-tight text-[#102D4E]">
                           {card.question_id}
                         </h2>
@@ -423,7 +428,17 @@ export default function SavedCardsPage() {
                       <img
                         src={card.image_url}
                         alt={card.image_alt || ''}
-                        className="block h-auto w-full max-h-[min(52vh,24rem)] object-contain"
+                        className="lt-hint-dialog-image"
+                      />
+                    ) : card.video_url && /\.(mp4|webm|ogg)(\?|#|$)/i.test(card.video_url) ? (
+                      <video className="lt-hint-dialog-image" src={card.video_url} controls playsInline />
+                    ) : card.video_url ? (
+                      <iframe
+                        title="Explanation hint video"
+                        src={card.video_url}
+                        className="lt-hint-dialog-video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
                       />
                     ) : null}
                     <div className="flex min-w-0 flex-1 flex-col px-4 pb-4 pt-3">

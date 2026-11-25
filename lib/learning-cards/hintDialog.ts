@@ -20,11 +20,17 @@ export interface HintDialogCopy {
   lang: string;
   languageLabel: string;
   title: string;
+  /** Arabic header line. The visible English title stays “Explanation Hint”. */
+  cardKicker: string;
   closeLabel: string;
   gotItLabel: string;
   triggerLabel: string;
   videoTitle: string;
   imageAltFallback: string;
+  saveLabel: string;
+  savedLabel: string;
+  loginToSave: string;
+  disclaimer: string;
 }
 
 export interface PageScrollStyle {
@@ -69,11 +75,17 @@ export function hintDialogCopy(language: string | null | undefined): HintDialogC
       lang: 'ar',
       languageLabel: 'العربية',
       title: 'تلميح',
+      cardKicker: 'تلميح الشرح',
       closeLabel: 'إغلاق',
       gotItLabel: 'فهمت',
       triggerLabel: 'تلميح',
       videoTitle: 'فيديو التلميح',
       imageAltFallback: 'صورة التلميح',
+      saveLabel: 'حفظ البطاقة',
+      savedLabel: 'محفوظة',
+      loginToSave: 'سجّل الدخول لحفظ البطاقات.',
+      disclaimer:
+        'هذا تلميح تعليمي من LingoTheory وليس شرحًا معتمدًا من DVSA. تبقى الصياغة الرسمية على السؤال.',
     };
   }
   const lang = String(language || '').trim().toLowerCase();
@@ -82,11 +94,17 @@ export function hintDialogCopy(language: string | null | undefined): HintDialogC
     lang: lang && lang !== 'en' ? lang : 'en',
     languageLabel: !lang || lang === 'en' ? 'English' : lang.toUpperCase(),
     title: 'Hint',
+    cardKicker: 'Explanation Hint',
     closeLabel: 'Close',
     gotItLabel: 'Got it',
     triggerLabel: 'Hint',
     videoTitle: 'Explanation hint video',
     imageAltFallback: 'Explanation hint',
+    saveLabel: 'Save card',
+    savedLabel: 'Saved',
+    loginToSave: 'Log in to save cards.',
+    disclaimer:
+      'This is a LingoTheory learning hint, not a DVSA-approved explanation. Official wording stays on the question.',
   };
 }
 

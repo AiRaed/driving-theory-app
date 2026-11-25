@@ -137,10 +137,11 @@ run('Opening the dialog locks page scroll and closing restores it', () => {
   assert.equal(restored, 240);
 });
 
-run('Hint dialog is a responsive sheet on mobile and a centered modal on desktop', () => {
+run('Hint dialog uses the keyword card floating layout with a red header', () => {
   const css = readFileSync(path.join(root, 'app/globals.css'), 'utf8');
   const overlayAt = css.indexOf('.lt-hint-dialog-overlay {');
   const panelAt = css.indexOf('.lt-hint-dialog-panel {');
+  const headerAt = css.indexOf('.lt-hint-dialog-header {');
   const scrollAt = css.indexOf('.lt-hint-dialog-scroll {');
   const footerAt = css.indexOf('.lt-hint-dialog-footer {');
   const mediaAt = css.indexOf('@media (min-width: 640px)', overlayAt);
@@ -148,34 +149,45 @@ run('Hint dialog is a responsive sheet on mobile and a centered modal on desktop
   assert.ok(mediaAt > footerAt);
 
   const overlay = css.slice(overlayAt, panelAt);
-  const panel = css.slice(panelAt, css.indexOf('.lt-hint-dialog-grabber'));
+  const panel = css.slice(panelAt, headerAt);
+  const header = css.slice(headerAt, scrollAt);
   const scroll = css.slice(scrollAt, footerAt);
-  const footer = css.slice(footerAt, mediaAt);
   const media = css.slice(mediaAt, css.indexOf('@layer utilities'));
+  const hintCss = css.slice(overlayAt, mediaAt);
 
   assert.ok(overlay.includes('position: fixed'));
   assert.ok(overlay.includes('align-items: flex-end'));
   assert.ok(overlay.includes('overflow: hidden'));
   assert.ok(overlay.includes('overscroll-behavior: none'));
+  assert.ok(overlay.includes('safe-area-inset-bottom'));
+  assert.ok(overlay.includes('safe-area-inset-left'));
+  assert.ok(overlay.includes('safe-area-inset-right'));
   assert.ok(!overlay.includes('overflow-y: auto'));
 
   assert.ok(panel.includes('overflow: hidden'));
-  assert.ok(panel.includes('92dvh'));
+  assert.ok(panel.includes('88dvh'));
   assert.ok(panel.includes('safe-area-inset-top'));
-  assert.ok(panel.includes('safe-area-inset-left'));
-  assert.ok(panel.includes('safe-area-inset-right'));
+  assert.ok(panel.includes('max-width: 32rem'));
+  assert.ok(panel.includes('border-radius: 1.15rem'));
   assert.ok(panel.includes('var(--surface)'));
-  assert.ok(panel.includes('var(--radius-lg) var(--radius-lg) 0 0'));
 
+  assert.ok(header.includes('#fdecee'));
+  assert.ok(header.includes('#D71920'));
   assert.ok(scroll.includes('overflow-y: auto'));
   assert.ok(scroll.includes('overscroll-behavior: contain'));
   assert.ok(scroll.includes('min-height: 0'));
-
-  assert.ok(footer.includes('safe-area-inset-bottom'));
+  assert.ok(scroll.includes('safe-area-inset-bottom'));
+  const imageRule = css.slice(css.indexOf('.lt-hint-dialog-image {'), css.indexOf('.lt-hint-dialog-video {'));
+  assert.ok(imageRule.includes('width: 100%'));
+  assert.ok(imageRule.includes('height: auto'));
+  assert.ok(imageRule.includes('object-fit: contain'));
+  assert.ok(!imageRule.includes('max-height'));
+  assert.ok(!imageRule.includes('object-fit: cover'));
+  assert.ok(!hintCss.includes('.lt-hint-dialog-grabber'));
+  assert.ok(!hintCss.includes('92dvh'));
 
   assert.ok(media.includes('align-items: center'));
-  assert.ok(media.includes('max-width: 32rem'));
-  assert.ok(media.includes('80dvh'));
+  assert.ok(media.includes('padding: 1.5rem'));
   assert.ok(!media.includes('align-items: flex-end'));
 });
 
@@ -193,16 +205,20 @@ run('Dialog semantics, focus trap, Escape, and no backdrop dismissal', () => {
   assert.ok(dialog.includes('tabIndex={-1}'));
   assert.ok(dialog.includes('dir={copy.dir}'));
   assert.ok(dialog.includes('lang={copy.lang}'));
-  assert.ok(dialog.includes('copy.languageLabel'));
+  assert.ok(dialog.includes('Explanation Hint'));
+  assert.equal(dialog.includes('copy.languageLabel'), false);
+  assert.equal(dialog.includes('hintFormatLabel'), false);
   assert.ok(dialog.includes('copy.closeLabel'));
   assert.ok(dialog.includes('copy.gotItLabel'));
-  assert.ok(dialog.includes('hintFormatLabel'));
   assert.ok(dialog.includes('lt-hint-dialog-overlay'));
   assert.ok(dialog.includes('lt-hint-dialog-panel'));
+  assert.ok(dialog.includes('lt-hint-dialog-header'));
   assert.ok(dialog.includes('lt-hint-dialog-scroll'));
   assert.ok(dialog.includes('lt-hint-dialog-footer'));
+  assert.ok(dialog.includes('lt-hint-dialog-close'));
   assert.ok(dialog.includes('lt-btn-primary'));
-  assert.ok(dialog.includes('lt-btn-ghost'));
+  assert.equal(dialog.includes('lt-btn-ghost'), false);
+  assert.equal(dialog.includes('lt-hint-dialog-grabber'), false);
   assert.ok(dialog.includes("event.key === 'Escape'"));
   assert.ok(dialog.includes('nextDialogFocusIndex'));
   assert.ok(dialog.includes('lockPageScroll'));
@@ -241,6 +257,17 @@ run('Dialog semantics, focus trap, Escape, and no backdrop dismissal', () => {
   assert.ok(panel.includes('SaveCardButton'));
   assert.ok(panel.includes('not a DVSA-approved explanation'));
   assert.ok(panel.includes('dir="ltr" lang="en"'));
+  assert.ok(panel.includes('isArabicHintLanguage'));
+  assert.ok(panel.includes('tone="explanation"'));
+  const imageAt = panel.indexOf('lt-hint-dialog-image');
+  const englishAt = panel.indexOf('{card.explanation}');
+  const saveAt = panel.indexOf('<SaveCardButton');
+  const disclaimerAt = panel.indexOf('not a DVSA-approved explanation');
+  assert.ok(imageAt > 0 && imageAt < englishAt && englishAt < saveAt && saveAt < disclaimerAt);
+  const headerAt = dialog.indexOf('lt-hint-dialog-header');
+  const panelAt = dialog.indexOf('<ExplanationCardPanel');
+  const gotItAt = dialog.indexOf('practice-hint-got-it');
+  assert.ok(headerAt > 0 && headerAt < panelAt && panelAt < gotItAt);
 
   assert.ok(practice.includes('<PracticeExplanationHint'));
   assert.ok(!practice.includes('PracticeHintDialog'));

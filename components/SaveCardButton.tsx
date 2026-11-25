@@ -9,6 +9,10 @@ export default function SaveCardButton({
   explanationCardId,
   requestSave,
   onSavedChange,
+  tone = 'default',
+  saveLabel = 'Save card',
+  savedLabel = 'Unsave card',
+  loginLabel = 'Log in to save cards.',
 }: {
   cardKind: 'keyword' | 'explanation';
   keywordCardId?: string;
@@ -16,6 +20,11 @@ export default function SaveCardButton({
   /** Saved Cards supplies the same save request. Practice keeps the built-in request. */
   requestSave?: () => Promise<Response>;
   onSavedChange?: (saved: boolean) => void;
+  /** Explanation hints use the red bookmark control. Keyword saves keep the default button. */
+  tone?: 'default' | 'explanation';
+  saveLabel?: string;
+  savedLabel?: string;
+  loginLabel?: string;
 }) {
   const [saved, setSaved] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -64,7 +73,7 @@ export default function SaveCardButton({
         });
     const data = await res.json();
     if (res.status === 401) {
-      setError('Log in to save cards.');
+      setError(tone === 'explanation' ? loginLabel : 'Log in to save cards.');
       return;
     }
     if (!res.ok) {
@@ -75,10 +84,28 @@ export default function SaveCardButton({
     onSavedChange?.(!!data.saved);
   };
 
+  if (tone === 'explanation') {
+    return (
+      <div>
+        <button
+          type="button"
+          className={saved ? 'lt-hint-save is-saved' : 'lt-hint-save'}
+          aria-pressed={saved}
+          onClick={() => void toggle()}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden className="lt-hint-save-icon" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.8">
+            <path d="M7 4.5h10a1 1 0 0 1 1 1V20l-6-3.2L6 20V5.5a1 1 0 0 1 1-1Z" strokeLinejoin="round" />
+          </svg>
+          {saved ? savedLabel : saveLabel}
+        </button>
+        {error ? <p className="text-[11px] text-[var(--wrong)] mt-1">{error}</p> : null}
+      </div>
+    );
+  }
   return (
     <div>
       <button type="button" className="lt-btn-ghost px-3 py-1.5 text-xs" onClick={() => void toggle()}>
-        {saved ? 'Unsave card' : 'Save card'}
+        {saved ? savedLabel : saveLabel}
       </button>
       {error ? <p className="text-[11px] text-[var(--wrong)] mt-1">{error}</p> : null}
     </div>

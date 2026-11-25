@@ -749,7 +749,7 @@
     border-radius: 999px;
   }
 
-  /* Practice hint: bottom sheet on small screens, centered dialog from 640px. */
+  /* Practice hint: same floating card as the keyword modal, with red accents. */
   .lt-hint-dialog-overlay {
     position: fixed;
     inset: 0;
@@ -759,7 +759,15 @@
     justify-content: center;
     overflow: hidden;
     overscroll-behavior: none;
-    padding: 0;
+    padding: 0.75rem 0.875rem max(0.875rem, env(safe-area-inset-bottom, 0px));
+    padding-left: max(0.875rem, env(safe-area-inset-left, 0px));
+    padding-right: max(0.875rem, env(safe-area-inset-right, 0px));
+  }
+
+  .lt-hint-dialog-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(16, 45, 78, 0.46);
   }
 
   .lt-hint-dialog-panel {
@@ -767,33 +775,79 @@
     z-index: 1;
     display: flex;
     width: 100%;
+    max-width: 32rem;
     min-height: 0;
-    max-height: 92vh;
-    max-height: min(92dvh, calc(100dvh - env(safe-area-inset-top, 0px)));
+    max-height: min(88dvh, calc(100dvh - env(safe-area-inset-top, 0px) - 1.25rem));
     flex-direction: column;
     overflow: hidden;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    border-top: 4px solid var(--blue);
+    border-radius: 1.15rem;
     background: var(--surface);
     color: var(--text-primary);
-    box-shadow: var(--shadow-md);
-    padding-left: env(safe-area-inset-left, 0px);
-    padding-right: env(safe-area-inset-right, 0px);
+    box-shadow: 0 18px 48px rgba(16, 45, 78, 0.28);
   }
 
-  .lt-hint-dialog-grabber {
+  .lt-hint-dialog-header {
     display: flex;
     flex-shrink: 0;
-    justify-content: center;
-    padding-top: 0.5rem;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.9rem 0.95rem 0.85rem 1.05rem;
+    background: #fdecee;
+    border-bottom: 1px solid #f3c1c4;
   }
 
-  .lt-hint-dialog-grabber span {
+  .lt-hint-dialog-kicker {
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0;
+    color: #D71920;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .lt-hint-dialog-icon {
+    width: 0.95rem;
+    height: 0.95rem;
+    flex: none;
+  }
+
+  .lt-hint-dialog-kicker-ar {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0.35rem 0 0;
+    color: var(--navy);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .lt-hint-dialog-close {
+    display: inline-flex;
     width: 2.5rem;
-    height: 0.25rem;
+    height: 2.5rem;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    border: 0;
     border-radius: 999px;
-    background: var(--border-strong);
+    background: transparent;
+    color: var(--navy);
+    font-size: 1.55rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .lt-hint-dialog-close:focus-visible {
+    outline: 2px solid #D71920;
+    outline-offset: 2px;
   }
 
   .lt-hint-dialog-scroll {
@@ -803,14 +857,81 @@
     overflow-y: auto;
     overscroll-behavior: contain;
     touch-action: pan-y;
-    padding: 1rem 1.25rem 1.25rem;
+    padding: 0.9rem 1rem max(1rem, env(safe-area-inset-bottom, 0px));
     -webkit-overflow-scrolling: touch;
   }
 
+  .lt-hint-dialog-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 0 0.9rem;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 0.9rem;
+    background: #f7fbfd;
+  }
+
+  .lt-hint-dialog-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    margin: 0 0 0.9rem;
+    border: 0;
+    border-radius: 0.9rem;
+    background: #f7fbfd;
+  }
+
+  .lt-hint-dialog-copy {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  .lt-hint-save {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.9rem;
+    min-height: 2.5rem;
+    padding: 0.4rem 0.85rem;
+    border: 1px solid #D71920;
+    border-radius: 0.75rem;
+    background: #fdecee;
+    color: #D71920;
+    font-size: 0.92rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .lt-hint-save.is-saved {
+    background: #D71920;
+    color: #fff;
+  }
+
+  .lt-hint-save-icon {
+    width: 1.05rem;
+    height: 1.05rem;
+    flex: none;
+  }
+
+  .lt-hint-dialog-note {
+    margin: 0.75rem 0 0;
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    line-height: 1.45;
+  }
+
   .lt-hint-dialog-footer {
-    flex-shrink: 0;
-    border-top: 1px solid var(--border);
-    padding: 0.75rem 1.25rem max(0.75rem, env(safe-area-inset-bottom, 0px));
+    margin-top: 0.85rem;
+  }
+
+  .lt-hint-dialog-done {
+    width: 100%;
   }
 
   .lt-hint-trigger {
@@ -895,17 +1016,6 @@
     .lt-hint-dialog-overlay {
       align-items: center;
       padding: 1.5rem;
-    }
-
-    .lt-hint-dialog-panel {
-      max-width: 32rem;
-      max-height: min(80vh, 42rem);
-      max-height: min(80dvh, 42rem);
-      border-radius: var(--radius-lg);
-    }
-
-    .lt-hint-dialog-grabber {
-      display: none;
     }
   }
 }
