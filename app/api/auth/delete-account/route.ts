@@ -30,6 +30,23 @@ export async function POST() {
       },
     });
 
+    // Practice progress follows the account. Cascade from auth.users is the
+    // guarantee; these deletes cover the same rows if the user is removed next.
+    const progressDelete = await adminClient
+      .from('learner_question_progress')
+      .delete()
+      .eq('user_id', user.id);
+    const historyDelete = await adminClient
+      .from('learner_attempt_history')
+      .delete()
+      .eq('user_id', user.id);
+    if (progressDelete.error) {
+      console.error('Error deleting learning progress:', progressDelete.error);
+    }
+    if (historyDelete.error) {
+      console.error('Error deleting attempt history:', historyDelete.error);
+    }
+
     // Delete user using admin client
     const { error } = await adminClient.auth.admin.deleteUser(user.id);
 

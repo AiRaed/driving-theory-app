@@ -4,6 +4,8 @@ export interface QuestionOption {
   correct: boolean;
   /** Optional answer-option image (DVSA image-choice questions). */
   image?: string;
+  /** Original 1–4 bank index, stable across option shuffle and language. */
+  sourceIndex?: number;
 }
 
 export interface Question {

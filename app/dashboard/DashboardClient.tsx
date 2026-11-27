@@ -6,7 +6,6 @@ import { createClient } from '@/lib/supabase/client';
 import Link from 'next/link';
 import { User } from '@supabase/supabase-js';
 import { cn } from '@/lib/utils';
-import { DVSA_V2_EXPECTED_COUNT, LINGO_TOPIC_IDS } from '@/lib/questions/dvsaV2';
 import AddToHomeScreenPopup from '@/components/AddToHomeScreenPopup';
 import IosInstallHint from '@/components/IosInstallHint';
 import { useInstallPrompt } from '@/lib/hooks/useInstallPrompt';
@@ -14,9 +13,13 @@ import { isMobileDevice, isStandaloneMode, isCapacitorWebView, isIOSDevice } fro
 import { trackEvent } from '@/lib/analytics/trackEvent';
 import { useLanguage } from '@/lib/i18n/LanguageProvider';
 import ContentMaintenanceNotice from '@/components/ContentMaintenanceNotice';
+import DvsaLicenceNotice from '@/components/DvsaLicenceNotice';
+import { PRACTICE_CARD_SUBTITLE, PRACTICE_CARD_SUBTITLE_AR } from '@/lib/legal/dvsaLicence';
 import { enLabel } from '@/lib/i18n/ui-strings';
 import { useContentMaintenance } from '@/lib/hooks/useContentMaintenance';
 import type { TranslationLang } from '@/lib/i18n/languages';
+import LearningProgressPanel from '@/components/LearningProgressPanel';
+import { useLearnerProgress } from '@/lib/progress/useLearnerProgress';
 
 const DASHBOARD_LANGUAGES: Array<{ code: TranslationLang; label: string }> = [
   { code: 'off', label: 'English' },
@@ -55,6 +58,7 @@ export default function DashboardClient() {
   const supabase = createClient();
   const { hasInstallPrompt, isInstalled, triggerInstall } = useInstallPrompt();
   const { lang, setLang, t } = useLanguage();
+  const learningProgress = useLearnerProgress(Boolean(user));
   const { loading: maintenanceLoading, enabled: contentMaintenance } = useContentMaintenance();
 
   useEffect(() => {
@@ -148,7 +152,7 @@ export default function DashboardClient() {
     {
       href: '/practice',
       title: 'Practice',
-      subtitle: `${DVSA_V2_EXPECTED_COUNT} questions · ${LINGO_TOPIC_IDS.length} topics`,
+      subtitle: PRACTICE_CARD_SUBTITLE,
       background: '#D71920',
       arrow: '#D71920',
       icon: 'car' as const,
@@ -199,7 +203,16 @@ export default function DashboardClient() {
                   {action.title}
                 </span>
                 <span className="mt-1 block text-[13px] font-medium leading-snug text-white/90 sm:text-sm">
-                  {action.subtitle}
+                  {action.href === '/practice' ? (
+                    <>
+                      <span className="block" lang="en" dir="ltr">{PRACTICE_CARD_SUBTITLE}</span>
+                      {lang === 'ar' ? (
+                        <span className="mt-0.5 block" lang="ar" dir="rtl">{PRACTICE_CARD_SUBTITLE_AR}</span>
+                      ) : null}
+                    </>
+                  ) : (
+                    action.subtitle
+                  )}
                 </span>
               </span>
               <span className="relative z-[1]">
@@ -208,6 +221,14 @@ export default function DashboardClient() {
             </Link>
           ))}
         </section>
+
+        <LearningProgressPanel
+          progress={learningProgress.summary.overall}
+          lang={lang}
+          status={learningProgress.status}
+          showRemaining
+          showCompleted
+        />
 
         <section className="rounded-[24px] border border-[#E6EDF5] bg-white px-4 py-5 shadow-[0_10px_30px_rgba(16,45,78,0.05)] sm:px-6 sm:py-6">
           <div className="flex items-start gap-3">
@@ -254,7 +275,9 @@ export default function DashboardClient() {
           </div>
         </section>
 
-        <section className="mt-16 rounded-2xl border border-[#E6EDF5] bg-white px-4 py-4 sm:px-5 md:mt-4">
+        <DvsaLicenceNotice lang={lang} heading className="mt-8 md:mt-6" />
+
+        <section className="mt-8 rounded-2xl border border-[#E6EDF5] bg-white px-4 py-4 sm:px-5 md:mt-6">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#4E5D73]">Account management</p>
           <p className="mt-2 max-w-xl text-sm leading-relaxed text-[#4E5D73]">
             Deleting your account is permanent. This cannot be undone.

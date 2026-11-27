@@ -13,6 +13,7 @@ import { shouldSelectAnswer } from '@/lib/keyword-cards/keywordActivation';
 import AnswerOptionContent from '@/components/AnswerOptionContent';
 import ArabicDraftNote from '@/components/ArabicDraftNote';
 import DisclaimerModal from '@/components/DisclaimerModal';
+import DvsaLicenceNotice from '@/components/DvsaLicenceNotice';
 import TopicGlyph from '@/components/TopicGlyph';
 import BilingualLabel from '@/components/BilingualLabel';
 import { enLabel } from '@/lib/i18n/ui-strings';
@@ -64,6 +65,11 @@ import {
   readAccountJson,
   writeAccountJson,
 } from '@/lib/account/clientAccountStorage';
+import LearningProgressPanel from '@/components/LearningProgressPanel';
+import { TopicProgressBlock } from '@/components/LearningProgressPanel';
+import { emptyTopicProgress } from '@/lib/progress/calculate';
+import { progressCopy } from '@/lib/progress/copy';
+import { useLearnerProgress } from '@/lib/progress/useLearnerProgress';
 
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];
@@ -123,6 +129,9 @@ export default function PracticePage() {
   const practiceSessionKeyRef = useRef<string | null>(null);
   const freeLimitTrackedRef = useRef(false);
   const practiceStartedTopicsRef = useRef<Set<string>>(new Set());
+  const answerClickLock = useRef<string | null>(null);
+  const failedAttempt = useRef<{ key: string; id: string } | null>(null);
+  const learningProgress = useLearnerProgress(true);
 
   // Bind Practice UI cache to the authenticated LingoTheory account.
   useEffect(() => {
@@ -474,24 +483,36 @@ export default function PracticePage() {
     void trackEvent('free_limit_reached', { free_used: freeUsed ?? 0 });
   }, [loading, paid, freeUsed]);
 
-  // Handle answer selection - INSTANT client-side only, no network calls
+  // Handle answer selection. The first click updates the screen immediately.
+  // Persistent progress is saved afterwards and does not block the answer.
   const handleAnswerClick = (index: number) => {
     if (selectedAnswerIndex !== null) return; // Prevent re-selection
     if (!currentQuestion) return;
-    
-    // Check if already answered this question
-    if (answeredQuestionIds.has(currentQuestion.id)) {
-      setSelectedAnswerIndex(index);
-      return;
-    }
-    
-    // INSTANT UI update - no async, no network calls, no loading
+    if (answerClickLock.current === currentQuestion.id) return;
+    answerClickLock.current = currentQuestion.id;
+
     setSelectedAnswerIndex(index);
-    
-    // Update local state
+    const selected = shuffledOptions[index];
+    if (typeof selected?.sourceIndex === 'number') {
+      const key = `${currentQuestion.id}:${selected.sourceIndex}`;
+      const clientAttemptId =
+        failedAttempt.current?.key === key ? failedAttempt.current.id : crypto.randomUUID();
+      void learningProgress.recordAnswer(currentQuestion.id, selected.sourceIndex, clientAttemptId).then((saved) => {
+        if (saved) {
+          failedAttempt.current = null;
+          return;
+        }
+        failedAttempt.current = { key, id: clientAttemptId };
+        answerClickLock.current = null;
+        setSelectedAnswerIndex(null);
+      });
+    }
+
+    // Analytics stays once per question for this practice visit.
+    if (answeredQuestionIds.has(currentQuestion.id)) return;
+
     setAnsweredQuestionIds(prev => new Set([...Array.from(prev), currentQuestion.id]));
 
-    const selected = shuffledOptions[index];
     const correctOpt =
       shuffledOptions.find((o) => o.correct) ||
       currentQuestion.options.find((o) => o.correct);
@@ -567,6 +588,8 @@ export default function PracticePage() {
   };
 
   const handleRestart = () => {
+    // Session navigation only. Saved answers stay on the account.
+    answerClickLock.current = null;
     setCurrentQuestionIndex(0);
     setSelectedAnswerIndex(null);
     setSelectedKeywordIndex(null);
@@ -580,6 +603,7 @@ export default function PracticePage() {
 
   // Reset selected answer when question changes
   useEffect(() => {
+    answerClickLock.current = null;
     setSelectedAnswerIndex(null);
     setSelectedKeywordIndex(null);
   }, [currentQuestion?.id]);
@@ -672,7 +696,9 @@ export default function PracticePage() {
                   </p>
                 </div>
                 <span className="shrink-0 rounded-full bg-white/15 px-2.5 py-1.5 text-center text-[11px] font-semibold leading-tight sm:px-3 sm:text-xs">
-                  {questions.length} questions · {topics.length} topics
+                  {translationLang === 'ar'
+                    ? `${questions.length} سؤال مراجعة · ${topics.length} مواضيع`
+                    : `${questions.length} revision questions · ${topics.length} topics`}
                 </span>
               </div>
             </section>
@@ -690,11 +716,11 @@ export default function PracticePage() {
                     onClick={() => handleTopicSelect(topic)}
                     data-active={isActive}
                     className={cn(
-                      'relative flex min-h-14 w-full items-center gap-3 rounded-[14px] border border-[#D5DEE8] bg-white px-3.5 py-2.5 text-left shadow-[0_8px_20px_rgba(16,45,78,0.05)] md:min-h-[104px] md:px-4',
+                      'relative flex min-h-14 w-full items-start gap-3 rounded-[14px] border border-[#D5DEE8] bg-white px-3.5 py-3 text-left shadow-[0_8px_20px_rgba(16,45,78,0.05)] md:min-h-[104px] md:px-4',
                       isActive && 'border-[#D71920] bg-[#FDECEE]'
                     )}
                   >
-                    <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E7F4F9] text-[#168CBA]">
+                    <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E7F4F9] text-[#168CBA]">
                       <TopicGlyph topic={topic} />
                     </span>
                     <span className="min-w-0 flex-1">
@@ -711,6 +737,12 @@ export default function PracticePage() {
                       <span className="mt-1 hidden text-xs font-medium text-[#4E5D73] md:block">
                         {count} {count === 1 ? 'question' : 'questions'}
                       </span>
+                      {learningProgress.status === 'ready' ? (
+                        <TopicProgressBlock
+                          progress={learningProgress.summary.topics[topic] ?? emptyTopicProgress(count)}
+                          lang={translationLang}
+                        />
+                      ) : null}
                     </span>
                     {isActive ? (
                       <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#D71920] text-white md:absolute md:-right-1.5 md:-top-1.5 md:shadow-[0_4px_10px_rgba(215,25,32,0.35)]">
@@ -719,7 +751,7 @@ export default function PracticePage() {
                         </svg>
                       </span>
                     ) : (
-                      <svg viewBox="0 0 24 24" aria-hidden className="h-5 w-5 shrink-0 text-[#168CBA] md:hidden" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg viewBox="0 0 24 24" aria-hidden className="mt-2.5 h-5 w-5 shrink-0 text-[#168CBA] md:hidden" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M9 6l6 6-6 6" />
                       </svg>
                     )}
@@ -728,9 +760,9 @@ export default function PracticePage() {
               })}
             </div>
 
-            <p className="mx-auto mt-5 hidden max-w-4xl text-center text-[10px] leading-tight text-[#4E5D73]/80 sm:block">
-              {enLabel('disclaimerBody')}
-            </p>
+            <div className="mx-auto mt-5 hidden max-w-4xl sm:block">
+              <DvsaLicenceNotice lang={translationLang} showDistinction />
+            </div>
             <DisclaimerModal lang={translationLang} />
           </>
         ) : null}
@@ -764,6 +796,23 @@ export default function PracticePage() {
                   </p>
                 </div>
               </header>
+
+              <div className="border-b border-[#E6EDF5] px-4 py-3 sm:px-6">
+                <LearningProgressPanel
+                  progress={
+                    learningProgress.summary.topics[currentQuestion.topic] ??
+                    emptyTopicProgress(topicQuestions.length)
+                  }
+                  lang={translationLang}
+                  status={learningProgress.status}
+                  compact
+                  bare
+                  showRemaining
+                  showCompleted={false}
+                  title={progressCopy(translationLang).completion}
+                  saveError={learningProgress.saveError}
+                />
+              </div>
 
               <div className="px-4 py-4 sm:px-7 sm:py-6">
                 <div className="mb-5 flex items-center gap-3">
