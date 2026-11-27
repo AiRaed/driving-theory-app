@@ -1,7 +1,16 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { applyLatestAnswer, formatCompletionPercent, incorrectQuestionIds, summariseProgress } from './calculate';
+import {
+  applyLatestAnswer,
+  completionPercent,
+  formatCompletionPercent,
+  incorrectQuestionIds,
+  isTopicFullyAnswered,
+  summariseProgress,
+  topicEntryChoice,
+} from './calculate';
+import type { TopicProgress } from './types';
 import { progressCopy, progressDir } from './copy';
 import { buildRetrySession, tallyRetrySession } from './retry';
 import type { ProgressAnswer, ProgressQuestionRef } from './types';
@@ -145,6 +154,12 @@ run('english and arabic progress labels are both present', () => {
   assert.ok(ar.remaining);
   assert.equal(progressCopy('ur').title, en.title);
   assert.equal(en.restartTitle, 'Restart Practice');
+  assert.equal(en.practiseAgain, 'Practise {topic} Again');
+  assert.equal(en.totalQuestions, 'Total questions');
+  assert.equal(en.retryNone, 'No incorrect questions to retry.');
+  assert.notEqual(ar.practiseAgain, en.practiseAgain);
+  assert.ok(ar.practiseAgain.includes('{topic}'));
+  assert.ok(ar.totalQuestions.length > 0);
   assert.equal(en.retryIncorrect, 'Retry Incorrect Questions ({n})');
   assert.equal(en.retryIncorrectHelp, 'Focus on the questions you got wrong.');
   assert.equal(en.retryNone, 'No incorrect questions to retry.');
@@ -210,12 +225,83 @@ run('account deletion removes progress rows', () => {
   assert.match(route, /deleteUser\(user\.id\)/);
 });
 
+function topicProgress(
+  total: number,
+  answered: number,
+  correct: number,
+  incorrect: number
+): TopicProgress {
+  return {
+    total,
+    answered,
+    correct,
+    incorrect,
+    unanswered: total - answered,
+    completionPercent: completionPercent(answered, total),
+    accuracyPercent: answered > 0 ? Math.round((correct / answered) * 100) : 0,
+  };
+}
+
+run('topic entry uses the answered count, not a rounded percentage', () => {
+  const none = topicProgress(40, 0, 0, 0);
+  const partial = topicProgress(40, 12, 8, 4);
+  const almost = topicProgress(2000, 1999, 1999, 0);
+  const finishedWrong = topicProgress(40, 40, 30, 10);
+  const finishedRight = topicProgress(40, 40, 40, 0);
+  assert.equal(almost.completionPercent, 100);
+  assert.equal(isTopicFullyAnswered(none), false);
+  assert.equal(isTopicFullyAnswered(partial), false);
+  assert.equal(isTopicFullyAnswered(almost), false);
+  assert.equal(isTopicFullyAnswered(finishedWrong), true);
+  assert.equal(isTopicFullyAnswered(finishedRight), true);
+  assert.equal(isTopicFullyAnswered(null), false);
+
+  const ready = { authenticated: true, progressReady: true };
+  assert.equal(topicEntryChoice({ ...ready, progress: none }), 'resume');
+  assert.equal(topicEntryChoice({ ...ready, progress: partial }), 'resume');
+  assert.equal(topicEntryChoice({ ...ready, progress: almost }), 'resume');
+  assert.equal(topicEntryChoice({ ...ready, progress: finishedWrong }), 'completed');
+  assert.equal(topicEntryChoice({ ...ready, progress: finishedRight }), 'completed');
+  assert.equal(
+    topicEntryChoice({ authenticated: false, progressReady: true, progress: finishedWrong }),
+    'resume'
+  );
+  assert.equal(
+    topicEntryChoice({ authenticated: true, progressReady: false, progress: finishedWrong }),
+    'resume'
+  );
+  assert.equal(finishedRight.incorrect, 0);
+  assert.equal(finishedWrong.incorrect, 10);
+});
+
 run('practice restart does not delete saved progress', () => {
   const page = fs.readFileSync(path.join(root, 'app/practice/page.tsx'), 'utf8');
   const restart = page.slice(page.indexOf('const handleRestart'), page.indexOf('const handleImageError'));
   assert.match(restart, /Session navigation only/);
   assert.doesNotMatch(restart, /learner_question_progress/);
   assert.doesNotMatch(restart, /delete\(/);
+  const entry = page.slice(page.indexOf('const enterTopic'), page.indexOf('const handleChangeTopic'));
+  assert.match(entry, /topicEntryChoice/);
+  assert.match(entry, /choice === 'completed'/);
+  assert.match(entry, /setCompletedTopic\(topic\)/);
+  assert.match(entry, /return;/);
+  assert.doesNotMatch(entry, /learner_question_progress/);
+  assert.doesNotMatch(entry, /delete\(/);
+  const retry = page.slice(page.indexOf('const beginIncorrectRetry'), page.indexOf('const pageGate'));
+  assert.match(retry, /fetchIncorrectQuestionIds\(topic\)/);
+  assert.match(retry, /buildRetrySession/);
+  assert.doesNotMatch(retry, /learner_question_progress/);
+  assert.doesNotMatch(retry, /delete\(/);
+  assert.match(page, /onCancel=\{\(\) => setCompletedTopic\(null\)\}/);
+  assert.match(page, /enterTopic\(completedTopic, true\)/);
+  assert.match(page, /open=\{restartOpen && Boolean\(selectedTopic\) && !showTopicsGrid\}/);
+  const modal = fs.readFileSync(path.join(root, 'components/RestartPracticeModal.tsx'), 'utf8');
+  assert.match(modal, /practiseAgain/);
+  assert.match(modal, /LearningProgressBar/);
+  assert.match(modal, /retryNone/);
+  assert.match(modal, /disabled=\{!canRetry\}/);
+  assert.match(modal, /completed-topic-modal/);
+  assert.match(modal, /restart-practice-modal/);
   assert.match(page, /useLearnerProgress\(\s*Boolean\(accountUserId\) && statusConfirmed,\s*accountUserId\s*\)/);
   assert.match(page, /<TopicProgressBlock/);
   assert.match(page, /<LearningProgressPanel/);

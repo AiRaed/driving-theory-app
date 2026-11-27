@@ -11,6 +11,8 @@ export interface ProgressCopy {
   saveFailed: string;
   loading: string;
   restartTitle: string;
+  practiseAgain: string;
+  totalQuestions: string;
   retryIncorrect: string;
   retryIncorrectHelp: string;
   retryNone: string;
@@ -37,6 +39,8 @@ const EN: ProgressCopy = {
   saveFailed: 'Progress could not be saved. You can submit this answer again.',
   loading: 'Loading progress',
   restartTitle: 'Restart Practice',
+  practiseAgain: 'Practise {topic} Again',
+  totalQuestions: 'Total questions',
   retryIncorrect: 'Retry Incorrect Questions ({n})',
   retryIncorrectHelp: 'Focus on the questions you got wrong.',
   retryNone: 'No incorrect questions to retry.',
@@ -63,6 +67,8 @@ const AR: ProgressCopy = {
   saveFailed: 'تعذّر حفظ التقدّم. يمكنك إرسال هذه الإجابة مرة أخرى.',
   loading: 'جارٍ تحميل التقدّم',
   restartTitle: 'إعادة التدريب',
+  practiseAgain: 'تدرّب على {topic} مرة أخرى',
+  totalQuestions: 'إجمالي الأسئلة',
   retryIncorrect: 'إعادة الأسئلة غير الصحيحة ({n})',
   retryIncorrectHelp: 'ركّز على الأسئلة التي أخطأت فيها.',
   retryNone: 'لا توجد أسئلة غير صحيحة لإعادتها.',

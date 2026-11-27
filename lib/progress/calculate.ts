@@ -31,6 +31,26 @@ export function formatCompletionPercent(value: number): string {
   return rounded.toFixed(1);
 }
 
+/** Distinct answered questions, not a rounded percentage. 1999/2000 can display as 100%. */
+export function isTopicFullyAnswered(progress: TopicProgress | null | undefined): boolean {
+  return !!progress && progress.total > 0 && progress.answered === progress.total;
+}
+
+export type TopicEntryChoice = 'resume' | 'completed';
+
+/**
+ * A completed topic asks how to practise again.
+ * Guests, unloaded progress, and any unanswered question keep the normal entry.
+ */
+export function topicEntryChoice(input: {
+  authenticated: boolean;
+  progressReady: boolean;
+  progress: TopicProgress | null | undefined;
+}): TopicEntryChoice {
+  if (!input.authenticated || !input.progressReady) return 'resume';
+  return isTopicFullyAnswered(input.progress) ? 'completed' : 'resume';
+}
+
 function summariseIds(questionIds: string[], answersById: Map<string, ProgressAnswer>): TopicProgress {
   let correct = 0;
   let incorrect = 0;

@@ -69,7 +69,7 @@ import LearningProgressPanel from '@/components/LearningProgressPanel';
 import { TopicProgressBlock } from '@/components/LearningProgressPanel';
 import RestartPracticeModal from '@/components/RestartPracticeModal';
 import RetrySessionSummary from '@/components/RetrySessionSummary';
-import { emptyTopicProgress } from '@/lib/progress/calculate';
+import { emptyTopicProgress, topicEntryChoice } from '@/lib/progress/calculate';
 import { progressCopy, progressDir } from '@/lib/progress/copy';
 import { fetchIncorrectQuestionIds } from '@/lib/progress/client';
 import { buildRetrySession, tallyRetrySession } from '@/lib/progress/retry';
@@ -142,6 +142,8 @@ export default function PracticePage() {
     accountUserId
   );
   const [restartOpen, setRestartOpen] = useState(false);
+  const [completedTopic, setCompletedTopic] = useState<string | null>(null);
+  const startAtZeroTopicRef = useRef<string | null>(null);
   const [retryBusy, setRetryBusy] = useState(false);
   const [retryComplete, setRetryComplete] = useState(false);
   const [retrySession, setRetrySession] = useState<{
@@ -437,6 +439,15 @@ export default function PracticePage() {
   // A retry session keeps its own position and must not overwrite this cache.
   useEffect(() => {
     if (retryActiveRef.current) return;
+    if (startAtZeroTopicRef.current && startAtZeroTopicRef.current === selectedTopic) {
+      if (topicQuestions.length === 0) return;
+      startAtZeroTopicRef.current = null;
+      setCurrentQuestionIndex(0);
+      setSelectedAnswerIndex(null);
+      setSelectedKeywordIndex(null);
+      setShowHints(false);
+      return;
+    }
     if (!accountUserId || !selectedTopic || topicQuestions.length === 0) {
       return;
     }
@@ -472,15 +483,30 @@ export default function PracticePage() {
     setShowTopicsGrid(false);
   }, [topics, selectedTopic]);
 
-  const handleTopicSelect = (topic: string) => {
+  const enterTopic = (topic: string, startAtZero = false) => {
+    if (startAtZero) startAtZeroTopicRef.current = topic;
     setRetrySession(null);
     setRetryComplete(false);
     setRestartOpen(false);
+    setCompletedTopic(null);
     setSelectedTopic(topic);
-    // Index will be restored by useEffect
     setSelectedAnswerIndex(null);
     setSelectedKeywordIndex(null);
     setShowTopicsGrid(false);
+    if (startAtZero) setCurrentQuestionIndex(0);
+  };
+
+  const handleTopicSelect = (topic: string) => {
+    const choice = topicEntryChoice({
+      authenticated: Boolean(accountUserId),
+      progressReady: learningProgress.status === 'ready',
+      progress: learningProgress.summary.topics[topic],
+    });
+    if (choice === 'completed') {
+      setCompletedTopic(topic);
+      return;
+    }
+    enterTopic(topic);
   };
 
   // Handle change topic button
@@ -690,20 +716,22 @@ export default function PracticePage() {
     setImageError(true);
   };
 
-  const beginIncorrectRetry = async () => {
-    if (!selectedTopic || retryBusy) return;
+  const beginIncorrectRetry = async (topicOverride?: string) => {
+    const topic = topicOverride || selectedTopic;
+    if (!topic || retryBusy) return;
     setRetryBusy(true);
     try {
-      const result = await fetchIncorrectQuestionIds(selectedTopic);
+      const result = await fetchIncorrectQuestionIds(topic);
       if (!result.ok) return;
-      const questionIds = buildRetrySession(
-        topicQuestions.map((question) => question.id),
-        result.questionIds
-      );
+      const catalogIds = questions.filter((question) => question.topic === topic).map((question) => question.id);
+      const questionIds = buildRetrySession(catalogIds, result.questionIds);
       if (questionIds.length === 0) return;
-      setRetrySession({ topic: selectedTopic, questionIds, outcomes: {} });
+      setRetrySession({ topic, questionIds, outcomes: {} });
       setRetryComplete(false);
       setRestartOpen(false);
+      setCompletedTopic(null);
+      setSelectedTopic(topic);
+      setShowTopicsGrid(false);
       answerClickLock.current = null;
       setCurrentQuestionIndex(0);
       setSelectedAnswerIndex(null);
@@ -1592,6 +1620,33 @@ export default function PracticePage() {
           void beginIncorrectRetry();
         }}
         onRestartAll={handleRestart}
+      />
+      <RestartPracticeModal
+        open={Boolean(completedTopic) && showTopicsGrid}
+        lang={translationLang}
+        incorrectCount={
+          completedTopic ? learningProgress.summary.topics[completedTopic]?.incorrect ?? 0 : 0
+        }
+        incorrectState="ready"
+        totalCount={completedTopic ? learningProgress.summary.topics[completedTopic]?.total ?? 0 : 0}
+        busy={retryBusy}
+        completed={
+          completedTopic && learningProgress.summary.topics[completedTopic]
+            ? {
+                topicName:
+                  (translationLang === 'ar' ? getTopicTranslation(completedTopic, 'ar') : null) ||
+                  toTitleCaseLabel(completedTopic),
+                progress: learningProgress.summary.topics[completedTopic],
+              }
+            : null
+        }
+        onCancel={() => setCompletedTopic(null)}
+        onRetryIncorrect={() => {
+          if (completedTopic) void beginIncorrectRetry(completedTopic);
+        }}
+        onRestartAll={() => {
+          if (completedTopic) enterTopic(completedTopic, true);
+        }}
       />
     </div>
   );

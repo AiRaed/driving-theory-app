@@ -1,7 +1,10 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { LearningProgressBar } from '@/components/LearningProgressPanel';
+import { formatCompletionPercent } from '@/lib/progress/calculate';
 import { fillProgress, progressCopy, progressDir } from '@/lib/progress/copy';
+import type { TopicProgress } from '@/lib/progress/types';
 
 function RefreshIcon() {
   return (
@@ -31,6 +34,7 @@ export default function RestartPracticeModal({
   onCancel,
   onRetryIncorrect,
   onRestartAll,
+  completed,
 }: {
   open: boolean;
   lang: string;
@@ -41,10 +45,13 @@ export default function RestartPracticeModal({
   onCancel: () => void;
   onRetryIncorrect: () => void;
   onRestartAll: () => void;
+  /** Set when a finished topic is opened from the topic list. */
+  completed?: { topicName: string; progress: TopicProgress } | null;
 }) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const copy = progressCopy(lang);
   const dir = progressDir(lang);
+  const finished = completed ?? null;
   const canRetry = incorrectState === 'ready' && incorrectCount > 0 && !busy;
   const retryCount = incorrectState === 'ready' ? incorrectCount : '…';
   const retryHelp =
@@ -81,13 +88,37 @@ export default function RestartPracticeModal({
         tabIndex={-1}
         dir={dir}
         lang={lang === 'ar' ? 'ar' : 'en'}
-        data-testid="restart-practice-modal"
+        data-testid={finished ? 'completed-topic-modal' : 'restart-practice-modal'}
         className="max-h-[92vh] w-full max-w-md overflow-y-auto rounded-t-2xl bg-white p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-[0_18px_40px_rgba(16,45,78,0.18)] outline-none sm:rounded-2xl"
         onClick={(event) => event.stopPropagation()}
       >
-        <h2 id="restart-practice-title" className="text-lg font-bold text-[#102D4E]">
-          {copy.restartTitle}
+        <h2 id="restart-practice-title" className="text-lg font-bold leading-snug text-[#102D4E]">
+          {finished ? fillProgress(copy.practiseAgain, { topic: finished.topicName }) : copy.restartTitle}
         </h2>
+        {finished ? (
+          <div className="mt-4 rounded-xl border border-[#E6EDF5] bg-[#F7F9FC] px-3 py-3">
+            <dl className="grid grid-cols-1 gap-2 text-sm sm:grid-cols-3">
+              <div>
+                <dt className="text-xs font-semibold text-[#4E5D73]">{copy.totalQuestions}</dt>
+                <dd className="font-bold text-[#102D4E]">{finished.progress.total}</dd>
+              </div>
+              <div>
+                <dt className="text-xs font-semibold text-[#1B8A4A]">{copy.correct}</dt>
+                <dd className="font-bold text-[#1B8A4A]">{finished.progress.correct}</dd>
+              </div>
+              <div>
+                <dt className="text-xs font-semibold text-[#D71920]">{copy.incorrect}</dt>
+                <dd className="font-bold text-[#D71920]">{finished.progress.incorrect}</dd>
+              </div>
+            </dl>
+            <div className="mt-3">
+              <LearningProgressBar
+                progress={finished.progress}
+                label={`${copy.completion} ${formatCompletionPercent(finished.progress.completionPercent)}%`}
+              />
+            </div>
+          </div>
+        ) : null}
 
         <div className="mt-4 space-y-4">
           <div>
@@ -119,6 +150,7 @@ export default function RestartPracticeModal({
 
           <button
             type="button"
+            data-testid={finished ? 'completed-topic-cancel' : 'restart-cancel'}
             onClick={onCancel}
             className="inline-flex min-h-12 w-full items-center justify-center rounded-xl px-4 text-sm font-semibold text-[#102D4E]"
           >
