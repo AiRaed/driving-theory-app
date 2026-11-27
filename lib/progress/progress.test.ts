@@ -1,8 +1,9 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { applyLatestAnswer, incorrectQuestionIds, summariseProgress } from './calculate';
-import { progressCopy } from './copy';
+import { applyLatestAnswer, formatCompletionPercent, incorrectQuestionIds, summariseProgress } from './calculate';
+import { progressCopy, progressDir } from './copy';
+import { buildRetrySession, tallyRetrySession } from './retry';
 import type { ProgressAnswer, ProgressQuestionRef } from './types';
 
 function run(name: string, fn: () => void) {
@@ -52,7 +53,7 @@ run('correct and incorrect answers use the latest result only', () => {
   assert.equal(summary.topics.alertness.correct, 1);
   assert.equal(summary.topics.alertness.incorrect, 1);
   assert.equal(summary.topics.alertness.unanswered, 1);
-  assert.equal(summary.topics.alertness.completionPercent, 67);
+  assert.equal(summary.topics.alertness.completionPercent, 66.7);
   assert.equal(summary.topics.alertness.accuracyPercent, 50);
   assert.equal(summary.overall.answered, 2);
   assert.equal(summary.overall.completionPercent, 50);
@@ -76,7 +77,34 @@ run('a corrected answer moves from incorrect to correct without a new completion
   assert.equal(summary.overall.answered, 1);
   assert.equal(summary.overall.correct, 1);
   assert.equal(summary.overall.incorrect, 0);
-  assert.equal(summary.topics.alertness.completionPercent, 33);
+  assert.equal(summary.topics.alertness.completionPercent, 33.3);
+});
+
+run('a wrong answer after a correction stays incorrect without a new completion', () => {
+  const corrected = applyLatestAnswer(
+    [answer('q1', 'alertness', false, 1)],
+    answer('q1', 'alertness', true, 2)
+  );
+  const wrongAgain = applyLatestAnswer(corrected, answer('q1', 'alertness', false, 3));
+  const summary = summariseProgress(catalog, wrongAgain);
+  assert.equal(summary.overall.answered, 1);
+  assert.equal(summary.overall.correct, 0);
+  assert.equal(summary.overall.incorrect, 1);
+});
+
+run('small completion totals keep one decimal place', () => {
+  const bank: ProgressQuestionRef[] = Array.from({ length: 758 }, (_, index) => ({
+    id: `bank-${index}`,
+    topicId: 'alertness',
+  }));
+  const answers = [0, 1, 2].map((index) => answer(`bank-${index}`, 'alertness', true));
+  const summary = summariseProgress(bank, answers);
+  assert.equal(summary.overall.answered, 3);
+  assert.equal(summary.overall.completionPercent, 0.4);
+  assert.equal(formatCompletionPercent(summary.overall.completionPercent), '0.4');
+  assert.equal(formatCompletionPercent(50), '50');
+  assert.equal(formatCompletionPercent(0), '0');
+  assert.equal(formatCompletionPercent(100), '100');
 });
 
 run('skipped questions stay unanswered', () => {
@@ -116,6 +144,38 @@ run('english and arabic progress labels are both present', () => {
   assert.ok(ar.incorrect);
   assert.ok(ar.remaining);
   assert.equal(progressCopy('ur').title, en.title);
+  assert.equal(en.restartTitle, 'Restart Practice');
+  assert.equal(en.retryIncorrect, 'Retry Incorrect Questions ({n})');
+  assert.equal(en.retryIncorrectHelp, 'Focus on the questions you got wrong.');
+  assert.equal(en.retryNone, 'No incorrect questions to retry.');
+  assert.equal(en.restartAll, 'Restart All Questions ({n})');
+  assert.equal(en.restartAllHelp, 'Practise the entire topic again.');
+  assert.equal(en.cancel, 'Cancel');
+  assert.equal(en.retrySessionLabel, 'Retry Incorrect Questions');
+  assert.equal(en.reviewed, 'Questions reviewed');
+  assert.equal(en.corrected, 'Questions corrected during this session');
+  assert.equal(en.remainingIncorrect, 'Incorrect questions remaining in this topic');
+  assert.equal(en.retryRemaining, 'Retry Remaining Incorrect Questions ({n})');
+  assert.equal(en.backToTopics, 'Back to Practice Topics');
+  assert.equal(en.allCorrected, 'Great work! You have corrected all your incorrect answers in this topic.');
+  assert.notEqual(ar.restartTitle, en.restartTitle);
+  assert.ok(ar.retryNone.length > 0);
+  assert.ok(ar.allCorrected.length > 0);
+  assert.equal(progressDir('ar'), 'rtl');
+  assert.equal(progressDir('en'), 'ltr');
+});
+
+run('a retry session stays stable after a question is corrected', () => {
+  const topic = ['q1', 'q2', 'q3'];
+  const session = buildRetrySession(topic, ['q3', 'q1', 'missing']);
+  assert.deepEqual(session, ['q1', 'q3']);
+  const corrected = tallyRetrySession(session, { q1: true });
+  assert.deepEqual(session, ['q1', 'q3']);
+  assert.deepEqual(corrected, { reviewed: 2, corrected: 1 });
+  const wrongAgain = tallyRetrySession(session, { q1: false, q3: true });
+  assert.equal(wrongAgain.corrected, 1);
+  assert.equal(wrongAgain.reviewed, 2);
+  assert.deepEqual(tallyRetrySession(session, {}), { reviewed: 2, corrected: 0 });
 });
 
 const root = path.resolve(__dirname, '../..');
@@ -160,6 +220,16 @@ run('practice restart does not delete saved progress', () => {
   assert.match(page, /<TopicProgressBlock/);
   assert.match(page, /<LearningProgressPanel/);
   assert.match(page, /if \(accountUserId && typeof selected\?\.sourceIndex === 'number'\)/);
+  assert.match(page, /RestartPracticeModal/);
+  assert.match(page, /RetrySessionSummary/);
+  assert.match(page, /fetchIncorrectQuestionIds/);
+  assert.match(page, /buildRetrySession/);
+  assert.match(page, /questionIds: prev\.questionIds/);
+  assert.match(page, /\/api\/practice\/increment-usage/);
+  assert.match(page, /PaywallOverlay/);
+  assert.match(page, /decidePracticePageGate/);
+  const answerHandler = page.slice(page.indexOf('const handleAnswerClick'), page.indexOf('const handlePrevious'));
+  assert.doesNotMatch(answerHandler, /questionIds\.filter/);
   const categories = fs.readFileSync(path.join(root, 'lib/questions/practiceCategory.ts'), 'utf8');
   const order = categories.slice(
     categories.indexOf('PRACTICE_TOPIC_ORDER'),
@@ -178,6 +248,24 @@ run('progress saves do not trust a client correctness flag', () => {
   assert.match(route, /attempt id reused/);
   const mock = fs.readFileSync(path.join(root, 'app/mock-test/page.tsx'), 'utf8');
   assert.doesNotMatch(mock, /\/api\/progress/);
+  const incorrectRoute = fs.readFileSync(path.join(root, 'app/api/progress/incorrect/route.ts'), 'utf8');
+  assert.match(incorrectRoute, /getUser\(\)/);
+  assert.match(incorrectRoute, /user\.id/);
+  assert.match(incorrectRoute, /questionIds/);
+  assert.match(incorrectRoute, /Unknown topic/);
+  assert.doesNotMatch(incorrectRoute, /correct_answer/);
+  assert.doesNotMatch(incorrectRoute, /selected_answer/);
+  const server = fs.readFileSync(path.join(root, 'lib/progress/server.ts'), 'utf8');
+  const lookup = server.slice(
+    server.indexOf('export async function listIncorrectQuestionIds'),
+    server.indexOf('export async function recordPracticeAnswer')
+  );
+  assert.match(lookup, /user_id/);
+  assert.match(lookup, /is_correct', false/);
+  assert.match(lookup, /status', 'published'/);
+  assert.match(lookup, /content_version/);
+  assert.doesNotMatch(lookup, /correct_answer/);
+  assert.doesNotMatch(lookup, /selected_answer/);
 });
 
 run('a reused attempt id cannot be applied to another question or answer', () => {

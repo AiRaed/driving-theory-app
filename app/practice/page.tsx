@@ -67,8 +67,12 @@ import {
 } from '@/lib/account/clientAccountStorage';
 import LearningProgressPanel from '@/components/LearningProgressPanel';
 import { TopicProgressBlock } from '@/components/LearningProgressPanel';
+import RestartPracticeModal from '@/components/RestartPracticeModal';
+import RetrySessionSummary from '@/components/RetrySessionSummary';
 import { emptyTopicProgress } from '@/lib/progress/calculate';
-import { progressCopy } from '@/lib/progress/copy';
+import { progressCopy, progressDir } from '@/lib/progress/copy';
+import { fetchIncorrectQuestionIds } from '@/lib/progress/client';
+import { buildRetrySession, tallyRetrySession } from '@/lib/progress/retry';
 import { useLearnerProgress } from '@/lib/progress/useLearnerProgress';
 
 function shuffleArray<T>(array: T[]): T[] {
@@ -137,6 +141,15 @@ export default function PracticePage() {
     Boolean(accountUserId) && statusConfirmed,
     accountUserId
   );
+  const [restartOpen, setRestartOpen] = useState(false);
+  const [retryBusy, setRetryBusy] = useState(false);
+  const [retryComplete, setRetryComplete] = useState(false);
+  const [retrySession, setRetrySession] = useState<{
+    topic: string;
+    questionIds: string[];
+    outcomes: Record<string, boolean>;
+  } | null>(null);
+  const retryActiveRef = useRef(false);
 
   // Bind Practice UI cache to the authenticated LingoTheory account.
   useEffect(() => {
@@ -150,6 +163,9 @@ export default function PracticePage() {
           freeLimitTrackedRef.current = false;
           setCurrentQuestionIndex(0);
           setSelectedAnswerIndex(null);
+          setRetrySession(null);
+          setRetryComplete(false);
+          setRestartOpen(false);
         }
         return userId;
       });
@@ -331,8 +347,21 @@ export default function PracticePage() {
     return questions.filter(q => q.topic === selectedTopic);
   }, [selectedTopic, questions]);
 
+  const activeQuestions = useMemo(() => {
+    if (!retrySession || retrySession.topic !== selectedTopic) return topicQuestions;
+    const byId = new Map(topicQuestions.map((question) => [question.id, question]));
+    return retrySession.questionIds.flatMap((id) => {
+      const question = byId.get(id);
+      return question ? [question] : [];
+    });
+  }, [retrySession, selectedTopic, topicQuestions]);
+
+  retryActiveRef.current = Boolean(
+    retrySession && selectedTopic && retrySession.topic === selectedTopic
+  );
+
   // Get current question
-  const currentQuestion = topicQuestions[currentQuestionIndex] || null;
+  const currentQuestion = activeQuestions[currentQuestionIndex] || null;
 
   // Also ensure translations are loaded when question changes
   useEffect(() => {
@@ -404,8 +433,10 @@ export default function PracticePage() {
     });
   };
 
-  // Restore index when topic changes (per authenticated account)
+  // Restore index when topic changes (per authenticated account).
+  // A retry session keeps its own position and must not overwrite this cache.
   useEffect(() => {
+    if (retryActiveRef.current) return;
     if (!accountUserId || !selectedTopic || topicQuestions.length === 0) {
       return;
     }
@@ -418,13 +449,14 @@ export default function PracticePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [accountUserId, selectedTopic, topicQuestions.length]);
 
-  // Save index when it changes
+  // Save index when it changes. Skip while a retry session is open.
   useEffect(() => {
+    if (retrySession && retrySession.topic === selectedTopic) return;
     if (accountUserId && selectedTopic && topicQuestions.length > 0) {
       saveIndex(selectedTopic, currentQuestionIndex);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [accountUserId, currentQuestionIndex, selectedTopic]);
+  }, [accountUserId, currentQuestionIndex, selectedTopic, retrySession]);
 
   // Handle topic selection
   const topicFromUrlApplied = useRef(false);
@@ -441,6 +473,9 @@ export default function PracticePage() {
   }, [topics, selectedTopic]);
 
   const handleTopicSelect = (topic: string) => {
+    setRetrySession(null);
+    setRetryComplete(false);
+    setRestartOpen(false);
     setSelectedTopic(topic);
     // Index will be restored by useEffect
     setSelectedAnswerIndex(null);
@@ -450,6 +485,14 @@ export default function PracticePage() {
 
   // Handle change topic button
   const handleChangeTopic = () => {
+    if (retrySession && selectedTopic) {
+      const savedIndex = loadSavedIndex(selectedTopic);
+      const validIndex = Math.max(0, Math.min(savedIndex, Math.max(topicQuestions.length - 1, 0)));
+      setCurrentQuestionIndex(validIndex);
+    }
+    setRetrySession(null);
+    setRetryComplete(false);
+    setRestartOpen(false);
     setShowTopicsGrid(true);
     // Scroll to topics grid smoothly
     setTimeout(() => {
@@ -498,6 +541,19 @@ export default function PracticePage() {
 
     setSelectedAnswerIndex(index);
     const selected = shuffledOptions[index];
+    const questionId = currentQuestion.id;
+    const inRetry = retrySession?.topic === selectedTopic;
+    const previousOutcome = inRetry ? retrySession?.outcomes[questionId] : undefined;
+    if (inRetry) {
+      setRetrySession((prev) => {
+        if (!prev || prev.topic !== selectedTopic) return prev;
+        return {
+          ...prev,
+          questionIds: prev.questionIds,
+          outcomes: { ...prev.outcomes, [questionId]: selected?.correct === true },
+        };
+      });
+    }
     if (accountUserId && typeof selected?.sourceIndex === 'number') {
       const key = `${currentQuestion.id}:${selected.sourceIndex}`;
       const clientAttemptId =
@@ -510,6 +566,15 @@ export default function PracticePage() {
         failedAttempt.current = { key, id: clientAttemptId };
         answerClickLock.current = null;
         setSelectedAnswerIndex(null);
+        if (inRetry) {
+          setRetrySession((prev) => {
+            if (!prev || prev.topic !== selectedTopic) return prev;
+            const outcomes = { ...prev.outcomes };
+            if (previousOutcome === undefined) delete outcomes[questionId];
+            else outcomes[questionId] = previousOutcome;
+            return { ...prev, questionIds: prev.questionIds, outcomes };
+          });
+        }
       });
     }
 
@@ -584,16 +649,23 @@ export default function PracticePage() {
         });
     }
     
-    if (currentQuestionIndex < topicQuestions.length - 1) {
+    if (currentQuestionIndex < activeQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
       setSelectedAnswerIndex(null);
       setSelectedKeywordIndex(null);
       setShowHints(false); // Reset hints to collapsed when changing question
+      return;
+    }
+    if (retrySession && retrySession.topic === selectedTopic) {
+      setRetryComplete(true);
     }
   };
 
   const handleRestart = () => {
     // Session navigation only. Saved answers stay on the account.
+    setRetrySession(null);
+    setRetryComplete(false);
+    setRestartOpen(false);
     answerClickLock.current = null;
     setCurrentQuestionIndex(0);
     setSelectedAnswerIndex(null);
@@ -616,6 +688,30 @@ export default function PracticePage() {
   // Handle image load error
   const handleImageError = () => {
     setImageError(true);
+  };
+
+  const beginIncorrectRetry = async () => {
+    if (!selectedTopic || retryBusy) return;
+    setRetryBusy(true);
+    try {
+      const result = await fetchIncorrectQuestionIds(selectedTopic);
+      if (!result.ok) return;
+      const questionIds = buildRetrySession(
+        topicQuestions.map((question) => question.id),
+        result.questionIds
+      );
+      if (questionIds.length === 0) return;
+      setRetrySession({ topic: selectedTopic, questionIds, outcomes: {} });
+      setRetryComplete(false);
+      setRestartOpen(false);
+      answerClickLock.current = null;
+      setCurrentQuestionIndex(0);
+      setSelectedAnswerIndex(null);
+      setSelectedKeywordIndex(null);
+      setShowHints(false);
+    } finally {
+      setRetryBusy(false);
+    }
   };
 
   // Practice page gate: unconfirmed ≠ paywall.
@@ -676,9 +772,29 @@ export default function PracticePage() {
     );
   }
 
-  const progressPercent = topicQuestions.length
-    ? Math.round(((currentQuestionIndex + 1) / topicQuestions.length) * 100)
+  const retryNavigation = Boolean(
+    retrySession && retrySession.topic === selectedTopic && !retryComplete
+  );
+  const showRetrySummary = Boolean(
+    retrySession && retrySession.topic === selectedTopic && retryComplete
+  );
+  const progressPercent = activeQuestions.length
+    ? Math.round(((currentQuestionIndex + 1) / activeQuestions.length) * 100)
     : 0;
+  const nextDisabled =
+    selectedAnswerIndex === null ||
+    showPaywall ||
+    (currentQuestionIndex >= activeQuestions.length - 1 && !retryNavigation);
+  const incorrectCount =
+    accountUserId && learningProgress.status === 'ready' && selectedTopic
+      ? learningProgress.summary.topics[selectedTopic]?.incorrect ?? 0
+      : 0;
+  const incorrectState: 'ready' | 'loading' | 'unavailable' =
+    !accountUserId || learningProgress.status === 'ready'
+      ? 'ready'
+      : learningProgress.status === 'error'
+        ? 'unavailable'
+        : 'loading';
 
   return (
     <div dir="ltr" className="relative min-h-screen bg-[#F7F9FC] pb-28 md:pb-10">
@@ -796,10 +912,22 @@ export default function PracticePage() {
                   <h2 className="min-w-0 flex-1 text-base font-bold leading-tight sm:text-xl">
                     {toTitleCaseLabel(currentQuestion.topic)}
                   </h2>
-                  <p className="shrink-0 text-right text-xs font-semibold text-white/90 sm:text-sm">
-                    {enLabel('questionOf', { current: currentQuestionIndex + 1, total: topicQuestions.length })}
-                  </p>
+                  {showRetrySummary ? null : (
+                    <p className="shrink-0 text-right text-xs font-semibold text-white/90 sm:text-sm">
+                      {enLabel('questionOf', { current: currentQuestionIndex + 1, total: activeQuestions.length })}
+                    </p>
+                  )}
                 </div>
+                {retrySession && retrySession.topic === selectedTopic ? (
+                  <p
+                    className="relative z-[1] mt-2 text-xs font-semibold text-white/90 sm:text-sm"
+                    dir={progressDir(translationLang)}
+                    lang={translationLang === 'ar' ? 'ar' : 'en'}
+                    data-testid="retry-session-label"
+                  >
+                    {progressCopy(translationLang).retrySessionLabel}
+                  </p>
+                ) : null}
               </header>
 
               {accountUserId ? (
@@ -822,6 +950,22 @@ export default function PracticePage() {
               ) : null}
 
               <div className="px-4 py-4 sm:px-7 sm:py-6">
+                {showRetrySummary && retrySession ? (
+                  <RetrySessionSummary
+                    lang={translationLang}
+                    reviewed={tallyRetrySession(retrySession.questionIds, retrySession.outcomes).reviewed}
+                    corrected={tallyRetrySession(retrySession.questionIds, retrySession.outcomes).corrected}
+                    remaining={incorrectCount}
+                    totalCount={topicQuestions.length}
+                    busy={retryBusy}
+                    onRetryRemaining={() => {
+                      void beginIncorrectRetry();
+                    }}
+                    onRestartAll={handleRestart}
+                    onBack={handleChangeTopic}
+                  />
+                ) : (
+                <>
                 <div className="mb-5 flex items-center gap-3">
                   <div className="h-2 flex-1 overflow-hidden rounded-full bg-[#E7F4F9]" aria-hidden>
                     <div className="h-full rounded-full bg-[#168CBA]" style={{ width: `${progressPercent}%` }} />
@@ -1404,7 +1548,7 @@ export default function PracticePage() {
               </button>
               <button
                 type="button"
-                onClick={handleRestart}
+                onClick={() => setRestartOpen(true)}
                 className="inline-flex min-h-12 items-center rounded-xl border border-[#D5DEE8] bg-white px-3 text-sm font-semibold text-[#102D4E] sm:px-4"
               >
                 {enLabel('restart')}
@@ -1412,10 +1556,10 @@ export default function PracticePage() {
               <button
                 type="button"
                 onClick={handleNext}
-                disabled={currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall}
+                disabled={nextDisabled}
                 className={cn(
                   'practice-next lt-btn-primary ml-auto min-h-12 gap-1.5 px-4 text-sm sm:px-5',
-                  (currentQuestionIndex === topicQuestions.length - 1 || selectedAnswerIndex === null || showPaywall) && 'cursor-not-allowed'
+                  nextDisabled && 'cursor-not-allowed'
                 )}
               >
                 {enLabel('next')}
@@ -1424,6 +1568,8 @@ export default function PracticePage() {
                 </svg>
               </button>
             </div>
+                </>
+                )}
               </div>
             </article>
           </div>
@@ -1434,6 +1580,19 @@ export default function PracticePage() {
         ) : null}
       </div>
       </div>
+      <RestartPracticeModal
+        open={restartOpen && Boolean(selectedTopic) && !showTopicsGrid}
+        lang={translationLang}
+        incorrectCount={incorrectCount}
+        incorrectState={incorrectState}
+        totalCount={topicQuestions.length}
+        busy={retryBusy}
+        onCancel={() => setRestartOpen(false)}
+        onRetryIncorrect={() => {
+          void beginIncorrectRetry();
+        }}
+        onRestartAll={handleRestart}
+      />
     </div>
   );
 }

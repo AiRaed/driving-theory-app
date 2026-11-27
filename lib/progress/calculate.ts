@@ -18,6 +18,19 @@ function percent(part: number, whole: number): number {
   return Math.round((part / whole) * 100);
 }
 
+/** One decimal place so small fractions stay visible, for example 3/758 = 0.4. */
+export function completionPercent(part: number, whole: number): number {
+  if (whole <= 0 || part <= 0) return 0;
+  return Math.round((part / whole) * 1000) / 10;
+}
+
+/** 50 stays "50". 0.4 stays "0.4". */
+export function formatCompletionPercent(value: number): string {
+  const rounded = Math.round(value * 10) / 10;
+  if (Number.isInteger(rounded)) return String(rounded);
+  return rounded.toFixed(1);
+}
+
 function summariseIds(questionIds: string[], answersById: Map<string, ProgressAnswer>): TopicProgress {
   let correct = 0;
   let incorrect = 0;
@@ -35,7 +48,7 @@ function summariseIds(questionIds: string[], answersById: Map<string, ProgressAn
     correct,
     incorrect,
     unanswered: total - answered,
-    completionPercent: percent(answered, total),
+    completionPercent: completionPercent(answered, total),
     accuracyPercent: percent(correct, answered),
   };
 }

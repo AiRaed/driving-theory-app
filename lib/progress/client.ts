@@ -22,6 +22,23 @@ export async function fetchLearnerProgress(): Promise<
   }
 }
 
+export async function fetchIncorrectQuestionIds(
+  topicId: string
+): Promise<{ ok: true; questionIds: string[] } | { ok: false }> {
+  try {
+    const response = await fetch(
+      `/api/progress/incorrect?topic=${encodeURIComponent(topicId)}`,
+      { method: 'GET', cache: 'no-store' }
+    );
+    const body = (await response.json().catch(() => null)) as { questionIds?: unknown } | null;
+    if (!response.ok || !Array.isArray(body?.questionIds)) return { ok: false };
+    if (!body.questionIds.every((id) => typeof id === 'string')) return { ok: false };
+    return { ok: true, questionIds: body.questionIds };
+  } catch {
+    return { ok: false };
+  }
+}
+
 export async function submitLearnerAnswer(
   questionId: string,
   selectedAnswer: number,

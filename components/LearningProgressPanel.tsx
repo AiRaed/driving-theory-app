@@ -1,6 +1,7 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { formatCompletionPercent } from '@/lib/progress/calculate';
 import { fillProgress, progressCopy, progressDir } from '@/lib/progress/copy';
 import type { TopicProgress } from '@/lib/progress/types';
 
@@ -86,7 +87,8 @@ export function LearningProgressPanel({
   const copy = progressCopy(lang);
   const dir = progressDir(lang);
   const visible = status === 'ready' ? progress : emptyTrack;
-  const barLabel = `${copy.completion} ${status === 'ready' ? progress.completionPercent : 0}%`;
+  const shownPercent = status === 'ready' ? formatCompletionPercent(progress.completionPercent) : '0';
+  const barLabel = `${copy.completion} ${shownPercent}%`;
 
   return (
     <section
@@ -105,7 +107,7 @@ export function LearningProgressPanel({
           {title || copy.title}
         </h2>
         <p className={cn('shrink-0 font-bold text-[#168CBA]', compact ? 'text-sm' : 'text-lg')}>
-          {status === 'ready' ? `${progress.completionPercent}%` : '—'}
+          {status === 'ready' ? `${formatCompletionPercent(progress.completionPercent)}%` : '—'}
         </p>
       </div>
       <div className="mt-2">
@@ -150,7 +152,7 @@ export function TopicProgressBlock({
   lang: string;
 }) {
   const copy = progressCopy(lang);
-  const label = `${copy.completion} ${progress.completionPercent}%`;
+  const label = `${copy.completion} ${formatCompletionPercent(progress.completionPercent)}%`;
   return (
     <div className="mt-1.5 w-full min-w-0" dir={progressDir(lang)} lang={lang === 'ar' ? 'ar' : 'en'}>
       <span className="mb-1 flex items-center justify-between gap-2 text-[11px] font-bold leading-tight">

@@ -52,6 +52,45 @@ export async function loadPracticeProgress(userId: string): Promise<ProgressSumm
   return summariseProgress(catalog, answers);
 }
 
+/**
+ * Published active V2 questions in this topic whose latest answer is incorrect.
+ * Returns ids only. Correct answers and selected options stay on the server.
+ */
+export async function listIncorrectQuestionIds(userId: string, topicId: string): Promise<string[]> {
+  const admin = createServiceClient();
+  const [catalogResult, progressResult] = await Promise.all([
+    admin
+      .from('questions')
+      .select('id')
+      .eq('status', 'published')
+      .eq('content_version', PRACTICE_CONTENT_VERSION)
+      .eq('topic_id', topicId)
+      .order('sort_order', { ascending: true })
+      .order('id', { ascending: true }),
+    admin
+      .from('learner_question_progress')
+      .select('question_id')
+      .eq('user_id', userId)
+      .eq('content_version', PRACTICE_CONTENT_VERSION)
+      .eq('topic_id', topicId)
+      .eq('is_correct', false),
+  ]);
+
+  if (catalogResult.error) {
+    throw new Error(catalogResult.error.message);
+  }
+  if (progressResult.error) {
+    throw new Error(progressResult.error.message);
+  }
+
+  const incorrect = new Set(
+    ((progressResult.data || []) as Array<{ question_id: string }>).map((row) => row.question_id)
+  );
+  return ((catalogResult.data || []) as Array<{ id: string }>)
+    .map((row) => row.id)
+    .filter((id) => incorrect.has(id));
+}
+
 export async function recordPracticeAnswer(input: {
   userId: string;
   questionId: string;
