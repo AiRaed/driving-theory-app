@@ -152,7 +152,7 @@ export function TopicProgressBlock({
   const copy = progressCopy(lang);
   const label = `${copy.completion} ${progress.completionPercent}%`;
   return (
-    <div className="mt-1.5 w-full" dir={progressDir(lang)} lang={lang === 'ar' ? 'ar' : 'en'}>
+    <div className="mt-1.5 w-full min-w-0" dir={progressDir(lang)} lang={lang === 'ar' ? 'ar' : 'en'}>
       <span className="mb-1 flex items-center justify-between gap-2 text-[11px] font-bold leading-tight">
         <span className="text-[#168CBA]">{label}</span>
         <span className="text-[#102D4E]">
@@ -161,7 +161,7 @@ export function TopicProgressBlock({
       </span>
       <LearningProgressBar progress={progress} label={label} />
       <div className="mt-1">
-        <LearningProgressCounts progress={progress} lang={lang} />
+        <LearningProgressCounts progress={progress} lang={lang} showRemaining />
       </div>
     </div>
   );

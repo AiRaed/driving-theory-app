@@ -9,6 +9,7 @@ import TTSButton from "@/components/TTSButton";
 import AnswerOptionContent from "@/components/AnswerOptionContent";
 import ArabicDraftNote from "@/components/ArabicDraftNote";
 import DisclaimerModal from "@/components/DisclaimerModal";
+import DvsaLicenceNotice from "@/components/DvsaLicenceNotice";
 import { enLabel } from "@/lib/i18n/ui-strings";
 import PaywallOverlay from "@/components/PaywallOverlay";
 import ContentMaintenanceNotice from "@/components/ContentMaintenanceNotice";
@@ -1068,9 +1069,9 @@ export default function MockTestPage() {
           </div>
           </div>
         </article>
-        <p className="mx-auto mt-5 hidden max-w-4xl text-center text-[10px] leading-tight text-[#4E5D73]/80 sm:block">
-          {enLabel('disclaimerBody')}
-        </p>
+        <div className="mx-auto mt-5 hidden max-w-4xl sm:block">
+          <DvsaLicenceNotice lang={translationLang} showDistinction />
+        </div>
         <DisclaimerModal lang={translationLang} />
       </div>
     </div>

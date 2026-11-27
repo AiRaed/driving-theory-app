@@ -52,7 +52,7 @@ export default function KeywordInlineText({
           <p className="font-bold">{open.translation || open.term_en || open.term_key}</p>
           <p className="text-[var(--text-secondary)] mt-1">{open.definition}</p>
           <p className="text-[11px] text-[var(--text-secondary)] mt-2">
-            Extra learning card. Not DVSA-approved.
+            This keyword card has been created by LingoTheory as additional learning support and is not part of the DVSA revision material.
           </p>
           <div className="flex flex-wrap gap-2 mt-2">
             <SaveCardButton cardKind="keyword" keywordCardId={open.id} />

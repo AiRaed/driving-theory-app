@@ -124,9 +124,18 @@ run('migration stores latest answers, history, isolation and account deletion', 
   const sql = fs.readFileSync(path.join(root, 'supabase/migrations/0012_learner_progress.sql'), 'utf8');
   assert.match(sql, /PRIMARY KEY \(user_id, question_id, content_version\)/);
   assert.match(sql, /UNIQUE \(user_id, client_attempt_id\)/);
+  assert.match(sql, /IF FOUND THEN/);
+  assert.match(sql, /0012 stopped: attempt identity is already installed/);
   assert.match(sql, /REFERENCES auth\.users \(id\) ON DELETE CASCADE/);
   assert.match(sql, /user_id = auth\.uid\(\)/);
   assert.match(sql, /WITH CHECK \(false\)/);
+  assert.match(sql, /FOR INSERT/);
+  assert.match(sql, /FOR UPDATE/);
+  assert.match(sql, /FOR DELETE/);
+  assert.doesNotMatch(sql, /FOR ALL/);
+  assert.doesNotMatch(sql, /DROP TABLE/i);
+  assert.doesNotMatch(sql, /TRUNCATE/i);
+  assert.doesNotMatch(sql, /DELETE FROM/i);
   assert.match(sql, /WHERE is_correct = false/);
   assert.match(sql, /q\.correct_answer = p_selected_answer/);
   assert.match(sql, /content_version = 'v2'/);
@@ -147,14 +156,47 @@ run('practice restart does not delete saved progress', () => {
   assert.match(restart, /Session navigation only/);
   assert.doesNotMatch(restart, /learner_question_progress/);
   assert.doesNotMatch(restart, /delete\(/);
+  assert.match(page, /useLearnerProgress\(\s*Boolean\(accountUserId\) && statusConfirmed,\s*accountUserId\s*\)/);
+  assert.match(page, /<TopicProgressBlock/);
+  assert.match(page, /<LearningProgressPanel/);
+  assert.match(page, /if \(accountUserId && typeof selected\?\.sourceIndex === 'number'\)/);
+  const categories = fs.readFileSync(path.join(root, 'lib/questions/practiceCategory.ts'), 'utf8');
+  const order = categories.slice(
+    categories.indexOf('PRACTICE_TOPIC_ORDER'),
+    categories.indexOf('] as const')
+  );
+  assert.equal(order.match(/'[^']+'/g)?.length, 14);
+  const dashboard = fs.readFileSync(path.join(root, 'app/dashboard/DashboardClient.tsx'), 'utf8');
+  assert.match(dashboard, /useLearnerProgress\(Boolean\(user\) && statusConfirmed, user\?\.id\)/);
+  assert.match(dashboard, /<LearningProgressPanel/);
 });
 
 run('progress saves do not trust a client correctness flag', () => {
   const route = fs.readFileSync(path.join(root, 'app/api/progress/answer/route.ts'), 'utf8');
   assert.doesNotMatch(route, /is_correct/);
   assert.match(route, /user\.id/);
+  assert.match(route, /attempt id reused/);
   const mock = fs.readFileSync(path.join(root, 'app/mock-test/page.tsx'), 'utf8');
   assert.doesNotMatch(mock, /\/api\/progress/);
+});
+
+run('a reused attempt id cannot be applied to another question or answer', () => {
+  const sql = fs.readFileSync(
+    path.join(root, 'supabase/migrations/0013_learner_progress_attempt_identity.sql'),
+    'utf8'
+  );
+  assert.match(sql, /CREATE OR REPLACE FUNCTION public\.record_learner_practice_answer/);
+  assert.match(sql, /existing_question_id IS DISTINCT FROM q\.id/);
+  assert.match(sql, /existing_answer IS DISTINCT FROM p_selected_answer/);
+  assert.match(sql, /RAISE EXCEPTION 'attempt id reused'/);
+  assert.match(sql, /q\.correct_answer = p_selected_answer/);
+  assert.doesNotMatch(sql, /DROP TABLE/i);
+  assert.doesNotMatch(sql, /TRUNCATE/i);
+  assert.doesNotMatch(sql, /DELETE FROM/i);
+  const server = fs.readFileSync(path.join(root, 'lib/progress/server.ts'), 'utf8');
+  assert.match(server, /attempt id reused/);
+  assert.match(server, /prior\.data\.question_id !== input\.questionId/);
+  assert.match(server, /prior\.data\.selected_answer !== input\.selectedAnswer/);
 });
 
 console.log('progress tests passed');

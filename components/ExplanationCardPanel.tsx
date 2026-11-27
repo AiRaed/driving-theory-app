@@ -110,9 +110,7 @@ export default function ExplanationCardPanel({
         lang={copy.lang}
         className="lt-hint-dialog-note"
       >
-        {isArabicHintLanguage(language)
-          ? copy.disclaimer
-          : 'This is a LingoTheory learning hint, not a DVSA-approved explanation. Official wording stays on the question.'}
+        {copy.disclaimer}
       </p>
     </div>
   );

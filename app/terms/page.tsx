@@ -27,10 +27,10 @@ export default function TermsPage() {
                 2. Practice Questions Disclaimer
               </h2>
               <p className="text-base text-[var(--text-primary)] leading-relaxed mb-3">
-                The practice questions in this app are NOT official exam questions. They are created for learning purposes and may be similar in meaning to real driving theory questions, but they are not identical to any official test content.
+                This product includes the Driver and Vehicle Standards Agency (DVSA) revision question bank. These are DVSA revision questions. They are not live theory test questions. The Driver and Vehicle Standards Agency (DVSA) has given permission for the reproduction of Crown copyright material. DVSA does not accept responsibility for the accuracy of the reproduction. LingoTheory is an independent learning platform. Additional learning materials are created by LingoTheory.
               </p>
               <p className="text-xs text-[var(--text-secondary)] leading-relaxed font-normal" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
-                الأسئلة الموجودة في هذا التطبيق ليست أسئلة رسمية من اختبار القيادة. تم إنشاؤها لأغراض تعليمية وقد تكون مشابهة في المعنى لأسئلة الاختبار الحقيقي، لكنها ليست مطابقة لها.
+                تتضمن هذه المادة أسئلة مراجعة من DVSA. ليست أسئلة الاختبار النظري المباشر. LingoTheory منصة تعلم مستقلة، ومواد التعلم الإضافية من إعداد LingoTheory. يبقى إقرار حقوق النشر الإلزامي باللغة الإنجليزية أعلاه.
               </p>
             </section>
 

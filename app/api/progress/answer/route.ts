@@ -39,7 +39,11 @@ export async function POST(request: Request) {
     return NextResponse.json({ summary });
   } catch (error) {
     const message = error instanceof Error ? error.message : '';
-    if (message.includes('question not in active bank') || message.includes('invalid answer')) {
+    if (
+      message.includes('question not in active bank') ||
+      message.includes('invalid answer') ||
+      message.includes('attempt id reused')
+    ) {
       return NextResponse.json({ error: 'Answer was not accepted' }, { status: 400 });
     }
     console.error('[progress] save failed', error);

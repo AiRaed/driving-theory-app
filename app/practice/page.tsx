@@ -131,7 +131,12 @@ export default function PracticePage() {
   const practiceStartedTopicsRef = useRef<Set<string>>(new Set());
   const answerClickLock = useRef<string | null>(null);
   const failedAttempt = useRef<{ key: string; id: string } | null>(null);
-  const learningProgress = useLearnerProgress(true);
+  // Wait until access status has succeeded. Starting /api/progress in parallel
+  // refreshes the same session and can make /api/access/status fail closed.
+  const learningProgress = useLearnerProgress(
+    Boolean(accountUserId) && statusConfirmed,
+    accountUserId
+  );
 
   // Bind Practice UI cache to the authenticated LingoTheory account.
   useEffect(() => {
@@ -493,7 +498,7 @@ export default function PracticePage() {
 
     setSelectedAnswerIndex(index);
     const selected = shuffledOptions[index];
-    if (typeof selected?.sourceIndex === 'number') {
+    if (accountUserId && typeof selected?.sourceIndex === 'number') {
       const key = `${currentQuestion.id}:${selected.sourceIndex}`;
       const clientAttemptId =
         failedAttempt.current?.key === key ? failedAttempt.current.id : crypto.randomUUID();
@@ -737,7 +742,7 @@ export default function PracticePage() {
                       <span className="mt-1 hidden text-xs font-medium text-[#4E5D73] md:block">
                         {count} {count === 1 ? 'question' : 'questions'}
                       </span>
-                      {learningProgress.status === 'ready' ? (
+                      {accountUserId && learningProgress.status === 'ready' ? (
                         <TopicProgressBlock
                           progress={learningProgress.summary.topics[topic] ?? emptyTopicProgress(count)}
                           lang={translationLang}
@@ -797,6 +802,7 @@ export default function PracticePage() {
                 </div>
               </header>
 
+              {accountUserId ? (
               <div className="border-b border-[#E6EDF5] px-4 py-3 sm:px-6">
                 <LearningProgressPanel
                   progress={
@@ -813,6 +819,7 @@ export default function PracticePage() {
                   saveError={learningProgress.saveError}
                 />
               </div>
+              ) : null}
 
               <div className="px-4 py-4 sm:px-7 sm:py-6">
                 <div className="mb-5 flex items-center gap-3">

@@ -3,7 +3,10 @@
 -- Attempt history keeps earlier submissions for later analytics.
 -- Mock Test attempts are not written here.
 -- Account deletion: both tables reference auth.users ON DELETE CASCADE.
--- Status: apply once. Do not edit after it has been applied to production.
+--
+-- Additive only. Existing production rows stay in place.
+-- CREATE TABLE IF NOT EXISTS keeps any rows already stored if the script is run again.
+-- Apply once in the Supabase SQL Editor. Do not edit it after production apply.
 
 CREATE TABLE IF NOT EXISTS public.learner_question_progress (
   user_id uuid NOT NULL REFERENCES auth.users (id) ON DELETE CASCADE,
@@ -53,12 +56,27 @@ CREATE POLICY learner_progress_select_own
   USING (user_id = auth.uid());
 
 DROP POLICY IF EXISTS learner_progress_no_client_write ON public.learner_question_progress;
-CREATE POLICY learner_progress_no_client_write
+DROP POLICY IF EXISTS learner_progress_no_client_insert ON public.learner_question_progress;
+CREATE POLICY learner_progress_no_client_insert
   ON public.learner_question_progress
-  FOR ALL
+  FOR INSERT
+  TO anon, authenticated
+  WITH CHECK (false);
+
+DROP POLICY IF EXISTS learner_progress_no_client_update ON public.learner_question_progress;
+CREATE POLICY learner_progress_no_client_update
+  ON public.learner_question_progress
+  FOR UPDATE
   TO anon, authenticated
   USING (false)
   WITH CHECK (false);
+
+DROP POLICY IF EXISTS learner_progress_no_client_delete ON public.learner_question_progress;
+CREATE POLICY learner_progress_no_client_delete
+  ON public.learner_question_progress
+  FOR DELETE
+  TO anon, authenticated
+  USING (false);
 
 DROP POLICY IF EXISTS learner_history_select_own ON public.learner_attempt_history;
 CREATE POLICY learner_history_select_own
@@ -68,12 +86,44 @@ CREATE POLICY learner_history_select_own
   USING (user_id = auth.uid());
 
 DROP POLICY IF EXISTS learner_history_no_client_write ON public.learner_attempt_history;
-CREATE POLICY learner_history_no_client_write
+DROP POLICY IF EXISTS learner_history_no_client_insert ON public.learner_attempt_history;
+CREATE POLICY learner_history_no_client_insert
   ON public.learner_attempt_history
-  FOR ALL
+  FOR INSERT
+  TO anon, authenticated
+  WITH CHECK (false);
+
+DROP POLICY IF EXISTS learner_history_no_client_update ON public.learner_attempt_history;
+CREATE POLICY learner_history_no_client_update
+  ON public.learner_attempt_history
+  FOR UPDATE
   TO anon, authenticated
   USING (false)
   WITH CHECK (false);
+
+DROP POLICY IF EXISTS learner_history_no_client_delete ON public.learner_attempt_history;
+CREATE POLICY learner_history_no_client_delete
+  ON public.learner_attempt_history
+  FOR DELETE
+  TO anon, authenticated
+  USING (false);
+
+-- 0013 replaces this function. Re-running the replacement below would drop that
+-- attempt-identity check, so stop when it is already installed.
+DO $guard$
+BEGIN
+  IF EXISTS (
+    SELECT 1
+    FROM pg_proc p
+    JOIN pg_namespace n ON n.oid = p.pronamespace
+    WHERE n.nspname = 'public'
+      AND p.proname = 'record_learner_practice_answer'
+      AND pg_get_functiondef(p.oid) LIKE '%attempt id reused%'
+  ) THEN
+    RAISE EXCEPTION '0012 stopped: attempt identity is already installed. Do not replace record_learner_practice_answer from this script.';
+  END IF;
+END
+$guard$;
 
 CREATE OR REPLACE FUNCTION public.record_learner_practice_answer(
   p_user_id uuid,
@@ -134,14 +184,18 @@ BEGIN
       AND question_id = q.id
       AND content_version = q.content_version;
 
-    RETURN jsonb_build_object(
-      'duplicate', true,
-      'question_id', q.id,
-      'topic_id', q.topic_id,
-      'is_correct', row.is_correct,
-      'selected_answer', row.selected_answer,
-      'attempt_count', row.attempt_count
-    );
+    -- Same client attempt already stored. Do not count it again.
+    -- If that attempt never reached the progress row, fall through and store it once.
+    IF FOUND THEN
+      RETURN jsonb_build_object(
+        'duplicate', true,
+        'question_id', q.id,
+        'topic_id', q.topic_id,
+        'is_correct', row.is_correct,
+        'selected_answer', row.selected_answer,
+        'attempt_count', row.attempt_count
+      );
+    END IF;
   END IF;
 
   INSERT INTO public.learner_question_progress (

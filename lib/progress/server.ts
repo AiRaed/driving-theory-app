@@ -59,6 +59,23 @@ export async function recordPracticeAnswer(input: {
   clientAttemptId: string;
 }): Promise<ProgressSummary> {
   const admin = createServiceClient();
+  const prior = await admin
+    .from('learner_attempt_history')
+    .select('question_id, selected_answer')
+    .eq('user_id', input.userId)
+    .eq('client_attempt_id', input.clientAttemptId)
+    .maybeSingle();
+  if (prior.error) {
+    throw new Error(prior.error.message);
+  }
+  if (
+    prior.data &&
+    (prior.data.question_id !== input.questionId ||
+      prior.data.selected_answer !== input.selectedAnswer)
+  ) {
+    throw new Error('attempt id reused');
+  }
+
   const { error } = await admin.rpc('record_learner_practice_answer', {
     p_user_id: input.userId,
     p_question_id: input.questionId,

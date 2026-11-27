@@ -49,7 +49,7 @@ export function keywordDialogCopy(language: string | null | undefined): KeywordD
       englishHeading: 'English',
       arabicHeading: 'العربية',
       disclaimer:
-        'هذه بطاقة كلمة من LingoTheory وليست تعريفًا معتمدًا من DVSA، ولا تعرض الإجابة الصحيحة.',
+        'أُعدّت بطاقة الكلمة هذه من قِبل LingoTheory كدعم تعليمي إضافي، وهي ليست جزءاً من مادة المراجعة الخاصة بـ DVSA.',
       loginToSave: 'سجّل الدخول لحفظ البطاقات.',
     };
   }
@@ -71,7 +71,7 @@ export function keywordDialogCopy(language: string | null | undefined): KeywordD
     englishHeading: 'English',
     arabicHeading: 'Arabic',
     disclaimer:
-      'This is a LingoTheory keyword card, not a DVSA definition, and it does not show the correct answer.',
+      'This keyword card has been created by LingoTheory as additional learning support and is not part of the DVSA revision material.',
     loginToSave: 'Log in to save cards.',
   };
 }

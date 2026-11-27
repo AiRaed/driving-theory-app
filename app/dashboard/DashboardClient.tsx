@@ -20,6 +20,7 @@ import { useContentMaintenance } from '@/lib/hooks/useContentMaintenance';
 import type { TranslationLang } from '@/lib/i18n/languages';
 import LearningProgressPanel from '@/components/LearningProgressPanel';
 import { useLearnerProgress } from '@/lib/progress/useLearnerProgress';
+import { useAccess } from '@/lib/providers/AccessProvider';
 
 const DASHBOARD_LANGUAGES: Array<{ code: TranslationLang; label: string }> = [
   { code: 'off', label: 'English' },
@@ -58,7 +59,9 @@ export default function DashboardClient() {
   const supabase = createClient();
   const { hasInstallPrompt, isInstalled, triggerInstall } = useInstallPrompt();
   const { lang, setLang, t } = useLanguage();
-  const learningProgress = useLearnerProgress(Boolean(user));
+  const { statusConfirmed } = useAccess();
+  // Progress starts after access status so the two session refreshes do not overlap.
+  const learningProgress = useLearnerProgress(Boolean(user) && statusConfirmed, user?.id);
   const { loading: maintenanceLoading, enabled: contentMaintenance } = useContentMaintenance();
 
   useEffect(() => {

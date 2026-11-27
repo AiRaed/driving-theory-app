@@ -1,4 +1,5 @@
 import LandingClient, { AndroidInstallHeroCta } from './LandingClient';
+import DvsaLicenceNotice from '@/components/DvsaLicenceNotice';
 import AppVersionBadge from '@/components/AppVersionBadge';
 import StoreDownloadCta from '@/components/StoreDownloadCta';
 import Link from 'next/link';
@@ -7,7 +8,7 @@ const features = [
   {
     href: '/practice',
     title: 'Practice',
-    body: '758 questions across 14 topics',
+    body: '758 revision questions · 14 topics',
     icon: 'M4 16l4-6 4 4 4-7 4 9',
     surface: 'bg-[#FDECEE] text-[var(--lingo-red)]',
   },
@@ -111,13 +112,8 @@ export default function Home() {
           <AndroidInstallHeroCta />
         </div>
 
-        <section className="mx-auto mt-8 max-w-3xl space-y-3 border-t border-[var(--border)] pt-5">
-          <p className="text-xs leading-relaxed text-[var(--text-secondary)]">
-            For best results, use this app alongside official DVSA learning materials.
-          </p>
-          <p className="text-[11px] leading-relaxed text-[var(--text-secondary)]">
-            Disclaimer: Practice questions are designed to help learners prepare for the UK driving theory test. They are not official DVSA exam questions and are based on the same learning objectives and topics.
-          </p>
+        <section className="mx-auto mt-8 max-w-3xl border-t border-[var(--border)] pt-5">
+          <DvsaLicenceNotice showDistinction />
         </section>
       </div>
     </>

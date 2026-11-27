@@ -14,7 +14,7 @@ const EMPTY_SUMMARY: ProgressSummary = {
   topics: {},
 };
 
-export function useLearnerProgress(enabled = true) {
+export function useLearnerProgress(enabled = true, accountId?: string | null) {
   const [summary, setSummary] = useState<ProgressSummary>(EMPTY_SUMMARY);
   const [status, setStatus] = useState<ProgressLoadStatus>('loading');
   const [saveError, setSaveError] = useState(false);
@@ -31,8 +31,11 @@ export function useLearnerProgress(enabled = true) {
 
   useEffect(() => {
     if (!enabled) return;
+    setSummary(EMPTY_SUMMARY);
+    setStatus('loading');
+    setSaveError(false);
     void reload();
-  }, [enabled, reload]);
+  }, [enabled, accountId, reload]);
 
   const recordAnswer = useCallback(async (questionId: string, selectedAnswer: number, clientAttemptId: string) => {
     const result = await submitLearnerAnswer(questionId, selectedAnswer, clientAttemptId);

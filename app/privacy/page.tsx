@@ -79,10 +79,10 @@ export default function PrivacyPage() {
                 6. Purpose of This App
               </h2>
               <p className="text-base text-[var(--text-primary)] leading-relaxed mb-3">
-                This application is designed solely for driving theory practice and education. We are not affiliated with any official driving test authority, and this app is for learning purposes only.
+                This application is designed solely for driving theory practice and education. This product includes the Driver and Vehicle Standards Agency (DVSA) revision question bank. LingoTheory is an independent learning platform and is not affiliated with DVSA. The Driver and Vehicle Standards Agency (DVSA) has given permission for the reproduction of Crown copyright material. DVSA does not accept responsibility for the accuracy of the reproduction.
               </p>
               <p className="text-xs text-[var(--text-secondary)] leading-relaxed font-normal" dir="rtl" style={{ fontFeatureSettings: '"liga" 1, "kern" 1' }}>
-                هذا التطبيق مخصص فقط لممارسة وتعلم نظرية القيادة. لسنا مرتبطين بأي سلطة رسمية لاختبار القيادة، وهذا التطبيق لأغراض تعليمية فقط.
+                هذا التطبيق مخصص فقط لممارسة وتعلم نظرية القيادة. يتضمن أسئلة مراجعة من DVSA. LingoTheory منصة تعلم مستقلة وغير تابعة لـ DVSA. يبقى إقرار حقوق النشر الإلزامي باللغة الإنجليزية أعلاه.
               </p>
             </section>
 

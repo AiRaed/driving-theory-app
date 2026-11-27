@@ -260,14 +260,19 @@ run('Dialog semantics, focus trap, Escape, and no backdrop dismissal', () => {
   assert.ok(panel.includes('video_url'));
   assert.ok(panel.includes('hintMediaVisibility'));
   assert.ok(panel.includes('SaveCardButton'));
-  assert.ok(panel.includes('not a DVSA-approved explanation'));
+  assert.ok(
+    readFileSync(path.join(root, 'lib/learning-cards/hintDialog.ts'), 'utf8').includes(
+      'This learning hint has been created by LingoTheory and is separate from the DVSA revision material.'
+    )
+  );
+  assert.ok(panel.includes('{copy.disclaimer}'));
   assert.ok(panel.includes('dir="ltr" lang="en"'));
   assert.ok(panel.includes('isArabicHintLanguage'));
   assert.ok(panel.includes('tone="explanation"'));
   const imageAt = panel.indexOf('lt-hint-dialog-image');
   const englishAt = panel.indexOf('{card.explanation}');
   const saveAt = panel.indexOf('<SaveCardButton');
-  const disclaimerAt = panel.indexOf('not a DVSA-approved explanation');
+  const disclaimerAt = panel.indexOf('{copy.disclaimer}');
   assert.ok(imageAt > 0 && imageAt < englishAt && englishAt < saveAt && saveAt < disclaimerAt);
   const headerAt = dialog.indexOf('lt-hint-dialog-header');
   const panelAt = dialog.indexOf('<ExplanationCardPanel');

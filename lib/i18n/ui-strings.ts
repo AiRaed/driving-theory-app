@@ -41,9 +41,9 @@ export const UI_EN = {
   languages: 'Languages',
   changeTopic: 'Change topic',
   disclaimerTitle: 'Disclaimer',
-  disclaimerShort: 'Disclaimer • Not official DVSA questions',
+  disclaimerShort: 'DVSA revision questions • Not the live theory test',
   disclaimerBody:
-    'Disclaimer: This app provides practice questions designed to help learners prepare for the UK driving theory test. The questions are not official DVSA exam questions but are based on the same learning objectives and topics.',
+    'These are DVSA revision questions. They are not live theory test questions.',
   close: 'Close',
   questionOf: 'Question {current} of {total}',
   percentComplete: '{percent}% complete',
@@ -156,9 +156,9 @@ const ar: UiDict = {
   languages: 'اللغات',
   changeTopic: 'تغيير الموضوع',
   disclaimerTitle: 'تنويه',
-  disclaimerShort: 'تنويه • ليست أسئلة DVSA الرسمية',
+  disclaimerShort: 'أسئلة مراجعة DVSA • ليست أسئلة الاختبار المباشر',
   disclaimerBody:
-    'تنويه: هذا التطبيق يقدّم أسئلة تدريبية للمساعدة في الاستعداد لاختبار القيادة النظري في المملكة المتحدة. الأسئلة ليست أسئلة الامتحان الرسمية، لكنها مبنية على نفس الأهداف التعليمية.',
+    'هذه أسئلة مراجعة من DVSA. ليست أسئلة الاختبار النظري المباشر.',
   close: 'إغلاق',
   questionOf: 'سؤال {current} من {total}',
   percentComplete: '{percent}% مكتمل',

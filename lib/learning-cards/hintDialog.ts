@@ -85,7 +85,7 @@ export function hintDialogCopy(language: string | null | undefined): HintDialogC
       savedLabel: 'محفوظة',
       loginToSave: 'سجّل الدخول لحفظ البطاقات.',
       disclaimer:
-        'هذا تلميح تعليمي من LingoTheory وليس شرحًا معتمدًا من DVSA. تبقى الصياغة الرسمية على السؤال.',
+        'أُعدّ تلميح التعلم هذا من قِبل LingoTheory وهو منفصل عن مادة المراجعة الخاصة بـ DVSA.',
     };
   }
   const lang = String(language || '').trim().toLowerCase();
@@ -104,7 +104,7 @@ export function hintDialogCopy(language: string | null | undefined): HintDialogC
     savedLabel: 'Saved',
     loginToSave: 'Log in to save cards.',
     disclaimer:
-      'This is a LingoTheory learning hint, not a DVSA-approved explanation. Official wording stays on the question.',
+      'This learning hint has been created by LingoTheory and is separate from the DVSA revision material.',
   };
 }
 
