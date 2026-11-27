@@ -5,13 +5,15 @@ import PracticeKeywordDialog from '@/components/PracticeKeywordDialog';
 import { keywordDialogCopy } from '@/lib/keyword-cards/dialog';
 import { usePublishedQuestionKeywords } from '@/lib/keyword-cards/useQuestionKeywords';
 
-/** Practice only. Hidden unless this question has a published keyword card. */
+/** Hidden unless this question has a published keyword card. */
 export default function PracticeKeywordControl({
   questionId,
   language,
+  sectionLabel,
 }: {
   questionId: string;
   language: string;
+  sectionLabel?: string;
 }) {
   const keywords = usePublishedQuestionKeywords(questionId);
   const dialogId = useId();
@@ -27,6 +29,9 @@ export default function PracticeKeywordControl({
   const copy = keywordDialogCopy(language);
   return (
     <div className="mt-4">
+      {sectionLabel ? (
+        <h3 className="mb-2 text-sm font-bold text-[#102D4E]">{sectionLabel}</h3>
+      ) : null}
       <button
         ref={triggerRef}
         type="button"

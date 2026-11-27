@@ -51,7 +51,7 @@ function usePublishedExplanation(questionId: string, language: string) {
   return card;
 }
 
-/** Practice only. Mock Test must not import this module. */
+/** Published explanation hint. The active Mock Test screen does not render this. */
 export default function PracticeLearningAids({
   questionId,
   language,

@@ -60,8 +60,9 @@ export const UI_EN = {
   mockRequiresPaid: 'Mock Test requires paid access',
   mockResult: 'Mock Test Result',
   youScored: 'You scored {correct} / {total} ({percent}%)',
-  passMessage: "PASS — Well done! You're above the recommended pass mark.",
-  failMessage: 'FAIL — Keep practicing. Aim for at least 86% to pass the real test.',
+  passMessage:
+    'PASS — You reached 43 out of 50 on this multiple-choice mock. The official theory test also includes hazard perception.',
+  failMessage: 'FAIL — The pass mark for this multiple-choice mock is 43 out of 50.',
   retake: 'Retake',
   correctAnswer: 'Correct answer:',
   excellentFocus: 'Excellent! Keep your focus.',
@@ -175,8 +176,9 @@ const ar: UiDict = {
   mockRequiresPaid: 'الاختبار التجريبي يتطلب اشتراكاً مدفوعاً',
   mockResult: 'نتيجة الاختبار التجريبي',
   youScored: 'درجتك {correct} / {total} ({percent}%)',
-  passMessage: 'نجاح — أحسنت! أنت فوق درجة النجاح الموصى بها.',
-  failMessage: 'رسوب — تابع التدريب. استهدف 86% على الأقل لاجتياز الاختبار الحقيقي.',
+  passMessage:
+    'نجاح — وصلت إلى 43 من 50 في هذا الاختبار التجريبي متعدد الخيارات. الاختبار النظري الرسمي يتضمن أيضاً إدراك المخاطر.',
+  failMessage: 'رسوب — درجة النجاح في هذا الاختبار التجريبي متعدد الخيارات هي 43 من 50.',
   retake: 'إعادة المحاولة',
   correctAnswer: 'الإجابة الصحيحة:',
   excellentFocus: 'ممتاز! حافظ على تركيزك.',

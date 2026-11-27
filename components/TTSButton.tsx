@@ -7,7 +7,7 @@ import { useLanguage } from '@/lib/i18n/LanguageProvider';
 
 interface TTSButtonProps {
   text: string;
-  options?: { en: string; ar: string; correct: boolean }[];
+  options?: { en: string; ar: string; correct?: boolean }[];
   className?: string;
 }
 
